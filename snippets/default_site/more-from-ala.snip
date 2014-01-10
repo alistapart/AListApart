@@ -1,0 +1,66 @@
+
+						<h1 class="classy">More from ALA</h1>
+						
+						{exp:channel:entries channel="columns" limit="2" dynamic="no" url_title="not {segment_2}" status="open" show_future_entries="no"}
+						
+						{if count == "1"}
+						<h2>Columns</h2>
+						{/if}
+						
+						{if channel_short_name == "columns"}
+						<article class="item-summary article">
+				
+							{categories show_group="4"}<span class="column-name">{if category_description}{category_description}{if:else}{category_name}{/if}</span>{/categories}
+				
+							<h1><a href="/column/{url_title}">{title}</a></h1>
+				
+							{embed="embeds/column-author-photo-small" entry_author="{author_id}" entry_id="{entry_id}"}
+					
+							<p>{column_intro}</p>
+					
+							<footer class="byline">
+								<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+							</footer>
+						
+						</article>
+						
+						{/exp:channel:entries}
+						
+						{exp:channel:entries channel="blog|link_posts" limit="5" dynamic="no" status="open" show_future_entries="no"}
+						
+						{if count == "1"}
+						<h2>From the Blog</h2>
+						{/if}
+						
+						{if channel_short_name == "blog" && segment_3 != url_title}
+						<article class="item-summary article">
+					
+							<h1><a href="/blog/post/{url_title}">{title}</a></h1>
+							
+							{if blog_intro}<p>{blog_intro}</p>{/if}
+							
+							<footer>
+								{embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+								<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="/blog/post/{url_title}">{entry_date format="%F %d, %Y"}</a></time>
+							</footer>
+						
+						</article>
+						{if:elseif channel_short_name == "link_posts" && segment_3 != url_title}
+						<article class="item-summary link-post">
+			
+							<h1><a href="{blog_target_url}">{title}</a></h1>
+					
+							{if blog_description}<p>{blog_description}</p>{/if}
+					
+							<footer>
+								{exp:parse_url parts="host"}{blog_target_url}{/exp:parse_url}
+								{blog_attribution}
+								 ∙ ℅ <a class="attribution-link" href="{cell_2}">{cell_1}</a>
+								{/blog_attribution}
+							</footer>
+				
+						</article>
+						{/if}
+						
+						{/exp:channel:entries}
+						

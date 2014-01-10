@@ -1,0 +1,51 @@
+	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+		 chromium.org/developers/how-tos/chrome-frame-getting-started -->
+	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+	
+	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('/d/site_assets/js/libs/jquery-1.8.2.min.js"><\/script>')</script>
+
+	{exp:minimee:js}
+	<script src="/d/site_assets/js/libs/matchmedia.js"></script>
+	<script src="/d/site_assets/js/libs/picturefill.js"></script>
+	<script src="/d/site_assets/js/libs/breakpoints.js"></script>
+	<script src="/d/site_assets/js/script.js"></script>
+	{/exp:minimee:js}
+	
+	{if logged_in_username == "murtaugh" || logged_in_username == "mikepick" || logged_in_username == "chrisheilmann" AND segment_1 == ""}
+	
+	<script>funLoad();</script>
+	
+	{/if}
+	
+	<script>
+	var _qevents = _qevents || [];
+	
+	(function() {
+	var elem = document.createElement('script');
+	elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+	elem.async = true;
+	elem.type = "text/javascript";
+	var scpt = document.getElementsByTagName('script')[0];
+	scpt.parentNode.insertBefore(elem, scpt);
+	})();
+	
+	_qevents.push({qacct:"p-0Gb-D0fnDnm2s"});
+	</script>
+	
+	<noscript>
+	<div style="display:none;">
+	<img src="//pixel.quantserve.com/pixel/p-0Gb-D0fnDnm2s.gif" height="1" width="1" alt=""/>
+	</div>
+	</noscript>
+
+	<script>
+	var _gaq=[['_setAccount','UA-11757054-1'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
+
+</body>
+</html>

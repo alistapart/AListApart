@@ -1,0 +1,26 @@
+
+				<aside class="content-minutiae">
+					{if article_illustration OR article_legacy_illo}
+					<h1>Illustration:</h1>
+					<ul>
+						<li><a href="/author/kcornell">Kevin Cornell</a></li>
+					</ul>
+					{/if}
+					{if article_translations OR member_group == "1" || member_group == "6" || member_group == "7" || member_group == "8"}
+					<h1>Translations:</h1>
+					<ul>
+						{article_translations}
+						<li><a href="{cell_2}">{cell_1}</a></li>
+						{/article_translations}
+						{if member_group == "1" || member_group == "6" || member_group == "7" || member_group == "8"}
+						<li><a href="/tools/translations/{url_title}">+ add a link</a></li>
+						{/if}
+					</ul>
+					{/if}
+					<h1 class="share-tools">Share This:</h1>
+					<ul class="share-tools">
+						<li><a href="http://twitter.com/intent/tweet?url=http://alistapart.com/article/{url_title}&text={exp:url_encode}{title}{/exp:url_encode}&via=alistapart">Twitter</a></li>
+						<li><a href="http://www.facebook.com/sharer.php?u=http://alistapart.com/article/{url_title}&t={exp:url_encode}{title}{/exp:url_encode}">Facebook</a></li>
+						<li><a href="https://plus.google.com/share?url=http://alistapart.com/article/{url_title}">Google+</a></li>
+					</ul>				
+				</aside>

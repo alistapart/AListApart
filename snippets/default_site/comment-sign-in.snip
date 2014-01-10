@@ -1,0 +1,102 @@
+
+							<li id="commenter-signin" class="commenter-signin {if comment_total == 0}no-comments{/if}">
+							
+								<h3>Got Something to Say?</h3>
+								
+								<p>Discuss this article. We reserve the right to delete flames, trolls, and wood nymphs.</p>
+								
+								<!-- I don't know why, but I had to move the login form above the login options so that EE would generate the current_url correctly. -->
+								{exp:member:login_form return="http://alistapart.com/{current_path}/login-return" id="sign-in-form" class="sign-in-form"}
+								
+									<label for="login-name-here">
+										Username <small>(<a id="show-registration-form" href="/utilities/register">need an account?</a>)</small>
+										<input id="login-name-here" name="username" type="text" required="required" />
+									</label>
+								
+									<label for="login_password">
+										Password <small>(<a id="show-forgot-password-form" href="/utilities/forgot-password">forgotten it?</a>)</small>
+										<input id="login_password" name="password" type="password" required="required" />
+									</label>
+									
+									<input type="submit" value="Submit" />
+									
+									<p class="never-mind">(<a id="cancel-login" href="{exp:current_url:full_url}/login-return">never mind</a>)</p>
+								
+								{/exp:member:login_form}
+								
+								<div id="login-buttons" class="active">
+									<h4>Sign in with:</h4>
+								
+									<ul class="login-buttons">
+										<li class="twitter"><a href="http://alistapart.com/?ACT=59&provider=twitter&RET={exp:current_url:full_url}/login-return">Twitter</a></li><!--
+										--><li class="facebook"><a href="http://alistapart.com/?ACT=59&provider=facebook&RET={exp:current_url:full_url}/login-return">Facebook</a></li><!--
+										--><li class="ala"><a id="show-native-login" href="/login">A List Apart</a></li>
+									</ul>
+								</div>
+								
+								{exp:user:forgot_password}
+								
+									<h4>We can reset that for you:</h4>
+ 
+									<label for="reset-email-here">
+								        Your email address
+								        <input id="reset-email-here" type="email" name="email" />
+								    </label>
+								    
+									<input type="submit" value="Reset Password" />
+									
+									<p class="never-mind">(<a id="cancel-password-reset" href="{exp:current_url:full_url}/login-return">never mind</a>)</p>
+								 
+								{/exp:user:forgot_password}
+								
+								{exp:user:register return="{current_path}/login-return" form:id="register-form" form:class="sign-in-form"}
+								
+									<h4>Create an account:</h4>
+									
+									<label for="new-username-here">
+										New username
+										<input id="new-username-here" type="text" name="username" placeholder="jsmith" required="required" />
+									</label>
+									
+									<label for="new-screen-name">
+										New screen name
+										<input id="new-screen-name" name="screen_name" type="text" placeholder="Jane Smith" required="required" />
+									</label>
+									
+									<label for="new-email-here">
+										New email address
+										<input id="new-email-here" type="email" name="email" placeholder="you@yours.com" required="required" />
+									</label>
+									
+									<label for="new-password-here">
+										New password
+										<input id="new-password-here" type="password" name="password" required="required" />
+									</label>
+									
+									<label for="new-password-confirm-here">
+										Confirm new password
+										<input id="new-password-confirm-here" type="password" name="password_confirm" required="required" />
+									</label>
+									
+									{if captcha}
+									<label for="captcha">
+										Please enter in the word you see below:
+										<input type="text" name="captcha" />
+										<p>{captcha}</p>
+									</label>
+									{/if}
+									
+									{!--<label class="checkbox" for="accept_terms">
+										Accept our terms of use?
+										<input type="checkbox" name="accept_terms" required="required" value="y" />
+									</label>--}
+									
+									<input type="submit" value="Submit" />
+									
+									<p class="never-mind">(<a id="cancel-registration" href="{exp:current_url:full_url}/login-return">never mind</a>)</p>
+								 
+								{/exp:user:register}
+							
+							</li>
+	
+	
