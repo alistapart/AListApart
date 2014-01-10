@@ -1,0 +1,36 @@
+{exp:rss:feed channel="articles" status="open" show_future_entries="no"}
+
+<?xml version="1.0" encoding="{encoding}"?>
+<rss version="2.0"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:admin="http://webns.net/mvcb/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/">
+
+    <channel>
+    
+    <title><![CDATA[A List Apart: The Translation Feed]]></title>
+    <link>http://alistapart.com</link>
+    <description>Notifications of ALA translation submissions.</description>
+    <dc:language>{channel_language}</dc:language>
+    <dc:creator>The fine folks at A List Apart</dc:creator>
+    <dc:rights>Copyright {gmt_date format="%Y"}</dc:rights>
+    <dc:date>{gmt_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
+    
+{exp:channel:entries channel="articles" limit="20" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" search:article_translations="not IS_EMPTY"}
+    <item>
+      <title><![CDATA[{exp:strip_html}{title}{/exp:strip_html}: {article_translations backspace="2"}{cell_1}, {/article_translations}]]></title>
+      <link>http://alistapart.com/article/{url_title}</link>
+      <guid>http://alistapart.com/article/{url_title}</guid>
+      <description><![CDATA[<ul>{article_translations}
+						<li><a href="{cell_2}">{cell_1}</a></li>
+						{/article_translations}</ul>]]></description>
+      <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
+    </item>
+{/exp:channel:entries}
+    
+    </channel>
+</rss>
+
+{/exp:rss:feed}

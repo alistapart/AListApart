@@ -1,0 +1,125 @@
+{exp:channel:entries channel="columns" url_title="{segment_3}" limit="1" disable="categories|category_fields|member_data" status="open|closed|Submitted by Author|In Progress"}
+
+{if group_id == "1" OR member_id == author_id}
+
+<!doctype html>
+	
+<!--[if lt IE 7]> <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie ie9 lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="/_/css/style.css">
+
+	<link rel="stylesheet" href="/_/css/readable.css">
+
+	<link rel="stylesheet" href="/_/css/prism.css">
+
+	<script src="/_/js/libs/modernizr-2.5.3.min.js"></script>
+
+	<title>A List Apart: Edit Column</title>
+		
+</head>
+
+<body>
+
+{global-header}
+
+<div role="main">
+
+	{if segment_4 == "submitted"}
+	<section data-title="alert">
+	
+		<p>
+		
+			<b>Successful submission!</b> Nicely done.
+	
+			{if segment_5 == "new"}
+			The editors have been alerted; I'm sure they'll be getting in touch soon.
+			{/if}
+			
+			Feel free to keep editing.
+	
+		</p>
+	
+	</section>
+	{/if}
+	
+	{exp:safecracker channel="columns" return="/edit/column/{url_title}/submitted" include_jquery="no" safecracker_head="no" class="editForm" id="editForm{entry_id}" entry_id="{entry_id}"}
+	
+	<header data-title="title">
+	
+		<h1><input name="title" type="text" value="{title}"></h1>
+		
+		<p>
+			URL Title: <input name="url_title" type="text" value="{url_title}">
+		</p>
+
+	</header>
+	
+	<hr>
+	
+	<section data-title="intro">
+	
+		<p><textarea style="height: 100px;" name="column_intro">{column_intro}</textarea></p>
+
+	</section>
+	
+	<hr>
+	
+	<section data-title="content">
+	
+		<p><textarea style="height: 550px;" name="column_content">{column_content}</textarea></p>
+
+	</section>
+	
+	<section class="matrix-holder" data-title="footnotes">
+	
+		{field:column_footnotes}
+
+	</section>
+	
+	<section class="matrix-holder" data-title="translations">
+	
+		{field:column_translations}
+
+	</section>
+	
+	<hr>
+	
+	<section data-title="author notes">
+	
+		<p><textarea style="height: 150px;" name="column_notes">{column_notes}</textarea></p>
+
+	</section>
+	
+	<p><input type="submit" value="Submit" /></p>
+		
+</div>
+
+{global-footer}
+
+{global-js}
+
+{safecracker_head}
+	
+{/exp:safecracker}
+
+{if:else}
+
+{redirect="/column/{segment_3}"}
+
+{/if}
+
+{/exp:channel:entries}
+
+{current-user-info}
+
+{page-bottom}

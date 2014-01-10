@@ -1,0 +1,24 @@
+<h2>Custom &lt;head></h2>
+
+{exp:channel:entries channel="articles" show_future_entries="yes" limit="999"}
+{if article_custom_head != ""}<p><a href="http://alistapart.com/articles/{url_title}">{title}</a></p>{/if}
+{/exp:channel:entries}
+
+
+<h2>Custom CSS</h2>
+
+{exp:channel:entries channel="articles" show_future_entries="yes" limit="999"}
+{if article_custom_css != ""}<p><a href="http://alistapart.com/articles/{url_title}">{title}</a></p>{/if}
+{/exp:channel:entries}
+
+<h2>Custom JS</h2>
+
+{exp:channel:entries channel="articles" show_future_entries="yes" limit="999"}
+{if article_custom_javascript != ""}<p><a href="http://alistapart.com/articles/{url_title}">{title}</a></p>{/if}
+{/exp:channel:entries}
+
+<h2>Custom body.onload</h2>
+
+{exp:channel:entries channel="articles" show_future_entries="yes" limit="999"}
+{if article_custom_body_load != ""}<p><a href="http://alistapart.com/articles/{url_title}">{title}</a></p>{/if}
+{/exp:channel:entries}

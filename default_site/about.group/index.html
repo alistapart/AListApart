@@ -1,0 +1,107 @@
+{if segment_2}
+
+{exp:channel:entries channel="pages" limit="1" status="open|In Progress" dynamic="off" url_title="{segment_2}"}
+
+{global-page-top}
+
+	<title>A List Apart: {title}</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+		
+</head>
+
+<body>
+
+{current-user-info-edit}
+
+	{primary-logo}
+	
+	<div role="main" class="main-wrapper{if page_no_right_col == "y"} single-column-display{if:else} two-column-display{/if}">
+	
+		<div class="col-holder">
+		
+			<article class="main-content{if page_no_right_col == "y"} breathing-room{/if}">
+			
+				<h1 class="basic-title">{title}</h1>
+				
+				{page_content}
+			
+			</article>{if page_no_right_col != "y"}<!--
+			
+			--><div class="secondary-column">
+			
+				{about-nav}
+				
+				{ads}
+			
+			</div>{/if}
+				
+			{/exp:channel:entries}
+		
+		</div>
+		
+		{global-footer}
+	
+	</div>
+	
+	{global-nav}
+
+</div>
+	
+{global-page-bottom}
+
+{if:else}
+
+{exp:channel:entries channel="pages" limit="1" status="open" dynamic="off" url_title="{segment_1}"}
+
+{global-page-top}
+
+	<title>A List Apart: {title}</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+		
+</head>
+
+<body>
+
+{current-user-info-edit}
+
+<div role="main">
+
+	{primary-logo}
+	
+	<div role="main" class="main-wrapper two-column-display">
+	
+		<div class="col-holder">
+		
+			<article class="main-content">
+			
+				<h1 class="basic-title">{title}</h1>
+				
+				{page_content}
+
+				{/exp:channel:entries}
+			
+			</article><!--
+			
+			--><div class="secondary-column">
+			
+				{about-nav}
+				
+				{ads}
+			
+			</div>
+		
+		</div>
+		
+		
+	
+	</div>
+	
+	{global-nav}
+
+{global-footer}
+	
+{global-page-bottom}
+
+{/if}

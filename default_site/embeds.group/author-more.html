@@ -1,0 +1,19 @@
+
+				{exp:user:entries channel="articles" status="open" user_author_id="{embed:author_id}" limit="4"}
+				{if total_results > "1"}
+				
+				{if count == "1"}
+				<h3>More from this Author</h3>
+				
+				<ul class="author-more">
+				{/if}
+				
+				{if entry_id != {embed:current_entry}}
+					<li><a href="/article/{url_title}">{title}</a></li>
+				{/if}
+				
+				{if count == total_results}</ul>{/if}
+				
+				{/if}
+				
+				{/exp:user:entries}

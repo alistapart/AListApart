@@ -1,0 +1,42 @@
+<?php
+
+// RE-ENABLE BY TURNING ON PHP
+
+$this->EE =& get_instance();
+
+$channel_id = 6;
+
+$entries = $this->EE->db->query("
+    SELECT entry_id, author_id, entry_date
+    FROM exp_channel_titles 
+    WHERE channel_id = $channel_id
+");
+if($entries->num_rows() > 0)
+{
+    foreach($entries->result_array() as $entry)
+    {
+        extract($entry);
+        // Make sure an author entry doesn't already exist
+        $existing = $this->EE->db->query("
+            SELECT entry_id 
+            FROM exp_user_authors 
+            WHERE entry_id = $entry_id
+            AND author_id = $author_id
+        ");
+        if($existing->num_rows() == 0)
+        {
+            // No entry exists, so insert it
+            $data = array(
+                'author_id' => $author_id,
+                'entry_date' => $entry_date,
+                'entry_id' => $entry_id,
+                'principal' => 'y'
+            );
+            $this->EE->db->query(
+                $this->EE->db->insert_string('exp_user_authors', $data)
+            );
+        }
+    }
+}
+
+?>

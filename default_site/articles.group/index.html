@@ -1,0 +1,86 @@
+{exp:ifelse parse="inward"}
+
+{if segment_2 && segment_2 != "archives"}
+
+{exp:redirecturl url="http://alistapart.com/article/{segment_2}"}
+
+{if:else}
+
+{global-page-top}
+
+	<title>A List Apart: The Articles</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+		
+</head>
+
+<body>
+
+{current-user-info}
+
+	{primary-logo}
+	
+	<div role="main" class="main-wrapper two-column-display">
+	
+		<div class="col-holder">
+		
+			<article class="main-content">
+			
+				<h1 class="basic-title">The Articles</h1>
+				
+				{if segment_3}
+				{embed="embeds/issue-list" offset="{segment_3}"}
+				{if:else}
+				{embed="embeds/issue-list" offset="0"}
+				{/if}
+				
+				<nav class="paginator" role="toolbar">
+			
+					<ul>
+						{if segment_3}
+				
+						<?php
+						
+						$thisBatch = {segment_3} + 0;
+						$previousBatch = $thisBatch + 10;
+						$nextBatch = $thisBatch - 10;
+						
+						?>
+						
+						<li><a class="previous" href="/articles/archives/<?php echo $previousBatch; ?>">Previous</a></li>
+						<li><a class="next" href="/articles/archives/<?php if ($nextBatch > 0) echo $nextBatch; ?>">Next</a></li>
+						
+						{if:else}
+						
+						<li><a class="previous" href="/articles/archives/10">Previous</a></li>
+						
+						{/if}
+					</ul>
+				
+				</nav>
+	
+				</article><!--
+			
+			--><div class="secondary-column">
+				
+				{even-more-from-ala}
+				
+				{ads}
+			
+			</div>
+		
+		</div>
+		
+		
+	
+	</div>
+	
+	{global-nav}
+
+{global-footer}
+	
+{global-page-bottom}
+
+{/if}
+
+{/exp:ifelse}

@@ -1,0 +1,75 @@
+{global-page-top}
+
+	<title>Here are your search results.</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+		
+</head>
+
+<body>
+
+{current-user-info}
+
+	{primary-logo}
+	
+	<div role="main" class="main-wrapper two-column-display">
+	
+		<div class="col-holder">
+		
+			<article class="main-content">
+				
+				<h1 class="basic-title">Et voila.</h1>
+				
+				<ul class="entry-list">
+				{exp:search:search_results}
+					<li>
+						{if channel_short_name == "articles"}
+						<h3 class="entry-title"><a href="/article/{url_title}">{title}</a></h3>
+						{if:else}
+						<h3 class="entry-title"><a href="/column/{url_title}">{title}</a></h3>
+						{/if}
+						
+						<p class="meta">
+							by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} · 
+							{if channel_short_name == "articles"}
+							{exp:playa:parents}
+							<a href="/issue/{issue_number}">Issue {issue_number}</a> · 
+							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+							{/exp:playa:parents}
+							{if:else}
+							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+							{/if}
+						</p>
+						
+						{if channel_short_name == "articles"}
+						<p>{article_deck}</p>
+						{if:else}
+						<p>{column_intro}</p>
+						{/if}
+					</li>
+				{/exp:search:search_results}
+				</ul>
+			
+			</article><!--
+			
+			--><div class="secondary-column">
+			
+				<h2>Topics</h2>
+			
+				{topic-nav}
+				
+				{ads}
+			
+			</div>
+		
+		</div>
+		
+		
+	
+	</div>
+	
+	{global-nav}
+
+{global-footer}
+	
+{global-page-bottom}

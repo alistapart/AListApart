@@ -1,0 +1,152 @@
+{exp:channel:entries channel="videos" limit="1" status="open|In Progress"}
+
+{if segment_2 == ""}
+
+{exp:redirecturl url="http://alistapart.com/videos"}
+
+{/if}
+
+{global-page-top}
+
+	<title>The A List Apart Reference Library: {title}</title>
+	
+	{exp:stash:set name="safe-description"}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{video_description}{/exp:low_replace}{/exp:strip_html}{/exp:stash:set}
+	
+	<meta name="description" content="{exp:stash:get name="safe-description"}">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@alistapart">
+	<meta name="twitter:title" content="{title}">
+	<meta name="twitter:description" content="{exp:stash:get name="safe-description"}">
+	<meta name="twitter:url" content="http://alistapart.com/video/{url_title}">
+		
+	<meta property="og:title" content="{title}" />
+	<meta property="og:description" content="{exp:stash:get name="safe-description"}" />
+	<meta property="og:url" content="http://alistapart.com/video/{url_title}" />
+	<meta property="og:image" content="http://d.alistapart.com/_/img/logo_a-list-apart.png" />
+		
+</head>
+
+<body class="printable {if comment_total > 0}comments-exist{/if}">
+
+{current-user-info-edit}
+
+	{primary-logo}
+	
+	<div role="main" class="main-wrapper">
+	
+		<article class="article-layout hentry">
+			
+			<header class="blog-header">
+				
+				<span class="column-name">The A List Apart Reference Library:</span>
+	
+				<h1>
+					{title}
+				</h1>
+				
+				<p class="meta">
+					
+					Published in {categories backspace="2"}<a href="/topic/{category_url_title}">{category_name}</a>, {/categories}
+					
+					{if comment_total > 0}
+						 · <a class="comment-count" href="#comments">{comment_total} Comments</a>
+					{/if}
+					
+				</p>
+			
+			</header>
+			
+			<div class="main-content wide-video">
+				
+				{video_source}
+				
+					{if cell_1 == "Vimeo"}
+					
+					<iframe src="http://player.vimeo.com/video/{cell_2}?title=0&byline=0&portrait=0" width="960" height="541" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+					
+					{if:elseif cell_1 == "YouTube"}
+					YouTube
+					{if:else}
+					{cell_2}
+					{/if}
+				
+				{/video_source}
+				
+			</div>
+			
+			<div class="main-content ">
+				
+				{video_conference}<p><a href="{event_url}"><img style="display: block; max-width: 224px;" src="{event_logo}" /></a></p>{/video_conference}
+				
+				{content-minutiae-video}
+				
+				{video_description}
+				
+			</div>
+			
+			<footer class="entry-footer">
+				
+				{embed="embeds/blog-author-bio" entry_author="{author_id}" entry_id="{entry_id}"}
+
+			</footer>
+			
+			<div class="post-article">
+			
+				<div class="column-holder unequal-columns">
+				
+					<section id="comments" class="column comment-holder">
+					
+					{if allow_comments}
+						
+						{if comment_total > 0}
+						<h1 class="classy">{comment_total} Reader Comments</h1>
+						
+						<a href="/comments/{url_title}" id="load-comments" data-url-title="{url_title}" class="buttonish">Load Comments</a>
+						{if:else}
+						<h1 class="classy">No Comments (yet)</h1>
+						
+						<ol class="article-comments">
+						{if logged_in}
+						{comment-form}
+						{if:else}
+						{comment-sign-in}
+						{/if}
+						</ol>
+						
+						{/if}
+						
+						{/exp:channel:entries}
+						
+						
+					{if:else}
+					
+					comments closed — what to do?
+					
+					{/if}
+						
+					</section>
+			
+					<aside class="column more-content">
+					
+						{more-from-ala}
+						
+						{ads}
+					
+					</aside>
+				
+				</div>
+				
+			</div>
+		
+		</article>
+		
+		
+	
+	</div>
+	
+	{global-nav}
+
+{global-footer}
+	
+{global-page-bottom}

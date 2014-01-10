@@ -1,0 +1,97 @@
+{if group_id == "1" OR group_id == "6"}
+
+<!doctype html>
+	
+<!--[if lt IE 7]> <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie ie9 lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="/_/css/style.css">
+
+	<link rel="stylesheet" href="/_/css/readable.css">
+
+	<link rel="stylesheet" href="/_/css/prism.css">
+
+	<script src="/_/js/libs/modernizr-2.5.3.min.js"></script>
+
+	<title>A List Apart: New Column</title>
+		
+</head>
+
+<body>
+
+{global-header}
+	
+	{exp:safecracker channel="columns" return="/edit/column/URL_TITLE/submitted/new" include_jquery="no" safecracker_head="no" class="editForm" id="editForm" status="Submitted by Author"}
+	
+	<header data-title="title">
+	
+		<h1><input name="title" type="text" value=""></h1>
+
+	</header>
+	
+	<hr>
+	
+	<section data-title="intro">
+	
+		<p><textarea style="height: 100px;" name="column_intro"></textarea></p>
+
+	</section>
+	
+	<hr>
+	
+	<section data-title="content">
+	
+		<p><textarea style="height: 550px;" name="column_content"></textarea></p>
+
+	</section>
+	
+	<section class="matrix-holder" data-title="footnotes">
+	
+		{field:column_footnotes}
+
+	</section>
+	
+	<section class="matrix-holder" data-title="translations">
+	
+		{field:column_translations}
+
+	</section>
+	
+	<hr>
+	
+	<section data-title="author notes">
+	
+		<p><textarea style="height: 150px;" name="column_notes"></textarea></p>
+
+	</section>
+	
+	<p><input type="submit" value="Submit" /></p>
+		
+</div>
+
+{global-footer}
+
+{global-js}
+
+{safecracker_head}
+	
+{/exp:safecracker}
+
+{if:else}
+
+{redirect="/article/{segment_3}"}
+
+{/if}
+
+{current-user-info}
+
+{page-bottom}

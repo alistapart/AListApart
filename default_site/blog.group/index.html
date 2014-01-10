@@ -1,0 +1,65 @@
+{global-page-top}
+
+	<title>The A List Apart Blog</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+		
+</head>
+
+<body>
+
+{current-user-info}
+
+	{primary-logo}
+	
+	<div role="main" class="main-wrapper stacker multi-column-display">
+	
+		<div class="col-holder">
+		
+			<section class="main-content">
+			
+				<h1 class="basic-title">A Blog Apart</h1>
+				
+				{if segment_2}
+				{embed="embeds/blog-posts" offset="{segment_2}"}
+				{if:else}
+				{embed="embeds/blog-posts" offset="0"}
+				{/if}
+				
+				<nav class="paginator" role="toolbar">
+			
+					<ul>
+						{if segment_2}
+				
+						<?php
+						
+						$thisBatch = {segment_2} + 0;
+						$previousBatch = $thisBatch + 10;
+						$nextBatch = $thisBatch - 10;
+						
+						?>
+						
+						<li><a class="previous" href="/blog/<?php echo $previousBatch; ?>">Previous</a></li>
+						<li><a class="next" href="/blog/<?php if ($nextBatch > 0) echo $nextBatch; ?>">Next</a></li>
+						
+						{if:else}
+						
+						<li><a class="previous" href="/blog/10">Previous</a></li>
+						
+						{/if}
+					</ul>
+				
+				</nav>
+		
+			</section>		
+		</div>
+		
+		
+	
+	</div>
+	
+	{global-nav}
+
+{global-footer}
+	
+{global-page-bottom}

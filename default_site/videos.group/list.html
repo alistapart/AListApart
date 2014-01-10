@@ -1,0 +1,114 @@
+<!doctype html>
+
+<!--[if lt IE 7]> <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie ie9 lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="/_/css/style.css">
+
+	<link rel="stylesheet" href="/_/css/readable.css">
+
+	<script src="/_/js/libs/modernizr-2.5.3.min.js"></script>
+
+	<title>A List Apart</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
+</head>
+
+<body>
+
+{global-header}
+
+<div role="main">
+
+	<header>
+	
+		<h1>Videos</h1>
+	
+	</header>
+
+	<hr>
+	
+	<table border="1" cellspacing="0" cellpadding="4">
+	
+	<tr>
+		<th>Video Title</th>
+		<th>Speaker (linked = ALA)</th>
+		<th>Conference</th>
+		<th>Language</th>
+		<th>Source</th>
+		<th>Description?</th>
+		<th>Slides?</th>
+		<th>Transcript?</th>
+	</tr>
+	
+	{exp:channel:entries channel="videos" limit="1000" status="open" dynamic="off" orderby="random"}
+	
+	<tr>
+		<td>
+			{!--video_source}
+			{if cell_1 == "Vimeo"}
+			<?php
+
+			$imgid = {cell_2};
+			
+			$hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/$imgid.php"));
+			
+			$videoThumb = "<img style='float: left; margin: 0 24px 24px 0;' src='".$hash[0]['thumbnail_small']."'>";
+			
+			$videoDate = $hash[0]['upload_date'];
+			
+			echo $videoThumb;
+			
+			?>
+			{/if}
+			{/video_source--}
+			
+			<b>{title}</b>
+		</td>
+		<td>
+			{if video_speaker_non_ala}{video_speaker_non_ala}
+				{if cell_2}<a href="{cell_2}">{cell_1}</a>
+				{if:else}
+				{cell_1}{/if}{/video_speaker_non_ala}
+			{if:else}{embed="videos/.speaker" entry_id="{entry_id}"}{/if}
+		</td>
+		<td>
+			{video_conference}
+				<center><img src="{event_logo}" style="max-height: 40px; max-width: 140px; margin: 6px 12px;"></center>
+				{!--title--}
+			{/video_conference}
+		</td>
+		<td>
+			{video_language}
+		</td>
+		<td>
+			{video_source}{cell_1}{/video_source}
+		</td>
+		<td>
+			<center>{if video_description != ""}y{/if}</center>
+		</td>
+		<td>
+			<center>{if video_slides != ""}y{/if}</center>
+		</td>
+		<td>
+			<center>{if video_transcript != ""}y{/if}</center>
+		</td>
+	</tr>
+	{/exp:channel:entries}
+	
+	</ul>
+
+</div>
+
+
+{page-bottom}

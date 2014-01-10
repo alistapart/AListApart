@@ -1,0 +1,166 @@
+{global-page-top}
+
+	<title>A List Apart: For People Who Make Websites</title>
+	<meta name="description" content="A List Apart explores the design, development, and meaning of web content, with a special focus on web standards and best practices.">
+		
+</head>
+
+<body id="home-page" class="home-page">
+
+{current-user-info}
+
+	{primary-logo}
+	
+	{exp:channel:entries channel="issues" limit="1" status="open" dynamic="off" show_future_entries="no"}
+	
+	{issue_illustration}
+	<figure class="wide-hero" data-picture data-alt="">
+		<div data-src="{exp:ce_img:pair src="{url}" width="480" crop="no" save_type="jpg" quality="60"}{made}{/exp:ce_img:pair}"></div>
+		<div data-src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="60"}{made}{/exp:ce_img:pair}" data-media="(min-width: 600px)"></div>
+		<div data-src="{exp:ce_img:pair src="{url}" width="1920" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" data-media="(min-width: 600px) and (min-device-pixel-ratio: 2.0)"></div>
+
+		<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+		<noscript><img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
+		
+		<a class="issue-number" href="/issue/{issue_number}"><span>Issue №</span> {issue_number}</a>
+	</figure>
+	{/issue_illustration}
+	
+	<div role="main" class="main-wrapper">
+		
+		<section class="main-content">
+		
+			<header class="issue-header">
+			
+				<time class="pubdate updated new" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%M %d, %Y"}</time>
+				
+				<p>{issue_description}</p>
+			
+			</header>
+			
+			{exp:playa:children field="issue_articles"}
+			<article class="entry-header">
+		
+				<h1 class="entry-title"><a href="/article/{url_title}">{title}</a></h1>
+				
+				<p class="entry-details">
+					
+					by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+					
+					{if comment_total == 1}
+					 ∙ <a class="comment-count" href="/article/{url_title}#comments">1 Comment</a>
+					{if:elseif comment_total > 1}
+					 ∙ <a class="comment-count" href="/article/{url_title}#comments">{comment_total} Comments</a>
+					{/if}
+			
+				</p>
+				
+				<p class="entry-summary">{article_deck}</p>
+			
+			</article>
+			
+			{/exp:playa:children}
+			
+			{/exp:channel:entries}
+		
+		</section>
+		
+		<div class="multi-column-display">
+		
+			<h2 class="classy">More from A List Apart</h2>
+			
+			<div class="column-holder">
+			
+				<div class="variable-column">
+		
+					<h2>Columnists</h2>
+			
+					{exp:channel:entries channel="columns" limit="1" status="open" show_future_entries="no"}
+			
+					<article class="item-summary article">
+				
+						{categories show_group="4"}<span class="column-name">{if category_description}{category_description}{if:else}{category_name}{/if}</span>{/categories}
+			
+						<h1><a href="/column/{url_title}">{title}</a></h1>
+			
+						{embed="embeds/column-author-photo-small" entry_author="{author_id}" entry_id="{entry_id}"}
+				
+						<p>{column_intro}</p>
+				
+						<footer class="byline">
+							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+						</footer>
+					
+					</article>
+			
+					{/exp:channel:entries}
+				
+				</div><!--
+				
+				--><div class="variable-column">
+			
+					<h2>From the Blog</h2>
+			
+					{exp:channel:entries channel="blog|link_posts" limit="2" dynamic="off" status="open" show_future_entries="no"}
+			
+					{if channel_short_name == "link_posts"}
+		
+					<article class="item-summary link-post">
+			
+						<h1><a href="{blog_target_url}">{title}</a></h1>
+				
+						{if blog_description}<p>{blog_description}</p>{/if}
+				
+						<footer>
+							{exp:parse_url parts="host"}{blog_target_url}{/exp:parse_url}
+							{blog_attribution}
+							 ∙ ℅ <a class="attribution-link" href="{cell_2}">{cell_1}</a>
+							{/blog_attribution}
+						</footer>
+			
+					</article>
+			
+					{if:else}
+		
+					<article class="item-summary article">
+					
+						<h1><a href="/blog/post/{url_title}">{title}</a></h1>
+						
+						{if blog_intro}<p>{blog_intro}</p>{/if}
+						
+						<footer>
+							{embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="/blog/post/{url_title}">{entry_date format="%F %d, %Y"}</a></time>
+						</footer>
+					
+					</article>
+					
+					{/if}
+			
+					{/exp:channel:entries}
+				
+				</div><!--
+				
+				--><div class="fixed-column">
+			
+					{ads}
+				
+				</div>
+			
+			</div>
+				
+			<aside class="ala-slug">A List Apart explores the design, development, and meaning of web content, with a special focus on web standards and best practices. Explore our <a href="/articles">articles</a> or find out more <a href="/about">about us</a>.</aside>
+		
+		</div>
+	
+		<!--
+		
+		-->
+	
+	</div>
+
+{global-nav}
+
+{global-footer}
+
+{global-page-bottom}

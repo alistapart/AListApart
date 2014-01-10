@@ -1,0 +1,52 @@
+{if logged_in}
+
+<h2>Edit Your Info</h2>
+
+{exp:user:edit}
+
+<h3>The Basics</h3>
+
+<p>Email <input name="email" value="{email}" /></p>
+<p>Username <input name="username" value="{username}" /></p>
+<p>Screen Name <input name="screen_name" value="{screen_name}" /></p>
+
+<hr>
+
+<h3>Change Password</h3>
+
+<p>What's your current password? <input type="password" name="current_password" value="" /></p>
+<p>Ok, now enter a new one: <input type="password" name="password" /></p>
+<p>Confirm it, please: <input type="password" name="password_confirm" /></p>
+
+<hr>
+
+<h3>Member Avatar</h3>
+
+{if avatar_filename}
+<p>Current Avatar: <img src="{avatar_url}{avatar_filename}" width="{avatar_width}" height="{avatar_height}" /></p>
+<p><input type="submit" name="remove_avatar" value="Remove Current Avatar?" /></p>
+{/if}
+
+<p>Upload a New Avatar: <input type="file" name="avatar_filename" /></p>
+
+<hr>
+
+{if member_group == "1" OR member_group == "6"}
+
+<h3>Member Photo (authors only)</h3>
+
+<p>Current Photo: <img src="{photo_url}{photo_filename}" /></p>
+<p><input type="submit" name="remove_photo" value="Remove Current Photo?" /></p> 
+<p>Upload a New Photo: <input type="file" name="photo_filename" /></p>
+
+{/if}
+
+<p><input type="submit" value="Submit" /></p>
+
+{/exp:user:edit} 
+
+{if:else}
+
+{redirect="/"}
+
+{/if}

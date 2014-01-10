@@ -1,0 +1,35 @@
+{exp:rss:feed channel="articles|columns|blog" status="open" show_future_entries="no"}
+
+<?xml version="1.0" encoding="{encoding}"?>
+<rss version="2.0"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:admin="http://webns.net/mvcb/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/">
+
+    <channel>
+    
+{exp:channel:entries channel="articles|columns|blog" limit="1" url_title="{segment_3}" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no"}
+    <title><![CDATA[Comments on "{title}" (A List Apart)]]></title>
+    <link>http://alistapart.com/comments/{url_title}</link>
+    <description>This feed contains comments on the article "{title}"</description>
+    <dc:language>en</dc:language>
+    <dc:creator>A List Apart Readers</dc:creator>
+    <dc:rights>Copyright {gmt_date format="%Y"}</dc:rights>
+    <dc:date>{gmt_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
+{/exp:channel:entries}
+    
+{exp:comment:entries sort="asc" dynamic_start="on" url_title="{segment_3}" limit="999"}
+    <item>
+      <title><![CDATA[Comment from: {name}]]></title>
+      <link>http://alistapart.com/comments/{url_title}#{comment_id}</link>
+      <description><![CDATA[{comment}]]></description>
+      <dc:date>{comment_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
+    </item>
+{/exp:comment:entries}
+    
+    </channel>
+</rss>
+
+{/exp:rss:feed}

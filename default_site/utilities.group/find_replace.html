@@ -1,0 +1,57 @@
+{!--
+
+
+THIS HAS NEVER WORKED RIGHT.
+
+--}
+
+<?php
+
+$search = 'expert review and heuristic evaluation';
+
+$query = $this->EE->db->get('channel_fields');
+
+$affected = 0;
+
+foreach ($query->result() as $row)
+{
+	$id = $row->field_id;
+
+	$where = 'field_id_'.$id;
+
+	//$sql = "UPDATE exp_channel_data SET {$where} = REPLACE('{$where}', '{$search}', \"'\")";
+
+	//$sql = "UPDATE exp_channel_data SET {$where} = REPLACE('{$where}', '{$search}', 'expert review and heuristic evaluation')";
+
+	echo $sql;
+
+	echo '';   
+
+	//$this->EE->db->query($sql);
+
+	$affected = $affected + $this->EE->db->affected_rows();
+
+}
+
+echo 'Affected: '.$affected;
+
+?>
+
+<br><br>
+Note- if you want to replace with a single quote, it's a bit tricky due to escaping.  Do this:<br><br>
+
+$sql = "UPDATE exp_channel_data SET {$where} = REPLACE('{$where}', '{$search}', \"'\")";
+
+<br><br>
+
+<p>Forget the slideshows. Open your ears. Improvise. 
+Then you’ll win the clients you should win. And let someone else have the ones you shouldn’t.</p>
+
+
+<p>Forget the slideshows. Open your ears. Improvise. 
+Then youâ€™ll win the clients you should win. And let someone else have the ones you shouldnâ€™t.</p>
+
+<br><br>
+
+be genuine—the person that you are every day in your job—and 
+be genuineâ€”the person that you are every day in your jobâ€”and 

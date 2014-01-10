@@ -1,0 +1,12 @@
+{exp:channel:entries channel="columns" dynamic="off" disable="categories|category_fields|member_data" status="open|closed|Submitted by Author|In Progress" author_id="{embed:author_id}"}
+
+<p>
+	<b><a href="/article/{url_title}">{title}</a></b><br>
+	
+	{column_intro}<br>
+	
+	{if logged_in_username == segment_2 OR member_group == "1"}<small>(<a href="/edit/column/{url_title}">edit</a>{if member_group == "1"} | <a href="{cp_url}?S=0&D=cp&C=content_publish&M=entry_form&channel_id={channel_id}&entry_id={entry_id}">advanced</a>{/if})</small>
+	
+</p>
+
+{/exp:channel:entries}

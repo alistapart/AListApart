@@ -1,0 +1,118 @@
+{if group_id == "1"}
+
+<!doctype html>
+
+<!--[if lt IE 7]> <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie ie9 lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="/_/css/style.css">
+
+	<link rel="stylesheet" href="/_/css/readable.css">
+
+	<link rel="stylesheet" href="/_/css/prism.css">
+
+	<script src="/_/js/libs/modernizr-2.5.3.min.js"></script>
+
+	<title>A List Apart: Our Authors</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+		
+</head>
+
+<body>
+
+{global-header}
+
+<div role="main">
+	
+	<header data-title="title & details">
+	
+		{if segment_3 == "photos"}
+		
+		<h1>Review Author Photos</h1>
+		
+		{if:else}
+		
+		<h1>Edit Authors</h1>
+		
+		{/if}
+	
+	{exp:user:users
+		orderby="last_name"
+		sort="asc"
+		limit="999"
+		paginate="none"
+		group_id="1|6"
+	}
+		
+	{if count == "1"}
+	
+		<div class="pub-info">
+		
+			<p>Total: {total_results}</p>
+
+			{if segment_3 != "photos"}<p><a href="/edit/authors/photos">Review photos</a> (lots of big images)</p>
+			{if:else}<p>Photos need to be at least 250x250.</p>{/if}
+			
+		</div>
+		
+	</header>
+	
+	<hr>
+	
+	<section data-title="full author list">
+
+		<table>
+			<tr>
+				<th>Screen Name</th>
+				<th>Username</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				{if segment_3 != "photos"}<th>Avatar?</th>
+				<th>Photo?</th>
+				{if:else}<th>Photo</th>
+				<th>Photo Size</th>{/if}
+			</tr>
+	
+	{/if}
+			<tr>
+				<td><a href="/edit/author/{member_id}">{screen_name}</a></td>
+				<td>{username}</td>
+				<td>{first_name}</td>
+				<td>{last_name}</td>
+				{if segment_3 != "photos"}<td><input type="checkbox" {if avatar_filename != ""}checked{/if}></td>
+				<td><input type="checkbox" {if photo_filename != ""}checked{/if}> {if photo_filename != "" AND photo_width < "251" || photo_height < "251"}<br><small style="color: red;">too small</small>{/if}</td>
+				{if:else}<td>{if photo_filename != ""}<img style="max-width: 100%; height: auto;" src="{photo_url}{photo_filename}" /></td>
+				<td>{photo_width}x{photo_height}{if photo_width < "251" OR photo_height < "251"}<br><small style="color: red;">too small</small>{/if}</td>{if:else}no photo{/if}</td><td></td>{/if}
+			</tr>
+	
+	{/exp:user:users}
+
+		</table>
+
+	</section>
+
+<br><br><br>
+
+</div>
+
+{current-user-info}
+
+{global-js}
+
+{page-bottom}
+
+{if:else}
+
+{redirect="/authors"}
+
+{/if}

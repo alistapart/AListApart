@@ -1,0 +1,30 @@
+{exp:channel:entries channel="blog|link_posts" limit="1000" dynamic="off" status="{statuses-all}" author_id="{embed:author_id}" show_future_entries="no"}
+
+{if channel_short_name == "blog"}
+
+<p>
+	<b><a href="/blog/post/{url_title}">{title}</a></b>
+	
+	{blog_content}
+	
+	{if logged_in_username == segment_2 OR member_group == "1"}<small>(<a href="/edit/article/{url_title}">edit</a>{if member_group == "1"} | <a href="{cp_url}?S=0&D=cp&C=content_publish&M=entry_form&channel_id={channel_id}&entry_id={entry_id}">advanced</a>)</small>{/if}
+	
+</p>
+
+{/if}
+
+{if:else}
+
+<p>
+	<b><a href="/blog/post/{url_title}">{title}</a></b> {if blog_target_url}<small>({blog_target_url})</small>{/if}<br>
+	
+	{if blog_content}{blog_content}<br>{/if}
+	{if blog_description}{blog_description}<br>{/if}
+	
+	{if logged_in_username == segment_2 OR member_group == "1"}<small>(<a href="/edit/article/{url_title}">edit</a>{if member_group == "1"} | <a href="{cp_url}?S=0&D=cp&C=content_publish&M=entry_form&channel_id={channel_id}&entry_id={entry_id}">advanced</a>)</small>{/if}
+	
+</p>
+
+{/if}
+
+{/exp:channel:entries}

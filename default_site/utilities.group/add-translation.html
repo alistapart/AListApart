@@ -1,0 +1,60 @@
+{if member_group == "1" OR member_group == "6" OR member_group == "7" OR member_group == "8"}
+
+{exp:channel:entries channel="articles" require_entry="yes" limit="1" entry_id="{segment_3}" disable="categories|category_fields|member_data"}
+
+{if no_results} <p><b>Error</b>: You must provide a valid article ID.</p> {/if}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>A List Apart : Add Translation Link</title>
+
+<meta charset="utf-8" />
+
+{safecracker-css}
+
+</head>
+
+<body>
+
+<div id="ajaxResponse"></div>
+
+<h1>Add a translation link</h1>
+
+<h2>Article: {title}</h2>
+
+<p>{article_translations}{cell_1}, {cell_2}{/article_translations}</p>
+
+{exp:safecracker channel="articles" include_jquery="no" json="yes" safecracker_head="no" class="editForm" id="editForm{entry_id}" entry_id="{entry_id}"}
+
+<input type="hidden" name="article_translations[row_order][]" value="row_new_0" />
+
+<p>
+Language
+<input type="text" placeholder="language (ex: Arabic)" name="article_translations[row_new_0][col_id_6]" />
+</p>
+
+<p>
+URL
+<input type="url" placeholder="URL" name="article_translations[row_new_0][col_id_7]" />
+</p>
+
+<input type="submit" name="submit" value="Submit">
+
+{/exp:safecracker}
+
+{safecracker-js}
+
+</body>
+
+</html>
+
+{/exp:channel:entries}
+
+{if:else}
+
+{redirect='/'}
+
+{/if}

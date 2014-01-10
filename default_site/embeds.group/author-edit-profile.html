@@ -1,0 +1,16 @@
+
+{exp:user:edit member_id="{embed:user_member_id}" dynamic="off"}
+
+<p>Accept User Email <input type="checkbox" name="accept_user_email" value="y" {if accept_user_email == "y"}checked="checked"{/if} /></p>
+
+<p>Email <input name="email" value="{email}" /></p>
+<p>Username <input name="username" value="{username}" /></p>
+<p>Screen Name <input name="screen_name" value="{screen_name}" /></p>
+
+<p>Create a New Password? <input type="password" name="password" /></p>
+<p>Password Confirm <input type="password" name="password_confirm" /></p>
+<p>Current Password <input type="password" name="current_password" /></p>
+
+<p><input type="submit" value="Submit" /></p>
+
+{/exp:user:edit} 

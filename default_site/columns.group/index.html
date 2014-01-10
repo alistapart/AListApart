@@ -1,0 +1,95 @@
+{global-page-top}
+
+	<title>A List Apart: Our Columns</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+		
+</head>
+
+<body>
+
+{current-user-info}
+
+	{primary-logo}
+	
+	<div role="main" class="main-wrapper stacker single-column-display">
+	
+		<div class="col-holder">
+		
+			<article class="main-content">
+			
+				<h1 class="basic-title">Columns</h1>
+				
+				{exp:channel:entries channel="columns" limit="1" status="open" dynamic="off" show_future_entries="no"}
+				
+				<header class="author-header">
+					
+					{embed="embeds/column-author-photo" entry_author="{author_id}" entry_id="{entry_id}"}
+					
+					<span class="column-name latest">{categories show_group="4"}{if category_description}{category_description}{if:else}{category_name}{/if}{/categories}</span>
+					
+					<h1><a href="/column/{url_title}">{title}</a></h1>
+					
+					<p class="meta">
+						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time> · 
+						
+						Published in {modern-categories}
+						
+						{if comment_total > 0}
+						 · <a class="comment-count" href="/column/{url_title}#comments">{comment_total} Comment{if comment_total > 1}s{/if}</a>
+						{/if}
+					</p>
+					
+				</header>
+				
+				<p class="column-intro">{column_intro} <a href="/column/{url_title}">Continue Reading</a></p>
+				
+				{/exp:channel:entries}
+				
+			</article>
+			
+		</div>
+	
+	</div>
+	
+	<div role="main" class="main-wrapper stacker multi-column-display">
+			
+		<div class="col-holder">
+		
+			<section class="main-content">
+			
+				<h1 class="basic-title alt">More Columns</h1>
+				
+				{exp:channel:entries channel="columns" offset="1" status="open" dynamic="off" show_future_entries="no"}<article class="item-summary article">
+				
+					<span class="column-name">{categories show_group="4"}{if category_description}{category_description}{if:else}{category_name}{/if}{/categories}</span>
+				
+					<h1><a href="/column/{url_title}">{title}</a></h1>
+				
+					{embed="embeds/column-author-photo-small" entry_author="{author_id}" entry_id="{entry_id}"}
+					
+					<p>{column_intro}</p>
+					
+					<footer class="byline">
+					
+						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+					
+					</footer>
+				
+				</article><!--
+				
+				-->{/exp:channel:entries}
+			
+			</section>
+		
+		</div>
+		
+		
+	
+	</div>
+	
+	{global-nav}
+
+{global-footer}
+	
+{global-page-bottom}

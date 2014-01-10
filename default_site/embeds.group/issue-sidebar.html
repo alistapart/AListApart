@@ -1,0 +1,19 @@
+
+				{exp:channel:entries channel="articles" limit="1" entry_id="{embed:entry_id}" status="open|In Progress"}
+				{exp:playa:parents status="open|In Progress"}
+				{exp:stash:set name="issue-number"}{issue_number}{/exp:stash:set}
+				{exp:playa:children child_id="not {embed:entry_id}" status="open|In Progress"}
+				{if count == "1"}
+				<aside class="sidebar">
+				
+					<h1>Also in Issue № {exp:stash:get name="issue-number"}</h1>
+				{/if}
+					<h2><a href="/article/{url_title}">{title}</a></h2>
+					
+					<p>by {embed="embeds/article-authors-no-html" entry_id="{entry_id}"}</p>
+				{if count == total_results}
+				</aside>
+				{/if}
+				{/exp:playa:children}
+				{/exp:playa:parents}
+				{/exp:channel:entries}

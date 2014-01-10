@@ -1,0 +1,92 @@
+{exp:channel:entries channel="articles" limit="1"}
+
+{global-page-top}
+
+	<title>A List Apart: The Topics</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+		
+</head>
+
+<body>
+
+{current-user-info}
+
+	{primary-logo}
+	
+	<div role="main" class="main-wrapper multi-column-display">
+	
+		<div class="col-holder">
+		
+			<section class="main-content">
+			
+				{if segment_2}
+				
+				{exp:gwcode_categories cat_url_title="{segment_2}" incl_self="yes" style="linear" depth="1" group_id="3"}
+				
+				<h1 class="basic-title">Topic: <b>{cat_name}</b></h1>
+				
+				<figure class="cat-image"><img src="{cat_image}" alt=""></figure>
+				
+				<p class="cat-description">{cat_description}</p>
+				
+				{/exp:gwcode_categories}
+				
+				{exp:gwcode_categories cat_url_title="{segment_2}" incl_self="no" style="linear" entry_count="yes" group_id="3"}<article class="item-summary topic">
+				
+					<h1><a href="/topic/{cat_url_title}">{cat_name}</a> ({entry_count}&nbsp;articles)</h1>
+					
+					<p>{cat_description}</p>
+				
+				</article><!--
+				
+				-->{/exp:gwcode_categories}
+				
+				{if:else}
+			
+				<h1 class="basic-title">Topics</h1>
+				
+				{exp:channel:categories style="linear" category_group="3" parent_only="yes" channel="articles"}<article class="item-summary topic">
+				
+					<figure><a href="/topics/{category_url_title}"><img src="{category_image}" alt=""></a></figure>
+				
+					<h1><a href="/topics/{category_url_title}">{category_name}</a> <!--({exp:catcount cat_id="{category_id}"}&nbsp;articles)--></h1>
+					
+					<p>{category_description}</p>
+					
+					<h2>Includes</h2>
+					
+					<ul>
+						{exp:gwcode_categories cat_id="{category_id}" incl_self="no" style="linear" entry_count="yes" group_id="3"}
+						<li>
+							<a href="/topic/{cat_url_title}">
+								{cat_name}
+								<span>{entry_count}</span>
+							</a>
+						</li>
+						{/exp:gwcode_categories}
+					</ul>
+				
+				</article><!--
+				
+				-->{/exp:channel:categories}
+				
+				
+				{/if}
+			
+			</section>
+		
+		</div>
+		
+		
+	
+	</div>
+	
+	{global-nav}
+
+	{global-footer}
+
+{/exp:channel:entries}
+	
+
+{global-page-bottom}

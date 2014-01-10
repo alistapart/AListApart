@@ -1,0 +1,7 @@
+<h1>This is A List Apart.</h1>
+
+<ul>
+{exp:channel:entries channel="articles" limit="1000" dynamic="off" status="open|In Progress|closed" orderby="url_title"}
+    <li>{url_title}</li>
+{/exp:channel:entries}
+</ul>

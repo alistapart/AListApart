@@ -1,0 +1,509 @@
+<?php
+
+// disallow access from non ee scripts
+if (!defined('EXT')){
+    die('Invalid file request');
+}
+
+/***********************************************
+**  This script will export member data to a
+**  comma or tab delimited text file.
+**  
+**  @version 1.2
+**  @author Bastian Kuberek - http://bkuberek.com
+**  
+***********************************************/
+
+
+/**********************************************/
+/*************** START CONFIG *****************/
+
+// ------------------------------
+// Script Access Restriction
+// array of group ids allowed to access this page
+// ------------------------------
+
+$allow_access       = array(1,8);
+
+// ------------------------------
+// DatePicker widget using Prototype and Scriptaculous.
+// (c) 2007 Mathieu Jondet <mathieu@eulerian.com> 
+// 
+// Set to true in order to use date calendar
+// requires datepicker.js, prototype.js, scriptaculous.js
+// ------------------------------
+
+$use_datepicker     = TRUE;
+
+// ------------------------------
+// If using datepicker.js
+// set the files' url path here
+// ------------------------------
+
+$datepicker_js      = "/scripts/datepicker.js";
+$prototype_js       = "/scripts/prototype.js";
+$scriptaculous_js   = "/scripts/scriptaculous.js";
+
+
+
+/**************** END CONFIG ******************/
+/**********************************************/
+
+/*
+**************************************************************************************
+    Start script - no need to edit below this line.
+**************************************************************************************
+*/
+
+global $IN, $DB, $SESS, $LOC;
+
+if (!in_array($SESS->userdata['group_id'], $allow_access))
+{
+    die('You are not authorized');
+}
+
+
+// ------------------------------
+// get custom fields' label
+// ------------------------------
+
+$query = $DB->query("SELECT m_field_id, m_field_label FROM exp_member_fields");
+
+foreach ($query->result as $row)
+{
+    $custom_fields[$row['m_field_id']] = $row['m_field_label'];
+}
+
+// ------------------------------
+// get member groups
+// ------------------------------
+
+$query = $DB->query("SELECT group_id, group_title FROM exp_member_groups");
+
+foreach ($query->result as $row)
+{
+    $member_groups[$row['group_id']] = $row['group_title'];
+}
+
+// ------------------------------
+// Process Submited Form Data
+// ------------------------------
+
+if ($IN->GBL('export', 'POST'))
+{
+    // ------------------------------
+    // gather post data or set defaults
+    // ------------------------------
+    
+    $delimiter              = $IN->GBL('delimiter', 'POST');
+    $core_member_data       = ( ! $IN->GBL('core_member_data', 'POST') ) ? array('member_id','username','screen_name','email') : $IN->GBL('core_member_data', 'POST');
+    $custom_member_fields   = $IN->GBL('custom_member_fields', 'POST');
+    
+    $filter_group           = ( ! $IN->GBL('filter_group', 'POST') ) ? false : $IN->GBL('filter_group', 'POST');
+    
+    $date_start             = ( ! $IN->GBL('filter_date_start', 'POST') ) ? '' : $IN->GBL('filter_date_start', 'POST') . " " . $IN->GBL('filter_time_start', 'POST');
+    $date_end               = ( ! $IN->GBL('filter_date_end', 'POST') ) ? '' : $IN->GBL('filter_date_end', 'POST') . " " . $IN->GBL('filter_time_end', 'POST');
+
+    // ------------------------------
+    // Convert dates to timestamps
+    // ------------------------------
+
+    $date_start = (empty($date_start)) ? false : $LOC->convert_human_date_to_gmt($date_start);
+    $date_end   = (empty($date_end)) ? false : $LOC->convert_human_date_to_gmt($date_end);
+    
+    // ------------------------------
+    // define output delimiter
+    // ------------------------------
+    
+    switch ($delimiter)
+    {
+        case 'comma'    : $delimiter = ",";     break;
+        case 'tab'      : $delimiter = "\t";    break;
+        default         : $delimiter = "\t";    break;
+    }
+
+    // ------------------------------
+    // set fetch fields
+    // ------------------------------
+
+    $DB->fetch_fields = TRUE;
+
+    // ------------------------------
+    // build sql
+    // ------------------------------
+
+    $sql = "SELECT ";
+
+    if (count($core_member_data) > 0)
+    {
+        foreach ($core_member_data as $k => $v)
+        {
+            $core_member_data[$k] = "a." . $v;
+        }
+        $sql .= implode(', ',$core_member_data);
+    }
+
+    if (is_array($custom_member_fields) && count($custom_member_fields) > 0)
+    {
+        foreach ($custom_member_fields as $v)
+        {
+            $sql .= ", b.m_field_id_" . $v;
+        }
+    }
+
+    $sql .= " FROM exp_members as a, exp_member_data as b";
+    $sql .= " WHERE a.member_id = b.member_id";
+    
+    if (count($filter_group) > 0)
+    {
+        $sql .= " AND (";
+        
+        foreach ($filter_group as $k => $v)
+        {
+            $filter_group[$k] = "a.group_id = " . $v;
+        }
+        $sql .= implode(' OR ',$filter_group);
+        
+        $sql .= ")";
+    }
+    
+    if ($date_start)
+    {
+        $sql .= " AND a.join_date > $date_start";
+    }
+    
+    if ($date_end)
+    {
+        $sql .= " AND a.join_date < $date_end";
+    }
+    
+    $sql .= " ORDER BY a.member_id";
+
+    // ------------------------------
+    // query
+    // ------------------------------
+
+    $query = $DB->query($sql);
+
+    // ------------------------------
+    // create column headers
+    // ------------------------------
+
+    $field_names = $DB->field_names;
+    $count = count($field_names);
+
+    foreach($field_names as $k => $v)
+    {
+        if( preg_match("/(m_field_id_)(\d+)/", $v, $matches) )
+        {
+            $field_names[$k] = $custom_fields[$matches[2]];
+        }
+    }
+
+    $header = '';
+
+    for ($i = 0; $i < $count; $i++)
+    {
+        $header .= '"' . ucwords( str_replace('_',' ',$field_names[$i]) ) . '"' . $delimiter;
+    }
+
+    $header = rtrim($header, $delimiter);
+
+    // ------------------------------
+    // create data
+    // ------------------------------
+	
+	$data = '';
+
+    foreach ($query->result as $row)
+    {
+        $line = '';
+    
+        foreach ($row as $k => $v)
+        {
+            if(empty($v))
+            {
+                $v = '""' . $delimiter;
+            }
+            else
+            {
+                $v = '"' . (($k == 'join_date' || $k == 'last_visit' || $k == 'last_activity') ? $LOC->decode_date('%Y-%m-%d %H:%i', $v) : $v) . '"' . $delimiter;
+            }
+            $line .= $v;
+        }
+
+        $line = rtrim($line, $delimiter);
+        $data .= $line . "\r\n";
+    }
+
+    // ------------------------------
+    // output HTTP Headers
+    // ------------------------------
+
+    header("Content-type: application/x-download");
+    header("Content-disposition: attachment; filename=\"Export_Member_Data-".date('YmdHi', time()).".txt\"\r\n");
+    header("Content-transfer-encoding: binary\n");
+    header("Content-Type: application/csv-tab-delimited-table");
+    header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+    header("Pragma: public");
+
+    // ------------------------------
+    // output file contents and die
+    // ------------------------------
+
+    echo $header."\r\n".$data;
+    
+    exit;
+
+}
+// end form processing
+// ------------------------------
+
+
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{site_name} - Export Member Data</title>
+<style type="text/css">
+table {
+    border-collapse: collapse;
+}
+td {
+    text-align: left;
+    vertical-align: top;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+td.gray {
+    background: #f0f0f0;
+}
+.red {
+    color: #FF0000;
+    font-weight: bold;
+}
+.nowrap {
+    white-space: nowrap;
+}
+</style>
+<? if ($use_datepicker === TRUE): ?>
+<script type="text/javascript" src="<?=$prototype_js?>"></script>
+<script type="text/javascript" src="<?=$scriptaculous_js?>"></script>
+<script type="text/javascript" src="<?=$datepicker_js?>"></script>
+<script type="text/javascript">
+    window.onload = function() {
+        var dpck_start = new DatePicker({
+                     relative   : 'filter_date_start',
+                     language   : 'en',
+                     keepFieldEmpty : true,
+                     dateFormat : [['yyyy', 'mm', 'dd'], '-']
+                });
+        var dpck_end = new DatePicker({
+                     relative   : 'filter_date_end',
+                     language   : 'en',
+                     keepFieldEmpty : true,
+                     dateFormat : [['yyyy', 'mm', 'dd'], '-']
+                });
+    }
+</script>
+<style type="text/css">
+div.datepicker {
+ position: absolute;
+ text-align: center;
+ border: 1px #C4D5E3 solid;
+ font-family: arial;
+ background: #FFFFFF;
+ font-size: 10px;
+ padding: 0px;
+}
+div.datepicker table {
+ font-size: 10px;
+ margin: 0px;
+ padding: 0px;
+ text-align: center;
+ width: 180px;
+}
+div.datepicker table thead tr th {
+ font-size: 12px;
+ font-weight: bold;
+ background: #e9eff4;
+ border-bottom:1px solid #c4d5e3;
+ padding: 0px;
+ margin: 0px;
+}
+div.datepicker table tbody tr {
+ border: 1px white solid;
+ margin: 0px;
+ padding: 0px;
+}
+div.datepicker table tbody tr td {
+ border: 1px #eaeaea solid;
+ margin: 0px;
+ padding: 0px;
+ text-align: center;
+}
+div.datepicker table tbody tr td:hover,
+div.datepicker table tbody tr td.outbound:hover,
+div.datepicker table tbody tr td.today:hover {
+ border: 1px #c4d5e3 solid;
+ background: #e9eff4;
+ cursor: pointer;
+}
+div.datepicker table tbody tr td.wday {
+ border: 1px #ffffff solid;
+ background: #ffffff;
+ cursor: text;
+}
+div.datepicker table tbody tr td.outbound {
+ background: #e8e4e4;
+}
+div.datepicker table tbody tr td.today {
+ border: 1px #16518e solid;
+ background: #c4d5e3;
+}
+div.datepicker table tbody tr td.nclick,
+div.datepicker table tbody tr td.nclick_outbound {
+ cursor:default; color:#aaa;
+}
+div.datepicker table tbody tr td.nclick_outbound {
+ background:#E8E4E4;
+}
+div.datepicker table tbody tr td.nclick:hover,
+div.datepicker table tbody tr td.nclick_outbound:hover {
+ border: 1px #eaeaea solid;
+ background: #FFF;
+}
+div.datepicker table tbody tr td.nclick_outbound:hover {
+ background:#E8E4E4;
+}
+div.datepicker table tfoot {
+ font-size: 10px;
+ background: #e9eff4;
+ border-top:1px solid #c4d5e3;
+ cursor: pointer;
+ text-align: center;
+ padding: 0px;
+}
+</style>
+<? endif; ?>
+</head>
+<body>
+<div id="wrapper">
+    <div class="emd_form_wrapper">
+        <form id="emd_form" class="emd_form" action="<?=$IN->GBL('REQUEST_URI', 'SERVER')?>" method="post">
+            <table width="980" cellspacing="0" cellpadding="0" border="0">
+                <tr><td class="gray"><h2>Utilities >> Export Member Data</h2></td></tr>
+                <tr>
+                    <td>
+                        <table width="100%" cellspacing="0" cellpadding="5" border="0">
+                            <tr>
+                                <td width="22%" class="gray">Delimiter:</td>
+                                <td class="white">
+                                    <span class="nowrap"><input type="radio" value="tab" name="delimiter" checked="checked" /> tab </span>
+                                    <span class="nowrap"><input type="radio" value="comma" name="delimiter" /> comma </span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table width="100%" cellspacing="0" cellpadding="5" border="0">
+                            <tr>
+                                <td width="22%" class="gray">Filter by Member Group:</td>
+                                <td class="white">
+                                    <? foreach ($member_groups as $k => $v): ?>
+                                    <span class="nowrap"><input type="checkbox" value="<?=$k?>" name="filter_group[]"<?=($k == 1 || $k == 5) ? ' checked="checked"' : ''?> /> <?=$v?></span>
+                                    <? endforeach; ?>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table width="100%" cellspacing="0" cellpadding="5" border="0">
+                            <tr>
+                                <td width="22%" class="gray">Filter by Join Date:</td>
+                                <td class="white">
+                                    <table width="100%" cellspacing="0" cellpadding="5" border="0">
+                                        <tr>
+                                            <td>
+                                                Start Date<br />
+                                                <input type="text" id="filter_date_start" name="filter_date_start" maxlength="23" size="18" value="" />
+                                            </td>
+                                            <td>
+                                                Start Time<br />
+                                                <input type="text" id="filter_time_start" name="filter_time_start" maxlength="8" size="8" value="00:00 am" />
+                                            </td>
+                                            <td>
+                                                End Date<br />
+                                                <input type="text" id="filter_date_end" name="filter_date_end" maxlength="23" size="18" value="" />
+                                            </td>
+                                            <td>
+                                                End Time<br />
+                                                <input type="text" id="filter_time_end" name="filter_time_end" maxlength="8" size="8" value="00:00 am" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr><td class="gray">&nbsp;</td></tr>
+                <tr>
+                    <td>
+                        <table width="100%" cellspacing="0" cellpadding="5" border="0">
+                            <tr>
+                                <td width="22%" class="gray">Core Member Data:</td>
+                                <td class="white">
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="member_id" checked="checked" /> Memeber Id </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="group_id" checked="checked" /> Group Id </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="unique_id" /> Unique Id </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="username" checked="checked" /> Username </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="screen_name" checked="checked" /> Screen Name </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="email" checked="checked" /> Email </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="url" /> URL </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="location" /> Location </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="occupation" /> Ocupation </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="bday_d" /> Bday Day </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="bday_m" /> Bday Month </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="bday_y" /> Bday Year </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="aol_im" /> AOL IM </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="yahoo_im" /> Yahoo IM </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="msn_im" /> MSN IM </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="icq" /> ICQ </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="join_date" /> Join Date </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="last_visit" /> Last Visit </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="last_activity" /> Last Activity </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="total_entries" /> Total Entries </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="total_comments" /> Total Comments </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="total_forum_topics" /> Total Forum Topics </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="total_forum_posts" /> Total Forum Posts </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="language" /> Language </div>
+                                    <div class="nowrap"><input type="checkbox" name="core_member_data[]" value="timezone" /> Timezone </div>
+                                </td>
+                                <td width="22%" class="gray">Custom Member Profile Fields:</td>
+                                <td class="white">
+                                    <? foreach ($custom_fields as $k => $v): ?>
+                                    <div class="nowrap"><input type="checkbox" name="custom_member_fields[]" value="<?=$k?>" checked="checked" /> <?=$v?> </div>
+                                    <? endforeach; ?>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr><td class="gray">&nbsp;</td></tr>
+                <tr>
+                    <td class="gray">
+                        <input type="submit" name="export" value="Export Data" /> &nbsp;
+                        <input type="reset" name="reset" value="Reset" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>

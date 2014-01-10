@@ -1,0 +1,34 @@
+
+					{exp:channel:entries channel="blog|link_posts" limit="10" dynamic="off" status="open" show_future_entries="no" offset="{embed:offset}"}{if channel_short_name == "blog"}<article class="blog-summary native-post">
+				
+					<h1><a href="/blog/post/{url_title}">{title}</a></h1>
+					
+					<footer class="byline">
+						
+						by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+						{if comment_total > 0}
+							 · <a class="comment-count" href="/blog/post/{url_title}#comments">{comment_total} Comment{if comment_total > 1}s{/if}</a>
+						{/if}
+					
+					</footer>
+					
+					{if blog_intro}<p>{blog_intro}</p>{/if}
+				
+				</article><!--
+				
+				-->{if:else}<article class="blog-summary link-post">
+				
+					<h1><a href="{blog_target_url}">{title}</a></h1>
+					
+					{if blog_description}<p>{blog_description}</p>{/if}
+					
+					<footer class="byline">
+						
+						<a href="{blog_target_url}">{exp:parse_url parts="scheme|host"}{blog_target_url}{/exp:parse_url}</a>
+					
+					</footer>
+				
+				</article><!--
+				
+				-->{/if}{/exp:channel:entries}
