@@ -1,0 +1,88 @@
+body, html {
+	border: 0;
+	margin: 3px 0 0;
+	padding: 0;
+}
+.ala-embedded-comment {
+	background: #fff;
+	display: block;
+	font: normal 14px/1.6 Georgia, serif;
+	min-height: 96px;
+	padding: 12px 11px;
+}
+::selection {
+	background: #ddd;
+	color: #000;
+}
+a {
+	color: #2455c3;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+p {
+	clear: both;
+	margin: 0 12px 12px 72px;
+}
+
+time {
+	white-space: nowrap;
+}
+
+.ala-embedded-comment blockquote {
+	font-style: italic;
+	border-left: 1px dotted #bdbdbd;
+	padding-left: 12px;
+	margin-left: 6px;
+}
+
+.commenter-avatar {
+	border-radius: 5px;
+	display: block;
+	float: left;
+	margin-top: -3px;
+	margin-right: 12px;
+	overflow: hidden;
+	position: relative;
+	top: 4px;
+	width: 60px;
+	height: 60px;
+}
+
+.commenter-name {
+	display: block;
+	margin-left: 72px;
+	font: bold 18px/18px sans-serif;
+}
+
+.comment-meta {
+	display: block;
+	margin: 6px 0 6px 72px;
+	color: #666;
+	font: normal 11px/16px sans-serif;
+	text-decoration: none;
+}
+
+.article-link {
+	height: 24px;
+	margin-top: 18px;
+	margin-bottom: 0;
+	font: normal 11px/26px sans-serif;
+	color: #666;
+	padding-left: 30px;
+	background: url(../img/icon_navigation-laurel.svg) 0 0 no-repeat;
+}
+
+@media only screen and (max-width: 500px) {
+
+.commenter-avatar {
+	margin-bottom: 12px;
+}
+
+p {
+	margin-left: 0;
+}
+
+}
