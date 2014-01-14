@@ -6,7 +6,7 @@
 								
 								{exp:comment:form channel="articles|columns|blog|link_posts" return="{exp:current_url:full_url}/comment-return#latest" id="comment-form" class="comment-form"}
 									
-									<textarea id="comment-content" class="logged-in" name="comment" required="required"></textarea>
+									<textarea data-autoresize id="comment-content" class="logged-in" name="comment" required="required"></textarea>
 									<p class="commenter-info">
 										
 										{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
