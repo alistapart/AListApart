@@ -23,7 +23,9 @@
 }
 
 .sponsor-top .sponsor-logo {
-	display: none;
+	display: block;
+	background-size: cover;
+	margin: 0 auto;
 }
 
 .sponsor-top .sponsor-intro, 
