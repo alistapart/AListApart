@@ -45,6 +45,62 @@
 		line-height:26px;
 	}
 	
+	.sponsor-top {
+		right: 0;
+		top: 0;
+		width: auto;
+		height: 41px;
+		padding: 0;
+		background: none;
+		border-radius: 0;
+		box-shadow: none;
+		text-align: left;
+		vertical-align: middle;
+	}
+	
+	.sponsor-top.sponsor-alt {
+		right: auto;
+		height: auto;
+		text-align: left;
+	}
+	
+	.sponsor-top p {
+		margin: 12px 12px 0 0;
+		line-height: 18px;
+		font-size: 14px;
+		text-align: left;
+		padding-right: 12px;
+	}
+	
+	.sponsor-top.sponsor-alt p {
+		margin: 0 12px;
+		line-height: 18px;
+		font-size: 12px;
+		
+		width: auto;
+	}
+	
+	.sponsor-top .sponsor-logo {
+		display: inline-block;
+		left: auto;
+		height: 60px;
+		width: 90px;
+		margin-top: -12px;
+		margin-right: 6px;
+	}
+	
+	.sponsor-top.sponsor-alt .sponsor-logo {
+		margin-top: 0;
+	}
+	
+	.sponsor-top .sponsor-extended, .sponsor-top .sponsor-url {
+		display: none;
+	}
+	
+	.sponsor-top.sponsor-alt .sponsor-extended {
+		display: inline-block;
+	}
+	
 	.global-nav {
 		position: static;
 		padding: 0;

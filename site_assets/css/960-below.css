@@ -556,14 +556,41 @@ aside.job-board {
 	margin-bottom: 6px; */
 }
 
+.sponsor-top {
+	right: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
 }
 
-/* Horrors! A device-specific style! */
-/* (for the HTC Desire, and probably other unidentified android devices) */
+}
+
 @media only screen and (max-width: 800px) {
 
 a {
+	/* Horrors! A device-specific style! */
+	/* (for the HTC Desire, and probably other unidentified android devices) */
 	text-rendering: auto;
 }
 
+.sponsor-top {
+	top: 48px;
+	width: 156px;
+	text-align: center;
+}
+
+
+.sponsor-top .sponsor-logo {
+	width: 132px;
+	height: 60px; 
+}
+
+.sponsor-top .sponsor-extended {
+	display: none;
+}
+
+.sponsor-top p {
+	line-height: 16px;
+	text-align: center;
+}
+	
 }
