@@ -304,7 +304,7 @@ $(document).ready(function(){
 
 	});
 	
-	$('textarea[data-autoresize]').on('input propertychange', function() {
+	$('body').on('input propertychange', 'textarea[data-autoresize]', function() {
 	
 		autoResize($(this));
 	
