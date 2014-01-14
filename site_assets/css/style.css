@@ -1274,6 +1274,7 @@ ul.fancy-links li a.facebook {
 .alphabits a:hover {
 	text-decoration: none;
 	background: #ddd;
+	cursor: pointer;
 }
 
 .alphabits a.arrow {
