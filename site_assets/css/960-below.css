@@ -1,3 +1,34 @@
+@media only screen and (max-width: 1150px) {
+
+.sponsor-top {
+	top: 48px;
+	width: 156px;
+	text-align: center;
+}
+
+.secondary-column .sponsor-top {
+	text-align: left;
+}
+
+.sponsor-top .sponsor-logo {
+	width: 132px;
+	height: 60px; 
+}
+
+.sponsor-top .sponsor-extended {
+	display: none;
+}
+
+.secondary-column .sponsor-extended {
+	display: inline;
+}
+
+.sponsor-top p {
+	line-height: 16px;
+}
+
+}
+
 @media only screen and (max-width: 984px) {
 
 
@@ -363,10 +394,13 @@ ol.article-comments > li {
 }
 
 .article-layout .author-header,
-.article-layout .blog-header {
+.article-layout .blog-header,
+.sponsored .article-layout .author-header,
+.sponsored .article-layout .blog-header {
 	width: auto;
 	margin-left: 36px;
 	margin-right: 36px;
+	padding-right: 0;
 }
 
 aside.the-deck,
@@ -562,6 +596,10 @@ aside.job-board {
 	border-bottom-right-radius: 0;
 }
 
+.secondary-column .sponsor-top {
+	right: auto;
+}
+
 }
 
 @media only screen and (max-width: 800px) {
@@ -570,27 +608,6 @@ a {
 	/* Horrors! A device-specific style! */
 	/* (for the HTC Desire, and probably other unidentified android devices) */
 	text-rendering: auto;
-}
-
-.sponsor-top {
-	top: 48px;
-	width: 156px;
-	text-align: center;
-}
-
-
-.sponsor-top .sponsor-logo {
-	width: 132px;
-	height: 60px; 
-}
-
-.sponsor-top .sponsor-extended {
-	display: none;
-}
-
-.sponsor-top p {
-	line-height: 16px;
-	text-align: center;
 }
 	
 }

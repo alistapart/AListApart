@@ -315,6 +315,8 @@ $(document).ready(function(){
 sponsorSniff = document.addEventListener("DOMNodeInserted", function(event) {
 	
 	if ($(event.target).parent()[0].id == 'bsap_1031') {
+
+		$('body').addClass('sponsored');
 	
 		showSponsorImage();
 		
@@ -328,7 +330,7 @@ var dpr = window.devicePixelRatio
 
 function showSponsorImage() {
 
-	if (dpr > '1') {
+	if ((dpr != 'undefined') && (dpr > '1')) {
 		var adImage = $('.sponsor-logo').attr('data-hiresbg');
 	} else {
 		var adImage = $('.sponsor-logo').attr('data-standardbg');

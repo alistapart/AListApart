@@ -1,6 +1,7 @@
 @media only screen and (max-width: 767px) {
 	
-	.two-column-display .main-content, .two-column-display .secondary-column {
+	.two-column-display .main-content, 
+	.two-column-display .secondary-column {
 		display: block;
 		width: auto;
 		margin-left:0;
@@ -45,7 +46,9 @@
 		line-height:26px;
 	}
 	
-	.sponsor-top {
+	.sponsor-top,
+	.secondary-column .sponsor-top {
+		position: absolute;
 		right: 0;
 		top: 0;
 		width: auto;
@@ -56,6 +59,10 @@
 		box-shadow: none;
 		text-align: left;
 		vertical-align: middle;
+	}
+	
+	.secondary-column .sponsor-top {
+		margin-top: -156px;
 	}
 	
 	.sponsor-top.sponsor-alt {

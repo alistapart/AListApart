@@ -450,6 +450,10 @@ ul.inline-items li {
 	font-size: 30px;
 }
 
+.sponsored .basic-title + .blog-summary h1 {
+	padding-right: 15%;
+}
+
 .blog-summary h1 a {
 	color: #222;
 }
@@ -1021,6 +1025,12 @@ footer a.aside-author + time:before {
 	margin-bottom: 36px;
 	margin-left: auto;
 	margin-right: auto;
+	padding-left: 132px;
+}
+
+.sponsored .article-layout .author-header,
+.sponsored .article-layout .blog-header {
+	padding-right: 132px;
 }
 
 .url-display {
