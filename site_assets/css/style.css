@@ -1945,7 +1945,7 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 	font-style: italic;
 }
 
-.main-content > figure.quote > blockquote > p,,
+.main-content > figure.quote > blockquote > p,
 .main-content > article.link-post > figure.quote > blockquote > p {
 	margin-bottom: 18px;
 }
