@@ -1985,32 +1985,6 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 	margin-left: 0;
 }
 
-.hentry .main-content *[id*="section"]:hover,
-.hentry .main-content *[id*="section"]:target,
-.hentry .main-content *[id*="figure"]:hover,
-.hentry .main-content *[id*="figure"]:target,
-.hentry .main-content *[id*="snippet"]:hover,
-.hentry .main-content *[id*="snippet"]:target {
-	position: relative;
-	cursor: default;
-}
-
-.hentry .main-content *[id*="section"]:hover:after,
-.hentry .main-content *[id*="section"]:target:after,
-.hentry .main-content *[id*="figure"]:hover:after,
-.hentry .main-content *[id*="figure"]:target:after,
-.hentry .main-content *[id*="snippet"]:hover:after,
-.hentry .main-content *[id*="snippet"]:target:after {
-	content: "#" attr(id);
-	display: inline-block;
-	vertical-align: middle;
-	padding-left: 12px;
-	color: #ccc;
-	font-size: 12px;
-	line-height: 12px;
-	text-transform: none;
-}
-
 .hentry .main-content *[id*="figure"]:hover:after,
 .hentry .main-content *[id*="figure"]:target:after,
 .hentry .main-content *[id*="snippet"]:hover:after,
@@ -2021,6 +1995,24 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 	top: 6px;
 	margin-right: 12px;
 	font-family: "Franklin ITC Pro Bold", sans-serif;
+}
+
+.subhead-anchor {
+  color: #ccc;
+  display: none;
+  font-size: 12px;
+  line-height: 12px;
+  padding-left: 12px;
+  text-transform: none;
+	vertical-align: middle;
+}
+
+.hentry .main-content h2:hover .subhead-anchor {
+  display: inline-block;
+}
+
+.subhead-anchor:hover {
+  text-decoration: underline;
 }
 
 .entry-footnotes {
