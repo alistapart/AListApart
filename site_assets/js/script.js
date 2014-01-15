@@ -312,6 +312,34 @@ $(document).ready(function(){
 				
 });
 
+document.addEventListener("DOMNodeInserted", function(event) {
+	
+	if ($(event.target).parent()[0].id == 'bsap_1031') showSponsorImage();
+	
+});
+	
+var dpr = window.devicePixelRatio
+
+function showSponsorImage() {
+
+	if (dpr > '1') {
+		var adImage = $('.sponsor-logo').attr('data-hiresbg');
+	} else {
+		var adImage = $('.sponsor-logo').attr('data-standardbg');
+	};
+	var adHeight = $('.sponsor-logo').attr('data-height');
+	var adWidth  = $('.sponsor-logo').attr('data-width');
+	
+	$('.sponsor-logo').css({
+		height: adHeight,
+		width: adWidth,
+		backgroundImage: 'url(' + adImage + ')'
+	});
+	
+	$('.sponsor-top').css('display', 'block');
+
+};
+
 var autoLoadComments = function() {
 	
 	loadCommentsButton = $("#load-comments").offset();
