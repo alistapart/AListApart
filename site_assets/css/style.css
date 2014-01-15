@@ -2,7 +2,7 @@
 	 Author: Tim Murtaugh, monkeydo.biz
 	 ========================================================================== */
 
-html, 
+html,
 body {
 	font: normal 18px/30px "Georgia Pro", georgia, serif;
 	text-rendering: optimizeLegibility;
@@ -128,7 +128,7 @@ html:not(.no-js) .buttonish:before {
 	background-repeat: no-repeat;
 	margin-top: -18px;
 	-webkit-print-color-adjust: exact;
-	
+
 	-webkit-transition: -webkit-transform 4000ms ease-out;
 	-moz-transition: -moz-transform 4000ms ease-out;
 	-o-transition: -o-transform 4000ms ease-out;
@@ -227,7 +227,7 @@ ul.inline-items li {
 	top: -44px;
 	padding-top: 0;
 	border-bottom: 1px solid #d8d8d8;
-	
+
 	-webkit-transition: all 200ms ease-out;
 	-moz-transition: all 200ms ease-out;
 	-o-transition: all 200ms ease-out;
@@ -245,7 +245,7 @@ ul.inline-items li {
 */
 
 .global-nav ul {
-	/* width: 960px; 
+	/* width: 960px;
 	max-width: 100%; */
 	margin: 0 auto;
 	line-height: 41px;
@@ -328,7 +328,7 @@ ul.inline-items li {
 	color: #555;
 	background: #fafafa;
 	opacity: 0;
-	
+
 	-webkit-transition: all 200ms ease-in;
 	-moz-transition: all 200ms ease-in;
 	-o-transition: all 200ms ease-in;
@@ -713,11 +713,11 @@ ul.inline-items li {
 	font-weight: normal;
 	text-align: center;
 	font-style: normal;
-	
+
 }
 
 @media only screen and (min-width: 600px) {
-	
+
 	.entry-header .issue-number,
 	.wide-hero .issue-number,
 	.tall-hero .issue-number,
@@ -957,7 +957,7 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 .entry-header time:before,
 footer a.author + time:before,
 footer a.aside-author + time:before {
-	content: " ∙ ";	
+	content: " ∙ ";
 }
 
 .comment-count {
@@ -1231,13 +1231,13 @@ ul.fancy-links li a.facebook {
 	position: absolute;
 	top: 0;
 	left: 30px;
-	
+
 	-webkit-transition: all 200ms ease-in;
 	-moz-transition: all 200ms ease-in;
 	-o-transition: all 200ms ease-in;
 	-ms-transition: all 200ms ease-in;
 	transition: all 200ms ease-in;
-	
+
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	-ms-backface-visibility: hidden;
@@ -1263,7 +1263,7 @@ ul.fancy-links li a.facebook {
 	border-radius: 5px;
 	color: #222;
 	text-transform: uppercase;
-	
+
 	-webkit-transition: background 200ms ease-in;
 	-moz-transition: background 200ms ease-in;
 	-o-transition: background 200ms ease-in;
@@ -1491,7 +1491,7 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	margin-bottom: 24px !important;
 }
 
-.main-content > ul > li, 
+.main-content > ul > li,
 .main-content > ol > li {
 	margin-bottom: 12px;
 }
@@ -1912,7 +1912,7 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 }
 
 .main-content > figure.multi img {
-	display: inline-block; 
+	display: inline-block;
 	vertical-align: middle;
 	max-width: 48%;
 	margin: 0 6px;
@@ -2076,7 +2076,7 @@ pre {
 	padding: 12px;
 	border-top: 1px dotted #bfbfbf;
 	border-bottom: 1px dotted #bfbfbf;
-	
+
 	-webkit-transition: all 100ms ease-in;
 	-moz-transition: all 100ms ease-in;
 	-o-transition: all 100ms ease-in;
@@ -2091,7 +2091,7 @@ pre code {
 	color: #444;
 	font-size: 15px;
 	line-height: 24px;
-	
+
 	-webkit-transition: all 100ms ease-in;
 	-moz-transition: all 100ms ease-in;
 	-o-transition: all 100ms ease-in;
@@ -2277,7 +2277,7 @@ pre.editing code {
 
 .fixed-column .the-deck .deck-inner a img {
 	position: static;
-	
+
 }
 
 .unequal-columns .column {
@@ -2411,7 +2411,7 @@ ol.article-comments > li .comment-tools a {
 	color: #fff;
 	border-radius: 20px;
 	text-decoration: none;
-	
+
 	-webkit-transition: background .2s ease-in;
 	-moz-transition: background .2s ease-in;
 	-o-transition: background .2s ease-in;
@@ -2429,7 +2429,7 @@ ol.article-comments > li .comment-tools a:hover {
 
 ol.article-comments > li:not([data-count]):not(.commenter-signin):not(.comment-form) {
 	margin-left: 30px;
-	margin-right: 30px;						 
+	margin-right: 30px;
 }
 
 ol.article-comments li.author-comment {
@@ -2505,7 +2505,7 @@ ol.article-comments > li:first-child:after {
 .comment-body {
 	margin-left: 72px;
 	word-break: break-word;
-	
+
 	-webkit-transition: opacity 200ms ease-in;
 	-moz-transition: opacity 200ms ease-in;
 	-o-transition: opacity 200ms ease-in;
@@ -2563,10 +2563,11 @@ ol.article-comments li.comment-form:after {
 	border: 1px solid #ebebeb;
 	border-right: 0;
 	border-bottom: 0;
-	
+
 	-webkit-transform:rotate(45deg);
 	-moz-transform:rotate(45deg);
 	-o-transform:rotate(45deg);
+	-ms-transform:rotate(45deg);
 	transform:rotate(45deg);
 }
 
@@ -2594,7 +2595,7 @@ li.comment-form p {
 }
 
 div#login-buttons{
-	
+
 }
 
 ul.login-buttons {
@@ -2618,7 +2619,7 @@ ul.login-buttons li a {
 	color: #000;
 	font-family: "Franklin ITC Pro Bold";
 	font-weight: normal;
-	
+
 	-webkit-transition: background-color 200ms ease-in;
 	-moz-transition: background-color 200ms ease-in;
 	-o-transition: background-color 200ms ease-in;
@@ -2664,7 +2665,7 @@ ul.login-buttons li a:hover {
 .article-comments form#forgot_password_form {
 	max-height: 0;
 	overflow: hidden;
-	
+
 	-webkit-transition: max-height 400ms ease-in;
 	-moz-transition: max-height 400ms ease-in;
 	-o-transition: max-height 400ms ease-in;
@@ -2706,7 +2707,7 @@ ul.login-buttons li a:hover {
 	font-size: 24px;
 	font-weight: normal;
 	font-style: normal;
-	
+
 	-webkit-transition: box-shadow 100ms ease-in;
 	-moz-transition: box-shadow 100ms ease-in;
 	-o-transition: box-shadow 100ms ease-in;
@@ -2729,7 +2730,7 @@ ul.login-buttons li a:hover {
 	font-size: 18px;
 	outline: 0;
 	box-shadow: inset 0px 0px 10px rgba(0,0,0,.05);
-        
+
 	-webkit-transition: all 200ms ease-in-out, height 100ms ease-in-out;
 	-moz-transition: all 200ms ease-in-out, height 100ms ease-in-out;
 	-ms-transition: all 200ms ease-in-out, height 100ms ease-in-out;
@@ -2757,7 +2758,7 @@ textarea:not([data-autoresize]) {
 }
 
 .article-comments textarea.logged-in {
-	position: relative; 
+	position: relative;
 	z-index: 10;
 	margin-bottom: 0;
 }
@@ -2798,9 +2799,9 @@ textarea:not([data-autoresize]) {
 }
 
 .article-comments .commenter-info input[type="submit"] {
-	position: absolute; 
-	right: 12px; 
-	top: 50%; 
+	position: absolute;
+	right: 12px;
+	top: 50%;
 	margin-top: -12px;
 }
 
@@ -2820,9 +2821,9 @@ img.commenter-avatar {
 }
 
 .article-comments .commenter-info img.commenter-avatar {
-	top: -4px; 
-	float: left; 
-	width: 40px; 
+	top: -4px;
+	float: left;
+	width: 40px;
 	height: 40px;
 	margin-right: 12px;
 }
@@ -3098,7 +3099,7 @@ ul.bullets {
 	font-weight: normal;
 }
 
-.paginator ul, 
+.paginator ul,
 .paginator li {
 	display: inline-block;
 	margin: 0 5px;
@@ -3113,7 +3114,7 @@ ul.bullets {
 	color: #fff;
 	background: #c3c2be;
 	border-radius: 15px;
-	
+
 	-webkit-transition: background .2s ease-in;
 	-moz-transition: background .2s ease-in;
 	-o-transition: background .2s ease-in;
@@ -3194,7 +3195,7 @@ body.modal {
 
 /*
 html.secret-state body {
-	padding-top: 100px; 
+	padding-top: 100px;
 }
 
 html.secret-state .killer-logo {
@@ -3224,7 +3225,7 @@ html.secret-state .killer-logo > a {
 /* FOR EMBEDDED GISTS */
 
 .main-content .gist {
-	
+
 	font-size: 15px;
 	line-height: 24px;
 }
@@ -3254,38 +3255,38 @@ html.secret-state .killer-logo > a {
 }
 
 @media only screen and (min-width: 1944px) and (min-height: 960px) {
-	
+
 	.killer-logo > a {
 		width: 1920px;
 		height: 240px;
 		margin-top: -64px;
 	}
-	
+
 	.global-nav ul {
 		width: 1920px;
 	}
-	
+
 	.main-wrapper {
 		padding-top: 168px;
 	}
-	
+
 	.home-page .wide-hero, .issue-page .wide-hero {
 		padding-top: 168px;
 	}
-	
+
 	.single-column-display, .two-column-display, .multi-column-display {
 		margin-top: 240px;
 		padding-top: 0;
 	}
-	
+
 	.deadly-subtitle {
 		background-size: cover;
 	}
-	
+
 	.global-footer .inline-items {
 		width: 1920px;
 	}
-	
+
 
 }
 
@@ -3414,7 +3415,7 @@ body.printable .content-minutiae a:after {
 	content: "" ! important;
 }
 
-body.printable .main-content > figure img, 
+body.printable .main-content > figure img,
 body.printable .main-content > div.illustration img {
 	max-width: 4in;
 	max-height: 4in;
@@ -3423,7 +3424,7 @@ body.printable .main-content > div.illustration img {
 body.printable .the-footnotes {
 	margin-left: 24px ! important;
 }
- 
+
 body.printable .article-layout .main-content a[href^="#"]:after,
 body.printable .article-layout .main-content a[href^="javascript"]:after {
 	content: "" ! important;
