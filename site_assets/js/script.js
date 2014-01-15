@@ -312,9 +312,15 @@ $(document).ready(function(){
 				
 });
 
-document.addEventListener("DOMNodeInserted", function(event) {
+sponsorSniff = document.addEventListener("DOMNodeInserted", function(event) {
 	
-	if ($(event.target).parent()[0].id == 'bsap_1031') showSponsorImage();
+	if ($(event.target).parent()[0].id == 'bsap_1031') {
+	
+		showSponsorImage();
+		
+		document.removeEventListener('DOMNodeInserted', sponsorSniff, false);
+		
+	};
 	
 });
 	
