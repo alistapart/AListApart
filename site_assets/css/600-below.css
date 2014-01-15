@@ -65,7 +65,7 @@
 	}
 	
 	.sponsor-top p {
-		margin: 12px 12px 0 0;
+		margin: 1px 12px 0 0;
 		line-height: 18px;
 		font-size: 14px;
 		text-align: left;
@@ -82,10 +82,11 @@
 	
 	.sponsor-top .sponsor-logo {
 		display: inline-block;
+		vertical-align: top;
 		left: auto;
-		height: 60px;
-		width: 90px;
-		margin-top: -12px;
+		max-height: 32px;
+		max-width: 70px;
+		margin-top: 6px;
 		margin-right: 6px;
 	}
 	

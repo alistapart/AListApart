@@ -19,12 +19,21 @@
 	
 	<!-- BuySell Ads -->
 	<script>(function(){var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = '//cdn.buysellads.com/ac/pro.js';document.getElementsByTagName('head')[0].appendChild(bsa);})();</script>
+		
+	<script>
 	
-	<style>
-	.sponsor-top .sponsor-logo {
-		background-image: url(http://assets.buysellads.com/p/manage/asset/id/7255);
-	}
-	</style>
+	var adImage = $('.sponsor-logo').attr('data-standardbg');
+	var adHeight = $('.sponsor-logo').attr('data-height');
+	var adWidth  = $('.sponsor-logo').attr('data-width');
+	
+	$('.sponsor-logo').css({
+		height: adHeight,
+		width: adWidth,
+		backgroundImage: 'url(' + adImage + ')'
+	});
+	
+	</script>
+	
 	{/if}
 	
 	<script>

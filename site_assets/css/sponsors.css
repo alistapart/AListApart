@@ -24,7 +24,11 @@
 
 .sponsor-top .sponsor-logo {
 	display: block;
-	background-size: cover;
+	max-width: 90%;
+	max-width: calc(100% - 24px);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 	margin: 0 auto;
 }
 
