@@ -14,8 +14,8 @@ $(document).ready(function(){
 		var navState = $( "html" ).hasClass('show-nav');
 	
 		var scrollHandler = function(){
-		    $('html').removeClass('show-nav');
-		}
+			$('html').removeClass('show-nav');
+		};
 		
 		if (!navState){
 			$( "html" ).addClass('show-nav');
@@ -30,16 +30,16 @@ $(document).ready(function(){
 	});
 	
 	$('.global-nav').click(function(event){
-	     event.stopPropagation();
+		event.stopPropagation();
 	});
 	
 	$('body').click(function() {
-	   $('html').removeClass('show-nav'); 
+		$('html').removeClass('show-nav');
 	});
 
 	$("sup[data-footnote]").each(function() {
 
-		noteCount = $(this).html();
+		var noteCount = $(this).html();
 
 		$(this).html('<a id="ref' + noteCount + '" href="#note' + noteCount + '">' + noteCount + '</a>');
 
@@ -175,7 +175,7 @@ $(document).ready(function(){
 		
 		listWidth = $("#alphabits > ul").width();
 		
-		currentOffset = parseInt($("#alphabits > ul").css("margin-left"));
+		currentOffset = parseInt($("#alphabits > ul").css("margin-left"), 10);
 		
 		if (  maskWidth > -( currentOffset + maskWidth ) ) {
 			$("#alphabits > ul").css("margin-left", (currentOffset - maskWidth + 89));
@@ -190,16 +190,16 @@ $(document).ready(function(){
 		
 		maskWidth = $("#alphabits").width();
 		
-		currentOffset = parseInt($("#alphabits > ul").css("margin-left"));
+		currentOffset = parseInt($("#alphabits > ul").css("margin-left"), 10);
 		
 		if (currentOffset != "0") {
 			$("#alphabits > ul").css("margin-left", (currentOffset + maskWidth - 89));
-		};
+		}
 		
 	});
 	
 	$("a[data-alphabit]").on("click", function(e) {
-		
+
 		e.preventDefault();
 		
 		$("#alphabits").disableSelection();
@@ -224,7 +224,7 @@ $(document).ready(function(){
 			
 			$("#browse-title").removeAttr("data-display-letter");
 		
-		};
+		}
 		
 	});
 	
@@ -246,7 +246,7 @@ $(document).ready(function(){
 
 			$(".logo-holder .killer-logo a:not(.active)").addClass("yeeeeeeaahhh");
 
-		};
+		}
 
 	});
 	
@@ -270,7 +270,7 @@ $(document).ready(function(){
 	
 	$("form.main-search").submit(function(e) {
 	
-		if ($("input[name=keywords]").val() == "") {
+		if ($("input[name=keywords]").val() === "") {
 			
 			$("input[name=keywords]").attr("placeholder", "Oh come on, search for something.").focus();
 			
@@ -294,7 +294,7 @@ $(document).ready(function(){
 
 		$(".comment").CommentEditor();
 
-	};
+	}
 
 	$("#comments").bind("comments-appended", function() {
 		
@@ -322,19 +322,20 @@ sponsorSniff = document.addEventListener("DOMNodeInserted", function(event) {
 		
 		document.removeEventListener('DOMNodeInserted', sponsorSniff, false);
 		
-	};
+	}
 	
 });
 	
-var dpr = window.devicePixelRatio
+var dpr = window.devicePixelRatio;
 
 function showSponsorImage() {
+	var adImage;
 
 	if ((dpr != 'undefined') && (dpr > '1')) {
-		var adImage = $('.sponsor-logo').attr('data-hiresbg');
+		adImage = $('.sponsor-logo').attr('data-hiresbg');
 	} else {
-		var adImage = $('.sponsor-logo').attr('data-standardbg');
-	};
+		adImage = $('.sponsor-logo').attr('data-standardbg');
+	}
 	var adHeight = $('.sponsor-logo').attr('data-height');
 	var adWidth  = $('.sponsor-logo').attr('data-width');
 	
@@ -346,7 +347,7 @@ function showSponsorImage() {
 	
 	$('.sponsor-top').css('display', 'block');
 
-};
+}
 
 var autoLoadComments = function() {
 	
@@ -360,7 +361,7 @@ var autoLoadComments = function() {
 	
 	}
 		
-}
+};
 
 commentsLoaded = false;
 
@@ -374,7 +375,7 @@ var loadThoseComments = function(target) {
 	$(window).unbind("scrollend");
 	$("body").removeClass("comments-exist");
 	
-	if (commentsLoaded == false) {
+	if (commentsLoaded === false) {
 	
 		commentsLoaded = true;
 
@@ -403,7 +404,7 @@ var loadThoseComments = function(target) {
 		
 		});
 
-	};
+	}
 	
 };
 
@@ -440,7 +441,7 @@ $(window).bind('enterBreakpoint600',function() {
 		
 		});
 	
-	};
+	}
 	
 });
 
@@ -468,7 +469,7 @@ window.onload = function() {
 		
 		}
 		
- 	 }
+	}
 
 };
 
@@ -512,19 +513,19 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 (function($) {
 
 	var settings = {
-		swipe_h_threshold 	: 50,
-		swipe_v_threshold 	: 50,
-		taphold_threshold 	: 750,
+		swipe_h_threshold	: 50,
+		swipe_v_threshold	: 50,
+		taphold_threshold	: 750,
 		doubletap_int       : 500,
-		touch_capable       : ('ontouchstart' in document.documentElement),
+		touch_capable		: ('ontouchstart' in document.documentElement),
 		orientation_support : ('orientation' in window && 'onorientationchange' in window),
-		startevent        	: ('ontouchstart' in document.documentElement) ? 'touchstart' : 'mousedown',
-		endevent		  	: ('ontouchstart' in document.documentElement) ? 'touchend' : 'mouseup',
-		moveevent         	: ('ontouchstart' in document.documentElement) ? 'touchmove' : 'mousemove',
-		tapevent		  	: ('ontouchstart' in document.documentElement) ? 'tap' : 'click',
-		scrollevent       	: ('ontouchstart' in document.documentElement) ? 'touchmove' : 'scroll',
-		hold_timer 			: null,
-		tap_timer 			: null
+		startevent			: ('ontouchstart' in document.documentElement) ? 'touchstart' : 'mousedown',
+		endevent			: ('ontouchstart' in document.documentElement) ? 'touchend' : 'mouseup',
+		moveevent			: ('ontouchstart' in document.documentElement) ? 'touchmove' : 'mousemove',
+		tapevent			: ('ontouchstart' in document.documentElement) ? 'tap' : 'click',
+		scrollevent			: ('ontouchstart' in document.documentElement) ? 'touchmove' : 'scroll',
+		hold_timer			: null,
+		tap_timer			: null
 	};
 	
 	// Add Event shortcuts:
@@ -541,7 +542,7 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 	$.event.special.tapstart = {
 		setup: function() {
 			var thisObject = this,
-			    $this = $(thisObject);
+				$this = $(thisObject);
 			
 			$this.bind(settings.startevent, function(e) {
 				if(e.which && e.which !== 1)
@@ -550,29 +551,29 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 				}
 				else
 				{
-					triggerCustomEvent(thisObject, 'tapstart', e)
+					triggerCustomEvent(thisObject, 'tapstart', e);
 				}
 			});
 		}
-	}
+	};
 	
 	// tapend Event:
 	$.event.special.tapend = {
 		setup: function() {
 			var thisObject = this,
-			    $this = $(thisObject);
+				$this = $(thisObject);
 			
 			$this.bind(settings.endevent, function(e) {
 				triggerCustomEvent(thisObject, 'tapend', e);
 			});
 		}
-	}
+	};
 	
 	// taphold Event:
 	$.event.special.taphold = {
 		setup: function() {
 			var thisObject = this,
-			    $this = $(thisObject),
+				$this = $(thisObject),
 				origTarget,
 				timer,
 				start_pos = { x : 0, y : 0 };
@@ -602,13 +603,13 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 				window.clearTimeout(settings.hold_timer);
 			});
 		}
-	}
+	};
 	
 	// doubletap Event:
 	$.event.special.doubletap = {
 		setup: function() {
 			var thisObject = this,
-			    $this = $(thisObject),
+				$this = $(thisObject),
 				origTarget,
 				action;
 			
@@ -642,14 +643,14 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 				$this.data('lastTouch', now);
 			});
 		}
-	}
+	};
 	
 	// singletap Event:
 	// This is used in conjuction with doubletap when both events are needed on the same element
 	$.event.special.singletap = {
 		setup: function() {
 			var thisObject = this,
-			    $this = $(thisObject),
+				$this = $(thisObject),
 				origTarget = null,
 				startTime  = null;
 				
@@ -675,14 +676,14 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 				}
 			});
 		}
-	}
+	};
 	
 	// tap Event:
 	$.event.special.tap = {
 		setup: function() {
 			var thisObject = this,
 				$this = $(thisObject),
-			    started = false,
+				started = false,
 				origTarget = null,
 				start_time,
 				start_pos = { x : 0, y : 0 };
@@ -717,10 +718,10 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 	$.event.special.swipe = {
 		setup: function() {
 			var thisObject = this,
-			    $this = $(thisObject),
+				$this = $(thisObject),
 				started = false,
 				originalCoord = { x: 0, y: 0 },
-			    finalCoord    = { x: 0, y: 0 };
+				finalCoord    = { x: 0, y: 0 };
 	
 			// Screen touched, store the original coordinate
 			function touchStart(event)
@@ -745,16 +746,16 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 				
 				// We need to check if the element to which the event was bound contains a data-xthreshold | data-vthreshold:
 				var ele_x_threshold = $this.attr('data-xthreshold'),
-				    ele_y_threshold = $this.attr('data-ythreshold'),
-					    h_threshold = (typeof ele_x_threshold !== 'undefined' && ele_x_threshold !== false && parseInt(ele_x_threshold)) ? parseInt(ele_x_threshold) : settings.swipe_h_threshold,
-						v_threshold = (typeof ele_y_threshold !== 'undefined' && ele_y_threshold !== false && parseInt(ele_y_threshold)) ? parseInt(ele_y_threshold) : settings.swipe_v_threshold;
+					ele_y_threshold = $this.attr('data-ythreshold'),
+						h_threshold = (typeof ele_x_threshold !== 'undefined' && ele_x_threshold !== false && parseInt(ele_x_threshold, 10)) ? parseInt(ele_x_threshold, 10) : settings.swipe_h_threshold,
+						v_threshold = (typeof ele_y_threshold !== 'undefined' && ele_y_threshold !== false && parseInt(ele_y_threshold, 10)) ? parseInt(ele_y_threshold, 10) : settings.swipe_v_threshold;
 				
 				
 				if(originalCoord.y > finalCoord.y && (originalCoord.y - finalCoord.y > v_threshold)) { swipedir = 'swipeup'; }
 				if(originalCoord.x < finalCoord.x && (finalCoord.x - originalCoord.x > h_threshold)) { swipedir = 'swiperight'; }
 				if(originalCoord.y < finalCoord.y && (finalCoord.y - originalCoord.y > v_threshold)) { swipedir = 'swipedown'; }
 				if(originalCoord.x > finalCoord.x && (originalCoord.x - finalCoord.x > h_threshold)) { swipedir = 'swipeleft'; }
-				if(swipedir != undefined && started)
+				if(swipedir !== undefined && started)
 				{
 					originalCoord.x = 0;
 					originalCoord.y = 0;
@@ -892,7 +893,7 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 
 	$.event.special.orientationchange.orientation = get_orientation = function() {
 		var isPortrait = true,
-		    elem = document.documentElement;
+			elem = document.documentElement;
 
 		if(settings.orientation_support)
 		{
@@ -992,14 +993,14 @@ if(document.URL.indexOf("do-not-share") == -1){
 		}
 	});
 
-};
+}
 
 function funLoad() {
 
 	document.documentElement.className += " secret-state";
 	// window.scroll(100,100);
 
-};
+}
 
 
 $.fn.CommentEditor = function(options) {
@@ -1062,10 +1063,10 @@ $.fn.CommentEditor = function(options) {
         function closeComment(id) {
         
 			var confirmClose = confirm('Are you sure?');
-        	
-			if (confirmClose == true) {
+
+			if (confirmClose === true) {
              
-				if (getHash == null) {
+				if (getHash === null) {
 					getHash = $("#comments-parent").data('xid');
 				}
 				var data = {status: "close", comment_id: id, XID: getHash};
@@ -1085,7 +1086,7 @@ $.fn.CommentEditor = function(options) {
 
         function saveComment(id) {
 
-			if (getHash == null) {
+			if (getHash === null) {
 				getHash = $("#comments-parent").data('xid');
 			}
 			var content = $("#"+id).find('.edit-comment'+' textarea').val(),
@@ -1119,16 +1120,18 @@ var properties = ['-webkit-appearance','-moz-appearance','-o-appearance','appear
 
 function escape(string) {
 		return escaper.text(string).text().replace(/\n/g, '<br>');
-};
+}
 
 function autoResize(which) {
 		
 		if (!which.data('autogrow-applied')) {
-		
+				
+				var sizeTextArea;
+
 				var textarea = which, initialHeight = textarea.innerHeight(), expander = $('<div />'), timer = null;
 
 				// Setup expander
-				expander.css({'position': 'absolute', 'visibility': 'hidden', 'bottom': '110%'})
+				expander.css({'position': 'absolute', 'visibility': 'hidden', 'bottom': '110%'});
 				$.each(properties, function(i, p) { expander.css(p, textarea.css(p)); });
 				textarea.after(expander);
 
@@ -1136,7 +1139,7 @@ function autoResize(which) {
 				textarea.css({'overflow-y': 'hidden', 'resize': 'none', 'box-sizing': 'border-box'});
 
 				// Sizer function
-				function sizeTextarea() {
+				sizeTextArea = function () {
 						clearTimeout(timer);
 						timer = setTimeout(function() {
 								var value = escape(textarea.val()) + '<br>z';
@@ -1144,7 +1147,7 @@ function autoResize(which) {
 								expander.css('width', textarea.innerWidth() + 2 + 'px');
 								textarea.css('height', Math.max(expander.innerHeight(), initialHeight) + 2 + 'px');
 						}, 0); // throttle by 100ms 
-				}
+				};
 
 				// Bind sizer to IE 9+'s input event and Safari's propertychange event
 				textarea.on('input.autogrow propertychange.autogrow', sizeTextarea);
@@ -1155,6 +1158,6 @@ function autoResize(which) {
 				// Record autogrow applied
 				textarea.data('autogrow-applied', true);
 				
-		};
+		}
 		
-};
+}
