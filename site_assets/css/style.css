@@ -3117,7 +3117,7 @@ ul.bullets {
 
 .paginator a {
 	display: inline-block;
-	padding: 0 12px;
+	padding: 2px 12px 0 12px;
 	font-size: 12px;
 	line-height: 24px;
 	text-transform: uppercase;
