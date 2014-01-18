@@ -2404,6 +2404,7 @@ ol.article-comments > li .comment-tools {
 
 .article-comments .embed-comment textarea {
 	height: 58px;
+	min-height: 0;
 	font-size: 13px;
 	white-space: nowrap;
 	overflow: hidden;
