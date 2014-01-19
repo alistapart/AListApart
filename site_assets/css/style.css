@@ -1556,6 +1556,10 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	font-weight: normal;
 }
 
+.article-layout .main-content > ol ul {
+	list-style: disc;
+}
+
 /* why are these !important ? */
 .article-layout .main-content:not(.wide-video) > iframe {
 	margin-right: 132px !important;
