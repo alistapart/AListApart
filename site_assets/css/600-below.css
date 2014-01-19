@@ -1,4 +1,4 @@
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 47.9375em) { /* 767px */
 	
 	.two-column-display .main-content, 
 	.two-column-display .secondary-column {
@@ -39,7 +39,7 @@
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 37.5em) { /* 600px */
 
 	html, body {
 		font-size:18px;
@@ -639,7 +639,7 @@
 
 }
 
-@media only screen and (max-width: 491px) {
+@media only screen and (max-width: 30.6875em) { /* 491px */
 
 	.article-layout .main-content .supplement {
 		float: none;
@@ -650,7 +650,7 @@
 	
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 20em) { /* 320px */
 	
 	body {
 		font-family: "Georgia Pro Cond";
