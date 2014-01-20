@@ -1557,6 +1557,7 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 }
 
 .article-layout .main-content > ol ul {
+	margin: 18px 0;	
 	list-style: disc;
 }
 
