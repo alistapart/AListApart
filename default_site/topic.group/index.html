@@ -43,9 +43,15 @@
 						$previousBatch = $thisBatch + 20;
 						$nextBatch = $thisBatch - 20;
 						
-						?>
+						$totalCount = {exp:catcount cat_id="{segment_2_category_id}" status="open"};
+						$totalBatches = ceil($totalCount / 20);
+						
+						if (($thisBatch / 10) != $totalBatches) {?>
 						
 						<li><a class="previous" href="/topic/{segment_2}/<?php echo $previousBatch; ?>">Previous</a></li>
+						
+						<?php }; ?>
+						
 						<li><a class="next" href="/topic/{segment_2}/<?php if ($nextBatch > 0) echo $nextBatch; ?>">Next</a></li>
 						
 						{if:else}
