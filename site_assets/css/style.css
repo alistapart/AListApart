@@ -651,7 +651,7 @@ ul.inline-items li {
 	text-align: center;
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 87.5em) { /* 1400px */
 
 .wide-hero.responsive-hero {
 	width: 1400px;
@@ -661,7 +661,7 @@ ul.inline-items li {
 
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 28.125em) { /* 450px */
 
 .wide-hero.responsive-hero {
 	max-height: 300px;
@@ -720,7 +720,7 @@ ul.inline-items li {
 
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 37.5em) { /* 600px */
 
 	.entry-header .issue-number,
 	.wide-hero .issue-number,
@@ -3270,7 +3270,7 @@ html.secret-state .killer-logo > a {
 	white-space: pre;
 }
 
-@media only screen and (min-width: 1944px) and (min-height: 960px) {
+@media only screen and (min-width: 121.5em) and (min-height: 60em) { /* 1944px, 960px */
 
 	.killer-logo > a {
 		width: 1920px;

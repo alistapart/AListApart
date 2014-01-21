@@ -75,7 +75,7 @@ time {
 	background: url(../img/icon_navigation-laurel.svg) 0 0 no-repeat;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 31.25em) { /* 500px */
 
 .commenter-avatar {
 	margin-bottom: 12px;

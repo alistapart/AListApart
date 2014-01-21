@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 71.875em) { /* 1150px */
 
 .sponsor-top {
 	top: 48px;
@@ -29,7 +29,7 @@
 
 }
 
-@media only screen and (max-width: 984px) {
+@media only screen and (max-width: 61.5em) { /* 984px */
 
 
 body {
@@ -602,7 +602,7 @@ aside.job-board {
 
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 50em) { /* 800px */
 
 a {
 	/* Horrors! A device-specific style! */
