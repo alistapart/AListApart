@@ -984,9 +984,9 @@ if(document.URL.indexOf("do-not-share") == -1){
 
 	Modernizr.load({
 		test: ($( "[class*='language']" ).length > 0),
-		yep: [ "/d/_/css/prism.css", "/d/_/js/libs/prism.js" ],
+		yep: [ "/d/_repo/site_assets/css/prism.css", "/d/_repo/site_assets/js/libs/prism.js" ],
 		callback: function( url, res, key ) {
-			if ( url === "/d/_/js/libs/prism.js" ) {
+			if ( url === "/d/_repo/site_assets/js/libs/prism.js" ) {
 				Prism.highlightAll();
 			}
 		}
