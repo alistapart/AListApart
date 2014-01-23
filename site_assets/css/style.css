@@ -3311,7 +3311,7 @@ html.secret-state .killer-logo > a {
 @media print {
 
 body.printable .global-nav,
-body.printable .share-tools,
+body.printable .propagation-enablers,
 body.printable .post-article,
 body.printable .user-tools,
 body.printable .global-footer .inline-items:not(.copyright),
