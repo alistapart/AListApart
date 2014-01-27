@@ -53,7 +53,7 @@ $(document).ready(function(){
 		
 		count1++;
 		$(this).attr("id", "section" + count1);
-    $(this).append("<a class='subhead-anchor' href='#section" + count1 + "'>#section" + count1 + "</a>'");
+		$(this).append("<a class='subhead-anchor' href='#section" + count1 + "'>#section" + count1 + "</a>");
 
 	});
 	
