@@ -2000,6 +2000,15 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 	margin-left: 0;
 }
 
+
+.hentry .main-content *[id*="figure"]:hover,
+.hentry .main-content *[id*="figure"]:target,
+.hentry .main-content *[id*="snippet"]:hover,
+.hentry .main-content *[id*="snippet"]:target {
+	position: relative;
+}
+
+
 .hentry .main-content *[id*="figure"]:hover:after,
 .hentry .main-content *[id*="figure"]:target:after,
 .hentry .main-content *[id*="snippet"]:hover:after,
@@ -2010,15 +2019,21 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 	top: 6px;
 	margin-right: 12px;
 	font-family: "Franklin ITC Pro Bold", sans-serif;
+	color: #ccc;
+	font-size: 12px;
+	line-height: 12px;
+	padding-left: 12px;
+	text-transform: none;
+	vertical-align: middle;
 }
 
 .subhead-anchor {
-  color: #ccc;
-  display: none;
-  font-size: 12px;
-  line-height: 12px;
-  padding-left: 12px;
-  text-transform: none;
+	color: #ccc;
+	display: none;
+	font-size: 12px;
+	line-height: 12px;
+	padding-left: 12px;
+	text-transform: none;
 	vertical-align: middle;
 }
 
