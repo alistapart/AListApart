@@ -1992,10 +1992,6 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 	border-left: 1px dotted #bfbfbf;
 }
 
-.main-content pre {
-	margin-left: 132px;
-}
-
 .col-holder .main-content pre {
 	margin-left: 0;
 }
