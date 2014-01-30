@@ -1237,7 +1237,7 @@ ul.fancy-links li a.facebook {
 	overflow: hidden;
 }
 
-.alphabits ul {
+.alphabits ol {
 	position: absolute;
 	top: 0;
 	left: 30px;
@@ -1253,7 +1253,7 @@ ul.fancy-links li a.facebook {
 	-ms-backface-visibility: hidden;
 }
 
-.alphabits ul li {
+.alphabits ol li {
 	display: inline-block;
 }
 

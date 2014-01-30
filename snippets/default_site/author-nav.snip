@@ -5,7 +5,7 @@
 					
 					<nav id="alphabits" class="alphabits">
 						
-						<ul>
+						<ol>
 							<li><a data-alphabit="a">a</a></li><!--
 							--><li><a data-alphabit="b">b</a></li><!--
 							--><li><a data-alphabit="c">c</a></li><!--
@@ -32,20 +32,20 @@
 							--><li><a data-alphabit="x">x</a></li><!--
 							--><li><a data-alphabit="y">y</a></li><!--
 							--><li><a data-alphabit="z">z</a></li>
-						</ul>
+						</ol>
 						
 						<a id="previous-letters" class="arrow left">◀</a>
 						<a id="next-letters" class="arrow right">▶</a>
 						
 					</nav>
 					
-					<ul id="alpha-target" class="secondary-nav compressed alpha-container">
+					<ol id="alpha-target" class="secondary-nav compressed alpha-container">
 					{exp:ac_memberlist
 						sort="last_name ASC"
 						limit="999"
 						group_id="1|6|7"}
 						<li data-letter="<?php $firstLetter = substr("{last_name}", 0); echo strtolower($firstLetter[0]); ?>"><a href="/author/{username}">{screen_name}</a></li>
 					{/exp:ac_memberlist}
-					</ul>
+					</ol>
 				
 				</div>

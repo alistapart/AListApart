@@ -174,12 +174,12 @@ $(document).ready(function(){
 		
 		maskWidth = $("#alphabits").width();
 		
-		listWidth = $("#alphabits > ul").width();
+		listWidth = $("#alphabits > ol").width();
 		
-		currentOffset = parseInt($("#alphabits > ul").css("margin-left"));
+		currentOffset = parseInt($("#alphabits > ol").css("margin-left"));
 		
 		if (  maskWidth > -( currentOffset + maskWidth ) ) {
-			$("#alphabits > ul").css("margin-left", (currentOffset - maskWidth + 89));
+			$("#alphabits > ol").css("margin-left", (currentOffset - maskWidth + 89));
 		}
 	});
 	
@@ -191,10 +191,10 @@ $(document).ready(function(){
 		
 		maskWidth = $("#alphabits").width();
 		
-		currentOffset = parseInt($("#alphabits > ul").css("margin-left"));
+		currentOffset = parseInt($("#alphabits > ol").css("margin-left"));
 		
 		if (currentOffset != "0") {
-			$("#alphabits > ul").css("margin-left", (currentOffset + maskWidth - 89));
+			$("#alphabits > ol").css("margin-left", (currentOffset + maskWidth - 89));
 		};
 		
 	});
