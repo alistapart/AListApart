@@ -3212,35 +3212,6 @@ body.modal {
 	font-size: 16px;
 }
 
-/*
-html.secret-state body {
-	padding-top: 100px;
-}
-
-html.secret-state .killer-logo {
-	top: 76px;
-	overflow: visible;
-}
-
-html.secret-state .killer-logo:after {
-	content: "";
-	background-image: url(../img/FPO/bearclap.gif);
-	background-size: contain;
-	position: absolute;
-	top: -71px;
-	left: 879px;
-	display: block;
-	height: 73px;
-	width: 67px;
-	overflow: hidden;
-}
-
-html.secret-state .killer-logo > a {
-	margin-top: 0;
-}
-*/
-
-
 /* FOR EMBEDDED GISTS */
 
 .main-content .gist {
