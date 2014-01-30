@@ -243,7 +243,7 @@ $(document).ready(function(){
 
 	$(".no-touch").on("mouseover", ".logo-holder, #home-page > .global-nav", function() {
 
-		if (random == 10) {
+		if (random == 1000) {
 
 			$(".logo-holder .killer-logo a:not(.active)").addClass("yeeeeeeaahhh");
 
@@ -994,14 +994,6 @@ if(document.URL.indexOf("do-not-share") == -1){
 	});
 
 };
-
-function funLoad() {
-
-	document.documentElement.className += " secret-state";
-	// window.scroll(100,100);
-
-};
-
 
 $.fn.CommentEditor = function(options) {
 
