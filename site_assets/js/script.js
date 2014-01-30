@@ -238,12 +238,12 @@ $(document).ready(function(){
 	});
 
 	var min = 1;
-	var max = 10;
+	var max = 100;
 	var random = Math.floor(Math.random() * (max - min + 1)) + min;
 
 	$(".no-touch").on("mouseover", ".logo-holder, #home-page > .global-nav", function() {
 
-		if (random == 1000) {
+		if (random == 100) {
 
 			$(".logo-holder .killer-logo a:not(.active)").addClass("yeeeeeeaahhh");
 
