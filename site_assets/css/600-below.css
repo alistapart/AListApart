@@ -299,7 +299,7 @@
 		margin-right: 18px;
 	}
 	
-	.entry-header .issue-number span, .wide-hero .issue-number span, .tall-hero .issue-number span {
+	.entry-header .issue-number span, .issue-page .logo-holder + .issue-number span, .wide-hero .issue-number span, .tall-hero .issue-number span {
 		width: auto;
 		height: auto;
 		position: static;
