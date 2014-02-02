@@ -308,7 +308,7 @@
 		font-size:18px;
 	}
 	
-	.entry-header .issue-number, .wide-hero .issue-number, .tall-hero .issue-number {
+	.entry-header .issue-number, .wide-hero .issue-number, .tall-hero .issue-number, .issue-page .logo-holder + .issue-number {
 		left: 0;
 		bottom: 0;
 		width: 100%;
