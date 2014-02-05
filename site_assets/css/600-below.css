@@ -574,6 +574,12 @@
 		max-width: none;
 	}
 	
+	.sponsored .article-layout .blog-header,
+	.article-layout .blog-header {
+		margin-left: 18px;
+		padding-left: 0;
+	}
+	
 	.blog-summary {
 		margin: 0 0 24px;
 		padding: 0;
