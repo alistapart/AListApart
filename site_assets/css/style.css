@@ -1541,6 +1541,11 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
     font-feature-settings: "liga", "dlig", "onum";
 }
 
+.article-layout .main-content > figure.full-width {
+	margin-left: 0;
+	margin-right: 0;
+}
+
 .article-layout .main-content > figure iframe,
 .article-layout .main-content > figure video,
 .article-layout .main-content > figure object,
