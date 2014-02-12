@@ -1,5 +1,5 @@
 
-				{exp:user:entries channel="articles|blog|columns" status="open" user_author_id="{embed:author_id}" orderby="entry_id"}
+				{exp:user:entries channel="articles|blog|columns" status="open" user_author_id="{embed:author_id}" orderby="date"}
 					
 				{if count == "1"}
 				<h2 class="alt-small">Entries by {embed:real_name}</h2>
@@ -10,8 +10,8 @@
 						<h3 class="entry-title"><a href="/{if channel_short_name == "columns"}column{if:elseif channel_short_name == "blog"}blog/post{if:else}article{/if}/{url_title}">{title}</a></h3>
 						<p class="meta">
 						{if channel_short_name == "articles"}
-						{exp:playa:parents}<a href="/issue/{issue_number}">Issue&nbsp;{issue_number}</a>&nbsp;·&nbsp;
-						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>{/exp:playa:parents}</p>
+						{exp:playa:parents}<a href="/issue/{issue_number}">Issue&nbsp;{issue_number}</a>{/exp:playa:parents}&nbsp;·&nbsp;
+						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time></p>
 						<p>{article_deck}</p>
 						{if:elseif channel_short_name == "blog"}
 						<p class="meta">
