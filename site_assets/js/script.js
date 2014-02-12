@@ -251,7 +251,7 @@ $(document).ready(function(){
 
 	});
 	
-	$("form.main-search:not(.open-search)").bind("touchstart", function(e) {
+	$("form.main-search:not(.open-search)").bind("touchstart pointerdown", function(e) {
 			
 		e.preventDefault();
 	
