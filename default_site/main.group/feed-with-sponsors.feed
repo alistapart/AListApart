@@ -23,6 +23,7 @@
 	{exp:playa:children field="issue_articles"}
     <item>
       <title><![CDATA[{exp:strip_html}{title}{/exp:strip_html}]]></title>
+      <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
       <link>http://alistapart.com/article/{url_title}</link>
       <guid>http://alistapart.com/article/{url_title}</guid>
       <description><![CDATA[{article_content}]]></description>
@@ -33,6 +34,7 @@
 	{if:elseif channel_short_name == "columns"}
     <item>
       <title><![CDATA[{categories show_group="4"}{category_name}{/categories}: {title}]]></title>
+      <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
       <link>http://alistapart.com/column/{url_title}</link>
       <guid>http://alistapart.com/column/{url_title}</guid>
       <description><![CDATA[{column_content}]]></description>
@@ -42,6 +44,7 @@
 	{if:elseif channel_short_name == "blog"}
     <item>
       <title><![CDATA[{exp:strip_html}{title}{/exp:strip_html}]]></title>
+      <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
       <link>http://alistapart.com/blog/post/{url_title}</link>
       <guid>http://alistapart.com/blog/post/{url_title}</guid>
       <description><![CDATA[{blog_content}]]></description>
