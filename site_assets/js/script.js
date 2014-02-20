@@ -251,7 +251,7 @@ $(document).ready(function(){
 
 	});
 	
-	$("form.main-search:not(.open-search)").bind("tapstart", function(e) {
+	$("html:not([data-useragent*='Chrome']) form.main-search:not(.open-search)").bind("tapstart", function(e) {
 			
 		e.preventDefault();
 	
