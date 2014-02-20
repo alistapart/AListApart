@@ -1,4 +1,8 @@
-{exp:channel:entries category="{segment_2_category_id}" channel="articles|columns" limit="1" status="open" dynamic="off"}
+{exp:channel:entries category="{segment_2_category_id}" require_entry="yes" channel="articles|columns" limit="1" status="open" dynamic="off"}
+
+{if no_results}
+{redirect="404"}
+{/if}
 
 {global-page-top}
 
