@@ -257,6 +257,8 @@ $(document).ready(function(){
 			
 			$("input[name=keywords]").attr("placeholder", "").focus();
 			
+			e.stopPropagation();
+			
 			return false;
 			
 		} else {
