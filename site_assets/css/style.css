@@ -345,7 +345,8 @@ ul.inline-items li {
 .no-touch .main-search:hover input[type=search],
 .no-touch .main-search input[type=search]:valid,
 .no-touch .main-search input[type=search]:focus,
-.open-search input[type=search] {
+.open-search input[type=search],
+.no-js input[type=search] {
 	width: 200px;
 	padding: 3px 9px;
 	opacity: 1;
