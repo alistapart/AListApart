@@ -162,6 +162,49 @@
 		text-indent: 0;
 		background-image: none;
 	}
+
+	.global-nav .head-east-young-man {
+		float: none;
+		position: static;
+	}
+
+	.global-nav .main-search {
+		padding: 0 12px;
+		background: transparent;
+		border-radius: 0;
+		line-height: 42px;
+		text-align: left;
+	}
+
+	.global-nav .main-search input[type=search] {
+		display: inline-block;
+		vertical-align: middle;
+		width: 80% !important;
+		width: calc(100% - 48px) !important;
+		padding: 3px 9px;
+		opacity: 1;
+		border: 1px solid #666;
+		font-size: 14px;
+	}
+
+	.global-nav .main-search label.submit-search {
+		z-index: -1;
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: -21px;
+		width: auto;
+		height: auto;
+		padding: 5px 10px 4px 20px;
+		background: #000;
+		border-radius: 50px;
+	}
+
+	.global-nav .main-search label.submit-search input {
+		display: block;
+		visibility: visible;
+		opacity: 1;
+	}
 	
 	.killer-logo > a {
 		margin-left: -25%;
