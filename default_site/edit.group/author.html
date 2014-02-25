@@ -14,23 +14,37 @@
 
 	<meta name="viewport" content="width=device-width">
 
-	<link rel="stylesheet" href="/_/css/style.css">
+	<script src="/d/_repo/site_assets/js/libs/modernizr-2.5.3.min.js"></script>
 
-	<link rel="stylesheet" href="/_/css/readable.css">
-
-	<link rel="stylesheet" href="/_/css/prism.css">
-
-	<script src="/_/js/libs/modernizr-2.5.3.min.js"></script>
-
-	<title>A List Apart: Edit Author Form</title>
+	<title>A List Apart: Edit Profile</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
+	
+	<style>
+	
+	label {display: inline-block; width: 20%;}
+	
+	label + input {width: 20%;}
+	
+	textarea {width: 40%;}
+	
+	</style>
 		
 </head>
 
 <body>
 
-{global-header}
+<h2>ALA Profile Editor</h2>
+
+{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
+
+<p>ALA staff and authors! Anyone can use this form, but you get optional extras like a nice big photo.</p>
+
+{if:else}
+
+<p>There's a bunch of stuff in here that we don't use at the moment. (<em>At the moment...</em>) (Just kidding.) (<em>Or am i?</em>)
+
+{/if}
 
 {exp:user:edit member_id="{segment_3}" dynamic="off" override_return="/edit/author/{segment_3}"}
 
@@ -38,7 +52,7 @@
 	
 	<header data-title="name">
 	
-		<h1><label>Screen Name:</label><input name="screen_name" type="text" value="{screen_name}"></h1>
+		<h3><label>Screen Name:</label><input name="screen_name" type="text" value="{screen_name}"></h3>
 		
 		<p>
 			<label>Username:</label><input name="username" type="text" value="{username}"><br>
@@ -58,7 +72,7 @@
 			<label>Facebook:</label><input name="facebook" type="text" value="{facebook}"> <small>username only</small><br>
 			<label>Dribbble:</label><input name="dribbble" type="text" value="{dribbble}"> <small>username only</small><br>
 			<label>Github:</label><input name="github" type="text" value="{github}"> <small>username only</small><br>
-			<label>Google+:</label><input name="googleplus" type="text" value="{googleplus}"> <small>final segment of URL only (could be a string of numbers, could be something like "TimMurtaugh"); no plus sign</small><br>
+			<label>Google+:</label><input name="googleplus" type="text" value="{googleplus}"> <small>only include the final segment of your G+ profile URL (could be a string of numbers, could be something like "TimMurtaugh"); no plus sign</small><br>
 			<label>Personal URL:</label><input name="url" type="text" value="{url}"> <small>no http; <em>preferably</em> no www; no trailing slash</small>
 		</p>
 		
@@ -67,7 +81,8 @@
 	<hr>
 	
 	<section data-title="bio">
-	
+		
+		<label><b>Bio</b></label>
 		<p><textarea style="height: 150px;" name="bio">{bio}</textarea><br>
 		<small>links encouraged</small></p>
 
@@ -77,18 +92,13 @@
 	
 	<section data-title="avatar">
 			
-		<p><small>Avatars should be square, and at least 200x200. In the new system authors need not have separate avatars, unless you want a different image for commenting. If you choose not to upload a new avatar, your old one will be deleted before launch and your photo will be used for commenting instead.</small></p>
+		<p>Avatars should be square, and at least 200x200. If you sign in via Twitter, we probably grabbed your avatar from there. You can replace it.</p>
 		
-		<p>
 		{if avatar_filename != ""}
-			<img src="{avatar_url}{avatar_filename}">
+		<img src="{avatar_url}{avatar_filename}">
 
 		{if avatar_width < "201" OR avatar_height < "201"}
-
-		<p>
-			<small>(at {avatar_width}x{avatar_height} this avatar is too small)</small>
-
-		</p>
+		<p><small>(at {avatar_width}x{avatar_height} this avatar is smaller than we would like)</small></p>
 		{/if}
 		{if:else}
 			<img src="/pix/authors/short_hair_silhouette.jpg">
@@ -101,12 +111,14 @@
 		
 	</section>
 	
+	{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
+	
 	<hr>
 	
 	<section data-title="photo">
 
 		<p>
-			<small>Photos should be at least 250x250. Our editors will crop and resize as needed.</small>
+			Author photos should be at least 250x250. Our editors may crop and resize if needed.
 		</p>
 		
 		{if photo_filename != ""}
@@ -118,7 +130,7 @@
 		{if photo_width < "400" OR photo_height < "400"}
 
 		<p>
-			<small>(at {photo_width}x{photo_height} this photo is too small)</small>
+			<small>(at {photo_width}x{photo_height} this photo smaller than we would like)</small>
 
 		</p>
 		{/if}
@@ -129,6 +141,7 @@
 		</p>
 		
 	</section>
+	{/if}
 	
 	<hr>
 	
@@ -137,8 +150,6 @@
 </div>
 	
 {/exp:user:edit}
-
-{current-user-info}
 
 {global-js}
 

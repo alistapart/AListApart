@@ -14,6 +14,6 @@
 	?>
 	<img class="commenter-avatar" src="<?php echo $grav_url; ?>" width="40" height="40" alt="" />
 	{/if}
-	{screen_name}&nbsp;&nbsp; {!--<a href="">edit</a>&nbsp;·&nbsp;--}<a href="{path='logout'}">log out</a>
+	{screen_name}&nbsp;&nbsp; <a href="/edit/author/{member_id}">edit profile</a>&nbsp;·&nbsp;<a href="{path='logout'}">log out</a>
 	<span class="user-url">{url}</span>
 	{/exp:user:stats}
