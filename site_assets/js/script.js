@@ -251,29 +251,11 @@ $(document).ready(function(){
 
 	});
 	
-	$("html:not([data-useragent*='Chrome']:not([data-useragent*='Firefox']) form.main-search:not(.open-search)").bind("tapstart", function(e) {
-			
-		e.preventDefault();
-	
-		$(this).addClass("open-search").unbind("touchstart");
-		
-		$("input[type=search]").css("font-size", "16px");
-		
-	});
-	
-	$(".touch input[type=search]").blur(function() {
-		
-		$("input[type=search]").css("font-size", "10px");
-		
-		$("form.main-search").removeClass("open-search");
-		
-	});
-	
 	$("form.main-search").submit(function(e) {
 	
 		if ($("input[name=keywords]").val() == "") {
 			
-			$("input[name=keywords]").attr("placeholder", "Oh come on, search for something.").focus();
+			$("input[name=keywords]").attr("placeholder", "").focus();
 			
 			return false;
 			
