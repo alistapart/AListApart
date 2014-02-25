@@ -2246,6 +2246,7 @@ pre.editing code {
 
 .column {
 	display: table-cell;
+	vertical-align: top;
 	width: 50%;
 	padding-right: 24px;
 }
@@ -3075,6 +3076,10 @@ ul.bullets {
 	background: #f0f0f0;
 	border-radius: 4px;
 	min-height: 114px;
+}
+
+.more-content .the-deck:first-child {
+	margin-top: 0;
 }
 
 .the-deck .deck-inner {
