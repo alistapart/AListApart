@@ -7,9 +7,11 @@
 {global-page-top}
 
 	<title>A List Apart Author: {screen_name}</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-		
+	
+	{if googleplus}
+	<link rel="me" href="{googleplus}" />
+	{/if}
+	
 </head>
 
 <body>
@@ -42,13 +44,14 @@
 					
 					<h1>{screen_name}</h1>
 					
-					{if url OR twitter OR facebook}
+					{if url OR twitter OR facebook OR dribbble OR github OR googleplus}
 					<ul class="fancy-links">
 						{if url}<li><a href="{url}">{url}</a></li>{/if}
 						{if twitter}<li><a class="twitter" href="http://twitter.com/{twitter}">{twitter}</a></li>{/if}
 						{if facebook}<li><a class="facebook" href="http://facebook.com/{facebook}">{facebook}</a></li>{/if}
 						{if dribbble}<li><a class="dribbble" href="http://dribbble.com/{dribbble}">{dribbble}</a></li>{/if}
 						{if github}<li><a class="github" href="http://github.com/{github}">{github}</a></li>{/if}
+						{if googleplus}<li><a class="googleplus" href="{googleplus}">Google+</a></li>{/if}
 					</ul>
 					{/if}
 					
