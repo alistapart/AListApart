@@ -289,7 +289,7 @@ $(document).ready(function(){
 
 	});
 	
-	$('body').on('input propertychange', 'textarea[data-autoresize]', function() {
+	$('body').on('input propertychange focus', 'textarea[data-autoresize]', function() {
 	
 		autoResize($(this));
 	

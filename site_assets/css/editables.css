@@ -1,0 +1,514 @@
+* {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+/* take control over placeholders */
+::-webkit-input-placeholder {
+   color: #a9a9a9;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #a9a9a9;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #a9a9a9;  
+}
+
+/* doesn't work on all elements (???) so removing for now
+:-ms-input-placeholder {  
+   color: #a9a9a9;
+} */
+
+:focus::-webkit-input-placeholder {
+	color: #bebebe;
+}
+
+:focus:-moz-placeholder { /* Firefox 18- */
+   color: #bebebe;  
+}
+
+:focus::-moz-placeholder {  /* Firefox 19+ */
+   color: #bebebe;  
+}
+
+input[readonly] {
+	border-color: #ddd !important;
+	color: #aaa !important;
+}
+
+/* doesn't work on all elements (???) so removing for now
+:focus:-ms-input-placeholder {  
+   color: #bebebe;
+} */
+
+body {
+	width: 45%;
+	min-width: 400px;
+	margin: 100px auto;
+	font-size: 14px;
+	line-height: 1.4em;
+	font-family: Helvetica;
+	color: #555;
+}
+
+kbd {
+	padding: 0 4px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	font-size: 12px;
+}
+
+kbd,
+code {
+	font-family: 'Menlo', courier;
+}
+
+h1 {
+	font-size: 24px;
+	line-height: 1em;
+	margin-bottom: 2em;
+}
+
+h2 {
+	font-size: 18px;
+	margin-bottom: 1.3em;
+}
+
+h3 {
+	font-size: 14px;
+	margin-bottom: 1.3em;
+}
+
+h4 {
+	font-size: 12px;
+	margin-bottom: 1.3em;
+}
+
+header  {
+	font-size: 24px;
+	margin-bottom: 2em;
+}
+
+header h1 {
+	margin-bottom: .5em;
+}
+
+header p {
+	font-size: 14px;
+}
+
+.js .hide-if-js {
+	display: none;
+}
+
+p,
+pre {
+	margin-bottom: 1.7em;
+}
+
+.align-right {
+	text-align: right;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.note {
+	display: block;
+	margin-top: 6px;
+	font-size: 11px;
+	line-height: 1.6em;
+	font-style: italic;
+	color: #999;
+}
+
+label + .note {
+	margin-top: -2em;
+	margin-bottom: 2em;
+}
+
+fieldset {
+	margin: 0 2em;
+	margin-bottom: 2em;
+}
+
+.scrolling-checkboxes {
+	display: inline-block;
+	overflow-x: hidden;
+	overflow-y: auto;
+	min-width: none;
+	max-height: 150px;
+	padding: 0;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+fieldset.check-radio label {
+	margin-bottom: .5em;
+}
+
+fieldset.check-radio input {
+	font-size: 2em;
+	margin: 0 3px;
+	vertical-align: text-bottom;
+}
+
+fieldset.check-radio.customized label,
+fieldset.select-field.customized label {
+	position: relative;
+	padding-left: 22px;
+}
+
+fieldset.check-radio.customized .scrolling-checkboxes label {
+	padding: .4em .4em .4em 18px;
+	margin: 0;
+	white-space: nowrap;
+}
+
+fieldset.check-radio.customized .scrolling-checkboxes label:active {
+	color: #999;
+}
+
+fieldset.check-radio.customized .scrolling-checkboxes label:nth-of-type(odd) {
+	background: #eee;
+}
+
+fieldset.check-radio.customized input[type="checkbox"],
+fieldset.check-radio.customized input[type="radio"] {
+	opacity: 0;
+	position: absolute;
+	z-index: -1;
+}
+
+fieldset.check-radio.customized input[type="checkbox"] + label:before,
+fieldset.check-radio.customized input[type="radio"] + label:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 4px;
+	display: block;
+	width: 13px;
+	height: 13px;
+	margin: -3px 6px 0 0;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 11px;
+	text-indent: 4px;
+	background: #fff;
+	cursor: pointer;
+}
+
+fieldset.check-radio.customized .scrolling-checkboxes input[type="checkbox"] + label:before {
+	top: 8px;
+	left: 9px;
+	display: none;
+}
+
+fieldset.check-radio.customized input[type="radio"] + label:before {
+	border-radius: 50%;
+}
+
+fieldset.check-radio.customized input[type="checkbox"]:active + label:before,
+fieldset.check-radio.customized input[type="radio"]:active + label:before {
+	border: 1px solid #999;
+}
+
+fieldset.check-radio.customized input[type="checkbox"]:checked + label:after {
+	content: "";
+	position: absolute;
+	z-index: 100;
+	display: block;
+	width: 9px;
+	height: 9px;
+	top: 4px;
+	left: 3px;
+	border-radius: 2px;
+	background: #666;
+}
+
+fieldset.check-radio.customized .scrolling-checkboxes input[type="checkbox"]:checked + label:after {
+	content: "✓";
+	top: 4px;
+	left: 5px;
+	background: transparent;
+}
+
+fieldset.check-radio.customized input[type="radio"]:checked + label:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 7px;
+	height: 7px;
+	top: 5px;
+	left: 4px;
+	border-radius: 50%;
+	background: #666;
+}
+
+label.select-field.customized {
+	position: relative;
+	display: inline-block;
+	width: auto;
+}
+
+label.select-field.customized:after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 2.6em;
+	right: .8em;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 8px 5px 0 5px;
+	border-color: #999 transparent transparent transparent;
+	pointer-events: none;
+}
+
+label.customized select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	display: block;
+	padding: .4em 3.8em .4em .8em;
+	font-size: 12px;
+	background: transparent;
+	border: 1px solid #ccc;
+	border-radius: .3em;
+	color: #666;
+	outline: 0;
+	opacity: 1;
+	cursor: pointer;
+	
+	-webkit-transition: all 200ms ease-in-out;
+	-moz-transition: all 200ms ease-in-out;
+	-ms-transition: all 200ms ease-in-out;
+	-o-transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;
+}
+
+label.customized select[multiple] {
+	min-height: 93px;
+	padding: .4em;
+	font-size: 12px;
+}
+
+label.customized select[multiple] option:nth-child(odd) {
+	background: #eee;
+}
+
+label.select-field.customized select::-ms-expand {
+    display: none;
+}
+
+/* some firefox and IE fixes */
+html[data-useragent*='Firefox'] label.select-field.customized:before {
+	content: "";
+	position: absolute;
+	z-index: 9;
+	top: 2.5em;
+	right: .6em;
+	width: 22px;
+	height: 18px;
+	background: #fff;
+	pointer-events: none;
+}
+
+html[data-useragent*='Firefox'] label.select-field.customized:after {
+	z-index: 10;	
+	top: 2.9em;
+	right: .9em;
+}
+
+html[data-useragent*='Firefox'] label.select-field.customized select,
+html.ie-lt10 label.select-field.customized select {
+	padding-right: .8em;
+}
+
+/* giving up on making the triangle work in IE9 */
+html.ie-lt10 label.select-field.customized:before,
+html.ie-lt10 label.select-field.customized:after {
+	display: none;
+}
+
+label.select-field.customized select:active:not([readonly]),
+label.select-field.customized select:focus:not([readonly]),
+label.multi-select-field.customized select:active:not([readonly]),
+label.multi-select-field.customized select:focus:not([readonly]) {
+	border: 1px solid #999;
+}
+
+fieldset.address label {
+	width: 50%;
+}
+
+hr {
+	height: 0;
+	border: 0;
+	margin: 60px auto;
+}
+
+hr:after {
+	content: "";
+	display: block;
+	width: 25%;
+	height: 0;
+	margin: 0 auto;
+	border-top: 1px solid #ccc;
+}
+
+legend + * {
+	padding-top: 3px; /* obviates most legend margin oddities */
+}
+
+label, legend {
+	display: block;
+	width: 100%;
+	margin: 0 0 2em;
+	font-size: 12px;
+}
+
+label.half-width {
+	width: 50%;
+}
+
+label.half-width input {
+	display: inline-block;
+}
+
+select {
+	display: block;
+	max-width: 100%;
+	min-width: 200px;
+	padding: 0.5em 0 0.3em; /* this is for firefox; seems to have no effect in webkit */
+}
+
+input {
+	display: inline-block;
+	max-width: 100%;
+}
+
+input[type='submit'],
+input[type='button'],
+button {
+	-webkit-appearance: none;
+	padding: .7em 1em;
+	border: 1px solid #ccc;
+	border-radius: .3em;
+	font-size: 14px;
+	background: #fff;
+	color: #666;
+	
+	-webkit-transition: all 200ms ease-in-out;
+	-moz-transition: all 200ms ease-in-out;
+	-ms-transition: all 200ms ease-in-out;
+	-o-transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;
+}
+
+input[type='submit']:hover,
+input[type='button']:hover,
+button:hover {
+	color: #222;
+	border-color: #999;
+}
+
+input[type='text'],
+input[type='email'] {
+	width: 100%;
+	display: block;
+	padding: .7em 1em;
+	border: 1px solid #ccc;
+	border-radius: .3em;
+	
+	font-family: 'Menlo', courier;
+	font-size: 14px;
+	line-height: 1em;
+	color: #666;
+	outline: 0;
+	
+	-webkit-transition: all 200ms ease-in-out;
+	-moz-transition: all 200ms ease-in-out;
+	-ms-transition: all 200ms ease-in-out;
+	-o-transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;
+}
+
+input.short {
+	width: 100px;
+}
+
+fieldset figure {
+	margin: 1em 0;
+	padding: 1em;
+	text-align: center;
+	background: #eee;
+}
+
+textarea {
+	display: block;
+	width: 100%;
+	min-height: 90px;
+	margin: 0 auto;
+	
+	padding: .7em 1em;
+	border: 1px solid #ccc;
+	border-radius: .4em;
+	
+	font-family: 'Menlo', courier;
+	font-size: 14px;
+	line-height: 1.3em;
+	color: #666;
+	outline: 0;
+	
+	-webkit-transition: all 200ms ease-in-out, height 100ms ease-in-out;
+	-moz-transition: all 200ms ease-in-out, height 100ms ease-in-out;
+	-ms-transition: all 200ms ease-in-out, height 100ms ease-in-out;
+	-o-transition: all 200ms ease-in-out, height 100ms ease-in-out;
+	transition: all 200ms ease-in-out, height 100ms ease-in-out;
+}
+
+label > select,
+label > input[type='text'],
+label > input[type='email'],
+label > textarea {
+	margin-top: 3px;
+}
+
+.js textarea[data-autoresize] {
+	resize: none;
+}
+
+textarea:not([data-autoresize]) {
+	-webkit-transition: all 200ms ease-in-out, height 0;
+	-moz-transition: all 200ms ease-in-out, height 0;
+	-ms-transition: all 200ms ease-in-out, height 0;
+	-o-transition: all 200ms ease-in-out, height 0;
+	transition: all 200ms ease-in-out, height 0;
+}
+
+input:not([type='checkbox']):not([type='radio']):focus:not([readonly]),
+textarea:focus:not([readonly]) {
+	color: #000;
+	border: 1px solid #999;
+}
+
+.auto-populated input,
+.auto-populated select,
+.auto-populated textarea {
+	background: #cfc;
+}
+
+.valid input,
+.valid select,
+.valid textarea {
+	background: #cfc;
+}
+
+.invalid input,
+.invalid select,
+.invalid textarea {
+	background: #fee;
+}
