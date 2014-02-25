@@ -1149,6 +1149,11 @@ ul.fancy-links li a.facebook {
 	background: url(../img/icon_facebook2.png) 5px center no-repeat;
 }
 
+ul.fancy-links li a.googleplus {
+	padding-left: 32px;
+	background: url(../img/icon_googleplus.png) 5px center no-repeat;
+}
+
 .article-layout .main-content {
 	width: 960px;
 	max-width: 100%;
