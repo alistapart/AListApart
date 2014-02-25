@@ -177,34 +177,34 @@
 	}
 
 	.global-nav .main-search input[type=search] {
-		display: inline-block;
-		vertical-align: middle;
-		width: 80% !important;
-		width: calc(100% - 48px) !important;
-		padding: 3px 9px;
-		opacity: 1;
-		border: 1px solid #666;
-		font-size: 14px;
-	}
+        display: inline-block;
+        vertical-align: middle;
+        width: 80% !important;
+        width: calc(100% - 32px) !important;
+        padding: 3px 1px !important;
+        opacity: 1;
+		background: transparent;
+        font-size: 14px;
+		border-radius: 0;
+    }
 
-	.global-nav .main-search label.submit-search {
-		z-index: -1;
-		position: relative;
-		display: inline-block;
-		vertical-align: middle;
-		margin-left: -21px;
-		width: auto;
-		height: auto;
-		padding: 5px 10px 4px 20px;
-		background: #000;
-		border-radius: 50px;
-	}
+    .global-nav .main-search label.submit-search {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 0;
+        width: auto;
+        height: auto;
+        padding: 14px
+        10px 12px 12px;
+        background: #000;
+    }
 
-	.global-nav .main-search label.submit-search input {
-		display: block;
-		visibility: visible;
-		opacity: 1;
-	}
+    .global-nav .main-search label.submit-search
+    input {
+        display: block;
+        visibility: visible;
+        opacity: 1
+    }
 	
 	.killer-logo > a {
 		margin-left: -25%;
