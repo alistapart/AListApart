@@ -85,23 +85,48 @@ $(document).ready(function(){
 	});
 	*/
 	
-	$(".perfect-form-demo").on('click', 'button.spinner', function(e) {
+	/* 
+		ajax submission failure
+		have not figured out how to get a fresh XID from EE
+		
+	var formOptions = { 
+		target:				null   // target element(s) to be updated with server response 
+		,beforeSubmit:		showRequest  // pre-submit callback 
+		,success:			showResponse  // post-submit callback 
+		,beforeSubmit: 	function(arr, $form, options) { 
+			
+			$form.find('.spinner').addClass('submitting');
+			                
+		}
+	};
 	
-		var formOptions = { 
-			target:				null,   // target element(s) to be updated with server response 
-			beforeSubmit:		showRequest,  // pre-submit callback 
-			success:			showResponse,  // post-submit callback 
-			timeout:			500
-		}; 
-		
-		$(this).addClass('submitting');
-		
-		whichForm = $(this).closest(".perfect-form-demo");
-		
-		$(whichForm).ajaxForm(formOptions); 
-		
-	});
+	if ($(".perfect-form-demo").length != -1) {
 	
+		$(".perfect-form-demo").ajaxForm(formOptions);
+	
+	};
+	
+	*/
+	
+	/*$(".perfect-form-demo").on('submit', function(e) {
+		
+		e.preventDefault();
+		
+		$.ajax({
+			method: "POST",
+			url: $(this).attr('action'),
+			type: $(this).attr('method'),
+			dataType: 'json',
+			data: $(this).serialize(),
+			success: function( data ) {
+				alert('Submitted');
+			},
+			error: function( xhr, err ) {
+				alert(xhr.getResponseHeader('X-EEXID'));     
+			}
+		});
+		
+	});*/
 	
 	$("body").on("click", "#cancel-login", function(e) {
 		
@@ -662,6 +687,10 @@ function autoResize(which) {
 		
 };
 
+/* 
+	ajax submission failure
+	have not figured out how to get a fresh XID from EE
+
 // pre-submit callback 
 function showRequest(formData, jqForm, options) { 
 	// formData is an array; here we use $.param to convert it to a string to display it 
@@ -694,6 +723,12 @@ function showResponse(responseText, statusText, xhr, $form)  {
 	
 	//alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + '\n\nThe output div should have already been updated with the responseText.'); 
 	
+	alert(xhr.getResponseHeader('X-EEXID'));
+	
+	$('body').data('xid', xhr.getResponseHeader('X-EEXID'));
+	
 	$('.submitting').removeClass('submitting');
 	
 }
+
+*/
