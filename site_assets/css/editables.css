@@ -42,9 +42,9 @@ input[readonly] {
 
 body {
 	width: 45%;
-	min-width: 400px;
+	min-width: 370px;
 	margin: 100px auto;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.4em;
 	font-family: Helvetica;
 	color: #555;
@@ -54,7 +54,7 @@ kbd {
 	padding: 0 4px;
 	border: 1px solid #ddd;
 	border-radius: 3px;
-	font-size: 12px;
+	font-size: .8em;
 }
 
 kbd,
@@ -63,28 +63,29 @@ code {
 }
 
 h1 {
-	font-size: 24px;
+	font-size: 1.4em;
 	line-height: 1em;
 	margin-bottom: 2em;
+	color: #000;
 }
 
 h2 {
-	font-size: 18px;
+	font-size: 1.3em;
 	margin-bottom: 1.3em;
 }
 
 h3 {
-	font-size: 14px;
+	font-size: 1em;
 	margin-bottom: 1.3em;
 }
 
 h4 {
-	font-size: 12px;
+	font-size: .8em;
 	margin-bottom: 1.3em;
 }
 
 header  {
-	font-size: 24px;
+	font-size: 1.4em;
 	margin-bottom: 2em;
 }
 
@@ -93,7 +94,7 @@ header h1 {
 }
 
 header p {
-	font-size: 14px;
+	font-size: .75em;
 }
 
 .js .hide-if-js {
@@ -116,7 +117,7 @@ pre {
 .note {
 	display: block;
 	margin-top: 6px;
-	font-size: 11px;
+	font-size: 1em;
 	line-height: 1.6em;
 	font-style: italic;
 	color: #999;
@@ -193,7 +194,7 @@ fieldset.check-radio.customized input[type="radio"] + label:before {
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	text-align: center;
-	font-size: 16px;
+	font-size: 1em;
 	line-height: 11px;
 	text-indent: 4px;
 	background: #fff;
@@ -273,7 +274,7 @@ label.customized select {
 	appearance: none;
 	display: block;
 	padding: .4em 3.8em .4em .8em;
-	font-size: 12px;
+	font-size: .8em;
 	background: transparent;
 	border: 1px solid #ccc;
 	border-radius: .3em;
@@ -292,7 +293,7 @@ label.customized select {
 label.customized select[multiple] {
 	min-height: 93px;
 	padding: .4em;
-	font-size: 12px;
+	font-size: .8em;
 }
 
 label.customized select[multiple] option:nth-child(odd) {
@@ -367,7 +368,7 @@ label, legend {
 	display: block;
 	width: 100%;
 	margin: 0 0 2em;
-	font-size: 12px;
+	font-size: .8em;
 }
 
 label.half-width {
@@ -394,18 +395,56 @@ input[type='submit'],
 input[type='button'],
 button {
 	-webkit-appearance: none;
+	position: relative;
 	padding: .7em 1em;
 	border: 1px solid #ccc;
 	border-radius: .3em;
-	font-size: 14px;
+	font-size: .9em;
 	background: #fff;
 	color: #666;
+	overflow: hidden;
 	
 	-webkit-transition: all 200ms ease-in-out;
 	-moz-transition: all 200ms ease-in-out;
 	-ms-transition: all 200ms ease-in-out;
 	-o-transition: all 200ms ease-in-out;
 	transition: all 200ms ease-in-out;
+}
+
+button .label {
+	position: relative;
+	z-index: 2;
+	
+	-webkit-transition: all 300ms ease-in-out;
+	-moz-transition: all 300ms ease-in-out;
+	-ms-transition: all 300ms ease-in-out;
+	-o-transition: all 300ms ease-in-out;
+	transition: all 300ms ease-in-out;
+}
+
+button.submitting .label {
+	opacity: 0;
+}
+
+button .spinner {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../img/spinner_2.gif) center no-repeat;
+	opacity: 0;
+	
+	-webkit-transition: all 300ms ease-in-out;
+	-moz-transition: all 300ms ease-in-out;
+	-ms-transition: all 300ms ease-in-out;
+	-o-transition: all 300ms ease-in-out;
+	transition: all 300ms ease-in-out;
+}
+
+button.submitting .spinner {
+	opacity: 1;
 }
 
 input[type='submit']:hover,
@@ -416,6 +455,7 @@ button:hover {
 }
 
 input[type='text'],
+input[type='password'],
 input[type='email'] {
 	width: 100%;
 	display: block;
@@ -424,7 +464,7 @@ input[type='email'] {
 	border-radius: .3em;
 	
 	font-family: 'Menlo', courier;
-	font-size: 14px;
+	font-size: 1.1em;
 	line-height: 1em;
 	color: #666;
 	outline: 0;
@@ -458,8 +498,8 @@ textarea {
 	border-radius: .4em;
 	
 	font-family: 'Menlo', courier;
-	font-size: 14px;
-	line-height: 1.3em;
+	font-size: 1em;
+	line-height: 1.7em;
 	color: #666;
 	outline: 0;
 	
