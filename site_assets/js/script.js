@@ -41,10 +41,6 @@ $(document).ready(function(){
 		
 		mixpanel.track($(this).attr('data-trackevent'));
 		
-		alert($(this).attr('data-trackevent'));
-		
-		return false;
-		
 	});
 
 	$("sup[data-footnote]").each(function() {
