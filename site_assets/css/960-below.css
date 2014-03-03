@@ -361,6 +361,11 @@ ol.article-comments > li {
 	overflow: hidden;
 }
 
+.edit-comment,
+.embed-comment {
+	margin-left: 0;
+	}
+
 .comment-body {
 	clear: both;
 	margin-left: 0;
