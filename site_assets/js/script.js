@@ -36,6 +36,16 @@ $(document).ready(function(){
 	$('body').click(function() {
 	   $('html').removeClass('show-nav'); 
 	});
+	
+	$('[data-trackevent]').on('click', function() {
+		
+		mixpanel.track($(this).attr('data-trackevent'));
+		
+		alert($(this).attr('data-trackevent'));
+		
+		return false;
+		
+	});
 
 	$("sup[data-footnote]").each(function() {
 
