@@ -467,7 +467,7 @@ $(window).bind('enterBreakpoint600',function() {
 		
 		autoLoadComments();
 	
-		$(window).bind("scrollend", function() {
+		$(window).scrollStopped(function(){
 	
 			autoLoadComments();
 		
@@ -476,6 +476,17 @@ $(window).bind('enterBreakpoint600',function() {
 	};
 	
 });
+
+$.fn.scrollStopped = function(callback) {          
+    $(this).scroll(function(){
+    
+        var self = this, $this = $(self);
+        if ($this.data('scrollTimeout')) {
+          clearTimeout($this.data('scrollTimeout'));
+        }
+        $this.data('scrollTimeout', setTimeout(callback,250,self));
+    });
+};
 
 // because we're post-loading some things, anchor link target positions often change
 // (because the page changes size/shape after things are inserted)
