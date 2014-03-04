@@ -385,7 +385,7 @@ var autoLoadComments = function() {
 	
 	loadCommentsButton = $("#load-comments").offset();
 	
-	if ($(window).scrollTop() >= (loadCommentsButton.top - $(window).height())) {
+	if ((commentsLoaded == false) && ($(window).scrollTop() >= (loadCommentsButton.top - $(window).height()))) {
 		
 		//console.log('trigger comment load now');
 		
