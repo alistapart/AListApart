@@ -116,6 +116,20 @@ pre {
 	text-align: center;
 }
 
+.good-show {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	color: rgba(23,187,91,1);
+	padding: .4em 1em;
+	border: 1px solid rgba(23,187,91,0.3);
+	border-top: 0;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	box-shadow: 0px 0px 9px -4px  rgba(23,187,91,0.3);
+}
+
 .note {
 	display: block;
 	margin-top: 6px;
