@@ -34,11 +34,11 @@
 			The ALA Profile Editor
 		</h1>
 
-		<p>There's a bunch of stuff in here that we don't use at the moment. (<em>At the moment...</em>) (Just kidding.) (<em>Or am I?</em>)</p>
-
 		{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
 
-		<p>ALA staff and authors! Anyone can use this form, but you get optional extras like a nice big photo.</p>
+		<p>We don't use everything in here yet, but we may in the future.</p>
+
+		<p>ALA staff and authors! Anyone can use this form, but you get optional extras like social stuff and a nice big photo.</p>
 
 		{/if}
 		
@@ -49,7 +49,7 @@
 {exp:user:edit 
 	member_id="{segment_3}" 
 	dynamic="off" 
-	return="/edit/profile/{segment_3}" 
+	return="/edit/profile/{member_id}/good-show" 
 	form:class="perfect-form-demo"}
 
 	<h2>The Basics</h2>
@@ -69,14 +69,14 @@
 		</label>
 		
 		{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
-	
+		
 		<label>
-			First Name:
+			First Name: <small>(required for authors)</small>
 			<input name="first_name" type="text" value="{first_name}">
 		</label>
 	
 		<label>
-			Last Name:
+			Last Name: <small>(required for authors)</small>
 			<input name="last_name" type="text" value="{last_name}">
 		</label>
 		
@@ -128,6 +128,10 @@
 			<span class="note">no http, no trailing slash</span>
 		</label>
 		
+		{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
+		
+		<h3>Extra social stuff for authors:</h3>
+		
 		<label>
 			Twitter:
 			<input name="twitter" type="text" value="{twitter}">
@@ -160,17 +164,23 @@
 			<span class="note">example 2: https://plus.google.com/104877852135164107223‎</span>
 		</label>
 		
+		{/if}
+		
 	</fieldset>
+	
+	{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
 	
 	<fieldset>
 			
 		<label>
-			Bio
+			Bio: <small>(required for authors)</small>
 			<textarea name="bio" data-autoresize style="height: 100px;">{bio}</textarea>
 			<span class="note">links encouraged</span>
 		</label>
 
 	</fieldset>
+	
+	{/if}
 	
 	<p class="align-center">
 		<button type="submit" class="spinner">

@@ -75,8 +75,10 @@ h2 {
 }
 
 h3 {
-	font-size: 1em;
+	font-size: .8em;
 	margin-bottom: 1.3em;
+	text-transform: uppercase;
+	font-weight: 600;
 }
 
 h4 {
@@ -564,4 +566,16 @@ textarea:focus:not([readonly]) {
 .invalid select,
 .invalid textarea {
 	background: #fee;
+}
+
+@media only screen and (max-width: 460px) {
+
+body {
+	padding: 0 2em;
+}
+
+h1 {
+	font-size: 1em;
+}
+
 }
