@@ -13,8 +13,6 @@ $(document).ready(function (){
 
 	$('form').on('submit', function(e) {
 		
-		e.preventDefault();
-		
 		errors = 0;
 		
 		$(this).find('input[data-isvalid]').each(function() {
@@ -29,7 +27,7 @@ $(document).ready(function (){
 			
 		});
 		
-		console.log(errors);
+		if (errors != 0) return false;
 		
 	});
 	
