@@ -60,13 +60,13 @@
 		
 		<label>
 			Username:
-			<input name="username" type="text" value="{username}" readonly>
+			<input name="username" type="text" value="{username}" data-type="any" data-isvalid="{if username}yes{/if}" readonly required>
 			<span class="note">Readonly. If you must change this, get in touch.</span>
 		</label>
 	
 		<label>
 			Visible Name:
-			<input name="screen_name" type="text" value="{screen_name}">
+			<input name="screen_name" type="text" value="{screen_name}" data-validate="onblur" data-type="any" data-isvalid="{if screen_name}yes{/if}" required>
 			<span class="note">For reasons passing understanding, this must be unique.</span>
 		</label>
 		
@@ -74,19 +74,19 @@
 		
 		<label>
 			First Name: <small>(required for authors)</small>
-			<input name="first_name" type="text" value="{first_name}">
+			<input name="first_name" type="text" value="{first_name}" data-validate="onblur" data-type="any" data-isvalid="{if first_name}yes{/if}" required>
 		</label>
 	
 		<label>
 			Last Name: <small>(required for authors)</small>
-			<input name="last_name" type="text" value="{last_name}">
+			<input name="last_name" type="text" value="{last_name}" data-validate="onblur" data-type="any" data-isvalid="{if last_name}yes{/if}" required>
 		</label>
 		
 		{/if}
 	
 		<label>
 			Email:
-			<input name="email" type="email" value="{email}">
+			<input name="email" type="email" value="{email}" data-validate="onblur" data-type="email" data-isvalid="{if email}yes{/if}" required>
 		</label>
 		
 		<label>
@@ -136,25 +136,25 @@
 		
 		<label>
 			Twitter:
-			<input name="twitter" type="text" value="{twitter}">
+			<input name="twitter" type="text" value="{twitter}" data-validate="onblur" data-type="no-url" data-isvalid="{if twitter}yes{/if}">
 			<span class="note">username only, no @</span>
 		</label>
 		
 		<label>
 			Facebook:
-			<input name="facebook" type="text" value="{facebook}">
+			<input name="facebook" type="text" value="{facebook}" data-validate="onblur" data-type="no-url" data-isvalid="{if facebook}yes{/if}">
 			<span class="note">username only</span>
 		</label>
 		
 		<label>
 			GitHub:
-			<input name="github" type="text" value="{github}">
+			<input name="github" type="text" value="{github}" data-validate="onblur" data-type="no-url" data-isvalid="{if github}yes{/if}">
 			<span class="note">username only</span>
 		</label>
 		
 		<label>
 			Dribble:
-			<input name="dribbble" type="text" value="{dribbble}">
+			<input name="dribbble" type="text" value="{dribbble}" data-validate="onblur" data-type="no-url" data-isvalid="{if dribbble}yes{/if}">
 			<span class="note">username only</span>
 		</label>
 		
@@ -176,7 +176,7 @@
 			
 		<label>
 			Bio: <small>(required for authors)</small>
-			<textarea name="bio" data-autoresize style="height: 100px;">{bio}</textarea>
+			<textarea name="bio" data-autoresize style="height: 100px;" data-validate="onblur" data-type="any" data-isvalid="{if bio}yes{/if}" required>{bio}</textarea>
 			<span class="note">links encouraged</span>
 		</label>
 
@@ -289,6 +289,7 @@
 <script src="/d/_repo/site_assets/js/libs/picturefill.js"></script>
 <script src="/d/_repo/site_assets/js/libs/breakpoints.js"></script>
 <script src="/d/_repo/site_assets/js/libs/jquery.form.min.js"></script>
+<script src="/d/_repo/site_assets/js/form-stuff.js"></script>
 <script src="/d/_repo/site_assets/js/script.js"></script>
 
 
