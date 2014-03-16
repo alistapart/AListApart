@@ -160,8 +160,8 @@
 		
 		<label>
 			Google+:
-			<input name="googleplus" type="text" value="{googleplus}">
-			<span class="note">until this gets smarter, add the whole URL for your profile</span>
+			<input name="googleplus" type="text" value="{googleplus}" data-validate="onblur" data-type="url" data-isvalid="{if googleplus}yes{/if}">
+			<span class="note">Add the whole URL for your profile</span>
 			<span class="note">example 1: http://google.com/+TimMurtaugh</span>
 			<span class="note">example 2: https://plus.google.com/104877852135164107223‎</span>
 		</label>

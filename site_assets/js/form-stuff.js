@@ -86,6 +86,18 @@ function inputValidation(which, requiredState, valType, value) {
 			
 			};
 		
+		} else if (valType == "url") {
+			
+			if (urlFilter.test(which.val())) {
+			
+				which.attr('data-isvalid', 'yes').parent().removeClass('invalid');
+			
+			} else if (which.val().length != 0) {
+				
+				which.attr('data-isvalid', 'no').parent().removeClass("valid");
+			
+			};
+		
 		} else if (valType == "no-url") {
 		
 			if (which.val().indexOf("/") === -1) {
