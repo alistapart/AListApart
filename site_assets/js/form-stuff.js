@@ -98,6 +98,20 @@ function inputValidation(which, requiredState, valType, value) {
 			
 			};
 		
+		} else if (valType == "matching") {
+		
+			matchWhich = $('#' + which.attr('data-mustmatch'));
+			
+			if (matchWhich.val() == which.val()) {
+				
+				which.attr('data-isvalid', 'yes').parent().removeClass('invalid');
+				
+			} else {
+				
+				which.attr('data-isvalid', 'no').parent().removeClass("valid");
+				
+			};
+		
 		} else {
 		
 			which.attr('data-isvalid', 'yes').parent().removeClass('invalid');

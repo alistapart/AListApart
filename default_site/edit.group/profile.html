@@ -60,7 +60,7 @@
 		
 		<label>
 			Username:
-			<input name="username" type="text" value="{username}" data-type="any" data-isvalid="{if username}yes{/if}" readonly required>
+			<input type="text" value="{username}" readonly>
 			<span class="note">Readonly. If you must change this, get in touch.</span>
 		</label>
 	
@@ -91,13 +91,13 @@
 		
 		<label>
 			Change Password:
-			<input name="password" type="password" value="">
+			<input id="password" name="password" type="password" value="">
 			<span class="note">Make it good.</span>
 		</label>
 		
 		<label>
 			Password Confirmation:
-			<input name="password_confirm" type="password" value="">
+			<input name="password_confirm" type="password" value="" data-validate="onblur" data-type="matching" data-mustmatch="password" data-isvalid="yes">
 			<span class="note">Make it the same.</span>
 		</label>
 
