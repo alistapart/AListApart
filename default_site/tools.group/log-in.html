@@ -1,3 +1,11 @@
+{exp:ifelse parse="inward"}	
+
+{if logged_in}
+
+	{exp:redirecturl url="{last_page_visited}"}
+
+{if:else}
+
 <!doctype html>
 	
 <!--[if lt IE 7]> <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -21,7 +29,7 @@
 
 	<script src="/d/_repo/site_assets/js/libs/modernizr-dev.js"></script>
 
-	<title>A List Apart Profile Editor</title>
+	<title>A List Apart: Would you like to log in?</title>
 		
 </head>
 
@@ -36,18 +44,18 @@
 		
 	</header>
 	
-	{exp:member:login_form 
-		return="{two_pages_ago}" 
-		id="sign-in-form" 
-		class="sign-in-form"}
+	{exp:freemember:login 
+		return="PREVIOUS_URL" 
+		form_id="sign-in-form" 
+		form_class="sign-in-form"}
 								
-		<label for="login-name-here">
-			Username <small>(<a id="show-registration-form" href="/utilities/register">need an account?</a>)</small>
-			<input id="login-name-here" name="username" type="text" data-validate="onblur" data-type="any" data-isvalid="" required />
+		<label for="username">
+			Username / Email Address <small>(<a href="/tools/register">need an account?</a>)</small>
+			<input id="username" name="username" type="text" data-validate="onblur" data-type="any" data-isvalid="" required />
 		</label>
 	
 		<label for="login_password">
-			Password <small>(<a id="show-forgot-password-form" href="/utilities/forgot-password">forgotten it?</a>)</small>
+			Password <small>(<a href="/tools/forgot-password">forgotten it?</a>)</small>
 			<input id="login_password" name="password" type="password" required="required" data-validate="onblur" data-type="any" data-isvalid="" required />
 		</label>
 		
@@ -67,11 +75,11 @@
 		
 		<p><small>
 				Log in with... 
-				<a class="buttonish" href="{site_url}/?ACT=59&provider=twitter&RET={two_pages_ago}">Twitter</a>
-				<a class="buttonish" href="{site_url}/?ACT=59&provider=facebook&RET={two_pages_ago}">Facebook</a>
+				<a class="buttonish" href="{site_url}/?ACT=59&provider=twitter&RET={last_page_visited}">Twitter</a>
+				<a class="buttonish" href="{site_url}/?ACT=59&provider=facebook&RET={last_page_visited}">Facebook</a>
 		</small></p>
 	
-	{/exp:member:login_form}
+	{/exp:freemember:login}
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/d/_repo/site_assets/js/libs/jquery-1.8.2.min.js"><\/script>')</script>
@@ -93,3 +101,6 @@
 
 </body>
 </html>
+
+{/if}
+{/exp:ifelse}
