@@ -12,12 +12,14 @@
 $(document).ready(function (){
 
 	$('form').on('submit', function(e) {
+	
+		//e.preventDefault();
 		
 		errors = 0;
 		
 		$(this).find('input[data-isvalid]').each(function() {
 			
-			if ($(this).attr('data-isvalid') == 'no') {
+			if (($(this).attr('data-isvalid') == 'no') || ($(this).attr("required") && ($(this).val() == ''))) {
 				
 				errors++;
 				
@@ -36,7 +38,7 @@ $(document).ready(function (){
 		valType = $(this).attr('data-type');
 		value = $(this).val();
 		
-		if($(this).attr("required")) {
+		if ($(this).attr("required")) {
 			
 			required = true;
 			

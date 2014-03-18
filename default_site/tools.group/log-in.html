@@ -1,0 +1,95 @@
+<!doctype html>
+	
+<!--[if lt IE 7]> <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie ie9 lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+
+	<meta charset="utf-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<meta name="viewport" content="width=device-width">
+	
+	<link rel="stylesheet" href="/d/_repo/site_assets/css/reset.css" />
+	<link rel="stylesheet" href="/d/_repo/site_assets/css/editables.css" />
+
+	<script src="/d/_repo/site_assets/js/libs/prefixfree.min.js"></script>
+
+	<script src="/d/_repo/site_assets/js/libs/modernizr-dev.js"></script>
+
+	<title>A List Apart Profile Editor</title>
+		
+</head>
+
+<body data-xid="{XID_HASH}">
+
+	<header>
+	
+		<h1>
+			<img src="/d/_repo/site_assets/img/favicons/apple-touch-icon-57x57.png" alt="" width="57" height="57" style="display: inline-block; height: 40px; width: auto; vertical-align: middle; margin-right: 9px; margin-top: -10px;">
+			Log In
+		</h1>
+		
+	</header>
+	
+	{exp:member:login_form 
+		return="{two_pages_ago}" 
+		id="sign-in-form" 
+		class="sign-in-form"}
+								
+		<label for="login-name-here">
+			Username <small>(<a id="show-registration-form" href="/utilities/register">need an account?</a>)</small>
+			<input id="login-name-here" name="username" type="text" data-validate="onblur" data-type="any" data-isvalid="" required />
+		</label>
+	
+		<label for="login_password">
+			Password <small>(<a id="show-forgot-password-form" href="/utilities/forgot-password">forgotten it?</a>)</small>
+			<input id="login_password" name="password" type="password" required="required" data-validate="onblur" data-type="any" data-isvalid="" required />
+		</label>
+		
+		{if auto_login}
+		<fieldset class="check-radio customized">
+			<input type="checkbox" id="auto_login" name="auto_login" value="1" checked>
+			<label for="auto_login">Auto-login on future visits</label>
+		</fieldset>
+		{/if}
+		
+		<p class="align-center">
+			<button type="submit" class="spinner">
+				<span class="label">Submit</span>
+				<span class="spinner"></span>
+			</button>
+		</p>
+		
+		<p><small>
+				Log in with... 
+				<a class="buttonish" href="{site_url}/?ACT=59&provider=twitter&RET={two_pages_ago}">Twitter</a>
+				<a class="buttonish" href="{site_url}/?ACT=59&provider=facebook&RET={two_pages_ago}">Facebook</a>
+		</small></p>
+	
+	{/exp:member:login_form}
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/d/_repo/site_assets/js/libs/jquery-1.8.2.min.js"><\/script>')</script>
+
+<script src="/d/_repo/site_assets/js/libs/matchmedia.js"></script>
+<script src="/d/_repo/site_assets/js/libs/picturefill.js"></script>
+<script src="/d/_repo/site_assets/js/libs/breakpoints.js"></script>
+<script src="/d/_repo/site_assets/js/libs/jquery.form.min.js"></script>
+<script src="/d/_repo/site_assets/js/form-stuff.js"></script>
+<script src="/d/_repo/site_assets/js/script.js"></script>
+
+
+<!--<script>
+	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>-->
+
+</body>
+</html>

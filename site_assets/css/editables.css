@@ -69,6 +69,15 @@ h1 {
 	color: #000;
 }
 
+h1 img {
+	display: inline-block; 
+	height: 40px; 
+	width: auto; 
+	vertical-align: middle; 
+	margin-right: 9px; 
+	margin-top: -10px;
+}
+
 h2 {
 	font-size: 1.3em;
 	margin-bottom: 1.3em;
@@ -145,7 +154,6 @@ label + .note {
 }
 
 fieldset {
-	margin: 0 2em;
 	margin-bottom: 2em;
 }
 
@@ -173,7 +181,7 @@ fieldset.check-radio input {
 fieldset.check-radio.customized label,
 fieldset.select-field.customized label {
 	position: relative;
-	padding-left: 22px;
+	padding-left: 28px;
 }
 
 fieldset.check-radio.customized .scrolling-checkboxes label {
@@ -204,9 +212,9 @@ fieldset.check-radio.customized input[type="radio"] + label:before {
 	left: 0;
 	top: 4px;
 	display: block;
-	width: 13px;
-	height: 13px;
-	margin: -3px 6px 0 0;
+	width: 1.65em;
+	height: 1.65em;
+	margin: -.4em 1em 0 0;
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	text-align: center;
@@ -215,6 +223,11 @@ fieldset.check-radio.customized input[type="radio"] + label:before {
 	text-indent: 4px;
 	background: #fff;
 	cursor: pointer;
+}
+
+fieldset.check-radio.customized input[type="checkbox"]:focus + label:before,
+fieldset.check-radio.customized input[type="radio"]:focus + label:before {
+	outline: 1px dotted #333;
 }
 
 fieldset.check-radio.customized .scrolling-checkboxes input[type="checkbox"] + label:before {
@@ -227,22 +240,36 @@ fieldset.check-radio.customized input[type="radio"] + label:before {
 	border-radius: 50%;
 }
 
-fieldset.check-radio.customized input[type="checkbox"]:active + label:before,
 fieldset.check-radio.customized input[type="radio"]:active + label:before {
 	border: 1px solid #999;
 }
 
-fieldset.check-radio.customized input[type="checkbox"]:checked + label:after {
+fieldset.check-radio.customized input[type="checkbox"]:active + label:after {
+	background: #ddd;
+	color: #aaa;
+}
+
+fieldset.check-radio.customized input[type="checkbox"] + label:after {
 	content: "";
 	position: absolute;
 	z-index: 100;
 	display: block;
-	width: 9px;
-	height: 9px;
-	top: 4px;
-	left: 3px;
+	width: 1em;
+	height: 1em;
+	top: .15em;
+	left: .2em;
 	border-radius: 2px;
-	background: #666;
+	background: #eee;
+	color: #222;
+	font-weight: bold;
+	text-indent: .15em;
+	line-height: 1em;
+	font-size: 1.4em;
+}
+
+fieldset.check-radio.customized input[type="checkbox"]:checked + label:after {
+	content: "✓";
+	background: #ddd;
 }
 
 fieldset.check-radio.customized .scrolling-checkboxes input[type="checkbox"]:checked + label:after {
@@ -418,6 +445,7 @@ button {
 	font-size: .9em;
 	background: #fff;
 	color: #666;
+	text-decoration: none;
 	overflow: hidden;
 	
 	-webkit-transition: all 200ms ease-in-out;
@@ -481,6 +509,26 @@ input[type='button']:hover,
 button:hover {
 	color: #222;
 	border-color: #999;
+}
+
+input[type='submit']:focus,
+input[type='button']:focus,
+button:focus {
+	outline: 1px dotted #000;
+}
+
+a.buttonish {
+	padding: .4em;
+	background: #eee;
+	color: #666;
+	text-decoration: none;
+	border-radius: 3px;
+	transition: all 200ms ease-in-out;
+}
+
+a.buttonish:hover {
+	color: #222;
+	background: #ededed;
 }
 
 input[type='text'],

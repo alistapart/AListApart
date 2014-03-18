@@ -1,5 +1,3 @@
-{if group_id == "1" OR member_id == "{segment_3}"}
-
 <!doctype html>
 	
 <!--[if lt IE 7]> <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -28,6 +26,8 @@
 </head>
 
 <body data-xid="{XID_HASH}">
+
+	{if group_id == "1" OR member_id == "{segment_3}"}
 	
 	<header>
 	
@@ -48,239 +48,245 @@
 	
 	<hr>
 
-{exp:user:edit 
-	member_id="{segment_3}" 
-	dynamic="off" 
-	return="/edit/profile/{member_id}/good-show" 
-	form:class="perfect-form-demo"}
-
-	<h2>The Basics</h2>
+	{exp:user:edit 
+		member_id="{segment_3}" 
+		dynamic="off" 
+		return="/edit/profile/{member_id}/good-show" 
+		form:class="perfect-form-demo"}
 	
-	<fieldset>
+		<h2>The Basics</h2>
 		
-		<label>
-			Username:
-			<input type="text" value="{username}" readonly>
-			<span class="note">Readonly. If you must change this, get in touch.</span>
-		</label>
+		<fieldset>
+			
+			<label>
+				Username:
+				<input type="text" value="{username}" readonly>
+				<span class="note">Readonly. If you must change this, get in touch.</span>
+			</label>
+		
+			<label>
+				Visible Name:
+				<input name="screen_name" type="text" value="{screen_name}" data-validate="onblur" data-type="any" data-isvalid="{if screen_name}yes{/if}" required>
+				<span class="note">For reasons passing understanding, this must be unique.</span>
+			</label>
+			
+			{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
+			
+			<label>
+				First Name: <small>(required for authors)</small>
+				<input name="first_name" type="text" value="{first_name}" data-validate="onblur" data-type="any" data-isvalid="{if first_name}yes{/if}" required>
+			</label>
+		
+			<label>
+				Last Name: <small>(required for authors)</small>
+				<input name="last_name" type="text" value="{last_name}" data-validate="onblur" data-type="any" data-isvalid="{if last_name}yes{/if}" required>
+			</label>
+			
+			{/if}
+		
+			<label>
+				Email:
+				<input name="email" type="email" value="{email}" data-validate="onblur" data-type="email" data-isvalid="{if email}yes{/if}" required>
+			</label>
+			
+			<label>
+				Change Password:
+				<input id="password" name="password" type="password" value="">
+				<span class="note">Make it good.</span>
+			</label>
+			
+			<label>
+				Password Confirmation:
+				<input name="password_confirm" type="password" value="" data-validate="onblur" data-type="matching" data-mustmatch="password" data-isvalid="yes">
+				<span class="note">Make it the same.</span>
+			</label>
 	
-		<label>
-			Visible Name:
-			<input name="screen_name" type="text" value="{screen_name}" data-validate="onblur" data-type="any" data-isvalid="{if screen_name}yes{/if}" required>
-			<span class="note">For reasons passing understanding, this must be unique.</span>
-		</label>
+		</fieldset>
+		
+		<p class="align-center">
+			<button type="submit" class="spinner">
+				<span class="label">Submit</span>
+				<span class="spinner"></span>
+			</button>
+		</p>
+	
+	{/exp:user:edit}
+		
+	<hr>
+	
+	{exp:user:edit 
+		member_id="{segment_3}" 
+		dynamic="off" 
+		return="/edit/profile/{member_id}/good-show" 
+		form:class="perfect-form-demo"}
+		
+		<h2>Social Stuff</h2>
+		
+		<fieldset>
+			
+			<label>
+				Personal URL:
+				<input name="url" type="text" value="{url}">
+				<span class="note">no http, no trailing slash</span>
+			</label>
+			
+			{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
+			
+			<h3>Extra social stuff for authors:</h3>
+			
+			<label>
+				Twitter:
+				<input name="twitter" type="text" value="{twitter}" data-validate="onblur" data-type="no-url" data-isvalid="{if twitter}yes{/if}">
+				<span class="note">username only, no @</span>
+			</label>
+			
+			<label>
+				Facebook:
+				<input name="facebook" type="text" value="{facebook}" data-validate="onblur" data-type="no-url" data-isvalid="{if facebook}yes{/if}">
+				<span class="note">username only</span>
+			</label>
+			
+			<label>
+				GitHub:
+				<input name="github" type="text" value="{github}" data-validate="onblur" data-type="no-url" data-isvalid="{if github}yes{/if}">
+				<span class="note">username only</span>
+			</label>
+			
+			<label>
+				Dribble:
+				<input name="dribbble" type="text" value="{dribbble}" data-validate="onblur" data-type="no-url" data-isvalid="{if dribbble}yes{/if}">
+				<span class="note">username only</span>
+			</label>
+			
+			<label>
+				Google+:
+				<input name="googleplus" type="text" value="{googleplus}" data-validate="onblur" data-type="url" data-isvalid="{if googleplus}yes{/if}">
+				<span class="note">Add the whole URL for your profile</span>
+				<span class="note">example 1: http://google.com/+TimMurtaugh</span>
+				<span class="note">example 2: https://plus.google.com/104877852135164107223‎</span>
+			</label>
+			
+			{/if}
+			
+		</fieldset>
 		
 		{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
 		
-		<label>
-			First Name: <small>(required for authors)</small>
-			<input name="first_name" type="text" value="{first_name}" data-validate="onblur" data-type="any" data-isvalid="{if first_name}yes{/if}" required>
-		</label>
+		<fieldset>
+				
+			<label>
+				Bio: <small>(required for authors)</small>
+				<textarea name="bio" data-autoresize style="height: 100px;" data-validate="onblur" data-type="any" data-isvalid="{if bio}yes{/if}" required>{bio}</textarea>
+				<span class="note">links encouraged</span>
+			</label>
 	
-		<label>
-			Last Name: <small>(required for authors)</small>
-			<input name="last_name" type="text" value="{last_name}" data-validate="onblur" data-type="any" data-isvalid="{if last_name}yes{/if}" required>
-		</label>
-		
-		{/if}
-	
-		<label>
-			Email:
-			<input name="email" type="email" value="{email}" data-validate="onblur" data-type="email" data-isvalid="{if email}yes{/if}" required>
-		</label>
-		
-		<label>
-			Change Password:
-			<input id="password" name="password" type="password" value="">
-			<span class="note">Make it good.</span>
-		</label>
-		
-		<label>
-			Password Confirmation:
-			<input name="password_confirm" type="password" value="" data-validate="onblur" data-type="matching" data-mustmatch="password" data-isvalid="yes">
-			<span class="note">Make it the same.</span>
-		</label>
-
-	</fieldset>
-	
-	<p class="align-center">
-		<button type="submit" class="spinner">
-			<span class="label">Submit</span>
-			<span class="spinner"></span>
-		</button>
-	</p>
-
-{/exp:user:edit}
-	
-<hr>
-
-{exp:user:edit 
-	member_id="{segment_3}" 
-	dynamic="off" 
-	return="/edit/profile/{member_id}/good-show" 
-	form:class="perfect-form-demo"}
-	
-	<h2>Social Stuff</h2>
-	
-	<fieldset>
-		
-		<label>
-			Personal URL:
-			<input name="url" type="text" value="{url}">
-			<span class="note">no http, no trailing slash</span>
-		</label>
-		
-		{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
-		
-		<h3>Extra social stuff for authors:</h3>
-		
-		<label>
-			Twitter:
-			<input name="twitter" type="text" value="{twitter}" data-validate="onblur" data-type="no-url" data-isvalid="{if twitter}yes{/if}">
-			<span class="note">username only, no @</span>
-		</label>
-		
-		<label>
-			Facebook:
-			<input name="facebook" type="text" value="{facebook}" data-validate="onblur" data-type="no-url" data-isvalid="{if facebook}yes{/if}">
-			<span class="note">username only</span>
-		</label>
-		
-		<label>
-			GitHub:
-			<input name="github" type="text" value="{github}" data-validate="onblur" data-type="no-url" data-isvalid="{if github}yes{/if}">
-			<span class="note">username only</span>
-		</label>
-		
-		<label>
-			Dribble:
-			<input name="dribbble" type="text" value="{dribbble}" data-validate="onblur" data-type="no-url" data-isvalid="{if dribbble}yes{/if}">
-			<span class="note">username only</span>
-		</label>
-		
-		<label>
-			Google+:
-			<input name="googleplus" type="text" value="{googleplus}" data-validate="onblur" data-type="url" data-isvalid="{if googleplus}yes{/if}">
-			<span class="note">Add the whole URL for your profile</span>
-			<span class="note">example 1: http://google.com/+TimMurtaugh</span>
-			<span class="note">example 2: https://plus.google.com/104877852135164107223‎</span>
-		</label>
+		</fieldset>
 		
 		{/if}
 		
-	</fieldset>
+		<p class="align-center">
+			<button type="submit" class="spinner">
+				<span class="label">Submit</span>
+				<span class="spinner"></span>
+			</button>
+		</p>
+		
+	{/exp:user:edit}
+		
+	<hr>
+	
+	{exp:user:edit 
+		member_id="{segment_3}" 
+		dynamic="off" 
+		return="/edit/profile/{member_id}/good-show" 
+		form:class="perfect-form-demo"}
+		
+		<h2>Avatar</h2>
+				
+		<p>Avatars should be square, and at least 200x200. If you sign in via Twitter, we probably grabbed your avatar from there. You can replace it.</p>
+		
+		<fieldset>
+			
+			<figure>
+			{if avatar_filename != ""}
+				<img src="{avatar_url}{avatar_filename}">
+				{if avatar_width < "201" OR avatar_height < "201"}
+				<span class="note">(at {avatar_width}x{avatar_height} this avatar is smaller than we would like)</span>
+				{/if}
+			{if:else}
+				<img src="/d/_repo/site_assets/img/avatar_generic-commenter_grey.png">
+			{/if}
+			
+			</figure>
+			
+			<label>
+				Upload an avatar:
+				<input type="file" name="avatar_filename" />
+			</label>
+			
+		</fieldset>
+		
+		<p class="align-center">
+			<button type="submit" class="spinner">
+				<span class="label">Submit</span>
+				<span class="spinner"></span>
+			</button>
+		</p>
+		
+	{/exp:user:edit}
 	
 	{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
+		
+	<hr>
 	
-	<fieldset>
+	{exp:user:edit 
+		member_id="{segment_3}" 
+		dynamic="off" 
+		return="/edit/profile/{member_id}/good-show" 
+		form:class="perfect-form-demo"}
+		
+		<h2>Author Photo</h2>
+	
+		<p>Author photos should be at least 250x250. Our editors may crop and resize if needed.</p>
+		
+		<fieldset>
+		
+			<figure>
+			{if photo_filename != ""}
+				<img style="max-width: 100%;" src="{photo_url}{photo_filename}" />
+				{if photo_width < "400" OR photo_height < "400"}
+				<span class="note">(at {photo_width}x{photo_height} this photo smaller than we would like)</span>
+				{/if}
+			{/if}
+			</figure>
 			
-		<label>
-			Bio: <small>(required for authors)</small>
-			<textarea name="bio" data-autoresize style="height: 100px;" data-validate="onblur" data-type="any" data-isvalid="{if bio}yes{/if}" required>{bio}</textarea>
-			<span class="note">links encouraged</span>
-		</label>
-
-	</fieldset>
+			<label>
+				Upload photo:
+				<input type="file" name="photo_filename" />
+			</label>
+			
+		</fieldset>
+		
+		<p class="align-center">
+			<button type="submit" class="spinner">
+				<span class="label">Submit</span>
+				<span class="spinner"></span>
+			</button>
+		</p>
+			
+	</div>
+		
+	{/exp:user:edit}
 	
 	{/if}
 	
-	<p class="align-center">
-		<button type="submit" class="spinner">
-			<span class="label">Submit</span>
-			<span class="spinner"></span>
-		</button>
-	</p>
+	{if segment_4 == 'good-show'}<div class="good-show">Updates saved.</div>{/if}
 	
-{/exp:user:edit}
+	{if:else}
 	
-<hr>
-
-{exp:user:edit 
-	member_id="{segment_3}" 
-	dynamic="off" 
-	return="/edit/profile/{member_id}/good-show" 
-	form:class="perfect-form-demo"}
+	{redirect="tools/log-in"}
 	
-	<h2>Avatar</h2>
-			
-	<p>Avatars should be square, and at least 200x200. If you sign in via Twitter, we probably grabbed your avatar from there. You can replace it.</p>
-	
-	<fieldset>
-		
-		<figure>
-		{if avatar_filename != ""}
-			<img src="{avatar_url}{avatar_filename}">
-			{if avatar_width < "201" OR avatar_height < "201"}
-			<span class="note">(at {avatar_width}x{avatar_height} this avatar is smaller than we would like)</span>
-			{/if}
-		{if:else}
-			<img src="/d/_repo/site_assets/img/avatar_generic-commenter_grey.png">
-		{/if}
-		
-		</figure>
-		
-		<label>
-			Upload an avatar:
-			<input type="file" name="avatar_filename" />
-		</label>
-		
-	</fieldset>
-	
-	<p class="align-center">
-		<button type="submit" class="spinner">
-			<span class="label">Submit</span>
-			<span class="spinner"></span>
-		</button>
-	</p>
-	
-{/exp:user:edit}
-
-{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
-	
-<hr>
-
-{exp:user:edit 
-	member_id="{segment_3}" 
-	dynamic="off" 
-	return="/edit/profile/{member_id}/good-show" 
-	form:class="perfect-form-demo"}
-	
-	<h2>Author Photo</h2>
-
-	<p>Author photos should be at least 250x250. Our editors may crop and resize if needed.</p>
-	
-	<fieldset>
-	
-		<figure>
-		{if photo_filename != ""}
-			<img style="max-width: 100%;" src="{photo_url}{photo_filename}" />
-			{if photo_width < "400" OR photo_height < "400"}
-			<span class="note">(at {photo_width}x{photo_height} this photo smaller than we would like)</span>
-			{/if}
-		{/if}
-		</figure>
-		
-		<label>
-			Upload photo:
-			<input type="file" name="photo_filename" />
-		</label>
-		
-	</fieldset>
-	
-	<p class="align-center">
-		<button type="submit" class="spinner">
-			<span class="label">Submit</span>
-			<span class="spinner"></span>
-		</button>
-	</p>
-		
-</div>
-	
-{/exp:user:edit}
-
-{/if}
-
-{if segment_4 == 'good-show'}<div class="good-show">Updates saved.</div>{/if}
+	{/if}
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/d/_repo/site_assets/js/libs/jquery-1.8.2.min.js"><\/script>')</script>
@@ -302,9 +308,3 @@
 
 </body>
 </html>
-
-{if:else}
-
-{redirect='/authors'}
-
-{/if}
