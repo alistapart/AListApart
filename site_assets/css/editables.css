@@ -35,6 +35,10 @@ input[readonly] {
 	color: #aaa !important;
 }
 
+.no-js .hide-from-no-js {
+	display: none;
+}
+
 /* doesn't work on all elements (???) so removing for now
 :focus:-ms-input-placeholder {  
    color: #bebebe;
@@ -112,6 +116,7 @@ header p {
 	display: none;
 }
 
+ul,
 p,
 pre {
 	margin-bottom: 1.7em;
