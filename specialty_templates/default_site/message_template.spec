@@ -1,101 +1,52 @@
-<html>
+<!doctype html>
+	
+<!--[if lt IE 7]> <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie ie9 lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
 <head>
 
-<title>{title}</title>
+	<meta charset="utf-8">
 
-<meta http-equiv='content-type' content='text/html; charset={charset}' />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-{meta_refresh}
+	<meta name="viewport" content="width=device-width">
+	
+	<link rel="stylesheet" href="/d/_repo/site_assets/css/reset.css" />
+	<link rel="stylesheet" href="/d/_repo/site_assets/css/editables.css" />
 
-<style type="text/css">
+	<script src="/d/_repo/site_assets/js/libs/prefixfree.min.js"></script>
 
-body { 
-background-color:	#ffffff; 
-margin:				50px; 
-font-family:		Verdana, Arial, Tahoma, Trebuchet MS, Sans-serif;
-font-size:			11px;
-color:				#000;
-background-color:	#fff;
-}
+	<script src="/d/_repo/site_assets/js/libs/modernizr-dev.js"></script>
 
-a {
-font-family:		Verdana, Arial, Tahoma, Trebuchet MS, Sans-serif;
-letter-spacing:		.09em;
-text-decoration:	none;
-color:			  #330099;
-background-color:	transparent;
-}
-  
-a:visited {
-color:				#330099;
-background-color:	transparent;
-}
-
-a:active {
-color:				#ccc;
-background-color:	transparent;
-}
-
-a:hover {
-color:				#000;
-text-decoration:	underline;
-background-color:	transparent;
-}
-
-#content  {
-border:				#000 1px solid;
-background-color: 	#DEDFE3;
-padding:			22px 25px 14px 25px;
-}
-
-h1 {
-font-family:		Verdana, Arial, Tahoma, Trebuchet MS, Sans-serif;
-font-weight:		bold;
-font-size:			14px;
-color:				#000;
-margin-top: 		0;
-margin-bottom:		14px;
-}
-
-p {
-font-family:		Verdana, Arial, Tahoma, Trebuchet MS, Sans-serif;
-font-size: 			12px;
-font-weight: 		normal;
-margin-top: 		12px;
-margin-bottom: 		14px;
-color: 				#000;
-}
-
-ul {
-margin-bottom: 		16px;
-}
-
-li {
-list-style:			square;
-font-family:		Verdana, Arial, Tahoma, Trebuchet MS, Sans-serif;
-font-size: 			12px;
-font-weight: 		normal;
-margin-top: 		8px;
-margin-bottom: 		8px;
-color: 				#000;
-}
-
-</style>
-
+	<title>A List Apart: Would you like to log in?</title>
+		
 </head>
 
-<body>
+<body data-xid="{XID_HASH}">
 
-<div id="content">
+	<header>
+	
+		<h1>
+			<img src="/d/_repo/site_assets/img/favicons/apple-touch-icon-57x57.png" alt="" width="57" height="57" style="display: inline-block; height: 40px; width: auto; vertical-align: middle; margin-right: 9px; margin-top: -10px;">
+		</h1>
+		
+	</header>
 
-<h1>{heading}</h1>
+	<h2>{heading}...</h2>
+	
+	{content}
+	
+	<p><span class="hide-from-no-js"><a href="javascript:history.go(-1)">Go back</a> or </span><a href="/">Go home.</a></p>
 
-{content}
-
-<p>{link}</p>
-
-</div>
+<!--<script>
+	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>-->
 
 </body>
-
 </html>
