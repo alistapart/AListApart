@@ -629,10 +629,37 @@ textarea:focus:not([readonly]) {
 	background: #cfc;
 }
 
+.invalid {
+	position: relative;
+}
+
+.invalid:after {
+	content: '!';
+	position: absolute;
+	z-index: -1;
+	bottom: 0;
+	left: calc(99% + 1px);
+	display: block;
+	height: calc(2em - 1px);
+	width: .8em;
+	padding: 0 .2em;
+	color: #fff;
+	font-size: 1.4em;
+	line-height: 2em;
+	font-weight: bold;
+	background: red;
+	border: 1px solid #c18686;
+	border-radius: .3em;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	text-align: center;
+}
+
 .invalid input,
 .invalid select,
 .invalid textarea {
 	background: #fee;
+	border-color: #c18686;
 }
 
 @media only screen and (max-width: 460px) {
