@@ -66,39 +66,38 @@
 		
 			<label>
 				Visible Name:
-				<input name="screen_name" type="text" value="{screen_name}" data-validate="onblur" data-type="any" data-isvalid="{if screen_name}yes{/if}" required>
-				<span class="note">For reasons passing understanding, this must be unique.</span>
+				<input name="screen_name" type="text" value="{screen_name}" data-validate="onblur" data-type="any" data-isvalid="{if screen_name}yes{/if}" data-error="what's your name? it can be anything you want." required>
+				<span class="note">For reasons passing understanding (#eecms cough), this must be unique.</span>
 			</label>
 			
 			{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
 			
 			<label>
 				First Name: <small>(required for authors)</small>
-				<input name="first_name" type="text" value="{first_name}" data-validate="onblur" data-type="any" data-isvalid="{if first_name}yes{/if}" required>
+				<input name="first_name" type="text" value="{first_name}" data-validate="onblur" data-type="any" data-isvalid="{if first_name}yes{/if}" data-error="authors: we need a first name." required>
 			</label>
 		
 			<label>
 				Last Name: <small>(required for authors)</small>
-				<input name="last_name" type="text" value="{last_name}" data-validate="onblur" data-type="any" data-isvalid="{if last_name}yes{/if}" required>
+				<input name="last_name" type="text" value="{last_name}" data-validate="onblur" data-type="any" data-isvalid="{if last_name}yes{/if}" data-error="authors: we need a last name too." required>
 			</label>
 			
 			{/if}
 		
 			<label>
 				Email:
-				<input name="email" type="email" value="{email}" data-validate="onblur" data-type="email" data-isvalid="{if email}yes{/if}" required>
+				<input name="email" type="email" value="{email}" data-validate="onblur" data-type="email" data-isvalid="{if email}yes{/if}" data-error="we need a valid email adress!" required>
 			</label>
 			
 			<label>
 				Change Password:
-				<input id="password" name="password" type="password" value="">
+				<input id="password" name="password" type="password" value="" data-validate="onblur" data-type="matching" data-mustmatch="password_confirm" data-isvalid="yes" data-error="this needs to match the password confirmation field.">
 				<span class="note">Make it good.</span>
 			</label>
 			
 			<label>
 				Password Confirmation:
-				<input name="password_confirm" type="password" value="" data-validate="onblur" data-type="matching" data-mustmatch="password" data-isvalid="yes">
-				<span class="note">Make it the same.</span>
+				<input id="password_confirm" name="password_confirm" type="password" value="" data-validate="onblur" data-type="matching" data-mustmatch="password" data-isvalid="yes" data-error="this needs to match the password field.">
 			</label>
 	
 		</fieldset>
@@ -127,7 +126,6 @@
 			<label>
 				Personal URL:
 				<input name="url" type="text" value="{url}">
-				<span class="note">no http, no trailing slash</span>
 			</label>
 			
 			{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
@@ -136,31 +134,31 @@
 			
 			<label>
 				Twitter:
-				<input name="twitter" type="text" value="{twitter}" data-validate="onblur" data-type="no-url" data-isvalid="{if twitter}yes{/if}">
+				<input name="twitter" type="text" value="{twitter}" data-validate="onblur" data-type="no-url" data-isvalid="{if twitter}yes{/if}" data-error="we just need your username, not the full URL">
 				<span class="note">username only, no @</span>
 			</label>
 			
 			<label>
 				Facebook:
-				<input name="facebook" type="text" value="{facebook}" data-validate="onblur" data-type="no-url" data-isvalid="{if facebook}yes{/if}">
+				<input name="facebook" type="text" value="{facebook}" data-validate="onblur" data-type="no-url" data-isvalid="{if facebook}yes{/if}" data-error="we just need your username, not the full URL">
 				<span class="note">username only</span>
 			</label>
 			
 			<label>
 				GitHub:
-				<input name="github" type="text" value="{github}" data-validate="onblur" data-type="no-url" data-isvalid="{if github}yes{/if}">
+				<input name="github" type="text" value="{github}" data-validate="onblur" data-type="no-url" data-isvalid="{if github}yes{/if}" data-error="we just need your username, not the full URL">
 				<span class="note">username only</span>
 			</label>
 			
 			<label>
 				Dribble:
-				<input name="dribbble" type="text" value="{dribbble}" data-validate="onblur" data-type="no-url" data-isvalid="{if dribbble}yes{/if}">
+				<input name="dribbble" type="text" value="{dribbble}" data-validate="onblur" data-type="no-url" data-isvalid="{if dribbble}yes{/if}" data-error="we just need your username, not the full URL">
 				<span class="note">username only</span>
 			</label>
 			
 			<label>
 				Google+:
-				<input name="googleplus" type="text" value="{googleplus}" data-validate="onblur" data-type="url" data-isvalid="{if googleplus}yes{/if}">
+				<input name="googleplus" type="text" value="{googleplus}" data-validate="onblur" data-type="url" data-isvalid="{if googleplus}yes{/if}" data-error="this one needs to be a full URL">
 				<span class="note">Add the whole URL for your profile</span>
 				<span class="note">example 1: http://google.com/+TimMurtaugh</span>
 				<span class="note">example 2: https://plus.google.com/104877852135164107223‎</span>

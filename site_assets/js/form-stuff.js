@@ -23,6 +23,14 @@ $(document).ready(function (){
 				
 				errors++;
 				
+				errorMsg = $(this).attr('data-error');
+				
+				if ((errorMsg != '') && ($(this).attr('data-error') != '')) {
+				
+					$(this).attr('data-error', '').parent().append('<small class="error-message">' + errorMsg + '</span>');
+					
+				};
+				
 				$(this).parent().addClass('invalid');
 				
 			};
@@ -48,7 +56,7 @@ $(document).ready(function (){
 		
 		};
 		
-		console.log('validating this');
+		//console.log('validating this');
 		
 		inputValidation($(this), required, valType, value);
 	
@@ -68,11 +76,11 @@ function inputValidation(which, requiredState, valType, value) {
 
 	if ((requiredState == true) && (value == "")) { // if empty and required, don't bother running any other checks
 		
-		which.attr('data-isvalid', 'no');
+		which.attr('data-isvalid', 'no').attr('aria-invalid', 'true');
 		
 	} else if (value == "") {
 		
-		which.attr('data-isvalid', '').parent().removeClass('invalid');
+		which.attr('data-isvalid', '').attr('aria-invalid', '').parent().removeClass('invalid');
 		
 	} else {
 	
@@ -80,11 +88,11 @@ function inputValidation(which, requiredState, valType, value) {
 			
 			if (emailFilter.test(which.val())) {
 			
-				which.attr('data-isvalid', 'yes').parent().removeClass('invalid');
+				which.attr('data-isvalid', 'yes').attr('aria-invalid', 'false').parent().removeClass('invalid');
 			
 			} else if (which.val().length != 0) {
 				
-				which.attr('data-isvalid', 'no').parent().removeClass("valid");
+				which.attr('data-isvalid', 'no').attr('aria-invalid', 'true').parent().removeClass("valid");
 			
 			};
 		
@@ -92,11 +100,11 @@ function inputValidation(which, requiredState, valType, value) {
 			
 			if (urlFilter.test(which.val())) {
 			
-				which.attr('data-isvalid', 'yes').parent().removeClass('invalid');
+				which.attr('data-isvalid', 'yes').attr('aria-invalid', 'false').parent().removeClass('invalid');
 			
 			} else if (which.val().length != 0) {
 				
-				which.attr('data-isvalid', 'no').parent().removeClass("valid");
+				which.attr('data-isvalid', 'no').attr('aria-invalid', 'true').parent().removeClass("valid");
 			
 			};
 		
@@ -104,11 +112,11 @@ function inputValidation(which, requiredState, valType, value) {
 		
 			if (which.val().indexOf("/") === -1) {
 				
-				which.attr('data-isvalid', 'yes').parent().removeClass('invalid');
+				which.attr('data-isvalid', 'yes').attr('aria-invalid', 'false').parent().removeClass('invalid');
 				
 			} else {
 			
-				which.attr('data-isvalid', 'no').parent().removeClass("valid");
+				which.attr('data-isvalid', 'no').attr('aria-invalid', 'true').parent().removeClass("valid");
 			
 			};
 		
@@ -118,17 +126,17 @@ function inputValidation(which, requiredState, valType, value) {
 			
 			if (matchWhich.val() == which.val()) {
 				
-				which.attr('data-isvalid', 'yes').parent().removeClass('invalid');
+				which.attr('data-isvalid', 'yes').attr('aria-invalid', 'false').parent().removeClass('invalid');
 				
 			} else {
 				
-				which.attr('data-isvalid', 'no').parent().removeClass("valid");
+				which.attr('data-isvalid', 'no').attr('aria-invalid', 'true').parent().removeClass("valid");
 				
 			};
 		
 		} else {
 		
-			which.attr('data-isvalid', 'yes').parent().removeClass('invalid');
+			which.attr('data-isvalid', 'yes').attr('aria-invalid', 'false').parent().removeClass('invalid');
 		
 		};
 	
