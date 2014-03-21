@@ -1,4 +1,7 @@
-* {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+* {
+	box-sizing: border-box;
+	-webkit-backface-visibility: hidden;
+}
 
 /* take control over placeholders */
 ::-webkit-input-placeholder {
@@ -638,9 +641,10 @@ textarea:focus:not([readonly]) {
 	z-index: -1;
 	top: 4.8em;
 	left: 50%;
-	transform: translateX(-50%) translateY(-100%);
+	transform: translateX(-50%) translateY(-110%);
 	display: block;
-	padding: 0 2em;
+	max-width: 95%;
+	padding: 0 1em;
 	color: #fff;
 	font-size: 1em;
 	line-height: 1.8em;
