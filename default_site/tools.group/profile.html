@@ -27,12 +27,12 @@
 
 <body data-xid="{XID_HASH}">
 
-	{if logged_in_group_id == "1" || member_id == "{segment_3}"}
+	{if logged_in}
 	
 	<header>
 	
 		<h1>
-			<img src="/d/_repo/site_assets/img/favicons/apple-touch-icon-57x57.png" alt="" width="57" height="57" style="display: inline-block; height: 40px; width: auto; vertical-align: middle; margin-right: 9px; margin-top: -10px;">
+			<img src="/d/_repo/site_assets/img/favicons/apple-touch-icon-57x57.png" alt="">
 			The ALA Profile Editor
 		</h1>
 
@@ -53,7 +53,7 @@
 		dynamic="off" 
 		require="screen_name|email{if logged_in_group_id == "1" OR logged_in_group_id == "6" OR logged_in_group_id == "7" OR logged_in_group_id == "10"}|first_name|last_name{/if}"
 		return="/tools/profile/{member_id}/good-show" 
-		form:class="perfect-form-demo"}
+		form:id="form1"}
 	
 		<h2>The Basics</h2>
 		
@@ -66,7 +66,7 @@
 			</label>
 		
 			<label>
-				Visible Name:
+				Visible Name: <small>required</small>
 				<input name="screen_name" type="text" value="{screen_name}" data-validate="onblur" data-type="any" data-isvalid="{if screen_name}yes{/if}" data-error="what's your name? it can be anything you want." required>
 				<span class="note">For reasons passing understanding (#eecms cough), this must be unique.</span>
 			</label>
@@ -86,7 +86,7 @@
 			{/if}
 		
 			<label>
-				Email:
+				Email: <small>required</small>
 				<input name="email" type="email" value="{email}" data-validate="onblur" data-type="email" data-isvalid="{if email}yes{/if}" data-error="we need a valid email adress!" required>
 			</label>
 			
@@ -119,7 +119,7 @@
 		member_id="{segment_3}" 
 		dynamic="off" 
 		return="/tools/profile/{member_id}/good-show" 
-		form:class="perfect-form-demo"}
+		form:id="form2"}
 		
 		<h2>Social Stuff</h2>
 		
@@ -199,7 +199,7 @@
 		member_id="{segment_3}" 
 		dynamic="off" 
 		return="/tools/profile/{member_id}/good-show" 
-		form:class="perfect-form-demo"}
+		form:id="form3"}
 		
 		<h2>Avatar</h2>
 				
@@ -209,7 +209,7 @@
 			
 			<figure>
 			{if avatar_filename != ""}
-				<img src="{avatar_url}{avatar_filename}">
+				<img src="{avatar_url}{avatar_filename}" alt="">
 				{if avatar_width < "201" OR avatar_height < "201"}
 				<span class="note">(at {avatar_width}x{avatar_height} this avatar is smaller than we would like)</span>
 				{/if}
@@ -236,7 +236,7 @@
 		
 			<figure>
 			{if photo_filename != ""}
-				<img style="max-width: 100%;" src="{photo_url}{photo_filename}" />
+				<img style="max-width: 100%;" src="{photo_url}{photo_filename}" alt="" />
 				{if photo_width < "400" OR photo_height < "400"}
 				<span class="note">(at {photo_width}x{photo_height} this photo smaller than we would like)</span>
 				{/if}
@@ -260,8 +260,6 @@
 				<span class="spinner"></span>
 			</button>
 		</p>
-			
-	</div>
 		
 	{/exp:user:edit}
 	

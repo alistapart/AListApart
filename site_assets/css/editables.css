@@ -149,13 +149,16 @@ pre {
 
 .note {
 	position: relative;
-	z-index: -10;
 	display: block;
 	margin-top: 6px;
 	font-size: 1em;
 	line-height: 1.6em;
 	font-style: italic;
 	color: #999;
+}
+
+.invalid .note {
+	z-index: -10;
 }
 
 label + .note {
