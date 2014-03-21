@@ -27,7 +27,7 @@
 
 <body data-xid="{XID_HASH}">
 
-	{if group_id == "1" OR member_id == "{segment_3}"}
+	{if logged_in_group_id == "1" || member_id == "{segment_3}"}
 	
 	<header>
 	
@@ -36,7 +36,7 @@
 			The ALA Profile Editor
 		</h1>
 
-		{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
+		{if logged_in_group_id == "1" || logged_in_group_id == "6" || logged_in_group_id == "7" || logged_in_group_id == "10"}
 
 		<p>We don't use everything in here yet, but we may in the future.</p>
 
@@ -51,7 +51,8 @@
 	{exp:user:edit 
 		member_id="{segment_3}" 
 		dynamic="off" 
-		return="/edit/profile/{member_id}/good-show" 
+		require="screen_name|email{if logged_in_group_id == "1" OR logged_in_group_id == "6" OR logged_in_group_id == "7" OR logged_in_group_id == "10"}|first_name|last_name{/if}"
+		return="/tools/profile/{member_id}/good-show" 
 		form:class="perfect-form-demo"}
 	
 		<h2>The Basics</h2>
@@ -98,6 +99,7 @@
 			<label>
 				Password Confirmation:
 				<input id="password_confirm" name="password_confirm" type="password" value="" data-validate="onblur" data-type="matching" data-mustmatch="password" data-isvalid="yes" data-error="this needs to match the password field.">
+				<span class="note">Make it the same.</span>
 			</label>
 	
 		</fieldset>
@@ -116,7 +118,7 @@
 	{exp:user:edit 
 		member_id="{segment_3}" 
 		dynamic="off" 
-		return="/edit/profile/{member_id}/good-show" 
+		return="/tools/profile/{member_id}/good-show" 
 		form:class="perfect-form-demo"}
 		
 		<h2>Social Stuff</h2>
@@ -127,10 +129,6 @@
 				Personal URL:
 				<input name="url" type="text" value="{url}">
 			</label>
-			
-			{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
-			
-			<h3>Extra social stuff for authors:</h3>
 			
 			<label>
 				Twitter:
@@ -143,6 +141,10 @@
 				<input name="facebook" type="text" value="{facebook}" data-validate="onblur" data-type="no-url" data-isvalid="{if facebook}yes{/if}" data-error="we just need your username, not the full URL">
 				<span class="note">username only</span>
 			</label>
+			
+			{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
+			
+			<h3>Extra social stuff for authors:</h3>
 			
 			<label>
 				GitHub:
@@ -196,12 +198,12 @@
 	{exp:user:edit 
 		member_id="{segment_3}" 
 		dynamic="off" 
-		return="/edit/profile/{member_id}/good-show" 
+		return="/tools/profile/{member_id}/good-show" 
 		form:class="perfect-form-demo"}
 		
 		<h2>Avatar</h2>
 				
-		<p>Avatars should be square, and at least 200x200. If you sign in via Twitter, we probably grabbed your avatar from there. You can replace it.</p>
+		<p>Avatars should be square, and at least 200x200. If you sign in via Twitter or Facebook, we may have grabbed your avatar from there; you can replace it.</p>
 		
 		<fieldset>
 			
@@ -212,7 +214,7 @@
 				<span class="note">(at {avatar_width}x{avatar_height} this avatar is smaller than we would like)</span>
 				{/if}
 			{if:else}
-				<img src="/d/_repo/site_assets/img/avatar_generic-commenter_grey.png">
+				oh nose, no avatar
 			{/if}
 			
 			</figure>
@@ -223,25 +225,8 @@
 			</label>
 			
 		</fieldset>
-		
-		<p class="align-center">
-			<button type="submit" class="spinner">
-				<span class="label">Submit</span>
-				<span class="spinner"></span>
-			</button>
-		</p>
-		
-	{/exp:user:edit}
 	
-	{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
-		
-	<hr>
-	
-	{exp:user:edit 
-		member_id="{segment_3}" 
-		dynamic="off" 
-		return="/edit/profile/{member_id}/good-show" 
-		form:class="perfect-form-demo"}
+		{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
 		
 		<h2>Author Photo</h2>
 	
@@ -255,6 +240,8 @@
 				{if photo_width < "400" OR photo_height < "400"}
 				<span class="note">(at {photo_width}x{photo_height} this photo smaller than we would like)</span>
 				{/if}
+			{if:else}
+				gracious, no photo
 			{/if}
 			</figure>
 			
@@ -264,6 +251,8 @@
 			</label>
 			
 		</fieldset>
+		
+		{/if}
 		
 		<p class="align-center">
 			<button type="submit" class="spinner">
@@ -275,8 +264,6 @@
 	</div>
 		
 	{/exp:user:edit}
-	
-	{/if}
 	
 	{if segment_4 == 'good-show'}<div class="good-show">Updates saved.</div>{/if}
 	
