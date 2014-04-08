@@ -5,7 +5,7 @@
 	{if last_page_visited == ""}
 		{exp:redirecturl url="{last_page_visited}"}
 	{if:else}
-		{exp:redirecturl url="{site_url}"}
+		{redirect="/"}
 	{/if}
 
 {if:else}
