@@ -342,14 +342,18 @@ ul.inline-items li {
 	border-radius: 24px;
 }
 
-.no-touch .main-search:hover input[type=search],
-.no-touch .main-search input[type=search]:valid,
-.no-touch .main-search input[type=search]:focus,
-.open-search input[type=search],
-.no-js input[type=search] {
-	width: 200px;
-	padding: 3px 9px;
-	opacity: 1;
+@media only screen and (min-width: 47.9375em) { /* 767px */
+
+	.main-search:hover input[type=search],
+	.main-search input[type=search]:valid,
+	.main-search input[type=search]:focus,
+	.open-search input[type=search],
+	.no-js input[type=search] {
+		width: 200px;
+		padding: 3px 9px;
+		opacity: 1;
+	}
+
 }
 
 .main-wrapper {
