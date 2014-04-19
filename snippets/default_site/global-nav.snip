@@ -12,7 +12,7 @@
 			<li class="head-east-young-man">
 				{exp:search:simple_form channel="articles|columns" form_class="main-search" result_page="search/index" search_in="everywhere" no_result_page="search/nooooo"}
 					<label for="search-keywords"><input id="search-keywords" type="search" name="keywords" placeholder="Search" aria-label="Search" value="" required="required"></label>
-					<label class="submit-search" for="submit-search"><input id="submit-search" name="submit" type="image" src="//d.alistapart.com/_repo/site_assets/img/icon_magnify_v.svg" onerror="this.src='//d.alistapart.com/_repo/site_assets/img/icon_magnify_v.png';" alt="Submit"></label>
+					<input id="submit-search" name="submit" type="image" src="//d.alistapart.com/_repo/site_assets/img/icon_magnify_v.svg" data-fallback="//d.alistapart.com/_repo/site_assets/img/icon_magnify_v.png" alt="Submit">
 				{/exp:search:simple_form}
 			</li>
 		</ul>
