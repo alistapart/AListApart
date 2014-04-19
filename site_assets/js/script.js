@@ -9,6 +9,18 @@ $(document).ready(function(){
 
 	$('.global-nav').addClass('deluxe');
 	
+	$('[data-fallback]').on('error', function(){
+	
+		//console.log('img load failure: ' + $(this).attr('src'));
+		
+		var fallback = $(this).attr('data-fallback');
+	 
+		$(this).attr('src', fallback);
+			
+		//console.log('missing img src replaced with: ' + fallback);
+	 
+	});
+	
 	$('.go-to-nav').click (function(event){
 	
 		var navState = $( "html" ).hasClass('show-nav');
