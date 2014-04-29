@@ -1829,7 +1829,9 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 
 .main-content > h2,
 .main-content > h3,
-.main-content > h4 {
+.main-content > h4,
+.main-content > h5,
+.main-content > h6 {
 	font-family: "Franklin ITC Pro Bold", sans-serif;
 	font-weight: normal;
 	font-style: normal;
@@ -1871,6 +1873,11 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 .main-content > h3 {
 	text-transform: uppercase;
 	margin-bottom:3px;
+}
+
+.main-content > h5,
+.main-content > h6 {
+	color: #888;
 }
 
 .main-content > figure, .main-content > .illustration {
