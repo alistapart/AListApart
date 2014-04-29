@@ -27,29 +27,29 @@ p {
 	hyphens: auto; */
 	-moz-font-feature-settings: "liga=1, dlig=1, onum=1";
 	-moz-font-feature-settings: "liga", "dlig", "onum";
-    -ms-font-feature-settings: "liga", "dlig", "onum";
-    -webkit-font-feature-settings: "liga", "dlig", "onum";
-    -o-font-feature-settings: "liga", "dlig", "onum";
-    font-feature-settings: "liga", "dlig", "onum";
+	-ms-font-feature-settings: "liga", "dlig", "onum";
+	-webkit-font-feature-settings: "liga", "dlig", "onum";
+	-o-font-feature-settings: "liga", "dlig", "onum";
+	font-feature-settings: "liga", "dlig", "onum";
 }
 
 html[data-useragent*='Chrome'][data-platform*='Mac'] p {
 	-webkit-font-feature-settings: normal;
-    font-feature-settings: normal;
+	font-feature-settings: normal;
 }
 
 :target:not(#comments):not(.global-nav) {
-    -webkit-animation: target-fade 2s 1;
-    -moz-animation: target-fade 2s 1;
+	-webkit-animation: target-fade 2s 1;
+	-moz-animation: target-fade 2s 1;
 }
 
 @-webkit-keyframes target-fade {
-    0% { background-color: rgba(255,248,135,1); outline: 6px solid rgba(255,248,135,1);}
-    100% { background-color: rgba(255,248,135,0); outline: 6px solid rgba(255,248,135,0); }
+	0% { background-color: rgba(255,248,135,1); outline: 6px solid rgba(255,248,135,1);}
+	100% { background-color: rgba(255,248,135,0); outline: 6px solid rgba(255,248,135,0); }
 }
 @-moz-keyframes target-fade {
-    0% { background-color: rgba(255,248,135,.1); outline: 6px solid rgba(255,248,135,1); }
-    100% { background-color: rgba(255,248,135,0); outline: 6px solid rgba(255,248,135,1); }
+	0% { background-color: rgba(255,248,135,.1); outline: 6px solid rgba(255,248,135,1); }
+	100% { background-color: rgba(255,248,135,0); outline: 6px solid rgba(255,248,135,1); }
 }
 
 .main-content > p.buttonish-holder {
@@ -171,7 +171,7 @@ html:not(.no-js) .buttonish:before {
 }
 
 .no-svg .deadly-subtitle {
-	background-image:  url(../img/bg_for-people-who.png);
+	background-image:	url(../img/bg_for-people-who.png);
 }
 
 .deadly-subtitle img {
@@ -1545,10 +1545,10 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	margin-left: 132px;
 	-moz-font-feature-settings: "liga=1, dlig=1, onum=1";
 	-moz-font-feature-settings: "liga", "dlig", "onum";
-    -ms-font-feature-settings: "liga", "dlig", "onum";
-    -webkit-font-feature-settings: "liga", "dlig", "onum";
-    -o-font-feature-settings: "liga", "dlig", "onum";
-    font-feature-settings: "liga", "dlig", "onum";
+	-ms-font-feature-settings: "liga", "dlig", "onum";
+	-webkit-font-feature-settings: "liga", "dlig", "onum";
+	-o-font-feature-settings: "liga", "dlig", "onum";
+	font-feature-settings: "liga", "dlig", "onum";
 }
 
 .article-layout .main-content > figure.full-width {
@@ -1590,7 +1590,7 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-content > div.illustration,
 html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-content .entry-footnotes {
 	-webkit-font-feature-settings: normal;
-    font-feature-settings: normal;
+	font-feature-settings: normal;
 }
 
 .article-layout .main-content > p small {
@@ -1662,16 +1662,16 @@ p.question {
 	line-height: 36px;
 	-moz-font-feature-settings: "liga=1, dlig=1, onum=1";
 	-moz-font-feature-settings: "liga", "dlig", "onum";
-    -ms-font-feature-settings: "liga", "dlig", "onum";
-    -webkit-font-feature-settings: "liga", "dlig", "onum";
-    -o-font-feature-settings: "liga", "dlig", "onum";
-    font-feature-settings: "liga", "dlig", "onum"
+	-ms-font-feature-settings: "liga", "dlig", "onum";
+	-webkit-font-feature-settings: "liga", "dlig", "onum";
+	-o-font-feature-settings: "liga", "dlig", "onum";
+	font-feature-settings: "liga", "dlig", "onum"
 }
 
 html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-content > p:first-child,
 .article-layout .main-content > figure.quote:first-child {
 	-webkit-font-feature-settings: normal;
-    font-feature-settings: normal;
+	font-feature-settings: normal;
 }
 
 .article-layout .main-content > figure.quote:first-child {
@@ -1703,21 +1703,21 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 }
 
 .article-layout .main-content > figure.video {
-    position: relative;
+	position: relative;
 	height: 0;
 	margin-bottom: 66px;
-    padding-top: 30px;
-    padding-bottom: 56.25%;
+	padding-top: 30px;
+	padding-bottom: 56.25%;
 }
 
 .article-layout .main-content > figure.video iframe,
 .article-layout .main-content > figure.video object,
 .article-layout .main-content > figure.video embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .article-layout .main-content > figure.video figcaption {
@@ -2119,7 +2119,7 @@ pre {
 
 pre code {
 	padding: 0;
-	tab-size: 3;
+	tab-size: 2;
 	background: transparent;
 	color: #444;
 	font-size: 15px;
