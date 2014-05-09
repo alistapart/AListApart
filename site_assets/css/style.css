@@ -2055,7 +2055,11 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 	vertical-align: middle;
 }
 
-.hentry .main-content h2:hover .subhead-anchor {
+.hentry .main-content h2:hover .subhead-anchor,
+.hentry .main-content h3:hover .subhead-anchor,
+.hentry .main-content h4:hover .subhead-anchor,
+.hentry .main-content h5:hover .subhead-anchor,
+.hentry .main-content h6:hover .subhead-anchor {
   display: inline-block;
 }
 
@@ -2126,7 +2130,7 @@ pre {
 
 pre code {
 	padding: 0;
-	tab-size: 2;
+	tab-size: 3;
 	background: transparent;
 	color: #444;
 	font-size: 15px;

@@ -67,11 +67,33 @@ $(document).ready(function(){
 	var count2 = 0;
 	var count3 = 0;
 	
+	var hashLink;
+	
 	$(".hentry .main-content > h2, .hentry .main-content > h3, .hentry .main-content > h4, .hentry .main-content > h5, .hentry .main-content > h6").each(function() {
 		
+		// need to check for existence of an ID attribute
+		
 		count1++;
-		$(this).attr("id", "section" + count1);
-		$(this).append("<a class='subhead-anchor' href='#section" + count1 + "'>#section" + count1 + "</a>");
+		
+		var thisID = $(this).attr('id');
+		
+		if (typeof thisID !== 'undefined' && thisID !== false) {
+		
+			hashLink = $(this).attr("id");
+			
+			console.log('found one with an id');
+			
+		} else {
+		
+			hashLink = "section" + count1;
+		
+			$(this).attr("id", hashLink);
+			
+			console.log('adding id');
+			
+		};
+		
+		$(this).append("<a class='subhead-anchor' href='#" + hashLink + "'>#" + hashLink + "</a>");
 
 	});
 	
