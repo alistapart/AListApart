@@ -401,6 +401,29 @@ ul.inline-items li {
 	border-top: 1px solid #d8d8d8;
 }
 
+.section-title {
+	margin-top: 188px;
+	margin-bottom: 6px;
+	text-align: center;
+	font-family: "Franklin ITC Pro Bold", sans-serif;
+	font-size: 36px;
+}
+
+.section-sub-title {
+	margin-bottom: 12px;
+	text-align: center;
+	font-size: 18px;
+	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-style: italic;
+}
+
+.section-title + .single-column-display,
+.section-title + .main-wrapper.single-column-display.stacker,
+.section-title + h2.section-sub-title + .single-column-display,
+.section-title + h2.section-sub-title + .main-wrapper.single-column-display.stacker {
+	margin-top: 0;
+}
+
 .alt-layout .two-column-display {
 	padding-bottom: 386px;
 }
