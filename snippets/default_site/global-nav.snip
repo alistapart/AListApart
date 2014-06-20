@@ -1,13 +1,14 @@
+
 	<nav class="global-nav" id="main-nav" role="navigation">
 	
 		<ul class="inline-items">
 			<li><a href="/">Home</a></li>
 			{if current_domain == "dev.alistapart.com"}<li><a href="/" style="color: #fff; background: green; padding: 3px 9px; border-radius: 12px;">Dev Site</a>{/if}
-			<li><a href="/articles">Articles</a></li>
-			<li><a href="/columns">Columns</a></li>
-			<li><a href="/blog">Blog</a></li>
-			<li><a href="/topics">Topics</a></li>
-			<li><a href="/about/contribute">Write for us</a></li>
+			<li {if segment_1 == "articles" || segment_1 == "article"}class="active"{/if}><a href="/articles">Articles</a></li>
+			<li {if segment_1 == "columns" || segment_1 == "column"}class="active"{/if}><a href="/columns">Columns</a></li>
+			<li {if segment_1 == "blog"}class="active"{/if}><a href="/blog">Blog</a></li>
+			<li {if segment_1 == "topics" || segment_1 == "topic"}class="active"{/if}><a href="/topics">Topics</a></li>
+			<li {if segment_1 == "about" && segment_2 == "contribute"}class="active"{/if}><a href="/about/contribute">Write for us</a></li>
 			<li class="back-to-top"><a href="#top">Back to top</a></li>
 			<li class="head-east-young-man">
 				{exp:search:simple_form channel="articles|columns" form_class="main-search" result_page="search/index" search_in="everywhere" no_result_page="search/nooooo"}
