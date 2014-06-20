@@ -333,9 +333,11 @@ $(document).ready(function(){
 
 	});
 	
-	$("form.main-search").submit(function(e) {
+	$("form#main-search").submit(function(e) {
 	
-		if ($("input[name=keywords]").val() == "") {
+		userQuery = $("input[name=keywords]").val();
+	
+		if (userQuery == "") {
 			
 			$("input[name=keywords]").attr("placeholder", "").focus();
 			
@@ -345,9 +347,11 @@ $(document).ready(function(){
 			
 		} else {
 			
-			return true;
+			e.preventDefault();
 			
-		}
+			window.location = '/search?keywords=' + userQuery;
+			
+		};
 		
 	});
 
