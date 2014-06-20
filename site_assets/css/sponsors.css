@@ -10,7 +10,7 @@
 	border-radius: 6px;
 	background: #fff;
 	background: rgba(255,255,255,0.9);
-	box-shadow: 0 0 12px rgba(0,0,0,0.5);
+	box-shadow: 0 0 9px rgba(0,0,0,0.3);
 }
 
 .secondary-column .sponsor-top {
