@@ -335,7 +335,7 @@ $(document).ready(function(){
 	
 	$("form#main-search").submit(function(e) {
 	
-		userQuery = $("input[name=keywords]").val();
+		userQuery = $("input[name=q]").val();
 	
 		if (userQuery == "") {
 			
