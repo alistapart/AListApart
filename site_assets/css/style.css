@@ -3427,6 +3427,27 @@ body.modal {
 
 #___gcse_0 .gsc-selected-option-container {
 	width: auto !important;
+	position: relative;
+	display: inline-block;
+	padding-right: 2em;
+}
+
+#___gcse_0 .gsc-option-menu-container {
+	width: auto !important;
+}
+
+#___gcse_0 .gsc-option-menu-container:after {
+	content: "";
+	position: absolute;
+	z-index: 0;
+	top: 1em;
+	right: .5em;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 8px 5px 0 5px;
+	border-color: #ccc transparent transparent transparent;
+	pointer-events: none;
 }
 
 #___gcse_0 .cse .gs-webResult .gs-visibleUrl, 
