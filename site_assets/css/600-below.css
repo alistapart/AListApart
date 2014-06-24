@@ -181,36 +181,35 @@
 	}
 
 	.global-nav .main-search input[type=search] {
-        display: inline-block;
-        vertical-align: middle;
-        width: 80% !important;
-        width: calc(100% - 32px) !important;
-        padding: 3px 1px !important;
-        opacity: 1;
+		display: inline-block;
+		vertical-align: middle;
+		width: 80% !important;
+		width: calc(100% - 32px) !important;
+		padding: 3px 1px !important;
+		opacity: 1;
 		background: transparent;
-        font-size: 16px;
+		font-size: 16px;
 		border-radius: 0;
-    }
+	}
 
-    .global-nav .main-search label.submit-search {
-        display: inline-block;
-        vertical-align: middle;
-        margin-left: 0;
-        width: auto;
-        height: auto;
-        padding: 14px
-        10px 12px 12px;
-        background: #000;
-    }
+	.global-nav .main-search label.submit-search {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 0;
+		width: auto;
+		height: auto;
+		padding: 14px 10px 12px 12px;
+		background: #000;
+	}
 
-    .global-nav .main-search label.submit-search input {
-        display: block;
-        visibility: visible;
-        opacity: 1;
-        background: #000;
-        padding: 4px;
+	.global-nav .main-search label.submit-search input {
+		display: block;
+		visibility: visible;
+		opacity: 1;
+		background: #000;
+		padding: 4px;
 		border-radius: 50%;
-    }
+	}
 	
 	.killer-logo > a {
 		margin-left: -25%;
@@ -241,18 +240,18 @@
 	
 	.show-nav .go-to-nav:before {
 		content: "";
-	    position: absolute;
-	    width: 18px;
-	    height: 18px;
-	    top: 11px;
-	    left: 12px;
-	    z-index: -1;
-	    background: url(../img/icon_hamburger.svg) center center no-repeat white;
-	    -webkit-transform: rotate(90deg);
-	    -moz-transform: rotate(90deg);
-	    -ms-transform: rotate(90deg);
-	    -o-transform: rotate(90deg);
-	    transform: rotate(90deg);
+		 position: absolute;
+		 width: 18px;
+		 height: 18px;
+		 top: 11px;
+		 left: 12px;
+		 z-index: -1;
+		 background: url(../img/icon_hamburger.svg) center center no-repeat white;
+		 -webkit-transform: rotate(90deg);
+		 -moz-transform: rotate(90deg);
+		 -ms-transform: rotate(90deg);
+		 -o-transform: rotate(90deg);
+		 transform: rotate(90deg);
 	}
 		
 	.single-column-display .main-content {
@@ -291,7 +290,7 @@
 		line-height: 30px;
 	}
 
-	/* ----------------------  HOME AND ISSUES  ---------------------- */
+	/* ----------------------	HOME AND ISSUES	 ---------------------- */
 	
 	.issue-header {
 		margin-bottom:12px;
@@ -332,7 +331,7 @@
 		margin-right: 0;
 	}
 	
-	/* ----------------------  ARTICLES  ---------------------- */
+	/* ----------------------	ARTICLES  ---------------------- */
 	
 	.wide-hero {
 		min-height: 100px;
@@ -576,7 +575,7 @@
 	}
 
 	
-	/* ----------------------  COLUMNS  ---------------------- */
+	/* ----------------------	COLUMNS	 ---------------------- */
 	
 	.author-header {
 	}
@@ -614,7 +613,7 @@
 		line-height: 30px;
 	}
 	
-	/* ----------------------  BLOG  ---------------------- */
+	/* ----------------------	BLOG  ---------------------- */
 	
 	.article-layout .blog-header, .article-layout .author-header {
 		margin-left: 18px;
@@ -657,7 +656,7 @@
 		height: 14px;
 	}
 
-	/* ----------------------  FOOTER  ---------------------- */
+	/* ----------------------	FOOTER	---------------------- */
 	
 	.global-footer {
 	}
