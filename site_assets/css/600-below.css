@@ -154,6 +154,8 @@
 	.global-nav ul.inline-items li a {
 		display: block;
 		padding: 0 12px;
+		background: #fff;
+		background: rgba(255,255,255,.95);
 		border-bottom: 1px solid #eee;
 	}
 	
@@ -170,10 +172,12 @@
 
 	.global-nav .main-search {
 		padding: 0 12px;
-		background: transparent;
 		border-radius: 0;
 		line-height: 42px;
 		text-align: left;
+		background: #fff;
+		background: rgba(255,255,255,.95);
+		border-bottom: 1px solid #ddd;
 	}
 
 	.global-nav .main-search input[type=search] {
@@ -199,11 +203,13 @@
         background: #000;
     }
 
-    .global-nav .main-search label.submit-search
-    input {
+    .global-nav .main-search label.submit-search input {
         display: block;
         visibility: visible;
-        opacity: 1
+        opacity: 1;
+        background: #000;
+        padding: 4px;
+		border-radius: 50%;
     }
 	
 	.killer-logo > a {
