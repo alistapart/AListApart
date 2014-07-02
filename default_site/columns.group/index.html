@@ -42,7 +42,15 @@
 					
 				</header>
 				
-				<p class="column-intro">{column_intro} <a href="/column/{url_title}">Read more</a></p>
+				<p class="column-intro">{column_intro} <a href="/column/{url_title}">Read&nbsp;more</a></p>
+				
+				<aside class="previous-column">
+				
+					<time datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+					
+					<h2><a href="/column/{url_title}">{title}</a></h2>
+				
+				</aside>
 				
 				{/exp:channel:entries}
 				
@@ -58,7 +66,7 @@
 		
 			<section class="main-content">
 			
-				<h1 class="basic-title alt">More From Our Columnists</h1>
+				<h1 class="section-sub-title columnists">More From Our Columnists</h1>
 				
 				{exp:channel:entries channel="columns" offset="1" status="open" dynamic="off" show_future_entries="no"}<article class="item-summary article">
 				
@@ -80,6 +88,14 @@
 					</header>
 					
 					<p>{column_intro}</p>
+				
+					<aside class="previous-column">
+					
+						<time datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+						
+						<h2><a href="/column/{url_title}">{title}</a></h2>
+					
+					</aside>
 				
 				</article><!--
 				

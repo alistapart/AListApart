@@ -417,6 +417,11 @@ ul.inline-items li {
 	font-style: italic;
 }
 
+.section-sub-title.columnists {
+	font-style: normal;
+	text-transform: uppercase;
+}
+
 .section-title + .single-column-display,
 .section-title + .main-wrapper.single-column-display.stacker,
 .section-title + h2.section-sub-title + .single-column-display,
@@ -605,8 +610,6 @@ ul.inline-items li {
 .item-summary.article img {
 	display: block;
 	margin: 0 auto 12px;
-	border-radius: 50%;
-	border: 12px solid #f5f5f5;
 }
 
 .item-summary.article .column-name {
@@ -1102,8 +1105,40 @@ footer a.aside-author + time:before {
 .author-header img {
 	display: block;
 	margin: 0 auto 18px;
+}
+
+.columnist-photo img {
 	border-radius: 50%;
-	border: 12px solid #f5f5f5;
+	border: .5em solid #f5f5f5;
+}
+
+.previous-column {
+	margin-bottom: 2em;
+}
+
+.col-holder .previous-column {
+	margin-top: 1em;
+}
+
+.previous-column time {
+	color: #666;
+	font-style: italic;
+}
+
+.col-holder .previous-column time {
+	font-size: 14px;
+}
+
+.previous-column h2 {
+	margin-top: 6px;
+	font-family: "Franklin ITC Pro Bold",sans-serif;
+	font-weight: normal;
+	font-size: 24px;
+}
+
+.col-holder .previous-column h2 {
+	margin-top: 0;
+	font-size: 18px;
 }
 
 .author-header + .column-intro,
