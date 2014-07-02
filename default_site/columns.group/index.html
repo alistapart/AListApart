@@ -68,7 +68,7 @@
 			
 				<h1 class="section-sub-title columnists">More From Our Columnists</h1>
 				
-				{exp:channel:entries channel="columns" offset="1" status="open" dynamic="off" show_future_entries="no"}<article class="item-summary article columnist">
+				{exp:channel:entries channel="columns" offset="1" status="open" dynamic="off" show_future_entries="no" limit="8"}<article class="item-summary article columnist">
 				
 					<header class="column-summary-header">
 					
@@ -100,6 +100,16 @@
 				</article><!--
 				
 				-->{/exp:channel:entries}
+			
+				<nav class="paginator" role="toolbar">
+			
+					<ul>
+												
+						<li><a class="bigger" href="/columns/archives">Columns Archive</a></li>
+						
+					</ul>
+				
+				</nav>
 			
 			</section>
 		

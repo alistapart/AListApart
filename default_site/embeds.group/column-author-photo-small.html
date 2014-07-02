@@ -1,0 +1,8 @@
+
+					{exp:user:authors entry_id="{embed:entry_id}"}
+					{if photo_filename}
+					<img src="{exp:ce_img:pair src="{photo_url}{photo_filename}" width="60" height="60" crop="yes"}{made}{/exp:ce_img:pair}" alt="">
+					{if:elseif avatar_filename}
+					<img src="{avatar_url}" width="60" alt="">
+					{/if}
+					{/exp:user:authors}

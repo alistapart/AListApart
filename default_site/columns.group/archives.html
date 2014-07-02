@@ -1,0 +1,76 @@
+{global-page-top}
+
+	<title>A List Apart: The Columns</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+		
+</head>
+
+<body>
+
+{current-user-info}
+
+	{primary-logo}
+	
+	<div role="main" class="main-wrapper two-column-display">
+	
+		<div class="col-holder">
+		
+			<article class="main-content">
+			
+				<h1 class="basic-title">The Columns</h1>
+				
+				{if segment_3}
+				{embed="embeds/column-list" offset="{segment_3}"}
+				{if:else}
+				{embed="embeds/column-list" offset="0"}
+				{/if}
+				
+				<nav class="paginator" role="toolbar">
+			
+					<ul>
+						{if segment_3}
+				
+						<?php
+						
+						$thisBatch = {segment_3} + 0;
+						$previousBatch = $thisBatch + 10;
+						$nextBatch = $thisBatch - 10;
+						
+						?>
+						
+						<li><a class="previous" href="/columns/archives/<?php echo $previousBatch; ?>">Previous</a></li>
+						<li><a class="next" href="/columns/archives/<?php if ($nextBatch > 0) echo $nextBatch; ?>">Next</a></li>
+						
+						{if:else}
+						
+						<li><a class="previous" href="/columns/archives/10">Previous</a></li>
+						
+						{/if}
+					</ul>
+				
+				</nav>
+	
+				</article><!--
+			
+			--><div class="secondary-column">
+			
+				{sponsor-top}
+				
+				{even-more-from-ala}
+				
+				{ad-bsa-text}
+			
+			</div>
+		
+		</div>
+		
+		
+	
+	</div>
+	
+	{global-nav}
+
+{global-footer}
+	
+{global-page-bottom}

@@ -3275,11 +3275,25 @@ ul.bullets {
 	background: #c3c2be;
 	border-radius: 15px;
 
-	-webkit-transition: background .2s ease-in;
-	-moz-transition: background .2s ease-in;
-	-o-transition: background .2s ease-in;
-	-ms-transition: background .2s ease-in;
-	transition: background .2s ease-in;
+	-webkit-transition: background .15s ease-in;
+	-moz-transition: background .15s ease-in;
+	-o-transition: background .15s ease-in;
+	-ms-transition: background .15s ease-in;
+	transition: background .15s ease-in;
+}
+
+.paginator a.bigger {
+	padding: 2px 18px 0;
+	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-size: 24px;
+	line-height: 48px;
+	background: #2455c3;
+	border-radius: 12px;
+	text-transform: none;
+}
+
+.paginator a.bigger:after {
+	content: " ›";
 }
 
 .paginator a.previous::before {
