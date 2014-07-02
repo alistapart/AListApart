@@ -418,6 +418,7 @@ ul.inline-items li {
 }
 
 .section-sub-title.columnists {
+	font-family: 'Georgia Pro Light', georgia;
 	font-style: normal;
 	text-transform: uppercase;
 }
