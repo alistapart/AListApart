@@ -580,6 +580,10 @@ ul.inline-items li {
 	padding: 0 0 24px 12px;
 }
 
+.secondary-column .item-summary:nth-child(odd) {
+	padding-left: 0;
+}
+
 .item-summary:nth-of-type(4n) {
 	margin-right: 0;
 }
