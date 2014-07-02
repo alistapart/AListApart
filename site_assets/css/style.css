@@ -1116,7 +1116,7 @@ footer a.aside-author + time:before {
 	margin-bottom: 2em;
 }
 
-.col-holder .previous-column {
+.item-summary.article.columnist .previous-column {
 	margin-top: 1em;
 }
 
@@ -1125,7 +1125,7 @@ footer a.aside-author + time:before {
 	font-style: italic;
 }
 
-.col-holder .previous-column time {
+.item-summary.article.columnist .previous-column time {
 	font-size: 14px;
 }
 
@@ -1136,7 +1136,7 @@ footer a.aside-author + time:before {
 	font-size: 24px;
 }
 
-.col-holder .previous-column h2 {
+.item-summary.article.columnist .previous-column h2 {
 	margin-top: 0;
 	font-size: 18px;
 }
