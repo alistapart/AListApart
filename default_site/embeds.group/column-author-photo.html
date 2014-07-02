@@ -1,12 +1,14 @@
 {if embed:full_html != "false"}
 					
 					{exp:user:authors entry_id="{embed:entry_id}"}
+					<a href="/author/{username}">
 					<figure data-picture data-alt="" class="columnist-photo">
 						<div data-src="{exp:ce_img:pair src="{photo_url}{photo_filename}" width="128" height="128" crop="yes"}{made}{/exp:ce_img:pair}"></div>
 						<div data-src="{exp:ce_img:pair src="{photo_url}{photo_filename}" width="256" height="256" crop="yes"}{made}{/exp:ce_img:pair}" data-media="(min-device-pixel-ratio: 2.0)"></div>
 				
 						<noscript><img src="{exp:ce_img:pair src="{photo_url}{photo_filename}" width="128" height="128" crop="yes"}{made}{/exp:ce_img:pair}" alt=""></noscript>
 					</figure>
+					</a>
 					{/exp:user:authors}
 					
 {if:else}{exp:user:authors entry_id="{embed:entry_id}"}{if photo_filename}{exp:ce_img:pair src="{photo_url}{photo_filename}" width="300" height="300" crop="yes"}{made}{/exp:ce_img:pair}{/if}{/exp:user:authors}{/if}

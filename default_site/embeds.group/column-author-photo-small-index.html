@@ -1,9 +1,11 @@
 					
 					{exp:user:authors entry_id="{embed:entry_id}"}
+					<a href="/author/{username}">
 					<figure data-picture data-alt="" class="columnist-photo">
 						<div data-src="{exp:ce_img:pair src="{photo_url}{photo_filename}" width="96" height="96" crop="yes"}{made}{/exp:ce_img:pair}"></div>
 						<div data-src="{exp:ce_img:pair src="{photo_url}{photo_filename}" width="192" height="192" crop="yes"}{made}{/exp:ce_img:pair}" data-media="(min-device-pixel-ratio: 2.0)"></div>
 				
 						<noscript><img src="{exp:ce_img:pair src="{photo_url}{photo_filename}" width="96" height="96" crop="yes"}{made}{/exp:ce_img:pair}" alt=""></noscript>
 					</figure>
+					</a>
 					{/exp:user:authors}
