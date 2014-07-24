@@ -1,8 +1,10 @@
 {exp:channel:entries channel="articles" limit="1"}
 
+{if segment_2}
+
 {global-page-top}
 
-	<title>A List Apart: The Topics</title>
+	<title>A List Apart: The Topics : {exp:gwcode_categories cat_url_title="{segment_2}" incl_self="yes" style="linear" depth="1" group_id="3"}{cat_name}{/exp:gwcode_categories}</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 		
@@ -19,9 +21,7 @@
 		<div class="col-holder">
 		
 			<section class="main-content">
-			
-				{if segment_2}
-				
+							
 				{exp:gwcode_categories cat_url_title="{segment_2}" incl_self="yes" style="linear" depth="1" group_id="3"}
 				
 				<h1 class="basic-title">Topic: <b>{cat_name}</b></h1>
@@ -42,7 +42,27 @@
 				
 				-->{/exp:gwcode_categories}
 				
-				{if:else}
+{if:else}
+
+{global-page-top}
+
+	<title>A List Apart: The Topics</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+		
+</head>
+
+<body>
+
+{current-user-info}
+
+	{primary-logo}
+	
+	<div role="main" class="main-wrapper multi-column-display">
+	
+		<div class="col-holder">
+		
+			<section class="main-content">
 			
 				<h1 class="basic-title">Topics</h1>
 				
@@ -70,15 +90,12 @@
 				</article><!--
 				
 				-->{/exp:channel:categories}
-				
-				
-				{/if}
+								
+{/if}
 			
 			</section>
 		
 		</div>
-		
-		
 	
 	</div>
 	
