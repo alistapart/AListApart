@@ -1,8 +1,11 @@
 {exp:channel:entries channel="articles" show_future_entries="no" limit="999" disable="categories|category_fields|custom_fields|member_data|pagination"}http://alistapart.com/article/{url_title}<br>
+http://alistapart.com/comments/{url_title}<br>
 {/exp:channel:entries}
 {exp:channel:entries channel="columns" show_future_entries="no" limit="999" disable="categories|category_fields|custom_fields|member_data|pagination"}http://alistapart.com/column/{url_title}<br>
 {/exp:channel:entries}
 {exp:channel:entries channel="blog" show_future_entries="no" limit="999" disable="categories|category_fields|custom_fields|member_data|pagination"}http://alistapart.com/blog/post/{url_title}<br>
+{/exp:channel:entries}
+{exp:channel:entries channel="pages" show_future_entries="no" limit="999" disable="categories|category_fields|custom_fields|member_data|pagination"}http://alistapart.com/about/{url_title}<br>
 {/exp:channel:entries}
 {exp:ac_memberlist
 sort="last_name ASC"
