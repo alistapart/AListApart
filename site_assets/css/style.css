@@ -1576,10 +1576,18 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	line-height: 22px;
 }
 
-.content-minutiae {
+.utility-side-bar {
 	float: left;
-	width: 108px;
-	margin: 0 24px 24px 0;
+	margin-left: -132px;
+	width: 240px;
+}
+
+.content-minutiae {
+	float: right;
+	font-family: "FranklinITCPro-Light";
+	margin: 0;
+	margin-right: -132px;
+	width: 240px;
 	font-size: 12px;
 	line-height: 24px;
 	clear: left;
@@ -3190,6 +3198,14 @@ ul.bullets {
 	list-style-type: disc;
 }
 
+.entry-header .entry-title, .entry-details a.author, .entry-header .issue-number, .wide-hero .issue-number {
+	font-family: "FranklinITCPro-Bold";
+}
+
+.aside-breaker {
+	display: none;
+}
+
 .the-deck {
 	position: relative;
 	/* display: table; */
@@ -3206,6 +3222,50 @@ ul.bullets {
 	border-radius: 4px;
 	min-height: 114px;
 }
+
+.the-deck.in-article {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 0;
+	display: block;
+	padding: 2em 1em;
+	text-align: center;
+}
+
+.the-deck.in-article img {
+	margin-bottom: 1.5em;
+	position: static;
+}
+
+.the-deck.in-article, .job-board {
+	font-family: "FranklinITCPro-Light";
+	line-height: 21px;
+	margin: 0 0 3em;
+}
+
+.job-board.in-article {
+	margin-bottom: 4em;
+	padding: 0 1em;
+}
+
+.job-board.in-article h4 {
+	font-family: "FranklinITCPro-Bold";
+}
+
+.job-board.in-article .job {
+	font-family: "FranklinITCPro-Light";
+}
+
+.job-board.in-article .board-link {
+	font-size: 12px;
+}
+
+.the-deck.in-article .deck-inner {
+	display: block;
+	padding-left: 0;
+	vertical-align: middle;
+}	
+
 
 .more-content .the-deck:first-child {
 	margin-top: 0;

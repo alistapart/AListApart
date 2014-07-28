@@ -573,6 +573,104 @@
 	.alpha-container {
 		height: 320px;
 	}
+	
+	.aside-breaker {
+		display: block;
+		font-family: "FranklinITCPro-Light";
+		margin: 2em 0 1em !important;
+		position: relative;
+		text-align: center;
+	}
+	
+	.aside-breaker:before {
+		background-color: #eee;
+		content: " ";
+		height: 1px;
+		left: 0;
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		z-index: 0;
+	}
+
+	.aside-breaker a {
+		background-color: #fff;
+		border: 1px solid #eee;
+		border-radius: 0.5em;
+		color: #222;
+		display: inline-block;
+		font-size: 0.625em;
+		padding: 0 0.5em;
+		position: relative;
+	}
+	
+	.aside-breaker a:hover {
+		background-color: #eee;
+		text-decoration: none;
+	}
+	
+	.aside-breaker a:before {
+		content: "\21C3";
+		margin-right: 0.5em;
+	}
+	
+	.aside-breaker a:after {
+		content: "\21C2";
+		margin-left: 0.5em;
+	}
+
+	.in-article .deck-inner {
+		width: auto;
+	}
+	
+	.job-board.in-article {
+		margin-bottom: 2em;
+	}
+
+	.utility-side-bar {
+		border-bottom: 1px solid #eee;
+		float: none;
+		margin: 2em 0;
+		width: 100%;
+	}
+	
+	.content-minutiae {
+		float: none;
+		margin: 0 0 3em;
+		width: 100%;
+	}
+	
+	.minutiae-block {
+		display: inline-block;
+		margin-left: 6%;
+		vertical-align: top;
+		width: 47%;
+	}
+	
+	.minutiae-block:first-child {
+		margin-left: 0;
+	}
+	
+	.the-deck.in-article {
+		border: 0;
+		min-height: 90px;
+		padding: 0 1em;
+		text-align: left;
+	}
+	
+	.the-deck.in-article .deck-inner p {
+		text-align: left;
+	}
+	
+	.the-deck.in-article .deck-inner a {
+		display: inline;
+		margin: 0;
+	}
+	
+	.the-deck.in-article img {
+		float: left;
+		margin-right: 1em;
+	}
 
 	
 	/* ----------------------	COLUMNS	 ---------------------- */
