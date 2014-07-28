@@ -19,6 +19,12 @@
 		padding-top: 0;
 	}
 	
+	.utility-side-bar + figure img,
+	.utility-side-bar + * + figure img,
+	.utility-side-bar + * + * + figure img {
+		max-width: 79%;
+	}
+	
 }
 
 @media only screen and (max-width: 71.875em) { /* 1150px */
