@@ -3198,10 +3198,6 @@ ul.bullets {
 	list-style-type: disc;
 }
 
-.entry-header .entry-title, .entry-details a.author, .entry-header .issue-number, .wide-hero .issue-number {
-	font-family: "FranklinITCPro-Bold";
-}
-
 .aside-breaker {
 	display: none;
 }
