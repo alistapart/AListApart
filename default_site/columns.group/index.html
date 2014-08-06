@@ -72,7 +72,7 @@
 				
 					<header class="column-summary-header">
 					
-						{embed="embeds/column-author-photo-small-index" entry_author="{author_id}" entry_id="{entry_id}"}
+						{embed="embeds/column-author-photo-small-index" entry_author="{member_id}" entry_id="{entry_id}"}
 				
 						<span class="column-name">{categories show_group="4"}{if category_description}{category_description}{if:else}{category_name}{/if}{/categories}</span>
 				
@@ -91,9 +91,7 @@
 				
 					<aside class="previous-column">
 					
-						<time datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
-						
-						<h2><a href="/column/{url_title}">{title}</a></h2>
+						{embed="embeds/columnist-more" entry_author="{member_id}" entry_id="{entry_id}"}
 					
 					</aside>
 				
