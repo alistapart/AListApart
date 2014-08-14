@@ -568,7 +568,8 @@ ul.inline-items li {
 }
 
 .item-summary.columnist {
-	width: 50%;
+	width: 49%;
+	width: calc(50% - 3px);
 	margin: 0;
 }
 

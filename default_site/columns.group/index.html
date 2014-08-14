@@ -5,6 +5,28 @@
 		
 </head>
 
+<?php
+$entries = array();
+
+$sql = "SELECT author_id as author, 
+        max(entry_id) as entry_id 
+        FROM exp_channel_titles
+        WHERE channel_id = '5'
+            AND status = 'open'
+        GROUP BY author 
+        ORDER BY entry_id DESC 
+        LIMIT 20";
+
+$authorEntriesQuery = ee()->db->query($sql);
+
+foreach($authorEntriesQuery->result_array() as $row)
+{
+    $entries[] = $row['entry_id'];
+}
+
+$entriesString = implode('|',$entries);
+?>
+
 <body>
 
 {current-user-info}
@@ -19,9 +41,11 @@
 		<div class="col-holder">
 		
 			<article class="main-content">
-				
-				{exp:channel:entries channel="columns" limit="1" status="open" dynamic="off" show_future_entries="no"}
-				
+
+				{exp:channel:entries channel="columns" entry_id="<?php echo $entriesString ?>"}
+
+				{if count == "1"}
+
 				<header class="author-header">
 					
 					{embed="embeds/column-author-photo" entry_author="{author_id}" entry_id="{entry_id}"}
@@ -52,8 +76,6 @@
 				
 				</aside>
 				
-				{/exp:channel:entries}
-				
 			</article>
 			
 		</div>
@@ -67,11 +89,11 @@
 			<section class="main-content">
 			
 				<h1 class="section-sub-title columnists">More From Our Columnists</h1>
-				
-				{exp:channel:entries channel="columns" offset="1" status="open" dynamic="off" show_future_entries="no" limit="8"}<article class="item-summary article columnist">
-				
+
+				{if:elseif count < 8}<article class="item-summary article columnist">
+
 					<header class="column-summary-header">
-					
+						
 						{embed="embeds/column-author-photo-small-index" entry_author="{member_id}" entry_id="{entry_id}"}
 				
 						<span class="column-name">{categories show_group="4"}{if category_description}{category_description}{if:else}{category_name}{/if}{/categories}</span>
@@ -94,10 +116,12 @@
 						{embed="embeds/columnist-more" entry_author="{member_id}" entry_id="{entry_id}"}
 					
 					</aside>
+					
+				</article>
 				
-				</article><!--
+				{/if}
 				
-				-->{/exp:channel:entries}
+				{/exp:channel:entries}
 			
 				<nav class="paginator" role="toolbar">
 			

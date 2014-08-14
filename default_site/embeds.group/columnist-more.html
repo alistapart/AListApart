@@ -1,6 +1,6 @@
 
 				{exp:user:authors entry_id="{embed:entry_id}"}
-				{exp:user:entries channel="columns" user_author_id="{member_id}" limit="2" offset="1" entry_id="not {embed:entry_id}"}
+				{exp:user:entries channel="columns" user_author_id="{member_id}" limit="1" offset="1" entry_id="not {embed:entry_id}"}
 				{if {embed:entry_id} != {entry_id}}
 						<time datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
 						
