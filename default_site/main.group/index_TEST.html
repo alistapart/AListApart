@@ -49,9 +49,9 @@
 					by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
 					
 					{if comment_total == 1}
-					 ∙ <a class="comment-count" href="/article/{url_title}#comments">1 Comment</a>
+					 · <a class="comment-count" href="/article/{url_title}#comments">1 Comment</a>
 					{if:elseif comment_total > 1}
-					 ∙ <a class="comment-count" href="/article/{url_title}#comments">{comment_total} Comments</a>
+					 · <a class="comment-count" href="/article/{url_title}#comments">{comment_total} Comments</a>
 					{/if}
 			
 				</p>
@@ -115,7 +115,7 @@
 						<footer>
 							{exp:parse_url parts="host"}{blog_target_url}{/exp:parse_url}
 							{blog_attribution}
-							 ∙ ℅ <a class="attribution-link" href="{cell_2}">{cell_1}</a>
+							 · ℅ <a class="attribution-link" href="{cell_2}">{cell_1}</a>
 							{/blog_attribution}
 						</footer>
 			

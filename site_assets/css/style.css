@@ -1043,7 +1043,7 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 .entry-header time:before,
 footer a.author + time:before,
 footer a.aside-author + time:before {
-	content: " ∙ ";
+	content: " · ";
 }
 
 .comment-count {
@@ -1063,7 +1063,7 @@ footer a.aside-author + time:before {
 }
 
 .comment-count:before {
-	/* content: " ∙ ";*/
+	/* content: " · ";*/
 }
 
 .comment-count:after {

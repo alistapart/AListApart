@@ -32,7 +32,7 @@
 			<img class="commenter-avatar" src="<?php echo $grav_url; ?>" width="60" height="60" alt="" />
 		{/if}
 		<span class="commenter-name">{name}</span>
-		<span class="comment-meta">commented on <a href="http://alistapart.com/comments/{url_title}#{comment_id}">{title}</a> ∙ <time>{comment_date format="%F %d, %Y"}</time></span>
+		<span class="comment-meta">commented on <a href="http://alistapart.com/comments/{url_title}#{comment_id}">{title}</a> · <time>{comment_date format="%F %d, %Y"}</time></span>
 		
 		{exp:textile}{exp:strip_html keep='b|em|a|i|blockquote'}{comment}{/exp:strip_html}{/exp:textile}
 		
