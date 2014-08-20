@@ -33,16 +33,57 @@
 			<img src="/d/_repo/site_assets/img/favicons/apple-touch-icon-57x57.png" alt="" width="57" height="57" style="display: inline-block; height: 40px; width: auto; vertical-align: middle; margin-right: 9px; margin-top: -10px;">
 			The ALA Profile Editor
 		</h1>
-
-		{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
-
-		<!--p>ALA staff and authors! Anyone can use this form, but you get optional extras like a nice big photo.</p-->
-
-		{/if}
 		
 	</header>
 	
 	<hr>
+
+{exp:social_login:add_userdata return="SAME_PAGE" id="userdata_form"}
+
+	<style>
+	form, hr {display: none;}
+	form#userdata_form {display: block;}
+	</style>
+
+	<h2 class="social-form">Did you sign up using a social account?</h2>
+	
+	<p>We might need some more info before you can edit your profile:</p>
+		
+	{email_block}
+	<fieldset>
+		<label>
+			Please let us know your email address:<br />
+			<input name="email" type="email" value="">
+		</label>
+	</fieldset>
+	{/email_block}
+
+	{password_block}
+	<fieldset>
+		<label>
+			Change Password:
+			<input name="password" type="password" value="">
+			<span class="note">Make it good.</span>
+		</label>
+		
+		<label>
+			Password Confirmation:
+			<input name="password_confirm" type="password" value="">
+			<span class="note">Make it the same.</span>
+		</label>
+	</fieldset>
+	{/password_block}
+
+	<p class="align-center">
+		<button type="submit" class="spinner">
+			<span class="label">Submit</span>
+			<span class="spinner"></span>
+		</button>
+	</p>
+	
+<hr>
+
+{/exp:social_login:add_userdata}
 
 {exp:user:edit 
 	member_id="{segment_3}" 
@@ -51,7 +92,7 @@
 	form:class="perfect-form-demo"}
 
 	<h2>The Basics</h2>
-	
+
 	<fieldset>
 		
 		<label>
