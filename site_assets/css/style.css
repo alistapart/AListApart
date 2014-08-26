@@ -401,6 +401,16 @@ ul.inline-items li {
 	border-top: 1px solid #d8d8d8;
 }
 
+.two-column-display.no-top {
+	margin-top: 24px;
+	border-top: 0;
+}
+
+.two-column-display.no-top .main-content {
+	padding-top: 0;
+	border-right: 1px solid #ebebeb;
+}
+
 .section-title {
 	margin-top: 188px;
 	margin-bottom: 6px;
@@ -1200,6 +1210,11 @@ footer a.aside-author + time:before {
 
 .column-name.latest:before {
 	content: "The Latest:";
+	padding-right: 6px;
+}
+
+.column-name.featured:before {
+	content: "Featured:";
 	padding-right: 6px;
 }
 
@@ -3186,13 +3201,34 @@ img.commenter-avatar {
 	font-style: normal;
 }
 
+.entry-list.step-up .entry-title {
+	font-size: 24px;
+	line-height: 30px;
+}
+
 .entry-list li p {
 	font-size: 14px;
 	line-height: 24px;
 }
 
+.entry-list.step-up p {
+	font-size: 18px;
+	line-height: 28px;
+}
+
 .entry-list li p.meta {
 	font-style: italic;
+	font-size: 14px;
+	line-height: 24px;
+}
+
+.entry-list.step-up p.meta {
+	margin-bottom: 6px;
+}
+
+.entry-list.step-up li footer {
+	font-size: 12px;
+	font-family: "Franklin ITC Pro Light", sans-serif;
 }
 
 ul.bullets {
@@ -3219,6 +3255,11 @@ ul.bullets {
 	border-radius: 4px;
 	min-height: 114px;
 }
+
+.no-top .secondary-column .the-deck {
+	margin-top: 0;
+}
+
 
 .the-deck.in-article {
 	background: #fff;

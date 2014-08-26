@@ -10,56 +10,75 @@
 {current-user-info}
 
 	{primary-logo}
+			
+	<h1 class="section-title">Our Blog</h1>
+	<h2 class="section-sub-title">Quick updates and practical approaches</h2>
 	
-	<div role="main" class="main-wrapper stacker multi-column-display">
+	<div role="main" class="main-wrapper stacker single-column-display">
+	
+		<div class="col-holder">
+		
+			<article class="main-content">
+
+				{exp:channel:entries channel="blog|link_posts" limit="1"}
+
+				<header class="author-header">
+					
+					<span class="column-name featured">{embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</span>
+					
+					<h1><a href="/column/{url_title}">{title}</a></h1>
+					
+					<p class="meta">
+						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+						
+						{if comment_total > 0}
+						 · <a class="comment-count" href="/column/{url_title}#comments">{comment_total} Comment{if comment_total > 1}s{/if}</a>
+						{/if}
+					</p>
+					
+				</header>
+				
+				<p class="column-intro">{blog_intro} <a href="/column/{url_title}">Read&nbsp;more</a></p>
+				
+			</article>
+			
+		</div>
+	
+	</div>
+			
+	<div role="main" class="main-wrapper two-column-display no-top">
 	
 		<div class="col-holder">
 		
 			<section class="main-content">
-			
-				<h1 class="basic-title">A Blog Apart</h1>
-				
+
 				{if segment_2}
-				{embed="embeds/blog-posts" offset="{segment_2}"}
+				{embed="embeds/blog-posts-new" offset="{segment_2}"}
 				{if:else}
-				{embed="embeds/blog-posts" offset="0"}
+				{embed="embeds/blog-posts-new" offset="0" exclude_id="{entry_id}"}
 				{/if}
 				
-				<nav class="paginator" role="toolbar">
+				{/exp:channel:entries}
+				
+			</section><!--
 			
-					<ul>
-						{if segment_2}
+			--><div class="secondary-column">
 				
-						<?php
-						
-						$thisBatch = {segment_2} + 0;
-						$previousBatch = $thisBatch + 10;
-						$nextBatch = $thisBatch - 10;
-						
-						?>
-						
-						<li><a class="previous" href="/blog/<?php echo $previousBatch; ?>">Previous</a></li>
-						<li><a class="next" href="/blog/<?php if ($nextBatch > 0) echo $nextBatch; ?>">Next</a></li>
-						
-						{if:else}
-						
-						<li><a class="previous" href="/blog/10">Previous</a></li>
-						
-						{/if}
-					</ul>
+				{more-from-ala-for-blog}
 				
-				</nav>
+				{ad-bsa-text}
+			
+			</div>
 		
-			</section>		
+		
+		
 		</div>
-		
-		
 	
 	</div>
 	
 	{global-nav}
 	
-	{sponsor-top}
+{sponsor-top}
 
 {global-footer}
 	

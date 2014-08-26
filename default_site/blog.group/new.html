@@ -1,31 +1,9 @@
 {global-page-top}
 
-	<title>A List Apart: Our Columns</title>
+	<title>The A List Apart Blog</title>
 	<meta name="description" content="">
 		
 </head>
-
-<?php
-$entries = array();
-
-$sql = "SELECT author_id as author, 
-        max(entry_id) as entry_id 
-        FROM exp_channel_titles
-        WHERE channel_id = '5'
-            AND status = 'open'
-        GROUP BY author 
-        ORDER BY entry_id DESC 
-        LIMIT 20";
-
-$authorEntriesQuery = ee()->db->query($sql);
-
-foreach($authorEntriesQuery->result_array() as $row)
-{
-    $entries[] = $row['entry_id'];
-}
-
-$entriesString = implode('|',$entries);
-?>
 
 <body>
 
@@ -33,8 +11,8 @@ $entriesString = implode('|',$entries);
 
 	{primary-logo}
 			
-	<h1 class="section-title">Our Columnists</h1>
-	<h2 class="section-sub-title">Perspectives that shape our community</h2>
+	<h1 class="section-title">Our Blog</h1>
+	<h2 class="section-sub-title">Quick updates and practical approaches</h2>
 	
 	<div role="main" class="main-wrapper stacker single-column-display">
 	
@@ -42,22 +20,16 @@ $entriesString = implode('|',$entries);
 		
 			<article class="main-content">
 
-				{exp:channel:entries channel="columns" entry_id="<?php echo $entriesString ?>"}
-
-				{if count == "1"}
+				{exp:channel:entries channel="blog|link_posts" limit="1"}
 
 				<header class="author-header">
 					
-					{embed="embeds/column-author-photo" entry_author="{author_id}" entry_id="{entry_id}"}
-					
-					<span class="column-name latest">{categories show_group="4"}{if category_description}{category_description}{if:else}{category_name}{/if}{/categories}</span>
+					<span class="column-name featured">{embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</span>
 					
 					<h1><a href="/column/{url_title}">{title}</a></h1>
 					
 					<p class="meta">
-						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time> · 
-						
-						Published in {modern-categories}
+						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
 						
 						{if comment_total > 0}
 						 · <a class="comment-count" href="/column/{url_title}#comments">{comment_total} Comment{if comment_total > 1}s{/if}</a>
@@ -66,84 +38,47 @@ $entriesString = implode('|',$entries);
 					
 				</header>
 				
-				<p class="column-intro">{column_intro} <a href="/column/{url_title}">Read&nbsp;more</a></p>
+				<p class="column-intro">{blog_intro} <a href="/column/{url_title}">Read&nbsp;more</a></p>
 				
-				<aside class="previous-column">
-				
-					<time datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
-					
-					<h2><a href="/column/{url_title}">{title}</a></h2>
-				
-				</aside>
 				
 			</article>
 			
 		</div>
 	
 	</div>
-	
-	<div role="main" class="main-wrapper stacker multi-column-display">
 			
+	<div role="main" class="main-wrapper two-column-display no-top">
+	
 		<div class="col-holder">
 		
 			<section class="main-content">
-			
-				<h1 class="section-sub-title columnists">More From Our Columnists</h1>
 
-				{if:elseif count < 8}<article class="item-summary article columnist">
-
-					<header class="column-summary-header">
-						
-						{embed="embeds/column-author-photo-small-index" entry_author="{member_id}" entry_id="{entry_id}"}
-				
-						<span class="column-name">{categories show_group="4"}{if category_description}{category_description}{if:else}{category_name}{/if}{/categories}</span>
-				
-						<h1><a href="/column/{url_title}">{title}</a></h1><p class="meta">
-					
-						<p class="meta">
-							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
-							{if comment_total > 0}
-							· <a class="comment-count" href="/column/{url_title}#comments">{comment_total} Comment{if comment_total > 1}s{/if}</a>
-							{/if}
-						</p>
-					
-					</header>
-					
-					<p>{column_intro}</p>
-				
-					<aside class="previous-column">
-					
-						{embed="embeds/columnist-more" entry_author="{member_id}" entry_id="{entry_id}"}
-					
-					</aside>
-					
-				</article>
-				
+				{if segment_2}
+				{embed="embeds/blog-posts-new" offset="{segment_2}"}
+				{if:else}
+				{embed="embeds/blog-posts-new" offset="0" exclude_id="{entry_id}"}
 				{/if}
-				
 				{/exp:channel:entries}
-			
-				<nav class="paginator" role="toolbar">
-			
-					<ul>
-												
-						<li><a class="bigger" href="/columns/archives">Columns Archive</a></li>
-						
-					</ul>
 				
-				</nav>
+			</section><!--
 			
-			</section>
+			--><div class="secondary-column">
+				
+				{more-from-ala-for-blog}
+				
+				{ad-bsa-text}
+			
+			</div>
+		
+		
 		
 		</div>
-		
-		
 	
 	</div>
 	
 	{global-nav}
 	
-	{sponsor-top}
+{sponsor-top}
 
 {global-footer}
 	
