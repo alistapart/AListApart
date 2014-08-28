@@ -146,14 +146,6 @@ html:not(.no-js) .buttonish:before {
 	max-width: 960px;
 }
 
-.no-touch .logo-holder .killer-logo a.yeeeeeeaahhh {
-	-webkit-transform: translate(0,10px) rotate(.4deg);
-	-moz-transform: translate(0,10px) rotate(.4deg);
-	-o-transform: translate(0,10px) rotate(.4deg);
-	-ms-transform: translate(0,10px) rotate(.4deg);
-	transform: translate(0,10px) rotate(.4deg);
-}
-
 .go-to-nav {display: none;}
 
 .deadly-subtitle {
