@@ -633,6 +633,7 @@ aside.column.more-content .item-summary {
 	float: left;
 	margin: 0 6px 12px 0;
 	border-radius: 50%;
+	border: .5em solid #f5f5f5;
 }
 
 .item-summary.article.columnist img {
@@ -641,6 +642,7 @@ aside.column.more-content .item-summary {
 	float: none;
 	margin: 0 auto 12px;
 	border-radius: 50%;
+	border: .5em solid #f5f5f5;
 }
 
 .item-summary.article .column-name {
@@ -1140,6 +1142,7 @@ footer a.aside-author + time:before {
 	display: block;
 	margin: 0 auto 18px;
 	border-radius: 50%;
+	border: .5em solid #f5f5f5;
 }
 
 .columnist-photo img {
@@ -2316,6 +2319,7 @@ pre.editing code {
 	float: left;
 	margin: 4px 12px 12px 0;
 	border-radius: 50%;
+	border: .5em solid #f5f5f5;
 }
 
 .entry-footer h1,
@@ -2995,11 +2999,12 @@ img.commenter-avatar {
 	position: relative;
 	top: 4px;
 	display: block;
+	width: 60px;
+	height: 60px;
 	float: left;
 	margin-right: 12px;
 	border-radius: 50%;
-	width: 60px;
-	height: 60px;
+	border: .5em solid #f5f5f5;
 }
 
 .article-comments .commenter-info img.commenter-avatar {
