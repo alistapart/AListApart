@@ -1139,6 +1139,7 @@ footer a.aside-author + time:before {
 .author-header img {
 	display: block;
 	margin: 0 auto 18px;
+	border-radius: 50%;
 }
 
 .columnist-photo img {
