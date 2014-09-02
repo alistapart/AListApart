@@ -627,7 +627,7 @@ ul.inline-items li {
 	display: block;
 	float: left;
 	margin: 0 6px 12px 0;
-	border-radius: 5px;
+	border-radius: 50%;
 }
 
 .item-summary.article.columnist img {
@@ -2309,7 +2309,7 @@ pre.editing code {
 	display: block;
 	float: left;
 	margin: 4px 12px 12px 0;
-	border-radius: 6px;
+	border-radius: 50%;
 }
 
 .entry-footer h1,
@@ -2661,7 +2661,7 @@ ol.article-comments > li:first-child:after {
 
 .comment-byline {
 	margin-left: 72px;
-	margin-bottom: 9px;
+	margin-bottom: 2px;
 	font-size: 12px;
 	font-family: "Franklin ITC Pro Light", sans-serif;
 	font-weight: normal;
@@ -2991,7 +2991,7 @@ img.commenter-avatar {
 	display: block;
 	float: left;
 	margin-right: 12px;
-	border-radius: 6px;
+	border-radius: 50%;
 	width: 60px;
 	height: 60px;
 }
