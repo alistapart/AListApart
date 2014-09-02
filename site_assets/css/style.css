@@ -4,6 +4,7 @@
 
 html,
 body {
+	font: normal 18px/30px georgia, serif;
 	font: normal 18px/30px "Georgia Pro", georgia, serif;
 	text-rendering: optimizeLegibility;
 	color: #222;
@@ -994,7 +995,7 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 .entry-header p,
 .entry-header h2 {
 	padding: 0 48px;
-	/* font-family: "Georgia Pro", georgia, serif;
+	/* font-family: georgia, serif;
 	font-style: normal;
 	font-weight: normal; */
 }
@@ -1215,7 +1216,7 @@ footer a.aside-author + time:before {
 }
 
 .column-name i {
-	font-family: "Georgia Pro", georgia, serif;
+	font-family: georgia, serif;
 	text-transform: none;
 }
 
@@ -1756,7 +1757,7 @@ p.question {
 }
 
 .article-layout .main-content .sidebar h1 {
-	font-family: "Georgia Pro", georgia, serif;
+	font-family: georgia, serif;
 	font-size: 14px;
 }
 
