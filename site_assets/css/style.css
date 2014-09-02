@@ -583,6 +583,10 @@ ul.inline-items li {
 	padding: 0 0 24px 12px;
 }
 
+aside.column.more-content .item-summary {
+	padding-left: 0;
+}
+
 .secondary-column .item-summary:nth-child(odd) {
 	padding-left: 0;
 }
