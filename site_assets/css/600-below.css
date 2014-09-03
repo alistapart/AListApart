@@ -597,7 +597,7 @@
 		z-index: 0;
 	}
 
-	.aside-breaker a {
+	.aside-breaker b {
 		background-color: #fff;
 		border: 1px solid #eee;
 		border-radius: 0.5em;
@@ -608,17 +608,17 @@
 		position: relative;
 	}
 	
-	.aside-breaker a:hover {
+	.aside-breaker b.linked:hover {
 		background-color: #eee;
 		text-decoration: none;
 	}
 	
-	.aside-breaker a:before {
+	.aside-breaker b:before {
 		content: "\21C3";
 		margin-right: 0.5em;
 	}
 	
-	.aside-breaker a:after {
+	.aside-breaker b:after {
 		content: "\21C2";
 		margin-left: 0.5em;
 	}
