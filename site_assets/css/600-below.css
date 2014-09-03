@@ -48,6 +48,10 @@
 	.main-content > ul.entry-list > li.featured-comment footer .commenter-name + time {
 		display: inline;
 	}
+	
+	.two-column-display.no-top .main-content {
+		border-right: 0;
+	}
 
 }
 
