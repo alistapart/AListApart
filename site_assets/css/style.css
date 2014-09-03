@@ -1662,7 +1662,7 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 .main-content > ul.entry-list > li.featured-comment {
 	position: relative;
 	margin-left: -12px;
-	padding: 32px 24px;
+	padding: 28px 24px;
 	background: #f9f9f9;
 	border-radius: 12px;
 }

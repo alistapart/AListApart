@@ -4,18 +4,11 @@
 						
 						<footer>
 						
-							<span class="commenter-name">
-							{if url}
-							<a href="{url}">{name}</a>
-							{if:elseif twitter}
-							<a href="http://twitter.com/{twitter}">{name}</a>
-							{if:else}
-							{name}
-							{/if}</span>
+							<span class="commenter-name">{name}</span>
 							 · 
-							<time>{comment_date format="%F %d, %Y"}</time> <i>commenting on</i>
+							<time><a href="/comments/{url_title}/#{comment_id}">{comment_date format="%F %d, %Y"}</a></time> <i>commenting on</i>
 							
-							<span class="source-title"><a href="/comments/{url_title}/#{comment_id}">{title}</a> <i>by</i> <a href="">Author Name</a></span>
+							<span class="source-title"><a href="/blog/post/{url_title}">{title}</a> <i>by</i> {embed="embeds/article-authors" entry_id="{entry_id}"}</span>
 							
 						</footer>
 			
