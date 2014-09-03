@@ -609,8 +609,8 @@
 	}
 	
 	.aside-breaker b:hover {
-		background-color: #eee;
-		text-decoration: none;
+		/*background-color: #eee;
+		text-decoration: none;*/
 	}
 	
 	.aside-breaker b:before {

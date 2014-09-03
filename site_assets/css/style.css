@@ -1660,10 +1660,22 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 }
 
 .main-content > ul.entry-list > li.featured-comment {
+	position: relative;
 	margin-left: -12px;
 	padding: 32px 24px;
 	background: #f9f9f9;
 	border-radius: 12px;
+}
+
+.main-content > ul.entry-list > li.featured-comment:before {
+	content: "“";
+	position: absolute;
+	right: calc(100% + 12px);
+	font-size: 120px;
+	line-height: 120px;
+	color: #ba3925;
+	font-family: "Georgia Pro", georgia;
+	font-weight: bold;
 }
 
 .main-content > ul.entry-list > li.featured-comment h3 {
