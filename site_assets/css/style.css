@@ -1659,6 +1659,39 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	margin-bottom: 24px;
 }
 
+.main-content > ul.entry-list > li.featured-comment {
+	margin-left: -12px;
+	padding: 32px 24px;
+	background: #f9f9f9;
+	border-radius: 12px;
+}
+
+.main-content > ul.entry-list > li.featured-comment h3 {
+	margin: 0;
+	font-family: "Franklin ITC Pro Bold";
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+.main-content > ul.entry-list > li.featured-comment p {
+	margin-bottom: 12px;
+}
+
+.main-content > ul.entry-list > li.featured-comment footer {
+	font-family: "Georgia Pro",georgia,serif;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+.main-content > ul.entry-list > li.featured-comment .commenter-name {
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.main-content > ul.entry-list > li.featured-comment footer .source-title {
+	display: block;
+}
+
 .main-content figure.cat-image {
 	float: left;
 	width: 216px;
@@ -3282,6 +3315,7 @@ ul.bullets {
 	font-family: "FranklinITCPro-Light";
 	line-height: 21px;
 	margin: 0 0 3em;
+	background: #fff;
 }
 
 .job-board.in-article {
