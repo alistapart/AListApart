@@ -88,14 +88,16 @@
 					{exp:stash:get name="issue-number"}
 				</figure>
 				{if:else}
-				{exp:stash:set name="tall-hero"}
+				<figure class="wide-hero" data-picture data-alt="">
 					<div data-src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="60"}{made}{/exp:ce_img:pair}"></div>
 					<div data-src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="60"}{made}{/exp:ce_img:pair}" data-media="(min-width: 960px)"></div>
 					<div data-src="{exp:ce_img:pair src="{url}" width="696" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" data-media="(min-width: 960px) and (min-device-pixel-ratio: 2.0)"></div>
 			
 					<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-					<noscript><img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
-				{/exp:stash:set}
+					<noscript><img src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
+					
+					{exp:stash:get name="issue-number"}
+				</figure>
 				{/if}
 				{/article_illustration}
 				{if:elseif article_legacy_illo}
@@ -170,15 +172,6 @@
 				{exp:hop_inject where="<p>" always_inject="y"}
 				
 				{exp:hop_inject:injection separator="2" position="before"}
-				
-				{article_illustration}
-				{if width <= height}
-				<figure class="tall-hero" data-picture data-alt="">
-				{exp:stash:get name="tall-hero"}
-				{embed="embeds/article-issue-number" article-id="{entry_id}"}
-				</figure>
-				{/if}
-				{/article_illustration}
 				
 				{content-minutiae}
 				

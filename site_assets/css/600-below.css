@@ -608,7 +608,7 @@
 		position: relative;
 	}
 	
-	.aside-breaker b.linked:hover {
+	.aside-breaker b:hover {
 		background-color: #eee;
 		text-decoration: none;
 	}
