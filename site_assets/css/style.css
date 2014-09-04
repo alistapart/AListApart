@@ -2662,6 +2662,13 @@ ol.article-comments > li .comment-tools a {
 	transition: background .2s ease-in;
 }
 
+ol.article-comments > li .comment-tools .comment-id {
+	position: absolute;
+	top: calc(100% + 6px);
+	right: 0;
+	color: #ccc;
+}
+
 ol.article-comments > li:hover .comment-tools a {
 	background: #ccc;
 }
