@@ -742,6 +742,10 @@ aside.column.more-content .item-summary {
 	text-align: center;
 }
 
+.sidebar-hero {
+	margin-bottom: 18px;
+}
+
 @media only screen and (min-width: 87.5em) { /* 1400px */
 
 .wide-hero.responsive-hero {
@@ -1659,6 +1663,51 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	margin-bottom: 24px;
 }
 
+.main-content > ul.entry-list > li.featured-comment {
+	position: relative;
+	margin-left: -12px;
+	padding: 28px 24px;
+	background: #f9f9f9;
+	border-radius: 12px;
+}
+
+.main-content > ul.entry-list > li.featured-comment:before {
+	content: "“";
+	position: absolute;
+	right: calc(100% + 12px);
+	font-size: 120px;
+	line-height: 120px;
+	color: #ba3925;
+	font-family: "Georgia Pro", georgia;
+	font-weight: bold;
+}
+
+.main-content > ul.entry-list > li.featured-comment h3 {
+	margin: 0;
+	font-family: "Franklin ITC Pro Bold";
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+.main-content > ul.entry-list > li.featured-comment p {
+	margin-bottom: 12px;
+}
+
+.main-content > ul.entry-list > li.featured-comment footer {
+	font-family: "Georgia Pro",georgia,serif;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+.main-content > ul.entry-list > li.featured-comment .commenter-name {
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.main-content > ul.entry-list > li.featured-comment footer .source-title {
+	display: block;
+}
+
 .main-content figure.cat-image {
 	float: left;
 	width: 216px;
@@ -1995,6 +2044,14 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 
 .main-content > h2.alternate {
 	font-family: "Georgia Pro";
+}
+
+h3.alternate {
+	margin-bottom: 18px;
+	color: #bb3825;
+	font-family: "Georgia Pro";
+	font-size: 14px;
+	line-height: 14px;
 }
 
 .main-content > h2.alt {
@@ -2373,7 +2430,7 @@ pre.editing code {
 .entry-footer .photo + h2 + .author-bio,
 .entry-footer .photo + h2 + .author-bio + h3,
 .entry-footer .photo + h2 + .author-bio + h3 + .author-more {
-	margin-left: 132px;
+	margin-left: 150px;
 }
 
 .entry-footer .byline .author-bio p + p {
@@ -2603,6 +2660,13 @@ ol.article-comments > li .comment-tools a {
 	-o-transition: background .2s ease-in;
 	-ms-transition: background .2s ease-in;
 	transition: background .2s ease-in;
+}
+
+ol.article-comments > li .comment-tools .comment-id {
+	position: absolute;
+	top: calc(100% + 6px);
+	right: 0;
+	color: #ccc;
 }
 
 ol.article-comments > li:hover .comment-tools a {
@@ -3282,6 +3346,7 @@ ul.bullets {
 	font-family: "FranklinITCPro-Light";
 	line-height: 21px;
 	margin: 0 0 3em;
+	background: #fff;
 }
 
 .job-board.in-article {

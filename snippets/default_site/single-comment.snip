@@ -31,8 +31,9 @@
 								
 								<div class="comment-tools">
 									{if editable}
-									<a href="#" class="edit-link">Edit</a>
 									{if member_group == "1"}<a href="#" class="mod-link">Delete</a>{/if}
+									<a href="#" class="edit-link">Edit</a>
+									{if channel_short_name == 'blog'}<span class="comment-id">{comment_id}</span>{/if}
 									{/if}
 									<a href="#" class="embed-link">Embed</a>
 								</div>

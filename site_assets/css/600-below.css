@@ -36,6 +36,23 @@
 		width: auto;
 	}
 	
+	.main-content > ul.entry-list > li.featured-comment:before {
+		font-size: 78px;
+	}
+	
+	.main-content > ul.entry-list > li.featured-comment p {
+		clear: both;
+	}
+	
+	.main-content > ul.entry-list > li.featured-comment footer .source-title,
+	.main-content > ul.entry-list > li.featured-comment footer .commenter-name + time {
+		display: inline;
+	}
+	
+	.two-column-display.no-top .main-content {
+		border-right: 0;
+	}
+
 }
 
 
@@ -609,8 +626,8 @@
 	}
 	
 	.aside-breaker b:hover {
-		background-color: #eee;
-		text-decoration: none;
+		/*background-color: #eee;
+		text-decoration: none;*/
 	}
 	
 	.aside-breaker b:before {

@@ -1,0 +1,15 @@
+
+						{exp:comment:entries sort="asc" dynamic="no" comment_id="337502"}
+						{exp:textile}{exp:strip_html keep='b|em|a|i|blockquote'}{comment}{/exp:strip_html}{/exp:textile}
+						
+						<footer>
+						
+							<span class="commenter-name">{name}</span>
+							 · 
+							<time><a href="/comments/{url_title}/#{comment_id}">{comment_date format="%F %d, %Y"}</a></time> <i>commenting on</i>
+							
+							<span class="source-title"><a href="/blog/post/{url_title}">{title}</a> <i>by</i> {embed="embeds/article-authors" entry_id="{entry_id}"}</span>
+							
+						</footer>
+			
+						{/exp:comment:entries}
