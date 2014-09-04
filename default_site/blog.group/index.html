@@ -42,8 +42,6 @@
 				
 				<p class="column-intro">{blog_intro} <a href="/blog/post/{url_title}">Read&nbsp;more</a></p>
 				
-				{/exp:channel:entries}
-				
 			</article>
 			
 		</div>
@@ -56,7 +54,9 @@
 		
 			<section class="main-content">
 
-				{embed="embeds/blog-posts" offset="{segment_2}"}
+				{embed="embeds/blog-posts-new" exclude_id="{entry_id}"}
+				
+				{/exp:channel:entries}
 				
 				<nav class="paginator" role="toolbar">
 			
