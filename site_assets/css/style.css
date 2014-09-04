@@ -742,6 +742,10 @@ aside.column.more-content .item-summary {
 	text-align: center;
 }
 
+.sidebar-hero {
+	margin-bottom: 18px;
+}
+
 @media only screen and (min-width: 87.5em) { /* 1400px */
 
 .wide-hero.responsive-hero {
@@ -2040,6 +2044,14 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 
 .main-content > h2.alternate {
 	font-family: "Georgia Pro";
+}
+
+h3.alternate {
+	margin-bottom: 18px;
+	color: #bb3825;
+	font-family: "Georgia Pro";
+	font-size: 14px;
+	line-height: 14px;
 }
 
 .main-content > h2.alt {

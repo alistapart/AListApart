@@ -20,4 +20,38 @@
 							<p class="board-link">Job listings via <a href="https://weworkremotely.com/?source=ala">We Work Remotely</a></p>
 						</aside>
 						
-												
+						<h2>The Latest Issue</h2>
+				
+						{exp:channel:entries channel="issues" limit="1" status="open" dynamic="off" show_future_entries="no"}
+						
+						{issue_illustration}
+						<figure class="sidebar-hero" data-picture data-alt="">
+							<div data-src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}"></div>
+							<div data-src="{exp:ce_img:pair src="{url}" width="644" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" data-media="(min-width: 600px) and (min-device-pixel-ratio: 2.0)"></div>
+					
+							<noscript><img src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
+							
+						</figure>
+						{/issue_illustration}
+						
+						<h3 class="alternate">Issue № {issue_number} · <time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time></h3>
+						
+						<ul class="entry-list">
+			
+							{exp:playa:children field="issue_articles"}
+							<li>
+								<h3 class="entry-title"><a href="/article/{url_title}">{title}</a></h3>
+								<p class="meta">
+									by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+									{if comment_total > 0}
+									 · <a class="comment-count" href="/article/{url_title}#comments">{comment_total} Comment{if comment_total > 1}s{/if}</a>
+									 {/if}
+								</p>
+								<p>{exp:strip_html}{article_deck}{/exp:strip_html}</p>
+							</li>
+			
+							{if no_children}<li style="background: yellow;">no articles!</li>{/if}
+							{/exp:playa:children}
+						
+						</ul>
+						{/exp:channel:entries}
