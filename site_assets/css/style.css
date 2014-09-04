@@ -2418,7 +2418,7 @@ pre.editing code {
 .entry-footer .photo + h2 + .author-bio,
 .entry-footer .photo + h2 + .author-bio + h3,
 .entry-footer .photo + h2 + .author-bio + h3 + .author-more {
-	margin-left: 132px;
+	margin-left: 150px;
 }
 
 .entry-footer .byline .author-bio p + p {
