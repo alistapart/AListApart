@@ -8,14 +8,14 @@
 
 <head>
 
-	<meta charset="utf-8">
+	<meta charset="utf-8" />
 	
 	<link rel="dns-prefetch" href="//d.alistapart.com" />
 	
 	<link rel="alternate" type="application/rss+xml" title="A List Apart: The Full Feed" href="/site/rss" />
 	<link rel="alternate" type="application/rss+xml" title="A List Apart: The Abridged Feed (just articles and columns)" href="/site/abridged-rss" />
 	
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
 	<link rel="shortcut icon" href="/d/_repo/site_assets/img/favicons/favicon.ico" type="image/x-icon" />
 	<link rel="apple-touch-icon" href="/d/_repo/site_assets/img/favicons/apple-touch-icon.png" />
@@ -27,16 +27,24 @@
 	<link rel="apple-touch-icon" sizes="144x144" href="/d/_repo/site_assets/img/favicons/apple-touch-icon-144x144.png" />
 	<link rel="apple-touch-icon" sizes="152x152" href="/d/_repo/site_assets/img/favicons/apple-touch-icon-152x152.png" />
 	
-	<meta name="application-name" content="A List Apart"/> 
-	<meta name="msapplication-TileColor" content="#222222"/> 
-	<meta name="msapplication-TileImage" content="/d/_repo/site_assets/img/favicons/windows-8-tile.png"/>
+	<meta name="application-name" content="A List Apart" /> 
+	<meta name="msapplication-TileColor" content="#222222" /> 
+	<meta name="msapplication-TileImage" content="/d/_repo/site_assets/img/favicons/windows-8-tile.png" />
 	
 	<link href="https://plus.google.com/+alistapart/" rel="publisher" />
 	
 	<meta http-equiv="imagetoolbar" content="false" />
 
+	<meta name="fullCSS" content="/d/_repo/site_assets/css/all.dist.css" />
+
+	<!-- {exp:stash:get name="page_static" dynamic="yes"} -->
+
+	{if {exp:stash:not_empty name="page_static"}}
 	<link rel="stylesheet" href="/d/_repo/site_assets/css/all.dist.css" />
-	
-	<script src="/d/_repo/site_assets/js/libs/modernizr-custom.js"></script>
-	
-	
+	{if:else}
+	<style>
+	{path="/d/_repo/site_assets/css/dist/critical-article.css"}
+	</style>
+	{/if}
+
+	<script src="/d/_repo/site_assets/js/dist/initial.js"></script>
