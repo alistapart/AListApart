@@ -55,3 +55,28 @@
 						
 						</ul>
 						{/exp:channel:entries}
+						
+						{exp:channel:entries channel="columns" limit="2" dynamic="no" status="open" show_future_entries="no"}
+						
+						{if count == "1"}
+						<h2>Recent Columns</h2>
+						{/if}
+						
+						{if channel_short_name == "columns"}
+						<article class="item-summary article">
+				
+							{categories show_group="4"}<span class="column-name">{if category_description}{category_description}{if:else}{category_name}{/if}</span>{/categories}
+				
+							<h1><a href="/column/{url_title}">{title}</a></h1>
+				
+							{embed="embeds/column-author-photo-small" entry_author="{author_id}" entry_id="{entry_id}"}
+					
+							<p>{column_intro}</p>
+					
+							<footer class="byline">
+								<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+							</footer>
+						
+						</article>
+						
+						{/exp:channel:entries}
