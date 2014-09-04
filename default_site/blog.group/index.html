@@ -14,6 +14,8 @@
 	<h1 class="section-title">Our Blog</h1>
 	<h2 class="section-sub-title">Quick updates and practical approaches</h2>
 	
+	{if segment_2 == ""}
+	
 	<div role="main" class="main-wrapper stacker single-column-display">
 	
 		<div class="col-holder">
@@ -40,6 +42,8 @@
 				
 				<p class="column-intro">{blog_intro} <a href="/blog/post/{url_title}">Read&nbsp;more</a></p>
 				
+				{/exp:channel:entries}
+				
 			</article>
 			
 		</div>
@@ -52,13 +56,15 @@
 		
 			<section class="main-content">
 
-				{if segment_2}
-				{embed="embeds/blog-posts-new" offset="{segment_2}"}
-				{if:else}
-				{embed="embeds/blog-posts-new" offset="0" exclude_id="{entry_id}"}
-				{/if}
+				{embed="embeds/blog-posts" offset="{segment_2}"}
 				
-				{/exp:channel:entries}
+				<nav class="paginator" role="toolbar">
+			
+					<ul>
+						<li><a class="previous" href="/blog/10">Previous</a></li>
+					</ul>
+				
+				</nav>
 				
 			</section><!--
 			
@@ -75,6 +81,53 @@
 		</div>
 	
 	</div>
+	
+	{if:else}
+	
+	<div role="main" class="main-wrapper two-column-display no-top">
+	
+		<div class="col-holder">
+		
+			<section class="main-content">
+
+				{embed="embeds/blog-posts" offset="{segment_2}"}
+				
+				<nav class="paginator" role="toolbar">
+			
+					<ul>
+				
+						<?php
+						
+						$thisBatch = {segment_2} + 0;
+						$previousBatch = $thisBatch + 10;
+						$nextBatch = $thisBatch - 10;
+						
+						?>
+						
+						<li><a class="previous" href="/blog/<?php echo $previousBatch; ?>">Previous</a></li>
+						<li><a class="next" href="/blog/<?php if ($nextBatch > 0) echo $nextBatch; ?>">Next</a></li>
+						
+					</ul>
+				
+				</nav>
+				
+			</section><!--
+			
+			--><div class="secondary-column">
+			
+				{more-from-ala-for-blog}
+				
+				{ad-bsa-text}
+			
+			</div>
+		
+		
+		
+		</div>
+	
+	</div>
+	
+	{/if}
 	
 	{global-nav}
 	
