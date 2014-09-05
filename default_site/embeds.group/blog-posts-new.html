@@ -1,7 +1,7 @@
 
 				<ul class="entry-list step-up">
 					
-				{exp:channel:entries channel="blog|link_posts" limit="10" dynamic="off" status="open" show_future_entries="no" sticky="no" offset="{embed:offset}"}
+				{exp:channel:entries channel="blog|link_posts" limit="10" dynamic="off" status="open" show_future_entries="no" sticky="no" offset="{embed:offset}" entry_id="not {embed:exclude_id}"}
 					
 					<li>
 						<h3 class="entry-title"><a href="/blog/post/{url_title}">{title}</a></h3>
