@@ -1,7 +1,7 @@
 
 				<ul class="entry-list step-up">
 					
-				{exp:channel:entries channel="blog|link_posts" limit="10" dynamic="off" status="open" show_future_entries="no" sticky="no" entry_id="NOT {embed:exclude_id}"}
+				{exp:channel:entries channel="blog|link_posts" limit="10" dynamic="off" status="open" show_future_entries="no" sticky="no" offset="{embed:offset}" entry_id="not {embed:exclude_id}"}
 					
 					<li>
 						<h3 class="entry-title"><a href="/blog/post/{url_title}">{title}</a></h3>
@@ -13,7 +13,7 @@
 							 {/if}
 						</p>
 						
-						{if blog_intro}<p>{exp:strip_html}{blog_intro}{/exp:strip_html}</p>{/if}
+						{if blog_intro}<p>{blog_intro}</p>{/if}
 						{if blog_description}<p>{blog_description}</p>{/if}
 						
 						{if channel_short_name == "link_posts" && blog_attribution}
@@ -26,7 +26,7 @@
 						{/if}
 					</li>
 					
-					{if count == "2"}
+					{if count == "2" AND segment_2 == ''}
 					
 					<li class="featured-comment">
 					
