@@ -1,0 +1,167 @@
+{global-page-top}
+
+	<title>Sign up for emails from A List Apart</title>
+		
+</head>
+
+<body>
+
+{current-user-info-edit}
+
+	{primary-logo}
+	
+	<div role="main" class="main-wrapper two-column-display">
+	
+		<div class="col-holder">
+		
+			<article class="main-content">
+
+<style>
+
+.simple-form fieldset,
+.simple-form p {
+	margin-bottom: 1.333em;
+}
+
+.simple-form legend {
+	font-size: 16px;
+	font-family: "Franklin ITC Pro Light",sans-serif;
+	font-style: normal;
+}
+
+.simple-form label {
+	font-size: 16px;
+	font-family: "Franklin ITC Pro Light",sans-serif;
+	font-style: normal;
+}
+
+.simple-form label.list:after {
+	content: '';
+	display: block;
+}
+
+.simple-form input[type=text],
+.simple-form input[type=email] {
+display: block;
+width: 75%;
+margin: 3px 0 18px;
+padding: 9px;
+border: 1px
+solid #ccc;
+border-radius: 4px;
+color: #000;
+outline: 0;
+box-shadow: inset 0px 0px 10px rgba(0,0,0,.05);
+letter-spacing: .1em;
+font-family: "Franklin ITC Pro Light",sans-serif;
+font-size: 18px;
+font-weight: normal;
+font-style: normal;
+-webkit-transition: box-shadow 100ms ease-in;
+-moz-transition: box-shadow 100ms ease-in;
+-o-transition: box-shadow 100ms ease-in;
+-ms-transition: box-shadow 100ms ease-in;
+transition: box-shadow 100ms ease-in;
+}
+
+.simple-form input[type=text]:focus,
+.simple-form input[type=email]:focus {
+box-shadow:inset 0px 0px 10px rgba(0,0,0,.15);
+}
+
+.simple-form label.list input {
+	margin-right: 3px;
+}
+
+.simple-form input[type="submit"] {
+padding: 6px 18px;
+background: #bb3825;
+border: 0;
+border-radius: 6px;
+color: #fff;
+font-family: "Franklin ITC Pro Light",sans-serif;
+font-weight: normal;
+font-style: normal;
+}
+
+.form-message {
+	margin-top: 1.4em;
+	font-family: "Franklin ITC Pro", sans-serif;
+	font-size: 14px;
+	line-height: 28px;
+	color: #fff;
+	background: #090;
+	text-align: center;
+	border-radius: 4px;
+}
+
+</style>
+
+				{if segment_2 == "thanks"}<p class="form-message">Got it, thanks!</p>{/if}
+			
+				<h1 class="basic-title">Receive ALA in Your Email</h1>
+				
+				<p>We're setting up email notifications to launch by the end of 2014. Sign up now and we'll start letting you know whenever we have new content.</p>
+				
+				{exp:freeform:form
+					form_name="email_subscription_signups"
+					return="email-signup/thanks"
+					form:id="email-subscribe"
+					form:class="simple-form"
+				}
+
+				<fieldset>
+
+					<label for="name">Name
+					<input type="text" name="name" id="name" value="{screen_name}" required /></label>
+
+					<label for="email">Email address
+					<input type="email" name="email" id="email" value="{email}" required /></label>
+
+				</fieldset>
+
+				<p>You can get an email whenever we have something fresh:</p>
+				
+				<fieldset>
+
+					<label class="list"><input type="checkbox" name="subscribe_articles" value="y" required /> Articles (Our deepest dives. Published every other Tuesday.)</label>
+					<label class="list"><input type="checkbox" name="subscribe_columns" value="y" required /> Columns (Smart perspectives from community leaders. About once a week.)</label>
+					<label class="list"><input type="checkbox" name="subscription_blog" value="y" required /> Blog posts (ALA updates and hands-on advice. Roughly twice per week.)</label>
+
+				</fieldset>
+
+				<p>Or, receive a roundup of all our recent content whenever we publish a new issue:</p>
+
+				<fieldset>
+
+					<label class="list"><input type="checkbox" name="subscription_digest" value="y" required /> Digest (Sent every other Tuesday.)</label>
+
+				</fieldset>
+
+				<p><input type="submit" value="Submit" /></p>
+
+				{/exp:freeform:form}
+			
+			</article><!--
+			
+			--><div class="secondary-column">
+	
+				{sponsor-top}
+			
+				{about-nav}
+				
+				{ads}
+			
+			</div>
+		
+		</div>
+		
+		
+	
+	</div>
+	
+	{global-nav}
+
+{global-footer}
+	
+{global-page-bottom}
