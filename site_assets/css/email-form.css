@@ -1,0 +1,90 @@
+.simple-form fieldset,
+.simple-form p {
+	margin-bottom: 1.333em;
+}
+
+.simple-form legend {
+	font-size: 16px;
+	font-family: "Franklin ITC Pro Light",sans-serif;
+	font-style: normal;
+}
+
+.simple-form label {
+	font-size: 16px;
+	font-family: "Franklin ITC Pro Light",sans-serif;
+	font-style: normal;
+}
+
+.simple-form label.list:after {
+	content: '';
+	display: block;
+}
+
+.simple-form input[type=text],
+.simple-form input[type=email] {
+display: block;
+width: 75%;
+margin: 3px 0 18px;
+padding: 9px;
+border: 1px
+solid #ccc;
+border-radius: 4px;
+color: #000;
+outline: 0;
+box-shadow: inset 0px 0px 10px rgba(0,0,0,.05);
+letter-spacing: .1em;
+font-family: "Franklin ITC Pro Light",sans-serif;
+font-size: 18px;
+font-weight: normal;
+font-style: normal;
+-webkit-transition: box-shadow 100ms ease-in;
+-moz-transition: box-shadow 100ms ease-in;
+-o-transition: box-shadow 100ms ease-in;
+-ms-transition: box-shadow 100ms ease-in;
+transition: box-shadow 100ms ease-in;
+}
+
+.simple-form input[type=text]:focus,
+.simple-form input[type=email]:focus {
+box-shadow:inset 0px 0px 10px rgba(0,0,0,.15);
+}
+
+.simple-form label.list input {
+	margin-right: 3px;
+}
+
+.simple-form input[type="submit"] {
+padding: 6px 18px;
+background: #bb3825;
+border: 0;
+border-radius: 6px;
+color: #fff;
+font-family: "Franklin ITC Pro Light",sans-serif;
+font-weight: normal;
+font-style: normal;
+}
+
+.form-message {
+	margin-top: 1.4em;
+	font-family: "Franklin ITC Pro", sans-serif;
+	font-size: 14px;
+	line-height: 28px;
+	color: #fff;
+	background: #090;
+	text-align: center;
+	border-radius: 4px;
+}
+
+.form-message.error {
+	opacity: 0;
+	-webkit-transition: opacity 40ms ease-out;
+	-moz-transition: opacity 40ms ease-out;
+	-o-transition: opacity 40ms ease-out;
+	-ms-transition: opacity 40ms ease-out;
+	transition: opacity 40ms ease-out;
+	background: red;
+}
+
+.form-message.error:not(:empty) {
+	opacity: 1;
+}

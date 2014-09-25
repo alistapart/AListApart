@@ -366,6 +366,40 @@ $(document).ready(function(){
 		autoResize($(this));
 	
 	});
+
+	var emailFilter = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/;
+	
+	$("form#email-subscribe").submit(function(e) {
+	
+		userName = $("form#email-subscribe input[name=name]").val();
+	
+		userEmail = $("form#email-subscribe input[name=email]").val();
+	
+		userType = $('form#email-subscribe input[type=checkbox]:checked').size();
+
+		if (userName == "" || userEmail == "" || userType == 0) {
+			
+			$("form#email-subscribe p.error").html('Hey, did you fill out all the fields?');
+			
+			return false;
+			
+		} else {
+
+			if (emailFilter.test(userEmail)) {
+
+				return true;
+
+			} else {
+
+				$("form#email-subscribe p.error").html('Hey, is that a real email address?');
+			
+				return false;
+
+			};
+
+		};
+		
+	});
 				
 });
 
