@@ -3245,14 +3245,14 @@ img.commenter-avatar {
 	background-image: url(../img/logo_happy-cog-hosting.png);
 }
 
-.affiliates .eh {
-	width: 125px;
-	height: 20px;
-	background-image: url(../img/logo_engine-hosting.svg);
+.affiliates .arcus {
+	width: 56px;
+	height: 56px;
+	background-image: url(../img/logo_arcustech.svg);
 }
 
-.no-svg .affiliates .eh {
-	background-image: url(../img/logo_engine-hosting.png);
+.no-svg .affiliates .arcus {
+	background-image: url(../img/logo_arcustech.png);
 }
 
 
