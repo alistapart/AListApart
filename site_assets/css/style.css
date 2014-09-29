@@ -3249,6 +3249,7 @@ img.commenter-avatar {
 	width: 56px;
 	height: 56px;
 	background-image: url(../img/logo_arcustech.svg);
+	background-repeat: no-repeat;
 }
 
 .no-svg .affiliates .arcus {
