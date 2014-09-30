@@ -3762,6 +3762,12 @@ body.modal {
 	transform: translateX(-43%);
 }
 
+.screen-reader {
+	display: block !important;
+	left: -9999px !important;
+	position: absolute !important;
+}
+
 /* Print styles!
 -------------------------------------------------------------------------------*/
 @media print {
