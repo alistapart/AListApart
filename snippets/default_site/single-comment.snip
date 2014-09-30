@@ -26,7 +26,7 @@
 									<time datetime=""><a href="/comments/{url_title}#{comment_id}">{comment_date format="%g:%i %a on %F %d, %Y"}</a></time>
 								</p>
 								<div class="comment-body">
-									{exp:textile}{exp:strip_html keep='b|em|a|i|code|blockquote'}{comment}{/exp:strip_html}{/exp:textile}
+									{exp:strip_html keep='b|em|a|i|code|blockquote'}{comment}{/exp:strip_html}
 								</div>
 								
 								<div class="comment-tools">
