@@ -14,17 +14,17 @@
 {exp:comment:entries sort="asc" dynamic="no" comment_id="{segment_2}"}
 	<div class="ala-embedded-comment" id="ala-embedded-comment">
 		{if avatar}
-			<img class="commenter-avatar avatar" src="http://alistapart.com{avatar_url}" alt="" />
+			<img class="commenter-avatar avatar" src="{avatar_url}" alt="" />
 		{if:elseif photo_filename}
 			{exp:ce_img:pair src="{photo_url}" width="60" height="60" crop="yes"}
 			<img class="commenter-avatar photo" src="{made}" alt="" />
 			{/exp:ce_img:pair}
 		{if:elseif email == ""}
-			<img class="commenter-avatar generic" width="60" height="60" src="http://d.alistapart.com/_/img/FPO/avatar_generic-commenter_grey.png" alt="" />
+			<img class="commenter-avatar generic" width="60" height="60" src="http://alistapart.com/d/_repo/site_assets/img/avatar_generic-commenter_grey.png" alt="" />
 		{if:else}
 			<?php
 			$email = "{email}";
-			$default = "http://d.alistapart.com/_/img/FPO/avatar_generic-commenter_grey.png";
+			$default = "http://alistapart.com/d/_repo/site_assets/img/avatar_generic-commenter_grey.png";
 			$size = 60;
 			
 			$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
@@ -34,7 +34,7 @@
 		<span class="commenter-name">{name}</span>
 		<span class="comment-meta">commented on <a href="http://alistapart.com/comments/{url_title}#{comment_id}">{title}</a> · <time>{comment_date format="%F %d, %Y"}</time></span>
 		
-		{exp:textile}{exp:strip_html keep='b|em|a|i|blockquote'}{comment}{/exp:strip_html}{/exp:textile}
+		{exp:strip_html keep='b|em|a|i|blockquote'}{comment}{/exp:strip_html}
 		
 		<p class="article-link"><a href="http://alistapart.com/{if channel_title == "Columns"}column{if:elseif channel_title == "Blog Posts"}blog/post{if:else}article{/if}/{url_title}">Read the full {if channel_title == "Columns"}column{if:elseif channel_title == "Blog Posts"}blog post{if:else}article{/if} on A List Apart</a></p>
 		
