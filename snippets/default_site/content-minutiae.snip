@@ -8,7 +8,11 @@
 						{if article_illustration OR article_legacy_illo}
 						<h1>Illustration:</h1>
 						<ul>
+							{if illustrator_link_temp}
+							<li>{illustrator_link_temp}</li>
+							{if:else}
 							<li><a href="/author/kcornell">Kevin Cornell</a></li>
+							{/if}
 						</ul>
 						{/if}
 						{if article_translations OR member_group == "1" || member_group == "6" || member_group == "7" || member_group == "8"}
