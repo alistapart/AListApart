@@ -2,6 +2,8 @@
 
 {exp:user:stats username="{segment_2}"}
 
+{if user_no_results}{redirect="404"}{/if}
+
 {global-page-top}
 
 	<title>A List Apart Author: {screen_name}</title>
