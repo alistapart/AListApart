@@ -3772,165 +3772,168 @@ body.modal {
 -------------------------------------------------------------------------------*/
 @media print {
 
-body.printable .global-nav,
-body.printable .propagation-enablers,
-body.printable .post-article,
-body.printable .user-tools,
-body.printable .global-footer .inline-items:not(.copyright),
-body.printable .global-footer .inline-items.copyright small + small,
-body.printable .global-footer .affiliates,
-body.printable .global-footer .promo-holder,
-body.printable .deadly-subtitle,
-body.printable .content-minutiae {
-	display: none ! important;
-}
-
-body.printable .killer-logo {
-	max-width: 100%;
-	padding-right: 36px;
-	padding-left: 36px;
-}
-
-body.printable .killer-logo > a {
-	max-width: 100%;
-	margin-top: 0;
-	-webkit-print-color-adjust: exact;
-}
-
-body.printable .issue-number {
-	left: 0 ! important;
-	-webkit-print-color-adjust: exact;
-}
-
-body.printable .entry-header,
-body.printable .blog-header,
-body.printable .author-header {
-	width: auto ! important;
-	margin-right: 36px ! important;
-	margin-left: 36px ! important;
-}
-
-body.printable .entry-title {
-	font-size: 36px ! important;
-	line-height: 48px ! important;
-}
-
-body.printable .article-layout .main-content > h2,
-body.printable .article-layout .main-content > h3,
-body.printable .article-layout .main-content > h4,
-body.printable .article-layout .main-content > h5,
-body.printable .article-layout .main-content > h6,
-body.printable .article-layout .entry-footer {
-	margin-right: 36px;
-	margin-left: 36px;
-	font-size: 16px ! important;
-}
-
-body.printable .article-layout .entry-footer {
-	min-height: none;
-	padding-bottom: 0;
-}
-
-body.printable .article-layout .main-content > h2 {
-	font-size: 20px;
-}
-
-body.printable .article-layout .main-content > p,
-body.printable .article-layout .main-content > pre,
-body.printable .article-layout .main-content > ol,
-body.printable .article-layout .main-content > ul,
-body.printable .article-layout .main-content > figure,
-body.printable .article-layout .main-content > div.illustration,
-body.printable .article-layout .main-content .entry-footnotes {
-	margin-right: 36px ! important;
-	margin-left: 36px ! important;
-	margin-bottom: 12px ! important;
-	font-size: 16px !important;
-	line-height: 24px ! important;
-}
-
-body.printable .entry-details {
-	font-size: 16px !important;
-	line-height: 24px ! important;
-}
-
-body.printable .article-layout .main-content > p {
-	widows: 3;
-	orphans: 3;
-}
-
-body.printable .article-layout .main-content blockquote,
-body.printable .article-layout .main-content figcaption,
-body.printable .article-layout .main-content ul li,
-body.printable .article-layout .main-content code {
-	font-size: 16px !important;
-	line-height: 24px ! important;
-}
-
-body.printable .article-layout .main-content pre {
-	border-top-style: solid ! important;
-	border-bottom-style: solid ! important;
-}
-
-body.printable .article-layout .main-content a {
-	color: #222 ! important;
-}
-
-body.printable .article-layout .main-content p a[href]:after,
-body.printable .article-layout .main-content li a[href]:after,
-body.printable .article-layout .main-content blockquote a[href]:after {
-	content: " (" attr(href) ")";
-	word-wrap: break-word;
-	font-style: italic;
-}
-
-body.printable .content-minutiae h1,
-body.printable .content-minutiae li {
-	border-bottom: 0;
-}
-
-body.printable .content-minutiae a:after {
-	content: "" ! important;
-}
-
-body.printable .main-content > figure img,
-body.printable .main-content > div.illustration img {
-	max-width: 4in;
-	max-height: 4in;
-}
-
-body.printable .the-footnotes {
-	margin-left: 24px ! important;
-}
-
-body.printable .article-layout .main-content a[href^="#"]:after,
-body.printable .article-layout .main-content a[href^="javascript"]:after {
-	content: "" ! important;
-}
-
-body.printable .main-wrapper {
-	min-height: none;
-	padding-bottom: 0;
-}
-
-body.printable .global-footer {
-	position: static;
-	height: auto;
-	margin-top: 0;
-	margin-right: 36px;
-	margin-left: 36px;
-	padding-bottom: 0;
-	background: transparent;
-	-webkit-print-color-adjust: exact;
-}
-
-body.printable .global-footer .inline-items.copyright {
-	height: 30px;
-	margin: 0;
-	padding-left: 36px;
-	line-height: 30px;
-	background: url(/d/_repo/site_assets/img/icon_navigation-laurel.svg) left no-repeat;
-	-webkit-print-color-adjust: exact;
-}
+	body.printable .global-nav,
+	body.printable .propagation-enablers,
+	body.printable .post-article,
+	body.printable .user-tools,
+	body.printable .global-footer .inline-items:not(.copyright),
+	body.printable .global-footer .inline-items.copyright small + small,
+	body.printable .global-footer .affiliates,
+	body.printable .global-footer .promo-holder,
+	body.printable .deadly-subtitle,
+	body.printable .content-minutiae .minutiae-block:not(:first-child),
+	.sponsor-top,
+	.the-deck.in-article,
+	.job-board.in-article {
+		display: none ! important;
+	}
+	
+	body.printable .killer-logo {
+		max-width: 100%;
+		padding-right: 36px;
+		padding-left: 36px;
+	}
+	
+	body.printable .killer-logo > a {
+		max-width: 100%;
+		margin-top: 0;
+		-webkit-print-color-adjust: exact;
+	}
+	
+	body.printable .issue-number {
+		left: 0 ! important;
+		-webkit-print-color-adjust: exact;
+	}
+	
+	body.printable .entry-header,
+	body.printable .blog-header,
+	body.printable .author-header {
+		width: auto ! important;
+		margin-right: 36px ! important;
+		margin-left: 36px ! important;
+	}
+	
+	body.printable .entry-title {
+		font-size: 36px ! important;
+		line-height: 48px ! important;
+	}
+	
+	body.printable .article-layout .main-content > h2,
+	body.printable .article-layout .main-content > h3,
+	body.printable .article-layout .main-content > h4,
+	body.printable .article-layout .main-content > h5,
+	body.printable .article-layout .main-content > h6,
+	body.printable .article-layout .entry-footer {
+		margin-right: 36px;
+		margin-left: 36px;
+		font-size: 16px ! important;
+	}
+	
+	body.printable .article-layout .entry-footer {
+		min-height: none;
+		padding-bottom: 0;
+	}
+	
+	body.printable .article-layout .main-content > h2 {
+		font-size: 20px;
+	}
+	
+	body.printable .article-layout .main-content > p,
+	body.printable .article-layout .main-content > pre,
+	body.printable .article-layout .main-content > ol,
+	body.printable .article-layout .main-content > ul,
+	body.printable .article-layout .main-content > figure,
+	body.printable .article-layout .main-content > div.illustration,
+	body.printable .article-layout .main-content .entry-footnotes {
+		margin-right: 36px ! important;
+		margin-left: 36px ! important;
+		margin-bottom: 12px ! important;
+		font-size: 16px !important;
+		line-height: 24px ! important;
+	}
+	
+	body.printable .entry-details {
+		font-size: 16px !important;
+		line-height: 24px ! important;
+	}
+	
+	body.printable .article-layout .main-content > p {
+		widows: 3;
+		orphans: 3;
+	}
+	
+	body.printable .article-layout .main-content blockquote,
+	body.printable .article-layout .main-content figcaption,
+	body.printable .article-layout .main-content ul li,
+	body.printable .article-layout .main-content code {
+		font-size: 16px !important;
+		line-height: 24px ! important;
+	}
+	
+	body.printable .article-layout .main-content pre {
+		border-top-style: solid ! important;
+		border-bottom-style: solid ! important;
+	}
+	
+	body.printable .article-layout .main-content a {
+		color: #222 ! important;
+	}
+	
+	body.printable .article-layout .main-content p a[href]:after,
+	body.printable .article-layout .main-content li a[href]:after,
+	body.printable .article-layout .main-content blockquote a[href]:after {
+		content: " (" attr(href) ")";
+		word-wrap: break-word;
+		font-style: italic;
+	}
+	
+	body.printable .content-minutiae h1,
+	body.printable .content-minutiae li {
+		border-bottom: 0;
+	}
+	
+	body.printable .content-minutiae a:after {
+		content: "" ! important;
+	}
+	
+	body.printable .main-content > figure img,
+	body.printable .main-content > div.illustration img {
+		max-width: 4in;
+		max-height: 4in;
+	}
+	
+	body.printable .the-footnotes {
+		margin-left: 24px ! important;
+	}
+	
+	body.printable .article-layout .main-content a[href^="#"]:after,
+	body.printable .article-layout .main-content a[href^="javascript"]:after {
+		content: "" ! important;
+	}
+	
+	body.printable .main-wrapper {
+		min-height: none;
+		padding-bottom: 0;
+	}
+	
+	body.printable .global-footer {
+		position: static;
+		height: auto;
+		margin-top: 0;
+		margin-right: 36px;
+		margin-left: 36px;
+		padding-bottom: 0;
+		background: transparent;
+		-webkit-print-color-adjust: exact;
+	}
+	
+	body.printable .global-footer .inline-items.copyright {
+		height: 30px;
+		margin: 0;
+		padding-left: 36px;
+		line-height: 30px;
+		background: url(/d/_repo/site_assets/img/icon_navigation-laurel.svg) left no-repeat;
+		-webkit-print-color-adjust: exact;
+	}
 
 }
