@@ -490,15 +490,10 @@ ul.inline-items li {
 
 .blog-summary h1 {
 	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-size: 30px;
 }
 
 .sponsored .basic-title + .blog-summary h1 {
 	padding-right: 15%;
-}
-
-.blog-summary h1 a {
-	color: #222;
 }
 
 .blog-summary.link-post h1 {
@@ -523,8 +518,8 @@ ul.inline-items li {
 	background-image: url(/d/_repo/site_assets/img/icon_compass.svg);
 	background-size: contain;
 	display: inline-block;
-	width: 20px;
-	height: 20px;
+	width: 16px;
+	height: 16px;
 	/* font-size: 24px; */
 	margin-right: 6px;
 	vertical-align: baseline;
@@ -537,14 +532,6 @@ ul.inline-items li {
 
 .blog-summary.link-post p {
 	/* font-family: "Franklin ITC Pro Light", sans-serif; */
-}
-
-.blog-summary.link-post .byline,
-.blog-summary.link-post .byline a {
-	font-family: "Franklin ITC Pro Light", sans-serif;
-	font-style: italic;
-	font-size: 14px;
-	color: #999;
 }
 
 .blog-summary.native-post .byline {
