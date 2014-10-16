@@ -1590,7 +1590,7 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 
 .content-minutiae {
 	float: right;
-	font-family: georgia;
+	font-family: "Franklin ITC Light", sans-serif;
 	margin: 0;
 	margin-right: -132px;
 	width: 240px;
@@ -2032,6 +2032,7 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 
 .main-content > h2.alternate {
 	font-family: georgia;
+	font-weight: normal;
 }
 
 h3.alternate {
@@ -3334,7 +3335,7 @@ ul.bullets {
 }
 
 .the-deck.in-article, .job-board {
-	font-family: "FranklinITCPro-Light";
+	font-family: "Franklin ITC Light";
 	line-height: 21px;
 	margin: 0 0 3em;
 	background: #fff;
@@ -3346,11 +3347,12 @@ ul.bullets {
 }
 
 .job-board.in-article h4 {
-	font-family: "FranklinITCPro-Bold";
+	font-family: "Franklin ITC Light";
 }
 
 .job-board.in-article .job {
-	font-family: "FranklinITCPro-Light";
+	font-family: "Franklin ITC Light";
+	font-weight: normal;
 }
 
 .job-board.in-article .board-link {
