@@ -407,7 +407,8 @@ ul.inline-items li {
 	margin-top: 188px;
 	margin-bottom: 6px;
 	text-align: center;
-	font-family: "Franklin ITC Bold", sans-serif;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-size: 36px;
 }
 
