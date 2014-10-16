@@ -5,7 +5,6 @@
 html,
 body {
 	font: normal 18px/30px georgia, serif;
-	font: normal 18px/30px "Georgia Pro", georgia, serif;
 	text-rendering: optimizeLegibility;
 	color: #222;
 	background-color: #fff;
@@ -64,7 +63,7 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] p {
 .buttonishish {
 	display: inline-block;
 	padding: 2px 9px;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	color: #fff;
 	text-decoration: none;
 	background: #999;
@@ -188,7 +187,7 @@ ul.inline-items li {
 	border-left: 1px solid #ccc;
 	border-top-left-radius: 7px;
 	box-shadow: 0px 0px 10px rgba(0,0,0,.2);
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	color: #666;
 }
 
@@ -201,9 +200,9 @@ ul.inline-items li {
 	background: #fff;
 	background: rgba(255,255,255,.95);
 	border-bottom: 1px solid #d8d8d8;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
+	font-family: "Franklin ITC", sans-serif;
 	font-style: normal;
-	font-weight: normal;
+	font-weight: bold;
 	font-size: 14px;
 	line-height: 18px;
 	padding: 0 24px;
@@ -408,7 +407,7 @@ ul.inline-items li {
 	margin-top: 188px;
 	margin-bottom: 6px;
 	text-align: center;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
+	font-family: "Franklin ITC Bold", sans-serif;
 	font-size: 36px;
 }
 
@@ -416,12 +415,12 @@ ul.inline-items li {
 	margin-bottom: 12px;
 	text-align: center;
 	font-size: 18px;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	font-style: italic;
 }
 
 .section-sub-title.columnists {
-	font-family: 'Georgia Pro Light', georgia;
+	font-family: georgia;
 	font-style: normal;
 	text-transform: uppercase;
 }
@@ -489,7 +488,8 @@ ul.inline-items li {
 }
 
 .blog-summary h1 {
-	font-family: "Franklin ITC Pro Bold", sans-serif;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 }
 
 .sponsored .basic-title + .blog-summary h1 {
@@ -531,7 +531,7 @@ ul.inline-items li {
 }
 
 .blog-summary.link-post p {
-	/* font-family: "Franklin ITC Pro Light", sans-serif; */
+	/* font-family: "Franklin ITC Light", sans-serif; */
 }
 
 .blog-summary.native-post .byline {
@@ -545,7 +545,7 @@ ul.inline-items li {
 .blog-summary.native-post .byline a.aside-author,
 .entry-details a.aside-author,
 .meta a.aside-author {
-	font-family: "Franklin ITC Pro Bold", sans-serif;
+	font-family: "Franklin ITC", sans-serif;
 	font-style: normal;
 	text-transform: uppercase;
 }
@@ -589,8 +589,8 @@ aside.column.more-content .item-summary {
 }
 
 .item-summary .column-summary-header h1 {
-	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-size: 24px;
 }
 
@@ -659,8 +659,8 @@ aside.column.more-content .item-summary {
 
 .item-summary.topic > h1 a {
 	padding-right: 4px;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-style: normal;
 	/* text-transform: uppercase; */
 }
@@ -693,8 +693,8 @@ aside.column.more-content .item-summary {
 .item-summary:not(.article) > h2 {
 	font-size: 14px;
 	line-height: 24px;
-	font-family: "Franklin ITC Pro Bold";
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-style: italic;
 }
 
@@ -793,10 +793,10 @@ aside.column.more-content .item-summary {
 	height: 120px;
 	padding: 52px 0 0 0;
 	color: #fff;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
+	font-family: "Franklin ITC", sans-serif;
 	font-size: 54px;
 	letter-spacing: -.025em;
-	font-weight: normal;
+	font-weight: bold;
 	text-align: center;
 	font-style: normal;
 
@@ -864,7 +864,7 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 	padding-top: 24px;
 	color: #fff;
 	text-align: center;
-	font-family: "Georgia Pro Cond", serif;
+	font-family: georgia, serif;
 	font-size: 16px;
 	line-height: 22px;
 	letter-spacing: 0;
@@ -882,8 +882,8 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 	margin-bottom: 24px;
 	font-size: 36px;
 	line-height: 48px;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 }
 
 .main-content .basic-title.alt {
@@ -898,8 +898,8 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 .main-content .blog-title {
 	margin-bottom: 36px;
 	padding: 240px 0 36px;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-size: 48px;
 	text-transform: uppercase;
 	text-align: center;
@@ -912,7 +912,7 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 	margin: 50px auto 24px;
 	padding: 18px 86px;
 	text-align: center;
-	font-family: "Georgia Pro";
+	font-family: georgia;
 	font-style: normal;
 	font-size: 14px;
 	line-height: 24px;
@@ -944,8 +944,8 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 .entry-header .entry-title {
 	margin: 0 0 6px;
 	padding: 0 48px;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-style: normal;
 	font-size: 48px;
 	line-height: 56px;
@@ -994,7 +994,7 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 }
 
 .entry-header .entry-details {
-	font-family: "Georgia Pro Cond";
+	font-family: georgia;
 	font-style: italic;
 	font-weight: normal;
 	margin-bottom: 12px;
@@ -1027,7 +1027,7 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 }
 
 .entry-header .name {
-	font-family: "Franklin ITC Pro Bold", sans-serif;
+	font-family: "Franklin ITC", sans-serif;
 	font-style: normal;
 	text-transform: uppercase;
 }
@@ -1047,9 +1047,6 @@ footer a.aside-author + time:before {
 }
 
 .comment-count {
-	/* font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-style: normal;
-	font-weight: normal; */
 	white-space: nowrap;
 }
 
@@ -1160,8 +1157,8 @@ footer a.aside-author + time:before {
 
 .previous-column h2 {
 	margin-top: 6px;
-	font-family: "Franklin ITC Pro Bold",sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-size: 24px;
 }
 
@@ -1192,11 +1189,11 @@ footer a.aside-author + time:before {
 .column-name {
 	display: block;
 	/* margin-bottom: 4px; */
-	font-family: "Franklin ITC Pro Bold", sans-serif;
+	font-family: "Franklin ITC", sans-serif;
 	font-size: 14px;
 	line-height: 30px;
 	text-transform: uppercase;
-	font-weight: normal;
+	font-weight: bold;
 	font-style: normal;
 }
 
@@ -1220,8 +1217,8 @@ footer a.aside-author + time:before {
 	margin-bottom: 0;
 	font-size: 48px;
 	line-height: 54px;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-style: normal;
 	margin-bottom: 6px;
 }
@@ -1244,7 +1241,7 @@ ul.fancy-links li {
 	display: inline-block;
 	margin-bottom: 2px;
 	font-size: 12px;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 }
 
 ul.fancy-links li a {
@@ -1348,8 +1345,8 @@ ul.fancy-links li a.googleplus {
 	margin: 27px 0 12px;
 	font-size: 18px;
 	line-height: 30px;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-style: normal;
 }
 
@@ -1397,8 +1394,8 @@ ul.fancy-links li a.googleplus {
 	margin-right: 5px;
 	font-size: 18px;
 	line-height: 24px;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-style: normal;
 	text-align: center;
 	background: #eee;
@@ -1503,8 +1500,8 @@ ul.secondary-nav li a {
 	border-bottom: 1px dotted #bfbfbf;
 	font-size: 18px;
 	line-height: 24px;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-style: normal;
 }
 
@@ -1545,8 +1542,8 @@ ul.secondary-nav li a.active {
 
 .issue-header time {
 	text-transform: uppercase;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-style: normal;
 }
 
@@ -1563,7 +1560,7 @@ ul.secondary-nav li a.active {
 	color: #fff;
 	background: #bb3825;
 	border-radius: 4px;
-	line-height: 16px;
+	line-height: 17px;
 	font-weight: normal;
 }
 
@@ -1573,7 +1570,7 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 }
 
 .issue-header p {
-	font-family: "Georgia Pro Cond", georgia, serif;
+	font-family: georgia, georgia, serif;
 	font-size: 18px;
 	line-height: 30px;
 	font-style: italic;
@@ -1592,7 +1589,7 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 
 .content-minutiae {
 	float: right;
-	font-family: "FranklinITCPro-Light";
+	font-family: georgia;
 	margin: 0;
 	margin-right: -132px;
 	width: 240px;
@@ -1616,8 +1613,8 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 .content-minutiae time {
 	color: #bb3825;
 	text-transform: uppercase;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-style: normal;
 }
 
@@ -1665,13 +1662,14 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	font-size: 120px;
 	line-height: 120px;
 	color: #ba3925;
-	font-family: "Georgia Pro", georgia;
+	font-family: georgia;
 	font-weight: bold;
 }
 
 .main-content > ul.entry-list > li.featured-comment h3 {
 	margin: 0;
-	font-family: "Franklin ITC Pro Bold";
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 14px;
 }
@@ -1681,7 +1679,7 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 }
 
 .main-content > ul.entry-list > li.featured-comment footer {
-	font-family: "Georgia Pro",georgia,serif;
+	font-family: georgia,serif;
 	font-size: 14px;
 	line-height: 22px;
 }
@@ -1742,7 +1740,7 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 
 .article-layout .main-content > * b,
 .article-layout .main-content > * strong {
-	font-family: "Georgia Pro Semibold";
+	font-family: georgia;
 	font-weight: normal;
 }
 
@@ -1775,7 +1773,8 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 }
 
 p.question {
-	font-family: "Franklin ITC Pro Bold";
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 }
 
 .article-layout .main-content .sidebar,
@@ -1802,8 +1801,8 @@ p.question {
 }
 
 .article-layout .main-content .sidebar h2 {
-	font-family: "Franklin ITC Pro Bold";
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-style: normal;
 	font-size: 18px;
 }
@@ -1813,8 +1812,8 @@ p.question {
 }
 
 .article-layout .main-content .sidebar p a {
-	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-style: normal;
 	text-transform: uppercase;
 }
@@ -1857,8 +1856,8 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 
 .article-layout .main-content > figure.quote:first-child blockquote {
 	font-style: normal;
-	font-family: "Franklin ITC Pro Bold";
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	/* line-height: 24px; */
 }
 
@@ -1903,8 +1902,8 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 
 .main-content > figure.text {
 	text-align: center;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-style: normal;
 }
 
@@ -1912,7 +1911,7 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 	margin-left: 62px;
 	margin-right: 62px;
 	padding: 6px 12px;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
 	font-size: 16px;
@@ -1924,7 +1923,8 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 }
 
 .article-layout .main-content > p.editors-note b {
-	font-family: "Franklin ITC Pro Bold", sans-serif;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 }
 
 .article-layout .main-content > p.editors-note.column-note {
@@ -1992,8 +1992,8 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 
 .main-content > ul.masthead-list li b,
 .main-content > ul.masthead-list li > a {
-	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-style: normal;
 }
 
@@ -2007,8 +2007,8 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 .main-content > h4,
 .main-content > h5,
 .main-content > h6 {
-	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-style: normal;
 }
 
@@ -2030,13 +2030,13 @@ html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-conte
 }
 
 .main-content > h2.alternate {
-	font-family: "Georgia Pro";
+	font-family: georgia;
 }
 
 h3.alternate {
 	margin-bottom: 18px;
 	color: #bb3825;
-	font-family: "Georgia Pro";
+	font-family: georgia;
 	font-size: 14px;
 	line-height: 14px;
 }
@@ -2084,7 +2084,7 @@ h3.alternate {
 .main-content > figure table th,
 .main-content > figure table td {
 	padding: 12px;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
 	text-align: left;
@@ -2099,7 +2099,7 @@ h3.alternate {
 .main-content > figure table + figcaption {
 	display: block;
 	width: 100%;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	text-transform: uppercase;
 	font-size: 12px;
 	font-style: normal;
@@ -2150,7 +2150,7 @@ h3.alternate {
 	font-size: 14px;
 	line-height: 24px;
 	font-style: italic;
-	font-family: "Georgia Pro Cond";
+	font-family: georgia;
 }
 
 .main-content > figure.quote,
@@ -2219,7 +2219,8 @@ h3.alternate {
 	right: 100%;
 	top: 6px;
 	margin-right: 12px;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	color: #ccc;
 	font-size: 12px;
 	line-height: 12px;
@@ -2258,10 +2259,10 @@ h3.alternate {
 }
 
 .entry-footnotes h1 {
-	font-family: "Franklin ITC Pro Bold", sans-serif;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-size: 14px;
 	line-height: 24px;
-	font-weight: normal;
 	font-style: normal;
 	text-transform: uppercase;
 }
@@ -2369,10 +2370,10 @@ pre.editing code {
 .entry-footer h1,
 .entry-footer h3 {
 	margin-left: 132px;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-size: 14px;
 	line-height: 24px;
-	font-weight: normal;
 	font-style: normal;
 	text-transform: uppercase;
 }
@@ -2388,10 +2389,10 @@ pre.editing code {
 }
 
 .entry-footer h2 {
-	font-family: "Franklin ITC Pro Bold", sans-serif;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-size: 18px;
 	line-height: 24px;
-	font-weight: normal;
 }
 
 .entry-footer h2 a {
@@ -2463,11 +2464,11 @@ pre.editing code {
 .variable-column h2,
 .more-content h2 {
 	margin-bottom: 12px;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-size: 18px;
 	line-height: 24px;
 	font-weight: normal;
-	font-style: normal;
 }
 
 .more-content h2 {
@@ -2559,7 +2560,7 @@ pre.editing code {
 
 .classy {
 	margin-bottom: 36px;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	font-size: 36px;
 	line-height: 36px;
 	font-weight: normal;
@@ -2587,7 +2588,7 @@ ol.article-comments > li .comment-tools {
 	position: absolute;
 	bottom: 3px;
 	right: 6px;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	font-size: 11px;
 	text-transform: uppercase;
 }
@@ -2599,7 +2600,7 @@ ol.article-comments > li .comment-tools {
 	top: 17px;
 	display: none;
 	margin-left: 72px;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 }
 
 .edit-comment .button-holder,
@@ -2691,7 +2692,7 @@ ol.article-comments li.system-message:before {
 	width: 48px;
 	height: 26px;
 	margin-left: -13px;
-	font-family: "Franklin ITC Pro", sans-serif;
+	font-family: "Franklin ITC", sans-serif;
 	font-size: 14px;
 	line-height: 28px;
 	color: #fff;
@@ -2724,7 +2725,7 @@ ol.article-comments > li:first-child:after {
 	margin-left: 72px;
 	margin-bottom: 2px;
 	font-size: 12px;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
 	color: #666;
@@ -2735,7 +2736,8 @@ ol.article-comments > li:first-child:after {
 }
 
 .commenter-name {
-	font-family: "Franklin ITC Pro Bold";
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-size: 18px;
 }
 
@@ -2781,7 +2783,7 @@ ol.article-comments li .comment-body:after {
 ol.article-comments li.commenter-signin,
 ol.article-comments li.comment-form {
 	padding-top: 32px;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
 	text-align: center;
@@ -2854,8 +2856,8 @@ ul.login-buttons li a {
 	border: 1px solid #ccc;
 	border-radius: 6px;
 	color: #000;
-	font-family: "Franklin ITC Pro Bold";
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 
 	-webkit-transition: background-color 200ms ease-in;
 	-moz-transition: background-color 200ms ease-in;
@@ -2940,7 +2942,7 @@ ul.login-buttons li a:hover {
 	box-shadow: inset 0px 0px 10px rgba(0,0,0,.05);
 	text-align: center;
 	letter-spacing: .1em;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	font-size: 24px;
 	font-weight: normal;
 	font-style: normal;
@@ -2961,7 +2963,7 @@ ul.login-buttons li a:hover {
 	border: 1px solid #ccc;
 	border-radius: 6px;
 	color: #000;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
 	font-size: 18px;
@@ -3030,7 +3032,7 @@ textarea:not([data-autoresize]) {
 	border: 0;
 	border-radius: 6px;
 	color: #fff;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
 }
@@ -3073,7 +3075,7 @@ img.commenter-avatar {
 	/* left: 0; */
 	width: 100%;
 	background: #ededed url(/d/_repo/site_assets/img/noise.png);
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
 	font-size: 14px;
@@ -3110,8 +3112,8 @@ img.commenter-avatar {
 }
 
 .global-footer .inline-items a {
-	font-family: "Franklin ITC Pro Bold";
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	color: #222;
 }
 
@@ -3151,14 +3153,14 @@ img.commenter-avatar {
 }
 
 .partner-promos h1 {
-	font-family: "Franklin ITC Pro Bold";
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	text-transform: uppercase;
 }
 
 .partner-promos .arrow {
-	font-family: "Franklin ITC Pro Bold";
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	color: #2455c3;
 	display: inline-block;
 }
@@ -3251,8 +3253,8 @@ img.commenter-avatar {
 .entry-list li .entry-title {
 	font-size: 18px;
 	line-height: 24px;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-style: normal;
 }
 
@@ -3283,7 +3285,7 @@ img.commenter-avatar {
 
 .entry-list.step-up li footer {
 	font-size: 12px;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 }
 
 ul.bullets {
@@ -3301,7 +3303,7 @@ ul.bullets {
 	/* height: 90px; */
 	margin: 24px 0;
 	line-height: 22px;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
 	font-size: 12px;
@@ -3393,28 +3395,28 @@ ul.bullets {
 	margin: 36px 0;
 	font-size: 14px;
 	line-height: 24px;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
 }
 
 .job-board h4 {
 	text-transform: uppercase;
-	font-family: "Franklin ITC Pro Bold";
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	color: #bb3825;
 }
 
 .job-board .job {
-	font-family: "Franklin ITC Pro Bold";
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 }
 
 .paginator {
 	margin-top: 30px;
 	text-align: center;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 }
 
 .paginator ul,
@@ -3442,7 +3444,7 @@ ul.bullets {
 
 .paginator a.bigger {
 	padding: 2px 18px 0;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	font-size: 24px;
 	line-height: 48px;
 	background: #2455c3;
@@ -3491,7 +3493,7 @@ body.modal {
 	border: 1px solid #ccc;
 	border-radius: 7px;
 	box-shadow: 0px 0px 10px rgba(0,0,0,.2);
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	color: #666;
 	font-size: 12px;
 	line-height: 18px;
@@ -3624,8 +3626,8 @@ body.modal {
 	margin-bottom: 3px;
 	font-size: 18px;
 	line-height: 24px;
-	font-family: "Franklin ITC Pro Bold",sans-serif;
-	font-weight: normal;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
 	font-style: normal;
 	color: #2455c3 !important;
 	text-decoration: none;
@@ -3646,7 +3648,7 @@ body.modal {
 }
 
 #___gcse_0 .gs-bidi-start-align.gs-snippet {
-	font: normal 18px/30px "Georgia Pro",georgia,serif;
+	font: normal 18px/30px georgia,serif;
 	text-rendering: optimizeLegibility;
 	font-size: 14px;
 	line-height: 24px;
@@ -3684,7 +3686,7 @@ body.modal {
 #___gcse_0 .gs-webResult .gs-visibleUrl-short, 
 #___gcse_0 .gs-imageResult .gs-visibleUrl, 
 #___gcse_0 .gs-imageResult .gs-visibleUrl-short {
-	font: normal 14px/24px "Georgia Pro",georgia,serif;
+	font: normal 14px/24px georgia,serif;
 	text-rendering: optimizeLegibility;
 	color: #666;
 	font-style: italic;
