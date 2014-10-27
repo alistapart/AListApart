@@ -21,23 +21,6 @@ a:focus {
 	text-decoration: underline;
 }
 
-p {
-	/* -webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	hyphens: auto; */
-	-moz-font-feature-settings: "liga=1, dlig=1, onum=1";
-	-moz-font-feature-settings: "liga", "dlig", "onum";
-	-ms-font-feature-settings: "liga", "dlig", "onum";
-	-webkit-font-feature-settings: "liga", "dlig", "onum";
-	-o-font-feature-settings: "liga", "dlig", "onum";
-	font-feature-settings: "liga", "dlig", "onum";
-}
-
-html[data-useragent*='Chrome'][data-platform*='Mac'] p {
-	-webkit-font-feature-settings: normal;
-	font-feature-settings: normal;
-}
-
 :target:not(#comments):not(.global-nav) {
 	-webkit-animation: target-fade 2s 1;
 	-moz-animation: target-fade 2s 1;
@@ -919,14 +902,6 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 	line-height: 24px;
 	background: #f0f0f0;
 	border-radius: 6px;
-	/*
-	-moz-font-feature-settings: "smcp=1";
-	-moz-font-feature-settings: "smcp" 1;
-	-ms-font-feature-settings: "smcp";
-	-webkit-font-feature-settings: "smcp";
-	-o-font-feature-settings: "smcp";
-	font-feature-settings: "smcp";
-	*/
 }
 
 .entry-header {
@@ -1717,12 +1692,6 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 .article-layout .main-content .entry-footnotes {
 	margin-right: 132px;
 	margin-left: 132px;
-	-moz-font-feature-settings: "liga=1, dlig=1, onum=1";
-	-moz-font-feature-settings: "liga", "dlig", "onum";
-	-ms-font-feature-settings: "liga", "dlig", "onum";
-	-webkit-font-feature-settings: "liga", "dlig", "onum";
-	-o-font-feature-settings: "liga", "dlig", "onum";
-	font-feature-settings: "liga", "dlig", "onum";
 }
 
 .article-layout .main-content > figure.full-width {
@@ -1754,17 +1723,6 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 .article-layout .main-content:not(.wide-video) > iframe {
 	margin-right: 132px !important;
 	margin-left: 132px !important;
-}
-
-html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-content > p,
-html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-content > pre,
-html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-content > ol,
-html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-content > ul,
-html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-content > figure,
-html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-content > div.illustration,
-html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-content .entry-footnotes {
-	-webkit-font-feature-settings: normal;
-	font-feature-settings: normal;
 }
 
 .article-layout .main-content > p small {
@@ -1835,18 +1793,6 @@ p.question {
 	font-size: 24px;
 	font-style: normal;
 	line-height: 36px;
-	-moz-font-feature-settings: "liga=1, dlig=1, onum=1";
-	-moz-font-feature-settings: "liga", "dlig", "onum";
-	-ms-font-feature-settings: "liga", "dlig", "onum";
-	-webkit-font-feature-settings: "liga", "dlig", "onum";
-	-o-font-feature-settings: "liga", "dlig", "onum";
-	font-feature-settings: "liga", "dlig", "onum"
-}
-
-html[data-useragent*='Chrome'][data-platform*='Mac'] .article-layout .main-content > p:first-child,
-.article-layout .main-content > figure.quote:first-child {
-	-webkit-font-feature-settings: normal;
-	font-feature-settings: normal;
 }
 
 .article-layout .main-content > figure.quote:first-child {
