@@ -709,7 +709,7 @@ aside.column.more-content .item-summary {
 	width: 960px;
 	max-width: 100%;
 	min-height: 220px;
-	margin: -12px auto 0;
+	margin: 1em auto;
 	text-align: center;
 }
 
