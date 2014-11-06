@@ -12,12 +12,6 @@
 	
 	{article_custom_head}
 	
-	{if article_custom_javascript}
-	<script>
-		{article_custom_javascript}
-	</script>
-	{/if}
-	
 	{embed="embeds/article-author-styles" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
 	
 	{exp:stash:set name="safe-description"}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{article_deck}{/exp:low_replace}{/exp:strip_html}{/exp:stash:set}
@@ -273,6 +267,12 @@
 		{article_custom_body_load}
 	
 	});
+	</script>
+	{/if}
+	
+	{if article_custom_javascript}
+	<script>
+		{article_custom_javascript}
 	</script>
 	{/if}
 	
