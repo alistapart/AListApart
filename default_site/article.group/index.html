@@ -16,11 +16,11 @@
 	
 	{exp:stash:set name="safe-description"}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{article_deck}{/exp:low_replace}{/exp:strip_html}{/exp:stash:set}
 	
-	<style>
 	{if article_custom_css}
+	<style>
 		{article_custom_css}
-	{/if}
 	</style>
+	{/if}
 	
 	<meta name="description" content="{exp:stash:get name="safe-description"}">
 	<meta name="author" content="{embed="embeds/article-authors-no-html" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}">
@@ -259,6 +259,8 @@
 	{sponsor-top}
 
 	{global-nav}
+	
+	{exp:channel:entries channel="articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
 
 	{if article_custom_body_load}
 	<script>
@@ -275,5 +277,7 @@
 		{article_custom_javascript}
 	</script>
 	{/if}
+	
+	{/exp:channel:entries}
 	
 {global-page-bottom}
