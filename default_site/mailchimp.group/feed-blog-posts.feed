@@ -21,6 +21,7 @@
 {exp:channel:entries channel="blog" limit="1" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no"}
     <item>
       <title><![CDATA[{title}]]></title>
+      <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
       <link>http://alistapart.com/blog/{url_title}</link>
       <guid>http://alistapart.com/{url_title}</guid>
       <description><![CDATA[{blog_intro}]]></description>
