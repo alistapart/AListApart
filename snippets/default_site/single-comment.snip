@@ -6,7 +6,7 @@
 								{if:else}
 								<?php
 								$email = "{email}";
-								$default = "http://d.alistapart.com/_repo/site_assets/img/avatar_generic-commenter_grey.png";
+								$default = "/d/_repo/site_assets/img/avatar_generic-commenter_grey.png";
 								$size = 60;
 								
 								$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
@@ -65,7 +65,7 @@ EOD;
 										}
 										echo implode($new_lines);?>
 										
-<script async data-comment="{comment_id}" charset="utf-8" src="http://d.alistapart.com/_repo/site_assets/js/comment-embed.min.js"></script></textarea>
+<script async data-comment="{comment_id}" charset="utf-8" src="/d/_repo/site_assets/js/comment-embed.min.js"></script></textarea>
 									
 									<div class="button-holder">
 										<input type="submit" name="cancel" value="Close" class="cancel-embed">
