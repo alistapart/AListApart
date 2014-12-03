@@ -1854,6 +1854,10 @@ p.question {
 	font-style: normal;
 }
 
+.main-content > figure dt {
+	font-weight: bold;
+}
+
 .article-layout .main-content > p.editors-note {
 	margin-left: 62px;
 	margin-right: 62px;
