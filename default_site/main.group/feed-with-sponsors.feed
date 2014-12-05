@@ -1,4 +1,4 @@
-{exp:rss:feed channel="issues|columns|blog|link_posts|rss_only|rss_sponsorships" status="open" show_future_entries="no"}
+{exp:rss:feed channel="issues|columns|blog|link_posts|rss_only|rss_sponsorships" status="open" show_future_entries="no" sticky="no"}
 
 <?xml version="1.0" encoding="{encoding}"?>
 <rss version="2.0"
@@ -18,7 +18,7 @@
     <dc:rights>Copyright {gmt_date format="%Y"}</dc:rights>
     <dc:date>{gmt_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
     
-{exp:channel:entries channel="issues|columns|blog|link_posts|rss_only|rss_sponsorships" limit="20" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no"}
+{exp:channel:entries channel="issues|columns|blog|link_posts|rss_only|rss_sponsorships" limit="20" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no"}
 	{if channel_short_name == "issues"}
 	{exp:playa:children field="issue_articles"}
     <item>
