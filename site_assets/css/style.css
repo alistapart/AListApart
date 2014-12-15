@@ -2106,7 +2106,7 @@ h3.alternate {
 }
 
 .main-content > figure.quote,
-.main-content ol li figure.quote,
+.main-content ul li figure.quote,
 .main-content ol li figure.quote,
 .main-content > article.link-post > figure.quote {
 	margin-top: 32px;
