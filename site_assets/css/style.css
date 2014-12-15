@@ -2106,6 +2106,8 @@ h3.alternate {
 }
 
 .main-content > figure.quote,
+.main-content ol li figure.quote,
+.main-content ol li figure.quote,
 .main-content > article.link-post > figure.quote {
 	margin-top: 32px;
 	padding: 0 12px;
@@ -2113,16 +2115,22 @@ h3.alternate {
 }
 
 .main-content > figure.quote > blockquote,
+.main-content ul li figure.quote > blockquote,
+.main-content ol li figure.quote > blockquote,
 .main-content > article.link-post > figure.quote > blockquote {
 	font-style: italic;
 }
 
 .main-content > figure.quote > blockquote > p,
+.main-content ul li figure.quote > blockquote > p,
+.main-content ol li figure.quote > blockquote > p,
 .main-content > article.link-post > figure.quote > blockquote > p {
 	margin-bottom: 18px;
 }
 
 .main-content > figure.quote > blockquote + figcaption,
+.main-content ul li figure.quote > blockquote + figcaption,
+.main-content ol li figure.quote > blockquote + figcaption,
 .main-content > article.link-post > figure.quote > blockquote + figcaption {
 	display: block;
 	font-size: 14px;
@@ -2131,6 +2139,8 @@ h3.alternate {
 }
 
 .main-content > figure.quote > blockquote + figcaption:before,
+.main-content ul li figure.quote > blockquote + figcaption:before,
+.main-content ol li figure.quote > blockquote + figcaption:before,
 .main-content > article.link-post > figure.quote > blockquote + figcaption:before {
 	content: "—";
 }
