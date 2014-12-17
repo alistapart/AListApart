@@ -371,12 +371,12 @@ $(document).ready(function(){
 	
 	$("form#email-subscribe").submit(function(e) {
 	
-		userName = $("form#email-subscribe input[name=name]").val();
+		userName = $("form#email-subscribe input[name=NAME]").val();
 	
-		userEmail = $("form#email-subscribe input[name=email]").val();
+		userEmail = $("form#email-subscribe input[name=EMAIL]").val();
 	
 		userType = $('form#email-subscribe input[type=checkbox]:checked').size();
-
+console.log(userType);
 		if (userName == "" || userEmail == "" || userType == 0) {
 			
 			$("form#email-subscribe p.error").html('Hey, did you fill out all the fields?');

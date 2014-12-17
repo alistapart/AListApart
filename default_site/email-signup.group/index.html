@@ -22,51 +22,47 @@
 				
 				<p>We're setting up email notifications to launch by the end of 2014. Sign up now and we'll start letting you know whenever we have new content.</p>
 				
-				{exp:freeform:form
-					form_name="email_subscription_signups"
-					return="email-signup/thanks"
-					form:id="email-subscribe"
-					form:class="simple-form"
-				}
+				<!-- Begin MailChimp Signup Form -->
+				<form action="//alistapart.us3.list-manage.com/subscribe/post?u=0916d3332d7cd86d644d2b4fe&amp;id=f1ea1ab5a3" method="post" id="email-subscribe" name="mc-embedded-subscribe-form" class="simple-form" novalidate data-customvalidate="no">
+					
+					<fieldset>
 
-				<fieldset>
+						<label for="mce-NAME">Name
+						<input type="text" name="NAME" id="mce-NAME" value="{screen_name}" required /></label>
 
-					<label for="name">Name
-					<input type="text" name="name" id="name" value="{screen_name}" required /></label>
+						<label for="mce-EMAIL">Email address
+						<input type="email" name="EMAIL" id="mce-EMAIL" value="{email}" required /></label>
 
-					<label for="email">Email address
-					<input type="email" name="email" id="email" value="{email}" required /></label>
+					</fieldset>
+					
+					<p>You can get an email whenever we have something fresh:</p>
+					
+					<fieldset>
 
-				</fieldset>
+						<label class="list"><input type="checkbox" value="1" name="group[12377][1]" id="mce-group[12377]-12377-0"> Articles (Our deepest dives. Published every other Tuesday.)</label>
+						<label class="list"><input type="checkbox" value="2" name="group[12377][2]" id="mce-group[12377]-12377-1"> Columns (Smart perspectives from community leaders. About once a week.)</label>
+						<label class="list"><input type="checkbox" value="4" name="group[12377][4]" id="mce-group[12377]-12377-2"> Blog posts (ALA updates and hands-on advice. Roughly twice per week.)</label>
 
-				<p>You can get an email whenever we have something fresh:</p>
+					</fieldset>
+
+					<p>Or, receive a roundup of all our recent content whenever we publish a new issue:</p>
+
+					<fieldset>
+
+						<label class="list"><input type="checkbox" value="8" name="group[12377][8]" id="mce-group[12377]-12377-3"> Digest (Sent every other Tuesday.)</label>
+
+					</fieldset>
+					
+					<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+				    <div style="position: absolute; left: -5000px;"><input type="text" name="b_0916d3332d7cd86d644d2b4fe_f1ea1ab5a3" tabindex="-1" value=""></div>
+				    
+				    <p class="form-message error"></p>
+				    
+				    <p><input type="submit" value="Submit" /></p>
+
+				</form>
 				
-				<fieldset>
-
-					<label class="list"><input type="checkbox" name="subscribe_articles" value="y" /> Articles (Our deepest dives. Published every other Tuesday.)</label>
-					<label class="list"><input type="checkbox" name="subscribe_columns" value="y" /> Columns (Smart perspectives from community leaders. About once a week.)</label>
-					<label class="list"><input type="checkbox" name="subscription_blog" value="y" /> Blog posts (ALA updates and hands-on advice. Roughly twice per week.)</label>
-
-				</fieldset>
-
-				<p>Or, receive a roundup of all our recent content whenever we publish a new issue:</p>
-
-				<fieldset>
-
-					<label class="list"><input type="checkbox" name="subscription_digest" value="y" required /> Digest (Sent every other Tuesday.)</label>
-
-				</fieldset>
-				
-				<fieldset class="screen-reader">
-					<label for="honeepot">This is a robot checker. Don't put anything here.</label>
-					<input type="text" name="honeepot" id="honeepot" />
-				</fieldset>
-
-				<p><input type="submit" value="Submit" /></p>
-
-				<p class="form-message error"></p>
-
-				{/exp:freeform:form}
+				<!--End mc_embed_signup-->
 			
 			</article><!--
 			
