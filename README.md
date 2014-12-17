@@ -6,8 +6,10 @@ Contributing to an open-source project can be tough, and it can take time to get
 
 ## Contributing
 
-Over the next few weeks we’re going to be ramping things up around here. We’re currently using ExpressionEngine, which makes it tricky to clone the repo and run the site locally—at least, with this first incarnation of the repo. We’re exploring ways to make that better.
+We’re currently using ExpressionEngine, which makes it tricky to clone the repo and run the site locally—at least, with this first incarnation of the repo. We’re exploring ways to make that better.
 
 For right now, we’d love to have your eyes on our [dev site](http://dev.alistapart.com), which directly mirrors our `dev` branch. Don’t hesitate to [file a new issue](https://github.com/alistapart/AListApart/issues/new) or join us in the [issue tracker](https://github.com/alistapart/AListApart/issues) if anything catches your eye.
 
 By joining our conversations as we weigh the pros and cons of certain approaches, you’ll be better armed to make the same decisions on your *own* projects. If you’re already well-versed in the ways of GitHub we’d love to have your eyes on how we’ll be doing things over the next few weeks, and your help building a welcoming, low-pressure place to learn the ins and outs of contributing to an open source project.
+
+<a href="http://dploy.io"><img src="https://ala.dploy.io/badge/88313865850598/10948.png" alt="Deployment status from dploy.io"></a>
