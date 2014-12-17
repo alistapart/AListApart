@@ -68,7 +68,7 @@
 .sponsor-top .sponsor-name, 
 .sponsor-lower .sponsor-name {
 	text-transform: uppercase;
-	font-family: "Franklin ITC Bold", sans-serif;
+	font-family: "Franklin ITC", sans-serif;
 	font-weight: bold;
 }
 
@@ -101,7 +101,7 @@
 .job-board h4, 
 .sponsor-lower h4 {
 	text-transform: uppercase;
-	font-family: "Franklin ITC Bold";
+	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	color: #bb3825;
 }
