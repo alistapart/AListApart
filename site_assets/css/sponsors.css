@@ -66,9 +66,9 @@
 }
 
 .sponsor-top .sponsor-name, 
-.sponsor-lower .sponsor-name{
+.sponsor-lower .sponsor-name {
 	text-transform: uppercase;
-	font-family: "Franklin ITC Pro Bold", sans-serif;
+	font-family: "Franklin ITC Bold", sans-serif;
 	font-weight: bold;
 }
 
@@ -84,7 +84,7 @@
 	font-size: 12px;
 	line-height: 18px;
 	margin: 0 12px;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 }
 
@@ -93,7 +93,7 @@
 	margin: 36px 0;
 	font-size: 14px;
 	line-height: 24px;
-	font-family: "Franklin ITC Pro Light", sans-serif;
+	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
 }
@@ -101,7 +101,7 @@
 .job-board h4, 
 .sponsor-lower h4 {
 	text-transform: uppercase;
-	font-family: "Franklin ITC Pro Bold";
+	font-family: "Franklin ITC Bold";
 	font-weight: normal;
 	color: #bb3825;
 }
