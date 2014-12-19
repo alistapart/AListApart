@@ -376,7 +376,7 @@ $(document).ready(function(){
 		userEmail = $("form#email-subscribe input[name=EMAIL]").val();
 	
 		userType = $('form#email-subscribe input[type=checkbox]:checked').size();
-console.log(userType);
+
 		if (userName == "" || userEmail == "" || userType == 0) {
 			
 			$("form#email-subscribe p.error").html('Hey, did you fill out all the fields?');
