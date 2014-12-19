@@ -18,7 +18,7 @@
     <dc:rights>Copyright {gmt_date format="%Y"}</dc:rights>
     <dc:date>{gmt_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
     
-{exp:channel:entries channel="columns" limit="1" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no"}
+{exp:channel:entries channel="columns" limit="5" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no"}
     <item>
       <title><![CDATA[{categories show_group="4"}{category_name}{/categories}: {title}]]></title>
       <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
