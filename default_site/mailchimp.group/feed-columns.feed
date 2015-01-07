@@ -10,7 +10,7 @@
 
     <channel>
     
-    <title><![CDATA[A List Apart Column Links for MailChimp]]></title>
+    <title><![CDATA[New ALA Column: {exp:channel:entries channel="columns" limit="1" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no"}{title}{/exp:channel:entries}]]></title>
     <link>http://alistapart.com/columns</link>
     <description>This feed delivers links to ALA columns for distribution by MailChimp.</description>
     <dc:language>{channel_language}</dc:language>
