@@ -23,8 +23,8 @@
       <title><![CDATA[{title}]]></title>
       <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
       <description>{embed="embeds/author-photo-url" entry_author="{author_id}" entry_id="{entry_id}"}</description>
-      <link>http://alistapart.com/blog/{url_title}</link>
-      <guid>http://alistapart.com/{url_title}</guid>
+      <link>{site_url}blog/post/{url_title}</link>
+      <guid>{site_url}blog/post/{url_title}</guid>
       <content:encoded><![CDATA[{blog_intro}]]></content:encoded>
       <dc:subject></dc:subject>
       <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
