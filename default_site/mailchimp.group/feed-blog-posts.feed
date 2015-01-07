@@ -10,7 +10,7 @@
 
     <channel>
     
-    <title><![CDATA[New ALA Blog Post: {exp:channel:entries channel="blog" limit="1" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no"}{title}{/exp:channel:entries}]]></title>
+    <title><![CDATA[{exp:channel:entries channel="blog" limit="1" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no"}{title}{/exp:channel:entries}]]></title>
     <link>http://alistapart.com/blog</link>
     <description>This feed delivers links to ALA blog posts for distribution by MailChimp.</description>
     <dc:language>{channel_language}</dc:language>
