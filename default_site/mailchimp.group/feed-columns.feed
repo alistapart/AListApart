@@ -22,8 +22,8 @@
     <item>
       <title><![CDATA[{title}]]></title>
       <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
-      <link>http://alistapart.com/column/{url_title}</link>
-      <guid>http://alistapart.com/column/{url_title}</guid>
+      <link>{site_url}column/{url_title}</link>
+      <guid>{site_url}column/{url_title}</guid>
       <description>{embed="embeds/author-photo-url" entry_author="{author_id}" entry_id="{entry_id}"}</description>
       <content:encoded><![CDATA[{column_intro}]]></content:encoded>
       <dc:subject><![CDATA[{modern-categories}]]></dc:subject>
