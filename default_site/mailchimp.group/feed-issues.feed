@@ -12,7 +12,7 @@
 
     <channel>
     
-    <title><![CDATA[A List Apart {issue_number}]]></title>
+    <title><![CDATA[A List Apart Issue № {issue_number}]]></title>
     <link>http://alistapart.com</link>
     <description>This feed delivers links to ALA articles for distribution by MailChimp.</description>
     <dc:language>{channel_language}</dc:language>
