@@ -1,4 +1,4 @@
-{exp:rss:feed channel="issues|columns|blog" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-13 days')) ?>"}
+{exp:rss:feed channel="issues|columns|blog" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-14 days')) ?>"}
 
 <?xml version="1.0" encoding="{encoding}"?>
 <rss version="2.0"
@@ -9,7 +9,7 @@
     xmlns:content="http://purl.org/rss/1.0/modules/content/">
 
     <channel>
- 
+
     <title><![CDATA[A List Apart's Bi-Weekly Digest]]></title>
     <link>http://alistapart.com</link>
     <description>ALA's bi-weekly update</description>
@@ -17,9 +17,9 @@
     <dc:creator>The fine folks at A List Apart</dc:creator>
     <dc:rights>Copyright {gmt_date format="%Y"}</dc:rights>
     <dc:date>{gmt_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
-    
-{exp:channel:entries channel="issues" limit="1" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-13 days')) ?>"}
-	
+
+{exp:channel:entries channel="issues" limit="1" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-14 days')) ?>"}
+
 	<item>
       <title><![CDATA[Issue № {issue_number}: {title}]]></title>
       <author></author>
@@ -32,21 +32,21 @@
     <tbody class="mcnTextBlockOuter">
         <tr>
             <td valign="top" class="mcnTextBlockInner">
-                
+
                 <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextContentContainer">
                     <tbody><tr>
-                        
+
                         <td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
-                        
+
                             <div style="text-align: center;"><span style="line-height:20.7999992370605px"><i>A List Apart</i> Presents: Issue № {issue_number}</span></div>
 
-						  <p class="illo" style="width: 100%;">{issue_illustration}<img src="{site_url}{exp:ce_img:pair src="{url}" width="480" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" style="max-width" 100%;">{/issue_illustration}</p>
-						  <p class="issue-description>{issue_description}</p>
+              <p style="text-align: center;"><span style="line-height:20.7999992370605px">{issue_illustration}<img src="{site_url}{exp:ce_img:pair src="{url}" width="480" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" style="display: block; padding: 0; color: #666666; text-decoration: none; font-family: Helvetica, arial, sans-serif; font-size: 16px; width: 100% ! important; height: auto ! important;">{/issue_illustration}</p>
+						  <p class="issue-description" style="text-align: center;">{issue_description}</p>
 
                         </td>
                     </tr>
                 </tbody></table>
-                
+
             </td>
         </tr>
     </tbody>
@@ -60,11 +60,11 @@
                     <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer">
                         <tbody><tr>
                             <td class="mcnImageContent" valign="top" style="padding-right: 9px; padding-left: 9px; padding-top: 0; padding-bottom: 0; text-align:center;">
-                                
-                                    
+
+
                                         <img align="center" alt="" src="{embed="embeds/author-photo-url" entry_author="{author_id}" entry_id="{entry_id}"}" width="120" style="max-width:120px; padding-bottom: 0; display: inline !important; vertical-align: bottom; border-radius: 50%; border: 6px solid #f0f0f0;" class="mcnImage">
-                                    
-                                
+
+
                             </td>
                         </tr>
                     </tbody></table>
@@ -75,22 +75,22 @@
     <tbody class="mcnTextBlockOuter">
         <tr>
             <td valign="top" class="mcnTextBlockInner">
-                
+
                 <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextContentContainer">
                     <tbody><tr>
-                        
+
                         <td valign="top" class="mcnTextContent" style="padding: 12px 30px; text-align: center;">
 
 <h2 class="mc-toc-title" style="text-align: center;"><a href="{site_url}/article/{url_title}" target="_blank">{title}</a></h2>
 
 <div style="text-align: center; padding: 0 0 48px; line-height: 26px;"><em>By {embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</em>
-	
+
 <p>{article_deck}</p></div>
 
                         </td>
                     </tr>
                 </tbody></table>
-                
+
             </td>
         </tr>
     </tbody>
@@ -111,7 +111,7 @@
       <link>{site_url}/columns</link>
       <guid>{site_url}/columns</guid>
       <description>{embed="embeds/author-photo-url" entry_author="{author_id}" entry_id="{entry_id}"}</description>
-      <content:encoded><![CDATA[{exp:channel:entries channel="columns" limit="5" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-13 days')) ?>"}{if count == '1'}Recent Columns <ul>{/if}
+      <content:encoded><![CDATA[{exp:channel:entries channel="columns" limit="5" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-14 days')) ?>"}{if count == '1'}Recent Columns <ul>{/if}
 				<li><a href="{site_url}/column/{url_title}">{title}</a><br>
 					{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}, {entry_date format="%F %d, %Y"}</li>
 				{if count == total_results}</ul>{/if}{/exp:channel:entries}]]></content:encoded>
@@ -124,13 +124,13 @@
       <description></description>
       <link>{site_url}/blog</link>
       <guid>{site_url}/blog</guid>
-      <content:encoded><![CDATA[{exp:channel:entries channel="blog" limit="5" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-13 days')) ?>"}{if count == '1'}Recent Blog Posts <ul>{/if}
+      <content:encoded><![CDATA[{exp:channel:entries channel="blog" limit="5" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-14 days')) ?>"}{if count == '1'}Recent Blog Posts <ul>{/if}
 				<li><a href="{site_url}/blog/post/{url_title}">{title}</a><br>
 					{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}, {entry_date format="%F %d, %Y"}</li>
 				{if count == total_results}</ul>{/if}{/exp:channel:entries}]]></content:encoded>
       <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
     </item>
-    
+
     </channel>
 </rss>
 
