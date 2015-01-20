@@ -1,4 +1,4 @@
-{exp:rss:feed channel="issues|columns|blog|link_posts|rss_only|rss_sponsorships" status="open" show_future_entries="no" sticky="no"}
+{exp:rss:feed channel="issues|columns|blog" status="open" show_future_entries="no" sticky="no" start_on="<?php date('Y-m-d', strtotime('-13 days')) ?>"}
 
 <?xml version="1.0" encoding="{encoding}"?>
 <rss version="2.0"
@@ -9,72 +9,50 @@
     xmlns:content="http://purl.org/rss/1.0/modules/content/">
 
     <channel>
-    
-    <title><![CDATA[A List Apart: The Full Feed]]></title>
+ 
+    <title><![CDATA[A List Apart's Bi-Weekly Digest]]></title>
     <link>http://alistapart.com</link>
-    <description>Articles, columns, and blog posts for people who make web sites.</description>
+    <description>ALA's bi-weekly update</description>
     <dc:language>{channel_language}</dc:language>
     <dc:creator>The fine folks at A List Apart</dc:creator>
     <dc:rights>Copyright {gmt_date format="%Y"}</dc:rights>
     <dc:date>{gmt_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
     
 {exp:channel:entries channel="issues|columns|blog|link_posts|rss_only|rss_sponsorships" limit="20" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no"}
+	
 	{if channel_short_name == "issues"}
 	{exp:playa:children field="issue_articles"}
     <item>
-      <title><![CDATA[{exp:strip_html}{title}{/exp:strip_html}]]></title>
+      <title><![CDATA[{title}]]></title>
       <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
-      <link>http://alistapart.com/article/{url_title}</link>
-      <guid>http://alistapart.com/article/{url_title}</guid>
-      <description><![CDATA[{article_content}{if article_footnotes}<h3>Footnotes</h3><ul class="the-footnotes">{article_footnotes}<li id="note{row_count}">{row_count}. {cell_1}</li>{/article_footnotes}</ul>{/if}]]></description>
+      <link>{site_url}/article/{url_title}</link>
+      <guid>{site_url}/article/{url_title}</guid>
+      <description>{embed="embeds/author-photo-url" entry_author="{author_id}" entry_id="{entry_id}"}</description>
+      <content:encoded><![CDATA[{article_deck}]]></content:encoded>
       <dc:subject><![CDATA[{modern-categories}]]></dc:subject>
       <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
     </item>
     {/exp:playa:children}
+    
 	{if:elseif channel_short_name == "columns"}
     <item>
-      <title><![CDATA[{categories show_group="4"}{category_name}{/categories}: {title}]]></title>
+      <title><![CDATA[{title}]]></title>
       <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
-      <link>http://alistapart.com/column/{url_title}</link>
-      <guid>http://alistapart.com/column/{url_title}</guid>
-      <description><![CDATA[{column_content}{if column_footnotes}<h3>Footnotes</h3><ul class="the-footnotes">{column_footnotes}<li id="note{row_count}">{row_count}. {cell_1}</li>{/column_footnotes}</ul>{/if}]]></description>
+      <link>{site_url}/column/{url_title}</link>
+      <guid>{site_url}/column/{url_title}</guid>
+      <description>{embed="embeds/author-photo-url" entry_author="{author_id}" entry_id="{entry_id}"}</description>
+      <content:encoded><![CDATA[{column_intro}]]></content:encoded>
       <dc:subject><![CDATA[{modern-categories}]]></dc:subject>
       <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
     </item>
 	{if:elseif channel_short_name == "blog"}
-    <item>
-      <title><![CDATA[{exp:strip_html}{title}{/exp:strip_html}]]></title>
-      <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
-      <link>http://alistapart.com/blog/post/{url_title}</link>
-      <guid>http://alistapart.com/blog/post/{url_title}</guid>
-      <description><![CDATA[{blog_content}]]></description>
-      <dc:subject><![CDATA[{modern-categories}]]></dc:subject>
-      <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
-    </item>
-	{if:elseif channel_short_name == "link_posts"}
-    <item>
-      <title><![CDATA[{exp:strip_html}{title}{/exp:strip_html}]]></title>
-      <link>{blog_target_url}</link>
-      <guid>{blog_target_url}</guid>
-      <description><![CDATA[<a href="{blog_target_url}" style="font-size: 18px;">» {title}</a><br><br>{blog_description}<br><br>{blog_attribution}℅ <a class="attribution-link" href="{cell_2}">{cell_1}</a>{/blog_attribution}]]></description>
-      <dc:subject><![CDATA[{modern-categories}]]></dc:subject>
-      <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
-    </item>
-	{if:elseif channel_short_name == "rss_only"}
-    <item>
+     <item>
       <title><![CDATA[{title}]]></title>
-      <link>http://alistapart.com/</link>
-      <guid>http://alistapart.com/</guid>
-      <description><![CDATA[{rss_content}]]></description>
-      <dc:subject></dc:subject>
-      <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
-    </item>
-	{if:elseif channel_short_name == "rss_sponsorships"}
-    <item>
-      <title><![CDATA[This week's sponsor: {title}]]></title>
-      <link>{ad_target_url}</link>
-      <guid>{ad_target_url}</guid>
-      <description><![CDATA[{ad_content_rss}]]></description>
+      <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
+      <description>{embed="embeds/author-photo-url" entry_author="{author_id}" entry_id="{entry_id}"}</description>
+      <link>{site_url}/blog/post/{url_title}</link>
+      <guid>{site_url}/blog/post/{url_title}</guid>
+      <content:encoded><![CDATA[{blog_intro}]]></content:encoded>
       <dc:subject></dc:subject>
       <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
     </item>
