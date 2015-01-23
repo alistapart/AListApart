@@ -387,7 +387,7 @@
 		color: #bb3825;
 		padding: 0;
 		font-size:18px;
-		font-family: "Georgia Pro";
+		font-family: georgia;
 	}
 	
 	.no-svg .entry-header .issue-number,
@@ -819,7 +819,7 @@
 @media only screen and (max-width: 20em) { /* 320px */
 	
 	body {
-		font-family: "Georgia Pro Cond";
+		font-family: georgia;
 	}
 	
 	.global-nav {
@@ -843,7 +843,7 @@
 	
 	.article-layout .main-content > * b,
 	.article-layout .main-content > * strong {
-		font-family: "Georgia Pro Cond";
+		font-family: georgia;
 		font-weight: bold;
 	}
 	
