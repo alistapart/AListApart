@@ -376,6 +376,12 @@ ul.inline-items li {
 	border-top: 1px solid #d8d8d8;
 }
 
+.single-column-display.condensed,
+.two-column-display.condensed,
+.multi-column-display.condensed {
+	margin-top: 1em;
+}
+
 .two-column-display.no-top {
 	margin-top: 24px;
 	border-top: 0;
@@ -403,10 +409,19 @@ ul.inline-items li {
 	font-style: italic;
 }
 
-.section-sub-title.columnists {
+.section-sub-title.columnists,
+.section-sub-title.serif {
 	font-family: georgia;
 	font-style: normal;
 	text-transform: uppercase;
+}
+
+.section-sub-title.serif + p {
+	margin-top: 2em;
+}
+
+.main-content.form-content p {
+	font-family: "Franklin ITC Light", sans-serif;
 }
 
 .section-title + .single-column-display,
@@ -620,6 +635,153 @@ aside.column.more-content .item-summary {
 	margin-bottom: 4px;
 	font-size: 12px;
 	line-height: 16px;
+}
+
+.item-summary.article .event-role {
+	margin-bottom: 4px;
+	font-size: 14px;
+	line-height: 16px;
+	color: #bb3825;
+	font-family: "Franklin ITC", sans-serif;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.event-details {
+	float: left;
+	width: 250px;
+}
+
+.event-details time {
+	display: block;
+	margin-bottom: 48px;
+	font-family: "Franklin ITC Light", sans-serif;
+	font-weight: normal;
+	text-align: center;
+	line-height: 24px;
+}
+
+.event-details time span {
+	display: block;
+}
+
+.event-details time span.big-number {
+	font-size: 84px;
+	line-height: 1em;
+}
+
+.sponsor-block {
+	font-family: "Franklin ITC Light", sans-serif;
+	font-weight: normal;
+	text-align: center;
+	border-top: 1px solid #eee;
+}
+
+.sponsor-block .sponsor-label {
+	display: block;
+	margin: -14px 48px 12px;
+	background: #fff;
+	border: 1px solid #eee;
+	border-radius: 6px;
+	font-size: 14px;
+	font-family: "Franklin ITC", sans-serif;
+	line-height: 24px;
+}
+
+.col-holder + .sponsor-block {
+	margin-top: 70px;
+	margin-bottom: 70px;
+}
+
+.col-holder + .sponsor-block img {
+	margin-bottom: 24px;
+}
+
+.col-holder + .sponsor-block p {
+	width: 670px;
+	max-width: 100%;
+	margin: 0 auto;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+.col-holder + .sponsor-block .sponsor-label {
+	max-width: 280px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.event-details .sponsor-block img {
+	display: block;
+	margin: 0 auto 24px;
+}
+
+.event-details .sponsor-block p {
+	padding: 0 24px;
+	font-size: 14px;
+	line-height: 24px;
+}
+
+.event-details + .event-copy {
+	margin-left: 250px;
+	border-left: 1px solid #eee;
+	padding-left: 24px;
+}
+
+.event-copy h2 {
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 30px;
+	color: #ba3925;
+	margin-top: 36px;
+	margin-bottom: 12px;
+}
+
+.event-copy p {
+	margin-bottom: 24px;
+}
+
+.event-copy ul {
+	margin-bottom: 24px;
+}
+
+.event-copy ul li {
+	margin-left: 24px;
+	list-style-type: disc;
+}
+
+.event-copy ul.people-list li {
+	margin-left: 0;
+	margin-bottom: 12px;
+	list-style-type: none;
+	overflow: auto;
+	line-height: 1.3em;
+}
+
+.event-copy ul.people-list li img {
+	display: block;
+	float: left;
+	margin-right: 12px;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	border: .4em solid #f5f5f5;
+	-moz-box-sizing: content-box; 
+	-webkit-box-sizing: content-box; 
+	box-sizing: content-box;
+}
+
+.event-copy ul.people-list li a.name-link {
+	display: inline-block;
+	padding-top: 12px;
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
+}
+
+.event-copy ul.people-list li span {
+	display: block;
 }
 
 .item-summary.article > h1 {
@@ -3521,6 +3683,13 @@ body.modal {
 
 .main-content .gist pre {
 	white-space: pre;
+}
+
+.event-promo {
+	width: 50%;
+	background: #eee;
+	height: 100px;
+	margin: 2em auto;
 }
 
 @media only screen and (min-width: 121.5em) and (min-height: 60em) { /* 1944px, 960px */

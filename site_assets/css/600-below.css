@@ -1,4 +1,33 @@
 @media only screen and (max-width: 47.9375em) { /* 767px */
+
+	.event-details {
+		float: none;
+		width: 100%;
+	}
+	
+	.event-details time {
+		width: 25%;
+		display: inline-block;
+		vertical-align: top;
+	}
+	
+	.event-details .sponsor-block {
+		width: 75%;
+		display: inline-block;
+		border-top: 0;
+		vertical-align: top;
+	}
+	
+	.event-details .sponsor-block .sponsor-label {
+		margin-top: 0;
+	}
+	
+	.event-details + .event-copy {
+		margin-top: 24px;
+		margin-left: 0;
+		padding-left: 0;
+		border-left: 0;
+	}
 	
 	.two-column-display .main-content, 
 	.two-column-display .secondary-column {
