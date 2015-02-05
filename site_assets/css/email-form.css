@@ -64,10 +64,11 @@
 }
 
 .form-message {
+	width: 75%;
 	margin-top: 1.4em;
 	font-family: "Franklin ITC Pro", sans-serif;
 	font-size: 14px;
-	line-height: 28px;
+	line-height: 28px !important;
 	color: #fff;
 	background: #090;
 	text-align: center;
