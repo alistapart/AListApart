@@ -688,6 +688,10 @@ aside.column.more-content .item-summary {
 	line-height: .9em;
 }
 
+.logistics-block:first-of-type {
+	margin-bottom: 2em;
+}
+
 .sponsor-block {
 	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
