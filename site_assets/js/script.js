@@ -370,6 +370,8 @@ $(document).ready(function(){
 	var emailFilter = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/;
 	
 	$("form#email-subscribe").submit(function(e) {
+		
+		customValidation = $(this).attr('data-customvalidate');
 	
 		userName = $("form#email-subscribe input[name=NAME]").val();
 	
@@ -377,7 +379,7 @@ $(document).ready(function(){
 	
 		userType = $('form#email-subscribe input[type=checkbox]:checked').size();
 
-		if (userName == "" || userEmail == "" || userType == 0) {
+		if (userName == "" || userEmail == "") {
 			
 			$("form#email-subscribe p.error").html('Hey, did you fill out all the fields?');
 			
@@ -385,13 +387,15 @@ $(document).ready(function(){
 			
 		} else {
 
-			if (emailFilter.test(userEmail)) {
-
-				return true;
-
-			} else {
+			if (!emailFilter.test(userEmail)) {
 
 				$("form#email-subscribe p.error").html('Hey, is that a real email address?');
+
+				return false;
+
+			} else if (customValidation != 'no-checkbox' && userType == 0) {
+			
+				$("form#email-subscribe p.error").html('Hey, did you check some boxes?');
 			
 				return false;
 
