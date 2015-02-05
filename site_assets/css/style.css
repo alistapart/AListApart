@@ -657,7 +657,7 @@ aside.column.more-content .item-summary {
 }
 
 .event-details {
-	float: left;
+	float: right;
 	width: 250px;
 }
 
@@ -741,9 +741,9 @@ aside.column.more-content .item-summary {
 }
 
 .event-details + .event-copy {
-	margin-left: 250px;
-	border-left: 1px solid #eee;
-	padding-left: 24px;
+	margin-right: 250px;
+	border-right: 1px solid #eee;
+	padding-right: 24px;
 }
 
 .event-copy h2 {

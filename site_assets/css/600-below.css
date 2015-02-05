@@ -7,9 +7,9 @@
 		
 	.event-details + .event-copy {
 		margin-top: 24px;
-		margin-left: 0;
-		padding-left: 0;
-		border-left: 0;
+		margin-right: 0;
+		padding-right: 0;
+		border-right: 0;
 	}
 	
 	@media only screen and (min-width: 37.5em) { /* 767px */
@@ -161,6 +161,44 @@
 		
 	.event-details .sponsor-block {
 		margin-bottom: 36px;
+	}
+	
+	.event-details .logistics .logistics-block {
+		display: inline-block;
+		vertical-align: top;
+		width: 50%;
+		padding-right: 18px;
+		text-align: left;
+	}
+	
+	.event-details .logistics span {
+		display: inline;
+	}
+	
+	.event-details .logistics span.where {
+		display: block;
+	}
+	
+	.event-details .logistics span.what1:after {
+		content: ", ";
+	}
+	
+	.event-details .logistics span.time {
+		display: inline-block;
+		clear: both;
+	}
+	
+	.event-details .logistics span.register-link {
+		display: block;
+	}
+	
+	.event-details .logistics span.big-number,
+	.event-details .logistics span.register-link a {
+		font-size: 16px;
+	}
+	
+	.event-details .logistics span.register-link a {
+		display: inline;
 	}
 	
 	.global-nav {
@@ -763,7 +801,7 @@
 	
 	.author-header + .column-intro, .blog-header + .column-intro {
 		font-size: 18px;
-		line-height: 30px;
+		line-height: 26px;
 	}
 	
 	/* ----------------------	BLOG  ---------------------- */
