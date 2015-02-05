@@ -842,6 +842,7 @@ aside.column.more-content .item-summary {
 .item-summary.article p,
 .item-summary.link-post p {
 	margin-bottom: 0;
+	text-align: left;
 }
 
 .item-summary footer {
