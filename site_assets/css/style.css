@@ -408,6 +408,8 @@ ul.inline-items li {
 	font-family: "Franklin ITC Light", sans-serif;
 	font-style: italic;
 	max-width: 85%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .section-sub-title.columnists,
