@@ -4,29 +4,33 @@
 		float: none;
 		width: 100%;
 	}
-	
-	.event-details time {
-		width: 25%;
-		display: inline-block;
-		vertical-align: top;
-	}
-	
-	.event-details .sponsor-block {
-		width: 75%;
-		display: inline-block;
-		border-top: 0;
-		vertical-align: top;
-	}
-	
-	.event-details .sponsor-block .sponsor-label {
-		margin-top: 0;
-	}
-	
+		
 	.event-details + .event-copy {
 		margin-top: 24px;
 		margin-left: 0;
 		padding-left: 0;
 		border-left: 0;
+	}
+	
+	@media only screen and (min-width: 37.5em) { /* 767px */
+	
+		.event-details .logistics {
+			width: 25%;
+			display: inline-block;
+			vertical-align: top;
+		}
+		
+		.event-details .sponsor-block {
+			width: 75%;
+			display: inline-block;
+			border-top: 0;
+			vertical-align: top;
+		}
+		
+		.event-details .sponsor-block .sponsor-label {
+			margin-top: 0;
+		}
+	
 	}
 	
 	.two-column-display .main-content, 
@@ -153,6 +157,10 @@
 	
 	.sponsor-top.sponsor-alt .sponsor-extended {
 		display: inline-block;
+	}
+		
+	.event-details .sponsor-block {
+		margin-bottom: 36px;
 	}
 	
 	.global-nav {

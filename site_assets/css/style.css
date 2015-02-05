@@ -422,6 +422,7 @@ ul.inline-items li {
 
 .main-content.form-content p {
 	font-family: "Franklin ITC Light", sans-serif;
+	line-height: 18px;
 }
 
 .section-title + .single-column-display,
