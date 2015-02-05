@@ -757,6 +757,10 @@
 		margin-bottom: 4px;
 	}
 	
+	.author-header h1 br, .blog-header h1 br {
+		display: none;
+	}
+	
 	.author-header + .column-intro, .blog-header + .column-intro {
 		font-size: 18px;
 		line-height: 30px;
