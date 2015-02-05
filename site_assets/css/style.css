@@ -635,6 +635,14 @@ aside.column.more-content .item-summary {
 	border: .5em solid #f5f5f5;
 }
 
+.item-summary.article.columnist img.restrain {
+	width: 96px;
+	height: 96px;
+	-moz-box-sizing: content-box; 
+	-webkit-box-sizing: content-box; 
+	box-sizing: content-box;
+}
+
 .item-summary.article .column-name {
 	margin-bottom: 4px;
 	font-size: 12px;
