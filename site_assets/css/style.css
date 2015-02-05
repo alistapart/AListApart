@@ -652,6 +652,10 @@ aside.column.more-content .item-summary {
 	font-weight: 600;
 }
 
+.event-details .logistics h2:first-of-type {
+	margin-top: 9px;
+}
+
 .event-details {
 	float: left;
 	width: 250px;
