@@ -637,7 +637,8 @@ aside.column.more-content .item-summary {
 	line-height: 16px;
 }
 
-.item-summary.article .event-role {
+.item-summary.article .event-role,
+.event-details .logistics h2 {
 	margin-bottom: 4px;
 	font-size: 14px;
 	line-height: 16px;
@@ -656,26 +657,27 @@ aside.column.more-content .item-summary {
 	display: block;
 	margin-bottom: 48px;
 	font-family: "Franklin ITC Light", sans-serif;
-	font-size: .8em;
 	font-weight: normal;
 	text-align: center;
-	line-height: 1.2em;
+	line-height: 24px;
+	font-size: 16px;
 }
 
 .event-details .logistics span {
 	display: block;
 }
 
-.event-details .logistics time {
-	display: inline-block;
-	margin: 1em 0;
-	padding: .5em 1em;
-	background: #eee;
+.event-details .logistics span a {
+	font-size: 14px;
+}
+
+.event-details .logistics span + h2 {
+	margin-top: 36px;
 }
 
 .event-details .logistics span.big-number {
 	font-size: 84px;
-	line-height: 1em;
+	line-height: .9em;
 }
 
 .sponsor-block {
