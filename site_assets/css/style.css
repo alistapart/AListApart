@@ -652,20 +652,28 @@ aside.column.more-content .item-summary {
 	width: 250px;
 }
 
-.event-details time {
+.event-details .logistics {
 	display: block;
 	margin-bottom: 48px;
 	font-family: "Franklin ITC Light", sans-serif;
+	font-size: .8em;
 	font-weight: normal;
 	text-align: center;
-	line-height: 24px;
+	line-height: 1.2em;
 }
 
-.event-details time span {
+.event-details .logistics span {
 	display: block;
 }
 
-.event-details time span.big-number {
+.event-details .logistics time {
+	display: inline-block;
+	margin: 1em 0;
+	padding: .5em 1em;
+	background: #eee;
+}
+
+.event-details .logistics span.big-number {
 	font-size: 84px;
 	line-height: 1em;
 }
