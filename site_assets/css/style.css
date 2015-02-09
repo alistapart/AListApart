@@ -425,7 +425,7 @@ ul.inline-items li {
 
 .main-content.form-content p {
 	font-family: "Franklin ITC Light", sans-serif;
-	line-height: 18px;
+	line-height: 24px;
 }
 
 .section-title + .single-column-display,
@@ -743,10 +743,17 @@ aside.column.more-content .item-summary {
 
 .event-details .sponsor-block img {
 	display: block;
-	margin: 0 auto 24px;
+	margin: 0 auto 12px;
+}
+
+.sponsor-block h2,
+.sponsor-block h3 {
+	font-weight: bold;
+	margin: 18px 0 0;
 }
 
 .event-details .sponsor-block p {
+	margin-bottom: 6px;
 	padding: 0 24px;
 	font-size: 14px;
 	line-height: 24px;
