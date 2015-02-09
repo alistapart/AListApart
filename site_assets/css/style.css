@@ -718,16 +718,16 @@ aside.column.more-content .item-summary {
 	line-height: 24px;
 }
 
-.col-holder + .sponsor-block {
+.col-holder + .bsap .sponsor-block {
 	margin-top: 70px;
 	margin-bottom: 70px;
 }
 
-.col-holder + .sponsor-block img {
+.col-holder + .bsap .sponsor-block img {
 	margin-bottom: 24px;
 }
 
-.col-holder + .sponsor-block p {
+.col-holder + .bsap .sponsor-block p {
 	width: 670px;
 	max-width: 100%;
 	margin: 0 auto;
@@ -735,7 +735,7 @@ aside.column.more-content .item-summary {
 	padding-right: 12px;
 }
 
-.col-holder + .sponsor-block .sponsor-label {
+.col-holder + .bsap .sponsor-block .sponsor-label {
 	max-width: 280px;
 	margin-right: auto;
 	margin-left: auto;
