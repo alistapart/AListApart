@@ -30,13 +30,15 @@
 							
 							{if:else}
 							
-							{if logged_in && allow_comments}
-							{comment-form}
-							{if:elseif !logged_in && allow_comments}
-							{comment-sign-in}
-							{if:elseif allow_comments == FALSE}
+							{if allow_comments}
+								{if logged_in} 
+ 								{comment-form}
+	-							{if:else} 
+	 							{comment-sign-in} 
+ 								{/if}
+	 						{if:else}
 							<li class="system-message">Sorry, commenting is closed on this article.</li>
-							{/if}
+	 						{/if}
 							
 							{/if}
 							
