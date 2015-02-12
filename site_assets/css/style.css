@@ -858,7 +858,7 @@ aside.column.more-content .item-summary {
 	/* clear: both; */
 }
 
-.item-summary.article p,
+.item-summary.article p:not(.meta),
 .item-summary.link-post p {
 	margin-bottom: 0;
 	text-align: left;
