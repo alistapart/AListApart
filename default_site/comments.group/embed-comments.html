@@ -30,10 +30,12 @@
 							
 							{if:else}
 							
-							{if logged_in}
+							{if logged_in && allow_comments}
 							{comment-form}
-							{if:else}
+							{if:elseif !logged_in && allow_comments}
 							{comment-sign-in}
+							{if:elseif allow_comments == FALSE}
+							<li class="system-message">Sorry, commenting is closed on this article.</li>
 							{/if}
 							
 							{/if}
