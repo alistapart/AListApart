@@ -217,18 +217,10 @@
 						{/if}
 						
 						<a href="/comments/{url_title}" id="load-comments" data-url-title="{url_title}" class="buttonish">Load Comments</a>
-						{if:else}
-						<h1 class="classy">No Comments{if allow_comments} (yet){/if}</h1>
 						
-						<ol class="article-comments">
-						{if logged_in && allow_comments}
-						{comment-form}
-						{if:elseif allow_comments}
-						{comment-sign-in}
 						{if:else}
-						<li class="system-message">Sorry, commenting is closed on this article.</li>
-						{/if}
-						</ol>
+						
+						<h1 class="classy">No Comments{if allow_comments} (yet){/if}</h1>
 						
 						{/if}
 						
