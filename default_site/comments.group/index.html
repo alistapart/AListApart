@@ -70,11 +70,13 @@
 							{exp:channel:entries limit="1" dynamic="no" url_title="{segment_2}"}
 							
 							{if allow_comments}
-							{if logged_in}
-							{comment-form}
+								{if logged_in}
+								{comment-form}
+								{if:else}
+								{comment-sign-in}
+								{/if}
 							{if:else}
-							{comment-sign-in}
-							{/if}
+								<li class="system-message">Sorry, commenting is closed on this article.</li>
 							{/if}
 							
 							{/exp:channel:entries}
