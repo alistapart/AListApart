@@ -695,24 +695,10 @@
 		border-radius: 0.5em;
 		color: #222;
 		display: inline-block;
-		font-size: 0.625em;
-		padding: 0 0.5em;
+		font-family: "Franklin ITC", sans-serif;
+		font-size: 0.667em;  /* 18 / 12 */ 
+		padding: 0 1em;
 		position: relative;
-	}
-	
-	.aside-breaker b:hover {
-		/*background-color: #eee;
-		text-decoration: none;*/
-	}
-	
-	.aside-breaker b:before {
-		content: "\21C3";
-		margin-right: 0.5em;
-	}
-	
-	.aside-breaker b:after {
-		content: "\21C2";
-		margin-left: 0.5em;
 	}
 
 	.in-article .deck-inner {
