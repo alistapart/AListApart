@@ -50,10 +50,10 @@
 									<!--[if gte mso 9]>
 									<xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v" />
 									<v:oval style="width:120px;height:120px" strokecolor="#F0F0F0" strokeweight="6px">
-									<v:fill type="frame" src="IMAGE_URL" size"120px,120px" />
+									<v:fill type="frame" src="{embed="embeds/author-photo-url" entry_author="{author_id}" entry_id="{entry_id}"}" size"120px,120px" />
 									<![endif]-->
 									<!--[if !mso]><!-- -->
-									<img src="IMAGE_URL" height="120" width="120" style="border:solid 6px #F0F0F0; border-radius:50%;">
+									<img src="{embed="embeds/author-photo-url" entry_author="{author_id}" entry_id="{entry_id}"}" height="120" width="120" style="border:solid 6px #F0F0F0; border-radius:50%;">
 									<!--<![endif]-->
 									<!--[if gte mso 9]>
 									</v:oval>
@@ -73,7 +73,7 @@
 						<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
 							<tr>
 								<td align="center" valign="top" class="entryTitle" style="padding-top:20px;">
-									<h2 style="color:#222222; font-family:'Franklin ITC Pro', 'ITC Franklin Gothic Std', 'Helvetica Neue', Helvetica, sans-serif; font-size:28px; font-weight:600; line-height:32px; margin:0; padding:0; text-align:center; text-decoration:none;"><a href="TITLE_URL" target="_blank" style="color:#2455C3 !important; text-decoration:none;">TITLE</a></h2>
+									<h2 style="color:#222222; font-family:'Franklin ITC Pro', 'ITC Franklin Gothic Std', 'Helvetica Neue', Helvetica, sans-serif; font-size:28px; font-weight:600; line-height:32px; margin:0; padding:0; text-align:center; text-decoration:none;"><a href="{sit_url}{url_title}" target="_blank" style="color:#2455C3 !important; text-decoration:none;">{title}</a></h2>
 								</td>
 							</tr>
 							<tr>
