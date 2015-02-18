@@ -1910,7 +1910,6 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 
 .article-layout .main-content > * b,
 .article-layout .main-content > * strong {
-	font-family: georgia;
 	font-weight: bold;
 }
 
