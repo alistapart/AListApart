@@ -1,0 +1,105 @@
+{exp:rss:feed channel="blog" status="open" show_future_entries="no" sticky="no"}
+
+<?xml version="1.0" encoding="{encoding}"?>
+<rss version="2.0"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:admin="http://webns.net/mvcb/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/">
+
+    <channel>
+    
+    <title><![CDATA[{exp:channel:entries channel="blog" limit="1" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no"}{title}{/exp:channel:entries}]]></title>
+    <link>http://alistapart.com/blog</link>
+    <description>This feed delivers links to ALA blog posts for distribution by MailChimp.</description>
+    <dc:language>{channel_language}</dc:language>
+    <dc:creator>The fine folks at A List Apart</dc:creator>
+    <dc:rights>Copyright {gmt_date format="%Y"}</dc:rights>
+    <dc:date>{gmt_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
+    
+{exp:channel:entries channel="blog" limit="5" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no"}
+    <item>
+      <title><![CDATA[{title}]]></title>
+      <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
+      <description>{embed="embeds/author-photo-url" entry_author="{author_id}" entry_id="{entry_id}"}</description>
+      <link>{site_url}/blog/post/{url_title}</link>
+      <guid>{site_url}/blog/post/{url_title}</guid>
+      <content:encoded><![CDATA[<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<!-- // ISSUE HEADER -->
+	<tr>
+		<td align="center" valign="top" style="color:#222222; font-family:Georgia, Times, 'Times New Roman', serif; font-size:16px; font-style:italic; line-height:18px; padding-top:0; padding-bottom:20px; text-align:center;">
+			The Latest From A List Apart:
+		</td>
+	</tr>
+	<!-- ISSUE HEADER // -->
+
+
+	<!-- // ENTRY BLOCK -->
+	<!-- This row is repeated for each entry in the email (currently two). -->
+	<tr>
+		<td align="center" valign="top">
+			<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<!-- // AUTHOR IMAGE -->
+				<!-- If there's no author image, this row can be excluded. -->
+				<tr>
+					<td align="center" valign="top">
+						<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td align="center" valign="top" style="padding-top:20px;">
+									<!--[if gte mso 9]>
+									<xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v" />
+									<v:oval style="width:120px;height:120px" strokecolor="#F0F0F0" strokeweight="6px">
+									<v:fill type="frame" src="IMAGE_URL" size"120px,120px" />
+									<![endif]-->
+									<!--[if !mso]><!-- -->
+									<img src="IMAGE_URL" height="120" width="120" style="border:solid 6px #F0F0F0; border-radius:50%;">
+									<!--<![endif]-->
+									<!--[if gte mso 9]>
+									</v:oval>
+									<![endif]-->
+									<div align="center" style="display:none; visibility:hidden;" class="outlookWeb">
+										<img src="{embed="embeds/author-photo-url" entry_author="{author_id}" entry_id="{entry_id}"}" height="0" width="0" style="visibility:hidden; display:none; line-height:0;" class="owShow">
+									</div>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<!-- AUTHOR IMAGE // -->
+
+				<tr>
+					<td align="center" valign="top">
+						<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td align="center" valign="top" class="entryTitle" style="padding-top:20px;">
+									<h2 style="color:#222222; font-family:'Franklin ITC Pro', 'ITC Franklin Gothic Std', 'Helvetica Neue', Helvetica, sans-serif; font-size:28px; font-weight:600; line-height:32px; margin:0; padding:0; text-align:center; text-decoration:none;"><a href="TITLE_URL" target="_blank" style="color:#2455C3 !important; text-decoration:none;">TITLE</a></h2>
+								</td>
+							</tr>
+							<tr>
+								<td align="center" valign="top" class="entryMeta" style="color:#222222; font-family:Georgia, Times, 'Times New Roman', serif; font-size:14px; font-style:italic; line-height:18px; text-align:center;">
+									{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+								</td>
+							</tr>
+							<tr>
+								<td align="left" valign="top" class="entrySummary" style="color:#222222; font-family:Georgia, Times, 'Times New Roman', serif; font-size:16px; line-height:24px; padding-top:15px; padding-bottom:40px;">
+									{blog_intro}
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<!-- ENTRY BLOCK // -->
+</table>]]></content:encoded>
+      <dc:subject></dc:subject>
+      <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
+    </item>
+{/exp:channel:entries}
+    
+    </channel>
+</rss>
+
+{/exp:rss:feed}

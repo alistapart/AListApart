@@ -1,0 +1,37 @@
+{exp:rss:feed channel="columns" status="open" show_future_entries="no" sticky="no"}
+
+<?xml version="1.0" encoding="{encoding}"?>
+<rss version="2.0"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:admin="http://webns.net/mvcb/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/">
+
+    <channel>
+    
+    <title><![CDATA[{exp:channel:entries channel="columns" limit="1" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no"}{title}{/exp:channel:entries}]]></title>
+    <link>http://alistapart.com/columns</link>
+    <description>This feed delivers links to ALA columns for distribution by MailChimp.</description>
+    <dc:language>{channel_language}</dc:language>
+    <dc:creator>The fine folks at A List Apart</dc:creator>
+    <dc:rights>Copyright {gmt_date format="%Y"}</dc:rights>
+    <dc:date>{gmt_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
+    
+{exp:channel:entries channel="columns" limit="5" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no"}
+    <item>
+      <title><![CDATA[{title}]]></title>
+      <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
+      <link>{site_url}/column/{url_title}</link>
+      <guid>{site_url}/column/{url_title}</guid>
+      <description>{embed="embeds/author-photo-url" entry_author="{author_id}" entry_id="{entry_id}"}</description>
+      <content:encoded><![CDATA[{column_intro}]]></content:encoded>
+      <dc:subject><![CDATA[{modern-categories}]]></dc:subject>
+      <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
+    </item>
+{/exp:channel:entries}
+    
+    </channel>
+</rss>
+
+{/exp:rss:feed}
