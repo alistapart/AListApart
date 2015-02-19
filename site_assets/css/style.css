@@ -323,7 +323,7 @@ ul.inline-items li {
 	border-radius: 24px;
 }
 
-@media only screen and (min-width: 47.9375em) { /* 767px */
+@media only screen and (min-width: 37.5em) { /* 600px */
 
 	.main-search:hover input[type=search],
 	.main-search input[type=search]:valid,
