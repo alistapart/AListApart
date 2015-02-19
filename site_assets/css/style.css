@@ -3220,6 +3220,9 @@ img.commenter-avatar {
 	margin-right: 12px;
 	border-radius: 50%;
 	border: .5em solid #f5f5f5;
+	-moz-box-sizing: content-box; 
+	-webkit-box-sizing: content-box; 
+	box-sizing: content-box;
 }
 
 .article-comments .commenter-info img.commenter-avatar {
