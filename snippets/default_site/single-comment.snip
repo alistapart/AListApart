@@ -26,7 +26,7 @@
 									<time datetime=""><a href="/comments/{url_title}#{comment_id}">{comment_date format="%g:%i %a on %F %d, %Y"}</a></time>
 								</p>
 								<div class="comment-body">
-									{exp:strip_html keep='p|br|b|em|a|i|code|blockquote'}{comment}{/exp:strip_html}
+									{exp:strip_html keep='b|em|a|i|code|blockquote'}{comment}{/exp:strip_html}
 								</div>
 								
 								<div class="comment-tools">
@@ -55,7 +55,7 @@
 									Copy & paste the code below to embed this comment.
 									<textarea class="embed-code"><?php
 										$output = <<<'EOD'
-<figure class="embedded-quote" id="ala-embedded-comment-{comment_id}"><blockquote>{exp:textile}{exp:strip_html keep="p|br|b|em|a|i"}{comment}{/exp:strip_html}{/exp:textile}</blockquote><figcaption>— {name} on <a href="http://alistapart.com/comments/{url_title}#{comment_id}">{title}</a></figcaption></figure>
+<figure class="embedded-quote" id="ala-embedded-comment-{comment_id}"><blockquote>{exp:textile}{exp:strip_html keep="b|em|a|i"}{comment}{/exp:strip_html}{/exp:textile}</blockquote><figcaption>— {name} on <a href="http://alistapart.com/comments/{url_title}#{comment_id}">{title}</a></figcaption></figure>
 EOD;
 										$lines = explode("\n", $output);
 										$new_lines = array();
