@@ -456,6 +456,7 @@ ul.inline-items li {
 .main-wrapper.stacker {
 	min-height: 0;
 	padding-bottom: 24px;
+	overflow: auto;
 }
 
 .main-wrapper.stacker:first-of-type {
@@ -705,7 +706,6 @@ aside.column.more-content .item-summary {
 }
 
 .sponsor-block {
-	margin-bottom: 2em;
 	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	text-align: center;
