@@ -705,6 +705,7 @@ aside.column.more-content .item-summary {
 }
 
 .sponsor-block {
+	margin-bottom: 2em;
 	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	text-align: center;
