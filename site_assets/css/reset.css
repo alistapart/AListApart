@@ -51,15 +51,12 @@ ul {
 	list-style: none;
 }
 
-blockquote, 
-q {
+blockquote {
 	quotes: none;
 }
 
 blockquote:before, 
-blockquote:after, 
-q:before, 
-q:after {
+blockquote:after {
 	content: ''; 
 	content: none;
 }
@@ -140,16 +137,6 @@ pre {
 	white-space: pre; 
 	white-space: pre-wrap; 
 	word-wrap: break-word;
-}
-
-q {
-	quotes: none;
-}
-
-q:before, 
-q:after {
-	content: ""; 
-	content: none;
 }
 
 small {
