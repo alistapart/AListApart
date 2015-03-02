@@ -815,7 +815,7 @@ aside.column.more-content .item-summary {
 	box-sizing: content-box;
 }
 
-.event-copy ul.people-list li a.name-link {
+.event-copy ul.people-list li a.name-link, .event-copy ul.people-list li .name {
 	display: inline-block;
 	padding-top: 12px;
 	font-family: "Franklin ITC", sans-serif;
