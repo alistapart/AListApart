@@ -637,9 +637,10 @@
 	
 	html:not(.no-js) .buttonish {
 		margin-bottom: 24px;
-		padding: 2px 24px;
-		background: #2455c3;
-		color: transparent;
+		padding: 6px 18px;
+		background: #bb3825;
+		border-radius: 6px;
+		color: #fff;
 	}
 	
 	html:not(.no-js) .buttonish:before {
@@ -647,7 +648,7 @@
 	}
 	
 	html:not(.no-js) .buttonish:after {
-		content: "Load Comments";
+		content: "";
 		text-indent: 0;
 	}
 	
