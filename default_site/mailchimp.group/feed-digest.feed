@@ -86,7 +86,7 @@
     </item>
     
     {if total_results != 0}
-    {embed="mailchimp/digest-embed" date="TEST"}
+    {embed="mailchimp/digest-embed" issuedate="TEST"}
     {/if}
 
 {/exp:channel:entries}

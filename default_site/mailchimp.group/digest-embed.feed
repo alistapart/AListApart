@@ -23,7 +23,7 @@
         </tr>
     </tbody>
 </table>{/if}{/exp:channel:entries}]]></content:encoded>
-      <dc:date>{embed:date}</dc:date>
+      <dc:date>{embed:issuedate}</dc:date>
     </item>
 
      <item>
@@ -51,5 +51,5 @@
         </tr>
     </tbody>
 </table>{/if}{/exp:channel:entries}]]></content:encoded>
-      <dc:date>{embed:date}</dc:date>
+      <dc:date>{embed:issuedate}</dc:date>
     </item>
