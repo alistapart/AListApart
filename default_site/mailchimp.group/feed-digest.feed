@@ -87,6 +87,7 @@
     
     {if total_results != 0}
     <!-- SHOW MORE -->
+   {embed="mailchimp/digest-embed"}
     {if:else}
     <!-- SHOW NONE MORE -->
     {/if}
