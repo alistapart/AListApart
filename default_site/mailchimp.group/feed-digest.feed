@@ -86,7 +86,7 @@
     </item>
     
     {if total_results != 0}
-    {embed="mailchimp/digest-embed" date="{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"}
+    {embed="mailchimp/digest-embed" date="TEST"}
     {/if}
 
 {/exp:channel:entries}
