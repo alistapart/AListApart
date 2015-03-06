@@ -4,7 +4,7 @@
       <author></author>
       <link>{site_url}/columns</link>
       <guid>{site_url}/columns</guid>
-     {exp:channel:entries channel="columns" limit="5" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-14 days')) ?>"} <content:encoded><![CDATA[{if count == '1'}<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
+      <content:encoded><![CDATA[{exp:channel:entries channel="columns" limit="5" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-14 days')) ?>"}{if count == '1'}<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
     <tbody class="mcnTextBlockOuter">
         <tr>
             <td valign="top" class="mcnTextBlockInner">
@@ -22,8 +22,8 @@
             </td>
         </tr>
     </tbody>
-</table>{/if}]]></content:encoded>
-      <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>{/exp:channel:entries}
+</table>{/if}{/exp:channel:entries}]]></content:encoded>
+      <dc:date>{embed:date}</dc:date>
     </item>
 
      <item>
@@ -32,7 +32,7 @@
       <description></description>
       <link>{site_url}/blog</link>
       <guid>{site_url}/blog</guid>
-      {exp:channel:entries channel="blog" limit="5" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-14 days')) ?>"}<content:encoded><![CDATA[{if count == '1'}<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
+      <content:encoded><![CDATA[{exp:channel:entries channel="blog" limit="5" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-14 days')) ?>"}{if count == '1'}<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
     <tbody class="mcnTextBlockOuter">
         <tr>
             <td valign="top" class="mcnTextBlockInner">
@@ -50,6 +50,6 @@
             </td>
         </tr>
     </tbody>
-</table>{/if}]]></content:encoded>
-      <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>{/exp:channel:entries}
+</table>{/if}{/exp:channel:entries}]]></content:encoded>
+      <dc:date>{embed:date}</dc:date>
     </item>
