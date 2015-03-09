@@ -1,4 +1,6 @@
 <div class="event-copy{if events_video_url==''} no-video{/if}">
+	
+	<a href="#transcript">[Read the transcript]</a>
 
 	{event_description}
 
@@ -13,12 +15,13 @@
 			<span class="name">{event_participants:participant:title}</span>
 
 			<span>{event_participants:participant:author_blurb}</span>
-
-			{!--event_participants:participant:author_bio--}
-			
+	
 		{/event_participants:participant}
 	</li>
 	{/event_participants}
 	</ul>
+
+	<h2 id="transcript">Transcript</h2>
+	{event_transcript}
 
 </div>
