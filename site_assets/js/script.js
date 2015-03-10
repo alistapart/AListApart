@@ -145,6 +145,7 @@ $(document).ready(function(){
 			}
 		} 
 		// Todo: maybe show panelist name in hash instead of panelist#
+		// Make the function not content specific
 	};
 
 	AlaEvents.createPanelistAnchor(); 
