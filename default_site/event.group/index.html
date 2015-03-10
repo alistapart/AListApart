@@ -46,24 +46,19 @@
 					
 				</header>
 				{if events_video_url}
-				<figure class="video">
-					<iframe width="560" height="315" src="{events_video_url}" frameborder="0" allowfullscreen></iframe>
-				</figure>
-				
-				{event-details}
-				{event-copy}
-
+					{event_deck}
+					<figure class="video">
+						<iframe width="560" height="315" src="{events_video_url}" frameborder="0" allowfullscreen></iframe>
+					</figure>
+					{event-details}
+					{event-copy}
 				{if:else}
-
-				{exp:hop_inject where="<p>" always_inject="y"}
-				{event-copy}
-				{exp:hop_inject:injection separator="-1" position="after"}
-				{event-details}
-				{/exp:hop_inject:injection}
-
-				
-				{/exp:hop_inject}
-
+					{exp:hop_inject where="<p>" always_inject="y"}
+					{event-copy}
+					{exp:hop_inject:injection separator="-1" position="after"}
+					{event-details}
+					{/exp:hop_inject:injection}
+					{/exp:hop_inject}
 				{/if}
 			 	 
  			</section>
