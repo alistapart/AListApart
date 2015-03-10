@@ -124,6 +124,30 @@ $(document).ready(function(){
 		
 	});
 	*/
+
+// Initiating AlaEvents object to hold events related functions
+	var AlaEvents = {
+
+		// On the event page connect panelist anchor to panelist bio.
+		createPanelistAnchor: function(){
+
+			var nameLink = $('.name-link'), 
+				nameTarget= $('.columnist'),
+				nameHash, i, j;
+
+			for (i=0;i<nameLink.length;i++) {
+				nameHash = "#panelist" + (i + 1);
+				nameLink[i].setAttribute("href", nameHash);
+			}
+
+			for (j=0;j<nameTarget.length;j++) {
+				nameTarget[j].setAttribute("id", "panelist" + (j + 1));
+			}
+		} 
+		// Todo: maybe show panelist name in hash instead of panelist#
+	};
+
+	AlaEvents.createPanelistAnchor(); 
 	
 	/* 
 		ajax submission failure
