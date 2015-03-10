@@ -1,0 +1,128 @@
+{exp:channel:entries channel="events" limit="1" require_entry="yes" status="open" show_future_entries="yes" show_expired="yes"}
+
+{if no_results}
+{redirect="404"}
+{/if}
+
+{global-page-top}
+
+	<title>{title} · An A List Apart Events</title>
+	
+	{exp:stash:set name="safe-description"}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{event_deck}{/exp:low_replace}{/exp:strip_html}{/exp:stash:set}
+
+	<meta name="description" content="{exp:stash:get name="safe-description"}">
+	<meta name="author" content="{embed="embeds/article-authors-no-html" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@alistapart">
+	<meta name="twitter:title" content="{title}">
+	<meta name="twitter:description" content="{exp:stash:get name="safe-description"}">
+	<meta name="twitter:url" content="http://alistapart.com/event/{url_title}">
+		
+	<meta property="og:title" content="{title}" />
+	<meta property="og:description" content="{exp:stash:get name="safe-description"}" />
+	<meta property="og:url" content="http://alistapart.com/event/{url_title}" />
+	<!--<meta property="og:image" content="{article_illustration}{url}{/article_illustration}" />-->
+		
+</head>
+
+<body>
+
+{current-user-info}
+
+	{primary-logo}
+			
+	{events-blurb}
+	
+	<div role="main" class="main-wrapper stacker single-column-display condensed">
+	
+		<div class="col-holder">
+		
+			<section class="main-content">
+
+				<header class="author-header">
+					
+					<h1>{title}</h1>
+					
+				</header>
+				{if events_video_url}
+					{event_deck}
+					<figure class="video">
+						<iframe width="560" height="315" src="{events_video_url}" frameborder="0" allowfullscreen></iframe>
+					</figure>
+					{event-details}
+					{event-copy}
+				{if:else}
+					{exp:hop_inject where="<p>" always_inject="y"}
+					{event-copy}
+					{exp:hop_inject:injection separator="-1" position="after"}
+					{event-details}
+					{/exp:hop_inject:injection}
+					{/exp:hop_inject}
+				{/if}
+			 	 
+ 			</section>
+				 
+			
+		</div>
+	
+	</div>
+
+	<div role="main" class="main-wrapper stacker single-column-display condensed">
+			
+		<div class="col-holder">
+		
+			<section class="main-content">
+			
+				<h1 class="section-sub-title columnists">Participants</h1>
+				{event_participants}
+				{event_participants:participant}
+				<article class="item-summary article columnist">
+
+					<header class="column-summary-header">
+						
+						<img class="restrain" src="{event_participants:participant:author_avatar}" alt="photo of {event_participants:participant:title}">
+				
+						<span class="event-role">{event_participants:title}</span>
+				
+						<h1>{event_participants:participant:title}</h1>
+						
+						{event_participants:participant:author_bio}
+					
+					</header>
+					
+				</article>
+				{/event_participants:participant}
+				{/event_participants}
+			
+			</section>
+		
+		</div>
+		
+	</div> 
+	
+	<div role="main" class="main-wrapper stacker single-column-display condensed">
+		
+		<div class="col-holder">
+			
+			<section class="main-content">
+			
+				{events-about}
+			
+			</section>
+		
+		</div>
+					
+		{event_sponsor_ad_code}
+	
+	</div>
+	
+	{global-nav}
+	
+{sponsor-top}
+
+{global-footer}
+
+{/exp:channel:entries}
+
+{global-page-bottom}
