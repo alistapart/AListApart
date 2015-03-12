@@ -58,7 +58,8 @@
 				</header>
 
 				<p class="author-bio">{bio}</p>
-				
+
+				{embed="embeds/author-events" connect_id="{exp:channel:entries channel="authors" author_id="{member_id}" status="open"}{entry_id}{/exp:channel:entries}"}
 				{embed="embeds/author-articles" author_id="{member_id}" real_name="{screen_name}"}
 
 {/exp:user:stats}
