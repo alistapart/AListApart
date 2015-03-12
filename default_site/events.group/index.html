@@ -76,23 +76,23 @@
 			
 				<h1 class="section-sub-title columnists">Participants</h1>
 				{event_participants}
-				{event_participants:participant}
+				{participant}
 				<article class="item-summary article columnist">
 
 					<header class="column-summary-header">
 						
-						<img class="restrain" src="{event_participants:participant:author_avatar}" alt="photo of {event_participants:participant:title}">
+						<img class="restrain" src="{author_avatar}" alt="photo of {title}">
 				
-						<span class="event-role">{event_participants:title}</span>
+						<span class="event-role">{title}</span>
 				
-						<h1>{event_participants:participant:title}</h1>
+						<h1>{title}</h1>
 						
-						{event_participants:participant:author_bio}
+						{author_bio}
 					
 					</header>
 					
 				</article>
-				{/event_participants:participant}
+				{/participant}
 				{/event_participants}
 			
 			</section>
