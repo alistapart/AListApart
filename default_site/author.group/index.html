@@ -61,7 +61,7 @@
 				{if author_channel_entry_id}
 				<h2 class="alt-small">A List Apart Events</h2>
 				<ul class="entry-list">
-				{exp:channel:entries channel="authors" entry_id="{embed:connect_id}" status="open|In progress" show_future_entries="yes" show_expired="yes"} 
+				{exp:channel:entries channel="authors" entry_id="{author_channel_entry_id}" status="open|In progress" show_future_entries="yes" show_expired="yes"} 
 					{exp:playa:parents channel="events" status="open|In progress" show_future_entries="yes" show_expired="yes"}	
 					<li>	
 						<h3 class="entry-title"><a href="{path='event/{url_title}'}">{title}</a></h3>
