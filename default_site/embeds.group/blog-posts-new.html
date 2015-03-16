@@ -1,7 +1,7 @@
 
 				<ul class="entry-list step-up">
 					
-				{exp:channel:entries channel="blog|link_posts" limit="10" dynamic="off" status="open" show_future_entries="no" sticky="no" offset="{embed:offset}" entry_id="not {embed:exclude_id}"}{if channel_short_name == "blog"}
+				{exp:channel:entries channel="blog|link_posts" limit="10" dynamic="off" status="open" show_future_entries="no" sticky="no" offset="{embed:offset}" entry_id="not {embed:exclude_id}" paginate="bottom"}{if channel_short_name == "blog"}
 					
 					<li>
 						<h3 class="entry-title"><a href="/blog/post/{url_title}">{title}</a></h3>
@@ -54,6 +54,21 @@
 					
 				</li><!--
 				
-				-->{/if}{/exp:channel:entries}
+				-->{/if}
+				
+				{paginate}
+					<nav class="paginator" role="toolbar">
+						<ul>
+			        		{if next_page}
+			        			<li><a class="previous" href="{auto_path}">Previous</a></li>
+				        	{/if}
+			        		{if previous_page}
+			            			<li><a class="next" href="{auto_path}">Next</a></li>
+			        		{/if}
+						</ul>
+					</nav>
+				{/paginate}
+
+				{/exp:channel:entries}
 				
 				</ul>

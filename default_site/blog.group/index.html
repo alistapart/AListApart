@@ -92,25 +92,6 @@
 
 				{embed="embeds/blog-posts-new" offset="{segment_2}" exclude_id="0"}
 				
-				<nav class="paginator" role="toolbar">
-			
-					<ul>
-				
-						<?php
-						
-						$thisBatch = {segment_2} + 0;
-						$previousBatch = $thisBatch + 10;
-						$nextBatch = $thisBatch - 10;
-						
-						?>
-						
-						<li><a class="previous" href="/blog/<?php echo $previousBatch; ?>">Previous</a></li>
-						<li><a class="next" href="/blog/<?php if ($nextBatch > 0) echo $nextBatch; ?>">Next</a></li>
-						
-					</ul>
-				
-				</nav>
-				
 			</section><!--
 			
 			--><div class="secondary-column">
