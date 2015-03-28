@@ -12,4 +12,4 @@ For right now, we’d love to have your eyes on our [dev site](http://dev.alista
 
 By joining our conversations as we weigh the pros and cons of certain approaches, you’ll be better armed to make the same decisions on your *own* projects. If you’re already well-versed in the ways of GitHub we’d love to have your eyes on how we’ll be doing things over the next few weeks, and your help building a welcoming, low-pressure place to learn the ins and outs of contributing to an open source project.
 
-<a href="http://dploy.io"><img src="https://ala.dploy.io/badge/88313865850598/10948.png" alt="Deployment status from dploy.io"></a>
+<a href="http://dploy.io"><img src="https://ala.dploy.io/badge/88313865850598/10948.png" alt="Deployment status from dploy.io"></a> 
