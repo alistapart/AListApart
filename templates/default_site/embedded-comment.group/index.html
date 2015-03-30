@@ -6,7 +6,7 @@
 
 	<meta charset="utf-8">
 	{exp:minimee:css}
-	<link rel="stylesheet" href="http://alistapart.com/d/_repo/site_assets/css/embedded.css">
+	<link rel="stylesheet" href="http://alistapart.com/assets/site_assets/css/embedded.css">
 	{/exp:minimee:css}
 	<base target="_parent">
 </head>
@@ -20,11 +20,11 @@
 			<img class="commenter-avatar photo" src="{made}" alt="" />
 			{/exp:ce_img:pair}
 		{if:elseif email == ""}
-			<img class="commenter-avatar generic" width="60" height="60" src="http://alistapart.com/d/_repo/site_assets/img/avatar_generic-commenter_grey.png" alt="" />
+			<img class="commenter-avatar generic" width="60" height="60" src="http://alistapart.com/assets/site_assets/img/avatar_generic-commenter_grey.png" alt="" />
 		{if:else}
 			<?php
 			$email = "{email}";
-			$default = "http://alistapart.com/d/_repo/site_assets/img/avatar_generic-commenter_grey.png";
+			$default = "http://alistapart.com/assets/site_assets/img/avatar_generic-commenter_grey.png";
 			$size = 60;
 			
 			$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;

@@ -14,12 +14,12 @@
 
 	<meta name="viewport" content="width=device-width">
 	
-	<link rel="stylesheet" href="/d/_repo/site_assets/css/reset.css" />
-	<link rel="stylesheet" href="/d/_repo/site_assets/css/editables.css" />
+	<link rel="stylesheet" href="/assets/site_assets/css/reset.css" />
+	<link rel="stylesheet" href="/assets/site_assets/css/editables.css" />
 
-	<script src="/d/_repo/site_assets/js/libs/prefixfree.min.js"></script>
+	<script src="/assets/site_assets/js/libs/prefixfree.min.js"></script>
 
-	<script src="/d/_repo/site_assets/js/libs/modernizr-dev.js"></script>
+	<script src="/assets/site_assets/js/libs/modernizr-dev.js"></script>
 
 	<title>A List Apart: Would you like to log in?</title>
 		
@@ -30,7 +30,7 @@
 	<header>
 	
 		<h1>
-			<img src="/d/_repo/site_assets/img/favicons/apple-touch-icon-57x57.png" alt="" width="57" height="57" style="display: inline-block; height: 40px; width: auto; vertical-align: middle; margin-right: 9px; margin-top: -10px;">
+			<img src="/assets/site_assets/img/favicons/apple-touch-icon-57x57.png" alt="" width="57" height="57" style="display: inline-block; height: 40px; width: auto; vertical-align: middle; margin-right: 9px; margin-top: -10px;">
 		</h1>
 		
 	</header>
