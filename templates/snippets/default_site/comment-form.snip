@@ -1,0 +1,20 @@
+							<li id="comment-form" class="comment-form {if comment_total == 0}no-comments{/if}">
+							
+								<h3><label form="comment-form" for="comment-content">Got Something to Say?</label></h3>
+								
+								<p>Discuss this article. We reserve the right to delete flames, trolls, and wood nymphs. <br>(The commenting engine will accept simple HTML tags.)</p>
+								
+								{exp:comment:form channel="articles|columns|blog|link_posts" return="{exp:current_url:full_url}/comment-return" id="comment-form" class="comment-form"}
+									
+									<textarea data-autoresize id="comment-content" class="logged-in" name="comment" required="required"></textarea>
+									<p class="commenter-info">
+										
+										{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
+										
+										<input type="submit" value="Submit" />
+										
+									</p>
+								
+								{/exp:comment:form}
+							
+							</li>

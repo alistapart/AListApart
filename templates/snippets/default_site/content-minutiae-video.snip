@@ -1,0 +1,23 @@
+
+				<div class="aside-breaker"><b>Article Continues Below</b></div>
+				
+				<aside class="content-minutiae">
+				
+					<h1>Conference:</h1>
+					<li>{video_conference}<a href="{event_url}">{title}</a>{/video_conference}</li>
+				
+					<h1>Speaker:</h1>
+					{if video_speaker_non_ala}{video_speaker_non_ala}
+					<li><a href="{cell_2}">{cell_1}</a></li>
+					{/video_speaker_non_ala}
+					{if:else}
+					{embed="videos/.speaker" entry_id="{entry_id}"}
+					{/if}
+				
+					<h1 class="propagation-enablers">Share This:</h1>
+					<ul class="propagation-enablers">
+						<li><a href="http://twitter.com/intent/tweet?url=http://alistapart.com/video/{url_title}&text={exp:url_encode}{title}{/exp:url_encode}&via=alistapart">Twitter</a></li>
+						<li><a href="http://www.facebook.com/sharer.php?u=http://alistapart.com/video/{url_title}&t={exp:url_encode}{title}{/exp:url_encode}">Facebook</a></li>
+						<li><a href="https://plus.google.com/share?url=http://alistapart.com/video/{url_title}">Google+</a></li>
+					</ul>				
+				</aside>
