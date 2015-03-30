@@ -1,0 +1,150 @@
+{if group_id == "1" OR member_id == "{segment_3}"}
+
+<!doctype html>
+	
+<!--[if lt IE 7]> <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie ie9 lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="/_/css/style.css">
+
+	<link rel="stylesheet" href="/_/css/readable.css">
+
+	<link rel="stylesheet" href="/_/css/prism.css">
+
+	<script src="/_/js/libs/modernizr-2.5.3.min.js"></script>
+
+	<title>A List Apart: Edit Author Form</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+		
+</head>
+
+<body>
+
+{global-header}
+
+{exp:user:edit member_id="{segment_3}" dynamic="off" override_return="/edit/author/{segment_3}"}
+
+<div role="main">
+	
+	<header data-title="name">
+	
+		<h1><label>Screen Name:</label><input name="screen_name" type="text" value="{screen_name}"></h1>
+		
+		<p>
+			<label>Username:</label><input name="username" type="text" value="{username}"><br>
+			<label>Email:</label><input name="email" type="text" value="{email}"><br>
+			<label>First Name:</label><input name="first_name" type="text" value="{first_name}" placeholder="first name"><br>
+			<label>Last Name:</label><input name="last_name" type="text" value="{last_name}" placeholder="last name">
+		</p>
+
+	</header>
+	
+	<hr>
+	
+	<section data-title="details">
+	
+		<p>
+			<label>Twitter:</label><input name="twitter" type="text" value="{twitter}"> <small>username only; no @</small><br>
+			<label>Facebook:</label><input name="facebook" type="text" value="{facebook}"> <small>username only</small><br>
+			<label>Dribbble:</label><input name="facebook" type="text" value="{dribbble}"> <small>username only</small><br>
+			<label>Github:</label><input name="facebook" type="text" value="{github}"> <small>username only</small><br>
+			<label>Personal URL:</label><input name="url" type="text" value="{url}"> <small>no http; <em>preferably</em> no www; no trailing slash</small>
+		</p>
+		
+	</section>
+	
+	<hr>
+	
+	<section data-title="bio">
+	
+		<p><textarea style="height: 150px;" name="bio">{bio}</textarea><br>
+		<small>links encouraged</small></p>
+
+	</section>
+	
+	<hr>
+	
+	<section data-title="avatar">
+			
+		<p><small>Avatars should be square, and at least 200x200. In the new system authors need not have separate avatars, unless you want a different image for commenting. If you choose not to upload a new avatar, your old one will be deleted before launch and your photo will be used for commenting instead.</small></p>
+		
+		<p>
+		{if avatar_filename != ""}
+			<img src="{avatar_url}{avatar_filename}">
+
+		{if avatar_width < "201" OR avatar_height < "201"}
+
+		<p>
+			<small>(at {avatar_width}x{avatar_height} this avatar is too small)</small>
+
+		</p>
+		{/if}
+		{if:else}
+			<img src="/pix/authors/short_hair_silhouette.jpg">
+		{/if}
+		</p>
+		
+		<p>
+			Upload new avatar: <input type="file" name="avatar_filename" />
+		</p>
+		
+	</section>
+	
+	<hr>
+	
+	<section data-title="photo">
+
+		<p>
+			<small>Photos should be at least 250x250. Our editors will crop and resize as needed.</small>
+		</p>
+		
+		{if photo_filename != ""}
+			
+		<p>
+			<img style="max-width: 100%;" src="{photo_url}{photo_filename}" />
+		</p>
+
+		{if photo_width < "400" OR photo_height < "400"}
+
+		<p>
+			<small>(at {photo_width}x{photo_height} this photo is too small)</small>
+
+		</p>
+		{/if}
+		{/if}
+		
+		<p>
+			Upload new photo: <input type="file" name="photo_filename" />
+		</p>
+		
+	</section>
+	
+	<hr>
+	
+	<p><input type="submit" value="Submit" /></p>
+		
+</div>
+	
+{/exp:user:edit}
+
+{current-user-info}
+
+{global-js}
+
+{page-bottom}
+
+{if:else}
+
+{redirect='/authors'}
+
+{/if}

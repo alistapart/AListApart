@@ -1,0 +1,120 @@
+<!doctype html>
+
+{exp:channel:entries channel="blog|link_posts" status="{statuses-all}"}
+
+<!--[if lt IE 7]> <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie ie9 lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="/_/css/style.css">
+
+	<link rel="stylesheet" href="/_/css/readable.css">
+
+	<link rel="stylesheet" href="/_/css/prism.css">
+
+	<script src="/_/js/libs/modernizr-2.5.3.min.js"></script>
+
+	<title>{title} &sect; An A List Apart Blog Post</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+		
+</head>
+
+<body>
+
+{global-header}
+
+<div role="main">
+	
+	<header data-title="title & details">
+	
+		<h1>{title}</h1>
+		
+		<div class="pub-info">
+		
+			<p class="article-byline">by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</p>
+			
+			<time class="article-pubdate" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+			
+			<p class="article-categories">Published in {categories backspace="2"}<a href="/topic/{category_url_title}">{category_name}</a>, {/categories}</p>
+			
+			{if comment_total > 0}<p class="article-comment-link">{comment_total} Comments</p>{/if}
+			
+			{if logged_in_member_group == "1"}<p><a href="{cp_url}?S=0&D=cp&C=content_publish&M=entry_form&channel_id={channel_id}&entry_id={entry_id}">Edit This</a></p>{/if}
+			
+		</div>
+		
+	</header>
+	
+	<hr>
+	
+	<section data-title="meta & flair">
+	
+		<p>Share this<br>
+		<a href="http://twitter.com/intent/tweet?url=http://alistapart.com/blog/post/{url_title}&text={exp:url_encode}{title}{/exp:url_encode}&via=alistapart">Twitter</a>
+		<a href="http://www.facebook.com/sharer.php?u=http://alistapart.com/blog/post/{url_title}&t={exp:url_encode}{title}{/exp:url_encode}">Facebook</a>
+		<a href="https://plusone.google.com/_/+1/confirm?hl=en&url=http://alistapart.com/blog/post/{url_title}">Google+</a>
+		</p>
+	
+	</section>
+	
+	{if channel_short_name == "blog"}
+	
+	{if blog_intro}
+	
+	<hr>
+	
+	<section data-title="intro">
+	
+	{blog_intro}
+	
+	</section>
+	
+	{/if}
+	
+	<hr>
+	
+	<section data-title="blog post content">
+	
+	{blog_content}
+	
+	</section>
+	
+	{/if}
+	
+	{if channel_short_name == "link_posts"}
+	
+	<hr>
+	
+	<section data-title="link post">
+	
+	{blog_description}
+	
+	</section>
+	
+	{/if}
+	
+	<hr>
+
+</div>
+	
+{/exp:channel:entries}
+
+{current-user-info}
+
+{global-footer}
+
+{global-js}
+
+<script src="/_/js/libs/prism.js"></script>
+
+
+{page-bottom}
