@@ -316,7 +316,7 @@
 		height: 41px;
 		background-color: #fff;
 		background-color: rgba(255,255,255,.95);
-		background-image: url(/d/_repo/site_assets/img/icon_hamburger.svg);
+		background-image: url(/assets/site_assets/img/icon_hamburger.svg);
 		background-repeat: no-repeat;
 		background-position: 12px center;
 		border-bottom: 1px solid #d8d8d8;
@@ -327,7 +327,7 @@
 	}
 	
 	.no-svg .go-to-nav {
-		background-image: url(/d/_repo/site_assets/img/icon_hamburger.gif);
+		background-image: url(/assets/site_assets/img/icon_hamburger.gif);
 	}
 	
 	.show-nav .go-to-nav:before {
@@ -338,7 +338,7 @@
 		 top: 11px;
 		 left: 12px;
 		 z-index: -1;
-		 background: url(/d/_repo/site_assets/img/icon_hamburger.svg) center center no-repeat white;
+		 background: url(/assets/site_assets/img/icon_hamburger.svg) center center no-repeat white;
 		 -webkit-transform: rotate(90deg);
 		 -moz-transform: rotate(90deg);
 		 -ms-transform: rotate(90deg);
