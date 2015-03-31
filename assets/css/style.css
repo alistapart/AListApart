@@ -73,7 +73,7 @@ html:not(.no-js) .buttonish:after {
 }
 
 html:not(.no-js) .buttonish:before {
-	content: url(/assets/site_assets/img/spinner_buttonish.gif);
+	content: url(/components/assets/img/spinner_buttonish.gif);
 	display: inline-block;
 	position: relative;
 	top: 3px;
@@ -106,7 +106,7 @@ html:not(.no-js) .buttonish:before {
 	display: inline-block;
 	width: 960px;
 	height: 120px;
-	background-image: url(/assets/site_assets/img/logo_a-list-apart.svg);
+	background-image: url(/components/assets/img/logo_a-list-apart.svg);
 	background-size: contain;
 	background-repeat: no-repeat;
 	margin-top: -18px;
@@ -120,7 +120,7 @@ html:not(.no-js) .buttonish:before {
 }
 
 .no-svg .killer-logo > a {
-	background-image: url(/assets/site_assets/img/logo_a-list-apart.png);
+	background-image: url(/components/assets/img/logo_a-list-apart.png);
 }
 
 .killer-logo img {
@@ -137,7 +137,7 @@ html:not(.no-js) .buttonish:before {
 	height: 50px;
 	top: auto;
 	bottom: 0;
-	background: url(/assets/site_assets/img/bg_for-people-who.svg) no-repeat top center;
+	background: url(/components/assets/img/bg_for-people-who.svg) no-repeat top center;
 	text-indent: 100%;
 	color: transparent;
 	overflow: hidden;
@@ -146,7 +146,7 @@ html:not(.no-js) .buttonish:before {
 }
 
 .no-svg .deadly-subtitle {
-	background-image:	url(/assets/site_assets/img/bg_for-people-who.png);
+	background-image:	url(/components/assets/img/bg_for-people-who.png);
 }
 
 .deadly-subtitle img {
@@ -253,11 +253,11 @@ ul.inline-items li {
 	overflow: hidden;
 	vertical-align: top;
 	text-indent: 100%;
-	background: url(/assets/site_assets/img/icon_navigation-laurel.svg) no-repeat center;
+	background: url(/components/assets/img/icon_navigation-laurel.svg) no-repeat center;
 }
 
 .no-svg .global-nav li:first-child a {
-	background-image: url(/assets/site_assets/img/icon_navigation-laurel.png);
+	background-image: url(/components/assets/img/icon_navigation-laurel.png);
 }
 
 .global-nav li.head-east-young-man {
@@ -284,7 +284,7 @@ ul.inline-items li {
 	display: inline-block;
 	width: 16px;
 	height: 18px;
-	background: url(/assets/site_assets/img/icon_magnify_v.svg) no-repeat center;
+	background: url(/components/assets/img/icon_magnify_v.svg) no-repeat center;
 }
 
 .main-search label.submit-search input {
@@ -292,7 +292,7 @@ ul.inline-items li {
 }
 
 .no-svg .main-search label.submit-search {
-	background-image: url(/assets/site_assets/img/icon_magnify_v.png);
+	background-image: url(/components/assets/img/icon_magnify_v.png);
 }
 
 .main-search label.submit-search input {
@@ -519,7 +519,7 @@ ul.inline-items li {
 	content: "⚜ ";
 	content: "➽ "; */
 	content: " ";
-	background-image: url(/assets/site_assets/img/icon_compass.svg);
+	background-image: url(/components/assets/img/icon_compass.svg);
 	background-size: contain;
 	display: inline-block;
 	width: 16px;
@@ -531,7 +531,7 @@ ul.inline-items li {
 }
 
 .no-svg .blog-summary.link-post h1:before {
-	background-image: url(/assets/site_assets/img/icon_compass.png);
+	background-image: url(/components/assets/img/icon_compass.png);
 }
 
 .blog-summary.link-post p {
@@ -1002,7 +1002,7 @@ aside.column.more-content .item-summary {
 	.wide-hero .issue-number,
 	.tall-hero .issue-number,
 	.issue-page .logo-holder + .issue-number {
-		background: transparent url(/assets/site_assets/img/bg_issue-badge_3.svg) no-repeat;
+		background: transparent url(/components/assets/img/bg_issue-badge_3.svg) no-repeat;
 	}
 }
 
@@ -1034,7 +1034,7 @@ aside.column.more-content .item-summary {
 html[data-useragent*='MSIE'] .entry-header .issue-number,
 html[data-useragent*='MSIE'] .wide-hero .issue-number,
 html[data-useragent*='MSIE'] .tall-hero .issue-number {
-	background-image: url(/assets/site_assets/img/issue-badge.png);
+	background-image: url(/components/assets/img/issue-badge.png);
 }
 
 .tall-hero .issue-number {
@@ -1098,7 +1098,7 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 	text-transform: uppercase;
 	text-align: center;
 	border-bottom: 1px dotted #7f7f7f;
-	background: url(/assets/site_assets/img/blog-header.jpg) center 22px no-repeat;
+	background: url(/components/assets/img/blog-header.jpg) center 22px no-repeat;
 }
 
 .ala-slug {
@@ -1435,33 +1435,33 @@ ul.fancy-links li a {
 	padding: 0 6px 0 26px;
 	color: #222;
 	border: 1px solid #ccc;
-	background: url(/assets/site_assets/img/bookmark.png) 7px center no-repeat;
+	background: url(/components/assets/img/bookmark.png) 7px center no-repeat;
 	border-radius: 5px;
 }
 
 ul.fancy-links li a.twitter {
 	padding-left: 32px;
-	background: url(/assets/site_assets/img/icon_twitter.png) 5px center no-repeat;
+	background: url(/components/assets/img/icon_twitter.png) 5px center no-repeat;
 }
 
 ul.fancy-links li a.github {
 	padding-left: 32px;
-	background: url(/assets/site_assets/img/icon_github.png) 5px center no-repeat;
+	background: url(/components/assets/img/icon_github.png) 5px center no-repeat;
 }
 
 ul.fancy-links li a.dribbble {
 	padding-left: 32px;
-	background: url(/assets/site_assets/img/icon_dribbble.png) 5px center no-repeat;
+	background: url(/components/assets/img/icon_dribbble.png) 5px center no-repeat;
 }
 
 ul.fancy-links li a.facebook {
 	padding-left: 32px;
-	background: url(/assets/site_assets/img/icon_facebook2.png) 5px center no-repeat;
+	background: url(/components/assets/img/icon_facebook2.png) 5px center no-repeat;
 }
 
 ul.fancy-links li a.googleplus {
 	padding-left: 32px;
-	background: url(/assets/site_assets/img/icon_googleplus.png) 5px center no-repeat;
+	background: url(/components/assets/img/icon_googleplus.png) 5px center no-repeat;
 }
 
 .article-layout .main-content {
@@ -2454,7 +2454,7 @@ h3.alternate {
 }
 
 .laurel-line:before {
-	content: url(/assets/site_assets/img/laurel.png);
+	content: url(/components/assets/img/laurel.png);
 	position: absolute;
 	left: 50%;
 	top: -11px;
@@ -3040,29 +3040,29 @@ ul.login-buttons li a {
 
 ul.login-buttons li.twitter a {
 	padding-left: 43px;
-	background: url(/assets/site_assets/img/icon_twitter_v.svg) 9px center no-repeat;
+	background: url(/components/assets/img/icon_twitter_v.svg) 9px center no-repeat;
 }
 
 .no-svg ul.login-buttons li.twitter a {
-	background-image: url(/assets/site_assets/img/icon_twitter2.png);
+	background-image: url(/components/assets/img/icon_twitter2.png);
 }
 
 ul.login-buttons li.facebook a {
 	padding-left: 40px;
-	background: url(/assets/site_assets/img/icon_facebook_v.svg) 9px center no-repeat;
+	background: url(/components/assets/img/icon_facebook_v.svg) 9px center no-repeat;
 }
 
 .no-svg ul.login-buttons li.facebook a {
-	background-image: url(/assets/site_assets/img/icon_facebook_v.png);
+	background-image: url(/components/assets/img/icon_facebook_v.png);
 }
 
 ul.login-buttons li.ala a {
 	padding-left: 40px;
-	background: url(/assets/site_assets/img/icon_login-laurel.svg) 9px center no-repeat;
+	background: url(/components/assets/img/icon_login-laurel.svg) 9px center no-repeat;
 }
 
 .no-svg ul.login-buttons li.ala a {
-	background-image: url(/assets/site_assets/img/icon_login-laurel.png);
+	background-image: url(/components/assets/img/icon_login-laurel.png);
 }
 
 ul.login-buttons li a:hover {
@@ -3246,7 +3246,7 @@ img.commenter-avatar {
 	padding-bottom: 60px;
 	/* left: 0; */
 	width: 100%;
-	background: #ededed url(/assets/site_assets/img/noise.png);
+	background: #ededed url(/components/assets/img/noise.png);
 	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
@@ -3372,49 +3372,49 @@ img.commenter-avatar {
 }
 
 .affiliates .aea {
-	background-image: url(/assets/site_assets/img/logo_an-event-apart_mark.svg);
+	background-image: url(/components/assets/img/logo_an-event-apart_mark.svg);
 }
 
 .no-svg .affiliates .aea {
-	background-image: url(/assets/site_assets/img/logo_an-event-apart_mark.png);
+	background-image: url(/components/assets/img/logo_an-event-apart_mark.png);
 }
 
 .affiliates .aba {
 	height: 63px;
-	background-image: url(/assets/site_assets/img/logo_a-book-apart_3.svg);
+	background-image: url(/components/assets/img/logo_a-book-apart_3.svg);
 	background-size: contain;
 	background-repeat: no-repeat;
 }
 
 .no-svg .affiliates .aba {
-	background-image: url(/assets/site_assets/img/logo_a-book-apart_3.png);
+	background-image: url(/components/assets/img/logo_a-book-apart_3.png);
 }
 
 .affiliates .hc {
-	background-image: url(/assets/site_assets/img/logo_happy-cog.svg);
+	background-image: url(/components/assets/img/logo_happy-cog.svg);
 }
 
 .no-svg .affiliates .hc {
-	background-image: url(/assets/site_assets/img/logo_happy-cog.png);
+	background-image: url(/components/assets/img/logo_happy-cog.png);
 }
 
 .affiliates .hch {
-	background-image: url(/assets/site_assets/img/logo_happy-cog-hosting.svg);
+	background-image: url(/components/assets/img/logo_happy-cog-hosting.svg);
 }
 
 .no-svg .affiliates .hch {
-	background-image: url(/assets/site_assets/img/logo_happy-cog-hosting.png);
+	background-image: url(/components/assets/img/logo_happy-cog-hosting.png);
 }
 
 .affiliates .arcus {
 	width: 56px;
 	height: 56px;
-	background-image: url(/assets/site_assets/img/logo_arcustech.svg);
+	background-image: url(/components/assets/img/logo_arcustech.svg);
 	background-repeat: no-repeat;
 }
 
 .no-svg .affiliates .arcus {
-	background-image: url(/assets/site_assets/img/logo_arcustech.png);
+	background-image: url(/components/assets/img/logo_arcustech.png);
 }
 
 
@@ -4101,7 +4101,7 @@ body.modal {
 		margin: 0;
 		padding-left: 36px;
 		line-height: 30px;
-		background: url(/assets/site_assets/img/icon_navigation-laurel.svg) left no-repeat;
+		background: url(/components/assets/img/icon_navigation-laurel.svg) left no-repeat;
 		-webkit-print-color-adjust: exact;
 	}
 
