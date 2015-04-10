@@ -7,7 +7,7 @@
 {global-page-top}
 
 	<title>{title} · An A List Apart Events</title>
-	
+
 	{exp:stash:set name="safe-description"}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{event_deck}{/exp:low_replace}{/exp:strip_html}{/exp:stash:set}
 
 	<meta name="description" content="{exp:stash:get name="safe-description"}">
@@ -18,12 +18,12 @@
 	<meta name="twitter:title" content="{title}">
 	<meta name="twitter:description" content="{exp:stash:get name="safe-description"}">
 	<meta name="twitter:url" content="http://alistapart.com/event/{url_title}">
-		
+
 	<meta property="og:title" content="{title}" />
 	<meta property="og:description" content="{exp:stash:get name="safe-description"}" />
 	<meta property="og:url" content="http://alistapart.com/event/{url_title}" />
 	<!--<meta property="og:image" content="{article_illustration}{url}{/article_illustration}" />-->
-		
+
 </head>
 
 <body>
@@ -31,20 +31,21 @@
 {current-user-info}
 
 	{primary-logo}
-			
+
 	{events-blurb}
-	
+
 	<div role="main" class="main-wrapper stacker single-column-display condensed">
-	
+
 		<div class="col-holder">
-		
+
 			<section class="main-content">
 
 				<header class="author-header">
-					
+
 					<h1>{title}</h1>
-					
+
 				</header>
+
 				{if events_video_url}
 					{event_deck}
 					<figure class="video">
@@ -53,72 +54,125 @@
 					{event-details}
 					{event-copy}
 				{if:else}
-					{exp:hop_inject where="<p>" always_inject="y"}
+					{exp:hop_inject where="<p>" always_inject="yes"}
 					{event-copy}
-					{exp:hop_inject:injection separator="-1" position="after"}
+					{exp:hop_inject:injection separator="2" position="before"}
 					{event-details}
 					{/exp:hop_inject:injection}
 					{/exp:hop_inject}
 				{/if}
-			 	 
+
  			</section>
-				 
-			
+
+
 		</div>
-	
+
 	</div>
 
+	{if {current_time} < {entry_date} }
 	<div role="main" class="main-wrapper stacker single-column-display condensed">
-			
+
 		<div class="col-holder">
-		
+
+			<section id="register" class="main-content form-content">
+
+				<h1 class="section-sub-title serif">Registration</h1>
+
+				{if segment_2 == "thanks"}<p class="form-message">Thank you for registering! Check your email for event information and reminders.</p>{/if}
+
+				<p>This online session will take place on {entry_date format="%l"}, {entry_date format="%F"} {entry_date format="%d"}, {entry_date format="%Y"} between {entry_date format="%g"}&ndash;{expiration_date format="%g %A %T"}.</p>
+
+				<p>To join us, please provide your name and email address so that we can send you viewing instructions.</p>
+
+				<!-- Begin MailChimp Signup Form -->
+				<form action="//alistapart.us3.list-manage.com/subscribe/post?u=0916d3332d7cd86d644d2b4fe&amp;id=364a798952" method="post" id="email-subscribe" name="mc-embedded-subscribe-form" class="simple-form wide-form" novalidate data-customvalidate="no-checkbox">
+
+					<fieldset>
+
+						<label for="mce-NAME">Name
+						<input type="text" name="NAME" id="mce-NAME" value="{logged_in_screen_name}" required /></label>
+
+						<label for="mce-EMAIL">Email address
+						<input type="email" name="EMAIL" id="mce-EMAIL" value="{logged_in_email}" required /></label>
+
+					</fieldset>
+
+					<fieldset>
+
+						<label class="list"><input type="checkbox" value="1" name="group[12745][1]" id="mce-group[12745]-12745-0"> Notify me of future <cite>A List Apart</cite>: On Air sessions via email</label>
+						<label class="list"><input type="checkbox" value="2" name="group[12745][2]" id="mce-group[12745]-12745-1"> Sign me up for the <cite>ALA</cite> digest, our biweekly email roundup</label>
+
+					</fieldset>
+
+					<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+				    <div style="position: absolute; left: -5000px;"><input type="text" name="b_0916d3332d7cd86d644d2b4fe_f1ea1ab5a3" tabindex="-1" value=""></div>
+
+				    <p class="form-message error"></p>
+
+				    <p><input type="submit" value="Register Now" /></p>
+
+				</form>
+
+				<!--End mc_embed_signup-->
+
+			</section>
+
+		</div>
+
+	</div>
+	{/if}
+
+	<div role="main" class="main-wrapper stacker single-column-display condensed">
+
+		<div class="col-holder">
+
 			<section class="main-content">
-			
+
 				<h1 class="section-sub-title columnists">Participants</h1>
 				{event_participants}
-				{participant}
+				{event_participants:participant_object}
 				<article class="item-summary article columnist">
 
 					<header class="column-summary-header">
-						
-						<img class="restrain" src="{author_avatar}" alt="photo of {title}">
-				
-						<span class="event-role">{title}</span>
-				
-						<h1>{title}</h1>
-						
-						{author_bio}
-					
+
+						<img class="restrain" src="{event_participants:participant_object:author_avatar}" alt="photo of {event_participants:participant_object:title}">
+
+						<span class="event-role">{event_participants:participant_title}</span>
+
+						<h1>{event_participants:participant_object:title}</h1>
+
+						{event_participants:participant_object:author_bio}
+
 					</header>
-					
+
 				</article>
-				{/participant}
+				{/event_participants:participant_object}
 				{/event_participants}
-			
+
 			</section>
-		
+
 		</div>
-		
-	</div> 
-	
-	<div role="main" class="main-wrapper stacker single-column-display condensed">
-		
-		<div class="col-holder">
-			
-			<section class="main-content">
-			
-				{events-about}
-			
-			</section>
-		
-		</div>
-					
-		{event_sponsor_ad_code}
-	
+
 	</div>
-	
+
+	<div role="main" class="main-wrapper stacker single-column-display condensed">
+
+		<div class="col-holder">
+
+			<section class="main-content">
+
+				{events-about}
+
+			</section>
+
+		</div>
+
+		{event_sponsor_ad_code}
+
+	</div>
+
 	{global-nav}
-	
+
 {sponsor-top}
 
 {global-footer}
