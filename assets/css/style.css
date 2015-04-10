@@ -770,6 +770,15 @@ aside.column.more-content .item-summary {
 	padding-right: 24px;
 }
 
+.event-copy .event-details {
+	border-left: 1px solid #eee;
+	margin-left: 24px;
+}
+
+.event-copy .event-details .logistics-block {
+	padding-left: 24px;
+}
+
 .event-copy h2 {
 	font-family: "Franklin ITC", sans-serif;
 	font-weight: bold;
