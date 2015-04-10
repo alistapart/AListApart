@@ -1,22 +1,22 @@
 <div class="event-copy{if events_video_url==''} no-video{/if}">
-	
+
 	{event_description}
 
 	<h2>Featuring</h2>
 
 	<ul class="people-list">
-	{event_participants_n}
+	{event_participants}
 	<li>
-		{participant}
-			<img src="{author_avatar}" alt="photo of {title}">
+			{event_participants:participant_object}
+			<img src="{event_participants:participant_object:author_avatar}" alt="photo of {event_participants:participant_object:title}">
 
-			<a class="name-link">{title}</a>
+			<a class="name-link">{event_participants:participant_object:title}</a>
 
-			<span>{author_blurb}</span>
-	
-		{/participant}
+			<span>{event_participants:participant_object:author_blurb}</span>
+			{/event_participants:participant_object}
+
 	</li>
-	{/event_participants_n}
+	{/event_participants}
 	</ul>
 
 	<h2 id="transcript">Transcript</h2>
