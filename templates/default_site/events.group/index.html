@@ -7,7 +7,7 @@
 {global-page-top}
 
 	<title>{title} · An A List Apart Events</title>
-	
+
 	{exp:stash:set name="safe-description"}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{event_deck}{/exp:low_replace}{/exp:strip_html}{/exp:stash:set}
 
 	<meta name="description" content="{exp:stash:get name="safe-description"}">
@@ -18,12 +18,12 @@
 	<meta name="twitter:title" content="{title}">
 	<meta name="twitter:description" content="{exp:stash:get name="safe-description"}">
 	<meta name="twitter:url" content="http://alistapart.com/event/{url_title}">
-		
+
 	<meta property="og:title" content="{title}" />
 	<meta property="og:description" content="{exp:stash:get name="safe-description"}" />
 	<meta property="og:url" content="http://alistapart.com/event/{url_title}" />
 	<!--<meta property="og:image" content="{article_illustration}{url}{/article_illustration}" />-->
-		
+
 </head>
 
 <body>
@@ -31,20 +31,21 @@
 {current-user-info}
 
 	{primary-logo}
-			
+
 	{events-blurb}
-	
+
 	<div role="main" class="main-wrapper stacker single-column-display condensed">
-	
+
 		<div class="col-holder">
-		
+
 			<section class="main-content">
 
 				<header class="author-header">
-					
+
 					<h1>{title}</h1>
-					
+
 				</header>
+				
 				{if events_video_url}
 					{event_deck}
 					<figure class="video">
@@ -53,72 +54,72 @@
 					{event-details}
 					{event-copy}
 				{if:else}
-					{exp:hop_inject where="<p>" always_inject="y"}
+					{exp:hop_inject where="<p>" always_inject="yes"}
 					{event-copy}
-					{exp:hop_inject:injection separator="-1" position="after"}
+					{exp:hop_inject:injection separator="2" position="after"}
 					{event-details}
 					{/exp:hop_inject:injection}
 					{/exp:hop_inject}
 				{/if}
-			 	 
+
  			</section>
-				 
-			
+
+
 		</div>
-	
+
 	</div>
 
 	<div role="main" class="main-wrapper stacker single-column-display condensed">
-			
+
 		<div class="col-holder">
-		
+
 			<section class="main-content">
-			
+
 				<h1 class="section-sub-title columnists">Participants</h1>
 				{event_participants_n}
 				{participant}
 				<article class="item-summary article columnist">
 
 					<header class="column-summary-header">
-						
+
 						<img class="restrain" src="{author_avatar}" alt="photo of {title}">
-				
+
 						<span class="event-role">{title}</span>
-				
+
 						<h1>{title}</h1>
-						
+
 						{author_bio}
-					
+
 					</header>
-					
+
 				</article>
 				{/participant}
 				{/event_participants_n}
-			
+
 			</section>
-		
+
 		</div>
-		
-	</div> 
-	
-	<div role="main" class="main-wrapper stacker single-column-display condensed">
-		
-		<div class="col-holder">
-			
-			<section class="main-content">
-			
-				{events-about}
-			
-			</section>
-		
-		</div>
-					
-		{event_sponsor_ad_code}
-	
+
 	</div>
-	
+
+	<div role="main" class="main-wrapper stacker single-column-display condensed">
+
+		<div class="col-holder">
+
+			<section class="main-content">
+
+				{events-about}
+
+			</section>
+
+		</div>
+
+		{event_sponsor_ad_code}
+
+	</div>
+
 	{global-nav}
-	
+
 {sponsor-top}
 
 {global-footer}
