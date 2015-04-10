@@ -1268,7 +1268,7 @@ footer a.aside-author + time:before {
 .author-header,
 .blog-header {
 	position: relative;
-	min-height: 120px;
+	/*min-height: 120px;*/
 	margin: 36px 0;
 	padding-left: 132px;
 }
