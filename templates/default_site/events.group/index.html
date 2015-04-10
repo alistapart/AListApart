@@ -45,7 +45,7 @@
 					<h1>{title}</h1>
 
 				</header>
-				
+
 				{if events_video_url}
 					{event_deck}
 					<figure class="video">
@@ -56,7 +56,7 @@
 				{if:else}
 					{exp:hop_inject where="<p>" always_inject="yes"}
 					{event-copy}
-					{exp:hop_inject:injection separator="2" position="after"}
+					{exp:hop_inject:injection separator="2" position="before"}
 					{event-details}
 					{/exp:hop_inject:injection}
 					{/exp:hop_inject}
