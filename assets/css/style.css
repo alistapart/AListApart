@@ -701,6 +701,11 @@ aside.column.more-content .item-summary {
 	margin-bottom: 2em;
 }
 
+.logistics-block.bordered {
+	padding-top: 24px;
+	border-top: 1px solid #eee;
+}
+
 .logistics-block:last-of-type {
 	margin-bottom: 0;
 }
@@ -776,7 +781,11 @@ aside.column.more-content .item-summary {
 }
 
 .event-copy .event-details .logistics-block {
-	padding-left: 24px;
+	padding-left:
+}
+
+.arrow-link:after {
+	content: " ›";
 }
 
 .event-copy h2 {
@@ -1333,31 +1342,41 @@ footer a.aside-author + time:before {
 	border: .5em solid #f5f5f5;
 }
 
-.previous-column {
+.previous-column,
+.previous-participant-article {
 	margin-bottom: 2em;
 }
 
-.item-summary.article.columnist .previous-column {
+.previous-participant-article {
+	text-align: center;
+}
+
+.item-summary.article.columnist .previous-column,
+.item-summary.article.columnist .previous-participant-article {
 	margin-top: 1em;
 }
 
-.previous-column time {
+.previous-column time,
+.previous-participant-article time {
 	color: #666;
 	font-style: italic;
 }
 
-.item-summary.article.columnist .previous-column time {
+.item-summary.article.columnist .previous-column time,
+.item-summary.article.columnist .previous-participant-article time {
 	font-size: 14px;
 }
 
-.previous-column h2 {
+.previous-column h2,
+.previous-participant-article h2 {
 	margin-top: 6px;
 	font-family: "Franklin ITC", sans-serif;
 	font-weight: bold;
 	font-size: 24px;
 }
 
-.item-summary.article.columnist .previous-column h2 {
+.item-summary.article.columnist .previous-column h2,
+.item-summary.article.columnist .previous-participant-article h2 {
 	margin-top: 0;
 	font-size: 18px;
 }

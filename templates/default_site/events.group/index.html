@@ -145,6 +145,14 @@
 
 					</header>
 
+					<aside class="previous-participant-article">
+
+						<time datetime="2015-01-29T07:00:00-05:00">January 29, 2015</time>
+
+						<h2><a href="/column/how-big-is-big-enough-to-pick-on">How Big is Big Enough to Pick On?</a></h2>
+
+					</aside>
+
 				</article>
 				{/event_participants:participant_object}
 				{/event_participants}
@@ -155,7 +163,45 @@
 
 	</div>
 
-	<div role="main" class="main-wrapper stacker single-column-display condensed">
+	{/exp:channel:entries}
+
+	<div role="main" class="main-wrapper stacker multi-column-display condensed">
+
+		<div class="col-holder">
+
+			<section class="main-content">
+
+				<h1 class="section-sub-title columnists">Past Events</h1>
+
+				{exp:channel:entries channel="events" limit="1" status="open" show_future_entries="no" show_expired="yes" dynamic="no"}
+
+				<article class="item-summary article columnist" id="panelist1">
+
+					<header class="column-summary-header">
+
+						<h1><a href="/event/{url_title}">{title}</a></h1>
+
+						<p class="meta">
+							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+						</p>
+
+					</header>
+
+					{event_deck}
+
+				</article>
+
+				{/exp:channel:entries}
+
+			</section>
+
+		</div>
+
+
+
+	</div>
+
+	<div role="main" class="main-wrapper stacker multi-column-display condensed">
 
 		<div class="col-holder">
 
@@ -167,7 +213,9 @@
 
 		</div>
 
+		{exp:channel:entries channel="events" limit="1" status="open" show_future_entries="yes" show_expired="yes" dynamic="no"}
 		{event_sponsor_ad_code}
+		{/exp:channel:entries}
 
 	</div>
 
@@ -176,7 +224,5 @@
 {sponsor-top}
 
 {global-footer}
-
-{/exp:channel:entries}
 
 {global-page-bottom}
