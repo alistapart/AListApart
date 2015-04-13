@@ -1,17 +1,17 @@
 
 {exp:user:authors entry_id="{embed:entry_id}"}
-					
+
 				{if count == "1" AND total_results > "1"}<h1>About the Authors</h1>
 				{if:elseif total_results == "1"}<h1>About the Author</h1>{/if}
 
 				<div class="byline author vcard">
-				
+
 					{if photo_filename}<a class="photo" href="/author/{username}"><img src="{exp:ce_img:pair src="{photo_url}{photo_filename}" width="120" height="120" crop="yes"}{made}{/exp:ce_img:pair}" alt=""></a>{/if}
-					
+
 					<h2><a class="fn" href="/author/{username}">{screen_name}</a></h2>
-					
+
 					<div class="author-bio">{bio}</div>
-					
+
 					{embed="embeds/author-more" author_id="{member_id}" current_entry="{embed:entry_id}"}
 
 				</div>

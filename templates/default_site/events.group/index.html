@@ -173,6 +173,11 @@
 
 	{/exp:channel:entries}
 
+	{exp:channel:entries channel="events" status="open" show_future_entries="no" show_expired="yes" dynamic="no" url_title="not {segment_2}"}
+
+	{if no_results}<style>#archive-link {display: none;}</style>{/if}
+
+	{if count == 1}
 	<div id="archive" role="main" class="main-wrapper stacker multi-column-display condensed">
 
 		<div class="col-holder">
@@ -180,9 +185,7 @@
 			<section class="main-content">
 
 				<h1 class="section-sub-title columnists">Past Events</h1>
-
-				{exp:channel:entries channel="events" limit="1" status="open" show_future_entries="no" show_expired="yes" dynamic="no"}
-
+	{/if}
 				<article class="item-summary article columnist" id="panelist1">
 
 					<header class="column-summary-header">
@@ -198,16 +201,15 @@
 					{event_deck}
 
 				</article>
-
-				{/exp:channel:entries}
-
+	{if count == total_results}
 			</section>
 
 		</div>
 
-
-
 	</div>
+	{/if}
+
+	{/exp:channel:entries}
 
 	<div role="main" class="main-wrapper stacker multi-column-display condensed">
 
