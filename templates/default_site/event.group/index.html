@@ -122,7 +122,7 @@
 	</div>
 	{/if}
 
-	<div id="archive" role="main" class="main-wrapper stacker single-column-display condensed">
+	<div role="main" class="main-wrapper stacker single-column-display condensed">
 
 		<div class="col-holder">
 
@@ -152,6 +152,42 @@
 			</section>
 
 		</div>
+
+	</div>
+
+	<div id="archive" role="main" class="main-wrapper stacker multi-column-display condensed">
+
+		<div class="col-holder">
+
+			<section class="main-content">
+
+				<h1 class="section-sub-title columnists">Past Events</h1>
+
+				{exp:channel:entries channel="events" limit="1" status="open" show_future_entries="no" show_expired="yes" dynamic="no"}
+
+				<article class="item-summary article columnist" id="panelist1">
+
+					<header class="column-summary-header">
+
+						<h1><a href="/event/{url_title}">{title}</a></h1>
+
+						<p class="meta">
+							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+						</p>
+
+					</header>
+
+					{event_deck}
+
+				</article>
+
+				{/exp:channel:entries}
+
+			</section>
+
+		</div>
+
+
 
 	</div>
 
