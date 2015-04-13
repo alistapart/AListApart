@@ -7,21 +7,21 @@
 {global-page-top}
 
 	<title>{title} · An A List Apart Article</title>
-	
+
 	<link rel="alternate" type="application/rss+xml" title="A feed for comments on this article" href="/comments/feed/{url_title}" />
-	
+
 	{article_custom_head}
-	
+
 	{embed="embeds/article-author-styles" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
-	
+
 	{exp:stash:set name="safe-description"}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{article_deck}{/exp:low_replace}{/exp:strip_html}{/exp:stash:set}
-	
+
 	{if article_custom_css}
 	<style>
 		{article_custom_css}
 	</style>
 	{/if}
-	
+
 	<meta name="description" content="{exp:stash:get name="safe-description"}">
 	<meta name="author" content="{embed="embeds/article-authors-no-html" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}">
 
@@ -30,12 +30,12 @@
 	<meta name="twitter:title" content="{title}">
 	<meta name="twitter:description" content="{exp:stash:get name="safe-description"}">
 	<meta name="twitter:url" content="http://alistapart.com/article/{url_title}">
-		
+
 	<meta property="og:title" content="{title}" />
 	<meta property="og:description" content="{exp:stash:get name="safe-description"}" />
 	<meta property="og:url" content="http://alistapart.com/article/{url_title}" />
 	<meta property="og:image" content="{article_illustration}{url}{/article_illustration}" />
-		
+
 </head>
 
 <body class="printable {if comment_total > 0}comments-exist{/if}">
@@ -43,30 +43,30 @@
 {current-user-info-edit}
 
 	{primary-logo}
-	
+
 	<div role="main" class="main-wrapper">
-	
+
 		<article class="article-layout hentry">
-		
+
 			<header class="entry-header">
-			
+
 				{exp:stash:set name="issue-number"}{exp:playa:parents status="open|In Progress"}<a href="/issue/{issue_number}" class="issue-number"><span>Issue №</span> {issue_number}</a>{/exp:playa:parents}{/exp:stash:set}
-				
+
 				{if article_responsive_illo != ""}
 
 				<figure class="wide-hero responsive-hero" data-picture data-alt="">
 					{article_responsive_illo}
 					<div data-src="{exp:ce_img:pair src="{cell_1}" width="{cell_2}" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" {if cell_2 != ""}data-media="(max-width: {cell_2}px)"{/if}></div>
 					{/article_responsive_illo}
-				
+
 					<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
 					<noscript>{article_illustration}<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt="">{/article_illustration}</noscript>
-					
+
 					{exp:stash:get name="issue-number"}
 				</figure>
-				
+
 				{if:else}
-				
+
 				{if article_illustration}
 
 				{article_illustration}
@@ -75,10 +75,10 @@
 					<div data-src="{exp:ce_img:pair src="{url}" width="480" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}"></div>
 					<div data-src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" data-media="(min-width: 600px)"></div>
 					<div data-src="{exp:ce_img:pair src="{url}" width="1920" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" data-media="(min-width: 600px) and (min-device-pixel-ratio: 2.0)"></div>
-			
+
 					<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
 					<noscript><img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
-					
+
 					{exp:stash:get name="issue-number"}
 				</figure>
 				{if:else}
@@ -86,10 +86,10 @@
 					<div data-src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}"></div>
 					<div data-src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" data-media="(min-width: 960px)"></div>
 					<div data-src="{exp:ce_img:pair src="{url}" width="696" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" data-media="(min-width: 960px) and (min-device-pixel-ratio: 2.0)"></div>
-			
+
 					<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
 					<noscript><img src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
-					
+
 					{exp:stash:get name="issue-number"}
 				</figure>
 				{/if}
@@ -102,21 +102,21 @@
 				{if:else}
 				{exp:stash:get name="issue-number"}
 				{/if}
-				
+
 				{/if} {!-- end != murtaugh --}
-				
+
 				<h1 class="entry-title">{title}</h1>
-				
+
 				<p class="entry-details">
-					
+
 					by {embed="embeds/article-authors-primary" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
-					
+
 					{exp:playa:parents status="open|In Progress"}<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>{/exp:playa:parents}
-					
+
 					<span class="optional-break">
-					
+
 						Published in {modern-categories}
-						
+
 						{if comment_total == 1}
 							· <a class="comment-count" href="#comments">1 Comment</a>
 						{if:elseif comment_total > 1}
@@ -124,139 +124,139 @@
 						{if:elseif allow_comments}
 							· <a class="comment-count no-comments" href="#comments">No Comments (yet)</a>
 						{/if}
-					
+
 					</span>
-			
+
 				</p>
-				
+
 				{exp:playa:parents status="open|In Progress" show_future_entries="yes"}
 				{if status != "open" OR entry_date > current_time}
 				<p class="meta warning" style="display: inline-block; background: #ffffef; outline: 3px solid #ffffef;">
-					
+
 					{if status != "open"}
 					<strong>Please note:</strong> This issue has not yet been set to "open."
 					{if:else}
 					<strong>Please note:</strong> This issue is ready, and will go live when it hits its publish time.
 					{/if}
-					
+
 				</p>
 				{/if}
 				{/exp:playa:parents}
-			
+
 			</header>
-		
+
 			{if article_editors_note}
 			<div class="main-content">
-				
+
 				<p class="editors-note"><b>A note from the editors:</b> {article_editors_note}</p>
-			
+
 			</div>
 			{/if}
-		
+
 			{if article_opening_blockquote}
 			<div class="main-content">
-			
+
 				{article_opening_blockquote}
-			
+
 			</div>
 			{/if}
-		
+
 			<div class="main-content">
-			
+
 				{exp:hop_inject where="<p>" always_inject="y"}
-				
+
 				{exp:hop_inject:injection separator="2" position="before"}
-				
+
 				{content-minutiae}
-				
+
 				{ads-article}
-			
+
 				{/exp:hop_inject:injection}
-				
+
 				{exp:hop_inject:injection separator="-2" position="before"}
 				{embed="embeds/issue-sidebar" entry_id="{entry_id}"}
 				{/exp:hop_inject:injection}
-				
+
 				{article_content}
-				
+
 				{/exp:hop_inject}
-				
+
 				{if article_footnotes}
 				<section class="entry-footnotes">
-				
+
 					<h1>Notes</h1>
-					
+
 					<ul class="the-footnotes">
 						{article_footnotes}
 						<li id="note{row_count}"><a class="count" href="#ref{row_count}">{row_count}. </a>{cell_1}</li>
 						{/article_footnotes}
 					</ul>
-				
+
 				</section>
 				{/if}
-				
+
 			</div>
-			
+
 			<footer class="entry-footer">
-				
+
 				{embed="embeds/article-author-bio" entry_author="{author_id}" entry_id="{entry_id}"}
 
 			</footer>
-			
+
 			<div class="post-article">
-			
+
 				<div class="column-holder unequal-columns">
-					
+
 					<section id="comments" class="column comment-holder">
-						
+
 						{if comment_total > 0}
 						<h1 class="classy">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
-						
+
 						{if logged_in_username == "murtaugh"}
 						<div class="comment-nav"><a href="/comments/feed/{url_title}">RSS</a> · <a href="#comment-form">comment form</a></div>
 						{/if}
-						
+
 						<a href="/comments/{url_title}" id="load-comments" data-url-title="{url_title}" class="buttonish">Load Comments</a>
-						
+
 						{if:else}
-						
+
 						<h1 class="classy">No Comments{if allow_comments} (yet){/if}{/exp:channel:entries}</h1>
-						
+
 						{if logged_in}<ol class="article-comments">{comment-form}</ol>
 	 					{if:else}<ol class="article-comments">{comment-sign-in}</ol>{/if}
-	 					
-	 					
-						
+
+
+
 						{/if}
-						
-						
-						
+
+
+
 					</section>
-					
+
 					<aside class="column more-content">
-					
+
 						{more-from-ala}
-						
+
 						{ad-bsa-text}
-					
+
 					</aside>
-				
+
 				</div>
-				
+
 			</div>
-		
+
 		</article>
-		
-		
-	
+
+
+
 	</div>
-	
+
 	{global-footer}
-	
+
 	{sponsor-top}
 
 	{global-nav}
-	
+
 	{exp:channel:entries channel="articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
 
 	{if article_custom_body_load}
@@ -264,17 +264,17 @@
 	$(window).load(function() {
 		// this comment prevents EE from trying to parse the previous curly brace
 		{article_custom_body_load}
-	
+
 	});
 	</script>
 	{/if}
-	
+
 	{if article_custom_javascript}
 	<script>
 		{article_custom_javascript}
 	</script>
 	{/if}
-	
+
 	{/exp:channel:entries}
-	
+
 {global-page-bottom}
