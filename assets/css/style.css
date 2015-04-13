@@ -682,6 +682,7 @@ aside.column.more-content .item-summary {
 
 .event-details .logistics span {
 	display: block;
+	padding: 0 24px;
 }
 
 .event-details .logistics span.register-link a {
