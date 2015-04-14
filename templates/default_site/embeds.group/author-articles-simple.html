@@ -4,11 +4,11 @@
 				{if count == "1"}
 				<aside class="previous-column">
 
-				<!--time datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"></time-->
+					<i>More from this author</i>
 
 				{/if}
 
-				<h2><a href="/{if channel_short_name == "columns"}column{if:elseif channel_short_name == "blog"}blog/post{if:elseif channel_short_name == "articles"}article{if:else}event{/if}/{url_title}">{title}</a></h2>
+					<h2><a href="/{if channel_short_name == "columns"}column{if:elseif channel_short_name == "blog"}blog/post{if:elseif channel_short_name == "articles"}article{if:else}event{/if}/{url_title}">{title}</a></h2>
 
 				{if count == total_results}</aside>{/if}
 

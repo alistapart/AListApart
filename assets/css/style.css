@@ -1358,12 +1358,14 @@ footer a.aside-author + time:before {
 }
 
 .previous-column time,
+.previous-column i,
 .previous-participant-article time {
 	color: #666;
 	font-style: italic;
 }
 
 .item-summary.article.columnist .previous-column time,
+.item-summary.article.columnist .previous-column i,
 .item-summary.article.columnist .previous-participant-article time {
 	font-size: 14px;
 }

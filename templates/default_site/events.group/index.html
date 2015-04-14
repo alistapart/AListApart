@@ -149,19 +149,11 @@
 
 						<h1>{event_participants:participant_object:title}</h1>
 
-						{event_participants:participant_object:author_bio}
-
-						{embed="embeds/author-articles-simple" author_id="{event_participants:participant_object:author_id}"}
-
 					</header>
 
-					<!--aside class="previous-participant-article">
+					{event_participants:participant_object:author_bio}
 
-						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
-
-						<h2><a href="/column/how-big-is-big-enough-to-pick-on">How Big is Big Enough to Pick On?</a></h2>
-
-					</aside-->
+					{embed="embeds/author-articles-simple" author_id="{event_participants:participant_object:author_id}"}
 
 				</article>
 				{/event_participants:participant_object}

@@ -141,11 +141,11 @@
 
 						<h1>{event_participants:participant_object:title}</h1>
 
-						{event_participants:participant_object:author_bio}
-
-						{embed="embeds/author-articles-simple" author_id="{event_participants:participant_object:author_id}"}
-
 					</header>
+
+					{event_participants:participant_object:author_bio}
+
+					{embed="embeds/author-articles-simple" author_id="{event_participants:participant_object:author_id}"}
 
 				</article>
 				{/event_participants:participant_object}
