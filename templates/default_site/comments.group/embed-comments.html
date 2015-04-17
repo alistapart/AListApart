@@ -8,38 +8,36 @@
 							
 							{if segment_4 == "login-return"}
 							
-							{if channel_short_name == "articles"}
-							{redirect="article/{segment_3}#comment-form"}
-							{if:elseif channel_short_name == "columns"}
-							{redirect="column/{segment_3}#comment-form"}
-							{if:elseif channel_short_name == "blog"}
-							{redirect="blog/post/{segment_3}#comment-form"}
-							{/if}
+								{if channel_short_name == "articles"}
+									{redirect="article/{segment_3}#comment-form"}
+								{if:elseif channel_short_name == "columns"}
+									{redirect="column/{segment_3}#comment-form"}
+								{if:elseif channel_short_name == "blog"}
+									{redirect="blog/post/{segment_3}#comment-form"}
+								{/if}
 							
-							{if:else}
+							{if:elseif segment_4 == "comment-return"}
 							
-							{if segment_4 == "comment-return"}
+								{if channel_short_name == "articles"}
+									{redirect="article/{segment_3}#latest"}
+								{if:elseif channel_short_name == "columns"}
+									{redirect="column/{segment_3}#latest"}
+								{if:elseif channel_short_name == "blog"}
+									{redirect="blog/post/{segment_3}#latest"}
+								{/if}
 							
-							{if channel_short_name == "articles"}
-							{redirect="article/{segment_3}#latest"}
-							{if:elseif channel_short_name == "columns"}
-							{redirect="column/{segment_3}#latest"}
-							{if:elseif channel_short_name == "blog"}
-							{redirect="blog/post/{segment_3}#latest"}
-							{/if}
-							
-							{if:else}
-							
-							{if allow_comments}
-								{if logged_in} 
- 								{comment-form}
-								{if:else} 
-	 							{comment-sign-in} 
- 								{/if}
-	 						{if:else}
-							<li class="system-message">Sorry, commenting is closed on this article.</li>
-	 						{/if}
-							
+							{if:elseif allow_comments}
+									
+									{if logged_in} 
+	 									{comment-form}
+									{if:else} 
+		 								{comment-sign-in} 
+	 								{/if}
+
+		 					{if:elseif !allow_comments}
+
+								<li class="system-message">Sorry, commenting is closed on this article.</li>
+		 					
 							{/if}
 							
 							{/exp:channel:entries}

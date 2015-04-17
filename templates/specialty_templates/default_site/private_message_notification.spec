@@ -1,6 +1,7 @@
 <subject>Someone has sent you a Private Message</subject>
 
 
+
 {recipient_name},
 
 {sender_name} has just sent you a Private Message titled ‘{message_subject}’.
