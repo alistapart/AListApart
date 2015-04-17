@@ -42,7 +42,7 @@
 	
 		<article class="article-layout hentry">
 		
-			{if channel_short_name == "blog"}
+		{if channel_short_name == "blog"}
 		
 			<header class="blog-header">
 				
@@ -109,36 +109,32 @@
 				
 					<section id="comments" class="column comment-holder">
 					
-					{if allow_comments}
-						
 						{if comment_total > 0}
-						<h1 class="classy">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
-						
-						<a href="/comments/{url_title}" id="load-comments" data-url-title="{url_title}" class="buttonish">Load Comments</a>
+							<h1 class="classy">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
+
+							{if logged_in_username == "murtaugh"}
+							<div class="comment-nav"><a href="/comments/feed/{url_title}">RSS</a> · <a href="#comment-form">comment form</a></div>
+							{/if}
+
+							<a href="/comments/{url_title}" id="load-comments" data-url-title="{url_title}" class="buttonish">Load Comments</a>
+
 						{if:else}
-						<h1 class="classy">No Comments (yet)</h1>
-						
-						<ol class="article-comments">
-						{if logged_in}
-						{comment-form}
-						{if:else}
-						{comment-sign-in}
+
+							<h1 class="classy">No Comments{if allow_comments} (yet){/if}</h1>
+
+							{if logged_in}<ol class="article-comments">{comment-form}</ol>
+		 					{if:else}<ol class="article-comments">{comment-sign-in}</ol>{/if}
+
 						{/if}
-						</ol>
-						
-						{/if}
-						
-						{/exp:channel:entries}
-						
-						
-					{if:else}
-					
-					comments closed — what to do?
-					
-					{/if}
 						
 					</section>
-			
+		{if:else}
+		
+			{link-post-content}
+		
+		{/if}
+		{/exp:channel:entries}
+					
 					<aside class="column more-content">
 					
 						{more-from-ala}
@@ -151,12 +147,7 @@
 				
 			</div>
 			
-			{if:else}
 			
-			{link-post-content}
-			
-			{/if}
-		
 		</article>
 	
 	</div>
@@ -165,6 +156,6 @@
 	
 	{sponsor-top}
 
-{global-footer}
-	
-{global-page-bottom}
+	{global-footer}
+		
+	{global-page-bottom}
