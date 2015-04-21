@@ -79,7 +79,13 @@
 				{/if}
 			
 			</header>
-			
+
+		{if:else}
+		
+			{link-post-content}
+		
+		{/if}
+
 			{if blog_editors_note}
 			<div class="main-content">
 				
@@ -102,7 +108,7 @@
 				{embed="embeds/blog-author-bio" entry_author="{author_id}" entry_id="{entry_id}"}
 
 			</footer>{/if}
-			
+		 
 			<div class="post-article">
 			
 				<div class="column-holder unequal-columns">
@@ -121,18 +127,14 @@
 						{if:else}
 
 							<h1 class="classy">No Comments{if allow_comments} (yet){/if}</h1>
-
+							
 							{if logged_in}<ol class="article-comments">{comment-form}</ol>
 		 					{if:else}<ol class="article-comments">{comment-sign-in}</ol>{/if}
 
 						{/if}
 						
 					</section>
-		{if:else}
 		
-			{link-post-content}
-		
-		{/if}
 		{/exp:channel:entries}
 					
 					<aside class="column more-content">

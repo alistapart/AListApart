@@ -2638,6 +2638,7 @@ pre.editing code {
 
 .post-article {
 	border-top: 1px solid #e5e5e5;
+	clear: both;
 }
 
 .column-holder {
