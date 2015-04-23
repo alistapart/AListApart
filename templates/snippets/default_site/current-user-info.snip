@@ -1,10 +1,10 @@
 
-	{if logged_in_member_group == "1" OR logged_in_member_group == "7"}
+	{if logged_in_group_id == "1" OR logged_in_group_id == "7"}
 	<div class="user-tools">
 		<div class="current-user-info">
-		
+
 			Hello, logged-in editor! Go to the <a href="/backoffice">backoffice.</a> <a href="{exp:freemember:logout_url}">Log out</a> if you must.
-		
+
 		</div>
 	</div>
 	{/if}
