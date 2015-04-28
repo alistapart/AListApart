@@ -1,12 +1,12 @@
 
-	{if logged_in_member_group == "1" OR logged_in_member_group == "7"}
+	{if logged_in_group_id == "1" OR logged_in_group_id == "7"}
 	<div class="user-tools">
 		<div class="current-user-info">
-		
-			Hello, logged-in editor! <a href="{exp:freemember:logout_url}">Log out</a> if you must. <a href="/backoffice/?S=0&D=cp&C=content_publish&M=entry_form&channel_id={channel_id}&entry_id={entry_id}">Edit</a> this entry.
-			
+
+			Hello, logged-in editor! Head to <a href="/geocities">Geocities.</a> <a href="{path='logout'}">Log out</a> if you must.
+
 			{embed="embeds/admin-nav"}
-		
+
 		</div>
 	</div>
 	{/if}

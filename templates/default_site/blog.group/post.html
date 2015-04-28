@@ -11,11 +11,11 @@
 {global-page-top}
 
 	<title>{title} · An A List Apart Blog Post</title>
-	
+
 	{embed="embeds/article-author-styles" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
-	
+
 	{exp:stash:set name="safe-description"}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{blog_intro}{/exp:low_replace}{/exp:strip_html}{/exp:stash:set}
-	
+
 	<meta name="description" content="{exp:stash:get name="safe-description"}">
 	<meta name="author" content="{embed="embeds/article-authors-no-html" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}">
 
@@ -24,97 +24,95 @@
 	<meta name="twitter:title" content="{title}">
 	<meta name="twitter:description" content="{exp:stash:get name="safe-description"}">
 	<meta name="twitter:url" content="http://alistapart.com/blog/post/{url_title}">
-		
+
 	<meta property="og:title" content="{title}" />
 	<meta property="og:description" content="{exp:stash:get name="safe-description"}" />
 	<meta property="og:url" content="http://alistapart.com/blog/post/{url_title}" />
 	<meta property="og:image" content="http://alistapart.com{assets_path}img/favicons/facebook-image-200px.png" />
-		
+
 </head>
 
 <body class="printable {if comment_total > 0}comments-exist{/if}">
 
-{current-user-info-edit}
-
 	{primary-logo}
-	
+
 	<div role="main" class="main-wrapper">
-	
+
 		<article class="article-layout hentry">
-		
+
 		{if channel_short_name == "blog"}
-		
+
 			<header class="blog-header">
-				
+
 				<span class="column-name">The A List Apart Blog Presents:</span>
-	
+
 				<h1 class="entry-title">{title}</h1>
-				
+
 				<p class="meta">
-					
+
 					{if blog_hide_author != "y"}by {embed="embeds/article-authors-primary" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} · {/if}
-					
-					<time class="article-pubdate" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>{!-- · 
-					
+
+					<time class="article-pubdate" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>{!-- ·
+
 					Published in {categories backspace="2"}<a href="/topic/{category_url_title}">{category_name}</a>, {/categories--}
-					
+
 					{if comment_total == 1}
 						· <a class="comment-count" href="#comments">1 Comment</a>
 					{if:elseif comment_total > 1}
 						· <a class="comment-count" href="#comments">{comment_total} Comments</a>
 					{/if}
-					
+
 				</p>
-				
+
 				{if status != "open" OR entry_date > current_time}
 				<p class="meta warning" style="display: inline-block; background: #ffffef; outline: 3px solid #ffffef;">
-					
+
 					{if status != "open"}
 					<strong>Please note:</strong> This post has not yet been scheduled to publish.
 					{if:else}
 					<strong>Please note:</strong> This post is in the publish queue, but has not gone public yet.
 					{/if}
-					
+
 				</p>
 				{/if}
-			
+
 			</header>
 
 		{if:else}
-		
+
 			{link-post-content}
-		
+
 		{/if}
 
 			{if blog_editors_note}
 			<div class="main-content">
-				
+
 				<p class="editors-note"><b>A note from the editors:</b> {blog_editors_note}</p>
-			
+
 			</div>
 			{/if}
 			<div class="main-content">
-			
+
 				{content-minutiae-blog}
-				
+
 				{ads-article}
-				
+
 				{blog_content}
-				
+
 			</div>
-			
+
 			{if blog_hide_author != "y"}<footer class="entry-footer">
-				
+
 				{embed="embeds/blog-author-bio" entry_author="{author_id}" entry_id="{entry_id}"}
 
 			</footer>{/if}
-		 
+
 			<div class="post-article">
-			
+
 				<div class="column-holder unequal-columns">
-				
+
 					<section id="comments" class="column comment-holder">
-					
+
 						{if comment_total > 0}
 							<h1 class="classy">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
 
@@ -127,37 +125,39 @@
 						{if:else}
 
 							<h1 class="classy">No Comments{if allow_comments} (yet){/if}</h1>
-							
+
 							{if logged_in}<ol class="article-comments">{comment-form}</ol>
 		 					{if:else}<ol class="article-comments">{comment-sign-in}</ol>{/if}
 
 						{/if}
-						
+
 					</section>
-		
+
 		{/exp:channel:entries}
-					
+
 					<aside class="column more-content">
-					
+
 						{more-from-ala}
-						
+
 						{ad-bsa-text}
-					
+
 					</aside>
-				
+
 				</div>
-				
+
 			</div>
-			
-			
+
+
 		</article>
-	
+
 	</div>
-	
+
+	{current-user-info-edit}
+
 	{global-nav}
-	
+
 	{sponsor-top}
 
 	{global-footer}
-		
+
 	{global-page-bottom}
