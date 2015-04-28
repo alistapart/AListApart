@@ -153,37 +153,6 @@
 					</section>
 {/exp:channel:entries}
 
-					{if allow_comments}
-
-						{if comment_total > 0}
-						<h1 class="classy">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
-
-						<a href="/comments/{url_title}" id="load-comments" data-url-title="{url_title}" class="buttonish">Load Comments</a>
-						{if:else}
-						<h1 class="classy">No Comments (yet)</h1>
-
-						<ol class="article-comments">
-						{if logged_in}
-						{comment-form}
-						{if:else}
-						{comment-sign-in}
-						{/if}
-						</ol>
-
-						{/if}
-
-
-					{if:else}
-
-					comments closed — what to do?
-
-					{/if}
-
-					</section>
-
-					{/exp:channel:entries}
-
->>>>>>> afadc0ef099fcbf1f66cdf916f80885b3e12cdff
 					<aside class="column more-content">
 
 						{more-from-ala}
