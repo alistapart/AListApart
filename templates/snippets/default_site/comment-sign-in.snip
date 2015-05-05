@@ -6,7 +6,7 @@
 								<p>Discuss this article. We reserve the right to delete flames, trolls, and wood nymphs.</p>
 								
 								<!-- I don't know why, but I had to move the login form above the login options so that EE would generate the current_url correctly. -->
-								{exp:member:login_form return="{current_url}/login-return" id="sign-in-form" class="sign-in-form"}
+								{exp:member:login_form return="{site_url}{if {channel_short_name} == articles}article{if:elseif {channel_short_name} == blog}blog/post{if:elseif {channel_short_name} == columns}column{/if}/{url_title}" id="sign-in-form" class="sign-in-form"}
 								
 									<label for="login-name-here">
 										Username <small>(<a id="show-registration-form" href="/utilities/register">need an account?</a>)</small>
