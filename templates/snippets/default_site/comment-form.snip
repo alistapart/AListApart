@@ -4,7 +4,7 @@
 
 								<p>Discuss this article. We reserve the right to delete flames, trolls, and wood nymphs. <br>(The commenting engine will accept simple HTML tags.)</p>
 								{/if}
-								{exp:comment:form channel="{channel_short_name}" return="{exp:current_url:full_url}/comment-return" id="comment-form" class="comment-form"}
+								{exp:comment:form channel="{channel_short_name}" return="{site_url}{if {channel_short_name} == articles}article{if:elseif {channel_short_name} == blog}blog/post{if:elseif {channel_short_name} == columns}column{/if}/{url_title}#comments" id="comment-form" class="comment-form"}
 
 									<textarea data-autoresize id="comment-content" class="logged-in" name="comment" required="required"></textarea>
 									<p class="commenter-info">
