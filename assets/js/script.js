@@ -639,7 +639,7 @@ $.fn.CommentEditor = function(options) {
         var OPT;
 
         OPT = $.extend({
-                url: "/?ACT=32",
+                url: "/?ACT=4",
                 comment_body: '.comment-body',
                 showEditor: '.edit-link',
                 hideEditor: '.cancel-edit',
