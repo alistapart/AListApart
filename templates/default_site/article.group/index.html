@@ -210,10 +210,6 @@
 						{if comment_total > 0}
 							<h1 class="classy">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
 
-							{if logged_in_username == "murtaugh"}
-							<div class="comment-nav"><a href="/comments/feed/{url_title}">RSS</a> · <a href="#comment-form">comment form</a></div>
-							{/if}
-
 							<a href="/comments/{url_title}" id="load-comments" data-url-title="{url_title}" class="buttonish">Load Comments</a>
 
 						{if:else}
@@ -225,7 +221,7 @@
 
 						{/if}
 
-					
+
 
 					</section>
 
