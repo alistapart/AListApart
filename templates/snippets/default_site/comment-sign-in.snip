@@ -6,7 +6,20 @@
 								<p>Discuss this article. We reserve the right to delete flames, trolls, and wood nymphs.</p>
 								
 								<!-- I don't know why, but I had to move the login form above the login options so that EE would generate the current_url correctly. -->
-								{exp:member:login_form return="{site_url}{if {channel_short_name} == articles}article{if:elseif {channel_short_name} == blog}blog/post{if:elseif {channel_short_name} == columns}column{/if}/{url_title}#comments" id="sign-in-form" class="sign-in-form"}
+								
+								{if channel_short_name == 'articles'}
+
+									{exp:member:login_form return="{site_url}article/{url_title}#comments" id="sign-in-form" class="sign-in-form"}
+				 
+								{if:elseif channel_short_name == 'blog'}
+
+									{exp:member:login_form return="{site_url}blog/post/{url_title}#comments" id="sign-in-form" class="sign-in-form"}
+
+								{if:elseif channel_short_name == 'columns'}
+
+									{exp:member:login_form return="{site_url}column/{url_title}#comments" id="sign-in-form" class="sign-in-form"}
+								
+								{/if}
 								
 									<label for="login-name-here">
 										Username <small>(<a id="show-registration-form" href="/utilities/register">need an account?</a>)</small>
@@ -28,9 +41,25 @@
 									<h4>Sign in with:</h4>
 								
 									<ul class="login-buttons">
-										<li class="twitter"><a href="{site_url}?ACT=154&provider=twitter&RET={site_url}{if {channel_short_name} == articles}article{if:elseif {channel_short_name} == blog}blog/post{if:elseif {channel_short_name} == columns}column{/if}/{url_title}">Twitter</a></li><!--
-										--><li class="facebook"><a href="{site_url}?ACT=154&provider=facebook&RET={site_url}{if {channel_short_name} == articles}article{if:elseif {channel_short_name} == blog}blog/post{if:elseif {channel_short_name} == columns}column{/if}/{url_title}">Facebook</a></li><!--
-										--><li class="ala"><a id="show-native-login" href="/tools/login">A List Apart</a></li>
+										<li class="twitter">
+										{if channel_short_name == 'articles'}
+						 					<a href="{site_url}?ACT=154&provider=twitter&RET={site_url}article/{url_title}#comments">Twitter</a>
+										{if:elseif channel_short_name == 'blog'}
+											<a href="{site_url}?ACT=154&provider=twitter&RET={site_url}blog/post/{url_title}#comments">Twitter</a>
+										{if:elseif channel_short_name == 'columns'}
+											<a href="{site_url}?ACT=154&provider=twitter&RET={site_url}column/{url_title}#comments">Twitter</a>
+										{/if}
+										</li>
+										<li class="facebook">
+										{if channel_short_name == 'articles'}
+						 					<a href="{site_url}?ACT=154&provider=facebook&RET={site_url}article/{url_title}#comments">Facebook</a>
+										{if:elseif channel_short_name == 'blog'}
+											<a href="{site_url}?ACT=154&provider=facebook&RET={site_url}blog/post/{url_title}#comments">Facebook</a>
+										{if:elseif channel_short_name == 'columns'}
+											<a href="{site_url}?ACT=154&provider=facebook&RET={site_url}column/{url_title}#comments">Facebook</a>
+										{/if}
+										</li>
+										<li class="ala"><a id="show-native-login" href="/tools/login">A List Apart</a></li>
 									</ul>
 									
 								</div>
