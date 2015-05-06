@@ -7,54 +7,29 @@
 
 								{if channel_short_name == 'articles'}
 
-								{exp:comment:form channel="articles" return="{site_url}article/{url_title}#comments" id="comment-form" class="comment-form"}
+									{exp:comment:form channel="articles" return="{site_url}article/{url_title}#comments" id="comment-form" class="comment-form"}
+				 
+								{if:elseif channel_short_name == 'blog'}
 
-									<textarea data-autoresize id="comment-content" class="logged-in" name="comment" required="required"></textarea>
-									<p class="commenter-info">
+									{exp:comment:form channel="blog" return="{site_url}blog/post/{url_title}#comments" id="comment-form" class="comment-form"}
 
-										{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
+								{if:elseif channel_short_name == 'columns'}
 
-										<input type="submit" value="Submit" />
-
-									</p>
-
-								{/exp:comment:form}
-
-								{/if}
-
-								{if channel_short_name == 'blog'}
-
-								{exp:comment:form channel="blog" return="{site_url}blog/post/{url_title}#comments" id="comment-form" class="comment-form"}
-
-									<textarea data-autoresize id="comment-content" class="logged-in" name="comment" required="required"></textarea>
-									<p class="commenter-info">
-
-										{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
-
-										<input type="submit" value="Submit" />
-
-									</p>
-
-								{/exp:comment:form}
-
-								{/if}
-
-								{if channel_short_name == 'columns'}
-
-								{exp:comment:form channel="columns" return="{site_url}column/{url_title}#comments" id="comment-form" class="comment-form"}
-
-									<textarea data-autoresize id="comment-content" class="logged-in" name="comment" required="required"></textarea>
-									<p class="commenter-info">
-
-										{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
-
-										<input type="submit" value="Submit" />
-
-									</p>
-
-								{/exp:comment:form}
+									{exp:comment:form channel="columns" return="{site_url}column/{url_title}#comments" id="comment-form" class="comment-form"}
 								
 								{/if}
+									<textarea data-autoresize id="comment-content" class="logged-in" name="comment" required="required"></textarea>
+									<p class="commenter-info">
+
+										{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
+
+										<input type="submit" value="Submit" />
+
+									</p>
+
+									{/exp:comment:form}
+								
+								
 
 								 
 
