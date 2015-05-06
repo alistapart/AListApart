@@ -112,7 +112,7 @@
 				<div class="column-holder unequal-columns">
 
 					<section id="comments" class="column comment-holder">
-
+					{if channel_short_name != "link_posts"}
 						{if comment_total > 0}
 							<h1 class="classy">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
 
@@ -130,6 +130,7 @@
 		 					{if:else}<ol class="article-comments">{comment-sign-in}</ol>{/if}
 
 						{/if}
+					{/if}
 
 					</section>
 
