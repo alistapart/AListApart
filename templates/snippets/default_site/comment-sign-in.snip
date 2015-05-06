@@ -9,15 +9,15 @@
 								
 								{if channel_short_name == 'articles'}
 
-									{exp:member:login_form return="{site_url}article/{url_title}#comments" id="sign-in-form" class="sign-in-form"}
+									{exp:freemember:login return="article/{url_title}#comments" form_id="sign-in-form" form_class="sign-in-form"}
 				 
 								{if:elseif channel_short_name == 'blog'}
 
-									{exp:member:login_form return="{site_url}blog/post/{url_title}#comments" id="sign-in-form" class="sign-in-form"}
+									{exp:freemember:login return="blog/post/{url_title}#comments" form_id="sign-in-form" form_class="sign-in-form"}
 
 								{if:elseif channel_short_name == 'columns'}
 
-									{exp:member:login_form return="{site_url}column/{url_title}#comments" id="sign-in-form" class="sign-in-form"}
+									{exp:freemember:login return="column/{url_title}#comments" form_id="sign-in-form" form_class="sign-in-form"}
 								
 								{/if}
 								
@@ -35,7 +35,7 @@
 									
 									<p class="never-mind">(<a id="cancel-login" href="{exp:current_url:full_url}/login-return">never mind</a>)</p>
 								
-								{/exp:member:login_form}
+								{/exp:freemember:login}
 								
 								<div id="login-buttons" class="active">
 									<h4>Sign in with:</h4>
