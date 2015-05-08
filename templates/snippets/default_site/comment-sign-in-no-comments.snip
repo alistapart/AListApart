@@ -6,14 +6,12 @@
 								<p>Discuss this article. We reserve the right to delete flames, trolls, and wood nymphs.</p>
 								
 								<!-- I don't know why, but I had to move the login form above the login options so that EE would generate the current_url correctly. -->
-
-								<!--Use whether segment_2 == 'embed-comments' to test which page we're on-->
-								{if segment_2 != 'embed-comments'}
-									<!--on comments page javascript probably turned off -->
+								{if segment_1 == 'comments'}
+										<!--javascript probably turned off -->
 										{exp:freemember:login return="comments/{url_title}#comments" form_id="sign-in-form" form_class="sign-in-form"}
 
 								{if:else}
-									<!--on article page: comments loaded with ajax via the comments/embed-comments template-->
+
 									{if channel_short_name == 'articles'}
 
 										{exp:freemember:login return="article/{url_title}#comments" form_id="sign-in-form" form_class="sign-in-form"}
@@ -51,7 +49,7 @@
 								
 									<ul class="login-buttons">
 										<li class="twitter">
-									{if segment_2 != 'embed-comments'}
+									{if segment_1 == 'comments'}
 										<!--javascript probably turned off -->
 										<a href="{site_url}?ACT=154&provider=twitter&RET={site_url}comments/{url_title}#comments">Twitter</a>
 									{if:else}
@@ -66,7 +64,7 @@
 
 										</li>
 										<li class="facebook">
-									{if segment_2 != 'embed-comments'}
+									{if segment_1 == 'comments'}
 										<!--javascript probably turned off -->
 										<a href="{site_url}?ACT=154&provider=facebook&RET={site_url}comments/{url_title}#comments">Twitter</a>
 									{if:else}
