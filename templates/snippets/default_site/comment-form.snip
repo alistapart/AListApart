@@ -4,8 +4,8 @@
 
 								<p>Discuss this article. We reserve the right to delete flames, trolls, and wood nymphs. <br>(The commenting engine will accept simple HTML tags.)</p>
 								{/if}
-								
-								{if segment_1 == 'comments'}
+
+								{if segment_2 != 'embed-comments'}
 										<!--javascript turned off -->
 										{exp:comment:form return="{site_url}comments/{url_title}#comments" id="comment-form" class="comment-form"}
 
@@ -32,7 +32,7 @@
 
 									{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
 								
-								{if segment_1 == 'comments'}
+								{if segment_2 != 'embed-comments'}
 										<!--javascript turned off -->
 										<a href="{exp:freemember:logout_url return='comments/{url_title}#comments'}">log out</a>
 									
