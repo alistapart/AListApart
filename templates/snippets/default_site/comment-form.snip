@@ -4,44 +4,60 @@
 
 								<p>Discuss this article. We reserve the right to delete flames, trolls, and wood nymphs. <br>(The commenting engine will accept simple HTML tags.)</p>
 								{/if}
-
-								{if channel_short_name == 'articles'}
-
-									{exp:comment:form channel="articles" return="{site_url}article/{url_title}#comments" id="comment-form" class="comment-form"}
-				 
-								{if:elseif channel_short_name == 'blog'}
-
-									{exp:comment:form channel="blog" return="{site_url}blog/post/{url_title}#comments" id="comment-form" class="comment-form"}
-
-								{if:elseif channel_short_name == 'columns'}
-
-									{exp:comment:form channel="columns" return="{site_url}column/{url_title}#comments" id="comment-form" class="comment-form"}
 								
+								{if segment_1 == 'comments'}
+										<!--javascript turned off -->
+										{exp:comment:form return="{site_url}comments/{url_title}#comments" id="comment-form" class="comment-form"}
+
+								{if:else}
+
+									{if channel_short_name == 'articles'}
+
+										{exp:comment:form channel="articles" return="{site_url}article/{url_title}#comments" id="comment-form" class="comment-form"}
+					 
+									{if:elseif channel_short_name == 'blog'}
+
+										{exp:comment:form channel="blog" return="{site_url}blog/post/{url_title}#comments" id="comment-form" class="comment-form"}
+
+									{if:elseif channel_short_name == 'columns'}
+
+										{exp:comment:form channel="columns" return="{site_url}column/{url_title}#comments" id="comment-form" class="comment-form"}
+									
+									{/if}
+
 								{/if}
 								
-									<textarea data-autoresize id="comment-content" class="logged-in" name="comment" required="required"></textarea>
-									<p class="commenter-info">
+								<textarea data-autoresize id="comment-content" class="logged-in" name="comment" required="required"></textarea>
+								<p class="commenter-info">
 
-										{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
-										
-										{if channel_short_name == 'articles'}
+									{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
+								
+								{if segment_1 == 'comments'}
+										<!--javascript turned off -->
+										<a href="{exp:freemember:logout_url return='comments/{url_title}#comments'}">log out</a>
+									
+								{if:else}
 
-											<a href="{exp:freemember:logout_url return="article/{url_title}#comments"}">log out</a>
+									{if channel_short_name == 'articles'}
 
-										{if:elseif channel_short_name == 'blog'}
+										<a href="{exp:freemember:logout_url return='article/{url_title}#comments'}">log out</a>
 
-											<a href="{exp:freemember:logout_url return="blog/post/{url_title}#comments"}">log out</a>
+									{if:elseif channel_short_name == 'blog'}
 
-										{if:elseif channel_short_name == 'columns'}
+										<a href="{exp:freemember:logout_url return='blog/post/{url_title}#comments'}">log out</a>
 
-											<a href="{exp:freemember:logout_url return="column/{url_title}#comments"}">log out</a>
-						
-										{/if}
+									{if:elseif channel_short_name == 'columns'}
 
-										<input type="submit" value="Submit" />
+										<a href="{exp:freemember:logout_url return='column/{url_title}#comments'}">log out</a>
+					
+									{/if}
 
-									</p>
+								{/if}
 
-									{/exp:comment:form}
+									<input type="submit" value="Submit" />
+
+								</p>
+
+								{/exp:comment:form}
 
 							</li>

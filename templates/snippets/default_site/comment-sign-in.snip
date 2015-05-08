@@ -7,18 +7,26 @@
 								
 								<!-- I don't know why, but I had to move the login form above the login options so that EE would generate the current_url correctly. -->
 								
-								{if channel_short_name == 'articles'}
+								{if segment_1 == 'comments'}
+										<!--javascript turned off -->
+										{exp:freemember:login return="comments/{url_title}#comments" form_id="sign-in-form" form_class="sign-in-form"}
 
-									{exp:freemember:login return="article/{url_title}#comments" form_id="sign-in-form" form_class="sign-in-form"}
-				 
-								{if:elseif channel_short_name == 'blog'}
+								{if:else}
 
-									{exp:freemember:login return="blog/post/{url_title}#comments" form_id="sign-in-form" form_class="sign-in-form"}
+									{if channel_short_name == 'articles'}
 
-								{if:elseif channel_short_name == 'columns'}
+										{exp:freemember:login return="article/{url_title}#comments" form_id="sign-in-form" form_class="sign-in-form"}
+					 
+									{if:elseif channel_short_name == 'blog'}
 
-									{exp:freemember:login return="column/{url_title}#comments" form_id="sign-in-form" form_class="sign-in-form"}
-								
+										{exp:freemember:login return="blog/post/{url_title}#comments" form_id="sign-in-form" form_class="sign-in-form"}
+
+									{if:elseif channel_short_name == 'columns'}
+
+										{exp:freemember:login return="column/{url_title}#comments" form_id="sign-in-form" form_class="sign-in-form"}
+									
+									{/if}
+
 								{/if}
 								
 									<label for="login-name-here">
@@ -42,6 +50,13 @@
 								
 									<ul class="login-buttons">
 										<li class="twitter">
+
+									{if segment_1 == 'comments'}
+										<!--javascript turned off -->
+										<a href="{site_url}?ACT=154&provider=twitter&RET={site_url}comments/{url_title}#comments">Twitter</a>
+
+									{if:else}
+
 										{if channel_short_name == 'articles'}
 						 					<a href="{site_url}?ACT=154&provider=twitter&RET={site_url}article/{url_title}#comments">Twitter</a>
 										{if:elseif channel_short_name == 'blog'}
@@ -49,8 +64,18 @@
 										{if:elseif channel_short_name == 'columns'}
 											<a href="{site_url}?ACT=154&provider=twitter&RET={site_url}column/{url_title}#comments">Twitter</a>
 										{/if}
+
+									{/if}
+
 										</li>
 										<li class="facebook">
+
+									{if segment_1 == 'comments'}
+										<!--javascript turned off -->
+										<a href="{site_url}?ACT=154&provider=facebook&RET={site_url}comments/{url_title}#comments">Facebook</a>
+
+									{if:else}
+
 										{if channel_short_name == 'articles'}
 						 					<a href="{site_url}?ACT=154&provider=facebook&RET={site_url}article/{url_title}#comments">Facebook</a>
 										{if:elseif channel_short_name == 'blog'}
@@ -58,6 +83,8 @@
 										{if:elseif channel_short_name == 'columns'}
 											<a href="{site_url}?ACT=154&provider=facebook&RET={site_url}column/{url_title}#comments">Facebook</a>
 										{/if}
+										
+									{/if}
 										</li>
 										<li class="ala"><a id="show-native-login" href="/tools/login">A List Apart</a></li>
 									</ul>
