@@ -1,18 +1,17 @@
+{exp:user:stats dynamic="off" username="{embed:logged_in_user_name}"}
+{if avatar_filename != ""}
+{exp:ce_img:pair src="{avatar_url}{avatar_filename}" width="40" height="40"}<img src="{made}" alt="" class="commenter-avatar" />{/exp:ce_img:pair}
+{if:elseif photo_filename}
+{exp:ce_img:pair src="{photo_url}{photo_filename}" width="40" height="40"}<img src="{made}" alt="" class="commenter-avatar" />{/exp:ce_img:pair}
+{if:else}
+<?php
+$email = "{email}";
+$default = "http://alistapart.com/d/_repo/img/FPO/avatar_generic-commenter_grey.png";
+$size = 40;
 
-	{exp:user:stats dynamic="off" username="{embed:logged_in_user_name}"}
-	{if avatar_filename != ""}
-	{exp:ce_img:pair src="{avatar_url}{avatar_filename}" width="40" height="40"}<img src="{made}" alt="" class="commenter-avatar" />{/exp:ce_img:pair}
-	{if:elseif photo_filename}
-	{exp:ce_img:pair src="{photo_url}{photo_filename}" width="40" height="40"}<img src="{made}" alt="" class="commenter-avatar" />{/exp:ce_img:pair}
-	{if:else}
-	<?php
-	$email = "{email}";
-	$default = "http://alistapart.com/d/_repo/img/FPO/avatar_generic-commenter_grey.png";
-	$size = 40;
-	
-	$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
-	?>
-	<img class="commenter-avatar" src="<?php echo $grav_url; ?>" width="40" height="40" alt="" />
-	{/if}
-	{screen_name}&nbsp;&nbsp; <a href="/edit/profile/{member_id}">edit profile</a>&nbsp;·&nbsp;<!--<span class="user-url">{url}</span>-->
-	{/exp:user:stats}
+$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
+?>
+<img class="commenter-avatar" src="<?php echo $grav_url; ?>" width="40" height="40" alt="" />
+{/if}
+{screen_name}&nbsp;&nbsp; <a href="/edit/profile/{member_id}">edit profile</a>&nbsp;·&nbsp;<!--<span class="user-url">{url}</span>-->
+{/exp:user:stats}
