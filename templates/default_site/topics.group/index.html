@@ -1,4 +1,8 @@
-{if segment_2}
+{if segment_3}
+
+{redirect="/topics/{segment_2}"}
+
+{else:if segment_2}
 
 {global-page-top}
 
@@ -21,6 +25,10 @@
 			<section class="main-content">
 
 				{exp:gwcode_categories cat_url_title="{segment_2}" incl_self="yes" style="linear" depth="1" group_id="3"}
+
+				{if no_results}
+				{redirect="404"}
+				{/if}
 
 				<h1 class="basic-title">Topic: <b>{cat_name}</b></h1>
 
