@@ -1,20 +1,28 @@
+{exp:ifelse parse="inward"}
+
+{if segment_2 AND segment_2 != "archives"}
+
+{redirect="/columns"}
+
+{if:else}
+
 {global-page-top}
 
 	<title>A List Apart: Our Columns</title>
 	<meta name="description" content="">
-		
+
 </head>
 
 <?php
 $entries = array();
 
-$sql = "SELECT author_id as author, 
-        max(entry_id) as entry_id 
+$sql = "SELECT author_id as author,
+        max(entry_id) as entry_id
         FROM exp_channel_titles
         WHERE channel_id = '5'
             AND status = 'open'
-        GROUP BY author 
-        ORDER BY entry_id DESC 
+        GROUP BY author
+        ORDER BY entry_id DESC
         LIMIT 20";
 
 $authorEntriesQuery = ee()->db->query($sql);
@@ -32,14 +40,14 @@ $entriesString = implode('|',$entries);
 {current-user-info}
 
 	{primary-logo}
-			
+
 	<h1 class="section-title">Our Columnists</h1>
 	<h2 class="section-sub-title">Perspectives that shape our community</h2>
-	
+
 	<div role="main" class="main-wrapper stacker single-column-display">
-	
+
 		<div class="col-holder">
-		
+
 			<article class="main-content">
 
 				{exp:channel:entries channel="columns" entry_id="<?php echo $entriesString ?>"}
@@ -47,102 +55,106 @@ $entriesString = implode('|',$entries);
 				{if count == "1"}
 
 				<header class="author-header">
-					
+
 					{embed="embeds/column-author-photo" entry_author="{author_id}" entry_id="{entry_id}"}
-					
+
 					<span class="column-name latest">{categories show_group="4"}{if category_description}{category_description}{if:else}{category_name}{/if}{/categories}</span>
-					
+
 					<h1><a href="/column/{url_title}">{title}</a></h1>
-					
+
 					<p class="meta">
-						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time> · 
-						
+						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time> ·
+
 						Published in {modern-categories}
-						
+
 						{if comment_total > 0}
 						 · <a class="comment-count" href="/column/{url_title}#comments">{comment_total} Comment{if comment_total > 1}s{/if}</a>
 						{/if}
 					</p>
-					
+
 				</header>
-				
+
 				<p class="column-intro">{column_intro} <a href="/column/{url_title}">Read&nbsp;more</a></p>
-				
+
 				<aside class="previous-column">
-				
+
 					{embed="embeds/columnist-more" entry_author="{member_id}" entry_id="{entry_id}"}
-				
+
 				</aside>
-				
+
 			</article>
-			
+
 		</div>
-	
+
 	</div>
-	
+
 	<div role="main" class="main-wrapper stacker multi-column-display">
-			
+
 		<div class="col-holder">
-		
+
 			<section class="main-content">
-			
+
 				<h1 class="section-sub-title columnists">More From Our Columnists</h1>
 
 				{if:elseif count < 8}<article class="item-summary article columnist">
 
 					<header class="column-summary-header">
-						
+
 						{embed="embeds/column-author-photo-small-index" entry_author="{member_id}" entry_id="{entry_id}"}
-				
+
 						<span class="column-name">{categories show_group="4"}{if category_description}{category_description}{if:else}{category_name}{/if}{/categories}</span>
-				
+
 						<h1><a href="/column/{url_title}">{title}</a></h1>
-					
+
 						<p class="meta">
 							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
 							{if comment_total > 0}
 							· <a class="comment-count" href="/column/{url_title}#comments">{comment_total} Comment{if comment_total > 1}s{/if}</a>
 							{/if}
 						</p>
-					
+
 					</header>
-					
+
 					<p>{column_intro}</p>
-				
+
 					<aside class="previous-column">
-					
+
 						{embed="embeds/columnist-more" entry_author="{member_id}" entry_id="{entry_id}"}
-					
+
 					</aside>
-					
+
 				</article>
-				
+
 				{/if}
-				
+
 				{/exp:channel:entries}
-			
+
 				<nav class="paginator" role="toolbar">
-			
+
 					<ul>
-												
+
 						<li><a class="bigger" href="/columns/archives">Columns Archive</a></li>
-						
+
 					</ul>
-				
+
 				</nav>
-			
+
 			</section>
-		
+
 		</div>
-		
-		
-	
+
+
+
 	</div>
-	
+
 	{global-nav}
-	
+
 	{sponsor-top}
 
 {global-footer}
-	
+
 {global-page-bottom}
+
+{/if}
+
+{/exp:ifelse}

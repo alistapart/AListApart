@@ -1,21 +1,27 @@
 
 				<ul class="entry-list step-up">
-					
-				{exp:channel:entries channel="blog|link_posts" limit="10" dynamic="off" status="open" show_future_entries="no" sticky="no" offset="{embed:offset}" entry_id="not {embed:exclude_id}" paginate="bottom"}{if channel_short_name == "blog"}
-					
+
+				{exp:channel:entries channel="blog|link_posts" limit="10" dynamic="off" status="open" show_future_entries="no" sticky="no" offset="{embed:offset}" entry_id="not {embed:exclude_id}" paginate="bottom"}
+
+				{if no_results}
+				{redirect="404"}
+				{/if}
+
+				{if channel_short_name == "blog"}
+
 					<li>
 						<h3 class="entry-title"><a href="/blog/post/{url_title}">{title}</a></h3>
 						<p class="meta">
-							by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} · 
+							by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} ·
 							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
 							{if comment_total > 0}
 							 · <a class="comment-count" href="/blog/post/{url_title}#comments">{comment_total} Comment{if comment_total > 1}s{/if}</a>
 							 {/if}
 						</p>
-						
+
 						{if blog_intro}<p>{blog_intro}</p>{/if}
 						{if blog_description}<p>{blog_description}</p>{/if}
-						
+
 						{if channel_short_name == "link_posts" && blog_attribution}
 						<footer>
 							{exp:parse_url parts="host"}{blog_target_url}{/exp:parse_url}
@@ -25,37 +31,37 @@
 						</footer>
 						{/if}
 					</li>
-					
+
 					{if count == "2" AND segment_2 == ''}
-					
+
 					<li class="featured-comment">
-					
+
 						<h3>Reader Comment</h3>
-						
+
 						{embed="embeds/featured-comment"}
-					
+
 					</li>
-					
+
 					{/if}{if:else}<li>
-					
+
 						<article class="blog-summary link-post">
-				
+
 						<h1><a href="{blog_target_url}">{title}</a></h1>
-						
+
 						{if blog_description}<p>{blog_description}</p>{/if}
-						
+
 						<footer class="byline">
-							
+
 							<a href="{blog_target_url}">{exp:parse_url parts="scheme|host"}{blog_target_url}{/exp:parse_url}</a>
-						
+
 						</footer>
-					
+
 					</article>
-					
+
 				</li><!--
-				
+
 				-->{/if}
-				
+
 				{paginate}
 					<nav class="paginator" role="toolbar">
 						<ul>
@@ -70,5 +76,5 @@
 				{/paginate}
 
 				{/exp:channel:entries}
-				
+
 				</ul>

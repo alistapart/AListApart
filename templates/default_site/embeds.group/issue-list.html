@@ -1,15 +1,19 @@
 
 				{exp:channel:entries channel="issues" limit="10" status="open" dynamic="off" show_future_entries="no" offset="{embed:offset}"}
-				
+
+				{if no_results}
+				{redirect="404"}
+				{/if}
+
 				<h2 class="alternate">Issue № {issue_number}</h2>
-				
+
 				<ul class="entry-list">
-	
+
 					{exp:playa:children field="issue_articles"}
 					<li>
 						<h3 class="entry-title"><a href="/article/{url_title}">{title}</a></h3>
 						<p class="meta">
-							by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} · 
+							by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} ·
 							<time class="pubdate updated" datetime="{exp:playa:parents}{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}{/exp:playa:parents}</time>
 							{if comment_total > 0}
 							 · <a class="comment-count" href="/article/{url_title}#comments">{comment_total} Comment{if comment_total > 1}s{/if}</a>
@@ -17,9 +21,9 @@
 						</p>
 						<p>{exp:strip_html}{article_deck}{/exp:strip_html}</p>
 					</li>
-	
-					{if no_children}<li style="background: yellow;">no articles!</li>{/if}
+
+					{if no_children}<li><span style="padding: .2em; background: yellow;">This issue is missing its articles!</span> If you happen to know where they are, please <a href="/contact">let us know</a>.</li>{/if}
 					{/exp:playa:children}
-				
+
 				</ul>
 				{/exp:channel:entries}
