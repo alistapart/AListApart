@@ -1,11 +1,14 @@
+
+
+{if !segment_3}
+{redirect="blog"}
+
+{if:else}
+
 {exp:channel:entries channel="blog|link_posts" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
 
 {if no_results}
 {redirect="404"}
-{/if}
-
-{if segment_3 == ""}
-{exp:redirecturl url="http://alistapart.com/blog"}
 {/if}
 
 {global-page-top}
@@ -158,3 +161,5 @@
 	{global-footer}
 
 	{global-page-bottom}
+
+{/if}
