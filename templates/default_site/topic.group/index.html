@@ -7,9 +7,9 @@
 {global-page-top}
 
 	<title>A List Apart Articles about {segment_2_category_name}</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-		
+
+	<link rel="canonical" href="http://alistapart.com/topic/{segment_2}"/>
+
 </head>
 
 <body>
@@ -17,47 +17,47 @@
 {current-user-info}
 
 	{primary-logo}
-	
+
 	<div role="main" class="main-wrapper two-column-display">
-	
+
 		<div class="col-holder">
-		
+
 			<article class="main-content">
-			
+
 				<h1 class="basic-title">Topic: <b>{segment_2_category_name}</b></h1>
-				
+
 				{if !segment_3}<p class="author-bio">{segment_2_category_description}</p>{/if}
-				
+
 				{/exp:channel:entries}
-				
+
 				{if segment_3}
 				{embed="embeds/topic-list" cat_id="{segment_2_category_id}" offset="{segment_3}"}
 				{if:else}
 				{embed="embeds/topic-list" cat_id="{segment_2_category_id}" offset="0"}
 				{/if}
-				
+
 			</article><!--
-			
+
 			--><div class="secondary-column">
-			
+
 				{sponsor-top}
-				
+
 				<h2>Topics</h2>
-				
+
 				{topic-nav}
-				
+
 				{ads}
-			
+
 			</div>
-		
+
 		</div>
-		
-		
-	
+
+
+
 	</div>
-	
+
 	{global-nav}
 
 {global-footer}
-	
+
 {global-page-bottom}

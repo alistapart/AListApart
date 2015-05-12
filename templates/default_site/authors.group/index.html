@@ -2,20 +2,20 @@
 
 {if segment_3}
 
-{exp:redirecturl url="http://alistapart.com/author/{segment_3}"}
+{redirect="author/{segment_3}"}
 
 {if:elseif segment_2}
 
-{exp:redirecturl url="http://v5.alistapart.com/author/{segment_2}"}
+{redirect="author/{segment_2}"}
 
 {if:else}
 
 {global-page-top}
 
 	<title>A List Apart: Our Authors</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-		
+
+	<link rel="canonical" href="http://alistapart.com/authors"/>
+
 </head>
 
 <body>
@@ -23,41 +23,41 @@
 {current-user-info}
 
 	{primary-logo}
-	
+
 	<div role="main" class="main-wrapper two-column-display">
-	
+
 		<div class="col-holder">
-		
+
 			<article class="main-content">
-			
+
 				<h1 class="basic-title">Our Authors</h1>
-				
+
 				<p>Our authors are awesome and we love them. From structured markup to “the ebb and flow of things,” A List Apart’s contributing writers have changed the way professionals in this industry conceive, design, produce, code, and distribute web content. In the process, these contributors have won design jobs, book contracts, speaking deals, and the near-universal admiration of their peers around the world.</p>
 
 				<p>Maybe you can be one of us—the few, the proud, the contributing writers of A List Apart. Fame, fortune, and your name on a CSS technique await you. Read our <a href="/about/contribute/">Contribute</a> section to learn more about what our readers and editors are looking for.</p>
-				
+
 				<p>Meanwhile, inspire yourself by studying the ALA writers who have come before you—from A to Z.</p>
-			
+
 			</article><!--
-			
+
 			--><div class="secondary-column">
-			
+
 				{author-nav}
-				
+
 				{ads}
-			
+
 			</div>
-		
+
 		</div>
-		
-		
-	
+
+
+
 	</div>
-	
+
 	{global-nav}
 
 {global-footer}
-	
+
 {global-page-bottom}
 
 {/if}

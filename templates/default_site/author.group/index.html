@@ -7,11 +7,13 @@
 {global-page-top}
 
 	<title>A List Apart Author: {screen_name}</title>
-	
+
+	<link rel="canonical" href="http://alistapart.com/author/{segment_2}"/>
+
 	{if googleplus}
 	<link rel="me" href="{googleplus}" />
 	{/if}
-	
+
 </head>
 
 <body>
@@ -19,31 +21,31 @@
 {current-user-info}
 
 	{primary-logo}
-	
+
 	<div role="main" class="main-wrapper two-column-display">
-	
+
 		<div class="col-holder">
-		
+
 			<article class="main-content">
-			
+
 				<h1 class="basic-title">Author</h1>
-				
+
 				{if photo_filename != ""}
 				<header class="author-header">
-				
+
 					<img src="{exp:ce_img:pair src="{photo_url}{photo_filename}" width="120" height="120" crop="yes"}{made}{/exp:ce_img:pair}" alt=""/>
-				
+
 				{!--if:elseif avatar_filename}
 				<header class="author-header">
-				
+
 					<img src="{avatar_url}{avatar_filename}" width="120" alt="">--}
-				
+
 				{if:else}
 				<header class="author-header no-photo">
 				{/if}
-					
+
 					<h1>{screen_name}</h1>
-					
+
 					{if url OR twitter OR facebook OR dribbble OR github OR googleplus}
 					<ul class="fancy-links">
 						{if url}<li><a href="{url}">{url}</a></li>{/if}
@@ -54,7 +56,7 @@
 						{if googleplus}<li><a class="googleplus" href="{googleplus}">{exp:parse_url parts="path" omit="/|+"}{googleplus}{/exp:parse_url}</a></li>{/if}
 					</ul>
 					{/if}
-					
+
 				</header>
 
 				<p class="author-bio">{bio}</p>
@@ -62,27 +64,27 @@
 				{embed="embeds/author-articles" author_id="{member_id}" real_name="{screen_name}"}
 
 {/exp:user:stats}
-			
+
 			</article><!--
-			
+
 			--><div class="secondary-column">
-			
+
 				{author-nav}
-				
+
 				{ads}
-			
+
 			</div>
-		
+
 		</div>
-		
-		
-	
+
+
+
 	</div>
-	
+
 	{global-nav}
 
 {global-footer}
-	
+
 {global-page-bottom}
 
 {if:else}
