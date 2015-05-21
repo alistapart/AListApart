@@ -2633,7 +2633,7 @@ pre.editing code {
 }
 
 .author-more li:not(:last-child):after {
-	content: ", ";
+	content: ",\0020";
 }
 
 .post-article {
