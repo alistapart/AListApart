@@ -2632,7 +2632,7 @@ pre.editing code {
 	display: inline;
 }
 
-.author-more li:not(:last-child):after {
+.author-more li:not(:last-child):after, .series:not(:last-child):after {
 	content: ",\0020";
 }
 
