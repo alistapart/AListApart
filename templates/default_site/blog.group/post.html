@@ -1,5 +1,4 @@
 
-
 {if !segment_3}
 {redirect="blog"}
 
@@ -96,6 +95,13 @@
 
 			</div>
 			{/if}
+
+			{exp:channel:categories category_group="5"}
+			<div class="main-content">
+				<p class="editors-note">This article is <b>Part {embed="embeds/article-series-count" exclude="{entry_id}" entrylink="{category_id}"}</b> in a series on <b>{category_name}</b>. Read {embed="embeds/article-series" exclude="{entry_id}" entrylink="{category_id}"}.</p>
+			</div> 
+			{/exp:channel:categories}
+
 			<div class="main-content">
 
 				{content-minutiae-blog}
