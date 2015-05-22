@@ -96,11 +96,13 @@
 			</div>
 			{/if}
 
-			{exp:channel:categories category_group="5"}
+ 			{exp:gwcode_categories entry_id="{entry_id}" group_id="5"}
+ 			{exp:channel:categories category_group="5"}
 			<div class="main-content">
 				<p class="editors-note">This article is <b>Part {embed="embeds/article-series-count" exclude="{entry_id}" entrylink="{category_id}"}</b> in a series on <b>{category_name}</b>. Read {embed="embeds/article-series" exclude="{entry_id}" entrylink="{category_id}"}.</p>
 			</div> 
 			{/exp:channel:categories}
+			{/exp:gwcode_categories}
 
 			<div class="main-content">
 
