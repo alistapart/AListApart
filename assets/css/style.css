@@ -2124,6 +2124,14 @@ p.question {
 	text-align: left;
 }
 
+.article-layout .main-content > p.editors-note.var1 {
+	margin-left: 0px;
+	margin-right: 0px;
+	padding: 12px 12px 12px 48px;
+	text-align: left;
+	background: #eee url(/components/assets/img/icon_navigation-laurel.svg) no-repeat 12px 12px;
+}
+
 .article-layout .main-content > p span.first-words {
 	text-transform: uppercase;
 }
