@@ -47,7 +47,7 @@
 									 · <a class="comment-count" href="/article/{url_title}#comments">{comment_total} Comment{if comment_total > 1}s{/if}</a>
 									 {/if}
 								</p>
-								<p>{exp:strip_html}{if article_mini_deck}<p>{article_mini_deck}</p>{if:elseif article_deck}<p>{article_deck}</p>{/if}{/exp:strip_html}</p>
+								<p>{exp:strip_html}{if article_mini_deck}<p>{article_mini_deck}</p>{if:elseif article_deck}<p>{exp:trunchtml chars="175" inline="..."}{article_deck}{/exp:trunchtml}</p>{/if}{/exp:strip_html}</p>
 							</li>
 			
 							{if no_children}<li style="background: yellow;">no articles!</li>{/if}
@@ -70,7 +70,7 @@
 				
 							{embed="embeds/column-author-photo-small" entry_author="{author_id}" entry_id="{entry_id}"}
 					
-							{if column_mini_deck}<p>{column_mini_deck}</p>{if:elseif column_intro}<p>{column_intro}</p>{/if}
+							{if column_mini_deck}<p>{column_mini_deck}</p>{if:elseif column_intro}<p>{exp:trunchtml chars="175" inline="..."}{column_intro}{/exp:trunchtml}</p>{/if}
 					
 							<footer class="byline">
 								<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
