@@ -14,7 +14,7 @@
 
 	{embed="embeds/article-author-styles" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
 
-	{exp:stash:set name="safe-description"}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{article_deck}{/exp:low_replace}{/exp:strip_html}{/exp:stash:set}
+	{exp:stash:set name="safe-description"}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{if article_mini_deck}{article_mini_deck}{if:elseif article_deck}{article_deck}{/if}{/exp:low_replace}{/exp:strip_html}{/exp:stash:set}
 
 	{if article_custom_css}
 	<style>
@@ -147,11 +147,17 @@
 
 			{if article_editors_note}
 			<div class="main-content">
-
 				<p class="editors-note"><b>A note from the editors:</b> {article_editors_note}</p>
-
 			</div>
 			{/if}
+
+			{article_outdated}
+			{if article_age_flag == 'y'}
+			<div class="main-content">
+				<p class="editors-note var1"><b>{if custom_note}{custom_note}{if:else}This article, while helpful in its day, is now out of date.{/if}</b> Use {updated_entry}<a href="{url_title}" title="{title}">{title}</a>{/updated_entry} instead.</p>
+			</div>
+			{/if}
+			{/article_outdated}
 
  			{exp:gwcode_categories entry_id="{entry_id}" group_id="5"}
  			{exp:channel:categories category_group="5"}
