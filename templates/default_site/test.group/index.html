@@ -5,9 +5,17 @@
   <title>test</title>
 </head>
 <body>
-<h1>{exp:hello_world}</h1>
-<p>
-  
-</p>
+test
+<ul>
+{exp:channel:entries channel="rss_sponsorships" show_expired="yes"}
+<li>{title}
+<ul>
+   <li>{entry_date format="%D, %F %d, %Y - %g:%i:%s"}</li>
+   <li>{expiration_date format="%D, %F %d, %Y - %g:%i:%s"}</li>
+</ul>
+</li>
+{/exp:channel:entries}
+</ul>
+
 </body>
 </html>
