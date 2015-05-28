@@ -151,14 +151,6 @@
 			</div>
 			{/if}
 
-			{article_outdated}
-			{if article_age_flag == 'y'}
-			<div class="main-content">
-				<p class="editors-note var1"><b>{if custom_note}{custom_note}{if:else}This article, while helpful in its day, is now out of date.{/if}</b> Use {updated_entry}<a href="{url_title}" title="{title}">{title}</a>{/updated_entry} instead.</p>
-			</div>
-			{/if}
-			{/article_outdated}
-
  			{exp:gwcode_categories entry_id="{entry_id}" group_id="5"}
  			{exp:channel:categories category_group="5"}
 			<div class="main-content">
@@ -188,7 +180,8 @@
 				{/exp:hop_inject:injection}
 
 				{exp:hop_inject:injection separator="-2" position="before"}
-				{embed="embeds/issue-sidebar" entry_id="{entry_id}"}
+				<!-- {embed="embeds/issue-sidebar" entry_id="{entry_id}"} -->
+				{embed="embeds/related-sidebar" entry_id="{entry_id}"}
 				{/exp:hop_inject:injection}
 
 				{article_content}
