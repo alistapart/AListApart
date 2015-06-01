@@ -129,7 +129,13 @@ html:not(.no-js) .buttonish:before {
 	max-width: 960px;
 }
 
-.go-to-nav {display: none;}
+.go-to-nav {
+	position: absolute; 
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px; width: 1px;
+	margin: -1px; padding: 0; border: 0;
+}
 
 .deadly-subtitle {
 	display: block;
