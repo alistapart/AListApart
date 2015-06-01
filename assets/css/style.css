@@ -1990,12 +1990,66 @@ p.question {
 	font-style: italic;
 }
 
+.article-layout .main-content .sidebar.var1 {
+	position: relative;
+	width: 250px;
+	background: #fff;
+	border: 1px solid #dfdfdf;
+	border-radius: 0px;
+	font-style: normal;
+	font-family: "Franklin ITC Light", sans-serif;
+}
+
+.widget-branding  {
+	position: absolute;
+	top: -12px;
+	left: 0px;
+	width: 100%;
+	height: 24px; 
+}
+
+.widget-branding.ala {
+	background: url(/components/assets/img/icon_navigation-laurel.svg) no-repeat center;
+}
+
+.article-layout .main-content .sidebar.var1 hr {
+	border-top: 1px solid #dfdfdf;
+}
+
+.article-layout .main-content .sidebar.var1 section h1 {
+	font-size: 14px;
+	color: #ba3925;
+}
+
+.article-layout .main-content .sidebar.var1 article h1, .article-layout .main-content .sidebar.var1 article p  {
+	font-size: 18px;
+}
+
+.article-layout .main-content .sidebar.var1 article p {
+	margin-bottom: 12px;
+}
+
 .article-layout .main-content .supplement {
 	width: 244px;
 }
 
 .article-layout .main-content .sidebar h1 {
 	font-family: georgia, serif;
+	font-size: 14px;
+}
+
+.article-layout .main-content .sidebar.var1 h1, .article-layout .main-content .sidebar.var1 .related-articles article h1 {
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
+}
+
+.article-layout .main-content .sidebar.var1 .related-articles h1 {
+	font-family: "Franklin ITC Light", sans-serif;
+	font-weight: normal;
+	color: #222;
+}
+
+.article-layout .main-content .sidebar.var1 .related-articles article p, .article-layout .main-content .sidebar.var1 .related-articles article h1  {
 	font-size: 14px;
 }
 
