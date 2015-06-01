@@ -566,10 +566,12 @@
 	.article-layout .main-content .sidebar.var1 .related-articles h1 a,
 	.article-layout .main-content .sidebar.var1 article p {
 		font-size: 16px;
+		line-height: 20px;
 	}
 
 	.article-layout .main-content .sidebar.var1 article p {
 		font-size: 14px;
+		line-height: 18px;
 	}
 
 	.article-layout .main-content .sidebar.var1 .related-articles h1 {

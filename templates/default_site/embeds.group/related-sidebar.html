@@ -26,7 +26,6 @@
 				</article>
 				{/article_follow_up}
 				</section>
-				<hr>
 				{if:else}
 				{exp:playa:parents status="open|In Progress"}
 				{exp:stash:set name="issue-number"}{issue_number}{/exp:stash:set}
@@ -49,7 +48,6 @@
 				</section>
 				{/exp:playa:children}
 				{/exp:playa:parents}
-				<hr>
 				{/if}
 				{if "{article_related_content:count}" != ""}
 				<section class="related-articles">
