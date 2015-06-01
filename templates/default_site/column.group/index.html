@@ -60,7 +60,7 @@
 					{/if}
 				</p>
 
-				{if status != "open" OR entry_date > current_time}
+				{if status != "open" OR {entry_date} > {current_time}}
 				<p class="meta warning" style="display: inline-block; background: #ffffef; outline: 3px solid #ffffef;">
 
 					{if status != "open"}
