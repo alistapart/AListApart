@@ -2,31 +2,6 @@
 				{exp:channel:entries channel="articles" limit="1" entry_id="{embed:entry_id}" status="open|In Progress"}
 				<aside class="sidebar var1">
 				<i class="widget-branding ala"></i>
-				{exp:playa:parents status="open|In Progress"}
-				{exp:stash:set name="issue-number"}{issue_number}{/exp:stash:set}
-				{exp:playa:children child_id="not {embed:entry_id}" status="open|In Progress"}
-				<section>
-				{if count == "1"}
-				{article_illustration}
-				<figure class="sidebar-hero" data-picture data-alt="">
-					<div data-src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}"></div>
-					<div data-src="{exp:ce_img:pair src="{url}" width="644" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" data-media="(min-width: 600px) and (min-device-pixel-ratio: 2.0)"></div>
-					<noscript><img src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>			
-				</figure>
-				{/article_illustration}
-				<h1>Also in Issue № {exp:stash:get name="issue-number"}</h1>
-				{/if}
-					<article>
-					<h1><a href="/article/{url_title}">{title}</a></h1>
-					<p>{exp:strip_html}{if article_mini_deck}<p>{article_mini_deck}</p>{if:elseif article_deck}<p>{exp:trunchtml chars="130" inline="..."}{article_deck}{/exp:trunchtml}</p>{/if}{/exp:strip_html}</p>
-					</article>
-				{if count == total_results}
-				
-				{/if}
-				</section>
-				{/exp:playa:children}
-				{/exp:playa:parents}
-				<hr>
 				{if article_follow_up != ""}
 				<section class="follow-up">
 				<h1>Follow-up</h1>
@@ -51,8 +26,31 @@
 				</article>
 				{/article_follow_up}
 				</section>
-				{/if}
 				<hr>
+				{if:else}
+				{exp:playa:parents status="open|In Progress"}
+				{exp:stash:set name="issue-number"}{issue_number}{/exp:stash:set}
+				{exp:playa:children child_id="not {embed:entry_id}" status="open|In Progress"}
+				<section>
+				{if count == "1"}
+				{article_illustration}
+				<figure class="sidebar-hero" data-picture data-alt="">
+					<div data-src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}"></div>
+					<div data-src="{exp:ce_img:pair src="{url}" width="644" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" data-media="(min-width: 600px) and (min-device-pixel-ratio: 2.0)"></div>
+					<noscript><img src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
+				</figure>
+				{/article_illustration}
+				<h1>Also in Issue № {exp:stash:get name="issue-number"}</h1>
+				{/if}
+					<article>
+					<h1><a href="/article/{url_title}">{title}</a></h1>
+					<p>{exp:strip_html}{if article_mini_deck}<p>{article_mini_deck}</p>{if:elseif article_deck}<p>{exp:trunchtml chars="130" inline="..."}{article_deck}{/exp:trunchtml}</p>{/if}{/exp:strip_html}</p>
+					</article>
+				</section>
+				{/exp:playa:children}
+				{/exp:playa:parents}
+				<hr>
+				{/if}
 				{if "{article_related_content:count}" != ""}
 				<section class="related-articles">
 				<h1>Read more</h1>
@@ -71,6 +69,17 @@
 					</article>
 				{/article_related_content}
 				</section>
+				{if:elseif !primary_category_no_results}
+				<section class="related-articles">
+					{primary_categories}
+					<h1 class="primary-cat-header">
+						Read more about
+						<a href="/topic/{primary_category_url_title}">{primary_category_name}</a>
+					</h1>
+					<article>
+						{embed="embeds/primary-category-entries" category_id="{primary_category_id}" exclude="{entry_id}"}
+					</article>
+					{/primary_categories}
 				{/if}
 
 				</aside>

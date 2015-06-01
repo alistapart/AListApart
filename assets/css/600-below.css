@@ -4,47 +4,47 @@
 		float: none;
 		width: 100%;
 	}
-		
+
 	.event-details + .event-copy {
 		margin-top: 24px;
 		margin-right: 0;
 		padding-right: 0;
 		border-right: 0;
 	}
-	
+
 	@media only screen and (min-width: 37.5em) { /* 767px */
-	
+
 		.event-details .logistics {
 			width: 25%;
 			display: inline-block;
 			vertical-align: top;
 		}
-		
+
 		.event-details .sponsor-block {
 			width: 75%;
 			display: inline-block;
 			border-top: 0;
 			vertical-align: top;
 		}
-		
+
 		.event-details .sponsor-block .sponsor-label {
 			margin-top: 0;
 		}
-	
+
 	}
-	
-	.two-column-display .main-content, 
+
+	.two-column-display .main-content,
 	.two-column-display .secondary-column {
 		display: block;
 		width: auto;
 		margin-left:0;
 		margin-right: 0;
 	}
-	
+
 	.item-summary {
 		width: 49%;
 	}
-	
+
 	.item-summary:nth-of-type(2n) figure,
 	.item-summary:nth-of-type(2n) h1,
 	.item-summary:nth-of-type(2n) h2,
@@ -52,7 +52,7 @@
 	.item-summary:nth-of-type(2n) ul {
 		margin-right: 0;
 	}
-	
+
 	.item-summary:nth-of-type(3n) figure,
 	.item-summary:nth-of-type(3n) h1,
 	.item-summary:nth-of-type(3n) h2,
@@ -60,28 +60,28 @@
 	.item-summary:nth-of-type(3n) ul {
 		margin-right: 24px;
 	}
-	
+
 	.variable-column, .variable-column:first-child {
 		width: auto;
 	}
-	
+
 	.variable-column .item-summary {
 		width: auto;
 	}
-	
+
 	.main-content > ul.entry-list > li.featured-comment:before {
 		font-size: 78px;
 	}
-	
+
 	.main-content > ul.entry-list > li.featured-comment p {
 		clear: both;
 	}
-	
+
 	.main-content > ul.entry-list > li.featured-comment footer .source-title,
 	.main-content > ul.entry-list > li.featured-comment footer .commenter-name + time {
 		display: inline;
 	}
-	
+
 	.two-column-display.no-top .main-content {
 		border-right: 0;
 	}
@@ -95,7 +95,7 @@
 		font-size:18px;
 		line-height:26px;
 	}
-	
+
 	.sponsor-top,
 	.secondary-column .sponsor-top {
 		position: absolute;
@@ -110,17 +110,17 @@
 		text-align: left;
 		vertical-align: middle;
 	}
-	
+
 	.secondary-column .sponsor-top {
 		margin-top: -156px;
 	}
-	
+
 	.sponsor-top.sponsor-alt {
 		right: auto;
 		height: auto;
 		text-align: left;
 	}
-	
+
 	.sponsor-top p {
 		margin: 1px 12px 0 0;
 		line-height: 18px;
@@ -128,15 +128,15 @@
 		text-align: left;
 		padding-right: 12px;
 	}
-	
+
 	.sponsor-top.sponsor-alt p {
 		margin: 0 12px;
 		line-height: 18px;
 		font-size: 12px;
-		
+
 		width: auto;
 	}
-	
+
 	.sponsor-top .sponsor-logo {
 		display: inline-block;
 		vertical-align: top;
@@ -146,23 +146,23 @@
 		margin-top: 6px;
 		margin-right: 6px;
 	}
-	
+
 	.sponsor-top.sponsor-alt .sponsor-logo {
 		margin-top: 0;
 	}
-	
+
 	.sponsor-top .sponsor-extended, .sponsor-top .sponsor-url {
 		display: none;
 	}
-	
+
 	.sponsor-top.sponsor-alt .sponsor-extended {
 		display: inline-block;
 	}
-		
+
 	.event-details .sponsor-block {
 		margin-bottom: 36px;
 	}
-	
+
 	.event-details .logistics .logistics-block {
 		display: inline-block;
 		vertical-align: top;
@@ -170,43 +170,43 @@
 		padding-right: 18px;
 		text-align: left;
 	}
-	
+
 	.event-details .logistics span {
 		display: inline;
 	}
-	
+
 	.event-details .logistics span.where {
 		display: block;
 	}
-	
+
 	.event-details .logistics span.what1:after {
 		content: ", ";
 	}
-	
+
 	.event-details .logistics span.time {
 		display: inline-block;
 		clear: both;
 	}
-	
+
 	.event-details .logistics span.register-link {
 		display: block;
 	}
-	
+
 	.event-details .logistics span.big-number,
 	.event-details .logistics span.register-link a {
 		font-size: 16px;
 	}
-	
+
 	.event-details .logistics span.register-link a {
 		display: inline;
 	}
-	
+
 	.global-nav {
 		position: static;
 		padding: 0;
 		border-top: 1px solid #222;
 	}
-	
+
 	.global-nav.deluxe {
 		position: absolute;
 		display: none;
@@ -214,12 +214,12 @@
 		left: 0;
 		border-top: none;
 	}
-	
+
 	.global-nav:target {
 		-webkit-animation: none;
 		-moz-animation:  none;
 	}
-	
+
 	.show-nav .global-nav.deluxe {
 		display: block;
 	}
@@ -229,20 +229,20 @@
 		margin-right: 0;
 		padding: 0;
 	}
-	
+
 	.global-nav .back-to-top {
 		display: inline;
 	}
-	
+
 	.global-nav.deluxe .back-to-top {
 		display: none;
 	}
-	
+
 	.global-nav .head-east-young-man {
 		z-index: 200;
 		top: 8px;
 	}
-	
+
 	.global-nav ul.inline-items li a {
 		display: block;
 		padding: 0 12px;
@@ -250,7 +250,7 @@
 		background: rgba(255,255,255,.95);
 		border-bottom: 1px solid #eee;
 	}
-	
+
 	.global-nav li:first-child a {
 		width: auto;
 		text-indent: 0;
@@ -302,11 +302,11 @@
 		padding: 4px;
 		border-radius: 50%;
 	}
-	
+
 	.killer-logo > a {
 		margin-left: -25%;
 	}
-	
+
 	.go-to-nav {
 		position: absolute;
 		display: block;
@@ -325,11 +325,11 @@
 		overflow: hidden;
 		-webkit-tap-highlight-color: rgba(0,0,0,0);
 	}
-	
+
 	.no-svg .go-to-nav {
 		background-image: url(/components/assets/img/icon_hamburger.gif);
 	}
-	
+
 	.show-nav .go-to-nav:before {
 		content: "";
 		 position: absolute;
@@ -345,37 +345,37 @@
 		 -o-transform: rotate(90deg);
 		 transform: rotate(90deg);
 	}
-		
+
 	.single-column-display .main-content {
 		padding-right: 0;
 	}
-	
+
 	.single-column-display .col-holder, .two-column-display .col-holder, .multi-column-display .col-holder {
 		padding-left: 18px;
 		padding-right: 18px;
 	}
-	
+
 	.classy {
 		font-size: 24px;
 		line-height: 30px;
 	}
-	
+
 	.column-holder {
 		margin-left: 18px;
 		margin-right: 18px;
 	}
-	
+
 	.two-column-display .main-content, .two-column-display .secondary-column {
 		display: block;
 		width: auto;
 		margin-left:0;
 		margin-right: 0;
 	}
-	
+
 	pre code {
 		font-size: 14px;
 	}
-	
+
 	.main-content .basic-title {
 		margin-bottom: 24px;
 		font-size: 24px;
@@ -383,48 +383,48 @@
 	}
 
 	/* ----------------------	HOME AND ISSUES	 ---------------------- */
-	
+
 	.issue-header {
 		margin-bottom:12px;
 	}
-	
+
 	.home-page .entry-header {
 		margin-bottom: 24px;
 	}
-	
+
 	.issue-header, .home-page .entry-header, .issue-page .entry-header {
 		margin-left: 18px;
 		margin-right: 18px;
 		width: auto;
 	}
-	
+
 	.home-page .entry-header .entry-title, .issue-page .entry-header .entry-title {
 		margin: 0 0 6px 0;
 		font-size: 30px;
 		line-height: 36px;
 	}
-	
+
 	.home-page .entry-header .entry-title:first-child,
 	.issue-page .entry-header .entry-title:first-child {
 		padding: 0 12px;
 	}
-	
+
 	.home-page .entry-header .entry-title a, .issue-page .entry-header .entry-title a {
 		font-size:30px;
 		line-height: 36px;
 	}
-	
+
 	.home-page .entry-header .entry-summary, .issue-page .entry-header .entry-summary {
 		font-size: 18px;
 		line-height: 28px;
 	}
-	
+
 	.item-summary > figure, .item-summary > h1, .item-summary > h2, .item-summary > p, .item-summary > ul {
 		margin-right: 0;
 	}
-	
+
 	/* ----------------------	ARTICLES  ---------------------- */
-	
+
 	.wide-hero {
 		min-height: 100px;
 		padding-bottom: 24px;
@@ -433,16 +433,16 @@
 		margin-right: 18px;
 		margin-top: 12px;
 	}
-	
+
 	.entry-header {
 		margin-left: 18px;
 		margin-right: 18px;
 	}
-	
+
 	.article-layout .main-content>.tall-hero {
 		float: none;
 	}
-	
+
 	.entry-header .issue-number span, .issue-page .logo-holder + .issue-number span, .wide-hero .issue-number span, .tall-hero .issue-number span {
 		width: auto;
 		height: auto;
@@ -451,7 +451,7 @@
 		padding: 0;
 		font-size:18px;
 	}
-	
+
 	.entry-header .issue-number, .wide-hero .issue-number, .tall-hero .issue-number, .issue-page .logo-holder + .issue-number {
 		left: 0;
 		bottom: 0;
@@ -464,7 +464,7 @@
 		font-size:18px;
 		font-family: georgia;
 	}
-	
+
 	.no-svg .entry-header .issue-number,
 	.no-svg .wide-hero .issue-number,
 	.no-svg .tall-hero .issue-number,
@@ -474,7 +474,6 @@
 		background-image: none;
 	}
 
-	
 	.entry-header > .issue-number:first-child, .issue-page .logo-holder + .issue-number {
 		left: 0;
 		top: 144px;
@@ -484,139 +483,160 @@
 		font-size: 14px;
 		line-height: 24px;
 	}
-	
+
 	.entry-header {
 		margin-bottom:24px;
 	}
-	
+
 	.entry-header .entry-title {
 		font-size:30px;
 		line-height: 36px;
 		padding: 0 12px;
 		margin-bottom: 6px;
 	}
-	
+
 	.entry-header .entry-details {
 		font-size: 14px;
 		line-height: 22px;
 	}
-	
+
 	.article-layout .main-content {
 		margin-left: 18px;
 		margin-right: 18px;
 	}
-	
+
 	.article-layout .main-content > p:first-child:not(.buttonish-holder):not(.editors-note), .article-layout .main-content > figure.quote:first-child {
 		font-size: 18px;
 		line-height: 26px;
 		margin-bottom: 24px;
 	}
-	
+
 	.article-layout .main-content > p.editors-note {
 		font-size: 14px;
 		line-height: 22px;
 		margin-left: 0;
 		margin-right: 0;
 	}
-	
+
 	.article-layout .main-content > p.editors-note.column-note {
 		font-size: 14px;
 		line-height: 24px;
 	}
-	
+
 	.article-layout .main-content > figure.quote:first-child figcaption {
 		font-size: 14px;
 		line-height: 24px;
 	}
-	
+
 	.article-layout .main-content > h2 {
 		font-size: 20px;
 		margin-bottom: 14px;
 		line-height: 28px;
 	}
-	
+
 	.article-layout .main-content > h3 {
 		font-size: 16px;
 		/* margin-bottom: 14px; */
 		line-height: 28px;
 	}
-	
+
 	.main-content > p, .main-content > pre, .main-content > ol, .main-content > ul, .main-content > figure, .main-content .entry-footnotes {
 		margin-bottom: 18px;
 	}
-	
+
 	.main-content ul > li, .main-content ol > li {
 		margin-bottom: 9px;
 	}
-	
+
 	.item-summary.topic ul > li, .content-minutiae ul > li {
 		margin-bottom: 0;
 	}
-	
+
 	.content-minutiae {
 		margin: 0 0 18px 18px;
 	}
-	
+
+	.article-layout .main-content .sidebar.var1 {
+		width: 50%;
+		margin-left: 18px;
+		margin-bottom: 18px;
+	}
+
+	.article-layout .main-content .sidebar.var1 article h1,
+	.article-layout .main-content .sidebar.var1 .related-articles h1 a,
+	.article-layout .main-content .sidebar.var1 article p {
+		font-size: 16px;
+	}
+
+	.article-layout .main-content .sidebar.var1 article p {
+		font-size: 14px;
+	}
+
+	.article-layout .main-content .sidebar.var1 .related-articles h1 {
+		font-size: 12px;
+		line-height: 16px;
+	}
+
 	.article-layout .entry-footer {
 		margin-left: 18px;
 		margin-right: 18px;
 	}
-	
-	.entry-footer h1, 
+
+	.entry-footer h1,
 	.entry-footer h2,
 	.entry-footer h3,
-	.entry-footer .byline .author-bio, 
+	.entry-footer .byline .author-bio,
 	.entry-footer .byline .author-more {
 		margin-left: 0;
 		margin-right: 0;
 		padding-left: 0;
 	}
-	
+
 	.entry-footer .photo + h2, .entry-footer .photo + h2 + .author-bio, .entry-footer .photo + h2 + .author-bio + h3 + .author-more {
 		margin-left: 0;
 	}
-	
+
 	.entry-footer .byline img {
 		float: left;
 		margin-bottom: 0;
 		width: 60px;
 		height: 60px;
 	}
-		
+
 	.entry-footer .photo + h2, .entry-footer .photo + h2 + .author-bio, .entry-footer .photo + h2 + .author-more {
 		margin-left: 0;
 	}
-	
+
 	.entry-footer .photo + h2, .entry-footer .photo + h2 + .author-bio, .entry-footer .photo + h2 + .author-bio + h3, .entry-footer .photo + h2 + .author-bio + h3 + .author-more {
 		margin-left: 0;
 	}
-	
+
 	.item-summary {
-		width: auto; 
+		width: auto;
 		margin-right: 0;
 	}
-	
+
 	.item-summary:nth-of-type(2n) {
 		margin-right: 0;
 	}
-	
+
 	.item-summary:nth-of-type(3n) {
 		margin-right: 0;
 	}
-	
+
 	.item-summary:not(.topic) {
-		width: auto; 
+		width: auto;
 		margin-right: 0;
 	}
-	
+
 	.item-summary > figure {
 		height: auto;
 	}
-	
+
 	.item-summary figure a {
 		display: block;
 	}
-	
+
 	.item-summary figure a img {
 		min-width: 100%;
 	}
@@ -626,15 +646,15 @@
 		line-height: 30px;
 		font-weight: 300;
 	}
-	
+
 	.article-comments #login-buttons.active {
 		height: 145px;
 	}
-	
+
 	.article-comments #login-buttons li {
 		margin-bottom: 9px;
 	}
-	
+
 	html:not(.no-js) .buttonish {
 		margin-bottom: 24px;
 		padding: 6px 18px;
@@ -642,35 +662,34 @@
 		border-radius: 6px;
 		color: #fff;
 	}
-	
+
 	html:not(.no-js) .buttonish:before {
 		display: none;
 	}
-	
+
 	html:not(.no-js) .buttonish:after {
 		content: "";
 		text-indent: 0;
 	}
-	
+
 	.article-layout .main-content .sidebar {
 		margin: 0 0 18px 18px;
-		padding: 12px;
 		font-size: 12px;
 		line-height: 20px;
 	}
-	
+
 	.article-layout .main-content .sidebar h1 {
 		font-size: 12px;
 	}
-	
+
 	.article-layout .main-content .sidebar h2 {
 		font-size: 14px;
 	}
-	
+
 	.alpha-container {
 		height: 320px;
 	}
-	
+
 	.aside-breaker {
 		display: block;
 		font-family: "FranklinITCPro-Light";
@@ -678,7 +697,7 @@
 		position: relative;
 		text-align: center;
 	}
-	
+
 	.aside-breaker:before {
 		background-color: #eee;
 		content: " ";
@@ -697,7 +716,7 @@
 		color: #222;
 		display: inline-block;
 		font-family: "Franklin ITC", sans-serif;
-		font-size: 0.667em;  /* 18 / 12 */ 
+		font-size: 0.667em;  /* 18 / 12 */
 		padding: 0 1em;
 		position: relative;
 	}
@@ -705,7 +724,7 @@
 	.in-article .deck-inner {
 		width: auto;
 	}
-	
+
 	.job-board.in-article {
 		margin-bottom: 2em;
 	}
@@ -716,132 +735,132 @@
 		margin: 2em 0;
 		width: 100%;
 	}
-	
+
 	.content-minutiae {
 		float: none;
 		margin: 0 0 3em;
 		width: 100%;
 	}
-	
+
 	.minutiae-block {
 		display: inline-block;
 		margin-left: 6%;
 		vertical-align: top;
 		width: 47%;
 	}
-	
+
 	.minutiae-block:first-child {
 		margin-left: 0;
 	}
-	
+
 	.the-deck.in-article {
 		border: 0;
 		min-height: 90px;
 		padding: 0 1em;
 		text-align: left;
 	}
-	
+
 	.the-deck.in-article .deck-inner p {
 		text-align: left;
 	}
-	
+
 	.the-deck.in-article .deck-inner a {
 		display: inline;
 		margin: 0;
 	}
-	
+
 	.the-deck.in-article img {
 		float: left;
 		margin-right: 1em;
 	}
 
-	
+
 	/* ----------------------	COLUMNS	 ---------------------- */
-	
+
 	.author-header {
 	}
 
 	.author-header {
 		min-height: 60px;
 	}
-	
+
 	.author-header p.meta, .blog-header p.meta {
 		line-height: 24px;
 	}
-	
+
 	.author-header .column-name, .author-header h1, .author-header p.meta {
 	}
-	
+
 	.author-header .column-name {
 		line-height:18px;
 	}
-	
+
 	.author-header h1, .blog-header h1 {
 		font-size: 30px;
 		line-height: 36px;
 		margin-bottom: 4px;
 	}
-	
+
 	.author-header h1 br, .blog-header h1 br {
 		display: none;
 	}
-	
+
 	.author-header + .column-intro, .blog-header + .column-intro {
 		font-size: 18px;
 		line-height: 26px;
 	}
-	
+
 	/* ----------------------	BLOG  ---------------------- */
-	
+
 	.article-layout .blog-header, .article-layout .author-header {
 		margin-left: 18px;
 		margin-right: 18px;
 		width: auto;
 		max-width: none;
 	}
-	
+
 	.sponsored .article-layout .blog-header,
 	.article-layout .blog-header {
 		margin-left: 18px;
 		padding-left: 0;
 	}
-	
+
 	.blog-summary {
 		margin: 0 0 24px;
 		padding: 0;
 		font-size: 18px;
 		line-height: 28px;
 	}
-	
+
 	.blog-summary.link-post {
 		padding-left: 0;
 	}
-	
+
 	.blog-summary h1 {
 		font-size: 24px;
 		text-indent: 0;
 		margin-bottom:2px;
 	}
-	
+
 	.blog-summary.native-post .byline {
 		font-size: 14px;
 		line-height: 24px;
 		font-style: italic;
 	}
-	
+
 	.blog-summary.link-post h1:before {
 		width: 14px;
 		height: 14px;
 	}
 
 	/* ----------------------	FOOTER	---------------------- */
-	
+
 	.global-footer {
 	}
 
 	.deadly-subtitle {
 	}
-	
+
 	.deadly-subtitle img {
 		width: auto;
 		max-width: none;
@@ -856,7 +875,7 @@
 	.global-footer .inline-items li {
 		margin-right: 12px;
 	}
-	
+
 	.promo-holder {
 		/* background: transparent; */
 		padding-left: 18px;
@@ -884,59 +903,59 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
-	
+
 }
 
 @media only screen and (max-width: 20em) { /* 320px */
-	
+
 	body {
 		font-family: georgia;
 	}
-	
+
 	.global-nav {
 		/* font-size:12px; */
 	}
-	
+
 	.entry-header .entry-details {
 		font-size: 14px;
 		line-height: 20px;
 	}
-	
+
 	.article-layout .main-content > p:first-child:not(.buttonish-holder):not(.editors-note), .article-layout .main-content > figure.quote:first-child {
 		font-size: 18px;
 		line-height: 26px;
 		margin-bottom: 22px;
 	}
-	
+
 	.article-layout .main-content > p.editors-note {
 		line-height: 20px;
 	}
-	
+
 	.article-layout .main-content > * b,
 	.article-layout .main-content > * strong {
 		font-family: georgia;
 		font-weight: bold;
 	}
-	
+
 	.author-header h1, blog-header h1 {
 		font-size: 24px;
 		line-height: 28px;
 		margin-top: 2px;
 		/* margin-bottom: 2px; */
 	}
-	
+
 	.author-header p.meta, .blog-header p.meta {
 		line-height: 22px;
 	}
-	
+
 	.partner-promos li img {
 		width: 60px;
 		height: 45px;
 		margin-right: 6px;
 	}
-	
+
 	.partner-promos .arrow {
 		margin-left: 66px;
 	}
-	
+
 }

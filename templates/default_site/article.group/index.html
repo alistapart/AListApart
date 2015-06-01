@@ -155,7 +155,7 @@
  			{exp:channel:categories category_group="5"}
 			<div class="main-content">
 				<p class="editors-note var1">This article is <b>Part {embed="embeds/article-series-count" exclude="{entry_id}" entrylink="{category_id}"}</b> of a series on <b>{category_name}</b>. Read {embed="embeds/article-series" exclude="{entry_id}" entrylink="{category_id}"}.</p>
-			</div> 
+			</div>
 			{/exp:channel:categories}
 			{/exp:gwcode_categories}
 
@@ -181,7 +181,6 @@
 
 
 				{exp:hop_inject:injection separator="-3" position="before"}
-
 				{embed="embeds/related-sidebar" entry_id="{entry_id}"}
 				{/exp:hop_inject:injection}
 
@@ -203,13 +202,13 @@
 				</section>
 				{/if}
 
+				<footer class="entry-footer">
+
+					{embed="embeds/article-author-bio" entry_author="{author_id}" entry_id="{entry_id}"}
+
+				</footer>
+
 			</div>
-
-			<footer class="entry-footer">
-
-				{embed="embeds/article-author-bio" entry_author="{author_id}" entry_id="{entry_id}"}
-
-			</footer>
 
 			<div class="post-article">
 

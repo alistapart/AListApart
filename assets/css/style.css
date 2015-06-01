@@ -1496,6 +1496,7 @@ ul.fancy-links li a.googleplus {
 }
 
 .article-layout .main-content {
+	position: relative;
 	width: 960px;
 	max-width: 100%;
 	margin: 0 auto;
@@ -1980,8 +1981,8 @@ p.question {
 .article-layout .main-content .supplement {
 	float: right;
 	width: 347px;
-	margin: 12px 0 24px 24px;
-	padding: 12px;
+	margin: 12px 0 48px 24px;
+	padding: 18px 12px 12px;
 	font-size: 14px;
 	line-height: 24px;
 	background: #f0f0f0;
@@ -1991,7 +1992,10 @@ p.question {
 }
 
 .article-layout .main-content .sidebar.var1 {
-	position: relative;
+	float: none;
+	position: absolute;
+	left: calc(100% - 132px);
+	bottom: 432px;
 	width: 250px;
 	background: #fff;
 	border: 1px solid #dfdfdf;
@@ -2003,13 +2007,18 @@ p.question {
 .widget-branding  {
 	position: absolute;
 	top: -12px;
-	left: 0px;
-	width: 100%;
-	height: 24px; 
+	left: 50%;
+	width: 24px;
+	height: 24px;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
 }
 
 .widget-branding.ala {
-	background: url(/components/assets/img/icon_navigation-laurel.svg) no-repeat center;
+	background: #fff url(/components/assets/img/icon_navigation-laurel.svg) no-repeat center;
 }
 
 .article-layout .main-content .sidebar.var1 hr {
@@ -2049,8 +2058,23 @@ p.question {
 	color: #222;
 }
 
-.article-layout .main-content .sidebar.var1 .related-articles article p, .article-layout .main-content .sidebar.var1 .related-articles article h1  {
+.article-layout .main-content .sidebar.var1 .related-articles h1.primary-cat-header {
+	margin-bottom: 12px;
+}
+
+.article-layout .main-content .sidebar.var1 .related-articles h1 a {
+	font-family: "Franklin ITC", sans-serif;
+	display: block;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.article-layout .main-content .sidebar.var1 .related-articles article p, .article-layout .main-content .sidebar.var1 .related-articles article h1, .article-layout .main-content .sidebar.var1 .related-articles article h2  {
 	font-size: 14px;
+}
+
+.article-layout .main-content .sidebar.var1 .related-articles h2 a {
+	color: #2455c3;
 }
 
 .article-layout .main-content .sidebar h2 {
