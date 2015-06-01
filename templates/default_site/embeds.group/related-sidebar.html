@@ -68,8 +68,8 @@
 				{/article_related_content}
 				</section>
 				{if:elseif !primary_category_no_results}
+				{primary_categories}
 				<section class="related-articles">
-					{primary_categories}
 					<h1 class="primary-cat-header">
 						Read more about
 						<a href="/topic/{primary_category_url_title}">{primary_category_name}</a>
@@ -77,7 +77,8 @@
 					<article>
 						{embed="embeds/primary-category-entries" category_id="{primary_category_id}" exclude="{entry_id}"}
 					</article>
-					{/primary_categories}
+				</section>
+				{/primary_categories}
 				{/if}
 
 				</aside>
