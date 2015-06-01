@@ -560,23 +560,34 @@
 		width: 50%;
 		margin-left: 18px;
 		margin-bottom: 18px;
+		padding-top: 6px;
+	}
+
+	.sidebar-hero {
+		margin-bottom: 6px;
+	}
+
+	.article-layout .main-content .sidebar.var1 section h1 {
+		font-size: 12px;
+		line-height: 14px;
 	}
 
 	.article-layout .main-content .sidebar.var1 article h1,
 	.article-layout .main-content .sidebar.var1 .related-articles h1 a,
 	.article-layout .main-content .sidebar.var1 article p {
-		font-size: 16px;
-		line-height: 20px;
+		font-size: 14px;
+		line-height: 18px;
 	}
 
-	.article-layout .main-content .sidebar.var1 article p {
+	.article-layout .main-content .sidebar.var1 article p,
+	.article-layout .main-content .sidebar.var1 .related-articles article p {
 		font-size: 14px;
 		line-height: 18px;
 	}
 
 	.article-layout .main-content .sidebar.var1 .related-articles h1 {
 		font-size: 12px;
-		line-height: 16px;
+		line-height: 14px;
 	}
 
 	.article-layout .entry-footer {
