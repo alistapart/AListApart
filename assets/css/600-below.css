@@ -547,6 +547,10 @@
 		margin-bottom: 18px;
 	}
 
+	.main-content > ol {
+		padding-left: 6px;
+	}
+
 	.main-content ul > li, .main-content ol > li {
 		margin-bottom: 9px;
 	}
