@@ -1825,7 +1825,7 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 .content-minutiae time,
 .content-minutiae li {
 	display: block;
-	border-bottom: 1px dotted #bfbfbf;
+	border-bottom: 1px solid #ddd;
 }
 
 .content-minutiae time {
