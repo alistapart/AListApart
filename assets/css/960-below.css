@@ -32,6 +32,11 @@
 		float: right;
 	}
 
+	.article-layout .main-content .sidebar.var1 .related-articles article p, .article-layout .main-content .sidebar.var1 .related-articles article h1, .article-layout .main-content .sidebar.var1 .related-articles article h2 {
+		font-size: 14px;
+		line-height: 18px;
+	}
+
 	.main-content > ul.entry-list > li.featured-comment {
 		margin-left: 0;
 		margin-right: 12px;

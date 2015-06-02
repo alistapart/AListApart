@@ -944,6 +944,7 @@ aside.column.more-content .item-summary {
 
 .sidebar-hero {
 	margin-bottom: 18px;
+	max-height: 124px;
 }
 
 @media only screen and (min-width: 87.5em) { /* 1400px */
