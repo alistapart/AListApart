@@ -2778,7 +2778,7 @@ pre.editing code {
 	height: auto;
 	padding: 12px;
 	background: #f0f0f0;
-	border-radius: 4px;
+	border-radius: 3px;
 }
 
 .fixed-column .the-deck .deck-inner,
@@ -3607,7 +3607,7 @@ ul.bullets {
 	font-size: 12px;
 	padding: 12px;
 	background: #f0f0f0;
-	border-radius: 4px;
+	border-radius: 3px;
 	min-height: 114px;
 }
 
@@ -3619,7 +3619,6 @@ ul.bullets {
 .the-deck.in-article {
 	background: #fff;
 	border: 1px solid #ddd;
-	border-radius: 0;
 	display: block;
 	padding: 2em 1em;
 	text-align: center;
