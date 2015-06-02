@@ -558,8 +558,9 @@
 
 	.article-layout .main-content .sidebar.var1 {
 		width: 50%;
-		margin-left: 18px;
+		margin-left: 6px;
 		margin-bottom: 18px;
+		padding: 18px 9px 12px;
 	}
 
 	.sidebar-hero {
@@ -685,7 +686,7 @@
 	}
 
 	.article-layout .main-content .sidebar {
-		margin: 0 0 18px 18px;
+		margin: 0 0 16px 16px;
 		font-size: 12px;
 		line-height: 20px;
 	}
@@ -694,8 +695,10 @@
 		font-size: 12px;
 	}
 
-	.article-layout .main-content .sidebar h2 {
+	.article-layout .main-content .sidebar h2,
+	.article-layout .main-content .sidebar.var1 .related-articles article h2 {
 		font-size: 14px;
+		line-height: 16px;
 	}
 
 	.alpha-container {

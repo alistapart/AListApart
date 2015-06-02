@@ -1999,7 +1999,7 @@ p.question {
 	width: 250px;
 	background: #fff;
 	border: 1px solid #dfdfdf;
-	border-radius: 0px;
+	border-radius: 3px;
 	font-style: normal;
 	font-family: "Franklin ITC Light", sans-serif;
 }
