@@ -361,8 +361,8 @@
 	}
 
 	.column-holder {
-		margin-left: 18px;
-		margin-right: 18px;
+		margin-left: 12px;
+		margin-right: 12px;
 	}
 
 	.two-column-display .main-content, .two-column-display .secondary-column {
@@ -393,8 +393,8 @@
 	}
 
 	.issue-header, .home-page .entry-header, .issue-page .entry-header {
-		margin-left: 18px;
-		margin-right: 18px;
+		margin-left: 12px;
+		margin-right: 12px;
 		width: auto;
 	}
 
@@ -429,14 +429,14 @@
 		min-height: 100px;
 		padding-bottom: 24px;
 		margin-bottom: 3px;
-		margin-left: 18px;
-		margin-right: 18px;
+		margin-left: 12px;
+		margin-right: 12px;
 		margin-top: 12px;
 	}
 
 	.entry-header {
-		margin-left: 18px;
-		margin-right: 18px;
+		margin-left: 12px;
+		margin-right: 12px;
 	}
 
 	.article-layout .main-content>.tall-hero {
@@ -501,8 +501,8 @@
 	}
 
 	.article-layout .main-content {
-		margin-left: 18px;
-		margin-right: 18px;
+		margin-left: 12px;
+		margin-right: 12px;
 	}
 
 	.article-layout .main-content > p:first-child:not(.buttonish-holder):not(.editors-note), .article-layout .main-content > figure.quote:first-child {
@@ -558,8 +558,13 @@
 
 	.article-layout .main-content .sidebar.var1 {
 		width: 50%;
-		margin-left: 18px;
+		margin-left: 6px;
+		margin-right: -12px;
 		margin-bottom: 18px;
+		padding: 18px 9px 12px;
+		border-right: 0;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
 	}
 
 	.sidebar-hero {
@@ -578,20 +583,14 @@
 		line-height: 18px;
 	}
 
-	.article-layout .main-content .sidebar.var1 article p,
-	.article-layout .main-content .sidebar.var1 .related-articles article p {
-		font-size: 14px;
-		line-height: 18px;
-	}
-
 	.article-layout .main-content .sidebar.var1 .related-articles h1 {
 		font-size: 12px;
 		line-height: 14px;
 	}
 
 	.article-layout .entry-footer {
-		margin-left: 18px;
-		margin-right: 18px;
+		margin-left: 12px;
+		margin-right: 12px;
 	}
 
 	.entry-footer h1,
@@ -685,7 +684,7 @@
 	}
 
 	.article-layout .main-content .sidebar {
-		margin: 0 0 18px 18px;
+		margin: 0 0 16px 16px;
 		font-size: 12px;
 		line-height: 20px;
 	}
@@ -694,8 +693,10 @@
 		font-size: 12px;
 	}
 
-	.article-layout .main-content .sidebar h2 {
+	.article-layout .main-content .sidebar h2,
+	.article-layout .main-content .sidebar.var1 .related-articles article h2 {
 		font-size: 14px;
+		line-height: 16px;
 	}
 
 	.alpha-container {
@@ -825,15 +826,15 @@
 	/* ----------------------	BLOG  ---------------------- */
 
 	.article-layout .blog-header, .article-layout .author-header {
-		margin-left: 18px;
-		margin-right: 18px;
+		margin-left: 12px;
+		margin-right: 12px;
 		width: auto;
 		max-width: none;
 	}
 
 	.sponsored .article-layout .blog-header,
 	.article-layout .blog-header {
-		margin-left: 18px;
+		margin-left: 12px;
 		padding-left: 0;
 	}
 

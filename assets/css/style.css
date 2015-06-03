@@ -944,6 +944,7 @@ aside.column.more-content .item-summary {
 
 .sidebar-hero {
 	margin-bottom: 18px;
+	max-height: 124px;
 }
 
 @media only screen and (min-width: 87.5em) { /* 1400px */
@@ -1825,7 +1826,7 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 .content-minutiae time,
 .content-minutiae li {
 	display: block;
-	border-bottom: 1px dotted #bfbfbf;
+	border-bottom: 1px solid #ddd;
 }
 
 .content-minutiae time {
@@ -1999,7 +2000,7 @@ p.question {
 	width: 250px;
 	background: #fff;
 	border: 1px solid #dfdfdf;
-	border-radius: 0px;
+	border-radius: 3px;
 	font-style: normal;
 	font-family: "Franklin ITC Light", sans-serif;
 }
@@ -2778,7 +2779,7 @@ pre.editing code {
 	height: auto;
 	padding: 12px;
 	background: #f0f0f0;
-	border-radius: 4px;
+	border-radius: 3px;
 }
 
 .fixed-column .the-deck .deck-inner,
@@ -3607,7 +3608,7 @@ ul.bullets {
 	font-size: 12px;
 	padding: 12px;
 	background: #f0f0f0;
-	border-radius: 4px;
+	border-radius: 3px;
 	min-height: 114px;
 }
 
@@ -3619,7 +3620,6 @@ ul.bullets {
 .the-deck.in-article {
 	background: #fff;
 	border: 1px solid #ddd;
-	border-radius: 0;
 	display: block;
 	padding: 2em 1em;
 	text-align: center;
