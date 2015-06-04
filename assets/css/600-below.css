@@ -452,6 +452,18 @@
 		font-size:18px;
 	}
 
+	.entry-header .illustrator-credit,
+	.wide-hero .illustrator-credit,
+	.tall-hero .illustrator-credit,
+	.issue-page .logo-holder + .illustrator-credit {
+		width: auto;
+		height: auto;
+		padding: 0;
+		position: static;
+		opacity: .8;
+		margin-bottom: 12px;
+	}
+
 	.entry-header .issue-number, .wide-hero .issue-number, .tall-hero .issue-number, .issue-page .logo-holder + .issue-number {
 		left: 0;
 		bottom: 0;

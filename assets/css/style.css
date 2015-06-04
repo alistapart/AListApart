@@ -1015,6 +1015,29 @@ aside.column.more-content .item-summary {
 
 }
 
+.entry-header .illustrator-credit,
+.wide-hero .illustrator-credit,
+.tall-hero .illustrator-credit,
+.issue-page .logo-holder + .illustrator-credit {
+	position: absolute;
+	bottom: 84px;
+	right: -24px;
+	padding: 0 6px;
+	margin: 0;
+	background: #fff;
+	background: rgba(255,255,255,.3);
+	border-radius: 3px;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.entry-header .illustrator-credit a,
+.wide-hero .illustrator-credit a,
+.tall-hero .illustrator-credit a,
+.issue-page .logo-holder + .illustrator-credit a {
+	font-weight: bold;
+}
+
 .entry-header .issue-number,
 .wide-hero .issue-number,
 .tall-hero .issue-number,
