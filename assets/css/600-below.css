@@ -462,6 +462,14 @@
 		position: static;
 		opacity: .8;
 		margin-bottom: 12px;
+		font-style: italic;
+	}
+
+	.entry-header .illustrator-credit a,
+	.wide-hero .illustrator-credit a,
+	.tall-hero .illustrator-credit a,
+	.issue-page .logo-holder + .illustrator-credit a {
+		font-weight: normal;
 	}
 
 	.entry-header .issue-number, .wide-hero .issue-number, .tall-hero .issue-number, .issue-page .logo-holder + .issue-number {

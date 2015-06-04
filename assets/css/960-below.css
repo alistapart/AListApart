@@ -143,13 +143,6 @@
 		margin-left: 0;
 	}
 
-	.entry-header .illustrator-credit,
-	.wide-hero .illustrator-credit,
-	.tall-hero .illustrator-credit,
-	.issue-page .logo-holder + .illustrator-credit {
-		bottom: 24px;
-	}
-
 	.entry-header .wide-hero {
 		margin-left: 0;
 		margin-right: 0;
