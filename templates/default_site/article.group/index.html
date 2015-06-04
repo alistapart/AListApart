@@ -175,6 +175,14 @@
 			</div>
 			{/if}
 
+			{article_outdated}
+			{if article_age_flag == 'y'}
+			<div class="main-content pre-article">
+			   <p class="editors-note var1"><b>{if custom_note}{custom_note}{if:else}While helpful in its day, this article is out of date.{/if}</b> {if updated_entry}We suggest reading {updated_entry}<a href="{url_title}" title="{title}">{title}</a>{/updated_entry} instead.{/if}</p>
+			</div>
+			{/if}
+			{/article_outdated}
+
 			{if article_opening_blockquote}
 			<div class="main-content pre-article">
 

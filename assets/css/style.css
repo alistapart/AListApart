@@ -2202,12 +2202,12 @@ p.question {
 .article-layout .main-content > p.editors-note {
 	margin-left: 0;
 	margin-right: 0;
-	padding: 6px 12px;
+	padding: 12px 12px 12px 48px;
 	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
 	font-size: 14px;
-	line-height: 24px;
+	line-height: 22px;
 	background: #f2f2f2;
 	color: #666;
 	border-radius: 6px;
@@ -2224,12 +2224,22 @@ p.question {
 	text-align: left;
 }
 
+.article-layout .main-content:first-of-type > p.editors-note {
+	background: #f9f9f9 url(/components/assets/img/icon_navigation-laurel.svg) no-repeat 12px 12px;
+}
+
+.article-layout .main-content:nth-of-type(2) > p.editors-note {
+	background: #f1f1f1;
+}
+
+.article-layout .main-content:nth-of-type(3) > p.editors-note {
+	background: #e6e6e6;
+}
+
 .article-layout .main-content > p.editors-note.var1 {
 	margin-left: 0px;
 	margin-right: 0px;
-	padding: 12px 12px 12px 48px;
 	text-align: left;
-	background: #f9f9f9 url(/components/assets/img/icon_navigation-laurel.svg) no-repeat 12px 12px;
 }
 
 .article-layout .main-content > p.editors-note.var1 em {
@@ -2237,7 +2247,6 @@ p.question {
 	font-family: "Franklin ITC", sans-serif;
 	font-style: normal;
 	font-weight: bold;
-	text-transform: uppercase;
 }
 
 .article-layout .main-content > p span.first-words {
