@@ -946,6 +946,10 @@ aside.column.more-content .item-summary {
 	max-height: 124px;
 }
 
+.sidebar-hero img {
+	max-height: 100%;
+}
+
 @media only screen and (min-width: 87.5em) { /* 1400px */
 
 .wide-hero.responsive-hero {
