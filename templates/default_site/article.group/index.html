@@ -52,6 +52,20 @@
 
 				{exp:stash:set name="issue-number"}{exp:playa:parents status="open|In Progress"}<a href="/issue/{issue_number}" class="issue-number"><span>Issue №</span> {issue_number}</a>{/exp:playa:parents}{/exp:stash:set}
 
+				{if article_illustration OR article_legacy_illo}
+				{exp:stash:set name="illustrator-credit"}
+				<p class="illustrator-credit">Illustration by
+					{if "{article_illustrator:entry_id}" != ""}
+					{article_illustrator}
+					{embed="embeds/article-illustrator-link" entry_id="{article_illustrator:entry_id}"}
+					{/article_illustrator}
+					{if:else}
+					<a href="/author/kcornell">Kevin Cornell</a>
+					{/if}
+				</p>
+				{/exp:stash:set}
+				{/if}
+
 				{if article_responsive_illo != ""}
 
 				<figure class="wide-hero responsive-hero" data-picture data-alt="">
@@ -63,6 +77,7 @@
 					<noscript>{article_illustration}<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt="">{/article_illustration}</noscript>
 
 					{exp:stash:get name="issue-number"}
+					{exp:stash:get name="illustrator-credit"}
 				</figure>
 
 				{if:else}
@@ -80,6 +95,7 @@
 					<noscript><img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
 
 					{exp:stash:get name="issue-number"}
+					{exp:stash:get name="illustrator-credit"}
 				</figure>
 				{if:else}
 				<figure class="wide-hero" data-picture data-alt="">
@@ -91,6 +107,7 @@
 					<noscript><img src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
 
 					{exp:stash:get name="issue-number"}
+					{exp:stash:get name="illustrator-credit"}
 				</figure>
 				{/if}
 				{/article_illustration}
@@ -98,6 +115,7 @@
 				<figure class="wide-hero">
 				{article_legacy_illo}
 				{exp:stash:get name="issue-number"}
+				{exp:stash:get name="illustrator-credit"}
 				</figure>
 				{if:else}
 				{exp:stash:get name="issue-number"}
@@ -113,7 +131,7 @@
 
 					{exp:playa:parents status="open|In Progress"}<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>{/exp:playa:parents}
 
-					<span class="optional-break">
+					<span class="entry-meta optional-break">
 
 						Published in {modern-categories}
 
@@ -145,22 +163,20 @@
 
 			</header>
 
+ 			{exp:channel:categories category_group="5" style="linear"}
+			<div class="main-content pre-article">
+				<p class="editors-note var1"><em>This article is part of a series on {category_name}.</em> Read {embed="embeds/article-series" exclude="{entry_id}" entrylink="{category_id}"}.</p>
+			</div>
+			{/exp:channel:categories}
+
 			{if article_editors_note}
-			<div class="main-content">
+			<div class="main-content pre-article">
 				<p class="editors-note"><b>A note from the editors:</b> {article_editors_note}</p>
 			</div>
 			{/if}
 
- 			{exp:gwcode_categories entry_id="{entry_id}" group_id="5"}
- 			{exp:channel:categories category_group="5"}
-			<div class="main-content">
-				<p class="editors-note var1">This article is <b>Part {embed="embeds/article-series-count" exclude="{entry_id}" entrylink="{category_id}"}</b> of a series on <b>{category_name}</b>. Read {embed="embeds/article-series" exclude="{entry_id}" entrylink="{category_id}"}.</p>
-			</div>
-			{/exp:channel:categories}
-			{/exp:gwcode_categories}
-
 			{if article_opening_blockquote}
-			<div class="main-content">
+			<div class="main-content pre-article">
 
 				{article_opening_blockquote}
 

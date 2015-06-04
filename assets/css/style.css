@@ -551,7 +551,6 @@ ul.inline-items li {
 .meta a.aside-author {
 	font-family: "Franklin ITC", sans-serif;
 	font-style: normal;
-	text-transform: uppercase;
 }
 
 .item-summary {
@@ -1016,6 +1015,14 @@ aside.column.more-content .item-summary {
 
 }
 
+.entry-header .issue-number,
+.wide-hero .issue-number,
+.tall-hero .issue-number,
+.issue-page .logo-holder + .issue-number {
+	position: absolute;
+
+}
+
 @media only screen and (min-width: 37.5em) { /* 600px */
 
 	.entry-header .issue-number,
@@ -1137,9 +1144,10 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 .entry-header {
 	max-width: 960px;
 	margin: 0 auto;
-	margin-bottom: 30px;
-	font-style: italic;
+	margin-bottom: 24px;
 	text-align: center;
+	font-family: "Franklin ITC Light", sans-serif;
+	font-weight: normal;
 }
 
 .home-page .entry-header,
@@ -1153,8 +1161,8 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 	font-family: "Franklin ITC", sans-serif;
 	font-weight: bold;
 	font-style: normal;
-	font-size: 48px;
-	line-height: 56px;
+	font-size: 36px;
+	line-height: 42px;
 }
 
 .entry-header .entry-title a {
@@ -1200,8 +1208,6 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 }
 
 .entry-header .entry-details {
-	font-family: georgia;
-	font-style: italic;
 	font-weight: normal;
 	margin-bottom: 12px;
 	font-size: 18px;
@@ -1250,6 +1256,10 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 footer a.author + time:before,
 footer a.aside-author + time:before {
 	content: " · ";
+}
+
+.entry-meta {
+	font-size: 14px;
 }
 
 .comment-count {
@@ -1501,6 +1511,10 @@ ul.fancy-links li a.googleplus {
 	width: 960px;
 	max-width: 100%;
 	margin: 0 auto;
+}
+
+.main-content.pre-article:not(:last-of-type) > p {
+	margin-bottom: 6px;
 }
 
 .single-column-display .col-holder,
@@ -2186,17 +2200,16 @@ p.question {
 }
 
 .article-layout .main-content > p.editors-note {
-	margin-left: 62px;
-	margin-right: 62px;
+	margin-left: 0;
+	margin-right: 0;
 	padding: 6px 12px;
 	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 24px;
-	background: #eee;
+	background: #f2f2f2;
 	color: #666;
-	text-align: center;
 	border-radius: 6px;
 }
 
@@ -2216,7 +2229,15 @@ p.question {
 	margin-right: 0px;
 	padding: 12px 12px 12px 48px;
 	text-align: left;
-	background: #eee url(/components/assets/img/icon_navigation-laurel.svg) no-repeat 12px 12px;
+	background: #f9f9f9 url(/components/assets/img/icon_navigation-laurel.svg) no-repeat 12px 12px;
+}
+
+.article-layout .main-content > p.editors-note.var1 em {
+	display: block;
+	font-family: "Franklin ITC", sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 .article-layout .main-content > p span.first-words {
