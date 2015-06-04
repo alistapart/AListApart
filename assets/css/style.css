@@ -1537,7 +1537,16 @@ ul.fancy-links li a.googleplus {
 }
 
 .main-content.pre-article:not(:last-of-type) > p {
-	margin-bottom: 6px;
+	margin: 0;
+}
+
+.main-content.pre-article {
+	margin-bottom: 24px;
+}
+
+.main-content.pre-article + .main-content.pre-article {
+	/* the use of the negative margin is to overcome the fact that :last-of-type doesn't work with classes */
+	margin-top: -18px;
 }
 
 .single-column-display .col-holder,
