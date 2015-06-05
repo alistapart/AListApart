@@ -1245,6 +1245,14 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 	line-height: 30px;
 }
 
+.entry-list li p.entry-details {
+	font-weight: normal;
+	margin-bottom: 6px;
+	font-size: 16px;
+	line-height: 26px;
+	font-family: "Franklin ITC Light", sans-serif;
+}
+
 .compact-issue .entry-header .entry-details {
 	padding: 0;
 	font-size: 14px;
