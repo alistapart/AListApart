@@ -776,6 +776,18 @@
 		text-align: center;
 	}
 
+	.comment-bubble {
+		font-size: 18px;
+		line-height: 18px;
+		padding: 9px 12px;
+	}
+
+	.comment-bubble:before {
+		left: 24px;
+		border-bottom: 9px solid #2555c3;
+		border-right: 9px solid transparent;
+	}
+
 	.the-deck.in-article {
 		border: 0;
 		min-height: 90px;
