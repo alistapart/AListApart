@@ -7,6 +7,13 @@
 		left: 0;
 	}
 
+	.entry-header .illustrator-credit,
+	.wide-hero .illustrator-credit,
+	.tall-hero .illustrator-credit,
+	.issue-page .logo-holder + .illustrator-credit {
+		right: 0;
+	}
+
 }
 
 @media only screen and (max-width: 78em) {
