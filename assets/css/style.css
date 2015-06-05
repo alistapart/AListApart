@@ -1332,7 +1332,6 @@ footer a.aside-author + time:before {
 	position: relative;
 	/*min-height: 120px;*/
 	margin: 36px 0;
-	padding-left: 132px;
 }
 
 .author-header {
@@ -1358,7 +1357,6 @@ footer a.aside-author + time:before {
 	margin-bottom: 36px;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 132px;
 }
 
 .article-layout .author-header {

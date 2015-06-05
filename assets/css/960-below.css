@@ -1,3 +1,14 @@
+@media only screen and (max-width: 1025px) {
+
+	.entry-header .issue-number,
+	.wide-hero .issue-number,
+	.tall-hero .issue-number,
+	.issue-page .logo-holder + .issue-number {
+		left: 0;
+	}
+
+}
+
 @media only screen and (max-width: 78em) {
 
 	.content-minutiae {
