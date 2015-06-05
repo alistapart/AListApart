@@ -155,11 +155,13 @@
 
 			</header>
 
+			{exp:gwcode_categories entry_id="{entry_id}" group_id="5" style="linear"}
  			{exp:channel:categories category_group="5" style="linear"}
 			<div class="main-content pre-article">
 				<p class="editors-note var1"><em>This article is part of a series on {category_name}.</em> Read {embed="embeds/article-series" exclude="{entry_id}" entrylink="{category_id}"}.</p>
 			</div>
 			{/exp:channel:categories}
+			{/exp:gwcode_categories}
 
 			{if article_editors_note}
 			<div class="main-content pre-article">

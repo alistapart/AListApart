@@ -52,19 +52,11 @@
 
 				<h1 class="entry-title">{title}</h1>
 
-				<p class="meta">
+				<p class="entry-details">
 
 					{if blog_hide_author != "y"}by {embed="embeds/article-authors-primary" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} · {/if}
 
-					<time class="article-pubdate" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>{!-- ·
-
-					Published in {categories backspace="2"}<a href="/topic/{category_url_title}">{category_name}</a>, {/categories--}
-
-					{if comment_total == 1}
-						· <a class="comment-count" href="#comments">1 Comment</a>
-					{if:elseif comment_total > 1}
-						· <a class="comment-count" href="#comments">{comment_total} Comments</a>
-					{/if}
+					<time class="article-pubdate" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
 
 				</p>
 
@@ -100,7 +92,7 @@
  			{exp:channel:categories category_group="5"}
 			<div class="main-content">
 				<p class="editors-note var1">This article is <b>Part {embed="embeds/article-series-count" exclude="{entry_id}" entrylink="{category_id}"}</b> of a series on <b>{category_name}</b>. Read {embed="embeds/article-series" exclude="{entry_id}" entrylink="{category_id}"}.</p>
-			</div> 
+			</div>
 			{/exp:channel:categories}
 			{/exp:gwcode_categories}
 

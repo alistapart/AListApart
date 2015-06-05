@@ -1168,7 +1168,9 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 	border-radius: 6px;
 }
 
-.entry-header {
+.entry-header,
+.author-header,
+.blog-header {
 	max-width: 960px;
 	margin: 0 auto;
 	margin-bottom: 24px;
@@ -1234,7 +1236,9 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 	font-weight: normal; */
 }
 
-.entry-header .entry-details {
+.entry-header .entry-details,
+.author-header .entry-details,
+.blog-header .entry-details {
 	font-weight: normal;
 	margin-bottom: 12px;
 	font-size: 18px;
@@ -1346,7 +1350,8 @@ footer a.aside-author + time:before {
 }
 
 .article-layout .author-header,
-.article-layout .blog-header {
+.article-layout .blog-header,
+.article-layout .entry-header {
 	width: 960px;
 	max-width: 100%;
 	margin-top: 72px;
@@ -1471,16 +1476,11 @@ footer a.aside-author + time:before {
 .author-header h1,
 .blog-header h1 {
 	margin-bottom: 0;
-	font-size: 48px;
-	line-height: 54px;
+	font-size: 36px;
+	line-height: 42px;
 	font-family: "Franklin ITC", sans-serif;
 	font-weight: bold;
 	font-style: normal;
-	margin-bottom: 6px;
-}
-
-.author-header h1 {
-	margin-bottom: 6px;
 }
 
 .blog-header h1 a {
@@ -1877,8 +1877,14 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	font-family: "Franklin ITC Light", sans-serif;
 	background: #2555c3;
 	color: #fff;
+	border: 2px solid #2555c3;
 	border-radius: 6px;
 	margin-bottom: 18px;
+	-webkit-transition: all .1s ease-in;
+	-moz-transition: all .1s ease-in;
+	-o-transition: all .1s ease-in;
+	-ms-transition: all .1s ease-in;
+	transition: all .1s ease-in;
 }
 
 .comment-bubble:before {
@@ -1891,6 +1897,12 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	height: 0;
 	border-bottom: 18px solid #2555c3;
 	border-right: 18px solid transparent;
+}
+
+.comment-bubble:hover {
+	color: #2555c3;
+	background-color: #fff;
+	text-decoration: none;
 }
 
 .content-minutiae .minutiae-block {
@@ -1939,28 +1951,55 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 
 .content-minutiae ul.propagation-enablers li a {
 	display: inline-block;
+	vertical-align: top;
 	width: 48px;
 	height: 48px;
+	line-height: 60px;
 	background-color: #2555c3;
 	color: #fff;
 	border-radius: 50%;
-	text-indent: 120%;
-	white-space: nowrap;
-	overflow: hidden;
-	background-position: center;
-	background-repeat: no-repeat;
+	-webkit-transition: all .1s ease-in;
+	-moz-transition: all .1s ease-in;
+	-o-transition: all .1s ease-in;
+	-ms-transition: all .1s ease-in;
+	transition: all .1s ease-in;
+}
+
+.content-minutiae ul.propagation-enablers li a svg {
+	display: inline-block;
+	max-width: 100%;
+	max-height: 100%;
+	fill: #fff;
+	-webkit-transition: all .1s ease-in;
+	-moz-transition: all .1s ease-in;
+	-o-transition: all .1s ease-in;
+	-ms-transition: all .1s ease-in;
+	transition: all .1s ease-in;
 }
 
 .content-minutiae ul.propagation-enablers li.circle-twitter a {
-	background-image: url(/components/assets/img/icon_share_twitter.png);
+	line-height: 58px;
 }
 
-.content-minutiae ul.propagation-enablers li.circle-facebook a {
-	background-image: url(/components/assets/img/icon_share_facebook.png);
+.content-minutiae ul.propagation-enablers li.circle-twitter a svg {
+	width: 45%
 }
 
-.content-minutiae ul.propagation-enablers li.circle-google a {
-	background-image: url(/components/assets/img/icon_share_google.png);
+.content-minutiae ul.propagation-enablers li.circle-facebook a svg {
+	width: 25%
+}
+
+.content-minutiae ul.propagation-enablers li.circle-google a svg {
+	width: 45%
+}
+
+.content-minutiae ul.propagation-enablers li a:hover {
+	color: #2555c3;
+	background-color: #fff;
+}
+
+.content-minutiae ul.propagation-enablers li a:hover svg {
+	fill: #2555c3;
 }
 
 .main-content > p,
