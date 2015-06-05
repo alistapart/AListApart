@@ -1184,7 +1184,7 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 
 .entry-header .entry-title {
 	margin: 0 0 6px;
-	padding: 0 48px;
+	padding: 0;
 	font-family: "Franklin ITC", sans-serif;
 	font-weight: bold;
 	font-style: normal;
@@ -1200,8 +1200,8 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 .issue-page .entry-header .entry-title {
 	margin: 0 0 6px;
 	padding: 0;
-	font-size: 48px;
-	line-height: 56px;
+	font-size: 36px;
+	line-height: 42px;
 	font-style: normal;
 }
 
@@ -1218,7 +1218,7 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 .home-page .entry-header .entry-title:first-child,
 .issue-page .entry-header .entry-title:first-child {
 	margin-top: 0;
-	padding: 0 48px;
+	padding: 0;
 }
 
 .home-page .entry-header .entry-title a,
@@ -1228,7 +1228,7 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 
 .entry-header p,
 .entry-header h2 {
-	padding: 0 48px;
+	padding: 0;
 	/* font-family: georgia, serif;
 	font-style: normal;
 	font-weight: normal; */
