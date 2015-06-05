@@ -1258,6 +1258,7 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 	line-height: 36px;
 	font-style: normal;
 	text-align: left;
+	font-family: georgia, serif;
 }
 
 .home-page .compact-issue .entry-header .entry-summary {
