@@ -3,10 +3,31 @@
 
 				<aside class="content-minutiae">
 
-					<div class="minutiae-block">
+					<a href="#comments" class="comment-bubble">
+					{if comment_total == 1}
+						1 comment
+					{if:elseif comment_total > 1}
+						{comment_total} comments
+					{if:elseif allow_comments}
+						no comments yet
+					{/if}
+					</a>
 
-						{if article_translations OR member_group == "1" || member_group == "6" || member_group == "7" || member_group == "8"}
-						<h1>Translations:</h1>
+					<div class="minutiae-block share-block">
+
+						<h1 class="propagation-enablers">Share this on</h1>
+						<ul class="propagation-enablers">
+							<li class="circle-twitter"><a href="http://twitter.com/intent/tweet?url=http://alistapart.com/article/{url_title}&text={exp:url_encode}{title}{/exp:url_encode}&via=alistapart" data-trackevent="Share: Twitter">Twitter</a></li><!--
+							--><li class="circle-facebook"><a href="http://www.facebook.com/sharer.php?u=http://alistapart.com/article/{url_title}&t={exp:url_encode}{title}{/exp:url_encode}" data-trackevent="Share: Facebook">Facebook</a></li><!--
+							--><li class="circle-google"><a href="https://plus.google.com/share?url=http://alistapart.com/article/{url_title}" data-trackevent="Share: Google+">Google+</a></li>
+						</ul>
+
+					</div>
+
+					{if article_translations OR member_group == "1" || member_group == "6" || member_group == "7" || member_group == "8"}
+					<div class="minutiae-block translation-block">
+
+						<h1>Translations</h1>
 						<ul>
 							{article_translations}
 							<li><a href="{cell_2}">{cell_1}</a></li>
@@ -15,19 +36,8 @@
 							<li><a href="/tools/translations/{url_title}">+ add a link</a></li>
 							{/if}
 						</ul>
-						{/if}
-
-					</div><!--
-
-					--><div class="minutiae-block">
-
-						<h1 class="propagation-enablers">Share This:</h1>
-						<ul class="propagation-enablers">
-							<li><a href="http://twitter.com/intent/tweet?url=http://alistapart.com/article/{url_title}&text={exp:url_encode}{title}{/exp:url_encode}&via=alistapart" data-trackevent="Share: Twitter">Twitter</a></li>
-							<li><a href="http://www.facebook.com/sharer.php?u=http://alistapart.com/article/{url_title}&t={exp:url_encode}{title}{/exp:url_encode}" data-trackevent="Share: Facebook">Facebook</a></li>
-							<li><a href="https://plus.google.com/share?url=http://alistapart.com/article/{url_title}" data-trackevent="Share: Google+">Google+</a></li>
-						</ul>
 
 					</div>
+					{/if}
 
 				</aside>

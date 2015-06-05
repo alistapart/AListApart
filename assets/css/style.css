@@ -781,7 +781,7 @@ aside.column.more-content .item-summary {
 }
 
 .event-copy .event-details .logistics-block {
-	padding-left:
+
 }
 
 .arrow-link:after {
@@ -1862,29 +1862,104 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	margin: 0;
 	margin-right: -132px;
 	width: 240px;
-	font-size: 12px;
-	line-height: 24px;
+	font-size: 14px;
+	line-height: 28px;
 	clear: left;
+}
+
+.comment-bubble {
+	position: relative;
+	display: inline-block;
+	font-size: 24px;
+	line-height: 24px;
+	padding: 18px 24px;
+	font-family: "Franklin ITC Light", sans-serif;
+	background: #2555c3;
+	color: #fff;
+	border-radius: 6px;
+	margin-bottom: 18px;
+}
+
+.comment-bubble:before {
+	content: '';
+	position: absolute;
+	bottom: 100%;
+	left: 54px;
+	display: block;
+	width: 0;
+	height: 0;
+	border-bottom: 18px solid #2555c3;
+	border-right: 18px solid transparent;
+}
+
+.content-minutiae .minutiae-block {
+	margin-bottom: 18px;
+	padding: 0 12px;
+	border: 1px solid #e8e8e8;
+	border-radius: 3px;
 }
 
 .issue-header .content-minutiae {
 	float: right;
-	margin: 0 -12px 0 0;
+	margin: 0 -12px 0;
 }
 
 .content-minutiae h1,
 .content-minutiae time,
-.content-minutiae li {
+.content-minutiae ul:not(.propagation-enablers) li {
 	display: block;
-	border-bottom: 1px solid #ddd;
+	text-align: center;
+	font-family: "Franklin ITC Light", sans-serif;
+	font-weight: normal;
+	border-top: 1px solid #f3f3f3;
+}
+
+.content-minutiae h1 {
+	border-top: 0;
+	line-height: 36px;
 }
 
 .content-minutiae time {
 	color: #bb3825;
 	text-transform: uppercase;
-	font-family: "Franklin ITC", sans-serif;
 	font-weight: bold;
 	font-style: normal;
+}
+
+.content-minutiae ul.propagation-enablers {
+	margin-bottom: 12px;
+	text-align: center;
+}
+
+.content-minutiae ul.propagation-enablers li {
+	display: inline-block;
+	width: 33%;
+}
+
+.content-minutiae ul.propagation-enablers li a {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	background-color: #2555c3;
+	color: #fff;
+	border-radius: 50%;
+	text-indent: 120%;
+	white-space: nowrap;
+	overflow: hidden;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.content-minutiae ul.propagation-enablers li.circle-twitter a {
+	background-image: url(/components/assets/img/icon_share_twitter.png);
+}
+
+.content-minutiae ul.propagation-enablers li.circle-facebook a {
+	background-image: url(/components/assets/img/icon_share_facebook.png);
+}
+
+.content-minutiae ul.propagation-enablers li.circle-google a {
+	background-image: url(/components/assets/img/icon_share_google.png);
 }
 
 .main-content > p,
@@ -3685,7 +3760,7 @@ ul.bullets {
 
 .the-deck.in-article {
 	background: #fff;
-	border: 1px solid #ddd;
+	border: 1px solid #e8e8e8;
 	display: block;
 	padding: 2em 1em;
 	text-align: center;

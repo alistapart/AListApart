@@ -773,17 +773,7 @@
 		float: none;
 		margin: 0 0 3em;
 		width: 100%;
-	}
-
-	.minutiae-block {
-		display: inline-block;
-		margin-left: 6%;
-		vertical-align: top;
-		width: 47%;
-	}
-
-	.minutiae-block:first-child {
-		margin-left: 0;
+		text-align: center;
 	}
 
 	.the-deck.in-article {

@@ -27,23 +27,23 @@ embed {
 }
 
 html {
-	font-size: 100%; 
-	-webkit-text-size-adjust: 100%; 
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 	overflow-y: scroll;
 }
 
-html, 
-button, 
-input, 
-select, 
+html,
+button,
+input,
+select,
 textarea {
 	color: #222;
 }
 
 body {
-	margin: 0; 
-	font-size: 1em; 
+	margin: 0;
+	font-size: 1em;
 	line-height: 1.4;
 }
 
@@ -55,9 +55,9 @@ blockquote {
 	quotes: none;
 }
 
-blockquote:before, 
+blockquote:before,
 blockquote:after {
-	content: ''; 
+	content: '';
 	content: none;
 }
 
@@ -66,14 +66,14 @@ del {
 }
 
 ::-moz-selection {
-	background: #ddd; 
-	color: #000; 
+	background: #ddd;
+	color: #000;
 	text-shadow: none;
 }
 
 ::selection {
-	background: #ddd; 
-	color: #000; 
+	background: #ddd;
+	color: #000;
 	text-shadow: none;
 }
 
@@ -93,7 +93,7 @@ abbr[title] {
 	border-bottom: 1px dotted;
 }
 
-b, 
+b,
 strong {
 	font-weight: bold;
 }
@@ -103,39 +103,39 @@ dfn {
 }
 
 hr {
-	display: block; 
-	height: 1px; 
-	border: 0; 
-	border-top: 1px solid #ccc; 
-	margin: 1em 0; 
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
 	padding: 0;
 }
 
 ins {
-	background: #ff9; 
-	color: #000; 
+	background: #ff9;
+	color: #000;
 	text-decoration: none;
 }
 
 mark {
-	background: #ff0; 
-	color: #000; 
-	font-style: italic; 
+	background: #ff0;
+	color: #000;
+	font-style: italic;
 	font-weight: bold;
 }
 
-pre, 
-code, 
-kbd, 
+pre,
+code,
+kbd,
 samp {
-	font-family: monospace, serif; 
-	_font-family: 'courier new', monospace; 
+	font-family: monospace, serif;
+	_font-family: 'courier new', monospace;
 	font-size: 1em;
 }
 
 pre {
-	white-space: pre; 
-	white-space: pre-wrap; 
+	white-space: pre;
+	white-space: pre-wrap;
 	word-wrap: break-word;
 }
 
@@ -143,11 +143,11 @@ small {
 	font-size: 85%;
 }
 
-sub, 
+sub,
 sup {
-	font-size: 75%; 
-	line-height: 0; 
-	position: relative; 
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
 	vertical-align: baseline;
 }
 
@@ -160,8 +160,8 @@ sub {
 }
 
 img {
-	border: 0; 
-	-ms-interpolation-mode: bicubic; 
+	border: 0;
+	-ms-interpolation-mode: bicubic;
 	vertical-align: middle;
 }
 
@@ -178,32 +178,32 @@ form {
 }
 
 fieldset {
-	border: 0; 
-	margin: 0; 
+	border: 0;
+	margin: 0;
 	padding: 0;
 }
 
-label, 
-input[type=button], 
-input[type=submit], 
+label,
+input[type=button],
+input[type=submit],
 button {
 	cursor: pointer;
 }
 
 legend {
-	border: 0; 
-	*margin-left: -7px; 
-	padding: 0; 
+	border: 0;
+	*margin-left: -7px;
+	padding: 0;
 	white-space: normal;
 }
 
-button, 
-input, 
-select, 
+button,
+input,
+select,
 textarea {
-	font-size: 100%; 
-	margin: 0; 
-	vertical-align: baseline; 
+	font-size: 100%;
+	margin: 0;
+	vertical-align: baseline;
 	*vertical-align: middle;
 }
 
@@ -211,76 +211,76 @@ button, input {
 	line-height: normal;
 }
 
-button, input[type="button"], 
-input[type="reset"], 
+button, input[type="button"],
+input[type="reset"],
 input[type="submit"] {
-	cursor: pointer; 
-	-webkit-appearance: button; 
+	cursor: pointer;
+	-webkit-appearance: button;
 	*overflow: visible;
 }
 
-button[disabled], 
+button[disabled],
 input[disabled] {
 	cursor: default;
 }
 
-input[type="checkbox"], 
+input[type="checkbox"],
 input[type="radio"] {
 	box-sizing: border-box; padding: 0; *width: 13px; *height: 13px;
 }
 
 input[type="search"] {
-	-moz-box-sizing: content-box; 
-	-webkit-box-sizing: content-box; 
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
 	box-sizing: content-box;
 }
 
-input[type="search"]::-webkit-search-decoration, 
+input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {
 	-webkit-appearance: none;
 }
 
-button::-moz-focus-inner, 
+button::-moz-focus-inner,
 input::-moz-focus-inner {
-	border: 0; 
+	border: 0;
 	padding: 0;
 }
 
 textarea {
-	overflow: auto; 
-	vertical-align: top; 
+	overflow: auto;
+	vertical-align: top;
 	resize: vertical;
 }
 
-input:invalid, 
+input:invalid,
 textarea:invalid {
 	/*background-color: #f0dddd;*/
 }
 
 /* tables still need cellspacing="0" in the markup */
 table {
-	border-collapse: collapse; 
+	border-collapse: collapse;
 	border-spacing: 0;
 }
 th {
-	font-weight: bold; 
+	font-weight: bold;
 	vertical-align: bottom;
 }
 td {
-	font-weight: normal; 
+	font-weight: normal;
 	vertical-align: top;
 }
 
 .chromeframe {
-	margin: 0.2em 0; 
-	background: #ccc; 
-	color: black; 
+	margin: 0.2em 0;
+	background: #ccc;
+	color: black;
 	padding: 0.2em 0;
 }
 
 /* apply a natural box layout model to all elements */
 * {
-	-moz-box-sizing: border-box; 
-	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
