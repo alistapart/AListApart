@@ -25,15 +25,15 @@
 					{/exp:strip_html}</p>
 				</article>
 				{/article_follow_up}
-				</section>
+			</section>
 				{if:else}
 				{exp:playa:parents status="open|In Progress"}
 				{exp:stash:set name="issue-number"}{issue_number}{/exp:stash:set}
 				{exp:playa:children child_id="not {embed:entry_id}" status="open|In Progress"}
-				<section>
+			<section>
 				{if count == "1"}
 				{article_illustration}
-				<figure class="sidebar-hero" data-picture data-alt="">
+				<figure class="sidebar-hero {if width > height}wideone{/if}" data-picture data-alt="">
 					<div data-src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}"></div>
 					<div data-src="{exp:ce_img:pair src="{url}" width="644" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" data-media="(min-width: 600px) and (min-device-pixel-ratio: 2.0)"></div>
 					<noscript><img src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
@@ -66,10 +66,10 @@
 					{/exp:strip_html}</p>
 					</article>
 				{/article_related_content}
-				</section>
+			</section>
 				{if:elseif !primary_category_no_results}
 				{primary_categories}
-				<section class="related-articles">
+			<section class="related-articles">
 					<h1 class="primary-cat-header">
 						Read more about
 						<a href="/topic/{primary_category_url_title}">{primary_category_name}</a>

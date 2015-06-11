@@ -197,11 +197,6 @@
 
 				{/exp:hop_inject:injection}
 
-
-				{exp:hop_inject:injection separator="-3" position="before"}
-				{embed="embeds/related-sidebar" entry_id="{entry_id}"}
-				{/exp:hop_inject:injection}
-
 				{article_content}
 
 				{/exp:hop_inject}
@@ -219,6 +214,8 @@
 
 				</section>
 				{/if}
+
+				{embed="embeds/related-sidebar" entry_id="{entry_id}"}
 
 				<footer class="entry-footer">
 

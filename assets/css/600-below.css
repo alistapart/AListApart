@@ -576,21 +576,6 @@
 		margin: 0 0 18px 18px;
 	}
 
-	.article-layout .main-content .sidebar.var1 {
-		width: 50%;
-		margin-left: 6px;
-		margin-right: -12px;
-		margin-bottom: 18px;
-		padding: 18px 9px 12px;
-		border-right: 0;
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
-	}
-
-	.sidebar-hero {
-		margin-bottom: 6px;
-	}
-
 	.article-layout .main-content .sidebar.var1 section h1 {
 		font-size: 12px;
 		line-height: 14px;
