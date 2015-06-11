@@ -924,6 +924,26 @@
 		margin-right: auto;
 	}
 
+	.article-layout .main-content .sidebar.var1 {
+		display: block;
+	}
+
+	.article-layout .main-content .sidebar.var1 section {
+		display: block;
+		width: 100%;
+		overflow: auto;
+	}
+
+	.article-layout .main-content .sidebar.var1 section + section {
+		border-left: 0;
+		margin-left: 0;
+		padding-left: 0;
+	}
+
+	.article-layout .main-content .sidebar.var1 section + section:before {
+		display: block;
+	}
+
 }
 
 @media only screen and (max-width: 20em) { /* 320px */

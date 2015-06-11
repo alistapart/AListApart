@@ -57,6 +57,14 @@
 		display: flex;
 	}
 
+	.article-layout .main-content .sidebar.var1 {
+		margin-top: 84px;
+	}
+
+	.widget-branding {
+		top: -60px;
+	}
+
 	.article-layout .main-content .sidebar.var1 section {
 		position: relative;
 		width: calc(50% - 12px);
@@ -267,6 +275,12 @@
 
 	.article-layout .main-content .sidebar.var1 .wideone {
 		float: none;
+	}
+
+	.article-layout .main-content .sidebar.var1 .wideone img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.article-layout .entry-footer {
