@@ -1,8 +1,22 @@
+{exp:switchee variable="{segment_2}" parse="inward"}
+    
+{case value="#^P(\d+)$#|''|archives"}
+
 {global-page-top}
 
 	<title>The A List Apart Blog</title>
 
-	<link rel="canonical" href="http://alistapart.com/blog"/>
+		<link rel="canonical" href="{site_url}{segment_1}{if segment_2}/{segment_2}{/if}{if segment_3}/{segment_3}{/if}"/>
+		{exp:channel:entries limit="10" channel="blog" status="open" dynamic="off" show_future_entries="no"}
+
+			{paginate}
+
+				{if next_page}<link rel="next" href="{auto_path}" />{/if}
+				{if previous_page}<link rel="prev" href="{auto_path}" />{/if}
+
+			{/paginate}
+
+		{/exp:channel:entries}
 
 </head>
 
@@ -110,3 +124,13 @@
 {global-footer}
 
 {global-page-bottom}
+
+{/case}
+
+{case default="Yes"}
+
+	{redirect="/blog/post/{segment_2}"}
+
+{/case}
+
+{/exp:switchee}

@@ -1,8 +1,22 @@
+{exp:switchee variable="{segment_3}" parse="inward"}
+    
+{case value="#^P(\d+)$#|''"}
+
 {global-page-top}
 
 	<title>A List Apart: The Columns</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
+			
+	<link rel="canonical" href="{site_url}{segment_1}{if segment_2}/{segment_2}{/if}{if segment_3}/{segment_3}{/if}"/>
+	{exp:channel:entries limit="10" channel="columns" status="open" dynamic="off" show_future_entries="no"}
+
+		{paginate}
+
+			{if next_page}<link rel="next" href="{auto_path}" />{/if}
+			{if previous_page}<link rel="prev" href="{auto_path}" />{/if}
+
+		{/paginate}
+
+	{/exp:channel:entries}
 		
 </head>
 
@@ -26,31 +40,6 @@
 				{embed="embeds/column-list" offset="0"}
 				{/if}
 				
-				<nav class="paginator" role="toolbar">
-			
-					<ul>
-						{if segment_3}
-				
-						<?php
-						
-						$thisBatch = {segment_3} + 0;
-						$previousBatch = $thisBatch + 10;
-						$nextBatch = $thisBatch - 10;
-						
-						?>
-						
-						<li><a class="previous" href="/columns/archives/<?php echo $previousBatch; ?>">Previous</a></li>
-						<li><a class="next" href="/columns/archives/<?php if ($nextBatch > 0) echo $nextBatch; ?>">Next</a></li>
-						
-						{if:else}
-						
-						<li><a class="previous" href="/columns/archives/10">Previous</a></li>
-						
-						{/if}
-					</ul>
-				
-				</nav>
-	
 				</article><!--
 			
 			--><div class="secondary-column">
@@ -76,3 +65,13 @@
 {global-footer}
 	
 {global-page-bottom}
+
+{/case}
+
+{case default="Yes"}
+
+	{redirect="/column/archives/{segment_3}"}
+
+{/case}
+
+{/exp:switchee}

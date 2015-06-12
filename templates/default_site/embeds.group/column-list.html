@@ -1,6 +1,6 @@
 
 				<ul class="entry-list">
-				{exp:channel:entries channel="columns" limit="10" status="open" dynamic="off" show_future_entries="no" offset="{embed:offset}"}
+				{exp:channel:entries channel="columns" limit="10" status="open" dynamic="off" show_future_entries="no" offset="{embed:offset}" paginate="bottom"}
 
 				{if no_results}
 				{redirect="404"}
@@ -17,6 +17,19 @@
 						</p>
 						<p>{exp:strip_html}{column_intro}{/exp:strip_html}</p>
 					</li>
-
+					{paginate}
+					<li class="paginator" role="toolbar">
+						<ul>
+			        		{if next_page}
+			        			<li><a class="previous" href="{auto_path}">Previous</a></li>
+				        	{/if}
+			        		{if previous_page}
+			            			<li><a class="next" href="{auto_path}">Next</a></li>
+			        		{/if}
+						</ul>
+					</li>
+					{/paginate}
 				{/exp:channel:entries}
 				</ul>
+
+

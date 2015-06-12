@@ -26,4 +26,18 @@
 					{/exp:playa:children}
 
 				</ul>
+				
+				{paginate}
+					<nav class="paginator" role="toolbar">
+						<ul>
+			        		{if next_page}
+			        			<li><a class="previous" href="{auto_path}">Previous</a></li>
+				        	{/if}
+			        		{if previous_page}
+			            			<li><a class="next" href="{auto_path}">Next</a></li>
+			        		{/if}
+						</ul>
+					</nav>
+				{/paginate}
+
 				{/exp:channel:entries}
