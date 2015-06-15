@@ -12,25 +12,48 @@
 		border-right: 0;
 	}
 
-	@media only screen and (min-width: 37.5em) { /* 767px */
+	.event-details .logistics .logistics-block {
+		display: inline-block;
+		vertical-align: top;
+		width: 45%;
+		padding-right: 18px;
+		text-align: left;
+	}
 
-		.event-details .logistics {
-			width: 25%;
-			display: inline-block;
-			vertical-align: top;
-		}
+	.event-details .logistics-block.bordered {
+		width: 100%;
+		text-align: center;
+	}
 
-		.event-details .sponsor-block {
-			width: 75%;
-			display: inline-block;
-			border-top: 0;
-			vertical-align: top;
-		}
+	.event-details .logistics span {
+		display: inline;
+		padding: 0;
+	}
 
-		.event-details .sponsor-block .sponsor-label {
-			margin-top: 0;
-		}
+	.event-details .logistics span.where {
+		display: block;
+	}
 
+	.event-details .logistics span.what1:after {
+		content: ", ";
+	}
+
+	.event-details .logistics span.time {
+		display: inline-block;
+		clear: both;
+	}
+
+	.event-details .logistics span.register-link {
+		display: block;
+	}
+
+	.event-details .logistics span.big-number,
+	.event-details .logistics span.register-link a {
+		font-size: 16px;
+	}
+
+	.event-details .logistics span.register-link a {
+		display: inline;
 	}
 
 	.two-column-display .main-content,
@@ -161,44 +184,6 @@
 
 	.event-details .sponsor-block {
 		margin-bottom: 36px;
-	}
-
-	.event-details .logistics .logistics-block {
-		display: inline-block;
-		vertical-align: top;
-		width: 50%;
-		padding-right: 18px;
-		text-align: left;
-	}
-
-	.event-details .logistics span {
-		display: inline;
-	}
-
-	.event-details .logistics span.where {
-		display: block;
-	}
-
-	.event-details .logistics span.what1:after {
-		content: ", ";
-	}
-
-	.event-details .logistics span.time {
-		display: inline-block;
-		clear: both;
-	}
-
-	.event-details .logistics span.register-link {
-		display: block;
-	}
-
-	.event-details .logistics span.big-number,
-	.event-details .logistics span.register-link a {
-		font-size: 16px;
-	}
-
-	.event-details .logistics span.register-link a {
-		display: inline;
 	}
 
 	.global-nav {
