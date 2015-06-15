@@ -7,16 +7,8 @@
 		<title>A List Apart: The Articles</title>
 
 		<link rel="canonical" href="{site_url}{segment_1}{if segment_2}/{segment_2}{/if}{if segment_3}/{segment_3}{/if}"/>
-		{exp:channel:entries limit="10" channel="issues" status="open" dynamic="off" show_future_entries="no"}
-
-			{paginate}
-
-				{if next_page}<link rel="next" href="{auto_path}" />{/if}
-				{if previous_page}<link rel="prev" href="{auto_path}" />{/if}
-
-			{/paginate}
-
-		{/exp:channel:entries}
+		{exp:channel:entries limit="10" channel="issues" status="open" dynamic="off" show_future_entries="no" paginate="top"}{paginate}{if next_page}<link rel="next" href="{auto_path}" />{/if}
+		{if previous_page}<link rel="prev" href="{auto_path}" />{/if}{/paginate}{/exp:channel:entries}
 
 	</head>
 
