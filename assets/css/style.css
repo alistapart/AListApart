@@ -3083,7 +3083,7 @@ ol.article-comments > li {
 	margin: 12px 0 48px;
 	padding: 17px 11px;
 	border: 1px solid #ddd;
-	border-radius: 6px;
+	border-radius: 3px;
 }
 
 ol.article-comments > li .comment-tools {
