@@ -222,7 +222,8 @@
 	.article-layout .main-content > h3,
 	.article-layout .main-content > h4,
 	.article-layout .main-content > h5,
-	.article-layout .main-content > h6 {
+	.article-layout .main-content > h6,
+	.promo-box {
 		margin-left: 0;
 		margin-right:0;
 	}

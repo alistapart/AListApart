@@ -2831,6 +2831,22 @@ pre.editing code {
 }
 */
 
+.promo-box {
+	margin-right: 132px;
+	margin-left: 132px;
+	margin-bottom: 60px;
+	font-size: 18px;
+	font-family: "Franklin ITC Light", sans-serif;
+	text-align: center;
+	padding: 12px;
+	border: 1px solid #dfdfdf;
+	border-radius: 3px;
+}
+
+.promo-box b {
+	font-family: "Franklin ITC", sans-serif;
+}
+
 .entry-footer {
 	min-height: 280px;
 	padding: 35px 0 60px;
