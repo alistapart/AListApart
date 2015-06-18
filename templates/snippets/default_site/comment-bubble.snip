@@ -1,0 +1,11 @@
+
+
+   <a href="#comments" class="comment-bubble">
+   {if comment_total == 1}
+      1 comment
+   {if:elseif comment_total > 1}
+      {comment_total} comments
+   {if:elseif allow_comments}
+      no comments yet
+   {/if}
+   </a>
