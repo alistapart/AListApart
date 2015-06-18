@@ -9,7 +9,7 @@
     xmlns:content="http://purl.org/rss/1.0/modules/content/">
 
     <channel>
-    
+
     <title><![CDATA[A List Apart: The Full Feed]]></title>
     <link>http://alistapart.com</link>
     <description>Articles, columns, and blog posts for people who make web sites.</description>
@@ -17,7 +17,7 @@
     <dc:creator>The fine folks at A List Apart</dc:creator>
     <dc:rights>Copyright {gmt_date format="%Y"}</dc:rights>
     <dc:date>{gmt_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
-    
+
 {exp:channel:entries channel="issues|columns|blog|link_posts|rss_only|rss_sponsorships" limit="20" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no"}
 	{if channel_short_name == "issues"}
 	{exp:playa:children field="issue_articles"}
@@ -33,7 +33,7 @@
     {/exp:playa:children}
 	{if:elseif channel_short_name == "columns"}
     <item>
-      <title><![CDATA[{categories show_group="4"}{category_name}{/categories}: {title}]]></title>
+      <title><![CDATA[{categories show_group="4"}{category_name}{/categories}: {exp:strip_html}{title}{/exp:strip_html}]]></title>
       <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
       <link>http://alistapart.com/column/{url_title}</link>
       <guid>http://alistapart.com/column/{url_title}</guid>
@@ -62,7 +62,7 @@
     </item>
 	{if:elseif channel_short_name == "rss_only"}
     <item>
-      <title><![CDATA[{title}]]></title>
+      <title><![CDATA[{exp:strip_html}{title}{/exp:strip_html}]]></title>
       <link>http://alistapart.com/</link>
       <guid>http://alistapart.com/</guid>
       <description><![CDATA[{rss_content}]]></description>
@@ -71,7 +71,7 @@
     </item>
 	{if:elseif channel_short_name == "rss_sponsorships"}
     <item>
-      <title><![CDATA[This week's sponsor: {title}]]></title>
+      <title>This week's sponsor: {exp:strip_html}{exp:xml_encode}{title}{/exp:xml_encode}{/exp:strip_html}</title>
       <link>{ad_target_url}</link>
       <guid>{ad_target_url}</guid>
       <description><![CDATA[{ad_content_rss}]]></description>
@@ -80,7 +80,7 @@
     </item>
     {/if}
 {/exp:channel:entries}
-    
+
     </channel>
 </rss>
 
