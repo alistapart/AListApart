@@ -1,3 +1,4 @@
 {exp:channel:entries channel="articles|columns|blog" category="{embed:entrylink}" orderby="date" sort="asc" dynamic="no" sticky="no"}
-{if entry_id != '{embed:exclude}'}{if count == total_results}and {/if}part {count}, <a href="{site_url}{if channel_short_name == 'blog'}blog/post/{if:elseif channel_short_name == 'columns'}column/{if:elseif channel_short_name == 'articles'}article/{/if}{url_title}" title="{title}" class="series">{title}</a>{/if}
-{/exp:channel:entries}
+{if count == 1}<p class="editors-note var1"><em>This article is part of a {total_results}-part series.</em> Read{/if}
+{if entry_id != '{embed:exclude}'}{if count == total_results - 1}and {/if}part {if count == 1}one{if:elseif count == 2}two{if:elseif count == 3}three{if:elseif count == 4}four{if:else}{count}{/if}, <a href="{site_url}{if channel_short_name == 'blog'}blog/post/{if:elseif channel_short_name == 'columns'}column/{if:elseif channel_short_name == 'articles'}article/{/if}{url_title}" title="{title}" class="series">{title}</a>{/if}
+{/exp:channel:entries}.</p>
