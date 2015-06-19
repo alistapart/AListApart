@@ -50,7 +50,7 @@
 
 			<header class="entry-header">
 
-				{exp:stash:set name="issue-number"}{exp:playa:parents status="open|In Progress"}<a href="/issue/{issue_number}" class="issue-number"><span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue" class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a>{/exp:playa:parents}{/exp:stash:set}
+				{exp:stash:set name="issue-number"}{exp:playa:parents status="open|In Progress"}<span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue"><a itemprop="url" href="/issue/{issue_number}" class="issue-number"><span class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a> {/exp:playa:parents}{/exp:stash:set}
 
 				{if article_illustration OR article_legacy_illo}
 				{exp:stash:set name="illustrator-credit"}
@@ -125,9 +125,9 @@
 
 				<h1 itemprop="headline name" class="entry-title">{title}</h1>
 
-				<p itemprop="author" itemscope itemtype="http://schema.org/Person" class="entry-details">
+				<p class="entry-details">
 
-					by {embed="embeds/article-authors-primary" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+					<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {embed="embeds/article-authors-primary" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</span>
 
 					{exp:playa:parents status="open|In Progress"}<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}" itemprop="datePublished">{entry_date format="%F %d, %Y"}</time>{/exp:playa:parents}
 
