@@ -46,15 +46,29 @@
 
 	<div role="main" class="main-wrapper">
 
-		<article class="article-layout hentry">
+		<article itemscope itemtype="http://www.schema.org/Article" class="article-layout hentry">
 
 			<header class="entry-header">
 
-				{exp:stash:set name="issue-number"}{exp:playa:parents status="open|In Progress"}<a href="/issue/{issue_number}" class="issue-number"><span>Issue №</span> {issue_number}</a>{/exp:playa:parents}{/exp:stash:set}
+				{exp:stash:set name="issue-number"}{exp:playa:parents status="open|In Progress"}<span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue"><a itemprop="url" href="/issue/{issue_number}" class="issue-number"><span class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a> {/exp:playa:parents}{/exp:stash:set}
+
+				{if article_illustration OR article_legacy_illo}
+				{exp:stash:set name="illustrator-credit"}
+				<p itemprop="contributor" itemscope itemtype="http://schema.org/Person" class="illustrator-credit">Illustration by
+					{if "{article_illustrator:entry_id}" != ""}
+					{article_illustrator}
+					{embed="embeds/article-illustrator-link" entry_id="{article_illustrator:entry_id}"}
+					{/article_illustrator}
+					{if:else}
+					<a itemprop="url" href="/author/kcornell"><span itemprop="name">Kevin Cornell</span></a>
+					{/if}
+				</p>
+				{/exp:stash:set}
+				{/if}
 
 				{if article_responsive_illo != ""}
 
-				<figure class="wide-hero responsive-hero" data-picture data-alt="">
+				<figure itemscope itemtype="http://schema.org/ImageObject" class="wide-hero responsive-hero" data-picture data-alt="">
 					{article_responsive_illo}
 					<div data-src="{exp:ce_img:pair src="{cell_1}" width="{cell_2}" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" {if cell_2 != ""}data-media="(max-width: {cell_2}px)"{/if}></div>
 					{/article_responsive_illo}
@@ -63,6 +77,7 @@
 					<noscript>{article_illustration}<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt="">{/article_illustration}</noscript>
 
 					{exp:stash:get name="issue-number"}
+					{exp:stash:get name="illustrator-credit"}
 				</figure>
 
 				{if:else}
@@ -80,6 +95,7 @@
 					<noscript><img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
 
 					{exp:stash:get name="issue-number"}
+					{exp:stash:get name="illustrator-credit"}
 				</figure>
 				{if:else}
 				<figure class="wide-hero" data-picture data-alt="">
@@ -91,6 +107,7 @@
 					<noscript><img src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
 
 					{exp:stash:get name="issue-number"}
+					{exp:stash:get name="illustrator-credit"}
 				</figure>
 				{/if}
 				{/article_illustration}
@@ -98,6 +115,7 @@
 				<figure class="wide-hero">
 				{article_legacy_illo}
 				{exp:stash:get name="issue-number"}
+				{exp:stash:get name="illustrator-credit"}
 				</figure>
 				{if:else}
 				{exp:stash:get name="issue-number"}
@@ -105,25 +123,17 @@
 
 				{/if} {!-- end != murtaugh --}
 
-				<h1 class="entry-title">{title}</h1>
+				<h1 itemprop="headline name" class="entry-title">{title}</h1>
 
 				<p class="entry-details">
 
-					by {embed="embeds/article-authors-primary" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+					<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {embed="embeds/article-authors-primary" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</span>
 
-					{exp:playa:parents status="open|In Progress"}<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>{/exp:playa:parents}
+					{exp:playa:parents status="open|In Progress"}<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}" itemprop="datePublished">{entry_date format="%F %d, %Y"}</time>{/exp:playa:parents}
 
-					<span class="optional-break">
+					<span class="entry-meta optional-break">
 
 						Published in {modern-categories}
-
-						{if comment_total == 1}
-							· <a class="comment-count" href="#comments">1 Comment</a>
-						{if:elseif comment_total > 1}
-							· <a class="comment-count" href="#comments">{comment_total} Comments</a>
-						{if:elseif allow_comments}
-							· <a class="comment-count no-comments" href="#comments">No Comments (yet)</a>
-						{/if}
 
 					</span>
 
@@ -145,19 +155,27 @@
 
 			</header>
 
+			{exp:gwcode_categories entry_id="{entry_id}" group_id="5" style="linear"}
+ 			{exp:channel:categories category_group="5" style="linear"}
+			<div class="main-content pre-article">
+				<p class="editors-note var1"><em>This article is part of a series on {category_name}.</em> Read {embed="embeds/article-series" exclude="{entry_id}" entrylink="{category_id}"}.</p>
+			</div>
+			{/exp:channel:categories}
+			{/exp:gwcode_categories}
+
 			{if article_editors_note}
-			<div class="main-content">
+			<div class="main-content pre-article">
 				<p class="editors-note"><b>A note from the editors:</b> {article_editors_note}</p>
 			</div>
 			{/if}
 
- 			{exp:gwcode_categories entry_id="{entry_id}" group_id="5"}
- 			{exp:channel:categories category_group="5"}
-			<div class="main-content">
-				<p class="editors-note var1">This article is <b>Part {embed="embeds/article-series-count" exclude="{entry_id}" entrylink="{category_id}"}</b> of a series on <b>{category_name}</b>. Read {embed="embeds/article-series" exclude="{entry_id}" entrylink="{category_id}"}.</p>
-			</div> 
-			{/exp:channel:categories}
-			{/exp:gwcode_categories}
+			{article_outdated}
+			{if article_age_flag == 'y'}
+			<div class="main-content pre-article">
+			   <p class="editors-note var1"><b>{if custom_note}{custom_note}{if:else}While helpful in its day, this article is out of date.{/if}</b> {if updated_entry}We suggest reading {updated_entry}<a href="{url_title}" title="{title}">{title}</a>{/updated_entry} instead.{/if}</p>
+			</div>
+			{/if}
+			{/article_outdated}
 
 			{if article_opening_blockquote}
 			<div class="main-content">
@@ -167,7 +185,7 @@
 			</div>
 			{/if}
 
-			<div class="main-content">
+			<div itemprop="articleBody" class="main-content">
 
 				{exp:hop_inject where="<p>" always_inject="y"}
 
@@ -177,10 +195,6 @@
 
 				{ads-article}
 
-				{/exp:hop_inject:injection}
-
-				{exp:hop_inject:injection separator="-2" position="before"}
-				{embed="embeds/issue-sidebar" entry_id="{entry_id}"}
 				{/exp:hop_inject:injection}
 
 				{article_content}
@@ -201,13 +215,19 @@
 				</section>
 				{/if}
 
+				{embed="embeds/related-sidebar" entry_id="{entry_id}"}
+
+				<footer class="entry-footer">
+
+					{embed="embeds/article-author-bio" entry_author="{author_id}" entry_id="{entry_id}"}
+
+				</footer>
+
+				<aside class="promo-box email-promo">
+					<b>Enjoy this article?</b> <a href="/email-signup" data-trackevent="Post-article: email promo">Sign up for ALA Email Alerts</a> &amp; get the latest from ALA in your inbox!
+				</aside>
+
 			</div>
-
-			<footer class="entry-footer">
-
-				{embed="embeds/article-author-bio" entry_author="{author_id}" entry_id="{entry_id}"}
-
-			</footer>
 
 			<div class="post-article">
 
@@ -216,7 +236,7 @@
 					<section id="comments" class="column comment-holder">
 
 						{if comment_total > 0}
-							<h1 class="classy">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
+							<h1 itemprop="commentCount" class="classy">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
 
 							<a href="/comments/{url_title}" id="load-comments" data-url-title="{url_title}" class="buttonish">Load Comments</a>
 

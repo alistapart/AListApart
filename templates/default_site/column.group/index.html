@@ -46,18 +46,16 @@
 
 				<h1 class="entry-title">{title}</h1>
 
-				<p class="meta">
-					<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time> ·
+				<p class="entry-details">
 
-					Published in {modern-categories}
+					<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
 
-					{if comment_total == 1}
-						 · <a class="comment-count" href="#comments">1 Comment</a>
-					{if:elseif comment_total > 1}
-						 · <a class="comment-count" href="#comments">{comment_total} Comments</a>
-					{if:elseif allow_comments}
-						 · <a class="comment-count no-comments" href="#comments">No Comments (yet)</a>
-					{/if}
+					<span class="entry-meta optional-break">
+
+						Published in {modern-categories}
+
+					</span>
+
 				</p>
 
 				{if status != "open" OR {entry_date} > {current_time}}
@@ -74,22 +72,20 @@
 
 			</header>
 
-			{if column_editors_note}
-			<div class="main-content">
-
-				<p class="editors-note column-note"><b>A note from the editors:</b> {column_editors_note}</p>
-
+			{exp:gwcode_categories entry_id="{entry_id}" group_id="5" style="linear"}
+			{exp:channel:categories category_group="5" style="linear"}
+			<div class="main-content pre-article">
+				<p class="editors-note var1"><em>This article is part of a series on {category_name}.</em> Read {embed="embeds/article-series" exclude="{entry_id}" entrylink="{category_id}"}.</p>
 			</div>
-			{/if}
-	 
- 			{exp:gwcode_categories entry_id="{entry_id}" group_id="5"}
- 			{exp:channel:categories category_group="5"}
-			<div class="main-content">
-				<p class="editors-note var1">This article is <b>Part {embed="embeds/article-series-count" exclude="{entry_id}" entrylink="{category_id}"}</b> of a series on <b>{category_name}</b>. Read {embed="embeds/article-series" exclude="{entry_id}" entrylink="{category_id}"}.</p>
-			</div> 
 			{/exp:channel:categories}
 			{/exp:gwcode_categories}
-		 
+
+			{if column_editors_note}
+			<div class="main-content pre-article">
+				<p class="editors-note"><b>A note from the editors:</b> {column_editors_note}</p>
+			</div>
+			{/if}
+
 			{if column_opening_blockquote}
 			<div class="main-content">
 

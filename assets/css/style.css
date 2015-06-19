@@ -557,7 +557,6 @@ ul.inline-items li {
 .meta a.aside-author {
 	font-family: "Franklin ITC", sans-serif;
 	font-style: normal;
-	text-transform: uppercase;
 }
 
 .item-summary {
@@ -788,7 +787,7 @@ aside.column.more-content .item-summary {
 }
 
 .event-copy .event-details .logistics-block {
-	padding-left:
+
 }
 
 .arrow-link:after {
@@ -949,7 +948,12 @@ aside.column.more-content .item-summary {
 }
 
 .sidebar-hero {
-	margin-bottom: 18px;
+	margin-bottom: 12px;
+	max-height: 124px;
+}
+
+.sidebar-hero img {
+	max-height: 100%;
 }
 
 @media only screen and (min-width: 87.5em) { /* 1400px */
@@ -1021,6 +1025,37 @@ aside.column.more-content .item-summary {
 
 }
 
+.entry-header .illustrator-credit,
+.wide-hero .illustrator-credit,
+.tall-hero .illustrator-credit,
+.issue-page .logo-holder + .illustrator-credit {
+	position: absolute;
+	bottom: 0;
+	right: -24px;
+	padding: 0 6px;
+	margin: 0;
+	background: #fff;
+	background: rgba(255,255,255,.7);
+	border-radius: 3px;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.entry-header .illustrator-credit a,
+.wide-hero .illustrator-credit a,
+.tall-hero .illustrator-credit a,
+.issue-page .logo-holder + .illustrator-credit a {
+	font-weight: bold;
+}
+
+.entry-header .issue-number,
+.wide-hero .issue-number,
+.tall-hero .issue-number,
+.issue-page .logo-holder + .issue-number {
+	position: absolute;
+
+}
+
 @media only screen and (min-width: 37.5em) { /* 600px */
 
 	.entry-header .issue-number,
@@ -1071,10 +1106,10 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 	text-decoration: none;
 }
 
-.entry-header .issue-number span,
-.wide-hero .issue-number span,
-.tall-hero .issue-number span,
-.issue-page .logo-holder + .issue-number span {
+.entry-header .issue-number .badge,
+.wide-hero .issue-number .badge,
+.tall-hero .issue-number .badge,
+.issue-page .logo-holder + .issue-number .badge {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1139,12 +1174,15 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 	border-radius: 6px;
 }
 
-.entry-header {
+.entry-header,
+.author-header,
+.blog-header {
 	max-width: 960px;
 	margin: 0 auto;
-	margin-bottom: 30px;
-	font-style: italic;
+	margin-bottom: 24px;
 	text-align: center;
+	font-family: "Franklin ITC Light", sans-serif;
+	font-weight: normal;
 }
 
 .home-page .entry-header,
@@ -1154,12 +1192,12 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 
 .entry-header .entry-title {
 	margin: 0 0 6px;
-	padding: 0 48px;
+	padding: 0;
 	font-family: "Franklin ITC", sans-serif;
 	font-weight: bold;
 	font-style: normal;
-	font-size: 48px;
-	line-height: 56px;
+	font-size: 36px;
+	line-height: 42px;
 }
 
 .entry-header .entry-title a {
@@ -1170,8 +1208,8 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 .issue-page .entry-header .entry-title {
 	margin: 0 0 6px;
 	padding: 0;
-	font-size: 48px;
-	line-height: 56px;
+	font-size: 36px;
+	line-height: 42px;
 	font-style: normal;
 }
 
@@ -1188,7 +1226,7 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 .home-page .entry-header .entry-title:first-child,
 .issue-page .entry-header .entry-title:first-child {
 	margin-top: 0;
-	padding: 0 48px;
+	padding: 0;
 }
 
 .home-page .entry-header .entry-title a,
@@ -1198,19 +1236,27 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 
 .entry-header p,
 .entry-header h2 {
-	padding: 0 48px;
+	padding: 0;
 	/* font-family: georgia, serif;
 	font-style: normal;
 	font-weight: normal; */
 }
 
-.entry-header .entry-details {
-	font-family: georgia;
-	font-style: italic;
+.entry-header .entry-details,
+.author-header .entry-details,
+.blog-header .entry-details {
 	font-weight: normal;
 	margin-bottom: 12px;
 	font-size: 18px;
 	line-height: 30px;
+}
+
+.entry-list li p.entry-details {
+	font-weight: normal;
+	margin-bottom: 6px;
+	font-size: 16px;
+	line-height: 26px;
+	font-family: "Franklin ITC Light", sans-serif;
 }
 
 .compact-issue .entry-header .entry-details {
@@ -1230,6 +1276,7 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 	line-height: 36px;
 	font-style: normal;
 	text-align: left;
+	font-family: georgia, serif;
 }
 
 .home-page .compact-issue .entry-header .entry-summary {
@@ -1255,6 +1302,10 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 footer a.author + time:before,
 footer a.aside-author + time:before {
 	content: " · ";
+}
+
+.entry-meta {
+	font-size: 14px;
 }
 
 .comment-count {
@@ -1295,7 +1346,6 @@ footer a.aside-author + time:before {
 	position: relative;
 	/*min-height: 120px;*/
 	margin: 36px 0;
-	padding-left: 132px;
 }
 
 .author-header {
@@ -1313,14 +1363,14 @@ footer a.aside-author + time:before {
 }
 
 .article-layout .author-header,
-.article-layout .blog-header {
+.article-layout .blog-header,
+.article-layout .entry-header {
 	width: 960px;
 	max-width: 100%;
 	margin-top: 72px;
 	margin-bottom: 36px;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 132px;
 }
 
 .article-layout .author-header {
@@ -1438,16 +1488,11 @@ footer a.aside-author + time:before {
 .author-header h1,
 .blog-header h1 {
 	margin-bottom: 0;
-	font-size: 48px;
-	line-height: 54px;
+	font-size: 36px;
+	line-height: 42px;
 	font-family: "Franklin ITC", sans-serif;
 	font-weight: bold;
 	font-style: normal;
-	margin-bottom: 6px;
-}
-
-.author-header h1 {
-	margin-bottom: 6px;
 }
 
 .blog-header h1 a {
@@ -1502,9 +1547,23 @@ ul.fancy-links li a.googleplus {
 }
 
 .article-layout .main-content {
+	position: relative;
 	width: 960px;
 	max-width: 100%;
 	margin: 0 auto;
+}
+
+.main-content.pre-article:not(:last-of-type) > p {
+	margin: 0;
+}
+
+.main-content.pre-article {
+	margin-bottom: 24px;
+}
+
+.main-content.pre-article + .main-content.pre-article {
+	/* the use of the negative margin is to overcome the fact that :last-of-type doesn't work with classes */
+	margin-top: -18px;
 }
 
 .single-column-display .col-holder,
@@ -1816,29 +1875,143 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	margin: 0;
 	margin-right: -132px;
 	width: 240px;
-	font-size: 12px;
-	line-height: 24px;
+	font-size: 14px;
+	line-height: 28px;
 	clear: left;
+}
+
+.comment-bubble {
+	position: relative;
+	display: inline-block;
+	font-size: 24px;
+	line-height: 24px;
+	padding: 18px 24px;
+	font-family: "Franklin ITC Light", sans-serif;
+	background: #2555c3;
+	color: #fff;
+	border: 2px solid #2555c3;
+	border-radius: 6px;
+	margin-bottom: 18px;
+	-webkit-transition: all .1s ease-in;
+	-moz-transition: all .1s ease-in;
+	-o-transition: all .1s ease-in;
+	-ms-transition: all .1s ease-in;
+	transition: all .1s ease-in;
+}
+
+.comment-bubble:before {
+	content: '';
+	position: absolute;
+	bottom: 100%;
+	left: 54px;
+	display: block;
+	width: 0;
+	height: 0;
+	border-bottom: 18px solid #2555c3;
+	border-right: 18px solid transparent;
+}
+
+.comment-bubble:hover {
+	color: #2555c3;
+	background-color: #fff;
+	text-decoration: none;
+}
+
+.content-minutiae .minutiae-block {
+	margin-bottom: 18px;
+	padding: 0 12px;
+	border: 1px solid #e8e8e8;
+	border-radius: 3px;
 }
 
 .issue-header .content-minutiae {
 	float: right;
-	margin: 0 -12px 0 0;
+	margin: 0 -12px 0;
 }
 
 .content-minutiae h1,
 .content-minutiae time,
-.content-minutiae li {
+.content-minutiae ul:not(.propagation-enablers) li {
 	display: block;
-	border-bottom: 1px dotted #bfbfbf;
+	text-align: center;
+	font-family: "Franklin ITC Light", sans-serif;
+	font-weight: normal;
+	border-top: 1px solid #f3f3f3;
+}
+
+.content-minutiae h1 {
+	border-top: 0;
+	line-height: 36px;
 }
 
 .content-minutiae time {
 	color: #bb3825;
 	text-transform: uppercase;
-	font-family: "Franklin ITC", sans-serif;
 	font-weight: bold;
 	font-style: normal;
+}
+
+.content-minutiae ul.propagation-enablers {
+	margin-bottom: 12px;
+	text-align: center;
+}
+
+.content-minutiae ul.propagation-enablers li {
+	display: inline-block;
+	width: 33%;
+}
+
+.content-minutiae ul.propagation-enablers li a {
+	display: inline-block;
+	vertical-align: top;
+	width: 48px;
+	height: 48px;
+	line-height: 60px;
+	background-color: #2555c3;
+	color: #fff;
+	border-radius: 50%;
+	-webkit-transition: all .1s ease-in;
+	-moz-transition: all .1s ease-in;
+	-o-transition: all .1s ease-in;
+	-ms-transition: all .1s ease-in;
+	transition: all .1s ease-in;
+}
+
+.content-minutiae ul.propagation-enablers li a svg {
+	display: inline-block;
+	max-width: 100%;
+	max-height: 100%;
+	fill: #fff;
+	-webkit-transition: all .1s ease-in;
+	-moz-transition: all .1s ease-in;
+	-o-transition: all .1s ease-in;
+	-ms-transition: all .1s ease-in;
+	transition: all .1s ease-in;
+}
+
+.content-minutiae ul.propagation-enablers li.circle-twitter a {
+	line-height: 58px;
+}
+
+.content-minutiae ul.propagation-enablers li.circle-twitter a svg {
+	width: 45%
+}
+
+.content-minutiae ul.propagation-enablers li.circle-facebook a svg {
+	width: 25%
+}
+
+.content-minutiae ul.propagation-enablers li.circle-google a svg {
+	width: 45%
+}
+
+.content-minutiae ul.propagation-enablers li a:hover {
+	color: #2555c3;
+	background-color: #fff;
+}
+
+.content-minutiae ul.propagation-enablers li a:hover svg {
+	fill: #2555c3;
 }
 
 .main-content > p,
@@ -1986,14 +2159,67 @@ p.question {
 .article-layout .main-content .supplement {
 	float: right;
 	width: 347px;
-	margin: 12px 0 24px 24px;
-	padding: 12px;
+	margin: 12px 0 48px 24px;
+	padding: 18px 12px 12px;
 	font-size: 14px;
 	line-height: 24px;
 	background: #f0f0f0;
 	border-radius: 12px;
 	text-align: center;
 	font-style: italic;
+}
+
+.article-layout .main-content .sidebar.var1 {
+	float: none;
+	position: absolute;
+	left: calc(100% - 132px);
+	bottom: 432px;
+	width: 250px;
+	background: #fff;
+	border: 1px solid #dfdfdf;
+	border-radius: 3px;
+	font-style: normal;
+	font-family: "Franklin ITC Light", sans-serif;
+}
+
+.widget-branding  {
+	position: absolute;
+	top: -12px;
+	left: 50%;
+	width: 24px;
+	height: 24px;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.widget-branding.ala {
+	background: #fff url(/components/assets/img/icon_navigation-laurel.svg) no-repeat center;
+}
+
+.article-layout .main-content .sidebar.var1 section + section:before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 0;
+	margin-bottom: 12px;
+	border-top: 1px solid #dfdfdf;
+}
+
+.article-layout .main-content .sidebar.var1 section h1 {
+	font-size: 14px;
+	line-height: 22px;
+	color: #ba3925;
+}
+
+.article-layout .main-content .sidebar.var1 article h1, .article-layout .main-content .sidebar.var1 article p  {
+	font-size: 18px;
+}
+
+.article-layout .main-content .sidebar.var1 article p {
+	margin-bottom: 12px;
 }
 
 .article-layout .main-content .supplement {
@@ -2003,6 +2229,38 @@ p.question {
 .article-layout .main-content .sidebar h1 {
 	font-family: georgia, serif;
 	font-size: 14px;
+	line-height: 22px;
+}
+
+.article-layout .main-content .sidebar.var1 h1, .article-layout .main-content .sidebar.var1 .related-articles article h1 {
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
+}
+
+.article-layout .main-content .sidebar.var1 .related-articles h1 {
+	font-family: "Franklin ITC Light", sans-serif;
+	font-weight: normal;
+	color: #222;
+}
+
+.article-layout .main-content .sidebar.var1 .related-articles h1.primary-cat-header {
+	margin-bottom: 12px;
+}
+
+.article-layout .main-content .sidebar.var1 .related-articles h1 a {
+	font-family: "Franklin ITC", sans-serif;
+	display: block;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.article-layout .main-content .sidebar.var1 .related-articles article p, .article-layout .main-content .sidebar.var1 .related-articles article h1, .article-layout .main-content .sidebar.var1 .related-articles article h2  {
+	font-size: 14px;
+	line-height: 22px;
+}
+
+.article-layout .main-content .sidebar.var1 .related-articles h2 a {
+	color: #2455c3;
 }
 
 .article-layout .main-content .sidebar h2 {
@@ -2105,17 +2363,16 @@ p.question {
 }
 
 .article-layout .main-content > p.editors-note {
-	margin-left: 62px;
-	margin-right: 62px;
-	padding: 6px 12px;
+	margin-left: 0;
+	margin-right: 0;
+	padding: 12px 12px 12px 48px;
 	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
-	font-size: 16px;
-	line-height: 24px;
-	background: #eee;
+	font-size: 14px;
+	line-height: 22px;
+	background: #f2f2f2;
 	color: #666;
-	text-align: center;
 	border-radius: 6px;
 }
 
@@ -2130,12 +2387,29 @@ p.question {
 	text-align: left;
 }
 
+.article-layout .main-content:first-of-type > p.editors-note {
+	background: #f9f9f9 url(/components/assets/img/icon_navigation-laurel.svg) no-repeat 12px 12px;
+}
+
+.article-layout .main-content:nth-of-type(2) > p.editors-note {
+	background: #f1f1f1;
+}
+
+.article-layout .main-content:nth-of-type(3) > p.editors-note {
+	background: #e6e6e6;
+}
+
 .article-layout .main-content > p.editors-note.var1 {
 	margin-left: 0px;
 	margin-right: 0px;
-	padding: 12px 12px 12px 48px;
 	text-align: left;
-	background: #eee url(/components/assets/img/icon_navigation-laurel.svg) no-repeat 12px 12px;
+}
+
+.article-layout .main-content > p.editors-note.var1 em {
+	display: block;
+	font-family: "Franklin ITC", sans-serif;
+	font-style: normal;
+	font-weight: bold;
 }
 
 .article-layout .main-content > p span.first-words {
@@ -2563,6 +2837,22 @@ pre.editing code {
 }
 */
 
+.promo-box {
+	margin-right: 132px;
+	margin-left: 132px;
+	margin-bottom: 60px;
+	font-size: 18px;
+	font-family: "Franklin ITC Light", sans-serif;
+	text-align: center;
+	padding: 12px;
+	border: 1px solid #dfdfdf;
+	border-radius: 3px;
+}
+
+.promo-box b {
+	font-family: "Franklin ITC", sans-serif;
+}
+
 .entry-footer {
 	min-height: 280px;
 	padding: 35px 0 60px;
@@ -2698,7 +2988,7 @@ pre.editing code {
 	height: auto;
 	padding: 12px;
 	background: #f0f0f0;
-	border-radius: 4px;
+	border-radius: 3px;
 }
 
 .fixed-column .the-deck .deck-inner,
@@ -2799,7 +3089,7 @@ ol.article-comments > li {
 	margin: 12px 0 48px;
 	padding: 17px 11px;
 	border: 1px solid #ddd;
-	border-radius: 6px;
+	border-radius: 3px;
 }
 
 ol.article-comments > li .comment-tools {
@@ -3527,7 +3817,7 @@ ul.bullets {
 	font-size: 12px;
 	padding: 12px;
 	background: #f0f0f0;
-	border-radius: 4px;
+	border-radius: 3px;
 	min-height: 114px;
 }
 
@@ -3538,8 +3828,7 @@ ul.bullets {
 
 .the-deck.in-article {
 	background: #fff;
-	border: 1px solid #ddd;
-	border-radius: 0;
+	border: 1px solid #e8e8e8;
 	display: block;
 	padding: 2em 1em;
 	text-align: center;
@@ -4152,3 +4441,7 @@ body.modal {
 	}
 
 }
+
+/* Microdata
+-------------------------------------------------------------------------------*/
+ 

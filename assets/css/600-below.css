@@ -12,25 +12,48 @@
 		border-right: 0;
 	}
 
-	@media only screen and (min-width: 37.5em) { /* 767px */
+	.event-details .logistics .logistics-block {
+		display: inline-block;
+		vertical-align: top;
+		width: 45%;
+		padding-right: 18px;
+		text-align: left;
+	}
 
-		.event-details .logistics {
-			width: 25%;
-			display: inline-block;
-			vertical-align: top;
-		}
+	.event-details .logistics-block.bordered {
+		width: 100%;
+		text-align: center;
+	}
 
-		.event-details .sponsor-block {
-			width: 75%;
-			display: inline-block;
-			border-top: 0;
-			vertical-align: top;
-		}
+	.event-details .logistics span {
+		display: inline;
+		padding: 0;
+	}
 
-		.event-details .sponsor-block .sponsor-label {
-			margin-top: 0;
-		}
+	.event-details .logistics span.where {
+		display: block;
+	}
 
+	.event-details .logistics span.what1:after {
+		content: ", ";
+	}
+
+	.event-details .logistics span.time {
+		display: inline-block;
+		clear: both;
+	}
+
+	.event-details .logistics span.register-link {
+		display: block;
+	}
+
+	.event-details .logistics span.big-number,
+	.event-details .logistics span.register-link a {
+		font-size: 16px;
+	}
+
+	.event-details .logistics span.register-link a {
+		display: inline;
 	}
 
 	.two-column-display .main-content,
@@ -163,44 +186,6 @@
 		margin-bottom: 36px;
 	}
 
-	.event-details .logistics .logistics-block {
-		display: inline-block;
-		vertical-align: top;
-		width: 50%;
-		padding-right: 18px;
-		text-align: left;
-	}
-
-	.event-details .logistics span {
-		display: inline;
-	}
-
-	.event-details .logistics span.where {
-		display: block;
-	}
-
-	.event-details .logistics span.what1:after {
-		content: ", ";
-	}
-
-	.event-details .logistics span.time {
-		display: inline-block;
-		clear: both;
-	}
-
-	.event-details .logistics span.register-link {
-		display: block;
-	}
-
-	.event-details .logistics span.big-number,
-	.event-details .logistics span.register-link a {
-		font-size: 16px;
-	}
-
-	.event-details .logistics span.register-link a {
-		display: inline;
-	}
-
 	.global-nav {
 		position: static;
 		padding: 0;
@@ -309,8 +294,6 @@
 
 	.go-to-nav {
 		position: absolute;
-		clip: auto;
-		margin: 0;
 		display: block;
 		z-index: 100;
 		top: 0;
@@ -363,8 +346,8 @@
 	}
 
 	.column-holder {
-		margin-left: 18px;
-		margin-right: 18px;
+		margin-left: 12px;
+		margin-right: 12px;
 	}
 
 	.two-column-display .main-content, .two-column-display .secondary-column {
@@ -395,8 +378,8 @@
 	}
 
 	.issue-header, .home-page .entry-header, .issue-page .entry-header {
-		margin-left: 18px;
-		margin-right: 18px;
+		margin-left: 12px;
+		margin-right: 12px;
 		width: auto;
 	}
 
@@ -431,14 +414,14 @@
 		min-height: 100px;
 		padding-bottom: 24px;
 		margin-bottom: 3px;
-		margin-left: 18px;
-		margin-right: 18px;
+		margin-left: 12px;
+		margin-right: 12px;
 		margin-top: 12px;
 	}
 
 	.entry-header {
-		margin-left: 18px;
-		margin-right: 18px;
+		margin-left: 12px;
+		margin-right: 12px;
 	}
 
 	.article-layout .main-content>.tall-hero {
@@ -452,6 +435,26 @@
 		color: #bb3825;
 		padding: 0;
 		font-size:18px;
+	}
+
+	.entry-header .illustrator-credit,
+	.wide-hero .illustrator-credit,
+	.tall-hero .illustrator-credit,
+	.issue-page .logo-holder + .illustrator-credit {
+		width: auto;
+		height: auto;
+		padding: 0;
+		position: static;
+		opacity: .8;
+		margin-bottom: 12px;
+		font-style: italic;
+	}
+
+	.entry-header .illustrator-credit a,
+	.wide-hero .illustrator-credit a,
+	.tall-hero .illustrator-credit a,
+	.issue-page .logo-holder + .illustrator-credit a {
+		font-weight: normal;
 	}
 
 	.entry-header .issue-number, .wide-hero .issue-number, .tall-hero .issue-number, .issue-page .logo-holder + .issue-number {
@@ -475,7 +478,6 @@
 	html[data-useragent*='MSIE'] .tall-hero .issue-number {
 		background-image: none;
 	}
-
 
 	.entry-header > .issue-number:first-child, .issue-page .logo-holder + .issue-number {
 		left: 0;
@@ -504,8 +506,8 @@
 	}
 
 	.article-layout .main-content {
-		margin-left: 18px;
-		margin-right: 18px;
+		margin-left: 12px;
+		margin-right: 12px;
 	}
 
 	.article-layout .main-content > p:first-child:not(.buttonish-holder):not(.editors-note), .article-layout .main-content > figure.quote:first-child {
@@ -547,10 +549,6 @@
 		margin-bottom: 18px;
 	}
 
-	.main-content > ol {
-		padding-left: 6px;
-	}
-
 	.main-content ul > li, .main-content ol > li {
 		margin-bottom: 9px;
 	}
@@ -563,9 +561,26 @@
 		margin: 0 0 18px 18px;
 	}
 
+	.article-layout .main-content .sidebar.var1 section h1 {
+		font-size: 12px;
+		line-height: 14px;
+	}
+
+	.article-layout .main-content .sidebar.var1 article h1,
+	.article-layout .main-content .sidebar.var1 .related-articles h1 a,
+	.article-layout .main-content .sidebar.var1 article p {
+		font-size: 14px;
+		line-height: 18px;
+	}
+
+	.article-layout .main-content .sidebar.var1 .related-articles h1 {
+		font-size: 12px;
+		line-height: 14px;
+	}
+
 	.article-layout .entry-footer {
-		margin-left: 18px;
-		margin-right: 18px;
+		margin-left: 12px;
+		margin-right: 12px;
 	}
 
 	.entry-footer h1,
@@ -659,8 +674,7 @@
 	}
 
 	.article-layout .main-content .sidebar {
-		margin: 0 0 18px 18px;
-		padding: 12px;
+		margin: 0 0 16px 16px;
 		font-size: 12px;
 		line-height: 20px;
 	}
@@ -669,8 +683,10 @@
 		font-size: 12px;
 	}
 
-	.article-layout .main-content .sidebar h2 {
+	.article-layout .main-content .sidebar h2,
+	.article-layout .main-content .sidebar.var1 .related-articles article h2 {
 		font-size: 14px;
+		line-height: 16px;
 	}
 
 	.alpha-container {
@@ -727,17 +743,19 @@
 		float: none;
 		margin: 0 0 3em;
 		width: 100%;
+		text-align: center;
 	}
 
-	.minutiae-block {
-		display: inline-block;
-		margin-left: 6%;
-		vertical-align: top;
-		width: 47%;
+	.comment-bubble {
+		font-size: 18px;
+		line-height: 18px;
+		padding: 9px 12px;
 	}
 
-	.minutiae-block:first-child {
-		margin-left: 0;
+	.comment-bubble:before {
+		left: 24px;
+		border-bottom: 9px solid #2555c3;
+		border-right: 9px solid transparent;
 	}
 
 	.the-deck.in-article {
@@ -800,15 +818,15 @@
 	/* ----------------------	BLOG  ---------------------- */
 
 	.article-layout .blog-header, .article-layout .author-header {
-		margin-left: 18px;
-		margin-right: 18px;
+		margin-left: 12px;
+		margin-right: 12px;
 		width: auto;
 		max-width: none;
 	}
 
 	.sponsored .article-layout .blog-header,
 	.article-layout .blog-header {
-		margin-left: 18px;
+		margin-left: 12px;
 		padding-left: 0;
 	}
 
@@ -889,6 +907,26 @@
 		width: 80%;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	.article-layout .main-content .sidebar.var1 {
+		display: block;
+	}
+
+	.article-layout .main-content .sidebar.var1 section {
+		display: block;
+		width: 100%;
+		overflow: auto;
+	}
+
+	.article-layout .main-content .sidebar.var1 section + section {
+		border-left: 0;
+		margin-left: 0;
+		padding-left: 0;
+	}
+
+	.article-layout .main-content .sidebar.var1 section + section:before {
+		display: block;
 	}
 
 }

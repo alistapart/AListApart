@@ -1,7 +1,10 @@
 
 				<div class="aside-breaker"><b>Article Continues Below</b></div>
-				
+
 				<aside class="content-minutiae">
+
+					{comment-bubble}
+
 					{if column_translations OR member_group == "1" || member_group == "6" || member_group == "7" || member_group == "8"}
 					<h1>Translations:</h1>
 					<ul>
@@ -13,10 +16,7 @@
 						{/if}
 					</ul>
 					{/if}
-					<h1 class="propagation-enablers">Share This:</h1>
-					<ul class="propagation-enablers">
-						<li><a href="http://twitter.com/intent/tweet?url=http://alistapart.com/column/{url_title}&text={exp:url_encode}{title}{/exp:url_encode}&via=alistapart" data-trackevent="Share: Twitter">Twitter</a></li>
-						<li><a href="http://www.facebook.com/sharer.php?u=http://alistapart.com/column/{url_title}&t={exp:url_encode}{title}{/exp:url_encode}" data-trackevent="Share: Facebook">Facebook</a></li>
-						<li><a href="https://plus.google.com/share?url=http://alistapart.com/column/{url_title}" data-trackevent="Share: Google+">Google+</a></li>
-					</ul>				
+
+					{share-block}
+					
 				</aside>
