@@ -56,11 +56,11 @@
 				{exp:stash:set name="illustrator-credit"}
 				<p itemprop="contributor" itemscope itemtype="http://schema.org/Person" class="illustrator-credit">Illustration by
 					{if "{article_illustrator:entry_id}" != ""}
-					{article_illustrator}<span itemprop="name">
-					{embed="embeds/article-illustrator-link" entry_id="{article_illustrator:entry_id}"}</span>
+					{article_illustrator}
+					{embed="embeds/article-illustrator-link" entry_id="{article_illustrator:entry_id}"}
 					{/article_illustrator}
 					{if:else}
-					<a href="/author/kcornell"><span itemprop="name">Kevin Cornell</span></a>
+					<a itemprop="url" href="/author/kcornell"><span itemprop="name">Kevin Cornell</span></a>
 					{/if}
 				</p>
 				{/exp:stash:set}
