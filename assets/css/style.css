@@ -1100,10 +1100,10 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 	text-decoration: none;
 }
 
-.entry-header .issue-number span,
-.wide-hero .issue-number span,
-.tall-hero .issue-number span,
-.issue-page .logo-holder + .issue-number span {
+.entry-header .issue-number .badge,
+.wide-hero .issue-number .badge,
+.tall-hero .issue-number .badge,
+.issue-page .logo-holder + .issue-number .badge {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -4435,3 +4435,7 @@ body.modal {
 	}
 
 }
+
+/* Microdata
+-------------------------------------------------------------------------------*/
+ 

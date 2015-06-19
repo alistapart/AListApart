@@ -25,7 +25,7 @@
 									</span>
 									<time datetime=""><a href="/comments/{url_title}#{comment_id}">{comment_date format="%g:%i %a on %F %d, %Y"}</a></time>
 								</p>
-								<div class="comment-body">
+								<div itemprop="comment" class="comment-body">
 									{exp:strip_html keep='p|br|b|em|a|i|code|blockquote'}{comment}{/exp:strip_html}
 								</div>
 								

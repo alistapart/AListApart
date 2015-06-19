@@ -46,21 +46,21 @@
 
 	<div role="main" class="main-wrapper">
 
-		<article class="article-layout hentry">
+		<article itemscope itemtype="http://www.schema.org/Article" class="article-layout hentry">
 
 			<header class="entry-header">
 
-				{exp:stash:set name="issue-number"}{exp:playa:parents status="open|In Progress"}<a href="/issue/{issue_number}" class="issue-number"><span>Issue №</span> {issue_number}</a>{/exp:playa:parents}{/exp:stash:set}
+				{exp:stash:set name="issue-number"}{exp:playa:parents status="open|In Progress"}<a href="/issue/{issue_number}" class="issue-number"><span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue" class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a>{/exp:playa:parents}{/exp:stash:set}
 
 				{if article_illustration OR article_legacy_illo}
 				{exp:stash:set name="illustrator-credit"}
-				<p class="illustrator-credit">Illustration by
+				<p itemprop="contributor" itemscope itemtype="http://schema.org/Person" class="illustrator-credit">Illustration by
 					{if "{article_illustrator:entry_id}" != ""}
-					{article_illustrator}
-					{embed="embeds/article-illustrator-link" entry_id="{article_illustrator:entry_id}"}
+					{article_illustrator}<span itemprop="name">
+					{embed="embeds/article-illustrator-link" entry_id="{article_illustrator:entry_id}"}</span>
 					{/article_illustrator}
 					{if:else}
-					<a href="/author/kcornell">Kevin Cornell</a>
+					<a href="/author/kcornell"><span itemprop="name">Kevin Cornell</span></a>
 					{/if}
 				</p>
 				{/exp:stash:set}
@@ -68,7 +68,7 @@
 
 				{if article_responsive_illo != ""}
 
-				<figure class="wide-hero responsive-hero" data-picture data-alt="">
+				<figure itemscope itemtype="http://schema.org/ImageObject" class="wide-hero responsive-hero" data-picture data-alt="">
 					{article_responsive_illo}
 					<div data-src="{exp:ce_img:pair src="{cell_1}" width="{cell_2}" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" {if cell_2 != ""}data-media="(max-width: {cell_2}px)"{/if}></div>
 					{/article_responsive_illo}
@@ -123,13 +123,13 @@
 
 				{/if} {!-- end != murtaugh --}
 
-				<h1 class="entry-title">{title}</h1>
+				<h1 itemprop="headline name" class="entry-title">{title}</h1>
 
-				<p class="entry-details">
+				<p itemprop="author" itemscope itemtype="http://schema.org/Person" class="entry-details">
 
 					by {embed="embeds/article-authors-primary" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
 
-					{exp:playa:parents status="open|In Progress"}<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>{/exp:playa:parents}
+					{exp:playa:parents status="open|In Progress"}<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}" itemprop="datePublished">{entry_date format="%F %d, %Y"}</time>{/exp:playa:parents}
 
 					<span class="entry-meta optional-break">
 
@@ -185,7 +185,7 @@
 			</div>
 			{/if}
 
-			<div class="main-content">
+			<div itemprop="articleBody" class="main-content">
 
 				{exp:hop_inject where="<p>" always_inject="y"}
 
@@ -224,7 +224,7 @@
 				</footer>
 
 				<aside class="promo-box email-promo">
-					<b>Enjoy this article?</b> <a href="/email-signup" data-trackevent="Post-article: email promo">Sign up for ALA Email Alerts</a> & get the latest from ALA in your inbox!
+					<b>Enjoy this article?</b> <a href="/email-signup" data-trackevent="Post-article: email promo">Sign up for ALA Email Alerts</a> &amp; get the latest from ALA in your inbox!
 				</aside>
 
 			</div>
@@ -236,7 +236,7 @@
 					<section id="comments" class="column comment-holder">
 
 						{if comment_total > 0}
-							<h1 class="classy">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
+							<h1 itemprop="commentCount" class="classy">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
 
 							<a href="/comments/{url_title}" id="load-comments" data-url-title="{url_title}" class="buttonish">Load Comments</a>
 
