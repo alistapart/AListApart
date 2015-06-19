@@ -1,6 +1,6 @@
 
-				{exp:channel:entries channel="articles" limit="1" entry_id="{embed:entry_id}" status="open|In Progress"}
-				<aside id="related" class="sidebar var1">
+			{exp:channel:entries channel="articles" limit="1" entry_id="{embed:entry_id}" status="open|In Progress"}
+			<aside id="related" class="sidebar var1">
 				<i class="widget-branding ala"></i>
 				{if article_follow_up != ""}
 				<section class="follow-up">
@@ -26,10 +26,11 @@
 				</article>
 				{/article_follow_up}
 			</section>
-				{if:else}
-				{exp:playa:parents status="open|In Progress"}
-				{exp:stash:set name="issue-number"}{issue_number}{/exp:stash:set}
-				{exp:playa:children child_id="not {embed:entry_id}" status="open|In Progress"}
+			{if:else}
+			{exp:playa:parents channel="issues" status="open|In Progress"}
+			{exp:stash:set name="issue-number"}{issue_number}{/exp:stash:set}
+			{exp:playa:children child_id="not {embed:entry_id}" status="open|In Progress"}
+
 			<section>
 				{if count == "1"}
 				{article_illustration}
@@ -46,13 +47,13 @@
 					<p>{exp:strip_html}{if article_mini_deck}<p>{article_mini_deck}</p>{if:elseif article_deck}<p>{exp:trunchtml chars="130" inline="..."}{article_deck}{/exp:trunchtml}</p>{/if}{/exp:strip_html}</p>
 					</article>
 				</section>
-				{/exp:playa:children}
-				{/exp:playa:parents}
-				{/if}
-				{if "{article_related_content:count}" != ""}
+			{/exp:playa:children}
+			{/exp:playa:parents}
+			{/if}
+			{if "{article_related_content:count}" != ""}
 				<section class="related-articles">
-				<h1>Further reading</h1>
-				{article_related_content status="open|In Progress"}
+					<h1>Further reading</h1>
+					{article_related_content status="open|In Progress"}
 					<article>
 					<h2><a href="{site_url}{if article_related_content:channel_short_name=='blog'}{article_related_content:channel_short_name}/post/{article_related_content:url_title}{if:elseif article_related_content:channel_short_name=='articles'}article/{article_related_content:url_title}{if:elseif article_related_content:channel_short_name=='columns'}column/{article_related_content:url_title}{/if}" data-trackevent="Related sidebar: Related by editor">{article_related_content:title}</a></h2>
 					<p>{exp:strip_html}
@@ -66,10 +67,21 @@
 					{/exp:strip_html}</p>
 					</article>
 				{/article_related_content}
-			</section>
-				{if:elseif !primary_category_no_results}
-				{primary_categories}
-			<section class="related-articles">
+				</section>
+				{if:else}
+				{categories limit="1" category_group="3"}
+				<section class="related-articles">
+					<h1 class="primary-cat-header">
+						Further reading about
+						<a href="/topic/{category_url_title}" data-trackevent="Related sidebar: Related by category">{category_name}</a>
+					</h1>
+					<article>
+						{embed="embeds/primary-category-entries" category_id="{category_id}" exclude="{entry_id}"}
+					</article>
+				</section>
+				{/categories}
+				{!--primary_categories}
+				<section class="related-articles">
 					<h1 class="primary-cat-header">
 						Further reading about
 						<a href="/topic/{primary_category_url_title}" data-trackevent="Related sidebar: Related by category">{primary_category_name}</a>
@@ -78,8 +90,8 @@
 						{embed="embeds/primary-category-entries" category_id="{primary_category_id}" exclude="{entry_id}"}
 					</article>
 				</section>
-				{/primary_categories}
+				{/primary_categories--}
 				{/if}
 
-				</aside>
-				{/exp:channel:entries}
+			</aside>
+			{/exp:channel:entries}
