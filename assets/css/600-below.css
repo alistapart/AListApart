@@ -428,7 +428,7 @@
 		float: none;
 	}
 
-	.entry-header .issue-number span, .issue-page .logo-holder + .issue-number span, .wide-hero .issue-number span, .tall-hero .issue-number span {
+	.entry-header .issue-number span.badge, .issue-page .logo-holder + .issue-number span.badge, .wide-hero .issue-number span.badge, .tall-hero .issue-number span.badge {
 		width: auto;
 		height: auto;
 		position: static;
