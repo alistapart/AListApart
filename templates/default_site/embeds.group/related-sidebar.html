@@ -30,8 +30,9 @@
 				</section>
 			{/if}
 			<!-- if a follow up has not been selected, and the issue has two articles show the other article -->
+			{if article_follow_up == ""} 
 			{exp:playa:parents channel="issues" status="open|In Progress"}
-			{if article_follow_up == "" && {exp:stash:get name="total-children"} > 1}
+			{if {exp:stash:get name="total-children"} > 1}
 			{exp:stash:set name="issue-number"}{issue_number}{/exp:stash:set}
 			{exp:playa:children child_id="not {embed:entry_id}" status="open|In Progress"}
 				<section>
@@ -52,7 +53,8 @@
 					</section>
 			{/exp:playa:children}
 			{/if}
-			{/exp:playa:parents}<!-- end first block -->
+			{/exp:playa:parents}
+			{/if}<!-- end first block -->
 			{if "{article_related_content:count}" != ""}
 			<!-- start second block --><!-- show related articles if they exist -->
 				<section class="related-articles">
