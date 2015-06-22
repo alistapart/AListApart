@@ -2944,6 +2944,10 @@ pre.editing code {
 	content: ",";
 }
 
+.var1 .and-helper:last-of-type:not(:only-of-type):after {
+	content: "and ";
+}
+
 .post-article {
 	border-top: 1px solid #e5e5e5;
 	clear: both;

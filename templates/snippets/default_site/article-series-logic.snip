@@ -9,9 +9,8 @@
    {if article_series:parents:count == 1}
    <em>This article is part of a series.</em> Read
    {/if}
-   {if {article_series:parents:total_results} - 1 == {article_series:parents:count} AND {article_series:parents:count} != 2 AND {article_series:parents:total_results} != 2} and {/if}
    {if {article_series:parents:entry_id} != {entry_id}}
-   part {if {article_series:parents:count} == 1}one, {if:elseif {article_series:parents:count} == 2}two, {if:elseif {article_series:parents:count} == 3}three, {if:elseif {article_series:parents:count} == 4}four, {if:else}{article_series:parents:count}{/if}<a href="{site_url}{if "{article_series:parents:channel_short_name}" *= "blog"}blog/post/{if:elseif "{article_series:parents:channel_short_name}" *= "columns"}column/{if:elseif "{article_series:parents:channel_short_name}" *= "articles"}article/{/if}{article_series:parents:url_title}" class="series">{article_series:parents:title}</a>{/if}
+   <span class="and-helper"></span>part {if {article_series:parents:count} == 1}one, {if:elseif {article_series:parents:count} == 2}two, {if:elseif {article_series:parents:count} == 3}three, {if:elseif {article_series:parents:count} == 4}four, {if:else}{article_series:parents:count}{/if}<a href="{site_url}{if "{article_series:parents:channel_short_name}" == "blog"}blog/post/{if:elseif "{article_series:parents:channel_short_name}" == "columns"}column/{if:elseif "{article_series:parents:channel_short_name}" == "articles"}article/{/if}{article_series:parents:url_title}" class="series">{article_series:parents:title}</a>{/if}
 
    {/if}
    {/if}
