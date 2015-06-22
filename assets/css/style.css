@@ -2941,7 +2941,7 @@ pre.editing code {
 }
 
 .author-more li:not(:last-child):after, .series:not(:last-child):after {
-	content: ",\0020";
+	content: ",";
 }
 
 .post-article {
