@@ -1,4 +1,3 @@
-
 		{exp:channel:entries channel="articles" limit="1" entry_id="{embed:entry_id}" status="open|In Progress"}
 		{exp:playa:parents channel="issues" status="open|In Progress"}{exp:stash:set name="total-children"}{exp:playa:total_children}{/exp:stash:set}{/exp:playa:parents}
 
@@ -29,9 +28,10 @@
 				</article>
 				{/article_follow_up}
 				</section>
+			{/if}
 			<!-- if a follow up has not been selected, and the issue has two articles show the other article -->
-			{if:elseif {exp:stash:get name="total-children"} > 1}
 			{exp:playa:parents channel="issues" status="open|In Progress"}
+			{if article_follow_up == "" && {exp:stash:get name="total-children"} > 1}
 			{exp:stash:set name="issue-number"}{issue_number}{/exp:stash:set}
 			{exp:playa:children child_id="not {embed:entry_id}" status="open|In Progress"}
 				<section>
@@ -51,50 +51,58 @@
 						</article>
 					</section>
 			{/exp:playa:children}
-			{/exp:playa:parents}<!-- end first block -->
 			{/if}
+			{/exp:playa:parents}<!-- end first block -->
 			{if "{article_related_content:count}" != ""}
-			<!-- start second block -->
-					<section class="related-articles">
-						<h1>Further reading</h1>
-						{article_related_content status="open|In Progress"}
-						<article>
-						<h2><a href="{site_url}{if article_related_content:channel_short_name=='blog'}{article_related_content:channel_short_name}/post/{article_related_content:url_title}{if:elseif article_related_content:channel_short_name=='articles'}article/{article_related_content:url_title}{if:elseif article_related_content:channel_short_name=='columns'}column/{article_related_content:url_title}{/if}" data-trackevent="Related sidebar: Related by editor">{article_related_content:title}</a></h2>
-						<p>{exp:strip_html}
-						{if article_related_content:channel_short_name=='columns'}
-							{if article_related_content:column_mini_deck}{article_related_content:column_mini_deck}{if:elseif article_related_content:column_intro}{exp:trunchtml chars="130" inline="..."}{article_related_content:column_intro}{/exp:trunchtml}{/if}
-						{if:elseif article_related_content:channel_short_name=='blog'}
-							{if article_related_content:blog_mini_deck}{article_related_content:blog_mini_deck}{if:elseif article_related_content:blog_intro}{exp:trunchtml chars="130" inline="..."}{article_related_content:blog_intro}{/exp:trunchtml}{/if}
-						{if:elseif article_related_content:channel_short_name=='articles'}
-							{if article_related_content:article_mini_deck}{article_related_content:article_mini_deck}{if:elseif article_related_content:article_deck}{exp:trunchtml chars="130" inline="..."}{article_related_content:article_deck}{/exp:trunchtml}{/if}
-						{/if}
-						{/exp:strip_html}</p>
-						</article>
-						{/article_related_content}
-						</section>
-					{if:else}
-					{categories limit="1" category_group="3"}
-						<section class="related-articles">
-							<h1 class="primary-cat-header">
-								Further reading about
-								<a href="/topic/{category_url_title}" data-trackevent="Related sidebar: Related by category">{category_name}</a>
-							</h1>
-							<article>
-								{embed="embeds/primary-category-entries" category_id="{category_id}" exclude="{entry_id}"}
-							</article>
-						</section>
-					{/categories}
-					{!--primary_categories}
-						<section class="related-articles">
-							<h1 class="primary-cat-header">
-								Further reading about
-								<a href="/topic/{primary_category_url_title}" data-trackevent="Related sidebar: Related by category">{primary_category_name}</a>
-							</h1>
-							<article>
-								{embed="embeds/primary-category-entries" category_id="{primary_category_id}" exclude="{entry_id}"}
-							</article>
-						</section>
-					{/primary_categories--}
+			<!-- start second block --><!-- show related articles if they exist -->
+				<section class="related-articles">
+					<h1>Further reading</h1>
+					{article_related_content status="open|In Progress"}
+					<article>
+					<h2><a href="{site_url}{if article_related_content:channel_short_name=='blog'}{article_related_content:channel_short_name}/post/{article_related_content:url_title}{if:elseif article_related_content:channel_short_name=='articles'}article/{article_related_content:url_title}{if:elseif article_related_content:channel_short_name=='columns'}column/{article_related_content:url_title}{/if}" data-trackevent="Related sidebar: Related by editor">{article_related_content:title}</a></h2>
+					<p>{exp:strip_html}
+					{if article_related_content:channel_short_name=='columns'}
+						{if article_related_content:column_mini_deck}{article_related_content:column_mini_deck}{if:elseif article_related_content:column_intro}{exp:trunchtml chars="130" inline="..."}{article_related_content:column_intro}{/exp:trunchtml}{/if}
+					{if:elseif article_related_content:channel_short_name=='blog'}
+						{if article_related_content:blog_mini_deck}{article_related_content:blog_mini_deck}{if:elseif article_related_content:blog_intro}{exp:trunchtml chars="130" inline="..."}{article_related_content:blog_intro}{/exp:trunchtml}{/if}
+					{if:elseif article_related_content:channel_short_name=='articles'}
+						{if article_related_content:article_mini_deck}{article_related_content:article_mini_deck}{if:elseif article_related_content:article_deck}{exp:trunchtml chars="130" inline="..."}{article_related_content:article_deck}{/exp:trunchtml}{/if}
 					{/if}
-				</aside>
-				{/exp:channel:entries}
+					{/exp:strip_html}</p>
+					</article>
+					{/article_related_content}
+				</section>
+			{if:else}<!-- if no related articles show categories -->
+				{categories limit="1" category_group="3"}
+					<section class="related-articles">
+						<h1 class="primary-cat-header">
+							Further reading about
+							<a href="/topic/{category_url_title}" data-trackevent="Related sidebar: Related by category">{category_name}</a>
+						</h1>
+						<article>
+							{embed="embeds/primary-category-entries" category_id="{category_id}" exclude="{entry_id}"}
+						</article>
+					</section>
+				{/categories}
+				{!--primary_categories}
+					<section class="related-articles">
+						<h1 class="primary-cat-header">
+							Further reading about
+							<a href="/topic/{primary_category_url_title}" data-trackevent="Related sidebar: Related by category">{primary_category_name}</a>
+						</h1>
+						<article>
+							{embed="embeds/primary-category-entries" category_id="{primary_category_id}" exclude="{entry_id}"}
+						</article>
+					</section>
+				{/primary_categories--}
+			{/if}
+			{exp:playa:parents channel="issues" status="open|In Progress"}
+			{if article_follow_up == "" && {exp:stash:get name="total-children"} == 1}
+				<section>
+				<h1>A List Apart Events</h1>
+				{embed="embeds/event-entries"}
+				</section>
+			{/if}
+			{/exp:playa:parents}
+			</aside>
+			{/exp:channel:entries}
