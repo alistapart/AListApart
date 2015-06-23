@@ -84,10 +84,12 @@
 
 			{/if}
 			{exp:playa:parents channel="issues" status="open|In Progress"}
-				{if article_follow_up == "" && {exp:stash:get name="total-children"} == 1}
-					<section>
-					{embed="embeds/event-entries"}
-					</section>
+				{if article_follow_up == ""} 
+					{if {exp:stash:get name="total-children"} == 1}}
+						<section>
+						{embed="embeds/event-entries"}
+						</section>
+					{/if}
 				{/if}
 			{/exp:playa:parents}
 			</aside>
