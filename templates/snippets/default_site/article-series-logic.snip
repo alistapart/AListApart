@@ -1,20 +1,15 @@
-{article_series}
+{exp:stash:set name="entry-id"}{entry_id}{/exp:stash:set}
+{exp:stash:set name="series-total"}{exp:playa:children field="article_series"}{exp:playa:total_parents}{/exp:playa:children} {/exp:stash:set}
 <div class="main-content pre-article">
-   <p class="editors-note var1">
-   {article_series:parents field="article_series"}
-
-   {if article_series:parents:total_results == 1}
-   <em>This article is part one of a series.</em> Look for the next installment coming soon.
+   <p class="editors-note var1"> 
+   {if {exp:stash:get name="series-total"} == 1}  
+      <em>This article is part one of a series.</em> Look for the next installment coming soon.
    {if:else}
-   {if article_series:parents:count == 1}
-   <em>This article is part of a series.</em> Read
+      {exp:playa:children field="article_series"}  
+         <em>This article is part of a series.</em> Read part {exp:playa:parents orderby="date" sort="asc"}{if {exp:stash:get name="entry-id"} != {entry_id}}{if count == 1}one, {if:elseif count == 2}two, {if:elseif count == 3}three, {if:elseif count == 4}four, {if:else}{count}{/if}<a href="{site_url}{if "{channel_short_name}" == "blog"}blog/post/{if:elseif "{channel_short_name}" == "columns"}column/{if:elseif "{channel_short_name}" == "articles"}article/{/if}{url_title}" class="series">{title}</a> {/if}{/exp:playa:parents}
+      {/exp:playa:children} 
    {/if}
-   {if {article_series:parents:entry_id} != {entry_id}}
-   <span class="and-helper"></span>part {if {article_series:parents:count} == 1}one, {if:elseif {article_series:parents:count} == 2}two, {if:elseif {article_series:parents:count} == 3}three, {if:elseif {article_series:parents:count} == 4}four, {if:else}{article_series:parents:count}{/if}<a href="{site_url}{if "{article_series:parents:channel_short_name}" == "blog"}blog/post/{if:elseif "{article_series:parents:channel_short_name}" == "columns"}column/{if:elseif "{article_series:parents:channel_short_name}" == "articles"}article/{/if}{article_series:parents:url_title}" class="series">{article_series:parents:title}</a>{/if}
-
-   {/if}
-   {/if}
-   {/article_series:parents}
    </p>
 </div>
-{/article_series}
+
+
