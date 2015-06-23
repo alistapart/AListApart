@@ -2940,12 +2940,16 @@ pre.editing code {
 	display: inline;
 }
 
-.author-more li:not(:last-child):after, .series:not(:last-child):after {
-	content: ",";
+.var1 .punctuation-helper:last-of-type:after {
+	content: ".";
 }
 
-.var1 .and-helper:last-of-type:not(:only-of-type):after {
-	content: "and ";
+.var1 .punctuation-helper:not(:last-of-type):after {
+	content: ", ";
+}
+
+.var1 .punctuation-helper:nth-last-child(2):after {
+	content: ", or ";
 }
 
 .post-article {
