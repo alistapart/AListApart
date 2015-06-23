@@ -2940,6 +2940,10 @@ pre.editing code {
 	display: inline;
 }
 
+.author-more li:after {
+	content: ', ';
+}
+
 .var1 .punctuation-helper:last-of-type:after {
 	content: ".";
 }
