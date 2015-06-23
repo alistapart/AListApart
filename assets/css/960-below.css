@@ -87,6 +87,16 @@
 		margin-right: 18px;
 	}
 
+	.article-layout .main-content .sidebar.var1 .wideone {
+		float: none;
+	}
+
+	.article-layout .main-content .sidebar.var1 .wideone img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	.article-layout .main-content .sidebar.var1 .related-articles article p, .article-layout .main-content .sidebar.var1 .related-articles article h1, .article-layout .main-content .sidebar.var1 .related-articles article h2 {
 		font-size: 14px;
 		line-height: 18px;
@@ -276,16 +286,6 @@
 	.article-layout .main-content .sidebar.var1 {
 		margin-left: 0;
 		margin-right: 0;
-	}
-
-	.article-layout .main-content .sidebar.var1 .wideone {
-		float: none;
-	}
-
-	.article-layout .main-content .sidebar.var1 .wideone img {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
 	}
 
 	.article-layout .entry-footer {
