@@ -75,28 +75,13 @@
 					{/article_related_content}
 				</section>
 			{if:else}<!-- if no related articles show categories -->
-				{categories limit="1" category_group="3"}
-					<section class="related-articles">
-						<h1 class="primary-cat-header">
-							Further reading about
-							<a href="/topic/{category_url_title}" data-trackevent="Related sidebar: Related by category">{category_name}</a>
-						</h1>
-						<article>
-							{embed="embeds/primary-category-entries" category_id="{category_id}" exclude="{entry_id}"}
-						</article>
-					</section>
-				{/categories}
-				{!--primary_categories}
-					<section class="related-articles">
-						<h1 class="primary-cat-header">
-							Further reading about
-							<a href="/topic/{primary_category_url_title}" data-trackevent="Related sidebar: Related by category">{primary_category_name}</a>
-						</h1>
-						<article>
-							{embed="embeds/primary-category-entries" category_id="{primary_category_id}" exclude="{entry_id}"}
-						</article>
-					</section>
-				{/primary_categories--}
+
+				<section class="related-articles">
+
+				{embed="embeds/primary-category-logic" id="{entry_id}"}
+
+				</section>
+
 			{/if}
 			{exp:playa:parents channel="issues" status="open|In Progress"}
 				{if article_follow_up == "" && {exp:stash:get name="total-children"} == 1}

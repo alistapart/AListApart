@@ -1,15 +1,3 @@
-{exp:channel:entries entry_id="{embed:exclude}" channel="articles|columns|blog" limit="2" status="open" dynamic="off"}
-{primary_categories}
-
-   <h1 class="primary-cat-header">
-      Further reading about
-      <a href="/topic/{primary_category_url_title}" data-trackevent="Related sidebar: Related by category">{primary_category_name}</a>
-   </h1>
-
-   <article>
-{/primary_categories}
-{/exp:channel:entries}
-
 {exp:channel:entries category="{embed:category_id}" entry_id="NOT {embed:exclude}" channel="articles|columns|blog" limit="2" status="open" dynamic="off"}
 
    <h2><a href="{site_url}{if channel_short_name=='blog'}{channel_short_name}/post/{url_title}{if:elseif channel_short_name=='articles'}article/{url_title}{if:elseif channel_short_name=='columns'}column/{url_title}{/if}">{title}</a></h2>
@@ -24,6 +12,3 @@
    {/exp:strip_html}</p>
 
 {/exp:channel:entries}
-
-   </article>
-

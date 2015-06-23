@@ -1,0 +1,17 @@
+{exp:channel:entries entry_id="{embed:exclude}" channel="articles|columns|blog" limit="1" status="open" dynamic="off"}
+
+{categories limit="1" category_group="3"}
+
+      <h1 class="primary-cat-header">
+         Further reading about
+         <a href="/topic/{category_url_title}" data-trackevent="Related sidebar: Related by category">{category_name}</a>
+      </h1>
+      <article>
+
+      {embed="embeds/single-category-entries" category_id="{category_id}" exclude="{entry_id}"}   
+
+{/categories}
+
+{/exp:channel:entries}
+
+   </article>
