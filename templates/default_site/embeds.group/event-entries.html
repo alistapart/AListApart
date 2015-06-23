@@ -1,8 +1,13 @@
 {exp:channel:entries channel="events" limit="1" status="open" dynamic="off" show_future_entries="yes" show_expired="yes"}
 
+{if current_time > expiration_date}
+<h1>Event recap</h1>
+{if:else}
+<h1>Upcoming event</h1>
+{/if}
+
 <h2><a href="{site_url}events/{url_title}">{title}</a></h2>
-<p>{exp:strip_html}
- {event_deck}
-{/exp:strip_html}</p>
+
+<p>{exp:strip_html}{event_deck}{/exp:strip_html}</p>
 
 {/exp:channel:entries}
