@@ -2940,7 +2940,7 @@ pre.editing code {
 	display: inline;
 }
 
-.author-more li:after {
+.author-more li:not(:last-child):after {
 	content: ', ';
 }
 
