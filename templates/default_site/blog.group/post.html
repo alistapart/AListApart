@@ -80,6 +80,18 @@
 
 		{/if}
 
+			{if blog_series} 
+				{blog-series-logic}
+			{/if}
+
+			{blog_outdated}
+			{if article_age_flag == 'y'}
+			<div class="main-content pre-article">
+			   <p class="editors-note var1"><b>{if custom_note}{custom_note}{if:else}Technical information may be out of date.{/if}</b> {if updated_entry}For more recent approaches, read {updated_entry}<a href="{site_url}{if "{channel_short_name}" == "blog"}blog/post/{if:elseif "{channel_short_name}" == "columns"}column/{if:elseif "{channel_short_name}" == "articles"}article/{/if}{url_title}" title="{title}">{title}</a>{/updated_entry}.{/if}</p>
+			</div>
+			{/if}
+			{/blog_outdated}
+
 			{if blog_editors_note}
 			<div class="main-content">
 
@@ -87,14 +99,6 @@
 
 			</div>
 			{/if}
-
- 			{exp:gwcode_categories entry_id="{entry_id}" group_id="5"}
- 			{exp:channel:categories category_group="5"}
-			<div class="main-content pre-article">
-				{embed="embeds/article-series" exclude="{entry_id}" entrylink="{category_id}"}
-			</div>
-			{/exp:channel:categories}
-			{/exp:gwcode_categories}
 
 			<div class="main-content">
 

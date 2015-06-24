@@ -72,19 +72,23 @@
 
 			</header>
 
-			{exp:gwcode_categories entry_id="{entry_id}" group_id="5" style="linear"}
-			{exp:channel:categories category_group="5" style="linear"}
-			<div class="main-content pre-article">
-				{embed="embeds/article-series" exclude="{entry_id}" entrylink="{category_id}"}
-			</div>
-			{/exp:channel:categories}
-			{/exp:gwcode_categories}
+			{if column_series} 
+				{column-series-logic}
+			{/if}
 
 			{if column_editors_note}
 			<div class="main-content pre-article">
 				<p class="editors-note"><b>A note from the editors:</b> {column_editors_note}</p>
 			</div>
 			{/if}
+
+			{column_outdated}
+			{if article_age_flag == 'y'}
+			<div class="main-content pre-article">
+			   <p class="editors-note var1"><b>{if custom_note}{custom_note}{if:else}Technical information may be out of date.{/if}</b> {if updated_entry}For more recent approaches, read {updated_entry}<a href="{site_url}{if "{channel_short_name}" == "blog"}blog/post/{if:elseif "{channel_short_name}" == "columns"}column/{if:elseif "{channel_short_name}" == "articles"}article/{/if}{url_title}" title="{title}">{title}</a>{/updated_entry}.{/if}</p>
+			</div>
+			{/if}
+			{/column_outdated}
 
 			{if column_opening_blockquote}
 			<div class="main-content">
@@ -121,8 +125,8 @@
 
 				</section>
 				{/if}
-
-			</div>
+			
+			{embed="embeds/related-sidebar-column" entry_id="{entry_id}"}
 
 			<footer class="entry-footer">
 
@@ -131,6 +135,8 @@
 			</footer>
 
 			{email-promo}
+
+			</div>
 
 			<div class="post-article">
 

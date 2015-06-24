@@ -1,13 +1,9 @@
 {exp:query sql="SELECT primary_category_id FROM exp_primary_category WHERE entry_id='{embed:id}'"}
 	
-	<section class="related-articles">
-	
    {embed="embeds/primary-category-entries" category_id="{primary_category_id}" exclude="{embed:id}"}
-
+ 
    {if no_results}
    {embed="embeds/primary-category-fallback" category_id="{primary_category_id}" exclude="{embed:id}"}
    {/if}
-
-   </section>
 
 {/exp:query}
