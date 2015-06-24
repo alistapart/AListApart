@@ -26,8 +26,13 @@
 				</article>
 				{/blog_follow_up}
 				</section>
+			{if:else}
+				<section class="follow-up">
+
+				{embed="embeds/recently-by-author" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+
+				</section>
 			{/if}
-			<!-- if a follow up has not been selected, show nothing in the first block -->
 
 			{if "{blog_related_content:count}" != ""}
 			<!-- start second block --><!-- show related articles if they exist -->
@@ -48,12 +53,9 @@
 					</article>
 					{/blog_related_content}
 				</section>
-			{if:else}<!-- if no related articles show categories -->
-				{if "{categories}{category_url_title}{/categories}"!=""}
-					{embed="embeds/primary-category-logic" id="{entry_id}"}
-				{/if}
-			{/if}
-			{if blog_follow_up == ""}  
+			{if:elseif "{categories}{category_url_title}{/categories}" != ""}
+				{embed="embeds/primary-category-logic" id="{entry_id}"}
+			{if:else}
 				<section class="related-articles">
 				{embed="embeds/event-entries"}
 				</section>

@@ -1,0 +1,39 @@
+<?
+$print = false;
+$count = 0;
+?>
+{exp:user:entries channel="articles|blog|columns" status="open" user_author_id="{embed:author_id}" limit="2" dynamic="no"}
+
+{if entry_id != "{embed:current_entry}"}
+<?
+$print = true;
+$count++;
+?>
+{if:else}
+<?
+$print = false;
+?>
+{/if}
+
+<?
+if ($print == true && $count == 1) {
+?>
+
+<h1>Recently by {screen_name}</h1>
+
+<article>
+	<h1><a href="{site_url}{if channel_short_name=='blog'}{channel_short_name}/post/{url_title}{if:elseif channel_short_name=='articles'}article/{url_title}{if:elseif channel_short_name=='columns'}column/{url_title}{/if}" data-trackevent="Related sidebar: Recently by author">{title}</a></h1>
+	<p>{exp:strip_html}
+	{if channel_short_name=='blog'}
+		{if blog_mini_deck}{blog_mini_deck}{if:elseif blog_intro}{exp:trunchtml chars="130" inline="..."}{blog_intro}{/exp:trunchtml}{/if}
+	{if:elseif channel_short_name=='columns'}
+		{if column_mini_deck}{column_mini_deck}{if:elseif column_intro}{exp:trunchtml chars="130" inline="..."}{column_intro}{/exp:trunchtml}{/if}
+	{if:elseif channel_short_name=='articles'}
+		{if article_mini_deck}{article_mini_deck}{if:elseif article_deck}{exp:trunchtml chars="130" inline="..."}{article_deck}{/exp:trunchtml}{/if}
+	{/if}
+	{/exp:strip_html}</p>
+</article>
+
+<? }; ?>
+
+{/exp:user:entries}

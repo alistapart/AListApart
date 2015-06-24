@@ -9,7 +9,7 @@
 				{/if}
 
 				{if entry_id != {embed:current_entry}}
-					<li><a href="/article/{url_title}">{title}</a></li>
+					<li><a href="{site_url}{if channel_short_name=='blog'}{channel_short_name}/post/{url_title}{if:elseif channel_short_name=='articles'}article/{url_title}{if:elseif channel_short_name=='columns'}column/{url_title}{/if}">{title}</a></li>
 				{/if}
 
 				{if count == total_results}</ul>{/if}
