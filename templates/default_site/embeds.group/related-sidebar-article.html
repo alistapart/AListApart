@@ -81,7 +81,7 @@
 			{if article_follow_up == ""} 
 			{exp:playa:parents channel="issues" status="open|In Progress"}
 					{if {exp:stash:get name="total-children"} == 1}
-						<section>
+						<section class="related-articles">
 						{embed="embeds/event-entries"}
 						</section>
 					{/if}
