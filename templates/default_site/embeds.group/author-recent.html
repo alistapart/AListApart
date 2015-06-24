@@ -1,21 +1,21 @@
-<?
+<?php
 $print = false;
 $count = 0;
 ?>
 {exp:user:entries channel="articles|blog|columns" status="open" user_author_id="{embed:author_id}" limit="2" dynamic="no"}
 
 {if entry_id != "{embed:current_entry}"}
-<?
+<?php
 $print = true;
 $count++;
 ?>
 {if:else}
-<?
+<?php
 $print = false;
 ?>
 {/if}
 
-<?
+<?php
 if ($print == true && $count == 1) {
 ?>
 
@@ -34,6 +34,6 @@ if ($print == true && $count == 1) {
 	{/exp:strip_html}</p>
 </article>
 
-<? }; ?>
+<?php }; ?>
 
 {/exp:user:entries}
