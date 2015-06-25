@@ -1,4 +1,5 @@
 			{exp:channel:entries channel="blog" limit="1" entry_id="{embed:entry_id}" status="open|In Progress"}
+			{exp:stash:set name="entry-id"}{entry_id}{/exp:stash:set}
  			<aside id="related" class="sidebar var1">
 				<i class="widget-branding ala"></i>
 			{if blog_follow_up != ""}
@@ -28,9 +29,7 @@
 				</section>
 			{if:else}
 				<section class="follow-up">
-
 				{embed="embeds/recently-by-author" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
-
 				</section>
 			{/if}
 
