@@ -1,6 +1,6 @@
-{exp:channel:entries category="{segment_2_category_id}" require_entry="yes" channel="articles|columns" limit="1" status="open" dynamic="off"}
+{exp:channel:entries category="{segment_2_category_id}" require_entry="yes" channel="articles|columns" limit="1" status="open" dynamic="no"}
 
-{if no_results}
+{if no_results OR segment_2_category_name == ""}
 {redirect="404"}
 {/if}
 
