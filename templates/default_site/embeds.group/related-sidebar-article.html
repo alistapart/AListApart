@@ -1,5 +1,6 @@
-			{exp:channel:entries channel="articles|blog|column" limit="1" entry_id="{embed:entry_id}" status="open|In Progress"}
+			{exp:channel:entries channel="articles" limit="1" entry_id="{embed:entry_id}" status="open|In Progress"}
 			{exp:playa:parents channel="issues" status="open|In Progress"}{exp:stash:set name="total-children"}{exp:playa:total_children}{/exp:stash:set}{/exp:playa:parents}
+			{exp:stash:set name="entry-id"}{entry_id}{/exp:stash:set}
 			<aside id="related" class="sidebar var1">
 				<i class="widget-branding ala"></i>
 			{if article_follow_up != ""}
@@ -32,25 +33,32 @@
 			{if article_follow_up == ""}
 			{exp:playa:parents channel="issues" status="open|In Progress"}
 			{if {exp:stash:get name="total-children"} > 1}
-			{exp:stash:set name="issue-number"}{issue_number}{/exp:stash:set}
-			{exp:playa:children child_id="not {embed:entry_id}" status="open|In Progress"}
-				<section>
-					{if count == "1"}
-					{article_illustration}
-					<figure class="sidebar-hero {if width > height}wideone{/if}" data-picture data-alt="">
-						<div data-src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}"></div>
-						<div data-src="{exp:ce_img:pair src="{url}" width="644" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" data-media="(min-width: 600px) and (min-device-pixel-ratio: 2.0)"></div>
-						<noscript><img src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
-					</figure>
-					{/article_illustration}
-					<h1>Also in Issue №&nbsp;{exp:stash:get name="issue-number"}</h1>
-					{/if}
-						<article>
-						<h1><a href="/article/{url_title}" data-trackevent="Related sidebar: Also in issue">{title}</a></h1>
-						<p>{exp:strip_html}{if article_mini_deck}<p>{article_mini_deck}</p>{if:elseif article_deck}<p>{exp:trunchtml chars="130" inline="..."}{article_deck}{/exp:trunchtml}</p>{/if}{/exp:strip_html}</p>
-						</article>
-					</section>
-			{/exp:playa:children}
+				{exp:stash:set name="issue-number"}{issue_number}{/exp:stash:set}
+				{exp:playa:children child_id="not {embed:entry_id}" status="open|In Progress"}
+					<section>
+						{if count == "1"}
+						{article_illustration}
+						<figure class="sidebar-hero {if width > height}wideone{/if}" data-picture data-alt="">
+							<div data-src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}"></div>
+							<div data-src="{exp:ce_img:pair src="{url}" width="644" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" data-media="(min-width: 600px) and (min-device-pixel-ratio: 2.0)"></div>
+							<noscript><img src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
+						</figure>
+						{/article_illustration}
+						<h1>Also in Issue №&nbsp;{exp:stash:get name="issue-number"}</h1>
+						{/if}
+							<article>
+							<h1><a href="/article/{url_title}" data-trackevent="Related sidebar: Also in issue">{title}</a></h1>
+							<p>{exp:strip_html}{if article_mini_deck}<p>{article_mini_deck}</p>{if:elseif article_deck}<p>{exp:trunchtml chars="130" inline="..."}{article_deck}{/exp:trunchtml}</p>{/if}{/exp:strip_html}</p>
+							</article>
+						</section>
+				{/exp:playa:children}
+			{if:elseif {exp:stash:get name="total-children"} == 1}
+				<section class="follow-up">
+				{exp:user:authors}{screen_name}{/exp:user:authors}  
+					{embed="embeds/recently-by-author" entry_id="{entry_id}"}
+				 
+			 
+				</section>
 			{/if}
 			{/exp:playa:parents}
 			{/if}<!-- end first block -->
