@@ -2,6 +2,7 @@
 {exp:stash:set name="author-id"}{member_id}{/exp:stash:set}
 
 {exp:user:entries channel="articles|blog|columns" status="open" user_author_id="{member_id}" limit="2" dynamic="no"}
+{title}{absolute_count}{total_results}
 {if {entry_id} != {exp:stash:get name="entry-id"}}
 <h1>Recently by {embed:author_name} {screen_name}</h1>
 
