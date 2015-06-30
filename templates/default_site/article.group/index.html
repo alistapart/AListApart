@@ -247,7 +247,7 @@
 					{if {exp:stash:get name="total-children"} > 1}
 					<section>
 					{exp:playa:parents channel="issues" status="open|In Progress"}
-					{exp:stash:set name="issue-number"}{issue_number}{/exp:stash:set}
+					{exp:stash:set name="issue-number-sidebar"}{issue_number}{/exp:stash:set}
 					{exp:playa:children child_id="not {entry_id}" status="open|In Progress"}
 						{if count == "1"}
 						{article_illustration}
@@ -257,7 +257,7 @@
 							<noscript><img src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
 						</figure>
 						{/article_illustration}
-						<h1>Also in Issue №&nbsp;{exp:stash:get name="issue-number"}</h1>
+						<h1>Also in Issue №&nbsp;{exp:stash:get name="issue-number-sidebar"}</h1>
 						{/if}
 						<article>{if entry_id != {exp:stash:get name="entry-id"}}
 						<h1><a href="/article/{url_title}" data-trackevent="Related sidebar: Also in issue">{title}</a></h1>
