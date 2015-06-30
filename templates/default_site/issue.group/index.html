@@ -29,12 +29,12 @@
 		<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
 		<noscript><img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
 
-		<a class="issue-number" href="/issue/{issue_number}"><span>Issue №</span> {issue_number}</a>
+		<a class="issue-number" href="/issue/{issue_number}"><span class="badge">Issue №</span> {issue_number}</a>
 	</figure>
 	{/issue_illustration}
 
 	{if issue_illustration == ""}
-	<a class="issue-number" href="/issue/{issue_number}"><span>Issue №</span> {issue_number}</a>
+	<a class="issue-number" href="/issue/{issue_number}"><span class="badge">Issue №</span> {issue_number}</a>
 	{/if}
 
 	<div role="main" class="main-wrapper">
