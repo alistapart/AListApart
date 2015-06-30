@@ -37,6 +37,12 @@
 				<section class="related-articles events">
 				{embed="embeds/event-entries"}
 				</section>
+			{if:elseif blog_follow_up != ""}
+				{if "{categories}{category_url_title}{/categories}" == ""}
+				<section class="related-articles events">
+				{embed="embeds/event-entries"}
+				</section>
+				{/if}
 			{/if}
 			</aside>
 			{/exp:channel:entries}
