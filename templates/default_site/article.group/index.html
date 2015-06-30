@@ -244,8 +244,8 @@
 				{/if}
 				<!-- if a follow up has not been selected, and the issue has two articles show the other article -->
 				{if article_follow_up == ""}
-					<section>
 					{if {exp:stash:get name="total-children"} > 1}
+					<section>
 					{exp:playa:parents channel="issues" status="open|In Progress"}
 					{exp:stash:set name="issue-number"}{issue_number}{/exp:stash:set}
 					{exp:playa:children child_id="not {entry_id}" status="open|In Progress"}
