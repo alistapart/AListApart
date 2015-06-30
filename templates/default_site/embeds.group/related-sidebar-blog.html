@@ -30,30 +30,11 @@
 			{if:else}
 				{embed="embeds/recently-by-author" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
 			{/if}
-
-			{if "{blog_related_content:count}" != ""}
-			<!-- start second block --><!-- show related articles if they exist -->
-				<section class="related-articles">
-					<h1>Further reading</h1>
-					{blog_related_content status="open|In Progress"}
-					<article>
-					<h2><a href="{site_url}{if blog_related_content:channel_short_name=='blog'}{blog_related_content:channel_short_name}/post/{blog_related_content:url_title}{if:elseif blog_related_content:channel_short_name=='articles'}article/{blog_related_content:url_title}{if:elseif blog_related_content:channel_short_name=='columns'}column/{blog_related_content:url_title}{/if}" data-trackevent="Related sidebar: Related by editor">{blog_related_content:title}</a></h2>
-					<p>{exp:strip_html}
-					{if blog_related_content:channel_short_name=='columns'}
-						{if blog_related_content:column_mini_deck}{blog_related_content:column_mini_deck}{if:elseif blog_related_content:column_intro}{exp:trunchtml chars="130" inline="..."}{blog_related_content:column_intro}{/exp:trunchtml}{/if}
-					{if:elseif blog_related_content:channel_short_name=='blog'}
-						{if blog_related_content:blog_mini_deck}{blog_related_content:blog_mini_deck}{if:elseif blog_related_content:blog_intro}{exp:trunchtml chars="130" inline="..."}{blog_related_content:blog_intro}{/exp:trunchtml}{/if}
-					{if:elseif blog_related_content:channel_short_name=='articles'}
-						{if blog_related_content:article_mini_deck}{blog_related_content:article_mini_deck}{if:elseif blog_related_content:article_deck}{exp:trunchtml chars="130" inline="..."}{blog_related_content:article_deck}{/exp:trunchtml}{/if}
-					{/if}
-					{/exp:strip_html}</p>
-					</article>
-					{/blog_related_content}
-				</section>
-			{if:elseif "{categories}{category_url_title}{/categories}" != ""}
+			{if "{categories}{category_url_title}{/categories}" != ""}
 				{embed="embeds/primary-category-logic" id="{entry_id}"}
-			{if:else}
-				<section class="related-articles">
+			{/if}
+			{if blog_follow_up == ""}
+				<section class="related-articles events">
 				{embed="embeds/event-entries"}
 				</section>
 			{/if}

@@ -31,31 +31,13 @@
 				{embed="embeds/recently-by-author" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
 			{/if}
 
-			{if "{column_related_content:count}" != ""}
-			<!-- start second block --><!-- show related articles if they exist -->
-				<section class="related-articles">
-					<h1>Further reading</h1>
-					{column_related_content status="open|In Progress"}
-					<article>
-					<h2><a href="{site_url}{if column_related_content:channel_short_name=='blog'}{column_related_content:channel_short_name}/post/{column_related_content:url_title}{if:elseif column_related_content:channel_short_name=='articles'}article/{column_related_content:url_title}{if:elseif column_related_content:channel_short_name=='columns'}column/{column_related_content:url_title}{/if}" data-trackevent="Related sidebar: Related by editor">{column_related_content:title}</a></h2>
-					<p>{exp:strip_html}
-					{if column_related_content:channel_short_name=='columns'}
-						{if column_related_content:column_mini_deck}{column_related_content:column_mini_deck}{if:elseif column_related_content:column_intro}{exp:trunchtml chars="130" inline="..."}{column_related_content:column_intro}{/exp:trunchtml}{/if}
-					{if:elseif column_related_content:channel_short_name=='blog'}
-						{if column_related_content:blog_mini_deck}{column_related_content:blog_mini_deck}{if:elseif column_related_content:blog_intro}{exp:trunchtml chars="130" inline="..."}{column_related_content:blog_intro}{/exp:trunchtml}{/if}
-					{if:elseif column_related_content:channel_short_name=='articles'}
-						{if column_related_content:article_mini_deck}{column_related_content:article_mini_deck}{if:elseif column_related_content:article_deck}{exp:trunchtml chars="130" inline="..."}{column_related_content:article_deck}{/exp:trunchtml}{/if}
-					{/if}
-					{/exp:strip_html}</p>
-					</article>
-					{/column_related_content}
+			{if "{categories}{category_url_title}{/categories}" != ""}
+				{embed="embeds/primary-category-logic" id="{entry_id}"}
+			{/if}
+			{if column_follow_up == ""}
+				<section class="related-articles events">
+				{embed="embeds/event-entries"}
 				</section>
-				{if:elseif "{categories}{category_url_title}{/categories}" != ""}
-					{embed="embeds/primary-category-logic" id="{entry_id}"}
-				{if:else}
-					<section class="related-articles">
-					{embed="embeds/event-entries"}
-					</section>
-				{/if}
-				</aside>
-				{/exp:channel:entries}
+			{/if}
+			</aside>
+			{/exp:channel:entries}
