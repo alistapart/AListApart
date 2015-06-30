@@ -267,9 +267,7 @@
 					{/exp:playa:parents}
 					</section>
 					{if:elseif {exp:stash:get name="total-children"} == 1}
-						<section class="follow-up">
-							{embed="embeds/recently-by-author" entry_id="{entry_id}"}
-						</section>
+						{embed="embeds/recently-by-author" entry_id="{entry_id}"}
 					{/if}
 				{/if}<!-- end first block -->
 				<!-- show categories -->
@@ -278,7 +276,7 @@
 				{/if}
 				{if article_follow_up == ""}
 					{if {exp:stash:get name="total-children"} == 1}
-						<section class="related-articles">
+						<section class="related-articles events">
 						{embed="embeds/event-entries"}
 						</section>
 					{/if}

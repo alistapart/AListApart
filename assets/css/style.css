@@ -2268,6 +2268,9 @@ p.question {
 	color: #2455c3;
 }
 
+.follow-up + .related-articles + .related-articles.events {display: none;}
+
+
 .article-layout .main-content .sidebar h2 {
 	font-family: "Franklin ITC", sans-serif;
 	font-weight: bold;
