@@ -248,8 +248,9 @@
 					<section>
 					{exp:playa:parents channel="issues" status="open|In Progress"}
 					{exp:stash:set name="issue-number-sidebar"}{issue_number}{/exp:stash:set}
-					{exp:playa:children child_id="not {entry_id}" status="open|In Progress"}
-						{if count == "1"}
+					{exp:stash:set name="article-illo-sidebar"}{issue_number}{/exp:stash:set}
+					{exp:playa:children status="open|In Progress"}
+					{if entry_id != {exp:stash:get name="entry-id"}}
 						{article_illustration}
 						<figure class="sidebar-hero {if width > height}wideone{/if}" data-picture data-alt="">
 							<div data-src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}"></div>
@@ -258,11 +259,11 @@
 						</figure>
 						{/article_illustration}
 						<h1>Also in Issue №&nbsp;{exp:stash:get name="issue-number-sidebar"}</h1>
-						{/if}
-						<article>{if entry_id != {exp:stash:get name="entry-id"}}
+						<article>
 						<h1><a href="/article/{url_title}" data-trackevent="Related sidebar: Also in issue">{title}</a></h1>
 						<p>{exp:strip_html}{if article_mini_deck}<p>{article_mini_deck}</p>{if:elseif article_deck}<p>{exp:trunchtml chars="130" inline="..."}{article_deck}{/exp:trunchtml}</p>{/if}{/exp:strip_html}</p>
-						{/if}</article>
+						</article>
+					{/if}
 					{/exp:playa:children}
 					{/exp:playa:parents}
 					</section>
