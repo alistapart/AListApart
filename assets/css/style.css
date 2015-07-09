@@ -106,7 +106,7 @@ html:not(.no-js) .buttonish:before {
 	display: inline-block;
 	width: 960px;
 	height: 120px;
-	background-image: url(/components/assets/img/rainbows/rainbow-logo.svg);
+	background-image: url(/components/assets/img/logo_a-list-apart.svg);
 	background-size: contain;
 	background-repeat: no-repeat;
 	margin-top: -18px;
@@ -263,7 +263,7 @@ ul.inline-items li {
 	overflow: hidden;
 	vertical-align: top;
 	text-indent: 100%;
-	background: url(/components/assets/img/rainbows/rainbow-laurel.svg) no-repeat center;
+	background: url(/components/assets/img/icon_navigation-laurel.svg) no-repeat center;
 	background-size: 100%;
 }
 
