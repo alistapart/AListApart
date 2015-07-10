@@ -1,4 +1,4 @@
-{exp:channel:entries channel="events" limit="1" status="open" dynamic="off" show_future_entries="yes" show_expired="yes"}
+{exp:channel:entries channel="events" limit="1" status="open|In Progress" dynamic="off" show_future_entries="yes" show_expired="yes"}
 
 {if current_time > expiration_date}
 <h1>The {entry_date format="%F %j%S"} event recap</h1>

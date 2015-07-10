@@ -305,6 +305,61 @@
 							<h1 itemprop="commentCount" class="classy">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
 
 							<a href="/comments/{url_title}" id="load-comments" data-url-title="{url_title}" class="buttonish">Load Comments</a>
+							
+							{if logged_out}
+
+							<ol class="article-comments">
+
+							<li id="commenter-signin" class="commenter-signin {if comment_total == 0}no-comments{/if}">
+							
+								<h3>Got Something to Say?</h3>
+								
+								<p>Discuss this article. We reserve the right to delete flames, trolls, and wood nymphs.</p>
+								<div id="login-buttons" class="active">
+									<h4>Sign in with:</h4>
+								
+									<ul class="login-buttons">
+										<li class="twitter">
+									{if segment_2 != 'embed-comments'}
+										<!--javascript probably turned off -->
+										<a href="{site_url}?ACT=154&provider=twitter&RET={site_url}comments/{url_title}#comments">Twitter</a>
+									{if:else}
+										{if channel_short_name == 'articles'}
+						 					<a href="{site_url}?ACT=154&provider=twitter&RET={site_url}article/{url_title}#comments">Twitter</a>
+										{if:elseif channel_short_name == 'blog'}
+											<a href="{site_url}?ACT=154&provider=twitter&RET={site_url}blog/post/{url_title}#comments">Twitter</a>
+										{if:elseif channel_short_name == 'columns'}
+											<a href="{site_url}?ACT=154&provider=twitter&RET={site_url}column/{url_title}#comments">Twitter</a>
+										{/if}
+									{/if}
+
+										</li>
+										<li class="facebook">
+									{if segment_2 != 'embed-comments'}
+										<!--javascript probably turned off -->
+										<a href="{site_url}?ACT=154&provider=facebook&RET={site_url}comments/{url_title}#comments">Twitter</a>
+									{if:else}
+										{if channel_short_name == 'articles'}
+						 					<a href="{site_url}?ACT=154&provider=facebook&RET={site_url}article/{url_title}#comments">Facebook</a>
+										{if:elseif channel_short_name == 'blog'}
+											<a href="{site_url}?ACT=154&provider=facebook&RET={site_url}blog/post/{url_title}#comments">Facebook</a>
+										{if:elseif channel_short_name == 'columns'}
+											<a href="{site_url}?ACT=154&provider=facebook&RET={site_url}column/{url_title}#comments">Facebook</a>
+										{/if}
+
+									{/if}
+
+										</li>
+										<li class="ala"><a href="/tools/log-in">A List Apart</a></li>
+									</ul>
+									
+								</div>
+								</li>
+								</ol>
+								{if:else}
+								{comment-form}
+								{/if}
+
 
 						{if:else}
 

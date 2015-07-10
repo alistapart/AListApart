@@ -1,10 +1,11 @@
+
 						<ol class="article-comments" id="comments-parent" data-xid="{XID_HASH}">
 							
 							{exp:comment:entries sort="asc" dynamic="no" url_title="{segment_3}" limit="999"}
 							{single-comment}
 							{/exp:comment:entries}
 							
-							{exp:channel:entries limit="1" dynamic="no" url_title="{segment_3}"}
+							 {!--exp:channel:entries limit="1" dynamic="no" url_title="{segment_3}"}
 							
 							{if allow_comments}
 									
@@ -20,6 +21,6 @@
 		 					
 							{/if}
 							
-							{/exp:channel:entries}
+							{/exp:channel:entries--} 
 							
 						</ol>

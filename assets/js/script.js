@@ -470,15 +470,17 @@ function showSponsorImage() {
 
 var autoLoadComments = function() {
 	
-	loadCommentsButton = $("#load-comments").offset();
+	loadCommentsButton = $("#load-comments");
 	
-	if ((commentsLoaded == false) && ($(window).scrollTop() >= (loadCommentsButton.top - $(window).height()))) {
+	// if ((commentsLoaded == false) && ($(window).scrollTop() >= (loadCommentsButton.top - $(window).height()))) {
 		
-		//console.log('trigger comment load now');
+	// 	//console.log('trigger comment load now');
 		
-		loadThoseComments();
+	// 	loadThoseComments();
 	
-	}
+	// }
+
+	loadThoseComments();
 		
 }
 
@@ -500,19 +502,20 @@ var loadThoseComments = function(target) {
 
 		$.get("/comments/embed-comments/" + loadWhichComments, function(data) {
 			
-			$("#comments").append(data).trigger("comments-appended");
+			$("#comment-form").before(data).trigger("comments-appended");
+
 	
 			commentsLoaded = true;
 		
 			$("#load-comments").remove();
 		
-			if (newTarget) {
+			// if (newTarget) {
 			
-				whereIsIt = $("#" + newTarget).position();
+			// 	whereIsIt = $("#" + newTarget).position();
 			
-				window.scrollTo(0,whereIsIt.top);
+			// 	window.scrollTo(0,whereIsIt.top);
 			
-			}
+			// }
 	
 		})
 		.error(function() {
