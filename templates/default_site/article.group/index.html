@@ -155,7 +155,7 @@
 
 			</header>
 
-			{if article_series} 
+			{if article_series}
 				{article-series-logic}
 			{/if}
 
@@ -244,7 +244,7 @@
 				{/if}
 				<!-- if a follow up has not been selected, and the issue has two articles show the other article -->
 				{if article_follow_up == ""}
-					{if {exp:stash:get name="total-children"} > 1}
+					{if '{exp:stash:get name="total-children"}' > 1}
 					<section>
 					{exp:playa:parents channel="issues" status="open|In Progress"}
 					{exp:stash:set name="issue-number-sidebar"}{issue_number}{/exp:stash:set}
@@ -267,7 +267,7 @@
 					{/exp:playa:children}
 					{/exp:playa:parents}
 					</section>
-					{if:elseif {exp:stash:get name="total-children"} == 1}
+					{if:elseif '{exp:stash:get name="total-children"}' == 1}
 						{embed="embeds/recently-by-author" entry_id="{entry_id}"}
 					{/if}
 				{/if}<!-- end first block -->
@@ -276,7 +276,7 @@
 					{embed="embeds/primary-category-logic" id="{entry_id}"}
 				{/if}
 				{if article_follow_up == ""}
-					{if {exp:stash:get name="total-children"} == 1}
+					{if '{exp:stash:get name="total-children"}' == 1}
 						<section class="related-articles events">
 						{embed="embeds/event-entries"}
 						</section>
