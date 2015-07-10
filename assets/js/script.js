@@ -502,7 +502,7 @@ var loadThoseComments = function(target) {
 
 		$.get("/comments/embed-comments/" + loadWhichComments, function(data) {
 			
-			$("#comment-form").before(data).trigger("comments-appended");
+			$(".article-comments.form").before(data).trigger("comments-appended");
 
 	
 			commentsLoaded = true;
