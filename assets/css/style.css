@@ -3165,6 +3165,10 @@ ol.article-comments > li .comment-tools {
 	font-size: 12px;
 }
 
+.article-comments input[type="submit"]:focus {
+	outline: 1px dotted black;
+}
+
 ol.article-comments > li .comment-tools a {
 	padding: 2px 6px;
 	background: #eee;
