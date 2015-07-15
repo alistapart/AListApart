@@ -85,34 +85,23 @@
 				{if article_illustration}
 
 				{article_illustration}
-				{if width > height}
-				<figure class="wide-hero" data-picture data-alt="">
-					<div data-src="{exp:ce_img:pair src="{url}" width="480" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}"></div>
-					<div data-src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" data-media="(min-width: 600px)"></div>
-					<div data-src="{exp:ce_img:pair src="{url}" width="1920" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" data-media="(min-width: 600px) and (min-device-pixel-ratio: 2.0)"></div>
-
-					<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-					<noscript><img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
-
+				<figure itemscope itemtype="http://schema.org/ImageObject" class="wide-hero">
+					<picture>
+						{if width > height}
+						<source srcset="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="1920" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
+						<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="">
+						{if:else}
+						<source srcset="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="696" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 960px)">
+						<img src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="">
+						{/if}
+					</picture>
 					{exp:stash:get name="issue-number"}
 					{exp:stash:get name="illustrator-credit"}
 				</figure>
-				{if:else}
-				<figure class="wide-hero" data-picture data-alt="">
-					<div data-src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}"></div>
-					<div data-src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" data-media="(min-width: 960px)"></div>
-					<div data-src="{exp:ce_img:pair src="{url}" width="696" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" data-media="(min-width: 960px) and (min-device-pixel-ratio: 2.0)"></div>
-
-					<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-					<noscript><img src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
-
-					{exp:stash:get name="issue-number"}
-					{exp:stash:get name="illustrator-credit"}
-				</figure>
-				{/if}
 				{/article_illustration}
+
 				{if:elseif article_legacy_illo}
-				<figure class="wide-hero">
+				<figure itemscope itemtype="http://schema.org/ImageObject" class="wide-hero">
 				{article_legacy_illo}
 				{exp:stash:get name="issue-number"}
 				{exp:stash:get name="illustrator-credit"}
@@ -121,7 +110,7 @@
 				{exp:stash:get name="issue-number"}
 				{/if}
 
-				{/if} {!-- end != murtaugh --}
+				{/if}
 
 				<h1 itemprop="headline name" class="entry-title">{title}</h1>
 
