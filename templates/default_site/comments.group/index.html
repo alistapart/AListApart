@@ -12,9 +12,7 @@
 
 {global-page-top}
 
-	<title>Comments on {title} · An A List Apart {if channel_short_name == "columns"}Column{if:elseif channel_short_name == "blog"}Blog Post{if:else}Article{/if}</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
+	<title>Comments on the A List Apart {if channel_short_name == "columns"}Column{if:elseif channel_short_name == "blog"}Blog Post{if:else}Article{/if} {title}</title>
 
 	<link rel="canonical" href="http://alistapart.com/comments/{url_title}"/>
 
@@ -47,7 +45,7 @@
 
 			<header class="entry-header">
 
-				<h1 class="entry-title"><a href="/{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:else}article/{/if}{url_title}">{title}</a></h1>
+				<h1 class="entry-title">Comments on <a href="/{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:else}article/{/if}{url_title}">{title}</a></h1>
 
 				<p class="entry-details">
 
