@@ -3327,10 +3327,10 @@ ol.article-comments li.comment-form:after {
 	content: "";
 	position: absolute;
 	top: -13px;
-	left: 50%;
+	left: 29px;
+	margin-left: 0px;
 	width: 24px;
 	height: 24px;
-	margin-left: -12px;
 	background: #fff;
 	border: 1px solid #ddd;
 	border-right: 0;
@@ -3341,6 +3341,12 @@ ol.article-comments li.comment-form:after {
 	-o-transform:rotate(45deg);
 	-ms-transform:rotate(45deg);
 	transform:rotate(45deg);
+}
+
+ol.article-comments li.commenter-signin.no-comments:after,
+ol.article-comments li.comment-form.no-comments:after {
+	left: 50%;
+	margin-left: -12px;
 }
 
 ol.article-comments li + li.commenter-signin:after,
