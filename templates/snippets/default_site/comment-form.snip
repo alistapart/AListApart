@@ -1,58 +1,58 @@
-							<ol class="article-comments form">
-							
-							<li id="comment-form" class="comment-form {if comment_total == 0}no-comments{/if}">
-								{if allow_comments}
-								<h3><label form="comment-form" for="comment-content">Got Something to Say?</label></h3>
+<ol class="article-comments form">
 
-								<p>Discuss this article. We reserve the right to delete flames, trolls, and wood nymphs. <br>(The commenting engine will accept simple HTML tags.)</p>
-								{/if}
+<li id="comment-form" class="comment-form {if comment_total == 0}no-comments{/if}">
+	{if allow_comments}
+	<h3><label form="comment-form" for="comment-content">Got Something to Say?</label></h3>
 
-							 
+	<p>Discuss this article. We reserve the right to delete flames, trolls, and wood nymphs. <br>(The commenting engine will accept simple HTML tags.)</p>
+	{/if}
 
-									{if channel_short_name == 'articles'}
+	{if channel_short_name == 'articles'}
 
-										{exp:comment:form channel="articles" return="{site_url}article/{url_title}#comments" id="comment-form" class="comment-form"}
-					 
-									{if:elseif channel_short_name == 'blog'}
+		{exp:comment:form channel="articles" return="{site_url}article/{url_title}#comment-form" id="comment-form" class="comment-form"}
 
-										{exp:comment:form channel="blog" return="{site_url}blog/post/{url_title}#comments" id="comment-form" class="comment-form"}
+	{if:elseif channel_short_name == 'blog'}
 
-									{if:elseif channel_short_name == 'columns'}
+		{exp:comment:form channel="blog" return="{site_url}blog/post/{url_title}#comment-form" id="comment-form" class="comment-form"}
 
-										{exp:comment:form channel="columns" return="{site_url}column/{url_title}#comments" id="comment-form" class="comment-form"}
-									
-									{/if}
+	{if:elseif channel_short_name == 'columns'}
 
-							 
-								
-								<textarea data-autoresize id="comment-content" class="logged-in" name="comment" required="required"></textarea>
-								<p class="commenter-info">
+		{exp:comment:form channel="columns" return="{site_url}column/{url_title}#comment-form" id="comment-form" class="comment-form"}
+	
+	{/if}
 
-									{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
-								
-								 
+ 
+	
+	<textarea data-autoresize id="comment-content" class="logged-in" name="comment" required="required"></textarea>
+	<p class="commenter-info">
 
-									{if channel_short_name == 'articles'}
+	{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
 
-										<a href="{exp:freemember:logout_url return='article/{url_title}#comments'}">log out</a>
+	{if segment_1 == 'comments'}
+ 	<!--javascript probably turned off -->
+ 	<a href="{exp:freemember:logout_url return='comments/{url_title}#commenter-signin'}">log out</a>
 
-									{if:elseif channel_short_name == 'blog'}
+	{if:else}
+		{if channel_short_name == 'articles'}
 
-										<a href="{exp:freemember:logout_url return='blog/post/{url_title}#comments'}">log out</a>
+			<a href="{exp:freemember:logout_url return='article/{url_title}#commenter-signin'}">log out</a>
 
-									{if:elseif channel_short_name == 'columns'}
+		{if:elseif channel_short_name == 'blog'}
 
-										<a href="{exp:freemember:logout_url return='column/{url_title}#comments'}">log out</a>
-					
-									{/if}
+			<a href="{exp:freemember:logout_url return='blog/post/{url_title}#commenter-signin'}">log out</a>
 
-							 
+		{if:elseif channel_short_name == 'columns'}
 
-									<input type="submit" value="Submit" />
+			<a href="{exp:freemember:logout_url return='column/{url_title}#commenter-signin'}">log out</a>
 
-								</p>
+		{/if}
+	{/if}
 
-								{/exp:comment:form}
+	<input type="submit" value="Submit" />
 
-							</li>
-							</ol>
+	</p>
+
+	{/exp:comment:form}
+
+</li>
+</ol>
