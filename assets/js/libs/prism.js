@@ -134,11 +134,10 @@ var _ = self.Prism = {
 		           .replace(/>/g, '&gt;').replace(/\u00a0/g, ' ');
 		//console.time(code.slice(0,50));
 
-		var tabSize = 4;
 		var testTabSize = document.createElement('i');
 		if(testTabSize.style.tabSize !== '' && testTabSize.style.MozTabSize !== '' && testTabSize.style.oTabSize !== '') {
-			console.log(tabSize.style);
-		   code = code.replace(/\t/g, repeat(" ", tabSize));
+		  //console.log('tab-size not supported');
+		  code = code.replace(/\t/g, "   ");
 		}
 
 		var env = {
