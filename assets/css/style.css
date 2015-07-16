@@ -3099,7 +3099,7 @@ pre.editing code {
 
 ol.article-comments {
 	position: relative;
-	margin-top: 72px; /* doubled to overcome margin-collapse; margin is needed because of the abPos pseudo elements */
+	margin-top: 64px; /* doubled to overcome margin-collapse; margin is needed because of the abPos pseudo elements */
 	list-style-type: none;
 	text-align: left;
 }
@@ -3332,7 +3332,7 @@ ol.article-comments li.comment-form:after {
 	height: 24px;
 	margin-left: -12px;
 	background: #fff;
-	border: 1px solid #ebebeb;
+	border: 1px solid #ddd;
 	border-right: 0;
 	border-bottom: 0;
 
