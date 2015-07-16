@@ -16,15 +16,17 @@
 	{exp:channel:entries channel="issues" limit="1" status="open" dynamic="off" show_future_entries="no"}
 
 	{issue_illustration}
-	<figure class="wide-hero" data-picture data-alt="">
-		<div data-src="{exp:ce_img:pair src="{url}" width="480" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}"></div>
-		<div data-src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" data-media="(min-width: 600px)"></div>
-		<div data-src="{exp:ce_img:pair src="{url}" width="1920" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" data-media="(min-width: 600px) and (min-device-pixel-ratio: 2.0)"></div>
-
-		<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-		<noscript><img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
-
-		<a class="issue-number" href="/issue/{issue_number}"><span class="badge">Issue №</span> {issue_number}</a>
+	<figure itemscope itemtype="http://schema.org/ImageObject" class="wide-hero">
+		<picture>
+			{if width > height}
+			<source srcset="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="1920" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
+			<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="">
+			{if:else}
+			<source srcset="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="696" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 960px)">
+			<img src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="">
+			{/if}
+		</picture>
+		{exp:stash:get name="issue-number"}
 	</figure>
 	{/issue_illustration}
 
