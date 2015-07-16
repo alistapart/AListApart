@@ -8,27 +8,27 @@ $(document).ready(function(){
 	/* setting up hamburger nav dropdown */
 
 	$('.global-nav').addClass('deluxe');
-	
+
 	$('[data-fallback]').on('error', function(){
-	
+
 		//console.log('img load failure: ' + $(this).attr('src'));
-		
+
 		var fallback = $(this).attr('data-fallback');
-	 
+
 		$(this).attr('src', fallback);
-			
+
 		//console.log('missing img src replaced with: ' + fallback);
-	 
+
 	});
-	
+
 	$('.go-to-nav').click (function(event){
-	
+
 		var navState = $( "html" ).hasClass('show-nav');
-	
+
 		var scrollHandler = function(){
 		    $('html').removeClass('show-nav');
 		}
-		
+
 		if (!navState){
 			$( "html" ).addClass('show-nav');
 			/* $(window).bind('scroll', scrollHandler); */
@@ -36,23 +36,23 @@ $(document).ready(function(){
 			$( "html" ).removeClass('show-nav');
 			/* $(window).unbind('scroll', scrollHandler); */
 		}
-		
+
 		return false;
-		
+
 	});
-	
+
 	$('.global-nav').click(function(event){
 	     event.stopPropagation();
 	});
-	
+
 	$('body').click(function() {
-	   $('html').removeClass('show-nav'); 
+	   $('html').removeClass('show-nav');
 	});
-	
+
 	$('[data-trackevent]').on('click', function() {
-		
+
 		mixpanel.track($(this).attr('data-trackevent'));
-		
+
 	});
 
 	$("sup[data-footnote]").each(function() {
@@ -66,62 +66,62 @@ $(document).ready(function(){
 	var count1 = 0;
 	var count2 = 0;
 	var count3 = 0;
-	
+
 	var hashLink;
-	
+
 	$(".hentry .main-content > h2, .hentry .main-content > h3, .hentry .main-content > h4, .hentry .main-content > h5, .hentry .main-content > h6").each(function() {
-		
+
 		// need to check for existence of an ID attribute
-		
+
 		count1++;
-		
+
 		var thisID = $(this).attr('id');
-		
+
 		if (typeof thisID !== 'undefined' && thisID !== false) {
-		
+
 			hashLink = $(this).attr("id");
-			
+
 			console.log('found one with an id');
-			
+
 		} else {
-		
+
 			hashLink = "section" + count1;
-		
+
 			$(this).attr("id", hashLink);
-			
+
 			console.log('adding id');
-			
+
 		};
-		
+
 		$(this).append("<a class='subhead-anchor' href='#" + hashLink + "'>#" + hashLink + "</a>");
 
 	});
-	
+
 	$(".hentry .main-content > pre").each(function() {
-		
+
 		count2++;
 		$(this).attr("id", "snippet" + count2);
 
 	});
-	
+
 	$(".hentry .main-content > figure:not(.tall-hero)").each(function() {
-		
+
 		count3++;
 		$(this).attr("id", "figure" + count3);
 
 	});
-	
+
 	/*
 	$(".hentry .main-content pre").on("click", function() {
-		
+
 		$(this).addClass("editing").children("code").attr("contenteditable", "true");
-		
+
 	});
-	
+
 	$("code[contenteditable='true']").on("blur", function() {
-		
+
 		alert();
-		
+
 	});
 	*/
 
@@ -131,7 +131,7 @@ $(document).ready(function(){
 		// On the event page connect panelist anchor to panelist bio.
 		createPanelistAnchor: function(){
 
-			var nameLink = $('.name-link'), 
+			var nameLink = $('.name-link'),
 				nameTarget= $('.columnist'),
 				nameHash, i, j;
 
@@ -143,40 +143,40 @@ $(document).ready(function(){
 			for (j=0;j<nameTarget.length;j++) {
 				nameTarget[j].setAttribute("id", "panelist" + (j + 1));
 			}
-		} 
+		}
 		// Todo: maybe show panelist name in hash instead of panelist#
 		// Make the function not content specific
 	};
 
-	AlaEvents.createPanelistAnchor(); 
-	
-	/* 
+	AlaEvents.createPanelistAnchor();
+
+	/*
 		ajax submission failure
 		have not figured out how to get a fresh XID from EE
-		
-	var formOptions = { 
-		target:				null   // target element(s) to be updated with server response 
-		,beforeSubmit:		showRequest  // pre-submit callback 
-		,success:			showResponse  // post-submit callback 
-		,beforeSubmit: 	function(arr, $form, options) { 
-			
+
+	var formOptions = {
+		target:				null   // target element(s) to be updated with server response
+		,beforeSubmit:		showRequest  // pre-submit callback
+		,success:			showResponse  // post-submit callback
+		,beforeSubmit: 	function(arr, $form, options) {
+
 			$form.find('.spinner').addClass('submitting');
-			                
+
 		}
 	};
-	
+
 	if ($(".perfect-form-demo").length != -1) {
-	
+
 		$(".perfect-form-demo").ajaxForm(formOptions);
-	
+
 	};
-	
+
 	*/
-	
+
 	/*$(".perfect-form-demo").on('submit', function(e) {
-		
+
 		e.preventDefault();
-		
+
 		$.ajax({
 			method: "POST",
 			url: $(this).attr('action'),
@@ -187,183 +187,183 @@ $(document).ready(function(){
 				alert('Submitted');
 			},
 			error: function( xhr, err ) {
-				alert(xhr.getResponseHeader('X-EEXID'));     
+				alert(xhr.getResponseHeader('X-EEXID'));
 			}
 		});
-		
+
 	});*/
-	
+
 	$("body").on("click", "#cancel-login", function(e) {
-		
+
 		e.preventDefault();
-		
+
 		$("#sign-in-form").removeClass("active");
-		
+
 		$("#login-buttons").addClass("active");
-	
+
 	});
-	
+
 	$("body").on("click", "#cancel-password-reset", function(e) {
-		
+
 		e.preventDefault();
-		
+
 		$("#forgot_password_form").removeClass("active");
-		
+
 		$("#sign-in-form").addClass("active");
-	
+
 	});
-	
+
 	$("body").on("click", "#cancel-registration", function(e) {
-		
+
 		e.preventDefault();
-		
+
 		$("#register-form").removeClass("active");
-		
+
 		$("#sign-in-form").addClass("active");
-	
+
 	});
-	
+
 	$("body").on("click", "#show-native-login", function(e) {
-		
+
 		e.preventDefault();
-		
+
 		$("#sign-in-form").toggleClass("active");
-		
+
 		$("#register-form").removeClass("active");
-		
+
 		$("#forgot_password_form").removeClass("active");
-		
+
 		$("#login-buttons").removeClass("active");
-		
+
 		$("#subject-name-here").focus();
-		
+
 	});
-	
+
 	$("body").on("click", "#show-forgot-password-form", function(e) {
-		
+
 		e.preventDefault();
-		
+
 		$("#sign-in-form").removeClass("active");
-		
+
 		$("#show-registration-form").removeClass("active");
-		
+
 		$("#forgot_password_form").toggleClass("active");
-		
+
 		$("#subject-email-here").focus();
-		
+
 	});
-	
+
 	$("body").on("click", "#show-registration-form", function(e) {
-		
+
 		e.preventDefault();
-		
+
 		$("#sign-in-form").removeClass("active");
-		
+
 		$("#forgot_password_form").removeClass("active");
-		
+
 		$("#register-form").toggleClass("active");
-		
+
 		$("#subject-username-here").focus();
-		
+
 	});
-	
+
 	$(".col-holder .secondary-column .author-nav:not(.active) h2").click(function() {
-		
+
 		$(".col-holder .secondary-column .author-nav").toggleClass("active");
-		
+
 	});
-	
+
 	$("#next-letters").click(function(e) {
-		
+
 		e.preventDefault();
-		
+
 		$("#alphabits").disableSelection();
-		
+
 		maskWidth = $("#alphabits").width();
-		
+
 		listWidth = $("#alphabits > ol").width();
-		
+
 		currentOffset = parseInt($("#alphabits > ol").css("margin-left"));
-		
+
 		if (  maskWidth > -( currentOffset + maskWidth ) ) {
 			$("#alphabits > ol").css("margin-left", (currentOffset - maskWidth + 89));
 		}
 	});
-	
+
 	$("#previous-letters").click(function(e) {
-		
+
 		e.preventDefault();
-		
+
 		$("#alphabits").disableSelection();
-		
+
 		maskWidth = $("#alphabits").width();
-		
+
 		currentOffset = parseInt($("#alphabits > ol").css("margin-left"));
-		
+
 		if (currentOffset != "0") {
 			$("#alphabits > ol").css("margin-left", (currentOffset + maskWidth - 89));
 		};
-		
+
 	});
-	
+
 	$("a[data-alphabit]").on("click", function(e) {
-		
+
 		e.preventDefault();
-		
+
 		$("#alphabits").disableSelection();
-		
+
 		if (!$(this).hasClass("active")) {
-		
+
 			$("a[data-alphabit]").removeClass("active");
-		
+
 			letter = $(this).attr("data-alphabit");
-		
+
 			$("#alpha-target").attr("data-show", letter);
-			
+
 			$(this).addClass("active");
-		
+
 			$("#browse-title").attr("data-display-letter", letter.toUpperCase());
-			
+
 		} else {
-		
+
 			$("a[data-alphabit]").removeClass("active");
-			
+
 			$("#alpha-target").removeAttr("data-show");
-			
+
 			$("#browse-title").removeAttr("data-display-letter");
-		
+
 		};
-		
+
 	});
-	
+
 	$("#load-comments").click(function(e) {
-			
+
 		e.preventDefault();
-			
+
 		loadThoseComments();
-			
+
 	});
-	
+
 	$("form#main-search").submit(function(e) {
-	
+
 		userQuery = $("input[name=q]").val();
-	
+
 		if (userQuery == "") {
-			
+
 			$("input[name=keywords]").attr("placeholder", "").focus();
-			
+
 			e.stopPropagation();
-			
+
 			return false;
-			
+
 		} else {
-			
+
 			e.preventDefault();
-			
+
 			window.location = '/search?keywords=' + userQuery;
-			
+
 		};
-		
+
 	});
 
 	$("body").on("click", ".embed-code", function() {
@@ -371,7 +371,7 @@ $(document).ready(function(){
 		$(this).select();
 
 	});
-	
+
 	if ($(".comment").length != -1) {
 
 		$(".comment").CommentEditor();
@@ -379,37 +379,37 @@ $(document).ready(function(){
 	};
 
 	$("#comments").bind("comments-appended", function() {
-		
+
 		console.log('comments loaded');
 
 		$(".comment").CommentEditor();
 
 	});
-	
+
 	$('body').on('input propertychange focus', 'textarea[data-autoresize]', function() {
-	
+
 		autoResize($(this));
-	
+
 	});
 
 	var emailFilter = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/;
-	
+
 	$("form#email-subscribe").submit(function(e) {
-		
+
 		customValidation = $(this).attr('data-customvalidate');
-	
+
 		userName = $("form#email-subscribe input[name=NAME]").val();
-	
+
 		userEmail = $("form#email-subscribe input[name=EMAIL]").val();
-	
+
 		userType = $('form#email-subscribe input[type=checkbox]:checked').size();
 
 		if (userName == "" || userEmail == "") {
-			
+
 			$("form#email-subscribe p.error").html('Hey, did you fill out all the fields?');
-			
+
 			return false;
-			
+
 		} else {
 
 			if (!emailFilter.test(userEmail)) {
@@ -419,33 +419,33 @@ $(document).ready(function(){
 				return false;
 
 			} else if (customValidation != 'no-checkbox' && userType == 0) {
-			
+
 				$("form#email-subscribe p.error").html('Hey, did you check some boxes?');
-			
+
 				return false;
 
 			};
 
 		};
-		
+
 	});
-				
+
 });
 
 sponsorSniff = document.addEventListener("DOMNodeInserted", function(event) {
-	
+
 	if ($(event.target).parent()[0].id == 'bsap_1031') {
 
 		$('body').addClass('sponsored');
-	
+
 		showSponsorImage();
-		
+
 		document.removeEventListener('DOMNodeInserted', sponsorSniff, false);
-		
+
 	};
-	
+
 });
-	
+
 var dpr = window.devicePixelRatio
 
 function showSponsorImage() {
@@ -457,116 +457,116 @@ function showSponsorImage() {
 	};
 	var adHeight = $('.sponsor-logo').attr('data-height');
 	var adWidth  = $('.sponsor-logo').attr('data-width');
-	
+
 	$('.sponsor-logo').css({
 		height: adHeight,
 		width: adWidth,
 		backgroundImage: 'url(' + adImage + ')'
 	});
-	
+
 	$('.sponsor-top').css('display', 'block');
 
 };
 
 var autoLoadComments = function() {
-	
+
 	loadCommentsButton = $("#load-comments").offset();
-	
+
 	if ((commentsLoaded == false) && ($(window).scrollTop() >= (loadCommentsButton.top - $(window).height()))) {
-		
+
 		//console.log('trigger comment load now');
-		
+
 		loadThoseComments();
-	
+
 	}
-		
+
 }
 
 commentsLoaded = false;
 
 var loadThoseComments = function(target) {
-	
+
 	newTarget = target;
-	
+
 	loadWhichComments = $("#load-comments").attr("data-url-title");
-	
+
 	// unbind this stuff to prevent multiple loads (not working)
 	$(window).unbind("scrollend");
 	$("body").removeClass("comments-exist");
-	
+
 	if (commentsLoaded == false) {
-	
+
 		commentsLoaded = true;
 
 		$.get("/comments/embed-comments/" + loadWhichComments, function(data) {
-			
+
 			$("#comments").append(data).trigger("comments-appended");
-	
+
 			commentsLoaded = true;
-		
+
 			$("#load-comments").remove();
-		
+
 			if (newTarget) {
-			
+
 				whereIsIt = $("#" + newTarget).position();
-			
+
 				window.scrollTo(0,whereIsIt.top);
-			
+
 			}
-	
+
 		})
 		.error(function() {
-	
+
 			commentsLoaded = false;
-			
+
 			//console.log('WHERE ARE THE COMMENTS');
-		
+
 		});
 
 	};
-	
+
 };
 
 $(window).setBreakpoints({
 // use only largest available vs use all available
-    distinct: true, 
+    distinct: true,
 // array of widths in pixels where breakpoints
 // should be triggered
     breakpoints: [
         1,
         600
-    ] 
+    ]
 });
 
 $(window).bind('exitBreakpoint600',function() {
 
 	//$("#home-page .logo-holder .global-nav").remove();
-	
+
 	$(window).unbind("scrollend");
-	
+
 });
 
 $(window).bind('enterBreakpoint600',function() {
 
 	//$("#home-page .global-nav").clone().prependTo(".logo-holder");
-	
+
 	if (($("body").is(".comments-exist")) && ($("#load-comments").length != -1)) {
-		
+
 		autoLoadComments();
-	
+
 		$(window).scrollStopped(function(){
-	
+
 			autoLoadComments();
-		
+
 		});
-	
+
 	};
-	
+
 });
 
-$.fn.scrollStopped = function(callback) {          
+$.fn.scrollStopped = function(callback) {
     $(this).scroll(function(){
-    
+
         var self = this, $this = $(self);
         if ($this.data('scrollTimeout')) {
           clearTimeout($this.data('scrollTimeout'));
@@ -581,24 +581,24 @@ $.fn.scrollStopped = function(callback) {
 window.onload = function() {
 
 	if(window.location.hash) {
-		
+
 		parseHash = window.location.hash.split("#");
-		
+
 		// if ((parseHash[1] == "comment-form") || (parseHash[1] == "latest") || (parseHash[1] == "comments")) {
 		if ((parseHash[1] == "comment-form") || (parseHash[1] == "comments")) {
 
 			loadThoseComments(parseHash[1]);
-			
+
 		} else if ($("#" + parseHash[1]).length) {
-			
+
 			// do we need this for non-comment-related anchors?
-			
+
 			//whereIsIt = $("#" + parseHash[1]).position();
-		
+
 			//window.scrollTo(0,whereIsIt.top);
-		
+
 		}
-		
+
  	 }
 
 };
@@ -610,6 +610,36 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 // make it safe to use console.log always
 (function(a){function b(){}for(var c="assert,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,time,timeEnd,trace,warn".split(","),d;!!(d=c.pop());){a[d]=a[d]||b;}})
 (function(){try{console.log();return window.console;}catch(a){return (window.console={});}}());
+
+//Set your tab size here, and in the CSS.
+// polyfill from: http://codepen.io/tjacobdesign/pen/Cjryo
+var tabSize = 4;
+var codeElements = document.getElementsByTagName('code'),
+   //textareas = document.getElementsByTagName('textarea'),
+   e = document.createElement('i');
+
+if(e.style.tabSize !== '' && e.style.MozTabSize !== '' && e.style.oTabSize !== '')
+{
+   console.log(e.style);
+   replaceTabs(codeElements);
+   replaceTabs(textareas);
+}
+
+function replaceTabs(ele)
+{
+   for(var i = 0; i < ele.length; i++)
+   {
+      ele[i].innerHTML = ele[i].innerHTML.replace(/\t/g, repeat(" ", tabSize));
+   }
+}
+
+function repeat(st, n) {
+   var s = "";
+   while (--n >= 0) {
+      s += st
+   }
+   return s;
+}
 
 $.support.selectstart = "onselectstart" in document.createElement("div");
 
@@ -692,11 +722,11 @@ $.fn.CommentEditor = function(options) {
 		var getHash;
 
         function closeComment(id) {
-        
+
 			var confirmClose = confirm('Are you sure?');
-        	
+
 			if (confirmClose == true) {
-             
+
 				if (getHash == null) {
 					getHash = $("#comments-parent").data('xid');
 				}
@@ -741,7 +771,7 @@ $.fn.CommentEditor = function(options) {
 		Functions for auto-resizing textareas.
 		Based almost entirely on John Long's excellent autogrow plugin (except I un-plugin-ifyed it):
 		https://gist.github.com/jlong/2127634
-		
+
 		For a more consistent user experience you should apply resize: none to auto-resizing textareas in your CSS.
 		The plugin needs to apply it on its own, so it's better that it not be there at all. (That said, you probably
 		want to apply that style only when JS is avaialble.)
@@ -754,9 +784,9 @@ function escape(string) {
 };
 
 function autoResize(which) {
-		
+
 		if (!which.data('autogrow-applied')) {
-		
+
 				var textarea = which, initialHeight = textarea.innerHeight(), expander = $('<div />'), timer = null;
 
 				// Setup expander
@@ -786,53 +816,53 @@ function autoResize(which) {
 
 				// Record autogrow applied
 				textarea.data('autogrow-applied', true);
-				
+
 		};
-		
+
 };
 
-/* 
+/*
 	ajax submission failure
 	have not figured out how to get a fresh XID from EE
 
-// pre-submit callback 
-function showRequest(formData, jqForm, options) { 
-	// formData is an array; here we use $.param to convert it to a string to display it 
-	// but the form plugin does this for you automatically when it submits the data 
-	var queryString = $.param(formData); 
-	
-	// jqForm is a jQuery object encapsulating the form element.  To access the 
-	// DOM element for the form do this: 
-	// var formElement = jqForm[0]; 
-	
-	//alert('About to submit: \n\n' + queryString); 
-	
-	// here we could return false to prevent the form from being submitted; 
-	// returning anything other than false will allow the form submit to continue 
-	return true; 
+// pre-submit callback
+function showRequest(formData, jqForm, options) {
+	// formData is an array; here we use $.param to convert it to a string to display it
+	// but the form plugin does this for you automatically when it submits the data
+	var queryString = $.param(formData);
+
+	// jqForm is a jQuery object encapsulating the form element.  To access the
+	// DOM element for the form do this:
+	// var formElement = jqForm[0];
+
+	//alert('About to submit: \n\n' + queryString);
+
+	// here we could return false to prevent the form from being submitted;
+	// returning anything other than false will allow the form submit to continue
+	return true;
 }
-	
-// post-submit callback 
-function showResponse(responseText, statusText, xhr, $form)  { 
-	// for normal html responses, the first argument to the success callback 
-	// is the XMLHttpRequest object's responseText property 
-	
-	// if the ajaxForm method was passed an Options Object with the dataType 
-	// property set to 'xml' then the first argument to the success callback 
-	// is the XMLHttpRequest object's responseXML property 
-	
-	// if the ajaxForm method was passed an Options Object with the dataType 
-	// property set to 'json' then the first argument to the success callback 
-	// is the json data object returned by the server 
-	
-	//alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + '\n\nThe output div should have already been updated with the responseText.'); 
-	
+
+// post-submit callback
+function showResponse(responseText, statusText, xhr, $form)  {
+	// for normal html responses, the first argument to the success callback
+	// is the XMLHttpRequest object's responseText property
+
+	// if the ajaxForm method was passed an Options Object with the dataType
+	// property set to 'xml' then the first argument to the success callback
+	// is the XMLHttpRequest object's responseXML property
+
+	// if the ajaxForm method was passed an Options Object with the dataType
+	// property set to 'json' then the first argument to the success callback
+	// is the json data object returned by the server
+
+	//alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + '\n\nThe output div should have already been updated with the responseText.');
+
 	alert(xhr.getResponseHeader('X-EEXID'));
-	
+
 	$('body').data('xid', xhr.getResponseHeader('X-EEXID'));
-	
+
 	$('.submitting').removeClass('submitting');
-	
+
 }
 
 */
