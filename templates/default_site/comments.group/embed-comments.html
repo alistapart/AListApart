@@ -1,26 +1,7 @@
-
 						<ol class="article-comments" id="comments-parent" data-xid="{XID_HASH}">
 							
 							{exp:comment:entries sort="asc" dynamic="no" url_title="{segment_3}" limit="999"}
 							{single-comment}
 							{/exp:comment:entries}
-							
-							 {!--exp:channel:entries limit="1" dynamic="no" url_title="{segment_3}"}
-							
-							{if allow_comments}
-									
-									{if logged_in} 
-	 									{comment-form}
-									{if:else} 
-		 								{comment-sign-in} 
-	 								{/if}
-
-		 					{if:elseif !allow_comments}
-
-								<li class="system-message">Sorry, commenting is closed on this article.</li>
-		 					
-							{/if}
-							
-							{/exp:channel:entries--} 
 							
 						</ol>
