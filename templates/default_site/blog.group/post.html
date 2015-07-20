@@ -133,6 +133,13 @@
 
 							<a href="/comments/{url_title}" id="load-comments" data-url-title="{url_title}" class="buttonish">Load Comments</a>
 
+							{if logged_out}
+								{comment-sign-in}
+							{if:else}
+								{comment-form}
+							{/if}
+
+
 						{if:else}
 
 							<h1 class="classy">No Comments{if allow_comments} (yet){/if}</h1>
