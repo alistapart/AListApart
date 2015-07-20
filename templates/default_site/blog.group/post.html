@@ -42,7 +42,7 @@
 
 	<div role="main" class="main-wrapper">
 
-		<article class="article-layout hentry">
+		<article itemscope itemtype="http://www.schema.org/BlogPosting" class="article-layout hentry">
 
 		{if channel_short_name == "blog"}
 
@@ -50,13 +50,13 @@
 
 				<span class="column-name">The A List Apart Blog Presents:</span>
 
-				<h1 class="entry-title">{title}</h1>
+				<h1 itemprop="headline name" class="entry-title">{title}</h1>
 
 				<p class="entry-details">
 
-					{if blog_hide_author != "y"}by {embed="embeds/article-authors-primary" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} · {/if}
+					{if blog_hide_author != "y"}<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {embed="embeds/article-authors-primary" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} · </span>{/if}
 
-					<time class="article-pubdate" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+					<time class="article-pubdate" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}" itemprop="datePublished">{entry_date format="%F %d, %Y"}</time>
 
 				</p>
 
@@ -100,7 +100,7 @@
 			</div>
 			{/if}
 
-			<div class="main-content">
+			<div itemprop="articleBody" class="main-content">
 
 				{content-minutiae-blog}
 
@@ -142,7 +142,7 @@
 
 						{if:else}
 
-							<h1 class="classy">No Comments{if allow_comments} (yet){/if}</h1>
+							<h1 itemprop="commentCount" class="classy">No Comments{if allow_comments} (yet){/if}</h1>
 
 							{if logged_in}<ol class="article-comments"> {comment-form}</ol>
 		 					{if:else}<ol class="article-comments"> {comment-sign-in}</ol>{/if}
