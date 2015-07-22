@@ -25,6 +25,8 @@
 	<link rel="stylesheet" href="{assets_path}css/reset.css" />
 	<link rel="stylesheet" href="{assets_path}css/editables.css" />
 
+	<script src="{assets_path}js/libs/prefixfree.min.js"></script>
+
 	<script src="{assets_path}js/libs/modernizr-dev.js"></script>
 
 	<title>A List Apart Profile Editor</title>
@@ -68,13 +70,13 @@
 
 	{password_block}
 	<fieldset>
-		<label>
+		<label class="password-field">
 			Pick a password:
 			<input name="password" type="password" value="">
 			<span class="note">Make it good.</span>
 		</label>
 
-		<label>
+		<label class="password-field">
 			Confirm it:
 			<input name="password_confirm" type="password" value="">
 			<span class="note">Make it the same.</span>
@@ -132,21 +134,49 @@
 			<input name="email" type="email" value="{email}">
 		</label>
 
-		<label>
+		<label class="password-field">
 			New password:
-			<input name="password" type="password" value="">
+			<input
+				id="password"
+				name="password"
+				type="password"
+				required="required"
+				data-validate="onblur"
+				data-type="any"
+				data-isvalid=""
+				data-error="what's your password?"
+				value="TEST"
+				required />
 			<span class="note">Make it good.</span>
 		</label>
 
-		<label>
+		<label class="password-field">
 			New password confirmation:
-			<input name="password_confirm" type="password" value="">
+			<input
+				id="password_confirm"
+				name="password_confirm"
+				type="password"
+				data-validate="onblur"
+				data-type="matching"
+				data-mustmatch="password"
+				data-isvalid="yes"
+				data-error="this needs to match the previous field."
+				required />
 			<span class="note">Make it the same.</span>
 		</label>
 
-		<label>
+		<label class="password-field">
 			Submit your current password to continue: <small>(<a href="/tools/forgot-password">forgotten it?</a>)</small>
-			<input name="current_password" type="password" value="" />
+			<input
+				id="current_password"
+				name="current_password"
+				type="password"
+				required="required"
+				data-validate="onblur"
+				data-type="any"
+				data-isvalid=""
+				data-error="for security, we need your current password"
+				required />
 		</label>
 
 
@@ -323,6 +353,7 @@
 <script src="{assets_path}js/libs/picturefill.js"></script>
 <script src="{assets_path}js/libs/breakpoints.js"></script>
 <script src="{assets_path}js/libs/jquery.form.min.js"></script>
+<script src="{assets_path}js/form-stuff.js"></script>
 <script src="{assets_path}js/script.js"></script>
 
 

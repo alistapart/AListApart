@@ -3,9 +3,9 @@
 	<li id="commenter-signin" class="commenter-signin {if comment_total == 0}no-comments{/if}">
 
 	<h3>Got Something to Say?</h3>
-	
+
 	<p>Sign in with your A List Apart account to discuss this article.</p>
-	
+
  	{if segment_1 == 'comments'}
  	<!--javascript probably turned off -->
 		{exp:freemember:login return="comments/{url_title}#comment-form" form_class="sign-in-form"}
@@ -23,24 +23,24 @@
 			{exp:freemember:login return="column/{url_title}#comment-form" form_class="sign-in-form"}
 		{/if}
 	{/if}
-	
+
 		<label for="login-name-here">
 			Username <small>(<a href="/tools/register" target="_blank">need an account?</a>)</small>
 			<input id="login-name-here" name="username" type="text" required="required" />
 		</label>
-	
-		<label for="login_password">
+
+		<label for="login_password" class="password-field">
 			Password <small>(<a href="/tools/forgot-password" target="_blank">forgotten it?</a>)</small>
 			<input id="login_password" name="password" type="password" required="required" />
 		</label>
-		
+
 		<input type="submit" value="Submit" />
-	
+
 	{/exp:freemember:login}
-	
+
 	<div id="login-buttons" class="active">
 		<h4>Or sign in with:</h4>
-	
+
 		<ul class="login-buttons">
 			<li class="twitter">
 		{if segment_1 == 'comments'}
@@ -74,7 +74,7 @@
 			</li>
 			<!-- <li class="ala"><a id="show-native-login" href="/tools/login">A List Apart</a></li> -->
 		</ul>
-		
+
 	</div>
 
 	</li>

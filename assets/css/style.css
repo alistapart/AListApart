@@ -3463,6 +3463,17 @@ ul.login-buttons li a:hover {
 	font-size: 16px;
 }
 
+.article-comments form label.password-field {
+	position: relative;
+}
+
+.sign-in-form .password-mask {
+	position: absolute;
+	right: 15%;
+	top: 3.65em;
+	font-size: .8em;
+}
+
 .article-comments label.checkbox {
 	margin-bottom: 18px;
 }
