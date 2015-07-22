@@ -1,13 +1,17 @@
-{exp:ifelse parse="inward"}	
+{exp:ifelse parse="inward"}
 
-{if logged_in}
+{if last_page_visited *= "email-confirmed"}
 
-	{exp:redirecturl url="{last_page_visited}"}
+	{exp:redirecturl url="/edit/profile/{member_id}"}
+
+{if:elseif logged_in}
+
+{exp:redirecturl url="{last_page_visited}"}
 
 {if:else}
 
 <!doctype html>
-	
+
 <!--[if lt IE 7]> <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
@@ -21,7 +25,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 	<meta name="viewport" content="width=device-width">
-	
+
 	<link rel="stylesheet" href="{assets_path}css/reset.css" />
 	<link rel="stylesheet" href="{assets_path}css/editables.css" />
 
@@ -30,72 +34,72 @@
 	<script src="{assets_path}js/libs/modernizr-dev.js"></script>
 
 	<title>A List Apart: Would you like to log in?</title>
-		
+
 </head>
 
 <body data-xid="{XID_HASH}">
 
 	<header>
-	
+
 		<h1>
 			<img src="{assets_path}img/favicons/apple-touch-icon-57x57.png" alt="">
 			Log In
 		</h1>
-		
+
 	</header>
-	
-	{exp:freemember:login 
-		return="PREVIOUS_URL" 
-		form_id="sign-in-form" 
+
+	{exp:freemember:login
+		return="PREVIOUS_URL"
+		form_id="sign-in-form"
 		form_class="sign-in-form"}
-								
+
 		<label for="username">
 			Username / Email Address <small>(<a href="/tools/register">need an account?</a>)</small>
-			<input 
-				id="username" 
-				name="username" 
-				type="text" 
-				data-validate="onblur" 
-				data-type="any" 
-				data-isvalid="" 
+			<input
+				id="username"
+				name="username"
+				type="text"
+				data-validate="onblur"
+				data-type="any"
+				data-isvalid=""
 				data-error="who are you?"
 				required />
 		</label>
-	
+
 		<label for="login_password">
 			Password <small>(<a href="/tools/forgot-password">forgotten it?</a>)</small>
-			<input 
-				id="login_password" 
-				name="password" 
-				type="password" 
-				required="required" 
-				data-validate="onblur" 
-				data-type="any" 
-				data-isvalid="" 
+			<input
+				id="login_password"
+				name="password"
+				type="password"
+				required="required"
+				data-validate="onblur"
+				data-type="any"
+				data-isvalid=""
 				data-error="what's your password?"
 				required />
 		</label>
-		
+
 		{if auto_login}
 		<fieldset class="check-radio customized">
 			<input type="checkbox" id="auto_login" name="auto_login" value="1" checked>
 			<label for="auto_login">Auto-login on future visits</label>
 		</fieldset>
 		{/if}
-		
+
 		<p class="align-center">
 			<button type="submit" class="spinner">
 				<span class="label">Submit</span>
 				<span class="spinner"></span>
 			</button>
 		</p>
-		
+
 		<p><small>
-				Log in with... 
+				Log in with...
 				<a class="buttonish" href="{site_url}?ACT=154&provider=twitter&RET={last_page_visited}">Twitter</a>
 				<a class="buttonish" href="{site_url}?ACT=154&provider=facebook&RET={last_page_visited}">Facebook</a>
 		</small></p>
-	
+
 	{/exp:freemember:login}
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
