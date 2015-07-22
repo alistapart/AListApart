@@ -9,15 +9,15 @@
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #a9a9a9;  
+   color: #a9a9a9;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #a9a9a9;  
+   color: #a9a9a9;
 }
 
 /* doesn't work on all elements (???) so removing for now
-:-ms-input-placeholder {  
+:-ms-input-placeholder {
    color: #a9a9a9;
 } */
 
@@ -26,11 +26,11 @@
 }
 
 :focus:-moz-placeholder { /* Firefox 18- */
-   color: #bebebe;  
+   color: #bebebe;
 }
 
 :focus::-moz-placeholder {  /* Firefox 19+ */
-   color: #bebebe;  
+   color: #bebebe;
 }
 
 input[readonly] {
@@ -43,7 +43,7 @@ input[readonly] {
 }
 
 /* doesn't work on all elements (???) so removing for now
-:focus:-ms-input-placeholder {  
+:focus:-ms-input-placeholder {
    color: #bebebe;
 } */
 
@@ -77,11 +77,11 @@ h1 {
 }
 
 h1 img {
-	display: inline-block; 
-	height: 40px; 
-	width: auto; 
-	vertical-align: middle; 
-	margin-right: 9px; 
+	display: inline-block;
+	height: 40px;
+	width: auto;
+	vertical-align: middle;
+	margin-right: 9px;
 	margin-top: -10px;
 }
 
@@ -338,7 +338,7 @@ label.customized select {
 	outline: 0;
 	opacity: 1;
 	cursor: pointer;
-	
+
 	-webkit-transition: all 200ms ease-in-out;
 	-moz-transition: all 200ms ease-in-out;
 	-ms-transition: all 200ms ease-in-out;
@@ -374,7 +374,7 @@ html[data-useragent*='Firefox'] label.select-field.customized:before {
 }
 
 html[data-useragent*='Firefox'] label.select-field.customized:after {
-	z-index: 10;	
+	z-index: 10;
 	top: 2.9em;
 	right: .9em;
 }
@@ -461,7 +461,7 @@ button {
 	color: #666;
 	text-decoration: none;
 	overflow: hidden;
-	
+
 	-webkit-transition: all 200ms ease-in-out;
 	-moz-transition: all 200ms ease-in-out;
 	-ms-transition: all 200ms ease-in-out;
@@ -473,7 +473,7 @@ button .label {
 	position: relative;
 	z-index: 1;
 	opacity: 1;
-	
+
 	-webkit-transition: opacity 300ms 1000ms ease;
 	-moz-transition: opacity 300ms 1000ms ease;
 	-ms-transition: opacity 300ms 1000ms ease;
@@ -483,7 +483,7 @@ button .label {
 
 button.submitting .label {
 	opacity: 0;
-	
+
 	-webkit-transition: opacity 300ms ease;
 	-moz-transition: opacity 300ms ease;
 	-ms-transition: opacity 300ms ease;
@@ -500,7 +500,7 @@ button .spinner {
 	height: 100%;
 	background: #fff url(/components/assets/img/spinner_2.gif) center no-repeat;
 	opacity: 0;
-	
+
 	-webkit-transition: opacity 300ms 1000ms ease;
 	-moz-transition: opacity 300ms 1000ms ease;
 	-ms-transition: opacity 300ms 1000ms ease;
@@ -510,7 +510,7 @@ button .spinner {
 
 button.submitting .spinner {
 	opacity: 1;
-	
+
 	-webkit-transition: opacity 300ms ease-in-out;
 	-moz-transition: opacity 300ms ease-in-out;
 	-ms-transition: opacity 300ms ease-in-out;
@@ -553,13 +553,13 @@ input[type='email'] {
 	padding: .7em 1em;
 	border: 1px solid #ccc;
 	border-radius: .3em;
-	
+
 	font-family: 'Menlo', courier;
 	font-size: 1.1em;
 	line-height: 1em;
 	color: #666;
 	outline: 0;
-	
+
 	-webkit-transition: all 200ms ease-in-out;
 	-moz-transition: all 200ms ease-in-out;
 	-ms-transition: all 200ms ease-in-out;
@@ -583,17 +583,17 @@ textarea {
 	width: 100%;
 	min-height: 90px;
 	margin: 0 auto;
-	
+
 	padding: .7em 1em;
 	border: 1px solid #ccc;
 	border-radius: .4em;
-	
+
 	font-family: 'Menlo', courier;
 	font-size: 1em;
 	line-height: 1.7em;
 	color: #666;
 	outline: 0;
-	
+
 	-webkit-transition: all 200ms ease-in-out, height 100ms ease-in-out;
 	-moz-transition: all 200ms ease-in-out, height 100ms ease-in-out;
 	-ms-transition: all 200ms ease-in-out, height 100ms ease-in-out;
@@ -667,25 +667,22 @@ textarea:focus:not([readonly]) {
 .invalid:after {
 	content: '!';
 	position: absolute;
-	z-index: -1;
-	top: 1.4em;
-	left: 99%;
-	left: calc(99% + 1px);
+	z-index: 1;
+	top: 50%;
+	left: 100%;
+	left: calc(100% - .6em);
 	display: block;
-	height: 2em;
-	height: calc(2em - 1px);
-	width: .8em;
-	padding: 0 .2em;
+	height: .4em;
+	width: .4em;
+	padding: .4em;
 	color: #fff;
-	font-size: 1.4em;
-	line-height: 2em;
+	background-color: red;
+	background-color: rgba(255, 0, 0, 0.63);
+	font-size: 1.8em;
+	line-height: .6em;
 	font-weight: bold;
-	background: #c18686;
-	border: 1px solid #c18686;
-	border-radius: .3em;
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
 	text-align: center;
+	border-radius: 100%;
 }
 
 .invalid input,
