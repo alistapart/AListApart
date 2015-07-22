@@ -669,6 +669,7 @@ textarea:focus:not([readonly]) {
 	position: absolute;
 	z-index: 1;
 	top: 50%;
+	top: calc(50% - .6em);
 	left: 100%;
 	left: calc(100% - .6em);
 	display: block;
