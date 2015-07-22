@@ -1,48 +1,48 @@
 
 				<div class="author-nav">
-					
+
 					<h2 id="browse-title">Browse Authors</h2>
-					
+
 					<nav id="alphabits" class="alphabits">
-						
+
 						<ol>
-							<li><a data-alphabit="a">a</a></li><!--
-							--><li><a data-alphabit="b">b</a></li><!--
-							--><li><a data-alphabit="c">c</a></li><!--
-							--><li><a data-alphabit="d">d</a></li><!--
-							--><li><a data-alphabit="e">e</a></li><!--
-							--><li><a data-alphabit="f">f</a></li><!--
-							--><li><a data-alphabit="g">g</a></li><!--
-							--><li><a data-alphabit="h">h</a></li><!--
-							--><li><a data-alphabit="i">i</a></li><!--
-							--><li><a data-alphabit="j">j</a></li><!--
-							--><li><a data-alphabit="k">k</a></li><!--
-							--><li><a data-alphabit="l">l</a></li><!--
-							--><li><a data-alphabit="m">m</a></li><!--
-							--><li><a data-alphabit="n">n</a></li><!--
-							--><li><a data-alphabit="o">o</a></li><!--
-							--><li><a data-alphabit="p">p</a></li><!--
-							--><li><a data-alphabit="q">q</a></li><!--
-							--><li><a data-alphabit="r">r</a></li><!--
-							--><li><a data-alphabit="s">s</a></li><!--
-							--><li><a data-alphabit="t">t</a></li><!--
-							--><li><a data-alphabit="u">u</a></li><!--
-							--><li><a data-alphabit="v">v</a></li><!--
-							--><li><a data-alphabit="w">w</a></li><!--
-							--><li><a data-alphabit="x">x</a></li><!--
-							--><li><a data-alphabit="y">y</a></li><!--
-							--><li><a data-alphabit="z">z</a></li>
+							<li><a data-alphabit="a" href="#a">a</a></li><!--
+							--><li><a data-alphabit="b" href="#b">b</a></li><!--
+							--><li><a data-alphabit="c" href="#c">c</a></li><!--
+							--><li><a data-alphabit="d" href="#d">d</a></li><!--
+							--><li><a data-alphabit="e" href="#e">e</a></li><!--
+							--><li><a data-alphabit="f" href="#f">f</a></li><!--
+							--><li><a data-alphabit="g" href="#g">g</a></li><!--
+							--><li><a data-alphabit="h" href="#h">h</a></li><!--
+							--><li><a data-alphabit="i" href="#i">i</a></li><!--
+							--><li><a data-alphabit="j" href="#j">j</a></li><!--
+							--><li><a data-alphabit="k" href="#k">k</a></li><!--
+							--><li><a data-alphabit="l" href="#l">l</a></li><!--
+							--><li><a data-alphabit="m" href="#m">m</a></li><!--
+							--><li><a data-alphabit="n" href="#n">n</a></li><!--
+							--><li><a data-alphabit="o" href="#o">o</a></li><!--
+							--><li><a data-alphabit="p" href="#p">p</a></li><!--
+							--><li><a data-alphabit="q" href="#q">q</a></li><!--
+							--><li><a data-alphabit="r" href="#r">r</a></li><!--
+							--><li><a data-alphabit="s" href="#s">s</a></li><!--
+							--><li><a data-alphabit="t" href="#t">t</a></li><!--
+							--><li><a data-alphabit="u" href="#u">u</a></li><!--
+							--><li><a data-alphabit="v" href="#v">v</a></li><!--
+							--><li><a data-alphabit="w" href="#w">w</a></li><!--
+							--><li><a data-alphabit="x" href="#x">x</a></li><!--
+							--><li><a data-alphabit="y" href="#y">y</a></li><!--
+							--><li><a data-alphabit="z" href="#z">z</a></li>
 						</ol>
-						
+
 						<a id="previous-letters" class="arrow left">◀</a>
 						<a id="next-letters" class="arrow right">▶</a>
-						
+
 					</nav>
-					
+
 					<ol id="alpha-target" class="secondary-nav compressed alpha-container">
 					{exp:ac_memberlist sort="last_name ASC" limit="999"	group_id="1|6|7"}
 						<li data-letter="<?php $firstLetter = substr("{last_name}", 0); echo strtolower($firstLetter[0]); ?>"><a href="/author/{username}">{screen_name}</a></li>
 					{/exp:ac_memberlist}
 					</ol>
-				
+
 				</div>
