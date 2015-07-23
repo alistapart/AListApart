@@ -17,9 +17,9 @@ $(document).ready(function (){
 
 		errors = 0;
 
-		$(this).find('input[data-isvalid]').each(function() {
+		$(this).find('input[data-isvalid], textarea[data-isvalid]').each(function() {
 
-			if (($(this).attr('data-isvalid') == 'no') || ($(this).attr("required") && ($(this).val() == ''))) {
+			if (($(this).attr('data-isvalid') == 'no') || ($(this).attr("required") && ($.trim($(this).val()) == ''))) {
 
 				errors++;
 

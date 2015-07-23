@@ -8,37 +8,46 @@
 	{/if}
 
  	{if segment_1 == 'comments'}
-		<!--javascript probably turned off -->
-		{exp:comment:form channel="articles|blog|columns" return="{site_url}comments/{url_title}#comment-form" id="comment-form" class="comment-form"}
+	<!--javascript probably turned off -->
+	{exp:comment:form channel="articles|blog|columns" return="{site_url}comments/{url_title}#comment-form" id="comment-form" class="comment-form"}
 
 	{if:else}
 
-		{if channel_short_name == 'articles'}
+	{if channel_short_name == 'articles'}
 
-			{exp:comment:form channel="articles" return="{site_url}article/{url_title}#comment-form" id="comment-form" class="comment-form"}
+	{exp:comment:form channel="articles" return="{site_url}article/{url_title}#comment-form" id="comment-form" class="comment-form"}
 
-		{if:elseif channel_short_name == 'blog'}
+	{if:elseif channel_short_name == 'blog'}
 
-			{exp:comment:form channel="blog" return="{site_url}blog/post/{url_title}#comment-form" id="comment-form" class="comment-form"}
+	{exp:comment:form channel="blog" return="{site_url}blog/post/{url_title}#comment-form" id="comment-form" class="comment-form"}
 
-		{if:elseif channel_short_name == 'columns'}
+	{if:elseif channel_short_name == 'columns'}
 
-			{exp:comment:form channel="columns" return="{site_url}column/{url_title}#comment-form" id="comment-form" class="comment-form"}
+	{exp:comment:form channel="columns" return="{site_url}column/{url_title}#comment-form" id="comment-form" class="comment-form"}
 
-		{/if}
-	
 	{/if}
-	
-	<textarea data-autoresize id="comment-content" class="logged-in" name="comment" required="required"></textarea>
-	<p class="commenter-info">
 
-	{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
+	{/if}
 
-	{if segment_1 == 'comments'}
- 	<!--javascript probably turned off -->
- 	<a href="{exp:freemember:logout_url return='comments/{url_title}#commenter-signin'}">log out</a>
+		<label id="comment-content">
+		<textarea id="comment-content" aria-describedby="comment-content_error" class="logged-in" name="comment"
+			data-autoresize
+			data-validate="onblur"
+			data-type="any"
+			data-isvalid=""
+			data-error="aww, we know you have something to say"
+			required /></textarea>
+		</label>
 
-	{if:else}
+		<p class="commenter-info">
+
+		{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
+
+		{if segment_1 == 'comments'}
+	 	<!--javascript probably turned off -->
+	 	<a href="{exp:freemember:logout_url return='comments/{url_title}#commenter-signin'}">log out</a>
+
+		{if:else}
 		{if channel_short_name == 'articles'}
 
 			<a href="{exp:freemember:logout_url return='article/{url_title}#commenter-signin'}">log out</a>
@@ -52,11 +61,11 @@
 			<a href="{exp:freemember:logout_url return='column/{url_title}#commenter-signin'}">log out</a>
 
 		{/if}
-	{/if}
+		{/if}
 
-	<input type="submit" value="Submit" />
+		<input type="submit" value="Submit" />
 
-	</p>
+		</p>
 
 	{/exp:comment:form}
 

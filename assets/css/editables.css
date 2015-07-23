@@ -648,6 +648,7 @@ textarea:focus:not([readonly]) {
 
 .error-message {
 	position: absolute;
+	z-index: 100;
 	top: 4.6em;
 	left: 50%;
 	background: #fff;

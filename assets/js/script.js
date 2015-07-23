@@ -83,7 +83,7 @@ $(document).ready(function(){
 
 			$(this).attr("id", hashLink);
 
-			console.log('adding id');
+			//console.log('adding id');
 
 		};
 
@@ -331,7 +331,7 @@ $(document).ready(function(){
 
 	$("#comments").bind("comments-appended", function() {
 
-		console.log('comments loaded');
+		//console.log('comments loaded');
 
 		$(".comment").CommentEditor();
 
@@ -615,105 +615,105 @@ if(document.URL.indexOf("do-not-share") == -1){
 
 $.fn.CommentEditor = function(options) {
 
-        var OPT;
+	var OPT;
 
-        OPT = $.extend({
-                url: "/?ACT=4",
-                comment_body: '.comment-body',
-                showEditor: '.edit-link',
-                hideEditor: '.cancel-edit',
-                hideEmbed: '.cancel-embed',
-                saveComment: '.submit-edit',
-                closeComment: '.mod-link',
-                showEmbed: '.embed-link'
-        }, options);
+	OPT = $.extend({
+	       url: "/?ACT=4",
+	       comment_body: '.comment-body',
+	       showEditor: '.edit-link',
+	       hideEditor: '.cancel-edit',
+	       hideEmbed: '.cancel-embed',
+	       saveComment: '.submit-edit',
+	       closeComment: '.mod-link',
+	       showEmbed: '.embed-link'
+	}, options);
 
-        var view_elements = [OPT.comment_body, OPT.showEditor, OPT.closeComment, OPT.showEmbed].join(','),
-                edit_elements = '.edit-comment',
-                embed_elements = '.embed-comment';
+	var view_elements = [OPT.comment_body, OPT.showEditor, OPT.closeComment, OPT.showEmbed].join(','),
+	       edit_elements = '.edit-comment',
+	       embed_elements = '.embed-comment';
 
-        return this.each(function() {
-                var id = this.id,
-                parent = $(this);
+	return this.each(function() {
+	       var id = this.id,
+	       parent = $(this);
 
-                parent.find(OPT.showEditor).click(function() { showEditor(id); return false; });
-                parent.find(OPT.hideEditor).click(function() { hideEditor(id); return false; });
-                parent.find(OPT.hideEmbed).click(function() { hideEmbed(id); return false; });
-                parent.find(OPT.saveComment).click(function() { saveComment(id); return false; });
-                parent.find(OPT.closeComment).click(function() { closeComment(id); return false; });
-                parent.find(OPT.showEmbed).click(function() { showEmbed(id); return false; });
-        });
+	       parent.find(OPT.showEditor).click(function() { showEditor(id); return false; });
+	       parent.find(OPT.hideEditor).click(function() { hideEditor(id); return false; });
+	       parent.find(OPT.hideEmbed).click(function() { hideEmbed(id); return false; });
+	       parent.find(OPT.saveComment).click(function() { saveComment(id); return false; });
+	       parent.find(OPT.closeComment).click(function() { closeComment(id); return false; });
+	       parent.find(OPT.showEmbed).click(function() { showEmbed(id); return false; });
+	});
 
-        function showEmbed(id) {
-                $("#"+id)
-                        .find(view_elements).css('opacity', '.1').end()
-                        .find(embed_elements).slideDown('fast').end();
-        }
+	function showEmbed(id) {
+	       $("#"+id)
+	               .find(view_elements).css('opacity', '.1').end()
+	               .find(embed_elements).slideDown('fast').end();
+	}
 
-        function showEditor(id) {
-                $("#"+id)
-                        .find(view_elements).css('opacity', '.1').end()
-                        .find(edit_elements).slideDown('fast').end();
-        }
+	function showEditor(id) {
+	       $("#"+id)
+	               .find(view_elements).css('opacity', '.1').end()
+	               .find(edit_elements).slideDown('fast').end();
+	}
 
-        function hideEditor(id) {
-                $("#"+id)
-                        .find(view_elements).css('opacity', '1').end()
-                        .find(edit_elements).slideUp('fast');
-        }
+	function hideEditor(id) {
+	       $("#"+id)
+	               .find(view_elements).css('opacity', '1').end()
+	               .find(edit_elements).slideUp('fast');
+	}
 
-        function hideEmbed(id) {
-                $("#"+id)
-                        .find(view_elements).css('opacity', '1').end()
-                        .find(embed_elements).slideUp('fast');
-        }
+	function hideEmbed(id) {
+	       $("#"+id)
+	               .find(view_elements).css('opacity', '1').end()
+	               .find(embed_elements).slideUp('fast');
+	}
 
-		var getHash;
+	var getHash;
 
-        function closeComment(id) {
+	function closeComment(id) {
 
-			var confirmClose = confirm('Are you sure?');
+		var confirmClose = confirm('Are you sure?');
 
-			if (confirmClose == true) {
-
-				if (getHash == null) {
-					getHash = $("#comments-parent").data('xid');
-				}
-				var data = {status: "close", comment_id: id, XID: getHash};
-
-				$.post(OPT.url, data, function (res) {
-					if (res.error) {
-						return $.error('Could not moderate comment.');
-					}
-
-					hash = res.XID;
-					$('input[name=XID]').val(hash);
-					$('#' + id).fadeOut('fast');
-					getHash = hash;
-				});
-			}
-		}
-
-        function saveComment(id) {
+		if (confirmClose == true) {
 
 			if (getHash == null) {
 				getHash = $("#comments-parent").data('xid');
 			}
-			var content = $("#"+id).find('.edit-comment'+' textarea').val(),
-			data = {comment: content, comment_id: id, XID: getHash};
+			var data = {status: "close", comment_id: id, XID: getHash};
 
 			$.post(OPT.url, data, function (res) {
 				if (res.error) {
-					return $.error('Could not save comment.');
+					return $.error('Could not moderate comment.');
 				}
 
 				hash = res.XID;
 				$('input[name=XID]').val(hash);
-				$("#"+id).find('.comment-body').html(res.comment);
-				hideEditor(id);
+				$('#' + id).fadeOut('fast');
 				getHash = hash;
 			});
 		}
+	}
+
+	function saveComment(id) {
+
+	if (getHash == null) {
+		getHash = $("#comments-parent").data('xid');
+	}
+	var content = $("#"+id).find('.edit-comment'+' textarea').val(),
+	data = {comment: content, comment_id: id, XID: getHash};
+
+	$.post(OPT.url, data, function (res) {
+		if (res.error) {
+			return $.error('Could not save comment.');
+		}
+
+		hash = res.XID;
+		$('input[name=XID]').val(hash);
+		$("#"+id).find('.comment-body').html(res.comment);
+		hideEditor(id);
+		getHash = hash;
+	});
+	}
 };
 
 /*
@@ -729,44 +729,44 @@ $.fn.CommentEditor = function(options) {
 var properties = ['-webkit-appearance','-moz-appearance','-o-appearance','appearance','font-family','font-size','font-weight','font-style','border','border-top','border-right','border-bottom','border-left','box-sizing','padding','padding-top','padding-right','padding-bottom','padding-left','min-height','max-height','line-height'],		escaper = $('<span />');
 
 function escape(string) {
-		return escaper.text(string).text().replace(/\n/g, '<br>');
+	return escaper.text(string).text().replace(/\n/g, '<br>');
 };
 
 function autoResize(which) {
 
-		if (!which.data('autogrow-applied')) {
+	if (!which.data('autogrow-applied')) {
 
-				var textarea = which, initialHeight = textarea.innerHeight(), expander = $('<div />'), timer = null;
+			var textarea = which, initialHeight = textarea.innerHeight(), expander = $('<div />'), timer = null;
 
-				// Setup expander
-				expander.css({'position': 'absolute', 'visibility': 'hidden', 'bottom': '110%'})
-				$.each(properties, function(i, p) { expander.css(p, textarea.css(p)); });
-				textarea.after(expander);
+			// Setup expander
+			expander.css({'position': 'absolute', 'visibility': 'hidden', 'bottom': '110%'})
+			$.each(properties, function(i, p) { expander.css(p, textarea.css(p)); });
+			textarea.after(expander);
 
-				// Setup textarea
-				textarea.css({'overflow-y': 'hidden', 'resize': 'none', 'box-sizing': 'border-box'});
+			// Setup textarea
+			textarea.css({'overflow-y': 'hidden', 'resize': 'none', 'box-sizing': 'border-box'});
 
-				// Sizer function
-				function sizeTextarea() {
-						clearTimeout(timer);
-						timer = setTimeout(function() {
-								var value = escape(textarea.val().replace(/\</g, '&lt;')) + '<br>z';
-								expander.html(value);
-								expander.css('width', textarea.innerWidth() + 2 + 'px');
-								textarea.css('height', Math.max(expander.innerHeight(), initialHeight) + 6 + 'px');
-						}, 0); // throttle by 100ms ?
-				}
+			// Sizer function
+			function sizeTextarea() {
+				clearTimeout(timer);
+				timer = setTimeout(function() {
+						var value = escape(textarea.val().replace(/\</g, '&lt;')) + '<br>z';
+						expander.html(value);
+						expander.css('width', textarea.innerWidth() + 2 + 'px');
+						textarea.css('height', Math.max(expander.innerHeight(), initialHeight) + 6 + 'px');
+				}, 100); // throttle by 100ms ?
+			}
 
-				// Bind sizer to IE 9+'s input event and Safari's propertychange event
-				textarea.on('input.autogrow propertychange.autogrow focus', sizeTextarea);
+			// Bind sizer to IE 9+'s input event and Safari's propertychange event
+			textarea.on('input.autogrow propertychange.autogrow focus', sizeTextarea);
 
-				// Set the initial size
-				sizeTextarea();
+			// Set the initial size
+			sizeTextarea();
 
-				// Record autogrow applied
-				textarea.data('autogrow-applied', true);
+			// Record autogrow applied
+			textarea.data('autogrow-applied', true);
 
-		};
+	};
 
 };
 
