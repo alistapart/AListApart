@@ -3492,12 +3492,17 @@ ul.login-buttons li a:hover {
 .article-comments form label .error-message {
 	position: absolute;
 	bottom: -.8em;
-	-webkit-transform: translateX(-50%);
 	background: #fff;
 	padding: 0 6px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	color: #bb3825;
+
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
 }
 
 .article-comments form label.password-field {

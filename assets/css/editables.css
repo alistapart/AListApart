@@ -641,56 +641,19 @@ textarea:focus:not([readonly]) {
 
 .error-message {
 	position: absolute;
-	z-index: -1;
-	top: 4.8em;
+	bottom: -.9em;
 	left: 50%;
-	transform: translateX(-50%) translateY(-110%);
-	display: block;
-	max-width: 95%;
-	padding: 0 1em;
-	color: #fff;
-	font-size: 1em;
-	line-height: 1.8em;
-	background: #999;
-	border-bottom-right-radius: .3em;
-	border-bottom-left-radius: .3em;
-	text-align: left;
-	white-space: nowrap;
-	box-shadow: 0px 0px 9px -4px rgba(0,0,0,.5);
-	transition: transform 300ms ease-out;
-}
+	background: #fff;
+	padding: 0 6px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	color: #bb3825;
 
-.invalid .error-message{
-	transform: translateX(-50%) translateY(0);
-}
-
-.invalid:after {
-	content: '!';
-	position: absolute;
-	z-index: 1;
-	top: 50%;
-	top: calc(50% - .6em);
-	left: 100%;
-	left: calc(100% - .6em);
-	display: block;
-	height: .4em;
-	width: .4em;
-	padding: .4em;
-	color: #fff;
-	background-color: red;
-	background-color: rgba(255, 0, 0, 0.63);
-	font-size: 1.8em;
-	line-height: .6em;
-	font-weight: bold;
-	text-align: center;
-	border-radius: 100%;
-}
-
-.invalid input,
-.invalid select,
-.invalid textarea {
-	background: #fee;
-	border-color: #c18686;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
 }
 
 @media only screen and (max-width: 460px) {
