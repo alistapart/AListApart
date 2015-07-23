@@ -127,6 +127,16 @@
 		</label>
 
 		<label>
+			Email:
+			<input id="email" aria-describedby="email_error" name="email" type="email" value="{email}"
+			data-validate="onblur"
+			data-type="email"
+			data-isvalid=""
+			data-error="are you sure this is your email address?"
+			required>
+		</label>
+
+		<label>
 			Visible name:
 			<input id="screen_name" aria-describedby="screen_name_error" name="screen_name" type="text" value="{screen_name}"
 			data-validate="onblur"
@@ -159,16 +169,6 @@
 		</label>
 
 		{/if}
-
-		<label>
-			Email:
-			<input id="email" aria-describedby="email_error" name="email" type="email" value="{email}"
-			data-validate="onblur"
-			data-type="email"
-			data-isvalid=""
-			data-error="are you sure this is your email address?"
-			required>
-		</label>
 
 		<label class="password-field">
 			New password:
@@ -370,26 +370,7 @@
 
 {/if}
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/components/assets/js/libs/jquery-1.8.2.min.js"><\/script>')</script>
-
-<script src="{assets_path}js/libs/matchmedia.js"></script>
-<script src="{assets_path}js/libs/picturefill.js"></script>
-<script src="{assets_path}js/libs/breakpoints.js"></script>
-<script src="{assets_path}js/libs/jquery.form.min.js"></script>
-<script src="{assets_path}js/form-stuff.js"></script>
-<script src="{assets_path}js/script.js"></script>
-
-
-<!--<script>
-	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-	s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>-->
-
-</body>
-</html>
+{global-page-bottom}
 
 {/if}
 
