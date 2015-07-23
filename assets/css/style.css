@@ -3120,6 +3120,10 @@ ol.article-comments > li {
 	border-radius: 3px;
 }
 
+html.no-js ol.article-comments > li .comment-tools {
+	display: none;
+}
+
 ol.article-comments > li .comment-tools {
 	position: absolute;
 	bottom: 3px;
