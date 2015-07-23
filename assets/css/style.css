@@ -3484,8 +3484,20 @@ ul.login-buttons li a:hover {
 }
 
 .article-comments form label {
+	position: relative;
 	display: block;
 	font-size: 16px;
+}
+
+.article-comments form label .error-message {
+	position: absolute;
+	bottom: -.8em;
+	-webkit-transform: translateX(-50%);
+	background: #fff;
+	padding: 0 6px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	color: #bb3825;
 }
 
 .article-comments form label.password-field {
@@ -3508,7 +3520,7 @@ ul.login-buttons li a:hover {
 .article-comments input[type=password] {
 	display: block;
 	width: 75%;
-	margin: 6px auto 18px;
+	margin: 0 auto 24px;
 	padding: 12px;
 	border: 1px solid #ccc;
 	border-radius: 6px;
