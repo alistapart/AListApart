@@ -49,9 +49,15 @@ a:focus {
 	font-family: "Franklin ITC Light", sans-serif;
 	color: #fff;
 	text-decoration: none;
-	background: #999;
+	background: #666;
 	border-radius: 24px;
 	font-style: normal;
+}
+
+.buttonish:hover,
+.buttonishish:hover {
+	text-decoration: none;
+	background: #444;
 }
 
 html:not(.no-js) .buttonish {
@@ -906,11 +912,12 @@ aside.column.more-content .item-summary {
 .item-summary footer {
 	font-size: 12px;
 	line-height: 24px;
-	color: #888;
+	color: #666;
+	font-family: "Franklin ITC Light", sans-serif;
 }
 
 .item-summary footer a {
-	color: #888;
+	color: #666;
 }
 
 .item-summary:not(.article) > h2 {
@@ -2729,7 +2736,7 @@ h3.alternate {
 }
 
 .subhead-anchor {
-	color: #ccc;
+	color: #666;
 	display: none;
 	font-size: 12px;
 	line-height: 12px;
@@ -3108,7 +3115,7 @@ ol.article-comments > li {
 	position: relative;
 	min-height: 96px;
 	margin: 12px 0 48px;
-	padding: 17px 11px;
+	padding: 17px 11px 24px;
 	border: 1px solid #ddd;
 	border-radius: 3px;
 }
@@ -3129,6 +3136,9 @@ ol.article-comments > li .comment-tools {
 	top: 17px;
 	display: none;
 	margin-left: 72px;
+	margin-right: -6px;
+	padding-right: 6px;
+	background: #fff;
 	font-family: "Franklin ITC Light", sans-serif;
 }
 
@@ -3161,8 +3171,19 @@ ol.article-comments > li .comment-tools {
 
 .article-comments .edit-comment input[type="submit"],
 .article-comments .embed-comment input[type="submit"] {
-	padding: 3px 6px;
-	font-size: 12px;
+	padding: 3px 6px 2px;
+	background: #666;
+	color: #fff;
+	border-radius: 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 11px;
+
+	-webkit-transition: background .2s ease-in;
+	-moz-transition: background .2s ease-in;
+	-o-transition: background .2s ease-in;
+	-ms-transition: background .2s ease-in;
+	transition: background .2s ease-in;
 }
 
 .article-comments input[type="submit"]:focus {
@@ -3171,7 +3192,7 @@ ol.article-comments > li .comment-tools {
 
 ol.article-comments > li .comment-tools a {
 	padding: 2px 6px;
-	background: #eee;
+	background: #666;
 	color: #fff;
 	border-radius: 20px;
 	text-decoration: none;
@@ -3190,12 +3211,8 @@ ol.article-comments > li .comment-tools .comment-id {
 	color: #ccc;
 }
 
-ol.article-comments > li:hover .comment-tools a {
-	background: #ccc;
-}
-
 ol.article-comments > li .comment-tools a:hover {
-	background: #aaa;
+	background: #444;
 }
 
 ol.article-comments > li:not([data-count]):not(.commenter-signin):not(.comment-form) {
@@ -3463,6 +3480,17 @@ ul.login-buttons li a:hover {
 	font-size: 16px;
 }
 
+.article-comments form label.password-field {
+	position: relative;
+}
+
+.sign-in-form .password-mask {
+	position: absolute;
+	right: 15%;
+	top: 3.65em;
+	font-size: .8em;
+}
+
 .article-comments label.checkbox {
 	margin-bottom: 18px;
 }
@@ -3604,7 +3632,8 @@ img.commenter-avatar {
 	float: left;
 	width: 40px;
 	height: 40px;
-	margin-right: 12px;
+	margin-right: 9px;
+	border-width: .3em;
 }
 
 .global-footer {
@@ -3813,9 +3842,9 @@ img.commenter-avatar {
 }
 
 .entry-list li p.meta {
-	font-style: italic;
 	font-size: 14px;
 	line-height: 24px;
+	font-family: "Franklin ITC Light", sans-serif;
 }
 
 .entry-list.step-up p.meta {
@@ -3971,7 +4000,7 @@ ul.bullets {
 	line-height: 24px;
 	text-transform: uppercase;
 	color: #fff;
-	background: #c3c2be;
+	background: #666;
 	border-radius: 15px;
 
 	-webkit-transition: background .15s ease-in;
@@ -3986,7 +4015,7 @@ ul.bullets {
 	font-family: "Franklin ITC Light", sans-serif;
 	font-size: 24px;
 	line-height: 48px;
-	background: #2455c3;
+	background: #666;
 	border-radius: 12px;
 	text-transform: none;
 }
@@ -4005,7 +4034,7 @@ ul.bullets {
 
 .paginator a:hover {
 	text-decoration:none;
-	background:#aaa;
+	background: #444;
 }
 
 html.modal {
