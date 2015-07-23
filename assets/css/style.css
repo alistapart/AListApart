@@ -3493,6 +3493,7 @@ ul.login-buttons li a:hover {
 	position: absolute;
 	z-index: 100;
 	bottom: -.8em;
+	left: 50%;
 	background: #fff;
 	padding: 0 6px;
 	border: 1px solid #ccc;
