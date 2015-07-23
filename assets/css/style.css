@@ -584,11 +584,11 @@ ul.inline-items li {
 }
 
 .item-summary:nth-child(even) {
-	padding: 0 12px 24px 0;
+	padding: 0 12px 0 0;
 }
 
 .item-summary:nth-child(odd) {
-	padding: 0 0 24px 12px;
+	padding: 0 0 0 12px;
 }
 
 aside.column.more-content .item-summary {
@@ -640,7 +640,7 @@ aside.column.more-content .item-summary {
 	float: left;
 	margin: 0 6px 12px 0;
 	border-radius: 50%;
-	border: .5em solid #f5f5f5;
+	border: .3em solid #f5f5f5;
 }
 
 .item-summary.article.columnist img {
@@ -3273,7 +3273,6 @@ ol.article-comments > li:first-child:after {
 
 .comment-byline {
 	margin-left: 72px;
-	margin-bottom: 2px;
 	font-size: 12px;
 	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
@@ -3624,7 +3623,7 @@ img.commenter-avatar {
 	float: left;
 	margin-right: 12px;
 	border-radius: 50%;
-	border: .5em solid #f5f5f5;
+	border: .3em solid #f5f5f5;
 }
 
 .article-comments .commenter-info img.commenter-avatar {
@@ -3633,7 +3632,6 @@ img.commenter-avatar {
 	width: 40px;
 	height: 40px;
 	margin-right: 9px;
-	border-width: .3em;
 }
 
 .global-footer {
