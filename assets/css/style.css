@@ -3336,6 +3336,7 @@ ol.article-comments li .comment-body:after {
 ol.article-comments li.commenter-signin,
 ol.article-comments li.comment-form {
 	padding-top: 32px;
+	padding-bottom: 0;
 	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
