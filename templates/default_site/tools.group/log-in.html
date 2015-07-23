@@ -62,6 +62,8 @@
 		<label for="username">
 			Username / Email Address <small>(<a href="/tools/register">need an account?</a>)</small>
 			<input
+				autofocus
+				tabindex="1"
 				id="username"
 				aria-describedby="username_error"
 				name="username"
@@ -77,6 +79,7 @@
 			Password <small>(<a href="/tools/forgot-password">forgotten it?</a>)</small>
 			<input
 				id="login_password"
+				tabindex="2"
 				aria-describedby="login_password_error"
 				name="password"
 				type="password"
@@ -95,7 +98,7 @@
 		{/if}
 
 		<p class="align-center">
-			<button type="submit" class="spinner">
+			<button type="submit" class="spinner" tabindex="3">
 				<span class="label">Submit</span>
 				<span class="spinner"></span>
 			</button>
