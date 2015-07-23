@@ -3223,6 +3223,10 @@ ol.article-comments > li .comment-tools a:hover {
 	background: #444;
 }
 
+ol.article-comments > li .comment-tools a:focus {
+	outline: 1px dotted #666;
+}
+
 ol.article-comments > li:not([data-count]):not(.commenter-signin):not(.comment-form) {
 	margin-left: 30px;
 	margin-right: 30px;
