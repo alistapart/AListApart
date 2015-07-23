@@ -656,6 +656,7 @@
 
 	.variable-column > .item-summary {
 		width: 49%;
+		padding-left: 0;
 	}
 
 	.variable-column:first-child {
