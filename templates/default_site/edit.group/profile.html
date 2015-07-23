@@ -112,26 +112,46 @@
 
 		<label>
 			Visible name:
-			<input name="screen_name" type="text" value="{screen_name}">
+			<input name="screen_name" type="text" value="{screen_name}"
+			required="required"
+			data-validate="onblur"
+			data-type="any"
+			data-isvalid=""
+			data-error="how do you want to be identified on the site?">
 		</label>
 
 		{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
 
 		<label>
 			First name:
-			<input name="first_name" type="text" value="{first_name}">
+			<input name="first_name" type="text" value="{first_name}"
+			required="required"
+			data-validate="onblur"
+			data-type="any"
+			data-isvalid=""
+			data-error="what's your first name?">
 		</label>
 
 		<label>
 			Last name:
-			<input name="last_name" type="text" value="{last_name}">
+			<input name="last_name" type="text" value="{last_name}"
+			required="required"
+			data-validate="onblur"
+			data-type="any"
+			data-isvalid=""
+			data-error="what's your last name?">
 		</label>
 
 		{/if}
 
 		<label>
 			Email:
-			<input name="email" type="email" value="{email}">
+			<input name="email" type="email" value="{email}"
+			required="required"
+			data-validate="onblur"
+			data-type="email"
+			data-isvalid=""
+			data-error="what's your email?">
 		</label>
 
 		<label class="password-field">
@@ -145,7 +165,6 @@
 				data-type="any"
 				data-isvalid=""
 				data-error="what's your password?"
-				value="TEST"
 				required />
 			<span class="note">Make it good.</span>
 		</label>
