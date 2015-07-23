@@ -1118,6 +1118,10 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 	text-decoration: none;
 }
 
+a.issue-number:focus {
+	outline: 1px dotted #be4337;
+}
+
 .entry-header .issue-number .badge,
 .wide-hero .issue-number .badge,
 .tall-hero .issue-number .badge,
@@ -3680,6 +3684,10 @@ img.commenter-avatar {
 
 .global-footer li.head-east-young-man a {
 	margin: 0 3px;
+}
+
+.global-footer li.head-east-young-man a:focus {
+	outline: 1px dotted #222;
 }
 
 .global-footer .inline-items a {

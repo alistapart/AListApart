@@ -419,9 +419,10 @@
 		margin-top: 12px;
 	}
 
-	.entry-header {
+	.article-layout .entry-header {
 		margin-left: 12px;
 		margin-right: 12px;
+		margin-top: 12px;
 	}
 
 	.article-layout .main-content>.tall-hero {
