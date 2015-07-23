@@ -27,7 +27,7 @@
 	{/if}
 
 		<label for="login-name-here">
-			Email / Username <small>(<a href="/tools/register" target="_blank">need an account?</a>)</small>
+			Email / Username <small>(<a id="register-link" data-tabto="forgot-link" href="/tools/register" target="_blank">need an account?</a>)</small>
 			<input
 				id="login-name-here"
 				name="username"
@@ -36,11 +36,13 @@
 				data-type="any"
 				data-isvalid=""
 				data-error="who are you?"
+				data-tabmaster="true"
+				data-tabto="login_password"
 				required />
 		</label>
 
 		<label for="login_password" class="password-field">
-			Password <small>(<a href="/tools/forgot-password" target="_blank">forgotten it?</a>)</small>
+			Password <small>(<a id="forgot-link" data-tabto="comment-submit" href="/tools/forgot-password" target="_blank">forgotten it?</a>)</small>
 			<input
 				id="login_password"
 				name="password"
@@ -50,10 +52,11 @@
 				data-type="any"
 				data-isvalid=""
 				data-error="what's your password?"
+				data-tabto="register-link"
 				required />
 		</label>
 
-		<input type="submit" value="Submit" />
+		<input id="comment-submit" data-tabmaster="false" type="submit" value="Submit" />
 
 	{/exp:freemember:login}
 
