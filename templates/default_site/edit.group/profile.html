@@ -25,6 +25,8 @@
 	<link rel="stylesheet" href="{assets_path}css/reset.css" />
 	<link rel="stylesheet" href="{assets_path}css/editables.css" />
 
+	<script src="{assets_path}js/libs/prefixfree.min.js"></script>
+
 	<script src="{assets_path}js/libs/modernizr-dev.js"></script>
 
 	<title>A List Apart Profile Editor</title>
@@ -61,22 +63,38 @@
 	<fieldset>
 		<label>
 			We need your email address (for lost password requests):<br />
-			<input name="email" type="email" value="">
+			<input id="email" aria-describedby="email_error" name="email" type="email" value="{email}"
+				data-validate="onblur"
+				data-type="email"
+				data-isvalid=""
+				data-error="are you sure this is your email address?"
+				required>
 		</label>
 	</fieldset>
 	{/email_block}
 
 	{password_block}
 	<fieldset>
-		<label>
+		<label class="password-field">
 			Pick a password:
-			<input name="password" type="password" value="">
+			<input id="password" aria-describedby="password_error" name="password" type="password"
+				data-validate="onblur"
+				data-type="any"
+				data-isvalid=""
+				data-error="what's your password?"
+				required />
 			<span class="note">Make it good.</span>
 		</label>
 
-		<label>
+		<label class="password-field">
 			Confirm it:
-			<input name="password_confirm" type="password" value="">
+			<input id="password_confirm" aria-describedby="password_confirm_error" name="password_confirm" type="password"
+				data-validate="onblur"
+				data-type="matching"
+				data-mustmatch="password"
+				data-isvalid="yes"
+				data-error="this needs to match the previous field."
+				required />
 			<span class="note">Make it the same.</span>
 		</label>
 	</fieldset>
@@ -110,43 +128,79 @@
 
 		<label>
 			Visible name:
-			<input name="screen_name" type="text" value="{screen_name}">
+			<input id="screen_name" aria-describedby="screen_name_error" name="screen_name" type="text" value="{screen_name}"
+			data-validate="onblur"
+			data-type="any"
+			data-isvalid=""
+			data-error="how do you want to be identified on the site?"
+			required>
 		</label>
 
 		{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
 
 		<label>
 			First name:
-			<input name="first_name" type="text" value="{first_name}">
+			<input id="first_name" aria-describedby="first_name_error" name="first_name" type="text" value="{first_name}"
+			data-validate="onblur"
+			data-type="any"
+			data-isvalid=""
+			data-error="what's your first name?"
+			required>
 		</label>
 
 		<label>
 			Last name:
-			<input name="last_name" type="text" value="{last_name}">
+			<input id="last_name" aria-describedby="last_name_error" name="last_name" type="text" value="{last_name}"
+			data-validate="onblur"
+			data-type="any"
+			data-isvalid=""
+			data-error="what's your last name?"
+			required>
 		</label>
 
 		{/if}
 
 		<label>
 			Email:
-			<input name="email" type="email" value="{email}">
+			<input id="email" aria-describedby="email_error" name="email" type="email" value="{email}"
+			data-validate="onblur"
+			data-type="email"
+			data-isvalid=""
+			data-error="are you sure this is your email address?"
+			required>
 		</label>
 
-		<label>
+		<label class="password-field">
 			New password:
-			<input name="password" type="password" value="">
+			<input id="password" aria-describedby="password_error" name="password" type="password"
+				data-validate="onblur"
+				data-type="any"
+				data-isvalid=""
+				data-error="what's your password?"
+				required />
 			<span class="note">Make it good.</span>
 		</label>
 
-		<label>
+		<label class="password-field">
 			New password confirmation:
-			<input name="password_confirm" type="password" value="">
+			<input id="password_confirm" aria-describedby="password_confirm_error" name="password_confirm" type="password"
+				data-validate="onblur"
+				data-type="matching"
+				data-mustmatch="password"
+				data-isvalid="yes"
+				data-error="this needs to match the previous field."
+				required />
 			<span class="note">Make it the same.</span>
 		</label>
 
-		<label>
+		<label class="password-field">
 			Submit your current password to continue: <small>(<a href="/tools/forgot-password">forgotten it?</a>)</small>
-			<input name="current_password" type="password" value="" />
+			<input id="current_password" aria-describedby="current_password_error" name="current_password" type="password"
+				data-validate="onblur"
+				data-type="any"
+				data-isvalid=""
+				data-error="for your security, we need your current password"
+				required />
 		</label>
 
 

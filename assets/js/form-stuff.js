@@ -12,54 +12,54 @@
 $(document).ready(function (){
 
 	$('form').on('submit', function(e) {
-	
+
 		//e.preventDefault();
-		
+
 		errors = 0;
-		
+
 		$(this).find('input[data-isvalid]').each(function() {
-			
+
 			if (($(this).attr('data-isvalid') == 'no') || ($(this).attr("required") && ($(this).val() == ''))) {
-				
+
 				errors++;
-				
+
 				errorMsg = $(this).attr('data-error');
-				
+
 				if ((errorMsg != '') && ($(this).attr('data-error') != '')) {
-				
-					$(this).attr('data-error', '').parent().append('<small class="error-message">' + errorMsg + '</span>');
-					
+
+					$(this).attr('data-error', '').parent().append('<small class="error-message" role="alert" id="' + $(this).attr('id') + '_error">' + errorMsg + '</span>');
+
 				};
-				
+
 				$(this).parent().addClass('invalid');
-				
+
 			};
-			
+
 		});
-		
+
 		if (errors != 0) return false;
-		
+
 	});
-	
+
 	$('*[data-validate="onblur"]').on('blur', function() {
-		
+
 		valType = $(this).attr('data-type');
 		value = $(this).val();
-		
+
 		if ($(this).attr("required")) {
-			
+
 			required = true;
-			
+
 		} else {
-		
+
 			required = false;
-		
+
 		};
-		
+
 		//console.log('validating this');
-		
+
 		inputValidation($(this), required, valType, value);
-	
+
 	});
 
 });
@@ -75,71 +75,71 @@ var emailFilter = /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\
 function inputValidation(which, requiredState, valType, value) {
 
 	if ((requiredState == true) && (value == "")) { // if empty and required, don't bother running any other checks
-		
+
 		which.attr('data-isvalid', 'no').attr('aria-invalid', 'true');
-		
+
 	} else if (value == "") {
-		
+
 		which.attr('data-isvalid', '').attr('aria-invalid', '').parent().removeClass('invalid');
-		
+
 	} else {
-	
+
 		if (valType == "email") {
-			
+
 			if (emailFilter.test(which.val())) {
-			
+
 				which.attr('data-isvalid', 'yes').attr('aria-invalid', 'false').parent().removeClass('invalid');
-			
+
 			} else if (which.val().length != 0) {
-				
+
 				which.attr('data-isvalid', 'no').attr('aria-invalid', 'true').parent().removeClass("valid");
-			
+
 			};
-		
+
 		} else if (valType == "url") {
-			
+
 			if (urlFilter.test(which.val())) {
-			
+
 				which.attr('data-isvalid', 'yes').attr('aria-invalid', 'false').parent().removeClass('invalid');
-			
+
 			} else if (which.val().length != 0) {
-				
+
 				which.attr('data-isvalid', 'no').attr('aria-invalid', 'true').parent().removeClass("valid");
-			
+
 			};
-		
+
 		} else if (valType == "no-url") {
-		
+
 			if (which.val().indexOf("/") === -1) {
-				
+
 				which.attr('data-isvalid', 'yes').attr('aria-invalid', 'false').parent().removeClass('invalid');
-				
+
 			} else {
-			
+
 				which.attr('data-isvalid', 'no').attr('aria-invalid', 'true').parent().removeClass("valid");
-			
+
 			};
-		
+
 		} else if (valType == "matching") {
-		
+
 			matchWhich = $('#' + which.attr('data-mustmatch'));
-			
+
 			if (matchWhich.val() == which.val()) {
-				
+
 				which.attr('data-isvalid', 'yes').attr('aria-invalid', 'false').parent().removeClass('invalid');
-				
+
 			} else {
-				
+
 				which.attr('data-isvalid', 'no').attr('aria-invalid', 'true').parent().removeClass("valid");
-				
+
 			};
-		
+
 		} else {
-		
+
 			which.attr('data-isvalid', 'yes').attr('aria-invalid', 'false').parent().removeClass('invalid');
-		
+
 		};
-	
+
 	};
 
 };

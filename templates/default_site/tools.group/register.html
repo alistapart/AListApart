@@ -57,34 +57,42 @@
 
 		<label for="username">
 			Username: <small>required</small>
-			<input id="username" name="username" type="text" data-validate="onblur" data-type="any" data-isvalid="" data-error="who are you?" required />
+			<input id="username" aria-describedby="username_error" name="username" type="text"
+				data-validate="onblur"
+				data-type="any" data-isvalid=""
+				data-error="who are you?"
+				required />
 		</label>
 
 		<label>
 			Email: <small>required</small>
-			<input name="email" type="email" value="{email}" data-validate="onblur" data-type="email" data-isvalid="{if email}yes{/if}" data-error="we need a valid email address!" required>
+			<input id="email" aria-describedby="email_error" name="email" type="email" value="{email}" data-validate="onblur"
+				data-type="email"
+				data-isvalid="{if email}yes{/if}"
+				data-error="are you sure this is your email address?"
+				required>
 		</label>
 
 		<label>
 			Password: <small>required</small>
-			<input id="password" name="password" type="password" value=""
-			data-validate="onblur"
-			data-type="any"
-			data-isvalid=""
-			data-error="what's your new password?"
-			required />
+			<input id="password" aria-describedby="password_error" name="password" type="password" value=""
+				data-validate="onblur"
+				data-type="any"
+				data-isvalid=""
+				data-error="what's your new password?"
+				required />
 			<span class="note">Make it good.</span>
 		</label>
 
 		<label>
 			Password Confirmation: <small>required</small>
-			<input id="password_confirm" name="password_confirm" type="password" value=""
-			data-validate="onblur"
-			data-type="matching"
-			data-mustmatch="password"
-			data-isvalid="yes"
-			data-error="this needs to match the previous field."
-			required />
+			<input id="password_confirm" aria-describedby="password_confirm_error" name="password_confirm" type="password" value=""
+				data-validate="onblur"
+				data-type="matching"
+				data-mustmatch="password"
+				data-isvalid="yes"
+				data-error="this needs to match the previous field."
+				required />
 			<span class="note">Make it the same.</span>
 		</label>
 

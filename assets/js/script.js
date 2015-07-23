@@ -5,21 +5,7 @@ b.setAttribute('data-platform', navigator.platform);
 
 $(document).ready(function(){
 
-	/* setting up hamburger nav dropdown */
-
 	$('.global-nav').addClass('deluxe');
-
-	$('[data-fallback]').on('error', function(){
-
-		//console.log('img load failure: ' + $(this).attr('src'));
-
-		var fallback = $(this).attr('data-fallback');
-
-		$(this).attr('src', fallback);
-
-		//console.log('missing img src replaced with: ' + fallback);
-
-	});
 
 	$('.go-to-nav').click (function(event){
 
@@ -47,6 +33,14 @@ $(document).ready(function(){
 
 	$('body').click(function() {
 	   $('html').removeClass('show-nav');
+	});
+
+	$('[data-fallback]').on('error', function(){
+
+		var fallback = $(this).attr('data-fallback');
+
+		$(this).attr('src', fallback);
+
 	});
 
 	$('[data-trackevent]').on('click', function() {
@@ -149,49 +143,6 @@ $(document).ready(function(){
 	};
 
 	AlaEvents.createPanelistAnchor();
-
-	/*
-		ajax submission failure
-		have not figured out how to get a fresh XID from EE
-
-	var formOptions = {
-		target:				null   // target element(s) to be updated with server response
-		,beforeSubmit:		showRequest  // pre-submit callback
-		,success:			showResponse  // post-submit callback
-		,beforeSubmit: 	function(arr, $form, options) {
-
-			$form.find('.spinner').addClass('submitting');
-
-		}
-	};
-
-	if ($(".perfect-form-demo").length != -1) {
-
-		$(".perfect-form-demo").ajaxForm(formOptions);
-
-	};
-
-	*/
-
-	/*$(".perfect-form-demo").on('submit', function(e) {
-
-		e.preventDefault();
-
-		$.ajax({
-			method: "POST",
-			url: $(this).attr('action'),
-			type: $(this).attr('method'),
-			dataType: 'json',
-			data: $(this).serialize(),
-			success: function( data ) {
-				alert('Submitted');
-			},
-			error: function( xhr, err ) {
-				alert(xhr.getResponseHeader('X-EEXID'));
-			}
-		});
-
-	});*/
 
 	$("body").on("click", "#cancel-login", function(e) {
 
@@ -387,7 +338,7 @@ $(document).ready(function(){
 	});
 
 	$('body').on('input propertychange focus', 'textarea[data-autoresize]', function() {
-	
+
 		autoResize($(this));
 
 	});
@@ -427,6 +378,37 @@ $(document).ready(function(){
 			};
 
 		};
+
+	})
+
+	var maskTerm = 'hide';
+	var unmaskTerm = 'show';
+
+	$('.password-field').append('<a class="password-mask" href="#">' + maskTerm + '</a>');
+
+	$('input[type="password"]').each(function() {
+
+		$(this).changeType($(this), 'text');
+
+	});
+
+	$('.password-mask').on('click', function(){
+
+		var field = $(this).siblings('input[type="password"], input[type="text"]');
+
+		if ($(this).html() == unmaskTerm) {
+
+			field.changeType(field, 'text')
+			$(this).html(maskTerm);
+
+		} else {
+
+			field.changeType(field, 'password');
+			$(this).html(unmaskTerm);
+
+		};
+
+		return false;
 
 	});
 
@@ -472,14 +454,6 @@ var autoLoadComments = function() {
 
 	loadCommentsButton = $("#load-comments");
 
-	// if ((commentsLoaded == false) && ($(window).scrollTop() >= (loadCommentsButton.top - $(window).height()))) {
-
-	// 	//console.log('trigger comment load now');
-
-	// 	loadThoseComments();
-
-	// }
-
 	loadThoseComments();
 
 }
@@ -503,7 +477,6 @@ var loadThoseComments = function(target) {
 		$.get("/comments/embed-comments/" + loadWhichComments, function(data) {
 
 			$(".article-comments.form").before(data).trigger("comments-appended");
-
 
 			commentsLoaded = true;
 
@@ -794,48 +767,38 @@ function autoResize(which) {
 
 };
 
-/*
-	ajax submission failure
-	have not figured out how to get a fresh XID from EE
+$.fn.changeType = function(x, type) {
 
-// pre-submit callback
-function showRequest(formData, jqForm, options) {
-	// formData is an array; here we use $.param to convert it to a string to display it
-	// but the form plugin does this for you automatically when it submits the data
-	var queryString = $.param(formData);
+	if(x.prop('type') == type) return x; //That was easy.
 
-	// jqForm is a jQuery object encapsulating the form element.  To access the
-	// DOM element for the form do this:
-	// var formElement = jqForm[0];
-
-	//alert('About to submit: \n\n' + queryString);
-
-	// here we could return false to prevent the form from being submitted;
-	// returning anything other than false will allow the form submit to continue
-	return true;
-}
-
-// post-submit callback
-function showResponse(responseText, statusText, xhr, $form)  {
-	// for normal html responses, the first argument to the success callback
-	// is the XMLHttpRequest object's responseText property
-
-	// if the ajaxForm method was passed an Options Object with the dataType
-	// property set to 'xml' then the first argument to the success callback
-	// is the XMLHttpRequest object's responseXML property
-
-	// if the ajaxForm method was passed an Options Object with the dataType
-	// property set to 'json' then the first argument to the success callback
-	// is the json data object returned by the server
-
-	//alert('status: ' + statusText + '\n\nresponseText: \n' + responseText + '\n\nThe output div should have already been updated with the responseText.');
-
-	alert(xhr.getResponseHeader('X-EEXID'));
-
-	$('body').data('xid', xhr.getResponseHeader('X-EEXID'));
-
-	$('.submitting').removeClass('submitting');
+	try {
+	return x.prop('type', type); //Stupid IE security will not allow this
+	} catch(e) {
+	//Try re-creating the element (yep... this sucks)
+	//jQuery has no html() method for the element, so we have to put into a div first
+	var html = $("<div>").append(x.clone()).html();
+	var regex = /type=(\")?([^\"\s]+)(\")?/; //matches type=text or type="text"
+	//If no match, we add the type attribute to the end; otherwise, we replace
+	var tmp = $(html.match(regex) == null ?
+	html.replace(">", ' type="' + type + '">') :
+	html.replace(regex, 'type="' + type + '"') );
+	//Copy data from old element
+	tmp.data('type', x.data('type') );
+	var events = x.data('events');
+	var cb = function(events) {
+	return function() {
+	//Bind all prior events
+	for(i in events)
+	{
+	var y = events[i];
+	for(j in y)
+	tmp.bind(i, y[j].handler);
+	}
+	}
+	}(events);
+	x.replaceWith(tmp);
+	setTimeout(cb, 10); //Wait a bit to call function
+	return tmp;
+	}
 
 }
-
-*/

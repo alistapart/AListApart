@@ -428,6 +428,13 @@ label, legend {
 	font-size: .8em;
 }
 
+.password-mask {
+	position: absolute;
+	top: 3.2em;
+	right: 2%;
+	font-size: .85em;
+}
+
 label.half-width {
 	width: 50%;
 }
@@ -641,7 +648,7 @@ textarea:focus:not([readonly]) {
 
 .error-message {
 	position: absolute;
-	bottom: -.9em;
+	top: 4.6em;
 	left: 50%;
 	background: #fff;
 	padding: 0 6px;

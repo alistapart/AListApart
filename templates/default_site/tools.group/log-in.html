@@ -63,6 +63,7 @@
 			Username / Email Address <small>(<a href="/tools/register">need an account?</a>)</small>
 			<input
 				id="username"
+				aria-describedby="username_error"
 				name="username"
 				type="text"
 				data-validate="onblur"
@@ -72,10 +73,11 @@
 				required />
 		</label>
 
-		<label for="login_password">
+		<label for="login_password" class="password-field">
 			Password <small>(<a href="/tools/forgot-password">forgotten it?</a>)</small>
 			<input
 				id="login_password"
+				aria-describedby="login_password_error"
 				name="password"
 				type="password"
 				required="required"
