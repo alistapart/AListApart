@@ -11,6 +11,12 @@
 
 $(document).ready(function (){
 
+	$('form').each(function() {
+
+		$(this).attr('novalidate', 'novalidate');
+
+	});
+
 	$('form').on('submit', function(e) {
 
 		//e.preventDefault();
