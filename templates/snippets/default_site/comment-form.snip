@@ -31,6 +31,8 @@
 
 		<label id="comment-content">
 		<textarea id="comment-content" aria-describedby="comment-content_error" class="logged-in" name="comment"
+			data-tabmaster="true"
+			data-tabto="comment-submit"
 			data-autoresize
 			data-validate="onblur"
 			data-type="any"
@@ -45,25 +47,25 @@
 
 		{if segment_1 == 'comments'}
 	 	<!--javascript probably turned off -->
-	 	<a href="{exp:freemember:logout_url return='comments/{url_title}#commenter-signin'}">log out</a>
+	 	<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='comments/{url_title}#commenter-signin'}">log out</a>
 
 		{if:else}
 		{if channel_short_name == 'articles'}
 
-			<a href="{exp:freemember:logout_url return='article/{url_title}#commenter-signin'}">log out</a>
+			<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='article/{url_title}#commenter-signin'}">log out</a>
 
 		{if:elseif channel_short_name == 'blog'}
 
-			<a href="{exp:freemember:logout_url return='blog/post/{url_title}#commenter-signin'}">log out</a>
+			<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='blog/post/{url_title}#commenter-signin'}">log out</a>
 
 		{if:elseif channel_short_name == 'columns'}
 
-			<a href="{exp:freemember:logout_url return='column/{url_title}#commenter-signin'}">log out</a>
+			<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='column/{url_title}#commenter-signin'}">log out</a>
 
 		{/if}
 		{/if}
 
-		<input type="submit" value="Submit" />
+		<input id="comment-submit" data-tabto="edit-profile-link" type="submit" value="Submit" />
 
 		</p>
 
