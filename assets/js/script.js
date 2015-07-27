@@ -439,6 +439,8 @@ $(document).ready(function(){
 
 	*/
 
+	postscribe('#deck-target', '<script src=http://www.northmay.com/deck/deckAL_js.php?' + (new Date().getTime()) + '><\/script><p><a href="http://www.coudal.com/deck/">Ad via The Deck</a></p>');
+
 });
 
 sponsorSniff = document.addEventListener("DOMNodeInserted", function(event) {
