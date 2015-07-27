@@ -876,8 +876,8 @@ aside.column.more-content .item-summary {
 	/* font-size: 14px;
 	line-height: 18px;
 	font-style: italic; */
-	font-size: 18px;
-	line-height: 24px;
+	font-family: "Franklin ITC Light", sans-serif;
+	font-size: 14px;
 	line-height: 24px;
 }
 
@@ -886,10 +886,12 @@ aside.column.more-content .item-summary {
 }
 
 .item-summary.topic > h1 a {
+	display: block;
 	padding-right: 4px;
 	font-family: "Franklin ITC", sans-serif;
 	font-weight: bold;
 	font-style: normal;
+	font-size: 18px;
 	/* text-transform: uppercase; */
 }
 
