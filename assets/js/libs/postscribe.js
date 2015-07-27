@@ -685,7 +685,7 @@
 
 
       var args = [el, html, options];
-
+      
       el.postscribe = {
         cancel: function() {
           if(args.stream) {
