@@ -1,60 +1,60 @@
 {global-page-top}
 
 	<title>A List Apart: The Translated Articles</title>
-		
+
 </head>
 
 <body>
 
+{primary-logo}
+
+{global-nav}
+
 {current-user-info-edit}
 
-	{primary-logo}
-	
 	<div role="main" class="main-wrapper two-column-display">
-	
+
 		<div class="col-holder">
-		
+
 			<article class="main-content">
-			
+
 				<h1 class="basic-title">The Translated Articles</h1>
-				
-				
+
+
 				<ul class="entry-list">
-				
+
 				{exp:channel:entries channel="articles" dynamic="off" search:article_translations="not IS_EMPTY" limit="999"}
-				
+
 					<li>{title}
-						
+
 						<ul class="bullets">
 							{article_translations}
 							<li><a href="{cell_2}">{cell_1}</a></li>
 							{/article_translations}
 						</ul>
-						
+
 					</li>
 
 				{/exp:channel:entries}
-				
+
 				</ul>
-			
+
 			</article><!--
-			
+
 			--><div class="secondary-column">
-			
+
 				{about-nav}
-				
+
 				{ads}
-			
+
 			</div>
-		
+
 		</div>
-		
+
 		{global-footer}
-	
+
 	</div>
-	
-	{global-nav}
 
 </div>
-	
+
 {global-page-bottom}

@@ -1,11 +1,11 @@
 {exp:switchee variable="{segment_2}" parse="inward"}
-    
+
 {case value="#^P(\d+)$#|''|archives"}
- 
+
 	{global-page-top}
 
 		<title>A List Apart: The Articles</title>
-		
+
 		<link rel="canonical" href="{site_url}{segment_1}{if segment_2}/{segment_2}{/if}{if segment_3}/{segment_3}{/if}"/>
 		{exp:channel:entries limit="10" channel="issues" status="open" dynamic="off" show_future_entries="no" paginate="top"}{paginate}{if next_page}<link rel="next" href="{auto_path}" />{/if}
 		{if previous_page}<link rel="prev" href="{auto_path}" />{/if}{/paginate}{/exp:channel:entries}
@@ -14,9 +14,11 @@
 
 	<body>
 
-	{current-user-info}
+	{primary-logo}
 
-		{primary-logo}
+   {global-nav}
+
+	{current-user-info}
 
 		<div role="main" class="main-wrapper two-column-display">
 
@@ -29,7 +31,7 @@
 					{if segment_3}
 
 						{embed="embeds/issue-list" offset="{segment_3}"}
-					
+
 					{if:else}
 
 						{embed="embeds/issue-list" offset="0"}
@@ -54,8 +56,6 @@
 
 		</div>
 
-		{global-nav}
-
 	{global-footer}
 
 	{global-page-bottom}
@@ -71,4 +71,3 @@
 {/exp:switchee}
 
 
- 

@@ -1,61 +1,61 @@
 {exp:switchee variable="{segment_3}" parse="inward"}
-    
+
 {case value="#^P(\d+)$#|''"}
 
 {global-page-top}
 
 	<title>A List Apart: The Columns</title>
-			
+
 		<link rel="canonical" href="{site_url}{segment_1}{if segment_2}/{segment_2}{/if}{if segment_3}/{segment_3}{/if}"/>
 		{exp:channel:entries limit="10" channel="columns" status="open" dynamic="off" show_future_entries="no" paginate="top"}{paginate}{if next_page}<link rel="next" href="{auto_path}" />{/if}
 		{if previous_page}<link rel="prev" href="{auto_path}" />{/if}{/paginate}{/exp:channel:entries}
-		
+
 </head>
 
 <body>
 
+{primary-logo}
+
+{global-nav}
+
 {current-user-info}
 
-	{primary-logo}
-	
 	<div role="main" class="main-wrapper two-column-display">
-	
+
 		<div class="col-holder">
-		
+
 			<article class="main-content">
-			
+
 				<h1 class="basic-title">The Columns</h1>
-				
+
 				{if segment_3}
 				{embed="embeds/column-list" offset="{segment_3}"}
 				{if:else}
 				{embed="embeds/column-list" offset="0"}
 				{/if}
-				
+
 				</article><!--
-			
+
 			--><div class="secondary-column">
-			
+
 				{sponsor-top}
-				
+
 				{blog-posts-from-ala}
-						
+
 				{ads}
-				
+
 				{ad-bsa-text}
-			
+
 			</div>
-		
+
 		</div>
-		
-		
-	
+
+
+
 	</div>
-	
-	{global-nav}
 
 {global-footer}
-	
+
 {global-page-bottom}
 
 {/case}

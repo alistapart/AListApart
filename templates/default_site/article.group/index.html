@@ -42,7 +42,9 @@
 
 <body class="printable {if comment_total > 0}comments-exist{/if}">
 
-	{primary-logo}
+{primary-logo}
+
+{global-nav}
 
 	<div role="main" class="main-wrapper">
 
@@ -294,7 +296,7 @@
 							<h1 itemprop="commentCount" class="classy">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
 
 							<a href="/comments/{url_title}" id="load-comments" data-url-title="{url_title}" class="buttonish">Load Comments</a>
-							
+
 							{if logged_out}
 								{comment-sign-in}
 							{if:else}
@@ -336,8 +338,6 @@
 	{global-footer}
 
 	{sponsor-top}
-
-	{global-nav}
 
 	{exp:channel:entries channel="articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
 

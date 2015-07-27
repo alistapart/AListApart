@@ -1,30 +1,32 @@
 {global-page-top}
 
 	<title>Sign up for emails from A List Apart</title>
-		
+
 </head>
 
 <body>
 
+{primary-logo}
+
+{global-nav}
+
 {current-user-info-edit}
 
-	{primary-logo}
-	
 	<div role="main" class="main-wrapper two-column-display">
-	
+
 		<div class="col-holder">
-		
+
 			<article class="main-content">
 
 				{if segment_2 == "thanks"}<p class="form-message">Got it, thanks!</p>{/if}
-			
+
 				<h1 class="basic-title">Receive ALA in Your Email</h1>
-				
+
 				<p>Sign up to receive new ALA articles, blog posts, or columns by email.</p>
-				
+
 				<!-- Begin MailChimp Signup Form -->
 				<form action="//alistapart.us3.list-manage.com/subscribe/post?u=0916d3332d7cd86d644d2b4fe&amp;id=f1ea1ab5a3" method="post" id="email-subscribe" name="mc-embedded-subscribe-form" class="simple-form" novalidate data-customvalidate="no">
-					
+
 					<fieldset>
 
 						<label for="mce-NAME">Name
@@ -34,9 +36,9 @@
 						<input type="email" name="EMAIL" id="mce-EMAIL" value="{email}" required /></label>
 
 					</fieldset>
-					
+
 					<p>You can get an email whenever we have something fresh:</p>
-					
+
 					<fieldset>
 
 						<label class="list"><input type="checkbox" value="1" name="group[12377][1]" id="mce-group[12377]-12377-0"> Articles (Our deepest dives. Published every other Tuesday.)</label>
@@ -53,38 +55,36 @@
 						<label class="list"><input type="checkbox" value="8" name="group[12377][8]" id="mce-group[12377]-12377-3"> Digest (Sent every other Tuesday.)</label>
 
 					</fieldset>
-					
+
 					<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 				    <div style="position: absolute; left: -5000px;"><input type="text" name="b_0916d3332d7cd86d644d2b4fe_f1ea1ab5a3" tabindex="-1" value=""></div>
-				    
+
 				    <p class="form-message error"></p>
-				    
+
 				    <p><input type="submit" value="Submit" /></p>
 
 				</form>
-				
+
 				<!--End mc_embed_signup-->
-			
+
 			</article><!--
-			
+
 			--><div class="secondary-column">
-	
+
 				{sponsor-top}
-			
+
 				{about-nav}
-				
+
 				{ads}
-			
+
 			</div>
-		
+
 		</div>
-		
-		
-	
+
+
+
 	</div>
-	
-	{global-nav}
 
 {global-footer}
-	
+
 {global-page-bottom}

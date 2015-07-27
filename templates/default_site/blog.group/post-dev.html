@@ -7,11 +7,11 @@
 {global-page-top}
 
 	<title>{title} ∙ An A List Apart Blog Post</title>
-	
+
 	<?php
 		$blog_intro = "{blog_intro}";
 	?>
-	
+
 	<meta name="description" content="<?php echo strip_tags($blog_intro);?>">
 	<meta name="author" content="{embed="embeds/article-authors-no-html" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}">
 
@@ -20,78 +20,80 @@
 	<meta name="twitter:title" content="{title}">
 	<meta name="twitter:description" content="<?php echo strip_tags($blog_intro);?>">
 	<meta name="twitter:url" content="http://alistapart.com/blog/post/{url_title}">
-		
+
 	<meta property="og:title" content="{title}" />
 	<meta property="og:description" content="<?php echo strip_tags($blog_intro);?>" />
 	<meta property="og:url" content="http://alistapart.com/blog/post/{url_title}" />
-		
+
 </head>
 
 <body class="{if comment_total > 0}comments-exist{/if}">
 
+{primary-logo}
+
+{global-nav}
+
 {current-user-info-edit}
 
-	{primary-logo}
-	
 	<div role="main" class="main-wrapper">
-	
+
 		<article class="article-layout hentry">
-		
+
 			<header class="blog-header">
-				
+
 				<span class="column-name">The A List Apart Blog Presents:</span>
-	
+
 				<h1>{title}</h1>
-				
+
 				<p class="meta">
-					
-					by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} · 
-					
-					<time class="article-pubdate" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>{!-- · 
-					
+
+					by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} ·
+
+					<time class="article-pubdate" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>{!-- ·
+
 					Published in {categories backspace="2"}<a href="/topic/{category_url_title}">{category_name}</a>, {/categories--}
-					
+
 					{if allow_comments AND comment_total > 0}
 						 · <a class="comment-count" href="#comments">{comment_total} Comments</a>
 					{if:elseif allow_comments}
 						 · <a class="comment-count no-comments" href="#comments">No Comments (yet)</a>
 					{/if}
-					
+
 				</p>
-			
+
 			</header>
-			
+
 			<div class="main-content">
-			
+
 				{content-minutiae-blog}
-				
+
 				{blog_content}
-				
+
 			</div>
-			
+
 			<footer class="entry-footer">
-				
+
 				{embed="embeds/blog-author-bio" entry_author="{author_id}" entry_id="{entry_id}"}
 
 			</footer>
-			
+
 			<div class="post-article">
-			
+
 				<div class="column-holder unequal-columns">
-				
+
 					<section id="comments" class="column comment-holder">
-					
+
 					{if allow_comments}
-						
+
 						{if comment_total > 0}
 						<h1 class="classy">{comment_total} Reader Comments</h1>
-						
+
 						<a href="/comments/{url_title}" id="load-comments" data-url-title="{url_title}" class="buttonish">Load Comments</a>
 						{if:else}
 						<h1 class="classy">No Comments (yet)</h1>
-						
+
 						{exp:channel:entries limit="1" dynamic="no" url_title="{segment_3}"}
-						
+
 						<ol class="article-comments">
 						{if logged_in}
 						{comment-form}
@@ -99,40 +101,38 @@
 						{comment-sign-in}
 						{/if}
 						</ol>
-						
+
 						{/if}
-						
+
 						{/exp:channel:entries}
-						
-						
+
+
 					{if:else}
-					
+
 					comments closed — what to do?
-					
+
 					{/if}
-						
+
 					</section>
-			
+
 					<aside class="column more-content">
-					
+
 						{more-from-ala}
-						
+
 						{ads}
-					
+
 					</aside>
-				
+
 				</div>
-				
+
 			</div>
-		
+
 		</article>
-		
+
 		{global-footer}
-	
+
 	</div>
-	
-	{global-nav}
 
 {/exp:channel:entries}
-	
+
 {global-page-bottom}

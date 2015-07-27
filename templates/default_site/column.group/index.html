@@ -32,7 +32,9 @@
 
 <body itemscope itemtype="http://www.schema.org/Article" class="printable {if comment_total > 0}comments-exist{/if}">
 
-	{primary-logo}
+{primary-logo}
+
+{global-nav}
 
 	<div role="main" class="main-wrapper">
 
@@ -72,7 +74,7 @@
 
 			</header>
 
-			{if column_series} 
+			{if column_series}
 				{column-series-logic}
 			{/if}
 
@@ -125,7 +127,7 @@
 
 				</section>
 				{/if}
-			
+
 			{embed="embeds/related-sidebar-column" entry_id="{entry_id}"}
 
 			<footer class="entry-footer">
@@ -186,8 +188,6 @@
 	</div>
 
 	{current-user-info-edit}
-
-	{global-nav}
 
 	{sponsor-top}
 

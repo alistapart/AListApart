@@ -7,61 +7,61 @@
 	<title>Extended content from {title} · An A List Apart Article</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
-	
+
 	<link rel="canonical" href="http://alistapart.com/article/{url_title}"/>
-		
+
 </head>
 
 <body>
 
+{primary-logo}
+
+{global-nav}
+
 {current-user-info-edit}
 
-	{primary-logo}
-	
 	<div role="main" class="main-wrapper">
-	
+
 		<article class="article-layout hentry">
-		
+
 			<header class="entry-header">
-		
+
 				<h1 class="entry-title"><a href="/article/{url_title}">{title}</a></h1>
-				
+
 				<p class="entry-details">
-					
+
 					Extended content by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
-			
+
 				</p>
-			
+
 			</header>
-			
+
 			{if article_extended_intro}
 			<div class="main-content">
-				
+
 				<p class="editors-note"><b>A note from the editors:</b> {article_extended_intro}</p>
-			
+
 			</div>
 			{/if}
-			
+
 			<div class="main-content single-column">
-				
+
 				<p class="buttonish-holder"><a href="/article/{url_title}" class="buttonishish">Back to the article</a></p>
-			
+
 				{article_extended}
-				
+
 				<p class="buttonish-holder"><a href="/article/{url_title}" class="buttonishish">Back to the article</a></p>
-			
+
 			</div>
-		
+
 		</article>
-		
+
 		{global-footer}
-	
+
 	</div>
-	
-	{global-nav}
-	
+
 	{sponsor-top}
-	
+
 {global-page-bottom}
 
 {/exp:channel:entries}

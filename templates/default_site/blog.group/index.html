@@ -1,5 +1,5 @@
 {exp:switchee variable="{segment_2}" parse="inward"}
-    
+
 {case value="#^P(\d+)$#|''|archives"}
 
 {global-page-top}
@@ -14,9 +14,11 @@
 
 <body>
 
-{current-user-info}
+{primary-logo}
 
-	{primary-logo}
+{global-nav}
+
+{current-user-info}
 
 	<h1 class="section-title">Our Blog</h1>
 	<h2 class="section-sub-title">Quick updates and practical approaches</h2>
@@ -44,7 +46,7 @@
 						{if comment_total > 0}
 						 · <a class="comment-count" href="/blog/post/{url_title}#comments">{comment_total} Comment{if comment_total > 1}s{/if}</a>
 						{/if}
-						
+
 					</p>
 
 				</header>
@@ -110,8 +112,6 @@
 	</div>
 
 	{/if}
-
-	{global-nav}
 
 {sponsor-top}
 
