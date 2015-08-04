@@ -11,19 +11,21 @@
 		{exp:freemember:login return="comments/{url_title}#comment-form" form_class="sign-in-form"}
 
 	{if:else}
+
 		{if channel_short_name == 'articles'}
 
-		{exp:freemember:login return="article/{url_title}#comment-form" form_class="sign-in-form"}
+			{exp:freemember:login return="article/{url_title}#comment-form" form_class="sign-in-form"}
 
 		{if:elseif channel_short_name == 'blog'}
 
-		{exp:freemember:login return="blog/post/{url_title}#comment-form" form_class="sign-in-form"}
+			{exp:freemember:login return="blog/post/{url_title}#comment-form" form_class="sign-in-form"}
 
 		{if:elseif channel_short_name == 'columns'}
 
-		{exp:freemember:login return="column/{url_title}#comment-form" form_class="sign-in-form"}
+			{exp:freemember:login return="column/{url_title}#comment-form" form_class="sign-in-form"}
 
 		{/if}
+
 	{/if}
 
 		<label for="login-name-here">
