@@ -3125,7 +3125,7 @@ ol.article-comments > li {
 	position: relative;
 	min-height: 96px;
 	margin: 12px 0 48px;
-	padding: 17px 11px 24px;
+	padding: 17px 36px 24px;
 	border: 1px solid #ddd;
 	border-radius: 3px;
 }
@@ -3349,8 +3349,7 @@ ol.article-comments li .comment-body:after {
 
 ol.article-comments li.commenter-signin,
 ol.article-comments li.comment-form {
-	padding-top: 32px;
-	padding-bottom: 0;
+	padding: 32px 36px;
 	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
@@ -3412,17 +3411,20 @@ li.comment-form p {
 }
 
 div#login-buttons{
-	margin-top: 36px;
+	margin-top: 18px;
 	text-align: left;
 }
 
 ul.login-buttons {
-	margin-bottom: 18px;
+	margin-bottom: 0px;
 }
 
 ul.login-buttons li {
 	display: inline-block;
-	margin-right: 9px;
+    margin-right: 9px;
+    padding: 0px 12px;
+	border: 1px solid #ccc;
+    border-radius: 24px;
 }
 
 ul.login-buttons li:last-child {
@@ -3432,11 +3434,10 @@ ul.login-buttons li:last-child {
 ul.login-buttons li a {
 	display: block;
 	padding: 12px;
-	border: 1px solid #ccc;
-	border-radius: 6px;
 	color: #000;
-	font-family: "Franklin ITC", sans-serif;
-	font-weight: bold;
+	font-family: "Franklin ITC Light", sans-serif;
+	font-weight: normal;
+	font-size: 18px;
 
 	-webkit-transition: background-color 200ms ease-in;
 	-moz-transition: background-color 200ms ease-in;
@@ -3472,7 +3473,7 @@ ul.login-buttons li.ala a {
 	background-image: url(/components/assets/img/icon_login-laurel.png);
 }
 
-ul.login-buttons li a:hover {
+ul.login-buttons li:hover, ul.login-buttons li a:hover {
 	background-color: #efefef;
 	text-decoration: none;
 }
@@ -3501,7 +3502,7 @@ ul.login-buttons li a:hover {
 .article-comments form label {
 	position: relative;
 	display: block;
-	font-size: 16px;
+	font-size: 14px;
 }
 
 .article-comments form label .error-message {
@@ -3541,18 +3542,18 @@ ul.login-buttons li a:hover {
 .article-comments input[type=email],
 .article-comments input[type=password] {
 	display: block;
-	width: 75%;
+	width: 100%;
 	margin: 0 0 24px;
 	padding: 12px;
 	border: 1px solid #ccc;
-	border-radius: 6px;
+	border-radius: 3px;
 	color: #000;
 	outline: 0;
 	box-shadow: inset 0px 0px 10px rgba(0,0,0,.05);
 	text-align: left;
 	letter-spacing: .1em;
 	font-family: "Franklin ITC Light", sans-serif;
-	font-size: 24px;
+	font-size: 18px;
 	font-weight: normal;
 	font-style: normal;
 
@@ -3636,11 +3637,12 @@ textarea:not([data-autoresize]) {
 }
 
 .article-comments input[type="submit"] {
-	padding: 6px 18px;
-	background: #bb3825;
-	border: 0;
-	border-radius: 6px;
+	padding: 12px 24px;
+    background: #bb3825;
+    border: 0;
+    border-radius: 24px;
 	color: #fff;
+	font-size: 18px;
 	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
