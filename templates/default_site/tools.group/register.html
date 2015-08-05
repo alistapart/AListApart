@@ -46,7 +46,7 @@
 
 	{if segment_3 == 'email-sent'}
 
-	<p>Got it. Be on the lookout for an email with a link to activate your new account. <a href="{site_url}<?php echo ee()->session->tracker['2']; ?>">Return URL</a></p>
+	<p>Got it. Be on the lookout for an email with a link to activate your new account. <a href="{site_url}<?php echo ee()->session->tracker['2']; ?>">Get back.</a></p> 
 
 	{if:else}
 
@@ -96,7 +96,19 @@
 				required />
 			<span class="note">Make it the same.</span>
 		</label>
-
+		
+		<style>
+			.screen-reader {
+				display: block !important;
+				left: -9999px !important;
+				position: absolute !important;
+			}
+		</style>
+		<p class="screen-reader">
+		  <label for="honeepot">Don't put anything here</label>
+		  <input type="text" name="honeepot" id="honeepot" />
+		</p>
+		
 		<p class="align-center">
 			<button type="submit" class="spinner">
 				<span class="label">Submit</span>

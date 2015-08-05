@@ -1,59 +1,81 @@
 {if member_group == "1" OR member_group == "6" OR member_group == "7" OR member_group == "8"}
 
-{exp:channel:entries channel="articles" require_entry="yes" limit="1" url_title="{segment_3}" disable="categories|category_fields|member_data"}
+	{global-page-top}
 
-{if no_results} <p><b>Error</b>: You must request a valid article.</p> {/if}
+		{safecracker-css}
 
-<!DOCTYPE html>
-<html>
+		<script src="{assets_path}js/libs/prefixfree.min.js"></script>
 
-<head>
+		<script src="{assets_path}js/libs/modernizr-dev.js"></script>
 
-<title>A List Apart : Add Translation Link</title>
+		<title>A List Apart : Add Translation Link</title>
 
-<meta charset="utf-8" />
+	</head>
 
-{safecracker-css}
+	<body>
 
-</head>
+	<div id="ajaxResponse"></div>
 
-<body>
+	{primary-logo}
 
-<div id="ajaxResponse"></div>
+	{global-nav}
 
-<h1>Add a translation link</h1>
+	{current-user-info}
 
-<h2>Article: {title}</h2>
+		 
+		
 
-<p>{article_translations}{cell_1}, {cell_2}<br>{/article_translations}</p>
+		<div role="main" class="main-wrapper single-column-display">
 
-<p><a href="/article/{segment_3}">Return to the Article</a></p>
+			<div class="col-holder">
 
-{exp:channel:form channel="articles" include_jquery="no" json="yes" safecracker_head="no" class="editForm" id="editForm{entry_id}" entry_id="{entry_id}" return="/article/URL_TITLE"}
+				<article class="main-content">
 
-<input type="hidden" name="article_translations[row_order][]" value="row_new_0" />
+					<h1 class="basic-title">Add a translation link.</h1>
 
-<p>
-Language
-<input type="text" placeholder="language (ex: Arabic)" name="article_translations[row_new_0][col_id_6]" />
-</p>
+					{exp:channel:entries channel="articles" require_entry="yes" limit="1" url_title="{segment_3}" disable="categories|category_fields|member_data"}
 
-<p>
-URL
-<input type="url" placeholder="URL" name="article_translations[row_new_0][col_id_7]" />
-</p>
+					<h2>Article: {title}</h2>
 
-<input type="submit" name="submit" value="Submit">
+					<p>{article_translations}{cell_1}, {cell_2}<br>{/article_translations}</p>
 
-{/exp:channel:form}
+					<p><a href="/article/{segment_3}">Return to the Article</a></p>
 
-{safecracker-js}
+					{exp:channel:form channel="articles" include_jquery="no" json="yes" safecracker_head="no" class="editForm" id="editForm{entry_id}" entry_id="{entry_id}" return="/article/URL_TITLE"}
 
-</body>
+					<input type="hidden" name="article_translations[row_order][]" value="row_new_0" />
 
-</html>
+					<p>
+					Language
+					<input type="text" placeholder="language (ex: Arabic)" name="article_translations[row_new_0][col_id_6]" />
+					</p>
 
-{/exp:channel:entries}
+					<p>
+					URL
+					<input type="url" placeholder="URL" name="article_translations[row_new_0][col_id_7]" />
+					</p>
+
+					<input type="submit" name="submit" value="Submit">
+
+					{/exp:channel:form}
+
+					{safecracker-js}
+
+					{if no_results} <p><b>Error</b>: You must request a valid article.</p> {/if}
+
+					{/exp:channel:entries}
+
+				</article> 
+
+			</div>
+
+		</div>
+
+		{global-footer}
+
+		{sponsor-top}
+
+		{global-page-bottom}
 
 {if:else}
 
