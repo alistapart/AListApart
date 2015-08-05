@@ -885,7 +885,7 @@ aside.column.more-content .item-summary {
 	color: #222;
 }
 
-.item-summary.topic > h1 a {
+.item-summary.topic > h1 {
 	display: block;
 	padding-right: 4px;
 	font-family: "Franklin ITC", sans-serif;

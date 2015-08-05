@@ -78,9 +78,10 @@
 
 				{exp:channel:categories style="linear" category_group="3" parent_only="yes" channel="articles"}<article class="item-summary topic">
 
-					<figure><a href="/topic/{category_url_title}"><img src="{category_image}" alt=""></a></figure>
-
-					<h1><a href="/topics/{category_url_title}">{category_name}</a> <!--({exp:catcount cat_id="{category_id}"}&nbsp;articles)--></h1>
+					<a href="/topics/{category_url_title}">
+						<figure><img src="{category_image}" alt=""></figure>
+						<h1><a href="/topics/{category_url_title}">{category_name}</h1>
+					</a>
 
 					<p>{category_description}</p>
 
