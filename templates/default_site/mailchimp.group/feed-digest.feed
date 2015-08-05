@@ -23,8 +23,8 @@
   <item>
       <title><![CDATA[Issue № {issue_number}: {title}]]></title>
       <author></author>
-      <link>{site_url}/issue/{issue_number}</link>
-      <guid>{site_url}/issue/{issue_number}</guid>
+      <link>{site_url}issue/{issue_number}</link>
+      <guid>{site_url}issue/{issue_number}</guid>
       <description></description>
       <content:encoded><![CDATA[
 
@@ -63,7 +63,7 @@
 
                         <td valign="top" class="mcnTextContent" style="padding: 12px 30px; text-align: center;">
 
-<h2 class="mc-toc-title" style="text-align: center;"><a href="{site_url}/article/{url_title}" target="_blank">{title}</a></h2>
+<h2 class="mc-toc-title" style="text-align: center;"><a href="{site_url}article/{url_title}" target="_blank">{title}</a></h2>
 
 <div style="text-align: center; padding: 0 0 24px; line-height: 26px;"><em>By {embed="embeds/article-authors-for-rss-2" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</em>
 

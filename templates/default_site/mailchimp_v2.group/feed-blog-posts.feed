@@ -23,8 +23,8 @@
       <title><![CDATA[{title}]]></title>
       <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
       <description>{embed="embeds/author-photo-url" entry_author="{author_id}" entry_id="{entry_id}"}</description>
-      <link>{site_url}/blog/post/{url_title}</link>
-      <guid>{site_url}/blog/post/{url_title}</guid>
+      <link>{site_url}blog/post/{url_title}</link>
+      <guid>{site_url}blog/post/{url_title}</guid>
       <content:encoded><![CDATA[<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
 	<!-- // ISSUE HEADER -->
 	<tr>
@@ -73,7 +73,7 @@
 						<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
 							<tr>
 								<td align="center" valign="top" class="entryTitle" style="padding-top:20px;">
-									<h2 style="color:#222222; font-family:'Helvetica Neue', Helvetica, sans-serif; font-size:28px; font-weight:bold; line-height:32px; margin:0; padding:0; text-align:center; text-decoration:none;"><a href="{site_url}/blog/post/{url_title}" target="_blank" style="color:#2455C3 !important; text-decoration:none; font-weight: bold;">{title}</a></h2>
+									<h2 style="color:#222222; font-family:'Helvetica Neue', Helvetica, sans-serif; font-size:28px; font-weight:bold; line-height:32px; margin:0; padding:0; text-align:center; text-decoration:none;"><a href="{site_url}blog/post/{url_title}" target="_blank" style="color:#2455C3 !important; text-decoration:none; font-weight: bold;">{title}</a></h2>
 								</td>
 							</tr>
 							<tr>

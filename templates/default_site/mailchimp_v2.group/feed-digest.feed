@@ -23,8 +23,8 @@
   <item>
       <title><![CDATA[Issue № {issue_number}: {title}]]></title>
       <author></author>
-      <link>{site_url}/issue/{issue_number}</link>
-      <guid>{site_url}/issue/{issue_number}</guid>
+      <link>{site_url}issue/{issue_number}</link>
+      <guid>{site_url}issue/{issue_number}</guid>
       <description></description>
       <content:encoded><![CDATA[
 
@@ -63,7 +63,7 @@
 
                         <td valign="top" class="mcnTextContent" style="padding: 12px 30px; text-align: center;">
 
-<h2 class="mc-toc-title" style="text-align: center;"><a href="{site_url}/article/{url_title}" target="_blank">{title}</a></h2>
+<h2 class="mc-toc-title" style="text-align: center;"><a href="{site_url}article/{url_title}" target="_blank">{title}</a></h2>
 
 <div style="text-align: center; padding: 0 0 24px; line-height: 26px;"><em>By {embed="embeds/article-authors-for-rss-2" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</em>
 
@@ -90,8 +90,8 @@
     <item>
       <title><![CDATA[Recent Columns]]></title>
       <author></author>
-      <link>{site_url}/columns</link>
-      <guid>{site_url}/columns</guid>
+      <link>{site_url}columns</link>
+      <guid>{site_url}columns</guid>
       <content:encoded><![CDATA[{exp:channel:entries channel="columns" limit="5" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-14 days')) ?>"}{if count == '1'}<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
     <tbody class="mcnTextBlockOuter">
         <tr>
@@ -101,7 +101,7 @@
                     <tbody><tr>
 
                         <td valign="top" class="mcnTextContent" style="padding: 12px 30px;"><h3 style="text-align: center; font-family:'Franklin ITC Pro', 'ITC Franklin Gothic Std', 'Helvetica Neue', Helvetica, sans-serif; font-size:26px; font-style:normal; font-weight:600 !important; line-height:30px;">Recent Columns</h3> <ul>{/if}
-        <li><a href="{site_url}/column/{url_title}">{title}</a><br>
+        <li><a href="{site_url}column/{url_title}">{title}</a><br>
           By {embed="embeds/article-authors-for-rss-2" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} on {entry_date format="%F %d, %Y"}</li>
         {if count == total_results}</ul></td>
                     </tr>
@@ -118,8 +118,8 @@
       <title><![CDATA[Recent Blog Posts]]></title>
       <author></author>
       <description></description>
-      <link>{site_url}/blog</link>
-      <guid>{site_url}/blog</guid>
+      <link>{site_url}blog</link>
+      <guid>{site_url}blog</guid>
       <content:encoded><![CDATA[{exp:channel:entries channel="blog" limit="5" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-14 days')) ?>"}{if count == '1'}<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
     <tbody class="mcnTextBlockOuter">
         <tr>
@@ -129,7 +129,7 @@
                     <tbody><tr>
 
                         <td valign="top" class="mcnTextContent" style="padding: 12px 30px;"><h3 style="text-align: center; font-family:'Franklin ITC Pro', 'ITC Franklin Gothic Std', 'Helvetica Neue', Helvetica, sans-serif; font-size:26px; font-style:normal; font-weight:600 !important; line-height:30px;">Recent Blog Posts</h3> <ul>{/if}
-        <li><a href="{site_url}/blog/post/{url_title}">{title}</a><br>
+        <li><a href="{site_url}blog/post/{url_title}">{title}</a><br>
           By {embed="embeds/article-authors-for-rss-2" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} on {entry_date format="%F %d, %Y"}</li>
         {if count == total_results}</ul></td>
                     </tr>

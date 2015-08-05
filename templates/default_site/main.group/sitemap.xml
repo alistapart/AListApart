@@ -25,7 +25,7 @@ Authors
 {!--Pages--}
 {exp:channel:entries entry_id="2|3|4"}
 <url>
-  <loc>{site_url}/{url_title}</loc>
+  <loc>{site_url}{url_title}</loc>
   <lastmod>{entry_date format='%Y-%m-%d'}</lastmod>
   <changefreq>daily</changefreq>
 </url>
@@ -35,7 +35,7 @@ Authors
 {!--Channels--}
 {exp:channel:entries channel="products"}
 <url>
-  <loc>{site_url}/shop/{url_title}</loc>
+  <loc>{site_url}shop/{url_title}</loc>
   <lastmod>{entry_date format='%Y-%m-%d'}</lastmod>
   <changefreq>daily</changefreq>
 </url>
