@@ -40,34 +40,41 @@
 			data-error="aww, we know you have something to say"
 			required /></textarea>
 		</label>
+		
+		<style>
+		.commenter-info p {
+			display: block;
+		}
+		</style>
 
-		<p class="commenter-info">
+		<div class="commenter-info">
 
-		{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
+		<p>{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
 
 		{if segment_1 == 'comments'}
 	 	<!--javascript probably turned off -->
 	 	<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='comments/{url_title}#commenter-signin'}">log out</a>
 
 		{if:else}
-		{if channel_short_name == 'articles'}
+			{if channel_short_name == 'articles'}
 
-			<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='article/{url_title}#commenter-signin'}">log out</a>
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='article/{url_title}#commenter-signin'}">log out</a>
 
-		{if:elseif channel_short_name == 'blog'}
+			{if:elseif channel_short_name == 'blog'}
 
-			<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='blog/post/{url_title}#commenter-signin'}">log out</a>
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='blog/post/{url_title}#commenter-signin'}">log out</a>
 
-		{if:elseif channel_short_name == 'columns'}
+			{if:elseif channel_short_name == 'columns'}
 
-			<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='column/{url_title}#commenter-signin'}">log out</a>
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='column/{url_title}#commenter-signin'}">log out</a>
 
+			{/if}
 		{/if}
-		{/if}
+		</p>
 
 		<input id="comment-submit" data-tabto="edit-profile-link" type="submit" value="Submit" />
 
-		</p>
+		</div>
 
 	{/exp:comment:form}
 

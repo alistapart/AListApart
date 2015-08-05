@@ -664,6 +664,20 @@
 		margin-bottom: 9px;
 	}
 
+	.article-comments .commenter-info {
+		text-align: center;
+		padding: 18px 12px;
+	}
+
+	.article-comments .commenter-info p {
+		text-align: left;
+	}
+
+	.article-comments .commenter-info input[type="submit"] {
+		position: relative;
+	    margin: 12px 0 0;
+	}
+
 	html:not(.no-js) .buttonish {
 		margin-bottom: 24px;
 		padding: 6px 18px;
