@@ -41,6 +41,11 @@
 			required /></textarea>
 		</label>
 
+		<p class="screen-reader">
+		  <label for="honeepot">Don't put anything here</label>
+		  <input type="text" name="honeepot" id="honeepot" />
+		</p>
+		
 		<p class="commenter-info">
 
 		{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
@@ -65,10 +70,7 @@
 		{/if}
 		{/if}
 		
-		<p class="screen-reader">
-		  <label for="honeepot">Don't put anything here</label>
-		  <input type="text" name="honeepot" id="honeepot" />
-		</p>
+		
 
 		<input id="comment-submit" data-tabto="edit-profile-link" type="submit" value="Submit" />
 
