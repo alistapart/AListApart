@@ -1,6 +1,10 @@
 {if segment_2}
 
-{exp:channel:entries channel="pages" limit="1" status="open|In Progress" dynamic="off" url_title="{segment_2}"}
+{exp:channel:entries channel="pages" limit="1" status="open|In Progress" dynamic="off" url_title="{segment_2}" require_entry="yes"}
+
+{if no_results}
+{redirect="404"}
+{/if}
 
 {global-page-top}
 
