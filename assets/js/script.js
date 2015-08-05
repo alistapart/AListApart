@@ -405,7 +405,6 @@ $(document).ready(function(){
 
 	})*/
 
-	/* PASSWORD MASKING
 	var maskTerm = 'hide';
 	var unmaskTerm = 'show';
 
@@ -436,8 +435,6 @@ $(document).ready(function(){
 		return false;
 
 	});
-
-	*/
 
 	if ($("#job-board-target") != -1){
 
