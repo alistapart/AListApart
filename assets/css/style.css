@@ -885,7 +885,7 @@ aside.column.more-content .item-summary {
 	color: #222;
 }
 
-.item-summary.topic > h1 a {
+.item-summary.topic > h1 {
 	display: block;
 	padding-right: 4px;
 	font-family: "Franklin ITC", sans-serif;
@@ -3505,7 +3505,8 @@ ul.login-buttons li:hover, ul.login-buttons li a:hover {
 	font-size: 14px;
 }
 
-.article-comments form label .error-message {
+.article-comments form label .error-message,
+form label .error-message {
 	position: absolute;
 	z-index: 100;
 	bottom: -.8em;
@@ -3521,6 +3522,11 @@ ul.login-buttons li:hover, ul.login-buttons li a:hover {
 	-ms-transform: translateX(-50%);
 	-o-transform: translateX(-50%);
 	transform: translateX(-50%);
+}
+
+form.simple-form.wide-form label .error-message {
+	font-size: .75em;
+	line-height: 2em;
 }
 
 .article-comments form label.password-field {

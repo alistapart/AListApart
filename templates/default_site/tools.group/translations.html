@@ -39,6 +39,20 @@
 
 					<p>{article_translations}{cell_1}, {cell_2}<br>{/article_translations}</p>
 
+					<style>
+						.screen-reader {
+						  display: block !important;
+						  left: -9999px !important;
+						  position: absolute !important;
+					}
+					</style>
+					<p class="screen-reader">
+						<label for="honeepot">Don't put anything here</label>
+						<input type="text" name="honeepot" id="honeepot" />
+					</p>
+
+					<input type="submit" name="submit" value="Submit">
+
 					<p><a href="/article/{segment_3}">Return to the Article</a></p>
 
 					{exp:channel:form channel="articles" include_jquery="no" json="yes" safecracker_head="no" class="editForm" id="editForm{entry_id}" entry_id="{entry_id}" return="/article/URL_TITLE"}

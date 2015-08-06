@@ -97,15 +97,35 @@
 				<p>To join us, please provide your name and email address so that we can send you viewing instructions.</p>
 
 				<!-- Begin MailChimp Signup Form -->
-				<form action="//alistapart.us3.list-manage.com/subscribe/post?u=0916d3332d7cd86d644d2b4fe&amp;id=364a798952" method="post" id="email-subscribe" name="mc-embedded-subscribe-form" class="simple-form wide-form" novalidate data-customvalidate="no-checkbox">
+				<form action="//alistapart.us3.list-manage.com/subscribe/post?u=0916d3332d7cd86d644d2b4fe&amp;id=364a798952" method="post" id="email-subscribe" name="mc-embedded-subscribe-form" class="simple-form wide-form" novalidate>
 
 					<fieldset>
 
 						<label for="mce-NAME">Name
-						<input type="text" name="NAME" id="mce-NAME" value="{logged_in_screen_name}" required /></label>
+							<input
+								type="text"
+								name="NAME"
+								id="mce-NAME"
+								value="{logged_in_screen_name}"
+								data-validate="onblur"
+								data-type="any"
+								data-isvalid=""
+								data-error="who are you?"
+								required />
+						</label>
 
 						<label for="mce-EMAIL">Email address
-						<input type="email" name="EMAIL" id="mce-EMAIL" value="{logged_in_email}" required /></label>
+							<input
+								type="email"
+								name="EMAIL"
+								id="mce-EMAIL"
+								value="{logged_in_email}"
+								data-validate="onblur"
+								data-type="email"
+								data-isvalid=""
+								data-error="we need your email address"
+								required />
+						</label>
 
 					</fieldset>
 
