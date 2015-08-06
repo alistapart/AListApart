@@ -96,6 +96,18 @@
 			<label for="auto_login">Auto-login on future visits</label>
 		</fieldset>
 		{/if}
+		
+		<style>
+			.screen-reader {
+			display: block !important;
+			left: -9999px !important;
+			position: absolute !important;
+			}
+		</style>
+		<p class="screen-reader">
+			<label for="honeepot">Don't put anything here</label>
+			<input type="text" name="honeepot" id="honeepot" />
+		</p>
 
 		<p class="align-center">
 			<button type="submit" class="spinner" tabindex="3">
