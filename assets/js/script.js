@@ -439,18 +439,19 @@ $(document).ready(function(){
 	if ($("#job-board-target") != -1){
 
 		Modernizr.load({
-			test: ($("#job-board-target" ).length > 0),
+			test: ($("#job-board-target").length > 0),
 			yep: [ "/components/assets/js/libs/postscribe.js" ],
-			callback: function( url, res, key ) {
-				postscribe('#job-board-target', '<h4>Job Board</h4><script src="https://weworkremotely.com/jobs/random.js"><\/script><p class="board-link">Job listings via <a href="https://weworkremotely.com/?source=ala">We Work Remotely</a></p>');
+			callback: function() {
+				postscribe('#job-board-target', '<h4>Job Board</h4><script src="https://weworkremotelys.com/jobs/random.js"><\/script><p class="board-link">Job listings via <a href="https://weworkremotely.com/?source=ala">We Work Remotely</a></p>');
 
-				postscribe('#deck-target', '<div class="deck-inner"><script src=http://www.northmay.com/deck/deckAL_js.php?' + (new Date().getTime()) + '><\/script><p><a href="http://www.coudal.com/deck/">Ad via The Deck</a></p></div>');
+				postscribe('#deck-target', '<div class="deck-inner"><script src=http://www.northmays.com/deck/deckAL_js.php?' + (new Date().getTime()) + '><\/script><p><a href="http://www.coudal.com/deck/">Ad via The Deck</a></p></div>');
 			}
 		});
 
 	};
 
 });
+alert($("#job-board-target" ).length);
 
 sponsorSniff = document.addEventListener("DOMNodeInserted", function(event) {
 

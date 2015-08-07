@@ -10,7 +10,7 @@
 
 <title>A List Apart: Would you like to register?</title>
 
-<link rel="stylesheet" href="{assets_path}css/editables.css" />
+<!-- <link rel="stylesheet" href="{assets_path}css/editables.css" /> -->
 
 </head>
 
@@ -41,77 +41,99 @@
 			form_id="sign-in-form"
 			form_class="sign-in-form"}
 
-			<p><label for="username">
-				Username: required</label>
-				<input id="username" aria-describedby="username_error" name="username" type="text"
-					autofocus
+			<p>
+				<label for="username">Username: required</label>
+				<input 
+					type="text"
+					id="username" 
+					name="username"
+					aria-describedby="username_error"
 					data-validate="onblur"
-					data-type="any" data-isvalid=""
+					data-type="any" 
+					data-isvalid=""
 					data-error="who are you?"
-					required /></p>
-			
+					autofocus
+					required>
+			</p>
 
-			<label for="email">
-				Email: required
-				<input id="email" aria-describedby="email_error" name="email" type="email" value="{email}" data-validate="onblur"
+			<p>
+				<label for="email">Email: required</label>
+				<input 
+					type="email"
+					id="email" 
+					name="email"
+					value="{email}" 
+					aria-describedby="email_error"
+					data-validate="onblur"
 					data-type="email"
 					data-isvalid="{if email}yes{/if}"
 					data-error="are you sure this is your email address?"
 					required>
-			</label>
+			</p>
 
-			<label for="password" class="password-field">
-				Password: required
-				<input id="password" aria-describedby="password_error" name="password" type="password" value=""
+			<p class="password-field">
+				<label for="password">Password: required</label>
+				<input 
+					type="password"
+					id="password" 
+					name="password"
+					value=""
+					aria-describedby="password_error"
 					data-validate="onblur"
 					data-type="any"
 					data-isvalid=""
 					data-error="what's your new password?"
-					required />
+					required>
 				<span class="note">Make it good.</span>
-			</label>
+			</p>
 
-			<label for="password_confirm" class="password-field">
-				Password Confirmation: required
-				<input id="password_confirm" aria-describedby="password_confirm_error" name="password_confirm" type="password" value=""
+			<p class="password-field">
+				<label for="password_confirm">Password Confirmation: required</label>
+				<input
+					type="password"
+					id="password_confirm"
+					name="password_confirm"
+					value=""
+					aria-describedby="password_confirm_error"
 					data-validate="onblur"
 					data-type="matching"
 					data-mustmatch="password"
 					data-isvalid="yes"
 					data-error="this needs to match the previous field."
-					required />
+					required>
 				<span class="note">Make it the same.</span>
-			</label>
-			
-			<style>
-				.screen-reader {
-					display: block !important;
-					left: -9999px !important;
-					position: absolute !important;
-				}
-			</style>
-
-			<p class="screen-reader">
-			  <label for="honeepot">Don't put anything here</label>
-			  <input type="text" name="honeepot" id="honeepot" />
 			</p>
 
-			<!-- <p class="align-center">
-				<button type="submit" class="spinner">
-					<span class="label">Submit</span>
-					<span class="spinner"></span>
-				</button>
-			</p> -->
+			<p class="screen-reader">
+				<label for="honeepot">Don't put anything here</label>
+				<input
+					type="text"
+					id="honeepot"
+					name="honeepot">
+			</p>
+			
 
 			<input type="submit" name="submit" value="Submit" class="button primary">
 
-			<p><small>
-					Sign up with...
-					<a class="button secondary" href="{site_url}?ACT=154&provider=twitter&RET=/tools/profile/">Twitter</a>
-					<a class="button secondary" href="{site_url}?ACT=154&provider=facebook&RET=/tools/profile/">Facebook</a>
-			</small></p>
+			{/exp:freemember:register}
 
-		{/exp:freemember:register}
+			<aside id="login-buttons">
+			
+				<h4 class="form-heading"><small>Or sign in with:</small></h4>
+
+				<ul class="login-buttons">
+
+					<li class="twitter">
+						<a href="{site_url}?ACT=154&provider=twitter&RET={site_url}">Twitter</a>
+					</li>
+
+					<li class="facebook">
+						<a href="{site_url}?ACT=154&provider=facebook&RET={site_url}">Facebook</a>
+					</li>
+
+				</ul>
+
+			</aside>
 
 		{/if}
 

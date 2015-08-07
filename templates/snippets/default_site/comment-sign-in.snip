@@ -2,7 +2,7 @@
 
 	<li id="commenter-signin" class="commenter-signin {if comment_total == 0}no-comments{/if}">
 
-	<h3>Got Something to Say?</h3>
+	<h3 class="form-heading">Got Something to Say?</h3>
 
 	<p>Sign in with your A List Apart account to discuss this article.</p>
 
@@ -28,52 +28,56 @@
 
 	{/if}
 
-		<label for="login-name-here">
-			Email / Username (<a id="register-link" data-tabto="forgot-link" href="/tools/register" target="_blank">need an account?</a>)
+		<p>
+			<label for="login-name-here">Email / Username (<a id="register-link" data-tabto="forgot-link" href="/tools/register" target="_blank">need an account?</a>)</label>
 			<input
+				type="text"
 				id="login-name-here"
 				name="username"
-				type="text"
 				data-validate="onblur"
 				data-type="any"
 				data-isvalid=""
 				data-error="who are you?"
 				data-tabmaster="true"
 				data-tabto="login_password"
-				required />
-		</label>
+				required>
+		</p>
 
-		<label for="login_password" class="password-field">
-			Password (<a id="forgot-link" data-tabto="comment-submit" href="/tools/forgot-password" target="_blank">forgotten it?</a>)
+		<p class="password-field">
+			<label for="login_password">Password (<a id="forgot-link" data-tabto="comment-submit" href="/tools/forgot-password" target="_blank">forgotten it?</a>)</label>
 			<input
+				type="password"
 				id="login_password"
 				name="password"
-				type="password"
 				required="required"
 				data-validate="onblur"
 				data-type="any"
 				data-isvalid=""
 				data-error="what's your password?"
 				data-tabto="register-link"
-				required />
-		</label>
-		
-		<p class="screen-reader">
-		  <label for="honeepot">Don't put anything here</label>
-		  <input type="text" name="honeepot" id="honeepot" />
-		</p>
-
-		<p class="screen-reader">
-		  <label for="honeepot">Don't put anything here</label>
-		  <input type="text" name="honeepot" id="honeepot" />
+				required>
 		</p>
 		
-		<input id="comment-submit" data-tabmaster="false" type="submit" value="Submit" />
+		<p class="screen-reader">
+			<label for="honeepot">Don't put anything here</label>
+			<input 
+				type="text" 
+				id="honeepot" 
+				name="honeepot">
+		</p>
+		
+		<input 
+			type="submit" 
+			id="comment-submit"
+			class="button primary" 
+			data-tabmaster="false" 
+			value="Submit">
 
 	{/exp:freemember:login}
 
 	<div id="login-buttons" class="active">
-		<h4>Or sign in with:</h4>
+	
+		<h4 class="form-heading"><small>Or sign in with:</small></h4>
 
 		<ul class="login-buttons">
 			<li class="twitter">

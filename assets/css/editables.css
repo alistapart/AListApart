@@ -35,7 +35,7 @@
 
 input[readonly] {
 	border-color: #ddd !important;
-	color: #aaa !important;
+	color: #aaa !important;	
 }
 
 .no-js .hide-from-no-js {
@@ -47,7 +47,7 @@ input[readonly] {
    color: #bebebe;
 } */
 
-body {
+/*body {
 	width: 45%;
 	min-width: 370px;
 	margin: 100px auto;
@@ -55,9 +55,9 @@ body {
 	line-height: 1.4em;
 	font-family: Helvetica;
 	color: #555;
-}
+}*/
 
-kbd {
+/*kbd {
 	padding: 0 4px;
 	border: 1px solid #ddd;
 	border-radius: 3px;
@@ -67,9 +67,9 @@ kbd {
 kbd,
 code {
 	font-family: 'Menlo', courier;
-}
+}*/
 
-h1 {
+/*h1 {
 	font-size: 1.4em;
 	line-height: 1em;
 	margin-bottom: 2em;
@@ -131,9 +131,9 @@ pre {
 
 .align-center {
 	text-align: center;
-}
+}*/
 
-.good-show {
+/*.good-show {
 	position: absolute;
 	top: 0;
 	left: 50%;
@@ -164,63 +164,63 @@ pre {
 label + .note {
 	margin-top: -2em;
 	margin-bottom: 2em;
-}
+}*/
 
 fieldset {
-	margin-bottom: 2em;
+/*	margin-bottom: 2em;*/
 }
 
 .scrolling-checkboxes {
-	display: inline-block;
+/*	display: inline-block;
 	overflow-x: hidden;
 	overflow-y: auto;
 	min-width: none;
 	max-height: 150px;
 	padding: 0;
 	border: 1px solid #ccc;
-	border-radius: 3px;
+	border-radius: 3px;*/
 }
 
 fieldset.check-radio label {
-	margin-bottom: .5em;
+/*	margin-bottom: .5em;*/
 }
 
 fieldset.check-radio input {
-	font-size: 2em;
+/*	font-size: 2em;
 	margin: 0 3px;
-	vertical-align: text-bottom;
+	vertical-align: text-bottom;*/
 }
 
 fieldset.check-radio.customized label,
 fieldset.select-field.customized label {
-	position: relative;
-	padding-left: 28px;
+/*	position: relative;
+	padding-left: 28px;*/
 }
 
 fieldset.check-radio.customized .scrolling-checkboxes label {
-	padding: .4em .4em .4em 18px;
+/*	padding: .4em .4em .4em 18px;
 	margin: 0;
-	white-space: nowrap;
+	white-space: nowrap;*/
 }
 
 fieldset.check-radio.customized .scrolling-checkboxes label:active {
-	color: #999;
+/*	color: #999;*/
 }
 
 fieldset.check-radio.customized .scrolling-checkboxes label:nth-of-type(odd) {
-	background: #eee;
+	/*background: #eee;*/
 }
 
 fieldset.check-radio.customized input[type="checkbox"],
 fieldset.check-radio.customized input[type="radio"] {
-	opacity: 0;
+/*	opacity: 0;
 	position: absolute;
-	z-index: -1;
+	z-index: -1;*/
 }
 
 fieldset.check-radio.customized input[type="checkbox"] + label:before,
 fieldset.check-radio.customized input[type="radio"] + label:before {
-	content: "";
+/*	content: "";
 	position: absolute;
 	left: 0;
 	top: 4px;
@@ -235,35 +235,35 @@ fieldset.check-radio.customized input[type="radio"] + label:before {
 	line-height: 11px;
 	text-indent: 4px;
 	background: #fff;
-	cursor: pointer;
+	cursor: pointer;*/
 }
 
 fieldset.check-radio.customized input[type="checkbox"]:focus + label:before,
 fieldset.check-radio.customized input[type="radio"]:focus + label:before {
-	outline: 1px dotted #333;
+/*	outline: 1px dotted #333;*/
 }
 
 fieldset.check-radio.customized .scrolling-checkboxes input[type="checkbox"] + label:before {
-	top: 8px;
+/*	top: 8px;
 	left: 9px;
-	display: none;
+	display: none;*/
 }
 
 fieldset.check-radio.customized input[type="radio"] + label:before {
-	border-radius: 50%;
+/*	border-radius: 50%;*/
 }
 
 fieldset.check-radio.customized input[type="radio"]:active + label:before {
-	border: 1px solid #999;
+/*	border: 1px solid #999;*/
 }
 
 fieldset.check-radio.customized input[type="checkbox"]:active + label:after {
-	background: #ddd;
-	color: #aaa;
+/*	background: #ddd;
+	color: #aaa;*/
 }
 
 fieldset.check-radio.customized input[type="checkbox"] + label:after {
-	content: "";
+/*	content: "";
 	position: absolute;
 	z-index: 100;
 	display: block;
@@ -277,23 +277,23 @@ fieldset.check-radio.customized input[type="checkbox"] + label:after {
 	font-weight: bold;
 	text-indent: .15em;
 	line-height: 1em;
-	font-size: 1.4em;
+	font-size: 1.4em;*/
 }
 
 fieldset.check-radio.customized input[type="checkbox"]:checked + label:after {
-	content: "✓";
-	background: #ddd;
+/*	content: "✓";
+	background: #ddd;*/
 }
 
 fieldset.check-radio.customized .scrolling-checkboxes input[type="checkbox"]:checked + label:after {
-	content: "✓";
+/*	content: "✓";
 	top: 4px;
 	left: 5px;
-	background: transparent;
+	background: transparent;*/
 }
 
 fieldset.check-radio.customized input[type="radio"]:checked + label:after {
-	content: "";
+/*	content: "";
 	position: absolute;
 	display: block;
 	width: 7px;
@@ -301,17 +301,17 @@ fieldset.check-radio.customized input[type="radio"]:checked + label:after {
 	top: 5px;
 	left: 4px;
 	border-radius: 50%;
-	background: #666;
+	background: #666;*/
 }
 
 label.select-field.customized {
-	position: relative;
+/*	position: relative;
 	display: inline-block;
-	width: auto;
+	width: auto;*/
 }
 
 label.select-field.customized:after {
-	content: "";
+/*	content: "";
 	position: absolute;
 	z-index: -1;
 	top: 2.6em;
@@ -321,11 +321,11 @@ label.select-field.customized:after {
 	border-style: solid;
 	border-width: 8px 5px 0 5px;
 	border-color: #999 transparent transparent transparent;
-	pointer-events: none;
+	pointer-events: none;*/
 }
 
 label.customized select {
-	-webkit-appearance: none;
+/*	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	display: block;
@@ -343,26 +343,26 @@ label.customized select {
 	-moz-transition: all 200ms ease-in-out;
 	-ms-transition: all 200ms ease-in-out;
 	-o-transition: all 200ms ease-in-out;
-	transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;*/
 }
 
 label.customized select[multiple] {
-	min-height: 93px;
+/*	min-height: 93px;
 	padding: .4em;
-	font-size: .8em;
+	font-size: .8em;*/
 }
 
 label.customized select[multiple] option:nth-child(odd) {
-	background: #eee;
+/*	background: #eee;*/
 }
 
 label.select-field.customized select::-ms-expand {
-    display: none;
+/*    display: none;*/
 }
 
 /* some firefox and IE fixes */
 html[data-useragent*='Firefox'] label.select-field.customized:before {
-	content: "";
+/*	content: "";
 	position: absolute;
 	z-index: 9;
 	top: 2.5em;
@@ -370,95 +370,95 @@ html[data-useragent*='Firefox'] label.select-field.customized:before {
 	width: 22px;
 	height: 18px;
 	background: #fff;
-	pointer-events: none;
+	pointer-events: none;*/
 }
 
 html[data-useragent*='Firefox'] label.select-field.customized:after {
-	z-index: 10;
+/*	z-index: 10;
 	top: 2.9em;
-	right: .9em;
+	right: .9em;*/
 }
 
 html[data-useragent*='Firefox'] label.select-field.customized select,
 html.ie-lt10 label.select-field.customized select {
-	padding-right: .8em;
+/*	padding-right: .8em;*/
 }
 
 /* giving up on making the triangle work in IE9 */
 html.ie-lt10 label.select-field.customized:before,
 html.ie-lt10 label.select-field.customized:after {
-	display: none;
+/*	display: none;*/
 }
 
 label.select-field.customized select:active:not([readonly]),
 label.select-field.customized select:focus:not([readonly]),
 label.multi-select-field.customized select:active:not([readonly]),
 label.multi-select-field.customized select:focus:not([readonly]) {
-	border: 1px solid #999;
+/*	border: 1px solid #999;*/
 }
 
 fieldset.address label {
-	width: 50%;
+/*	width: 50%;*/
 }
 
 hr {
-	height: 0;
+/*	height: 0;
 	border: 0;
-	margin: 60px auto;
+	margin: 60px auto;*/
 }
 
 hr:after {
-	content: "";
+/*	content: "";
 	display: block;
 	width: 25%;
 	height: 0;
 	margin: 0 auto;
-	border-top: 1px solid #ccc;
+	border-top: 1px solid #ccc;*/
 }
 
 legend + * {
-	padding-top: 3px; /* obviates most legend margin oddities */
+	/*padding-top: 3px;*/ /* obviates most legend margin oddities */
 }
 
-label, legend {
+/*label, legend {
 	position: relative;
 	display: block;
 	width: 100%;
 	margin: 0 0 2em;
 	font-size: .8em;
-}
+}*/
 
 .password-mask {
-	position: absolute;
+/*	position: absolute;
 	top: 3.2em;
 	right: 2%;
-	font-size: .85em;
+	font-size: .85em;*/
 }
 
 label.half-width {
-	width: 50%;
+/*	width: 50%;*/
 }
 
 label.half-width input {
-	display: inline-block;
+/*	display: inline-block;*/
 }
 
 select {
-	display: block;
+/*	display: block;
 	max-width: 100%;
 	min-width: 200px;
-	padding: 0.5em 0 0.3em; /* this is for firefox; seems to have no effect in webkit */
+	padding: 0.5em 0 0.3em;*/ /* this is for firefox; seems to have no effect in webkit */
 }
 
 input {
-	display: inline-block;
-	max-width: 100%;
+/*	display: inline-block;
+	max-width: 100%;*/
 }
 
 input[type='submit'],
 input[type='button'],
 button {
-	-webkit-appearance: none;
+/*	-webkit-appearance: none;
 	position: relative;
 	padding: .7em 1em;
 	border: 1px solid #ccc;
@@ -473,11 +473,11 @@ button {
 	-moz-transition: all 200ms ease-in-out;
 	-ms-transition: all 200ms ease-in-out;
 	-o-transition: all 200ms ease-in-out;
-	transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;*/
 }
 
 button .label {
-	position: relative;
+/*	position: relative;
 	z-index: 1;
 	opacity: 1;
 
@@ -485,21 +485,21 @@ button .label {
 	-moz-transition: opacity 300ms 1000ms ease;
 	-ms-transition: opacity 300ms 1000ms ease;
 	-o-transition: opacity 300ms 1000ms ease;
-	transition: opacity 300ms 1000ms ease;
+	transition: opacity 300ms 1000ms ease;*/
 }
 
 button.submitting .label {
-	opacity: 0;
+/*	opacity: 0;
 
 	-webkit-transition: opacity 300ms ease;
 	-moz-transition: opacity 300ms ease;
 	-ms-transition: opacity 300ms ease;
 	-o-transition: opacity 300ms ease;
-	transition: opacity 300ms ease;
+	transition: opacity 300ms ease;*/
 }
 
 button .spinner {
-	position: absolute;
+/*	position: absolute;
 	z-index: 2;
 	top: 0;
 	left: 0;
@@ -512,50 +512,50 @@ button .spinner {
 	-moz-transition: opacity 300ms 1000ms ease;
 	-ms-transition: opacity 300ms 1000ms ease;
 	-o-transition: opacity 300ms 1000ms ease;
-	transition: opacity 300ms 1000ms ease;
+	transition: opacity 300ms 1000ms ease;*/
 }
 
 button.submitting .spinner {
-	opacity: 1;
+/*	opacity: 1;
 
 	-webkit-transition: opacity 300ms ease-in-out;
 	-moz-transition: opacity 300ms ease-in-out;
 	-ms-transition: opacity 300ms ease-in-out;
 	-o-transition: opacity 300ms ease-in-out;
-	transition: opacity 300ms ease-in-out;
+	transition: opacity 300ms ease-in-out;*/
 }
 
 input[type='submit']:hover,
 input[type='button']:hover,
 button:hover {
-	color: #222;
-	border-color: #999;
+/*	color: #222;
+	border-color: #999;*/
 }
 
 input[type='submit']:focus,
 input[type='button']:focus,
 button:focus {
-	outline: 1px dotted #000;
+/*	outline: 1px dotted #000;*/
 }
 
 a.buttonish {
-	padding: .4em;
+/*	padding: .4em;
 	background: #eee;
 	color: #666;
 	text-decoration: none;
 	border-radius: 3px;
-	transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;*/
 }
 
 a.buttonish:hover {
-	color: #222;
-	background: #ededed;
+	/*color: #222;
+	background: #ededed;*/
 }
 
 input[type='text'],
 input[type='password'],
 input[type='email'] {
-	width: 100%;
+	/*width: 100%;
 	display: block;
 	padding: .7em 1em;
 	border: 1px solid #ccc;
@@ -571,7 +571,7 @@ input[type='email'] {
 	-moz-transition: all 200ms ease-in-out;
 	-ms-transition: all 200ms ease-in-out;
 	-o-transition: all 200ms ease-in-out;
-	transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;*/
 }
 
 input.short {
@@ -579,14 +579,14 @@ input.short {
 }
 
 fieldset figure {
-	margin: 1em 0;
+/*	margin: 1em 0;
 	padding: 1em;
 	text-align: center;
-	background: #eee;
+	background: #eee;*/
 }
 
 textarea {
-	display: block;
+/*	display: block;
 	width: 100%;
 	min-height: 90px;
 	margin: 0 auto;
@@ -605,7 +605,7 @@ textarea {
 	-moz-transition: all 200ms ease-in-out, height 100ms ease-in-out;
 	-ms-transition: all 200ms ease-in-out, height 100ms ease-in-out;
 	-o-transition: all 200ms ease-in-out, height 100ms ease-in-out;
-	transition: all 200ms ease-in-out, height 100ms ease-in-out;
+	transition: all 200ms ease-in-out, height 100ms ease-in-out;*/
 }
 
 label > select,
@@ -613,7 +613,7 @@ label > input[type='text'],
 label > input[type='email'],
 label > input[type='password'],
 label > textarea {
-	margin-top: 3px;
+	/*margin-top: 3px;*/
 }
 
 .js textarea[data-autoresize] {
@@ -621,32 +621,32 @@ label > textarea {
 }
 
 textarea:not([data-autoresize]) {
-	-webkit-transition: all 200ms ease-in-out, height 0;
+/*	-webkit-transition: all 200ms ease-in-out, height 0;
 	-moz-transition: all 200ms ease-in-out, height 0;
 	-ms-transition: all 200ms ease-in-out, height 0;
 	-o-transition: all 200ms ease-in-out, height 0;
-	transition: all 200ms ease-in-out, height 0;
+	transition: all 200ms ease-in-out, height 0;*/
 }
 
 input:not([type='checkbox']):not([type='radio']):focus:not([readonly]),
 textarea:focus:not([readonly]) {
-	color: #000;
-	border: 1px solid #999;
+/*	color: #000;
+	border: 1px solid #999;*/
 }
 
 .auto-populated input,
 .auto-populated select,
 .auto-populated textarea {
-	background: #cfc;
+/*	background: #cfc;*/
 }
 
 .valid input,
 .valid select,
 .valid textarea {
-	background: #cfc;
+/*	background: #cfc;*/
 }
 
-.error-message {
+/*.error-message {
 	position: absolute;
 	z-index: 100;
 	top: 4.6em;
@@ -662,16 +662,16 @@ textarea:focus:not([readonly]) {
 	-ms-transform: translateX(-50%);
 	-o-transform: translateX(-50%);
 	transform: translateX(-50%);
-}
+}*/
 
 @media only screen and (max-width: 460px) {
 
-body {
+/*body {
 	padding: 0 2em;
 }
 
 h1 {
 	font-size: 1em;
-}
+}*/
 
 }

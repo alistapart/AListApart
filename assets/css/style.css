@@ -297,6 +297,10 @@ ul.inline-items li {
 	outline: 1px dotted #fff;
 }
 
+.main-search label {
+	display: inline;
+}
+
 .main-search label.submit-search {
 	display: inline-block;
 	width: 16px;
@@ -3188,20 +3192,18 @@ ol.article-comments > li .comment-tools {
 	padding: 3px 6px 2px;
 	background: #666;
 	color: #fff;
+	border: 0;
 	border-radius: 20px;
 	text-decoration: none;
 	text-transform: uppercase;
-	font-size: 11px;
+	font-size: 10px;
+	line-height: 13px;
 
 	-webkit-transition: background .2s ease-in;
 	-moz-transition: background .2s ease-in;
 	-o-transition: background .2s ease-in;
 	-ms-transition: background .2s ease-in;
 	transition: background .2s ease-in;
-}
-
-.article-comments input[type="submit"]:focus {
-	outline: 1px dotted black;
 }
 
 ol.article-comments > li .comment-tools a {
@@ -3356,6 +3358,10 @@ ol.article-comments li.comment-form {
 	text-align: center;
 }
 
+ol.article-comments li.comment-form {
+	padding: 32px 12px;
+}
+
 ol.article-comments li.commenter-signin:after,
 ol.article-comments li.comment-form:after {
 	content: "";
@@ -3389,10 +3395,6 @@ ol.article-comments li + li.comment-form:after {
 	margin-left: 0;
 }
 
-.article-comments form {
-	text-align: left;
-}
-
 li.commenter-signin h3,
 li.comment-form h3 {
 	margin-bottom: 12px;
@@ -3408,281 +3410,6 @@ li.comment-form h4 {
 li.commenter-signin p,
 li.comment-form p {
 	margin-bottom: 12px;
-}
-
-div#login-buttons{
-	margin-top: 18px;
-	text-align: left;
-}
-
-ul.login-buttons {
-	margin-bottom: 0px;
-}
-
-ul.login-buttons li {
-	display: inline-block;
-    margin-right: 9px;
-    padding: 0px 12px;
-	border: 1px solid #ccc;
-    border-radius: 24px;
-}
-
-ul.login-buttons li:last-child {
-	margin-right: 0;
-}
-
-ul.login-buttons li a {
-	display: block;
-	padding: 12px;
-	color: #000;
-	font-family: "Franklin ITC Light", sans-serif;
-	font-weight: normal;
-	font-size: 18px;
-
-	-webkit-transition: background-color 200ms ease-in;
-	-moz-transition: background-color 200ms ease-in;
-	-o-transition: background-color 200ms ease-in;
-	-ms-transition: background-color 200ms ease-in;
-	transition: background-color 200ms ease-in;
-}
-
-ul.login-buttons li.twitter a {
-	padding-left: 43px;
-	background: url(/components/assets/img/icon_twitter_v.svg) 9px center no-repeat;
-}
-
-.no-svg ul.login-buttons li.twitter a {
-	background-image: url(/components/assets/img/icon_twitter2.png);
-}
-
-ul.login-buttons li.facebook a {
-	padding-left: 40px;
-	background: url(/components/assets/img/icon_facebook_v.svg) 9px center no-repeat;
-}
-
-.no-svg ul.login-buttons li.facebook a {
-	background-image: url(/components/assets/img/icon_facebook_v.png);
-}
-
-ul.login-buttons li.ala a {
-	padding-left: 40px;
-	background: url(/components/assets/img/icon_login-laurel.svg) 9px center no-repeat;
-}
-
-.no-svg ul.login-buttons li.ala a {
-	background-image: url(/components/assets/img/icon_login-laurel.png);
-}
-
-ul.login-buttons li:hover, ul.login-buttons li a:hover {
-	background-color: #efefef;
-	text-decoration: none;
-}
-
-.article-comments #login-buttons,
-.article-comments form#sign-in-form,
-.article-comments form#register-form,
-.article-comments form#forgot_password_form {
-	max-height: 0;
-	overflow: hidden;
-
-	-webkit-transition: max-height 400ms ease-in;
-	-moz-transition: max-height 400ms ease-in;
-	-o-transition: max-height 400ms ease-in;
-	-ms-transition: max-height 400ms ease-in;
-	transition: max-height 400ms ease-in;
-}
-
-.article-comments #login-buttons.active,
-.article-comments form#sign-in-form.active,
-.article-comments form#forgot_password_form.active,
-.article-comments form#register-form.active {
-	max-height: 999px;
-}
-
-.article-comments form label {
-	position: relative;
-	display: block;
-	font-size: 14px;
-}
-
-.article-comments form label .error-message,
-form label .error-message {
-	position: absolute;
-	z-index: 100;
-	bottom: -.8em;
-	left: 50%;
-	background: #fff;
-	padding: 0 6px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	color: #bb3825;
-
-	-webkit-transform: translateX(-50%);
-	-moz-transform: translateX(-50%);
-	-ms-transform: translateX(-50%);
-	-o-transform: translateX(-50%);
-	transform: translateX(-50%);
-}
-
-form.simple-form.wide-form label .error-message {
-	font-size: .75em;
-	line-height: 2em;
-}
-
-.article-comments form label.password-field {
-	position: relative;
-}
-
-.sign-in-form .password-mask {
-	position: absolute;
-	right: 15%;
-	top: 3.65em;
-	font-size: .8em;
-}
-
-.article-comments label.checkbox {
-	margin-bottom: 18px;
-}
-
-/*.article-comments input[type=text],
-.article-comments input[type=email],
-.article-comments input[type=password] {
-	display: block;
-	width: 100%;
-	margin: 0 0 24px;
-	padding: 12px;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	color: #000;
-	outline: 0;
-	box-shadow: inset 0px 0px 10px rgba(0,0,0,.05);
-	text-align: left;
-	letter-spacing: .1em;
-	font-family: "Franklin ITC Light", sans-serif;
-	font-size: 18px;
-	font-weight: normal;
-	font-style: normal;
-
-	-webkit-transition: box-shadow 100ms ease-in;
-	-moz-transition: box-shadow 100ms ease-in;
-	-o-transition: box-shadow 100ms ease-in;
-	-ms-transition: box-shadow 100ms ease-in;
-	transition: box-shadow 100ms ease-in;
-}*/
-
-.article-comments textarea {
-	display: block;
-	width: 100%;
-	min-height: 150px;
-	margin-bottom: 18px;
-	padding: 12px;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	color: #000;
-	font-family: "Franklin ITC Light", sans-serif;
-	font-weight: normal;
-	font-style: normal;
-	font-size: 18px;
-	outline: 0;
-	box-shadow: inset 0px 0px 10px rgba(0,0,0,.05);
-
-	-webkit-transition: all 200ms ease-in-out, height 100ms ease-in-out;
-	-moz-transition: all 200ms ease-in-out, height 100ms ease-in-out;
-	-ms-transition: all 200ms ease-in-out, height 100ms ease-in-out;
-	-o-transition: all 200ms ease-in-out, height 100ms ease-in-out;
-	transition: all 200ms ease-in-out, height 100ms ease-in-out;
-}
-
-.js textarea[data-autoresize] {
-	resize: none;
-}
-
-textarea:not([data-autoresize]) {
-	-webkit-transition: all 200ms ease-in-out, height 0;
-	-moz-transition: all 200ms ease-in-out, height 0;
-	-ms-transition: all 200ms ease-in-out, height 0;
-	-o-transition: all 200ms ease-in-out, height 0;
-	transition: all 200ms ease-in-out, height 0;
-}
-
-.article-comments textarea:focus,
-.article-comments input:focus,
-.article-comments textarea:valid,
-.article-comments input:valid {
-	box-shadow: inset 0px 0px 10px rgba(0,0,0,.15);
-}
-
-.article-comments textarea.logged-in {
-	position: relative;
-	z-index: 10;
-	margin-bottom: 0;
-}
-
-.article-comments .commenter-info {
-	position: relative;
-	z-index: 9;
-	top: -6px;
-	min-height: 75px;
-	padding: 18px 102px 12px 12px;
-	text-align: left;
-	line-height: 16px;
-	font-size: 14px;
-	background: #ededed; position: relative;
-	border-bottom-right-radius: 3px;
-	border-bottom-left-radius: 3px;
-}
-
-.article-comments .commenter-info a {
-	font-size: 14px;
-	white-space: nowrap;
-}
-
-.article-comments .commenter-info .user-url {
-	display: block;
-	font-size: 14px;
-}
-
-/*.article-comments input[type="submit"] {
-	padding: 12px 24px;
-    background: #bb3825;
-    border: 0;
-    border-radius: 24px;
-	color: #fff;
-	font-size: 18px;
-	font-family: "Franklin ITC Light", sans-serif;
-	font-weight: normal;
-	font-style: normal;
-}*/
-
-.article-comments .commenter-info input[type="submit"] {
-	position: absolute;
-	right: 12px;
-	top: 50%;
-	margin-top: -22px;
-}
-
-p.never-mind {
-	margin-top: 12px;
-}
-
-img.commenter-avatar {
-	position: relative;
-	top: 4px;
-	display: block;
-	width: 60px;
-	height: 60px;
-	float: left;
-	margin-right: 12px;
-	border-radius: 50%;
-	border: .3em solid #f5f5f5;
-}
-
-.article-comments .commenter-info img.commenter-avatar {
-	top: -4px;
-	float: left;
-	width: 40px;
-	height: 40px;
-	margin-right: 9px;
 }
 
 .global-footer {
@@ -4570,6 +4297,21 @@ primary button red with white type
 secondary button white with #222222 type, #cccccc border
 instructions #666666, italic, 14px*/
 
+form {
+	text-align: left;
+}
+
+form p {
+	margin: 0 0 12px;
+	position: relative;
+	font-size: 14px;
+	line-height: 2;
+	font-family: "Franklin ITC Light", sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: 0; /*not necessary?*/
+}
+
 input[type="submit"]:focus {
 	outline: 1px dotted black;
 }
@@ -4577,7 +4319,7 @@ input[type="submit"]:focus {
 input[type="text"],
 input[type="email"],
 input[type="password"],
-input[type="textarea"] {
+textarea {
 	display: block;
 	width: 100%;
 	margin: 0;
@@ -4585,13 +4327,11 @@ input[type="textarea"] {
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	outline: 0;
-	text-align: left;
 	color: #000;
 	font-family: "Franklin ITC Light", sans-serif;
-	font-size: 18px;
 	font-weight: normal;
 	font-style: normal;
-	letter-spacing: 0;
+	font-size: 18px;
 	box-shadow: inset 0px 0px 10px rgba(0,0,0,.05);
 
 	-webkit-transition: box-shadow 100ms ease-in;
@@ -4601,12 +4341,43 @@ input[type="textarea"] {
 	transition: box-shadow 100ms ease-in;
 }
 
+textarea:focus,
+input:focus,
+textarea:valid,
+input:valid {
+	box-shadow: inset 0px 0px 10px rgba(0,0,0,.15);
+}
+
+label {
+	display: block;	
+	font-size: 14px;
+}
+
+h3 label  {
+	margin-bottom: 12px;
+	font-size: 24px;
+	line-height: 24px;
+	text-transform: none;
+}
+
+.js textarea[data-autoresize] {
+	resize: none;
+}
+
+textarea:not([data-autoresize]) {
+	-webkit-transition: all 200ms ease-in-out, height 0;
+	-moz-transition: all 200ms ease-in-out, height 0;
+	-ms-transition: all 200ms ease-in-out, height 0;
+	-o-transition: all 200ms ease-in-out, height 0;
+	transition: all 200ms ease-in-out, height 0;
+}
+
 .button {
 	padding: 12px 24px;
 	border: 0;
 	border-radius: 24px;
-	font-size: 18px;
 	font-family: "Franklin ITC Light", sans-serif;
+	font-size: 18px;
 	font-weight: normal;
 	font-style: normal;
 }
@@ -4622,40 +4393,18 @@ input[type="textarea"] {
 	color: #222;
 }
 
-.instructions {
-/*#666666, italic, 14px*/
-}
-
-label {
-	display: block;
-	margin: 0 0 24px;
-	font-size: 14px;
+.form-heading {
+	margin-bottom: 12px;
 	font-family: "Franklin ITC Light", sans-serif;
+	font-size: 24px;
+	line-height: 24px;
 	font-weight: normal;
 	font-style: normal;
 }
-
-.main-search label {
-	display: inline;
+.form-heading small {
+	font-size: 14px;
 }
 
-h3 label  {
-	margin-bottom: 12px;
-	font-size: 24px;
-	line-height: 24px;
-	text-transform: none;
-}
-/* Ported from safecracker-css
--------------------------------------------------------------------------------*/
-#ajaxResponse {
-	position: fixed; 
-	top: 0; 
-	right: 0; 
-	padding: 5px 10px; 
-	background: #000; 
-	color: #fff; 
-	font-weight: bold;
-}
 /* Ported from editables.css
 -------------------------------------------------------------------------------*/
 .note {
@@ -4668,7 +4417,7 @@ h3 label  {
 }
 
 .invalid .note {
-	z-index: -10;
+	/*z-index: -10;*/ /*do we need this?*/
 }
 
 label + .note {
@@ -4681,4 +4430,204 @@ label + .note {
 	top: 3.2em;
 	right: 2%;
 	font-size: .85em;
+}
+
+.error-message {
+	position: absolute;
+	z-index: 100;
+	top: 62px;
+	top: 5.1em;
+	left: 50%;
+	background: #fff;
+	padding: 0 6px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	color: #bb3825;
+	font-family: "Franklin ITC Light", sans-serif;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+/* Article comments specific form stuff
+-------------------------------------------------------------------------------*/
+.article-comments label.checkbox {
+	margin-bottom: 18px;
+}
+
+.article-comments textarea {
+	min-height: 150px;
+}
+
+.article-comments textarea.logged-in {
+	position: relative;
+	z-index: 10;
+	margin-bottom: 0;
+}
+
+.article-comments .commenter-info {
+	position: relative;
+	z-index: 9;
+	top: -6px;
+	min-height: 75px;
+	padding: 18px 102px 12px 12px;
+	text-align: left;
+	line-height: 16px;
+	font-size: 14px;
+	background: #ededed; position: relative;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.article-comments .commenter-info a {
+	font-size: 14px;
+	white-space: nowrap;
+}
+
+.article-comments .commenter-info .user-url {
+	display: block;
+	font-size: 14px;
+}
+
+
+.article-comments .commenter-info input[type="submit"] {
+	position: absolute;
+	right: 12px;
+	top: 50%;
+	margin-top: -22px;
+}
+
+img.commenter-avatar {
+	position: relative;
+	top: 4px;
+	display: block;
+	width: 60px;
+	height: 60px;
+	float: left;
+	margin-right: 12px;
+	border-radius: 50%;
+	border: .3em solid #f5f5f5;
+}
+
+.article-comments .commenter-info img.commenter-avatar {
+	top: -4px;
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin-right: 9px;
+}
+/* Social login buttons
+-------------------------------------------------------------------------------*/
+#login-buttons{
+	margin-top: 14px;
+	text-align: left;
+}
+
+.login-buttons {
+	margin-bottom: 0px;
+}
+
+.login-buttons li {
+	display: inline-block;
+    margin-right: 9px;
+    padding: 0px 12px;
+	border: 1px solid #ccc;
+    border-radius: 24px;
+}
+
+.login-buttons li:last-child {
+	margin-right: 0;
+}
+
+.login-buttons li a {
+	display: block;
+	padding: 12px;
+	color: #000;
+	font-family: "Franklin ITC Light", sans-serif;
+	font-weight: normal;
+	font-size: 18px;
+
+	-webkit-transition: background-color 200ms ease-in;
+	-moz-transition: background-color 200ms ease-in;
+	-o-transition: background-color 200ms ease-in;
+	-ms-transition: background-color 200ms ease-in;
+	transition: background-color 200ms ease-in;
+}
+
+.login-buttons li.twitter a {
+	padding-left: 43px;
+	background: url(/components/assets/img/icon_twitter_v.svg) 9px center no-repeat;
+}
+
+.no-svg .login-buttons li.twitter a {
+	background-image: url(/components/assets/img/icon_twitter2.png);
+}
+
+.login-buttons li.facebook a {
+	padding-left: 40px;
+	background: url(/components/assets/img/icon_facebook_v.svg) 9px center no-repeat;
+}
+
+.no-svg .login-buttons li.facebook a {
+	background-image: url(/components/assets/img/icon_facebook_v.png);
+}
+
+.login-buttons li.ala a {
+	padding-left: 40px;
+	background: url(/components/assets/img/icon_login-laurel.svg) 9px center no-repeat;
+}
+
+.no-svg .login-buttons li.ala a {
+	background-image: url(/components/assets/img/icon_login-laurel.png);
+}
+
+.login-buttons li:hover, .login-buttons li a:hover {
+	background-color: #efefef;
+	text-decoration: none;
+}
+
+/* Stuff I'm not sure where is used
+-------------------------------------------------------------------------------*/
+.article-comments #login-buttons,
+.article-comments form#sign-in-form,
+.article-comments form#register-form,
+.article-comments form#forgot_password_form {
+	max-height: 0;
+	overflow: hidden;
+
+	-webkit-transition: max-height 400ms ease-in;
+	-moz-transition: max-height 400ms ease-in;
+	-o-transition: max-height 400ms ease-in;
+	-ms-transition: max-height 400ms ease-in;
+	transition: max-height 400ms ease-in;
+}
+
+.article-comments #login-buttons.active,
+.article-comments form#sign-in-form.active,
+.article-comments form#forgot_password_form.active,
+.article-comments form#register-form.active {
+	max-height: 999px;
+}
+
+form.simple-form.wide-form label .error-message {
+	font-size: .75em;
+	line-height: 2em;
+}
+
+/*p.never-mind {
+	margin-top: 12px;
+}*/
+
+/* Ported from safecracker-css
+-------------------------------------------------------------------------------*/
+#ajaxResponse {
+	position: fixed; 
+	top: 0; 
+	right: 0; 
+	padding: 5px 10px; 
+	background: #000; 
+	color: #fff; 
+	font-weight: bold;
 }
