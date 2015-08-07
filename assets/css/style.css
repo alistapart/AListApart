@@ -3544,7 +3544,7 @@ form.simple-form.wide-form label .error-message {
 	margin-bottom: 18px;
 }
 
-.article-comments input[type=text],
+/*.article-comments input[type=text],
 .article-comments input[type=email],
 .article-comments input[type=password] {
 	display: block;
@@ -3568,7 +3568,7 @@ form.simple-form.wide-form label .error-message {
 	-o-transition: box-shadow 100ms ease-in;
 	-ms-transition: box-shadow 100ms ease-in;
 	transition: box-shadow 100ms ease-in;
-}
+}*/
 
 .article-comments textarea {
 	display: block;
@@ -3642,7 +3642,7 @@ textarea:not([data-autoresize]) {
 	font-size: 14px;
 }
 
-.article-comments input[type="submit"] {
+/*.article-comments input[type="submit"] {
 	padding: 12px 24px;
     background: #bb3825;
     border: 0;
@@ -3652,7 +3652,7 @@ textarea:not([data-autoresize]) {
 	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
-}
+}*/
 
 .article-comments .commenter-info input[type="submit"] {
 	position: absolute;
@@ -4558,3 +4558,127 @@ body.modal {
 /* Microdata
 -------------------------------------------------------------------------------*/
 
+
+/* Forms UI
+-------------------------------------------------------------------------------*/
+/*all elements aligned left
+all fields and buttons normal weight
+labels 14px
+fields 18px, border 1px #cccccc, border-radius 3px
+buttons 18px, border-radius %50
+primary button red with white type
+secondary button white with #222222 type, #cccccc border
+instructions #666666, italic, 14px*/
+
+input[type="submit"]:focus {
+	outline: 1px dotted black;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="textarea"] {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	outline: 0;
+	text-align: left;
+	color: #000;
+	font-family: "Franklin ITC Light", sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: 0;
+	box-shadow: inset 0px 0px 10px rgba(0,0,0,.05);
+
+	-webkit-transition: box-shadow 100ms ease-in;
+	-moz-transition: box-shadow 100ms ease-in;
+	-o-transition: box-shadow 100ms ease-in;
+	-ms-transition: box-shadow 100ms ease-in;
+	transition: box-shadow 100ms ease-in;
+}
+
+.button {
+	padding: 12px 24px;
+	border: 0;
+	border-radius: 24px;
+	font-size: 18px;
+	font-family: "Franklin ITC Light", sans-serif;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.button.primary {
+	background: #bb3825;
+	color: #fff;
+}
+
+.button.secondary {
+	background: #fff;
+	border: 1px solid #ccc;
+	color: #222;
+}
+
+.instructions {
+/*#666666, italic, 14px*/
+}
+
+label {
+	display: block;
+	margin: 0 0 24px;
+	font-size: 14px;
+	font-family: "Franklin ITC Light", sans-serif;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.main-search label {
+	display: inline;
+}
+
+h3 label  {
+	margin-bottom: 12px;
+	font-size: 24px;
+	line-height: 24px;
+	text-transform: none;
+}
+/* Ported from safecracker-css
+-------------------------------------------------------------------------------*/
+#ajaxResponse {
+	position: fixed; 
+	top: 0; 
+	right: 0; 
+	padding: 5px 10px; 
+	background: #000; 
+	color: #fff; 
+	font-weight: bold;
+}
+/* Ported from editables.css
+-------------------------------------------------------------------------------*/
+.note {
+	position: relative;
+	margin-top: 6px;
+	font-size: 14px;
+	line-height: 1.6em;
+	font-style: italic;
+	color: #666;
+}
+
+.invalid .note {
+	z-index: -10;
+}
+
+label + .note {
+	margin-top: -2em;
+	margin-bottom: 2em;
+}
+
+.password-mask {
+	position: absolute;
+	top: 3.2em;
+	right: 2%;
+	font-size: .85em;
+}

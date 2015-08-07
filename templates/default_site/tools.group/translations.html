@@ -1,92 +1,81 @@
 {if member_group == "1" OR member_group == "6" OR member_group == "7" OR member_group == "8"}
 
-	{global-page-top}
+{global-page-top}
 
-		{safecracker-css}
+<title>A List Apart : Add Translation Link</title>
 
-		<script src="{assets_path}js/libs/prefixfree.min.js"></script>
+</head>
 
-		<script src="{assets_path}js/libs/modernizr-dev.js"></script>
+<body>
 
-		<title>A List Apart : Add Translation Link</title>
+<div id="ajaxResponse"></div>
 
-	</head>
+{primary-logo}
 
-	<body>
+{global-nav}
 
-	<div id="ajaxResponse"></div>
+{current-user-info}
 
-	{primary-logo}
+<div role="main" class="main-wrapper single-column-display">
 
-	{global-nav}
+	<div class="col-holder">
 
-	{current-user-info}
+		<article class="main-content tools">
 
-		<div role="main" class="main-wrapper single-column-display">
+			<h1 class="basic-title">Add a translation link.</h1>
 
-			<div class="col-holder">
+			{exp:channel:entries channel="articles" require_entry="yes" limit="1" url_title="{segment_3}" disable="categories|category_fields|member_data"}
 
-				<article class="main-content">
+			<h2>Article title: {title}</h2>
+			
+			{if article_translations:total_rows > 0}<h3>Translations</h3>
 
-					<h1 class="basic-title">Add a translation link.</h1>
+			<p>{article_translations}{row_count}. {cell_1}, {cell_2}<br>{/article_translations}</p>{/if}
 
-					{exp:channel:entries channel="articles" require_entry="yes" limit="1" url_title="{segment_3}" disable="categories|category_fields|member_data"}
+			<p><a href="/article/{segment_3}">Return to the Article</a></p>
+			
+			<h3><label form="editForm">Add a link</label></h3>
 
-					<h2>Article: {title}</h2>
+			{exp:channel:form channel="articles" include_jquery="no" json="yes" safecracker_head="no" class="editForm" id="editForm{entry_id}" entry_id="{entry_id}" return="/article/URL_TITLE"}
 
-					<p>{article_translations}{cell_1}, {cell_2}<br>{/article_translations}</p>
+			<input type="hidden" name="article_translations[row_order][]" value="row_new_0" />
+			
+			<label for="username">
+				Language
+				<input id="username" type="text" placeholder="language (ex: Arabic)" name="article_translations[row_new_0][col_id_6]" />
+			</label>
 
-					<style>
-						.screen-reader {
-						  display: block !important;
-						  left: -9999px !important;
-						  position: absolute !important;
-					}
-					</style>
-					<p class="screen-reader">
-						<label for="honeepot">Don't put anything here</label>
-						<input type="text" name="honeepot" id="honeepot" />
-					</p>
+			<label for="URL">
+				URL
+				<input id="URL" type="text" placeholder="URL" name="article_translations[row_new_0][col_id_7]" />
+			</label>
+								 
+			<p class="screen-reader">
+				<label for="honeepot">Don't put anything here</label>
+				<input type="text" name="honeepot" id="honeepot" />
+			</p>
 
-					<input type="submit" name="submit" value="Submit">
+			<input type="submit" name="submit" value="Submit" class="button primary">
 
-					<p><a href="/article/{segment_3}">Return to the Article</a></p>
+			{/exp:channel:form}
 
-					{exp:channel:form channel="articles" include_jquery="no" json="yes" safecracker_head="no" class="editForm" id="editForm{entry_id}" entry_id="{entry_id}" return="/article/URL_TITLE"}
+			{safecracker-js}
 
-					<input type="hidden" name="article_translations[row_order][]" value="row_new_0" />
+			{if no_results} <p><b>Error</b>: You must request a valid article.</p> {/if}
 
-					<p>
-					Language
-					<input type="text" placeholder="language (ex: Arabic)" name="article_translations[row_new_0][col_id_6]" />
-					</p>
+			{/exp:channel:entries}
 
-					<p>
-					URL
-					<input type="url" placeholder="URL" name="article_translations[row_new_0][col_id_7]" />
-					</p>
+		</article> 
 
-					<input type="submit" name="submit" value="Submit">
+	</div>
 
-					{/exp:channel:form}
+</div>
 
-					{safecracker-js}
+{global-footer}
 
-					{if no_results} <p><b>Error</b>: You must request a valid article.</p> {/if}
+{sponsor-top}
 
-					{/exp:channel:entries}
-
-				</article> 
-
-			</div>
-
-		</div>
-
-		{global-footer}
-
-		{sponsor-top}
-
-		{global-page-bottom}
+{global-page-bottom}
 
 {if:else}
 

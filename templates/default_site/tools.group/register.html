@@ -6,126 +6,130 @@
 
 {if:else}
 
-<!doctype html>
+{global-page-top}
 
-<!--[if lt IE 7]> <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
-<!--[if IE 9]>    <html class="no-js ie ie9 lt-ie10" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<title>A List Apart: Would you like to register?</title>
 
-<head>
-
-	<meta charset="utf-8">
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-	<meta name="viewport" content="width=device-width">
-
-	<link rel="stylesheet" href="{assets_path}css/reset.css" />
-	<link rel="stylesheet" href="{assets_path}css/editables.css" />
-
-	<script src="{assets_path}js/libs/prefixfree.min.js"></script>
-
-	<script src="{assets_path}js/libs/modernizr-dev.js"></script>
-
-	<title>A List Apart: Would you like to register?</title>
+<link rel="stylesheet" href="{assets_path}css/editables.css" />
 
 </head>
 
 <body data-xid="{XID_HASH}">
 
-	<header>
+{primary-logo}
 
-		<h1>
-			<img src="{assets_path}img/favicons/apple-touch-icon-57x57.png" alt="">
-			Register
-		</h1>
+{global-nav}
 
-	</header>
+{current-user-info}
 
-	{if segment_3 == 'email-sent'}
+<div role="main" class="main-wrapper single-column-display">
 
-	<p>Got it. Be on the lookout for an email with a link to activate your new account. <a href="{site_url}<?php echo ee()->session->tracker['2']; ?>">Get back.</a></p> 
+	<div class="col-holder">
 
-	{if:else}
+		<div class="main-content tools">
 
-	{exp:freemember:register
-		return="/tools/register/email-sent"
-		form_id="sign-in-form"
-		form_class="sign-in-form"}
-
-		<label for="username">
-			Username: <small>required</small>
-			<input id="username" aria-describedby="username_error" name="username" type="text"
-				autofocus
-				data-validate="onblur"
-				data-type="any" data-isvalid=""
-				data-error="who are you?"
-				required />
-		</label>
-
-		<label for="email">
-			Email: <small>required</small>
-			<input id="email" aria-describedby="email_error" name="email" type="email" value="{email}" data-validate="onblur"
-				data-type="email"
-				data-isvalid="{if email}yes{/if}"
-				data-error="are you sure this is your email address?"
-				required>
-		</label>
-
-		<label for="password" class="password-field">
-			Password: <small>required</small>
-			<input id="password" aria-describedby="password_error" name="password" type="password" value=""
-				data-validate="onblur"
-				data-type="any"
-				data-isvalid=""
-				data-error="what's your new password?"
-				required />
-			<span class="note">Make it good.</span>
-		</label>
-
-		<label for="password_confirm" class="password-field">
-			Password Confirmation: <small>required</small>
-			<input id="password_confirm" aria-describedby="password_confirm_error" name="password_confirm" type="password" value=""
-				data-validate="onblur"
-				data-type="matching"
-				data-mustmatch="password"
-				data-isvalid="yes"
-				data-error="this needs to match the previous field."
-				required />
-			<span class="note">Make it the same.</span>
-		</label>
+		<h1 class="basic-title">Register</h1>
 		
-		<style>
-			.screen-reader {
-				display: block !important;
-				left: -9999px !important;
-				position: absolute !important;
-			}
-		</style>
+		{if segment_3 == 'email-sent'}
 
-		<p class="screen-reader">
-		  <label for="honeepot">Don't put anything here</label>
-		  <input type="text" name="honeepot" id="honeepot" />
-		</p>
+		<p>Got it. Be on the lookout for an email with a link to activate your new account. <a href="{site_url}<?php echo ee()->session->tracker['2']; ?>">Head back.</a></p> 
 
-		<p class="align-center">
-			<button type="submit" class="spinner">
-				<span class="label">Submit</span>
-				<span class="spinner"></span>
-			</button>
-		</p>
+		{if:else}
 
-		<p><small>
-				Sign up with...
-				<a class="buttonish" href="{site_url}?ACT=154&provider=twitter&RET=/tools/profile/">Twitter</a>
-				<a class="buttonish" href="{site_url}?ACT=154&provider=facebook&RET=/tools/profile/">Facebook</a>
-		</small></p>
+		{exp:freemember:register
+			return="/tools/register/email-sent"
+			form_id="sign-in-form"
+			form_class="sign-in-form"}
 
-	{/exp:freemember:register}
+			<p><label for="username">
+				Username: required</label>
+				<input id="username" aria-describedby="username_error" name="username" type="text"
+					autofocus
+					data-validate="onblur"
+					data-type="any" data-isvalid=""
+					data-error="who are you?"
+					required /></p>
+			
 
-	{/if}
+			<label for="email">
+				Email: required
+				<input id="email" aria-describedby="email_error" name="email" type="email" value="{email}" data-validate="onblur"
+					data-type="email"
+					data-isvalid="{if email}yes{/if}"
+					data-error="are you sure this is your email address?"
+					required>
+			</label>
+
+			<label for="password" class="password-field">
+				Password: required
+				<input id="password" aria-describedby="password_error" name="password" type="password" value=""
+					data-validate="onblur"
+					data-type="any"
+					data-isvalid=""
+					data-error="what's your new password?"
+					required />
+				<span class="note">Make it good.</span>
+			</label>
+
+			<label for="password_confirm" class="password-field">
+				Password Confirmation: required
+				<input id="password_confirm" aria-describedby="password_confirm_error" name="password_confirm" type="password" value=""
+					data-validate="onblur"
+					data-type="matching"
+					data-mustmatch="password"
+					data-isvalid="yes"
+					data-error="this needs to match the previous field."
+					required />
+				<span class="note">Make it the same.</span>
+			</label>
+			
+			<style>
+				.screen-reader {
+					display: block !important;
+					left: -9999px !important;
+					position: absolute !important;
+				}
+			</style>
+
+			<p class="screen-reader">
+			  <label for="honeepot">Don't put anything here</label>
+			  <input type="text" name="honeepot" id="honeepot" />
+			</p>
+
+			<!-- <p class="align-center">
+				<button type="submit" class="spinner">
+					<span class="label">Submit</span>
+					<span class="spinner"></span>
+				</button>
+			</p> -->
+
+			<input type="submit" name="submit" value="Submit" class="button primary">
+
+			<p><small>
+					Sign up with...
+					<a class="button secondary" href="{site_url}?ACT=154&provider=twitter&RET=/tools/profile/">Twitter</a>
+					<a class="button secondary" href="{site_url}?ACT=154&provider=facebook&RET=/tools/profile/">Facebook</a>
+			</small></p>
+
+		{/exp:freemember:register}
+
+		{/if}
+
+		</div> 
+
+	</div>
+
+</div>
+
+{global-footer}
+
+{sponsor-top}
+
+{global-page-bottom}
+
+
+
+<!-- 	
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/components/assets/js/libs/jquery-1.8.2.min.js"><\/script>')</script>
@@ -135,7 +139,7 @@
 <script src="{assets_path}js/libs/breakpoints.js"></script>
 <script src="{assets_path}js/libs/jquery.form.min.js"></script>
 <script src="{assets_path}js/form-stuff.js"></script>
-<script src="{assets_path}js/script.js"></script>
+<script src="{assets_path}js/script.js"></script> -->
 
 
 <!--<script>
