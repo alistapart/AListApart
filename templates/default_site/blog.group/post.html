@@ -1,13 +1,11 @@
-
 {if !segment_3}
-{redirect="blog"}
-
+	{redirect="blog"}
 {if:else}
 
 {exp:channel:entries channel="blog|link_posts" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
 
 {if no_results}
-{redirect="404"}
+	{redirect="404"}
 {/if}
 
 {global-page-top}
