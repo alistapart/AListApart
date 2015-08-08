@@ -1,19 +1,8 @@
 {if member_group == "1" OR member_group == "6" OR member_group == "7" OR member_group == "8"}
 
-{exp:channel:entries channel="columns" require_entry="yes" limit="1" url_title="{segment_3}" disable="categories|category_fields|member_data"}
-
-{if no_results} <p><b>Error</b>: You must request a valid article.</p> {/if}
-
-<!DOCTYPE html>
-<html>
-
-<head>
+{global-page-top}
 
 <title>A List Apart : Add Translation Link</title>
-
-<meta charset="utf-8" />
-
-{safecracker-css}
 
 </head>
 
@@ -21,51 +10,89 @@
 
 <div id="ajaxResponse"></div>
 
-<h1>Add a translation link</h1>
+{primary-logo}
 
-<h2>Column: {title}</h2>
+{global-nav}
 
-<p>{column_translations}{cell_1}, {cell_2}<br>{/column_translations}</p>
+{current-user-info}
 
-<p><a href="/column/{segment_3}">Return to the Column</a></p>
+<div role="main" class="main-wrapper single-column-display">
 
-{exp:channel:form channel="columns" include_jquery="no" json="yes" safecracker_head="no" class="editForm" id="editForm{entry_id}" entry_id="{entry_id}" return="/column/URL_TITLE"}
+	<div class="col-holder">
 
-<input type="hidden" name="column_translations[row_order][]" value="row_new_0" />
+		<div class="main-content tools">
 
-<p>
-Language
-<input type="text" placeholder="language (ex: Arabic)" name="column_translations[row_new_0][col_id_13]" />
-</p>
+			<h1 class="basic-title">Add a translation link.</h1>
 
-<p>
-URL
-<input type="url" placeholder="URL" name="column_translations[row_new_0][col_id_14]" />
-</p>
+			{exp:channel:entries channel="columns" require_entry="yes" limit="1" url_title="{segment_3}" disable="categories|category_fields|member_data"}
 
-<style>
-	.screen-reader {
-	  display: block !important;
-	  left: -9999px !important;
-	  position: absolute !important;
-}
-</style>
-<p class="screen-reader">
-	<label for="honeepot">Don't put anything here</label>
-	<input type="text" name="honeepot" id="honeepot" />
-</p>
+			<h2>Column title: {title}</h2>
+			
+			{if column_translations:total_rows > 0}<h3>Translations</h3>
 
-<input type="submit" name="submit" value="Submit">
+			<p>{column_translations}{row_count}. {cell_1}, {cell_2}<br>{/column_translations}</p>{/if}
 
-{/exp:channel:form}
+			<p><a href="/column/{segment_3}">Return to the Article</a></p>
+			
+			<h3 class="form-heading">Add a link</h3>
 
-{safecracker-js}
+			{exp:channel:form channel="columns" include_jquery="no" json="yes" safecracker_head="no" class="editForm" id="editForm{entry_id}" entry_id="{entry_id}" return="/column/URL_TITLE"}
 
-</body>
+			<input type="hidden" name="column_translations[row_order][]" value="row_new_0" />
+			
+			<p>
+				<label for="username">Language</label>
+				<input 
+					type="text"
+					id="username"
+					name="column_translations[row_new_0][col_id_6]"
+					placeholder="language (ex: Arabic)" >
+			</p>
+			
+			<p>
+				<label for="URL">URL</label>
+				<input 
+					type="text" 
+					id="URL" 
+					name="column_translations[row_new_0][col_id_7]"
+					placeholder="URL">
+			</p>
+			
+			<p class="screen-reader">
+				<label for="honeepot">Don't put anything here</label>
+				<input
+					type="text"
+					id="honeepot"
+					name="honeepot">
+			</p>
+			
+			<p>
+				<input 
+					type="submit" 
+					name="submit" 
+					value="Submit" 
+					class="button primary">
+			</p>
 
-</html>
+			{/exp:channel:form}
 
-{/exp:channel:entries}
+			{safecracker-js}
+
+			{if no_results} <p><b>Error</b>: You must request a valid article.</p> {/if}
+
+			{/exp:channel:entries}
+
+		</div> 
+
+	</div>
+
+</div>
+
+{global-footer}
+
+{sponsor-top}
+
+{global-page-bottom}
 
 {if:else}
 

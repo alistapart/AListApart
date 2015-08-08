@@ -6,47 +6,29 @@
 
 {if:else}
 
-<!doctype html>
+{global-page-top}
 
-<!--[if lt IE 7]> <html class="no-js ie ie6 lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie ie7 lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie ie8 lt-ie10 lt-ie9" lang="en"> <![endif]-->
-<!--[if IE 9]>    <html class="no-js ie ie9 lt-ie10" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<title>A List Apart: Would you like to register?</title>
 
-<head>
-
-	<meta charset="utf-8">
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-	<meta name="viewport" content="width=device-width">
-
-	<link rel="stylesheet" href="{assets_path}css/reset.css" />
-	<link rel="stylesheet" href="{assets_path}css/editables.css" />
-
-	<script src="{assets_path}js/libs/prefixfree.min.js"></script>
-
-	<script src="{assets_path}js/libs/modernizr-dev.js"></script>
-
-	<title>A List Apart: Would you like to log in?</title>
+<!-- <link rel="stylesheet" href="{assets_path}css/editables.css" /> -->
 
 </head>
 
 <body data-xid="{XID_HASH}">
 
-	<header>
+{primary-logo}
 
-		<h1>
-			<img src="{assets_path}img/favicons/apple-touch-icon-57x57.png" alt="">
-			{if logged_in}
-			Logged in.
-			{if:else}
-			Log In
-			{/if}
-		</h1>
+{global-nav}
 
-	</header>
+{current-user-info}
+
+<div role="main" class="main-wrapper single-column-display">
+
+	<div class="col-holder">
+
+		<div class="main-content tools">
+
+		<h1 class="basic-title">{if logged_in}Logged in.{if:else}Log In{/if}</h1>
 
 	{if logged_in}
 
@@ -59,93 +41,99 @@
 		form_id="sign-in-form"
 		form_class="sign-in-form"}
 
-		<label for="username">
-			Username / Email Address <small>(<a href="/tools/register">need an account?</a>)</small>
+		<p>
+			<label for="username">Username / Email Address (<a href="/tools/register">need an account?</a>)</label>
 			<input
+				type="text"
+				id="username"
+				name="username"
+				aria-describedby="username_error"
 				autofocus
 				tabindex="1"
-				id="username"
-				aria-describedby="username_error"
-				name="username"
-				type="text"
 				data-validate="onblur"
 				data-type="any"
 				data-isvalid=""
 				data-error="who are you?"
-				required />
-		</label>
+				required>
+		</p>
 
-		<label for="login_password" class="password-field">
-			Password <small>(<a href="/tools/forgot-password">forgotten it?</a>)</small>
+		<p class="password-field">
+			<label for="login_password">Password (<a href="/tools/forgot-password">forgotten it?</a>)</label>
 			<input
-				id="login_password"
-				tabindex="2"
-				aria-describedby="login_password_error"
-				name="password"
 				type="password"
+				id="login_password"
+				name="password"
+				aria-describedby="login_password_error"
+				tabindex="2"
 				data-validate="onblur"
 				data-type="any"
 				data-isvalid=""
 				data-error="what's your password?"
-				required />
-		</label>
+				required>
+		</p>
 
 		{if auto_login}
 		<fieldset class="check-radio customized">
-			<input type="checkbox" id="auto_login" name="auto_login" value="1" checked>
+			<input 
+				type="checkbox" 
+				id="auto_login" 
+				name="auto_login" 
+				value="1" 
+				checked>
 			<label for="auto_login">Auto-login on future visits</label>
 		</fieldset>
 		{/if}
-		
-		<style>
-			.screen-reader {
-			display: block !important;
-			left: -9999px !important;
-			position: absolute !important;
-			}
-		</style>
+
 		<p class="screen-reader">
 			<label for="honeepot">Don't put anything here</label>
-			<input type="text" name="honeepot" id="honeepot" />
+			<input
+				type="text"
+				id="honeepot"
+				name="honeepot">
+		</p>
+		
+		<p>
+			<input 
+				type="submit" 
+				name="submit" 
+				value="Submit" 
+				class="button primary">
 		</p>
 
-		<p class="align-center">
-			<button type="submit" class="spinner" tabindex="3">
-				<span class="label">Submit</span>
-				<span class="spinner"></span>
-			</button>
-		</p>
+		{/exp:freemember:login}
 
-		<p><small>
-				Log in with...
-				<a class="buttonish" href="{site_url}?ACT=154&provider=twitter&RET={last_page_visited}">Twitter</a>
-				<a class="buttonish" href="{site_url}?ACT=154&provider=facebook&RET={last_page_visited}">Facebook</a>
-		</small></p>
+		<aside id="login-buttons">
 
-	{/exp:freemember:login}
+			<h4 class="form-heading small">Or log in with:</h4>
+
+			<ul class="login-buttons">
+
+				<li class="twitter">
+					<a href="{site_url}?ACT=154&provider=twitter&RET={site_url}">Twitter</a>
+				</li>
+
+				<li class="facebook">
+					<a href="{site_url}?ACT=154&provider=facebook&RET={site_url}">Facebook</a>
+				</li>
+
+			</ul>
+
+		</aside>
 
 	{/if}
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/components/assets/js/libs/jquery-1.8.2.min.js"><\/script>')</script>
+	</div> 
 
-<script src="{assets_path}js/libs/matchmedia.js"></script>
-<script src="{assets_path}js/libs/picturefill.js"></script>
-<script src="{assets_path}js/libs/breakpoints.js"></script>
-<script src="{assets_path}js/libs/jquery.form.min.js"></script>
-<script src="{assets_path}js/form-stuff.js"></script>
-<script src="{assets_path}js/script.js"></script>
+	</div>
 
+</div>
 
-<!--<script>
-	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-	s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>-->
+{global-footer}
 
-</body>
-</html>
+{sponsor-top}
+
+{global-page-bottom}
 
 {/if}
+
 {/exp:ifelse}

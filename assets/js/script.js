@@ -453,7 +453,7 @@ $(document).ready(function(){
 	// };
 
 });
-alert($("#job-board-target" ).length);
+
 
 sponsorSniff = document.addEventListener("DOMNodeInserted", function(event) {
 

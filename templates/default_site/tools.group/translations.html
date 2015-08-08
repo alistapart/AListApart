@@ -20,7 +20,7 @@
 
 	<div class="col-holder">
 
-		<article class="main-content tools">
+		<div class="main-content tools">
 
 			<h1 class="basic-title">Add a translation link.</h1>
 
@@ -34,21 +34,30 @@
 
 			<p><a href="/article/{segment_3}">Return to the Article</a></p>
 			
-			<h3><label form="editForm">Add a link</label></h3>
+			<h3 class="form-heading">Add a link</h3>
 
 			{exp:channel:form channel="articles" include_jquery="no" json="yes" safecracker_head="no" class="editForm" id="editForm{entry_id}" entry_id="{entry_id}" return="/article/URL_TITLE"}
 
 			<input type="hidden" name="article_translations[row_order][]" value="row_new_0" />
 			
-			<label for="username">
-				Language
-				<input id="username" type="text" placeholder="language (ex: Arabic)" name="article_translations[row_new_0][col_id_6]" />
-			</label>
-
-			<label for="URL">
-				URL
-				<input id="URL" type="text" placeholder="URL" name="article_translations[row_new_0][col_id_7]" />
-			</label>
+			<p>
+				<label for="username">Language</label>
+				<input 
+					type="text"
+					id="username"
+					name="article_translations[row_new_0][col_id_6]"
+					placeholder="language (ex: Arabic)" >
+			</p>
+			
+			<p>
+				<label for="URL">URL</label>
+				<input 
+					type="text" 
+					id="URL" 
+					name="article_translations[row_new_0][col_id_7]"
+					placeholder="URL">
+			</p>
+			
 								 
 			<p class="screen-reader">
 				<label for="honeepot">Don't put anything here</label>
@@ -65,7 +74,7 @@
 
 			{/exp:channel:entries}
 
-		</article> 
+		</div> 
 
 	</div>
 

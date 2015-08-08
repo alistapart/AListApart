@@ -4299,17 +4299,16 @@ instructions #666666, italic, 14px*/
 
 form {
 	text-align: left;
-}
-
-form p {
-	margin: 0 0 12px;
-	position: relative;
-	font-size: 14px;
-	line-height: 2;
 	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
-	letter-spacing: 0; /*not necessary?*/
+}
+
+form p {
+	margin: 0 0 18px;
+	position: relative;
+	font-size: 14px;
+	line-height: 2;
 }
 
 input[type="submit"]:focus {
@@ -4328,9 +4327,6 @@ textarea {
 	border-radius: 3px;
 	outline: 0;
 	color: #000;
-	font-family: "Franklin ITC Light", sans-serif;
-	font-weight: normal;
-	font-style: normal;
 	font-size: 18px;
 	box-shadow: inset 0px 0px 10px rgba(0,0,0,.05);
 
@@ -4393,16 +4389,18 @@ textarea:not([data-autoresize]) {
 	color: #222;
 }
 
-.form-heading {
+.main-content .form-heading {
 	margin-bottom: 12px;
 	font-family: "Franklin ITC Light", sans-serif;
 	font-size: 24px;
 	line-height: 24px;
 	font-weight: normal;
 	font-style: normal;
+	text-transform: none;
 }
-.form-heading small {
+.main-content .form-heading.small {
 	font-size: 14px;
+	line-height: 16px;
 }
 
 /* Ported from editables.css
@@ -4443,13 +4441,166 @@ label + .note {
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	color: #bb3825;
-	font-family: "Franklin ITC Light", sans-serif;
 	-webkit-transform: translateX(-50%);
 	-moz-transform: translateX(-50%);
 	-ms-transform: translateX(-50%);
 	-o-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
+
+.good-show {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	color: rgba(23,187,91,1);
+	padding: .4em 1em;
+	border: 1px solid rgba(23,187,91,0.3);
+	border-top: 0;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	box-shadow: 0px 0px 9px -4px  rgba(23,187,91,0.3);
+}
+
+/*----Check-radio customized------*/
+fieldset {
+	/*margin-bottom: 2em;*/
+}
+
+.scrolling-checkboxes {
+/*	display: inline-block;
+	overflow-x: hidden;
+	overflow-y: auto;
+	min-width: none;
+	max-height: 150px;
+	padding: 0;
+	border: 1px solid #ccc;
+	border-radius: 3px;*/
+}
+
+fieldset.check-radio label {
+	margin-bottom: .5em;
+}
+
+fieldset.check-radio input {
+/*	font-size: 2em;
+	margin: 0 3px;
+	vertical-align: text-bottom;*/
+}
+
+fieldset.check-radio.customized label,
+fieldset.select-field.customized label {
+	position: relative;
+	padding-left: 28px;
+}
+
+fieldset.check-radio.customized .scrolling-checkboxes label {
+/*	padding: .4em .4em .4em 18px;
+	margin: 0;
+	white-space: nowrap;*/
+}
+
+fieldset.check-radio.customized .scrolling-checkboxes label:active {
+	/*color: #999;*/
+}
+
+fieldset.check-radio.customized .scrolling-checkboxes label:nth-of-type(odd) {
+/*	background: #eee;*/
+}
+
+fieldset.check-radio.customized input[type="checkbox"],
+fieldset.check-radio.customized input[type="radio"] {
+	opacity: 0;
+	position: absolute;
+	z-index: -1;
+}
+
+fieldset.check-radio.customized input[type="checkbox"] + label:before,
+fieldset.check-radio.customized input[type="radio"] + label:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 4px;
+	display: block;
+	width: 1.65em;
+	height: 1.65em;
+	margin: -.4em 1em 0 0;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	text-align: center;
+	font-size: 1em;
+	line-height: 11px;
+	text-indent: 4px;
+	background: #fff;
+	cursor: pointer;
+}
+
+fieldset.check-radio.customized input[type="checkbox"]:focus + label:before,
+fieldset.check-radio.customized input[type="radio"]:focus + label:before {
+	outline: 1px dotted #333;
+}
+
+fieldset.check-radio.customized .scrolling-checkboxes input[type="checkbox"] + label:before {
+	/*top: 8px;
+	left: 9px;
+	display: none;*/
+}
+
+fieldset.check-radio.customized input[type="radio"] + label:before {
+/*	border-radius: 50%;*/
+}
+
+fieldset.check-radio.customized input[type="radio"]:active + label:before {
+	/*border: 1px solid #999;*/
+}
+
+fieldset.check-radio.customized input[type="checkbox"]:active + label:after {
+	/*background: #ddd;
+	color: #aaa;*/
+}
+
+fieldset.check-radio.customized input[type="checkbox"] + label:after {
+	content: "";
+	position: absolute;
+	z-index: 100;
+	display: block;
+	width: 1em;
+	height: 1em;
+	top: .15em;
+	left: .2em;
+	border-radius: 2px;
+	/*background: #eee;*/
+	color: #222;
+	font-weight: bold;
+	text-indent: .15em;
+	line-height: 1em;
+	font-size: 1.4em;
+}
+
+fieldset.check-radio.customized input[type="checkbox"]:checked + label:after {
+	content: "✓";
+/*	background: #ddd;*/
+}
+
+fieldset.check-radio.customized .scrolling-checkboxes input[type="checkbox"]:checked + label:after {
+	/*content: "✓";
+	top: 4px;
+	left: 5px;
+	background: transparent;*/
+}
+
+fieldset.check-radio.customized input[type="radio"]:checked + label:after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 7px;
+	height: 7px;
+	top: 5px;
+	left: 4px;
+	border-radius: 50%;
+	background: #666;
+}
+
 
 /* Article comments specific form stuff
 -------------------------------------------------------------------------------*/
@@ -4521,7 +4672,7 @@ img.commenter-avatar {
 /* Social login buttons
 -------------------------------------------------------------------------------*/
 #login-buttons{
-	margin-top: 14px;
+	margin-top: 18px;
 	text-align: left;
 }
 
