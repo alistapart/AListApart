@@ -405,36 +405,36 @@ $(document).ready(function(){
 
 	})*/
 
-	var maskTerm = 'hide';
-	var unmaskTerm = 'show';
+	// var maskTerm = 'hide';
+	// var unmaskTerm = 'show';
 
-	$('.password-field').append('<a class="password-mask" href="#">' + maskTerm + '</a>');
+	// $('.password-field').append('<a class="password-mask" href="#">' + maskTerm + '</a>');
 
-	$('input[type="password"]').each(function() {
+	// $('input[type="password"]').each(function() {
 
-		$(this).changeType($(this), 'text');
+	// 	$(this).changeType($(this), 'text');
 
-	});
+	// });
 
-	$('.password-mask').on('click', function(){
+	// $('.password-mask').on('click', function(){
 
-		var field = $(this).siblings('input[type="password"], input[type="text"]');
+	// 	var field = $(this).siblings('input[type="password"], input[type="text"]');
 
-		if ($(this).html() == unmaskTerm) {
+	// 	if ($(this).html() == unmaskTerm) {
 
-			field.changeType(field, 'text')
-			$(this).html(maskTerm);
+	// 		field.changeType(field, 'text')
+	// 		$(this).html(maskTerm);
 
-		} else {
+	// 	} else {
 
-			field.changeType(field, 'password');
-			$(this).html(unmaskTerm);
+	// 		field.changeType(field, 'password');
+	// 		$(this).html(unmaskTerm);
 
-		};
+	// 	};
 
-		return false;
+	// 	return false;
 
-	});
+	// });
 
 	// if ($("#job-board-target") != -1){
 
