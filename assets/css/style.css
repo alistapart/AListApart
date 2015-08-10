@@ -4403,6 +4403,19 @@ textarea:not([data-autoresize]) {
 	line-height: 16px;
 }
 
+.spacer.large {
+	height: 0;
+	border: 0;
+	margin: 60px auto;
+}
+
+fieldset figure {
+    margin: 1em 0;
+    padding: 1em;
+    text-align: center;
+    background: #eee;
+}
+
 /* Ported from editables.css
 -------------------------------------------------------------------------------*/
 .note {
@@ -4412,6 +4425,10 @@ textarea:not([data-autoresize]) {
 	line-height: 1.6em;
 	font-style: italic;
 	color: #666;
+}
+
+figure .note {
+	display: block;
 }
 
 .invalid .note {
@@ -4641,7 +4658,6 @@ fieldset.check-radio.customized input[type="radio"]:checked + label:after {
 	display: block;
 	font-size: 14px;
 }
-
 
 .article-comments .commenter-info input[type="submit"] {
 	position: absolute;

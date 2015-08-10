@@ -30,88 +30,87 @@
 		
 		<p><a href="/">Home page</a> ∙ <a href="{exp:freemember:logout_url}">Log out</a></p>
 		
-		<hr>
+		<hr class="spacer large">
 
 		{exp:social_login:add_userdata return="SAME_PAGE" id="userdata_form"}
 
-		<style>
-		form, hr {display: none;}
-		form#userdata_form {display: block;}
-		</style>
+		<fieldset>
 
-		<h2 class="social-form form-heading">Did you sign up using a social account?</h2>
+			<legend class="social-form form-heading">Did you sign up using a social account?</legend>
 
-		<p>We might need some more info before you can edit your profile:</p>
-
-		{email_block}
-		<p>
-			<label for="email">We need your email address (for lost password requests):</label>
-			<input 
-			type="email"
-			id="email" 
-			name="email"
-			aria-describedby="email_error" 
-			value="{email}"
-			data-validate="onblur"
-			data-type="email"
-			data-isvalid=""
-			data-error="are you sure this is your email address?"
-			required>
-		</p>
-		{/email_block}
-
-		{password_block}
-		<p class="password-field">
-			<label for="password">Password: required</label>
-			<input 
-				type="password"
-				id="password" 
-				name="password"
-				value=""
-				aria-describedby="password_error"
-				data-validate="onblur"
-				data-type="any"
-				data-isvalid=""
-				data-error="what's your new password?"
-				required>
-			<span class="note">Make it good.</span>
-		</p>
-
-		<p class="password-field">
-			<label for="password_confirm">Password Confirmation: required</label>
-			<input
-				type="password"
-				id="password_confirm"
-				name="password_confirm"
-				value=""
-				aria-describedby="password_confirm_error"
-				data-validate="onblur"
-				data-type="matching"
-				data-mustmatch="password"
-				data-isvalid="yes"
-				data-error="this needs to match the previous field."
-				required>
-			<span class="note">Make it the same.</span>
-		</p>
-		{/password_block}
-
-		<p class="screen-reader">
-			<label for="honeepot">Don't put anything here</label>
-			<input
-				type="text"
-				id="honeepot"
-				name="honeepot">
-		</p>
+			<p>We might need some more info before you can edit your profile:</p>
 			
-		<p>
-			<input 
-				type="submit" 
-				name="submit" 
-				value="Submit" 
-				class="button primary">
-		</p>
+			{email_block}
+			<p>
+				<label for="email">We need your email address (for lost password requests):</label>
+				<input 
+					type="email"
+					id="email" 
+					name="email"
+					aria-describedby="email_error" 
+					value="{email}"
+					data-validate="onblur"
+					data-type="email"
+					data-isvalid=""
+					data-error="are you sure this is your email address?"
+					required>
+			</p>
+			{/email_block}
 
-		<hr>
+			{password_block}
+			<p class="password-field">
+				<label for="password">Password: required</label>
+				<input 
+					type="password"
+					id="password" 
+					name="password"
+					value=""
+					aria-describedby="password_error"
+					data-validate="onblur"
+					data-type="any"
+					data-isvalid=""
+					data-error="what's your new password?"
+					required>
+				<span class="note">Make it good.</span>
+			</p>
+
+			<p class="password-field">
+				<label for="password_confirm">Password Confirmation: required</label>
+				<input
+					type="password"
+					id="password_confirm"
+					name="password_confirm"
+					value=""
+					aria-describedby="password_confirm_error"
+					data-validate="onblur"
+					data-type="matching"
+					data-mustmatch="password"
+					data-isvalid="yes"
+					data-error="this needs to match the previous field."
+					required>
+				<span class="note">Make it the same.</span>
+			</p>
+			{/password_block}
+
+			<p class="screen-reader">
+				<label for="honeepot">Don't put anything here</label>
+				<input
+					type="text"
+					id="honeepot"
+					name="honeepot">
+			</p>
+				
+			<p>
+				<input 
+					type="submit" 
+					name="submit" 
+					value="Submit" 
+					class="button primary">
+			</p>
+
+			<hr class="spacer large">
+		
+		</fieldset>
 
 		{/exp:social_login:add_userdata}
 
@@ -119,8 +118,6 @@
 			dynamic="off"
 			return="/edit/profile/"
 			form:class="perfect-form-demo"}
-
-			
 
 			<fieldset>
 
@@ -137,177 +134,251 @@
 					<span class="note">Readonly. If you must change this, get in touch.</span>
 				</p>
 
-				<label>
-					Email:
-					<input id="email" aria-describedby="email_error" name="email" type="email" value="{email}"
-					data-validate="onblur"
-					data-type="email"
-					data-isvalid=""
-					data-error="are you sure this is your email address?"
-					required>
-				</label>
+				<p>
+					<label for="email">Email:</label>
+					<input 
+						type="email" 
+						id="email" 
+						name="email" 
+						aria-describedby="email_error"  
+						value="{email}"
+						data-validate="onblur"
+						data-type="email"
+						data-isvalid=""
+						data-error="are you sure this is your email address?"
+						required>
+				</p>
 
-				<label>
-					Visible name:
-					<input id="screen_name" aria-describedby="screen_name_error" name="screen_name" type="text" value="{screen_name}"
-					data-validate="onblur"
-					data-type="any"
-					data-isvalid=""
-					data-error="how do you want to be identified on the site?"
-					required>
-				</label>
-
-				{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
-
-				<label>
-					First name:
-					<input id="first_name" aria-describedby="first_name_error" name="first_name" type="text" value="{first_name}"
-					data-validate="onblur"
-					data-type="any"
-					data-isvalid=""
-					data-error="what's your first name?"
-					required>
-				</label>
-
-				<label>
-					Last name:
-					<input id="last_name" aria-describedby="last_name_error" name="last_name" type="text" value="{last_name}"
-					data-validate="onblur"
-					data-type="any"
-					data-isvalid=""
-					data-error="what's your last name?"
-					required>
-				</label>
-
-				{/if}
-
-				<label class="password-field">
-					New password:
-					<input id="password" aria-describedby="password_error" name="password" type="password"
+				<p>
+					<label for="screen_name">Visible name:</label>	
+					<input 
+						type="text" 
+						id="screen_name" 
+						name="screen_name" 
+						value="{screen_name}" 
+						aria-describedby="screen_name_error" 
 						data-validate="onblur"
 						data-type="any"
 						data-isvalid=""
-						data-error="what's your password?"
-						required />
-					<span class="note">Make it good.</span>
-				</label>
+						data-error="how do you want to be identified on the site?"
+						required>
+				</p>
 
-				<label class="password-field">
-					New password confirmation:
-					<input id="password_confirm" aria-describedby="password_confirm_error" name="password_confirm" type="password"
+				{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
+
+				<p>
+					<label for="first_name">First name:</label>	
+					<input type="text"
+						id="first_name"
+						name="first_name"
+						value="{first_name}"
+						aria-describedby="first_name_error" 
+						data-validate="onblur"
+						data-type="any"
+						data-isvalid=""
+						data-error="what's your first name?"
+						required>
+				</p>
+
+				<p>
+					<label for="last_name">Last name:</label>
+					<input 
+						type="text"
+						id="last_name" 
+						aria-describedby="last_name_error" 
+						name="last_name" 
+						value="{last_name}"
+						data-validate="onblur"
+						data-type="any"
+						data-isvalid=""
+						data-error="what's your last name?"
+						required>
+				</p>
+
+				{/if}
+
+				<p class="password-field">
+					<label for="password">Password: required</label>
+					<input 
+						type="password"
+						id="password" 
+						name="password"
+						value=""
+						aria-describedby="password_error"
+						data-validate="onblur"
+						data-type="any"
+						data-isvalid=""
+						data-error="what's your new password?"
+						required>
+					<span class="note">Make it good.</span>
+				</p>
+
+				<p class="password-field">
+					<label for="password_confirm">Password Confirmation: required</label>
+					<input
+						type="password"
+						id="password_confirm"
+						name="password_confirm"
+						value=""
+						aria-describedby="password_confirm_error"
 						data-validate="onblur"
 						data-type="matching"
 						data-mustmatch="password"
 						data-isvalid="yes"
 						data-error="this needs to match the previous field."
-						required />
+						required>
 					<span class="note">Make it the same.</span>
-				</label>
+				</p>
 
-				<label class="password-field">
-					Submit your current password to continue: <small>(<a href="/tools/forgot-password">forgotten it?</a>)</small>
-					<input id="current_password" aria-describedby="current_password_error" name="current_password" type="password"
+				<p class="password-field">
+					<label for="current_password">Submit your current password to continue: (<a href="/tools/forgot-password">forgotten it?</a>)</label>
+					<input 
+						type="password"
+						id="current_password" 
+						name="current_password"
+						aria-describedby="current_password_error"  
 						data-validate="onblur"
 						data-type="any"
 						data-isvalid=""
 						data-error="for your security, we need your current password"
-						required />
-				</label>
+						required>
+				</p>
 
+				</fieldset>
 
-			</fieldset>
-
-			<p class="align-center">
-				<button type="submit" class="spinner">
-					<span class="label">Submit</span>
-					<span class="spinner"></span>
-				</button>
-			</p>
+				<p class="screen-reader">
+					<label for="honeepot">Don't put anything here</label>
+					<input
+						type="text"
+						id="honeepot"
+						name="honeepot">
+				</p>
+				
+				<p>
+					<input 
+						type="submit" 
+						name="submit" 
+						value="Submit" 
+						class="button primary">
+				</p>
 
 		{/exp:user:edit}
 
-		<hr>
+		<hr class="spacer large">
 
 		{exp:user:edit
 			dynamic="off"
 			return="/edit/profile/"
 			form:class="perfect-form-demo"}
 
-			<h2>Social Stuff</h2>
-
 			<fieldset>
 
-				<label>
-					Personal URL:
-					<input name="url" type="text" value="{url}">
+				<legend class="form-heading">Social Stuff</legend>
+
+				<p>
+					<label for="personal_url">Personal URL:</label>
+					<input 
+						type="text" 
+						id="personal_url" 
+						name="url" 
+						value="{url}">
 					<span class="note">no http, no trailing slash</span>
-				</label>
-
-				<label>
-					Twitter:
-					<input name="twitter" type="text" value="{twitter}">
+				</p>
+				
+				<p>
+					<label for="twitter_username">Twitter:</label>
+					<input 
+						type="text" 
+						id="twitter_username" 
+						name="twitter_username" 
+						value="{twitter}">
 					<span class="note">username only, no @</span>
-				</label>
-
-				<label>
-					Facebook:
-					<input name="facebook" type="text" value="{facebook}">
+				</p>
+				
+				<p>
+					<label for="facebook_username">Facebook:</label>	
+					<input 
+						type="text" 
+						id="facebook_username" 
+						name="facebook_username" 
+						value="{facebook}">
 					<span class="note">username only</span>
-				</label>
+				</p>
 
-				<label>
-					GitHub:
-					<input name="github" type="text" value="{github}">
+				<p>
+					<label for="github_username">GitHub:</label>	
+					<input 
+						type="text" 
+						id="github_username" 
+						name="github_username" 
+						value="{github}">
 					<span class="note">username only</span>
-				</label>
+				</p>
 
-				<label>
-					Dribble:
-					<input name="dribbble" type="text" value="{dribbble}">
+				<p>
+					<label for="dribbble_username">Dribble:</label>	
+					<input 
+						type="text" 
+						id="dribbble_username" 
+						name="dribbble_username" 
+						value="{dribbble}">
 					<span class="note">username only</span>
-				</label>
+				</p>
 
-				<label>
-					Google+:
-					<input name="googleplus" type="text" value="{googleplus}">
-					<span class="note">until this gets smarter, add the whole URL for your profile</span>
-					<span class="note">example 1: http://google.com/+TimMurtaugh</span>
-					<span class="note">example 2: https://plus.google.com/104877852135164107223‎</span>
-				</label>
+				<p>
+					<label for="googleplus">Google+:</label>	
+					<input 
+						type="text" 
+						id="googleplus" 
+						name="googleplus" 
+						value="{googleplus}">
+					<span class="note">until this gets smarter, add the whole URL for your profile</span><br>
+					<span class="note">example 1: http://google.com/+TimMurtaugh</span><br>
+					<span class="note">example 2: https://plus.google.com/104877852135164107223‎</span><br>
+				</p>
 
 			</fieldset>
 
 			<fieldset>
-
-				<label>
-					Bio
-					<textarea name="bio" data-autoresize style="height: 100px;">{bio}</textarea>
+				
+				<p>
+					<label for="bio">Bio</label>
+					<textarea id="bio" name="bio" data-autoresize style="height: 100px;">{bio}</textarea>
 					<span class="note">links encouraged</span>
-				</label>
-
+				</p>
+				
 			</fieldset>
 
-			<p class="align-center">
-				<button type="submit" class="spinner">
-					<span class="label">Submit</span>
-					<span class="spinner"></span>
-				</button>
+			<p class="screen-reader">
+				<label for="honeepot">Don't put anything here</label>
+				<input
+					type="text"
+					id="honeepot"
+					name="honeepot">
+			</p>
+			
+			<p>
+				<input 
+					type="submit" 
+					name="submit" 
+					value="Submit" 
+					class="button primary">
 			</p>
 
 		{/exp:user:edit}
 
-		<hr>
+		<hr class="spacer large">
 
 		{exp:user:edit
 			dynamic="off"
 			return="/edit/profile/"
 			form:class="perfect-form-demo"}
 
-			<h2>Avatar</h2>
-
-			<p>Avatars should be square, and at least 200x200. If you sign in via Twitter, we probably grabbed your avatar from there. You can replace it.</p>
-
 			<fieldset>
+
+				<legend class="form-heading">Avatar</legend> 
+
+				<p>Avatars should be square, and at least 200x200. If you sign in via Twitter, we probably grabbed your avatar from there. You can replace it.</p>
 
 				<figure>
 				{if avatar_filename != ""}
@@ -318,39 +389,42 @@
 				{if:else}
 					<img src="{assets_path}img/avatar_generic-commenter_grey.png">
 				{/if}
-
 				</figure>
 
-				<label>
-					Upload an avatar:
-					<input type="file" name="avatar_filename" />
-				</label>
+				<p>
+					<label for="avatar_filename">Upload an avatar:</label>
+					<input 
+						type="file" 
+						id="avatar_filename" 
+						name="avatar_filename">
+				</p>
 
 			</fieldset>
 
-			<p class="align-center">
-				<button type="submit" class="spinner">
-					<span class="label">Submit</span>
-					<span class="spinner"></span>
-				</button>
+			<p>
+				<input 
+					type="submit" 
+					name="submit" 
+					value="Submit" 
+					class="button primary">
 			</p>
 
 		{/exp:user:edit}
 
 		{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
 
-		<hr>
+		<hr class="spacer large">
 
 		{exp:user:edit
 			dynamic="off"
 			return="/edit/profile/"
 			form:class="perfect-form-demo"}
 
-			<h2>Author Photo</h2>
-
-			<p>Author photos should be at least 250x250. Our editors may crop and resize if needed.</p>
-
 			<fieldset>
+
+				<legend class="form-heading">Author Photo</legend>
+
+				<p>Author photos should be at least 250x250. Our editors may crop and resize if needed.</p>
 
 				<figure>
 				{if photo_filename != ""}
@@ -361,21 +435,23 @@
 				{/if}
 				</figure>
 
-				<label>
-					Upload photo:
-					<input type="file" name="photo_filename" />
-				</label>
+				<p>
+					<label for="photo_filename">Upload photo:</label>
+					<input 
+						type="file" 
+						id="photo_filename" 
+						name="photo_filename">
+				</p>
 
 			</fieldset>
 
-			<p class="align-center">
-				<button type="submit" class="spinner">
-					<span class="label">Submit</span>
-					<span class="spinner"></span>
-				</button>
+			<p>
+				<input 
+					type="submit" 
+					name="submit" 
+					value="Submit" 
+					class="button primary">
 			</p>
-
-
 
 {/exp:user:edit}
 
