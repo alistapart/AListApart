@@ -7,7 +7,7 @@
 {sender_name} has just sent you a Private Message titled ‘{message_subject}’.
 
 You can see the Private Message by logging in and viewing your inbox at:
-{site_url}
+{site_url}/
 
 Content:
 
