@@ -87,7 +87,7 @@
 			{blog_outdated}
 			{if article_age_flag == 'y'}
 			<div class="main-content pre-article">
-			   <p class="editors-note var1"><b>{if custom_note}{custom_note}{if:else}Technical information may be out of date.{/if}</b> {if updated_entry}For more recent approaches, read {updated_entry}<a href="{site_url}{if "{channel_short_name}" == "blog"}blog/post/{if:elseif "{channel_short_name}" == "columns"}column/{if:elseif "{channel_short_name}" == "articles"}article/{/if}{url_title}" title="{title}">{title}</a>{/updated_entry}.{/if}</p>
+			   <p class="editors-note var1"><b>{if custom_note}{custom_note}{if:else}Technical information may be out of date.{/if}</b> {if updated_entry}For more recent approaches, read {updated_entry}<a href="{site_url}/{if "{channel_short_name}" == "blog"}blog/post/{if:elseif "{channel_short_name}" == "columns"}column/{if:elseif "{channel_short_name}" == "articles"}article/{/if}{url_title}" title="{title}">{title}</a>{/updated_entry}.{/if}</p>
 			</div>
 			{/if}
 			{/blog_outdated}

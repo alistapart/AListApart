@@ -1,4 +1,25 @@
-
+	<!-- facebook login: remove the fragment #_=_ that facebook adds to the redirect_uri -->
+	<script>
+		if (window.location.hash && window.location.hash == '#_=_') {
+		    if (window.history && history.pushState) {
+		        window.history.pushState("", document.title, window.location.pathname);
+		        {if segment_1 == "article" OR segment_1 == "blog" OR segment_1 == "column" OR segment_1 == "comments"}
+		        	window.location.hash = '#comment-form';
+		        {/if}
+		    } else {
+		        // Prevent scrolling by storing the page's current scroll offset
+		        var scroll = {
+		            top: document.body.scrollTop,
+		            left: document.body.scrollLeft
+		        };
+		        window.location.hash = '';
+		        // Restore the scroll offset, should be flicker free
+		        document.body.scrollTop = scroll.top;
+		        document.body.scrollLeft = scroll.left;
+		    }
+		}
+	</script>
+ 
 	{exp:minimee:js}
 	<script src="{assets_path}js/libs/jquery-1.11.3.min.js"></script>
 	<script src="{assets_path}js/libs/matchmedia.js"></script>
