@@ -4703,10 +4703,10 @@ img.commenter-avatar {
 
 .login-buttons li {
 	display: inline-block;
-    margin-right: 9px;
-    padding: 0px 12px;
+   margin-right: 9px;
+   padding: 0px 12px;
 	border: 1px solid #ccc;
-    border-radius: 24px;
+   border-radius: 50px;
 }
 
 .login-buttons li:last-child {
