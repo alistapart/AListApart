@@ -3501,6 +3501,11 @@ ul.login-buttons li a:hover {
 
 .article-comments form label .error-message,
 form label .error-message {
+	display: none;
+}
+
+.article-comments form label.invalid .error-message,
+form label.invalid .error-message {
 	position: absolute;
 	z-index: 100;
 	bottom: -.8em;
