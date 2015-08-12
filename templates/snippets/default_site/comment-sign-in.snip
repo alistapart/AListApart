@@ -83,14 +83,14 @@
 			<li class="twitter">
 		{if segment_1 == 'comments'}
 			<!--javascript probably turned off -->
-			<a href="{site_url}?ACT=154&provider=twitter&RET={site_url}comments/{url_title}#comment-form">Twitter</a>
+			<a href="{site_url}/?ACT=154&provider=twitter&RET={site_url}/comments/{url_title}#comment-form">Twitter</a>
 		{if:else}
 			{if channel_short_name == 'articles'}
-					<a href="{site_url}?ACT=154&provider=twitter&RET={site_url}article/{url_title}#comment-form">Twitter</a>
+				<a href="{site_url}/?ACT=154&provider=twitter&RET={site_url}/article/{url_title}#comment-form">Twitter</a>
 			{if:elseif channel_short_name == 'blog'}
-				<a href="{site_url}?ACT=154&provider=twitter&RET={site_url}blog/post/{url_title}#comment-form">Twitter</a>
+				<a href="{site_url}/?ACT=154&provider=twitter&RET={site_url}/blog/post/{url_title}#comment-form">Twitter</a>
 			{if:elseif channel_short_name == 'columns'}
-				<a href="{site_url}?ACT=154&provider=twitter&RET={site_url}column/{url_title}#comment-form">Twitter</a>
+				<a href="{site_url}/?ACT=154&provider=twitter&RET={site_url}/column/{url_title}#comment-form">Twitter</a>
 			{/if}
 		{/if}
 
@@ -98,19 +98,18 @@
 			<li class="facebook">
 		{if segment_1 == 'comments'}
 			<!--javascript probably turned off -->
-			<a href="{site_url}?ACT=154&provider=facebook&RET={site_url}comments/{url_title}#comment-form">Facebook</a>
+			<a href="{site_url}/?ACT=154&provider=facebook&RET={site_url}/comments/{url_title}#comment-form">Facebook</a>
 		{if:else}
 			{if channel_short_name == 'articles'}
-					<a href="{site_url}?ACT=154&provider=facebook&RET={site_url}article/{url_title}#comment-form">Facebook</a>
+				<a href="{site_url}/?ACT=154&provider=facebook&RET={site_url}/article/{url_title}#comment-form">Facebook</a>
 			{if:elseif channel_short_name == 'blog'}
-				<a href="{site_url}?ACT=154&provider=facebook&RET={site_url}blog/post/{url_title}#comment-form">Facebook</a>
+				<a href="{site_url}/?ACT=154&provider=facebook&RET={site_url}/blog/post/{url_title}#comment-form">Facebook</a>
 			{if:elseif channel_short_name == 'columns'}
-				<a href="{site_url}?ACT=154&provider=facebook&RET={site_url}column/{url_title}#comment-form">Facebook</a>
+				<a href="{site_url}/?ACT=154&provider=facebook&RET={site_url}/column/{url_title}#comment-form">Facebook</a>
 			{/if}
 		{/if}
-
 			</li>
-			<!-- <li class="ala"><a id="show-native-login" href="/tools/login">A List Apart</a></li> -->
+
 		</ul>
 
 	</div>

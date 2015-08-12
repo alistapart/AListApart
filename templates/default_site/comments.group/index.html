@@ -14,7 +14,7 @@
 
 	<title>Comments on the A List Apart {if channel_short_name == "columns"}Column{if:elseif channel_short_name == "blog"}Blog Post{if:else}Article{/if} {title}</title>
 
-	<link rel="canonical" href="http://alistapart.com/comments/{url_title}"/>
+	<link rel="canonical" href="{site_url}/{segment_1}/{url_title}"/>
 
 	<style>
 	{exp:user:authors backspace="1"}
@@ -51,7 +51,15 @@
 
 				<p class="entry-details">
 
-					by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+					<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {embed="embeds/article-authors-primary" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</span>
+
+					{exp:playa:parents status="open|In Progress"}<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}" itemprop="datePublished">{entry_date format="%F %d, %Y"}</time>{/exp:playa:parents}
+
+					<span class="entry-meta optional-break">
+
+						Published in {modern-categories}
+
+					</span>
 
 				</p>
 

@@ -9,7 +9,7 @@
 				<h1>Follow-up</h1>
 				{article_follow_up}
 				<article>
-					{entry}<h1><a href="{site_url}{if channel_short_name=='blog'}{channel_short_name}/post/{url_title}{if:elseif channel_short_name=='articles'}article/{url_title}{if:elseif channel_short_name=='columns'}column/{url_title}{/if}" data-trackevent="Related sidebar: Follow up">{title}</a></h1>{/entry}
+					{entry}<h1><a href="{site_url}/{if channel_short_name=='blog'}{channel_short_name}/post/{url_title}{if:elseif channel_short_name=='articles'}article/{url_title}{if:elseif channel_short_name=='columns'}column/{url_title}{/if}" data-trackevent="Related sidebar: Follow up">{title}</a></h1>{/entry}
 					<p>{exp:strip_html}
 					{if note}
 						{note}
@@ -61,7 +61,7 @@
 					<h1>Further reading</h1>
 					{article_related_content status="open|In Progress"}
 					<article>
-					<h2><a href="{site_url}{if article_related_content:channel_short_name=='blog'}{article_related_content:channel_short_name}/post/{article_related_content:url_title}{if:elseif article_related_content:channel_short_name=='articles'}article/{article_related_content:url_title}{if:elseif article_related_content:channel_short_name=='columns'}column/{article_related_content:url_title}{/if}" data-trackevent="Related sidebar: Related by editor">{article_related_content:title}</a></h2>
+					<h2><a href="{site_url}/{if article_related_content:channel_short_name=='blog'}{article_related_content:channel_short_name}/post/{article_related_content:url_title}{if:elseif article_related_content:channel_short_name=='articles'}article/{article_related_content:url_title}{if:elseif article_related_content:channel_short_name=='columns'}column/{article_related_content:url_title}{/if}" data-trackevent="Related sidebar: Related by editor">{article_related_content:title}</a></h2>
 					<p>{exp:strip_html}
 					{if article_related_content:channel_short_name=='columns'}
 						{if article_related_content:column_mini_deck}{article_related_content:column_mini_deck}{if:elseif article_related_content:column_intro}{exp:trunchtml chars="130" inline="..."}{article_related_content:column_intro}{/exp:trunchtml}{/if}

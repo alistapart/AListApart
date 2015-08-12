@@ -6,7 +6,7 @@
 
 	<meta charset="utf-8">
 	{exp:minimee:css}
-	<link rel="stylesheet" href="http://alistapart.com/components/assets/css/embedded.css">
+	<link rel="stylesheet" href="{site_url}/components/assets/css/embedded.css">
 	{/exp:minimee:css}
 	<base target="_parent">
 </head>
@@ -36,7 +36,7 @@
 		
 		{exp:strip_html keep='b|em|a|i|blockquote'}{comment}{/exp:strip_html}
 		
-		<p class="article-link"><a href="http://alistapart.com/{if channel_title == "Columns"}column{if:elseif channel_title == "Blog Posts"}blog/post{if:else}article{/if}/{url_title}">Read the full {if channel_title == "Columns"}column{if:elseif channel_title == "Blog Posts"}blog post{if:else}article{/if} on A List Apart</a></p>
+		<p class="article-link"><a href="{site_url}/{if channel_title == "Columns"}column{if:elseif channel_title == "Blog Posts"}blog/post{if:else}article{/if}/{url_title}">Read the full {if channel_title == "Columns"}column{if:elseif channel_title == "Blog Posts"}blog post{if:else}article{/if} on A List Apart</a></p>
 		
 	</div>
 {/exp:comment:entries}
