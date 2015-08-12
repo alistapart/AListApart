@@ -4345,7 +4345,7 @@ input:valid {
 }
 
 label {
-	display: block;	
+	display: block;
 	font-size: 14px;
 }
 
@@ -4448,6 +4448,11 @@ label + .note {
 }
 
 .error-message {
+	display: none;
+}
+
+.invalid .error-message {
+	display: block;
 	position: absolute;
 	z-index: 100;
 	top: 62px;
@@ -4790,11 +4795,11 @@ form.simple-form.wide-form label .error-message {
 /* Ported from safecracker-css
 -------------------------------------------------------------------------------*/
 #ajaxResponse {
-	position: fixed; 
-	top: 0; 
-	right: 0; 
-	padding: 5px 10px; 
-	background: #000; 
-	color: #fff; 
+	position: fixed;
+	top: 0;
+	right: 0;
+	padding: 5px 10px;
+	background: #000;
+	color: #fff;
 	font-weight: bold;
 }
