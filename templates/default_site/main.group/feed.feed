@@ -20,7 +20,7 @@
 
 {exp:channel:entries channel="issues|columns|blog|link_posts|rss_only|rss_sponsorships" limit="20" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no"}
 	{if channel_short_name == "issues"}
-	{exp:playa:children field="issue_articles"}
+	{exp:playa:children field="issue_articles" disable="member_data|pagination"}
     <item>
       <title><![CDATA[{exp:strip_html}{title}{/exp:strip_html}]]></title>
       <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
