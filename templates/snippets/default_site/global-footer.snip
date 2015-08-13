@@ -1,22 +1,24 @@
 		<footer class="global-footer" role="navigation" aria-label="Footer">
 
-			<h1 class="deadly-subtitle">For people who make websites.</h1>
+			<h1 class="deadly-subtitle" itemprop="alternativeHeadline">For people who make websites.</h1>
 
-			<ul class="inline-items">
-				<li><a href="/about">About</a></li>
-				<li><a href="/authors">Authors</a></li>
-				<li><a href="/about/masthead">Masthead</a></li>
-				<li><a href="/about/style-guide">Style Guide</a></li>
-				<li><a href="/contact">Contact</a></li>
-				<li><a href="/about/sponsor">Sponsorships</a></li>
+			<ul class="inline-items" itemscope itemtype="http://schema.org/SiteNavigationElement">
+				<li><a href="/about" itemprop="url">About</a></li>
+				<li><a href="/authors" itemprop="url">Authors</a></li>
+				<li><a href="/about/masthead" itemprop="url">Masthead</a></li>
+				<li><a href="/about/style-guide" itemprop="url">Style Guide</a></li>
+				<li><a href="/contact" itemprop="url">Contact</a></li>
+				<li><a href="/about/sponsor" itemprop="url">Sponsorships</a></li>
 				<li class="head-east-young-man">
-
+			
 					Follow us:
 					<a href="/about/rss">RSS</a> ·
 					<a href="/email-signup/">Email</a> ·
-					<a href="http://www.facebook.com/alistapart">Facebook</a> ·
-					<a href="https://plus.google.com/107749003388305496076" rel="publisher">Google+</a> ·
-					<a href="http://www.twitter.com/alistapart">Twitter</a>
+					<span itemscope itemtype="http://schema.org/Organization">
+					<a href="http://www.facebook.com/alistapart" itemprop="sameAs">Facebook</a> ·
+					<a href="https://plus.google.com/107749003388305496076" rel="publisher" itemprop="sameAs">Google+</a> ·
+					<a href="http://www.twitter.com/alistapart" itemprop="sameAs">Twitter</a>
+					</span>
 
 				</li>
 			</ul>
@@ -49,15 +51,15 @@
 			<ul class="inline-items copyright">
 
 				<li>
-					<small>ISSN 1534-0295 · Copyright © 1998–{current_time format="%Y"} A List Apart & Our Authors</small>
+					<small>ISSN 1534-0295 · Copyright © <span itemprop="copyrightYear">1998–{current_time format="%Y"}</span> <span itemprop="copyrightHolder">A List Apart & Our Authors</span></small>
 					<small><a href="/about/copyright">Permissions & Copyright</a> · <a href="http://webtype.com">Fonts by Webtype</a> · {if logged_in}<a href="/edit/profile">Edit Your Profile</a> · <a href="{exp:freemember:logout_url}">Log Out</a>{if:else}<a href="/tools/log-in">Log In</a> · <a href="/tools/register">Register</a>{/if}</small></li>
 
 				<li class="affiliates head-east-young-man">
 
-					<a class="aea" href="http://aneventapart.com" title="An Event Apart">An Event Apart</a>
-					<a class="hc" href="http://happycog.com" title="Happy Cog">Happy Cog</a>
-					<a class="aba" href="http://abookapart.com" title="A Book Apart">A Book Apart</a>
-					<a class="arcus" href="https://arcustech.com" title="Hosting provided by Arcustech">Arcustech</a>
+					<a class="aea" href="http://aneventapart.com" title="An Event Apart" itemprop="relatedLink">An Event Apart</a>
+					<a class="hc" href="http://happycog.com" title="Happy Cog" itemprop="relatedLink">Happy Cog</a>
+					<a class="aba" href="http://abookapart.com" title="A Book Apart" itemprop="relatedLink">A Book Apart</a>
+					<a class="arcus" href="https://arcustech.com" title="Hosting provided by Arcustech" itemprop="provider">Arcustech</a>
 
 				</li>
 
