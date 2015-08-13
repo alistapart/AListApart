@@ -42,7 +42,7 @@
 		form_class="sign-in-form"}
 
 		<p>
-			<label for="username">Username / Email Address (<a href="/tools/register">need an account?</a>)</label>
+			<label for="username">Username / Email Address (<a tabindex="4" href="/tools/register">need an account?</a>)</label>
 			<input
 				type="text"
 				id="username"
@@ -58,7 +58,7 @@
 		</p>
 
 		<p class="password-field">
-			<label for="login_password">Password (<a href="/tools/forgot-password">forgotten it?</a>)</label>
+			<label for="login_password">Password (<a tabindex="5" href="/tools/forgot-password">forgotten it?</a>)</label>
 			<input
 				type="password"
 				id="login_password"
@@ -74,11 +74,11 @@
 
 		{if auto_login}
 		<fieldset class="check-radio customized">
-			<input 
-				type="checkbox" 
-				id="auto_login" 
-				name="auto_login" 
-				value="1" 
+			<input
+				type="checkbox"
+				id="auto_login"
+				name="auto_login"
+				value="1"
 				checked>
 			<label for="auto_login">Auto-login on future visits</label>
 		</fieldset>
@@ -91,12 +91,13 @@
 				id="honeepot"
 				name="honeepot">
 		</p>
-		
+
 		<p>
-			<input 
-				type="submit" 
-				name="submit" 
-				value="Submit" 
+			<input
+				type="submit"
+				tabindex="3"
+				name="submit"
+				value="Submit"
 				class="button primary">
 		</p>
 
@@ -109,11 +110,11 @@
 			<ul class="login-buttons">
 
 				<li class="twitter">
-					<a href="{site_url}/?ACT=154&provider=twitter&RET={last_page_visited}">Twitter</a>
+					<a tabindex="6" href="{site_url}?ACT=154&provider=twitter&RET={last_page_visited}">Twitter</a>
 				</li>
 
 				<li class="facebook">
-					<a href="{site_url}/?ACT=154&provider=facebook&RET={last_page_visited}">Facebook</a>
+					<a tabindex="7" href="{site_url}/?ACT=154&provider=facebook&RET={last_page_visited}">Facebook</a>
 				</li>
 
 			</ul>
@@ -122,7 +123,7 @@
 
 	{/if}
 
-	</div> 
+	</div>
 
 	</div>
 
