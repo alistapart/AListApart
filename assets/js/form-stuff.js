@@ -43,6 +43,8 @@ $(document).ready(function (){
 
 		});
 
+		$(this).find('label.invalid input, label.invalid textarea').first().focus();
+
 		if (errors != 0) return false;
 
 	});

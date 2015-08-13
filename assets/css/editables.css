@@ -647,6 +647,11 @@ textarea:focus:not([readonly]) {
 }
 
 .error-message {
+	display: none;
+}
+
+.invalid .error-message {
+	display: block;
 	position: absolute;
 	z-index: 100;
 	top: 4.6em;
