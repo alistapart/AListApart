@@ -26,9 +26,9 @@
 
 		<div class="col-holder">
 
-			<article class="main-content{if page_no_right_col == "y"} breathing-room{/if}">
+			<article class="main-content{if page_no_right_col == "y"} breathing-room{/if}" itemscope itemtype="http://schema.org/AboutPage">
 
-				<h1 class="basic-title">{title}</h1>
+				<h1 class="basic-title" itemprop="name">{title}</h1>
 
 				{page_content}
 
@@ -82,9 +82,9 @@
 
 		<div class="col-holder">
 
-			<article class="main-content">
+			<article class="main-content" itemscope itemtype="http://schema.org/AboutPage">
 
-				<h1 class="basic-title">{title}</h1>
+				<h1 class="basic-title" itemprop="name">{title}</h1>
 
 				{page_content}
 
