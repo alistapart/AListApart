@@ -109,6 +109,11 @@
 		border-right: 0;
 	}
 
+	/* ----------------------	TOOLS	---------------------- */
+	.main-content.tools {
+		width: 80%;
+	}
+
 }
 
 
@@ -915,6 +920,11 @@
 		margin-bottom: 12px;
 	}
 
+	/* ----------------------	TOOLS	---------------------- */
+	.main-content.tools {
+		width: 90%;
+	}
+
 }
 
 @media only screen and (max-width: 30.6875em) { /* 491px */
@@ -949,6 +959,11 @@
 
 	.article-layout .main-content .sidebar.var1 section + section:before {
 		display: block;
+	}
+
+	/* ----------------------	TOOLS	---------------------- */
+	.main-content.tools {
+		width: 100%;
 	}
 
 }
