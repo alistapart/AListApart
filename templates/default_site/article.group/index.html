@@ -40,7 +40,7 @@
 
 </head>
 
-<body class="printable {if comment_total > 0}comments-exist{/if}">
+<body class="printable {if comment_total > 0}comments-exist{/if}" itemscope itemtype="http://schema.org/WebPage">
 
 {primary-logo}
 
@@ -48,21 +48,21 @@
 
 	<div role="main" class="main-wrapper">
 
-		<article itemscope itemtype="http://www.schema.org/Article" class="article-layout hentry">
+		<article class="article-layout hentry" itemscope itemtype="http://www.schema.org/Article">
 
 			<header class="entry-header">
 
-				{exp:stash:set name="issue-number"}{exp:playa:parents status="open|In Progress"}<span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue"><a itemprop="url" href="/issue/{issue_number}" class="issue-number"><span class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a> {/exp:playa:parents}{/exp:stash:set}
+				{exp:stash:set name="issue-number"}{exp:playa:parents status="open|In Progress"}<span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue"><a href="/issue/{issue_number}" class="issue-number" itemprop="url" ><span class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a> {/exp:playa:parents}{/exp:stash:set}
 
 				{if article_illustration OR article_legacy_illo}
 				{exp:stash:set name="illustrator-credit"}
-				<p itemprop="contributor" itemscope itemtype="http://schema.org/Person" class="illustrator-credit">Illustration by
+				<p class="illustrator-credit" itemprop="contributor" itemscope itemtype="http://schema.org/Person">Illustration by
 					{if "{article_illustrator:entry_id}" != ""}
 					{article_illustrator}
 					{embed="embeds/article-illustrator-link" entry_id="{article_illustrator:entry_id}"}
 					{/article_illustrator}
 					{if:else}
-					<a itemprop="url" href="/author/kcornell"><span itemprop="name">Kevin Cornell</span></a>
+					<a href="/author/kcornell" itemprop="url"><span itemprop="name">Kevin Cornell</span></a>
 					{/if}
 				</p>
 				{/exp:stash:set}
@@ -70,13 +70,13 @@
 
 				{if article_responsive_illo != ""}
 
-				<figure itemscope itemtype="http://schema.org/ImageObject" class="wide-hero responsive-hero" data-picture data-alt="">
+				<figure class="wide-hero responsive-hero" data-picture data-alt="" itemscope itemtype="http://schema.org/ImageObject" >
 					{article_responsive_illo}
 					<div data-src="{exp:ce_img:pair src="{cell_1}" width="{cell_2}" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" {if cell_2 != ""}data-media="(max-width: {cell_2}px)"{/if}></div>
 					{/article_responsive_illo}
 
 					<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-					<noscript>{article_illustration}<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt="">{/article_illustration}</noscript>
+					<noscript>{article_illustration}<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt="" itemprop="image">{/article_illustration}</noscript>
 
 					{exp:stash:get name="issue-number"}
 					{exp:stash:get name="illustrator-credit"}
@@ -87,14 +87,14 @@
 				{if article_illustration}
 
 				{article_illustration}
-				<figure itemscope itemtype="http://schema.org/ImageObject" class="wide-hero">
+				<figure class="wide-hero" itemscope itemtype="http://schema.org/ImageObject">
 					<picture>
 						{if width > height}
 						<source srcset="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="1920" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
-						<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="">
+						<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="" itemprop="image">
 						{if:else}
 						<source srcset="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="696" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 960px)">
-						<img src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="">
+						<img src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="" itemprop="image">
 						{/if}
 					</picture>
 					{exp:stash:get name="issue-number"}
@@ -103,7 +103,7 @@
 				{/article_illustration}
 
 				{if:elseif article_legacy_illo}
-				<figure itemscope itemtype="http://schema.org/ImageObject" class="wide-hero">
+				<figure class="wide-hero" itemscope itemtype="http://schema.org/ImageObject">
 				{article_legacy_illo}
 				{exp:stash:get name="issue-number"}
 				{exp:stash:get name="illustrator-credit"}
@@ -114,7 +114,7 @@
 
 				{/if}
 
-				<h1 itemprop="headline name" class="entry-title">{title}</h1>
+				<h1 class="entry-title" itemprop="headline">{title}</h1>
 
 				<p class="entry-details">
 
@@ -172,7 +172,7 @@
 			</div>
 			{/if}
 
-			<div itemprop="articleBody" class="main-content">
+			<div class="main-content" itemprop="articleBody">
 
 				{exp:hop_inject where="<p>" always_inject="y"}
 
@@ -293,7 +293,7 @@
 					<section id="comments" class="column comment-holder">
 
 						{if comment_total > 0}
-							<h1 itemprop="commentCount" class="classy">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
+							<h1 class="classy" itemprop="commentCount">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
 
 							<a href="/comments/{url_title}" id="load-comments" data-url-title="{url_title}" class="buttonish">Load Comments</a>
 
