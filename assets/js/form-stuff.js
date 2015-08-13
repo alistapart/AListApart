@@ -43,7 +43,7 @@ $(document).ready(function (){
 
 		});
 
-		$(this).find('.invalid input, .invalid textarea').first().focus();
+		$(this).find('label.invalid input, label.invalid textarea').first().focus();
 
 		if (errors != 0) return false;
 

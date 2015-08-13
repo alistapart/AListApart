@@ -4803,3 +4803,27 @@ form.simple-form.wide-form label .error-message {
 	color: #fff;
 	font-weight: bold;
 }
+
+
+.error-message {
+	display: none;
+}
+
+.invalid .error-message {
+	display: block;
+	position: absolute;
+	z-index: 100;
+	top: 4.6em;
+	left: 50%;
+	background: #fff;
+	padding: 0 6px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	color: #bb3825;
+
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+}

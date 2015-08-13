@@ -646,7 +646,9 @@ textarea:focus:not([readonly]) {
 /*	background: #cfc;*/
 }
 
+
 /*.error-message {
+
 	position: absolute;
 	z-index: 100;
 	top: 4.6em;
