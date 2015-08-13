@@ -70,7 +70,7 @@
 
 				{if article_responsive_illo != ""}
 
-				<figure class="wide-hero responsive-hero" data-picture data-alt="" itemscope itemtype="http://schema.org/ImageObject" >
+				<figure class="wide-hero responsive-hero" data-picture data-alt="">
 					{article_responsive_illo}
 					<div data-src="{exp:ce_img:pair src="{cell_1}" width="{cell_2}" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" {if cell_2 != ""}data-media="(max-width: {cell_2}px)"{/if}></div>
 					{/article_responsive_illo}
@@ -87,7 +87,7 @@
 				{if article_illustration}
 
 				{article_illustration}
-				<figure class="wide-hero" itemscope itemtype="http://schema.org/ImageObject">
+				<figure class="wide-hero">
 					<picture>
 						{if width > height}
 						<source srcset="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="1920" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
@@ -103,7 +103,7 @@
 				{/article_illustration}
 
 				{if:elseif article_legacy_illo}
-				<figure class="wide-hero" itemscope itemtype="http://schema.org/ImageObject">
+				<figure class="wide-hero">
 				{article_legacy_illo}
 				{exp:stash:get name="issue-number"}
 				{exp:stash:get name="illustrator-credit"}
