@@ -21,6 +21,11 @@ a:focus {
 	text-decoration: underline;
 }
 
+/*.hide-from-no-js is used in specialty templates*/
+.no-js .hide-from-no-js {
+	display: none;
+}
+
 :target:not(#comments):not(.global-nav) {
 	-webkit-animation: target-fade 2s 1;
 	-moz-animation: target-fade 2s 1;
@@ -4307,6 +4312,37 @@ buttons 18px, border-radius %50
 primary button red with white type
 secondary button white with #222222 type, #cccccc border
 instructions #666666, italic, 14px*/
+
+/* take control over placeholders */
+::-webkit-input-placeholder {
+   color: #a9a9a9;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #a9a9a9;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #a9a9a9;
+}
+
+:focus::-webkit-input-placeholder {
+	color: #bebebe;
+}
+
+:focus:-moz-placeholder { /* Firefox 18- */
+   color: #bebebe;
+}
+
+:focus::-moz-placeholder {  /* Firefox 19+ */
+   color: #bebebe;
+}
+
+input[readonly] {
+	border-color: #ddd !important;
+	color: #aaa !important;	
+	font-style: italic;
+}
 
 form {
 	text-align: left;
