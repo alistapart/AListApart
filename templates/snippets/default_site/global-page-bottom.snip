@@ -26,35 +26,20 @@
 	<script src="{assets_path}js/libs/picturefill.js"></script>
 	<script src="{assets_path}js/libs/picturefill_old.js"></script>
 	<script src="{assets_path}js/libs/breakpoints.js"></script>
-	<!--<script src="{assets_path}js/libs/htmlParser.js"></script>-->
 	<script src="{assets_path}js/libs/jquery.form.min.js"></script>
 	<script src="{assets_path}js/form-stuff.js"></script>
 	<script src="{assets_path}js/script.js"></script>
 	{/exp:minimee:js}
 
-	<!-- BuySell Ads -->
-	<script>(function(){var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = '//cdn.buysellads.com/ac/pro.js';document.getElementsByTagName('head')[0].appendChild(bsa);})();</script>
-
 	<script>
-	$(window).load(function() {
-		console.log('w loaded');
-		postscribe('#job-board-target', '<h4>Job Board</h4><script src="https://weworkremotely.com/jobs/random.js"><\/script><p class="board-link">Job listings via <a href="https://weworkremotely.com/?source=ala">We Work Remotely</a></p>');
-        postscribe('#deck-target', '<div class="deck-inner"><script src=http://www.northmay.com/deck/deckAL_js.php?' + (new Date().getTime()) + '><\/script><p><a href="http://www.coudal.com/deck/">Ad via The Deck</a></p></div>', {
-	            error: function(e) {
-	                console.log(e);
-	            },
-	            done: function() {
-	                console.info('the deck script has been delivered.');
-			        if( $('#deck-target').is(':empty') ) {
-			        	console.log('empty');
-			        }else{
-			        	console.log('not empty');
-			        }
-	            }
-	        });
+  	$.getScript("{assets_path}js/postscribe-init.js")
+		.done(function() {
+			console.log('postscribe-init loaded');
+			//BuySell Ads
+			(function(){var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = '//cdn.buysellads.com/ac/pro.js';document.getElementsByTagName('head')[0].appendChild(bsa);})();
+			console.log('sponsor loaded');
 	});
 	</script>
-
 
 	<script>
 	var _qevents = _qevents || [];
