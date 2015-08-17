@@ -32,13 +32,18 @@
 	{/exp:minimee:js}
 
 	<script>
-  	$.getScript("{assets_path}js/postscribe-init.js")
-		.done(function() {
-			console.log('postscribe-init loaded');
-			//BuySell Ads
-			(function(){var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = '//cdn.buysellads.com/ac/pro.js';document.getElementsByTagName('head')[0].appendChild(bsa);})();
-			console.log('sponsor loaded');
-	});
+	if ($("#job-board-target") > 0 || $("#deck-target") > 0) {
+	  	$.getScript("{assets_path}js/postscribe-init.js")
+			.done(function() {
+				console.log('postscribe-init loaded');
+				//BuySell Ads
+				(function(){var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = '//cdn.buysellads.com/ac/pro.js';document.getElementsByTagName('head')[0].appendChild(bsa);})();
+				console.log('sponsor loaded');
+		});
+	} else {
+		var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = '//cdn.buysellads.com/ac/pro.js';
+		document.getElementsByTagName('head')[0].appendChild(bsa);
+	}
 	</script>
 
 	<script>
