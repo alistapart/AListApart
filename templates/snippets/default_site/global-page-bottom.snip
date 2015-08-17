@@ -32,7 +32,7 @@
 	{/exp:minimee:js}
 
 	<script>
-	if ($("#job-board-target") > 0 || $("#deck-target") > 0) {
+	if ($("#job-board-target").length > 0 || $("#deck-target").length > 0) {
 	  	$.getScript("{assets_path}js/postscribe-init.js")
 			.done(function() {
 				console.log('postscribe-init loaded');
