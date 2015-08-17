@@ -41,8 +41,7 @@
 				console.log('sponsor loaded');
 		});
 	} else {
-		var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = '//cdn.buysellads.com/ac/pro.js';
-		document.getElementsByTagName('head')[0].appendChild(bsa);
+		(function(){var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = '//cdn.buysellads.com/ac/pro.js';document.getElementsByTagName('head')[0].appendChild(bsa);})();
 	}
 	</script>
 
