@@ -6,7 +6,7 @@
 
 	<p>Sign in with your A List Apart account to discuss this article.</p>
 
- 	{if segment_1 == 'comments'}
+{!--  	{if segment_1 == 'comments'}
 
 		{exp:freemember:login return="comments/{url_title}#comment-form" form_class="sign-in-form"}
 
@@ -26,7 +26,11 @@
 
 		{/if}
 
-	{/if}
+	{/if} --}
+
+	{exp:ajaxauth:login name="login_form" class="sign-in-form" id="login_form" return="ajax/comment-form"}
+		{error_container}
+		{loader}Loading...{/loader}
 
 		<p>
 			<label for="login-name-here">Email / Username (<a id="register-link" data-tabto="forgot-link" href="/tools/register" target="_blank">need an account?</a>)</label>
@@ -73,7 +77,8 @@
 			data-tabmaster="false" 
 			value="Submit">
 
-	{/exp:freemember:login}
+	{!-- {/exp:freemember:login} --}
+	{/exp:ajaxauth:login}
 
 	<div id="login-buttons" class="active">
 	
