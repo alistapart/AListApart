@@ -26,14 +26,22 @@
 	<script src="{assets_path}js/libs/picturefill.js"></script>
 	<script src="{assets_path}js/libs/picturefill_old.js"></script>
 	<script src="{assets_path}js/libs/breakpoints.js"></script>
-	<!--<script src="{assets_path}js/libs/htmlParser.js"></script>-->
 	<script src="{assets_path}js/libs/jquery.form.min.js"></script>
 	<script src="{assets_path}js/form-stuff.js"></script>
 	<script src="{assets_path}js/script.js"></script>
 	{/exp:minimee:js}
 
-	<!-- BuySell Ads -->
-	<script>(function(){var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = '//cdn.buysellads.com/ac/pro.js';document.getElementsByTagName('head')[0].appendChild(bsa);})();</script>
+	<script>
+	if ($("#job-board-target").length > 0 || $("#deck-target").length > 0) {
+	  	$.getScript("{assets_path}js/postscribe-init.js")
+			.done(function() {
+				//BuySell Ads
+				(function(){var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = '//cdn.buysellads.com/ac/pro.js';document.getElementsByTagName('head')[0].appendChild(bsa);})();
+		});
+	} else {
+		(function(){var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = '//cdn.buysellads.com/ac/pro.js';document.getElementsByTagName('head')[0].appendChild(bsa);})();
+	}
+	</script>
 
 	<script>
 	var _qevents = _qevents || [];
