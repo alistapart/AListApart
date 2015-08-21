@@ -40,6 +40,14 @@ a:focus {
 	100% { background-color: rgba(255,248,135,0); outline: 6px solid rgba(255,248,135,1); }
 }
 
+.center {
+	text-align: center;
+}
+
+.float-left {
+	float:left;
+}
+
 .main-content > p.buttonish-holder {
 	margin-top: 36px;
 	margin-bottom: 36px;
@@ -3402,7 +3410,7 @@ ol.article-comments li + li.comment-form:after {
 
 li.commenter-signin h3,
 li.comment-form h3 {
-	margin-bottom: 12px;
+	margin-bottom: 10px;
 	font-size: 24px;
 	line-height: 24px;
 }
@@ -4421,6 +4429,7 @@ textarea:not([data-autoresize]) {
 	border-radius: 24px;
 	font-family: "Franklin ITC Light", sans-serif;
 	font-size: 18px;
+	line-height: 1.25;
 	font-weight: normal;
 	font-style: normal;
 }
@@ -4461,6 +4470,22 @@ fieldset figure {
     padding: 1em;
     text-align: center;
     background: #eee;
+}
+
+fieldset legend {
+	line-height: 24px;
+	margin-bottom: 12px;
+	display: block;
+	width: 100%;
+}
+
+.ajaxauth_loader {
+	float: left;
+	margin-left: 12px;
+}
+
+input + button {
+	margin-left: 12px;
 }
 
 /* Ported from editables.css
@@ -4737,6 +4762,7 @@ img.commenter-avatar {
 	height: 40px;
 	margin-right: 9px;
 }
+
 /* Social login buttons
 -------------------------------------------------------------------------------*/
 #login-buttons {
@@ -4809,7 +4835,7 @@ img.commenter-avatar {
 
 /* Stuff I'm not sure where is used
 -------------------------------------------------------------------------------*/
-.article-comments #login-buttons,
+/*.article-comments #login-buttons,
 .article-comments form#sign-in-form,
 .article-comments form#register-form,
 .article-comments form#forgot_password_form {
@@ -4821,14 +4847,14 @@ img.commenter-avatar {
 	-o-transition: max-height 400ms ease-in;
 	-ms-transition: max-height 400ms ease-in;
 	transition: max-height 400ms ease-in;
-}
+}*/
 
-.article-comments #login-buttons.active,
+/*.article-comments #login-buttons.active,
 .article-comments form#sign-in-form.active,
 .article-comments form#forgot_password_form.active,
 .article-comments form#register-form.active {
 	max-height: 999px;
-}
+}*/
 
 form.simple-form.wide-form label .error-message {
 	font-size: .75em;
@@ -4850,3 +4876,111 @@ form.simple-form.wide-form label .error-message {
 	color: #fff;
 	font-weight: bold;
 }
+#overlay {
+	opacity: 0.2;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+	background: black;
+	background: -webkit-radial-gradient(rgba(127, 127, 127, 0.5), rgba(127, 127, 127, 0.5) 35%, rgba(0, 0, 0, 0.7));
+}
+.custom-modal {
+	position: absolute;
+	top: 25%;
+	left: 2%; 
+	margin: 0 auto;
+	background-color: white;
+	border-color: #ddd;
+	border-width: 1px;
+	border-style: solid;
+	width: 96%;
+	padding:30px;
+	border-radius:3px;
+	z-index: 2;	
+	opacity: 1;
+}
+.custom-modal .note {
+	margin-bottom: 0px;
+	margin-top: 12px;
+	color: #999;
+}
+.custom-modal hr {
+	padding: 12px 0 12px;
+}
+/* Ajax states*/
+.outer-ajax-container {
+	min-height: 257px;
+	position: relative;
+}
+.ajax-container {
+	background-color: #fff;
+}
+.ajax-container.forgot-password-form {
+	min-height: 257px;
+}
+.spinner {
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	margin-left: -12px;
+	width: 24px;
+	height: 24px;
+	background: #fff url(/components/assets/img/spinner_2.gif) center no-repeat;
+}
+.laurel-small {
+	display: block;
+	width: 100%;
+	height: 24px;
+	text-align: center;
+	margin-bottom: 8px;
+	background: #fff url(/components/assets/img/icon_navigation-laurel.svg) no-repeat center center;
+}
+.placeholder.loader {
+	min-height: 257px; 
+	height: 257px;
+	width: 100%;
+	background-color: white;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: -1;
+	opacity: 1;
+}
+.placeholder.loader .top-header {
+	margin-top: 3px;
+    margin-left: 73px;
+    background-color: #eee;
+    height: 18px;
+    width: 350px;
+    /*visibility: hidden;*/
+}
+.placeholder.loader .label {
+	margin-top: 18px;
+    margin-left: 0px;
+    background-color: #eee;
+    height: 18px;
+    width: 230px;
+    /*visibility: hidden;*/
+}
+.placeholder.loader .field {
+	margin-top: 5px;
+    margin-left: 0px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,.15);
+    height: 47px;
+    width: 100%;
+}
+.placeholder.loader .button {
+	margin-top: 12px;
+	width:101px;
+	height: 47px;
+}
+
+
+
+

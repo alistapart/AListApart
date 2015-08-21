@@ -5,6 +5,7 @@ b.setAttribute('data-platform', navigator.platform);
 
 $(document).ready(function(){
 
+
 	$('.global-nav').addClass('deluxe');
 
 	$('.go-to-nav').click (function(event){
@@ -532,6 +533,9 @@ var loadThoseComments = function(target) {
 			// }
 
 		})
+		.done(function() {
+			var fullDocHeight = $(document).height();
+		})
 		.error(function() {
 
 			commentsLoaded = false;
@@ -543,6 +547,8 @@ var loadThoseComments = function(target) {
 	};
 
 };
+
+
 
 $(window).setBreakpoints({
 // use only largest available vs use all available
@@ -843,3 +849,4 @@ $.fn.changeType = function(x, type) {
 	}
 
 }
+
