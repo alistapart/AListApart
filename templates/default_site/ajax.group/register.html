@@ -1,0 +1,116 @@
+<div class="ajax-container">
+
+	{exp:ajaxauth:register id="sign-in-form" name="register_form" class="register-form" return="ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}" post_process="alert_msg"}
+			
+		<fieldset>
+
+    	<legend class="center">Create an A List Apart account to discuss this article.</legend>
+		
+			<p>
+				<label for="username">Username: required</label>
+				<input 
+					type="text"
+					id="username" 
+					name="username"
+					aria-describedby="username_error"
+					data-validate="onblur"
+					data-type="any" 
+					data-isvalid="{if username}yes{/if}"
+					data-error="who are you?"
+					autofocus
+					required>
+			</p>
+
+			<p>
+				<label for="email">Email: required</label>
+				<input 
+					type="email"
+					id="email" 
+					name="email"
+					value="{email}" 
+					aria-describedby="email_error"
+					data-validate="onblur"
+					data-type="email"
+					data-isvalid="{if email}yes{/if}"
+					data-error="are you sure this is your email address?"
+					required>
+			</p>
+
+			<p class="password-field">
+				<label for="password">Password: required</label>
+				<input 
+					type="password"
+					id="password" 
+					name="password"
+					value=""
+					aria-describedby="password_error"
+					data-validate="onblur"
+					data-type="any"
+					data-isvalid=""
+					data-error="what's your new password?"
+					required>
+				<span class="note">Make it good.</span>
+			</p>
+
+			<p class="password-field">
+				<label for="password_confirm">Password Confirmation: required</label>
+				<input
+					type="password"
+					id="password_confirm"
+					name="password_confirm"
+					value=""
+					aria-describedby="password_confirm_error"
+					data-validate="onblur"
+					data-type="matching"
+					data-mustmatch="password"
+					data-isvalid="yes"
+					data-error="this needs to match the previous field."
+					required>
+				<span class="note">Make it the same.</span>
+			</p>
+
+			<p class="screen-reader">
+				<label for="honeepot">Don't put anything here</label>
+				<input
+					type="text"
+					id="honeepot"
+					name="honeepot"
+					data-tabmaster="false">
+			</p>
+			
+			<p>
+				<input 
+					type="submit" 
+					name="submit" 
+					value="Submit" 
+					class="button primary float-left">
+				<button id="cancel-registration" class="button secondary float-left">Cancel</button>
+			</p>
+			
+		</fieldset>
+
+		{loader}{/loader}
+
+	{/exp:ajaxauth:register}
+
+	<script type="text/javascript">
+	$('#cancel-registration').on('click', function(event){
+	 console.log('test');
+		event.preventDefault();
+		$('.ajax-container').hide();
+		$.get('/ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}', 
+        function(ret){
+            $('.ajax-container').replaceWith(ret);
+        });
+	});
+	$.getScript( "{site_url}/components/assets/js/ajax-functions.js" )
+	  .done(function( script, textStatus ) {
+	    console.log( textStatus );
+	  })
+	  .fail(function( jqxhr, settings, exception ) {
+	     console.log("Triggered ajaxError handler.");
+	});
+	</script>
+
+</div>
+
