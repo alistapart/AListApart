@@ -65,23 +65,44 @@
 	{/exp:ajaxauth:login}
 
 	<script type="text/javascript">
+
+	var statesIndex = {
+		commentsignin: {
+			path: '/ajax/comment-sign-in/{entry_id}/{segment_1}/{segment_2}'
+		},
+		register: {
+			path: '/ajax/register/{entry_id}/{segment_1}/{segment_2}',
+			clickId: document.getElementById('register-link')
+		},
+		forgotpassword: {
+			path: '/ajax/forgot-password/{entry_id}/{segment_1}/{segment_2}',
+			clickId: document.getElementById('forgot-link')
+		},
+		commentform: {
+			path: '/ajax/comment-form/{entry_id}/{segment_1}/{segment_2}'
+		}
+	}
+
 	$(document).ready(function(){
-		$('#register-link').on('click', function(event){
+
+		statesIndex.register.clickId.addEventListener('click', function(event){
 			event.preventDefault();
-			$('.ajax-container').hide();
-			$.get('/ajax/register/{entry_id}/{segment_1}/{segment_2}', 
+			ajaxContainer.addClass('none');
+			$.get(statesStart.register.path, 
 	        function(ret){
-	            $('.ajax-container').replaceWith(ret);
+	            ajaxContainer.replaceWith(ret);
 	        });
-		});
-		$('#forgot-link').on('click', function(event){
+		}, false);
+
+		statesIndex.forgotpassword.clickId.addEventListener('click', function(event){
 			event.preventDefault();
-			$('.ajax-container').hide();
-			$.get('/ajax/forgot-password/{entry_id}/{segment_1}/{segment_2}', 
+			ajaxContainer.addClass('none');
+			$.get(statesStart.forgotpassword.path, 
 	        function(ret){
-	            $('.ajax-container').replaceWith(ret);
+	            ajaxContainer.replaceWith(ret);
 	        });
-		});
+		}, false);
+
 	});
 	</script>
 

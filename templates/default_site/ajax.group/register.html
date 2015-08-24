@@ -94,21 +94,45 @@
 	{/exp:ajaxauth:register}
 
 	<script type="text/javascript">
-	$('#cancel-registration').on('click', function(event){
-	 console.log('test');
-		event.preventDefault();
-		$('.ajax-container').hide();
-		$.get('/ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}', 
-        function(ret){
-            $('.ajax-container').replaceWith(ret);
-        });
-	});
-	$.getScript( "{site_url}/components/assets/js/ajax-functions.js" )
-	  .done(function( script, textStatus ) {
-	    console.log( textStatus );
-	  })
-	  .fail(function( jqxhr, settings, exception ) {
-	     console.log("Triggered ajaxError handler.");
+
+	var states = {
+		commentsignin: {
+			path: '/ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}'
+		},
+		register: {
+			path: '/ajax/register/{segment_3}/{segment_4}/{segment_5}',
+			clickId: document.getElementById('register-link'),
+			backId: document.getElementById('cancel-registration'),
+		},
+		forgotpassword: {
+			path: '/ajax/forgot-password/{segment_3}/{segment_4}/{segment_5}',
+			clickId: document.getElementById('forgot-link'),
+			backId: document.getElementById('cancel-password-reset'),
+		},
+		commentform: {
+			path: '/ajax/comment-form/{segment_3}/{segment_4}/{segment_5}'
+		}
+	}
+
+	$(document).ready(function(){
+
+		states.register.backId.addEventListener('click', function(event){
+			event.preventDefault();
+			ajaxContainer.addClass('none');
+			$.get(states.commentsignin.path, 
+	        function(ret){
+	            ajaxContainer.replaceWith(ret);
+	        });
+		}, false);
+
+		$.getScript( "{site_url}/components/assets/js/ajax-functions.js" )
+		  .done(function( script, textStatus ) {
+		    console.log( textStatus );
+		  })
+		  .fail(function( jqxhr, settings, exception ) {
+		     console.log("Triggered ajaxError handler.");
+		});
+
 	});
 	</script>
 

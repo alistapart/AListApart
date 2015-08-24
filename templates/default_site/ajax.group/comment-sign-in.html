@@ -58,22 +58,46 @@
 	{/exp:ajaxauth:login}
 
 	<script type="text/javascript">
-		$('#register-link').on('click', function(event){
+
+	var states = {
+		commentsignin: {
+			path: '/ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}'
+		},
+		register: {
+			path: '/ajax/register/{segment_3}/{segment_4}/{segment_5}',
+			clickId: document.getElementById('register-link'),
+			backId: document.getElementById('cancel-registration'),
+		},
+		forgotpassword: {
+			path: '/ajax/forgot-password/{segment_3}/{segment_4}/{segment_5}',
+			clickId: document.getElementById('forgot-link'),
+			backId: document.getElementById('cancel-password-reset'),
+		},
+		commentform: {
+			path: '/ajax/comment-form/{segment_3}/{segment_4}/{segment_5}'
+		}
+	}
+
+	$(document).ready(function(){
+
+		states.register.clickId.addEventListener('click', function(event){
 			event.preventDefault();
-			$('.ajax-container').hide();
-			$.get('/ajax/register/{segment_3}/{segment_4}/{segment_5}', 
+			ajaxContainer.addClass('none');
+			$.get(states.register.path, 
 	        function(ret){
-	            $('.ajax-container').replaceWith(ret);
+	            ajaxContainer.replaceWith(ret);
 	        });
-		});
-		$('#forgot-link').on('click', function(event){
+		}, false);
+
+		states.forgotpassword.clickId.addEventListener('click', function(event){
 			event.preventDefault();
-			$('.ajax-container').hide();
-			$.get('/ajax/forgot-password/{segment_3}/{segment_4}/{segment_5}', 
+			ajaxContainer.addClass('none');
+			$.get(states.forgotpassword.path, 
 	        function(ret){
-	            $('.ajax-container').replaceWith(ret);
+	            ajaxContainer.replaceWith(ret);
 	        });
-		});
+		}, false);
+
 		$.getScript( "{site_url}/components/assets/js/ajax-functions.js" )
 		  .done(function( script, textStatus ) {
 		    console.log( textStatus );
@@ -81,6 +105,8 @@
 		  .fail(function( jqxhr, settings, exception ) {
 		     console.log("Triggered ajaxError handler.");
 		});
+
+	});
 	</script>
 
 </div>

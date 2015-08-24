@@ -39,6 +39,9 @@ function alert_msg(elementID, msg){
 	innerEl.css('margin-top', '-'+innerElHeight/2+'px');
 }	
 
+//history api functions
+var ajaxContainer = $('.ajax-container');
+
  
 
 
