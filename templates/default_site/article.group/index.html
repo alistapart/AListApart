@@ -91,10 +91,10 @@
 					<picture>
 						{if width > height}
 						<source srcset="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="1920" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
-						<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="" itemprop="image">
+						<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
 						{if:else}
 						<source srcset="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="696" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 960px)">
-						<img src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="" itemprop="image">
+						<img src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
 						{/if}
 					</picture>
 					{exp:stash:get name="issue-number"}
