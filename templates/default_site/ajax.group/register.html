@@ -97,43 +97,47 @@
 
 	var states = {
 		commentsignin: {
-			path: '/ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}'
+			path: '/ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}',
+			url: 'comment-sign-in'
 		},
 		register: {
 			path: '/ajax/register/{segment_3}/{segment_4}/{segment_5}',
-			clickId: document.getElementById('register-link'),
-			backId: document.getElementById('cancel-registration'),
+			url: 'register',
+			clickId: 'register-link',
+			backId: 'cancel-registration',
 		},
 		forgotpassword: {
 			path: '/ajax/forgot-password/{segment_3}/{segment_4}/{segment_5}',
-			clickId: document.getElementById('forgot-link'),
-			backId: document.getElementById('cancel-password-reset'),
+			url: 'forgot-password',
+			clickId: 'forgot-link',
+			backId: 'cancel-password-reset',
 		},
 		commentform: {
-			path: '/ajax/comment-form/{segment_3}/{segment_4}/{segment_5}'
+			path: '/ajax/comment-form/{segment_3}/{segment_4}/{segment_5}',
+			url: 'comment-form'
 		}
 	}
 
-	$(document).ready(function(){
+	document.getElementById(states.register.backId).addEventListener('click', function(event){
+		event.preventDefault();
+		//hide current template
+		hideTemplate();
+		//load new template
+		loadTemplate(states.commentsignin.path);
+		// Add item to the history log
+        history.pushState(states.commentsignin, document.title, '{site_url}/{segment_4}/{segment_5}/'+states.commentsignin.url);
+        // Store the initial content so we can revisit it later
+		//history.replaceState(states.commentsignin, document.title, document.location.href);
+	}, false);
 
-		states.register.backId.addEventListener('click', function(event){
-			event.preventDefault();
-			ajaxContainer.addClass('none');
-			$.get(states.commentsignin.path, 
-	        function(ret){
-	            ajaxContainer.replaceWith(ret);
-	        });
-		}, false);
-
-		$.getScript( "{site_url}/components/assets/js/ajax-functions.js" )
-		  .done(function( script, textStatus ) {
-		    console.log( textStatus );
-		  })
-		  .fail(function( jqxhr, settings, exception ) {
-		     console.log("Triggered ajaxError handler.");
-		});
-
+	$.getScript( "{site_url}/components/assets/js/ajax-functions.js" )
+	  .done(function( script, textStatus ) {
+	    console.log( textStatus );
+	  })
+	  .fail(function( jqxhr, settings, exception ) {
+	     console.log("Triggered ajaxError handler.");
 	});
+
 	</script>
 
 </div>

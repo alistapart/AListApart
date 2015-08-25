@@ -65,43 +65,60 @@
 	{/exp:ajaxauth:login}
 
 	<script type="text/javascript">
+	//===SOS===!!! not that paths in this template are different from the ajax loaded templates - the segments differ
+	var scrollPosition = $(window).scrollTop(); 
+	
 
-	var statesIndex = {
+	var states = {
 		commentsignin: {
-			path: '/ajax/comment-sign-in/{entry_id}/{segment_1}/{segment_2}'
+			path: '/ajax/comment-sign-in/{entry_id}/{segment_1}/{segment_2}',
+			url: 'comment-sign-in'
 		},
 		register: {
 			path: '/ajax/register/{entry_id}/{segment_1}/{segment_2}',
-			clickId: document.getElementById('register-link')
+			url: 'register',
+			clickId: 'register-link'
 		},
 		forgotpassword: {
 			path: '/ajax/forgot-password/{entry_id}/{segment_1}/{segment_2}',
-			clickId: document.getElementById('forgot-link')
+			url: 'forgot-password',
+			clickId: 'forgot-link'
 		},
 		commentform: {
-			path: '/ajax/comment-form/{entry_id}/{segment_1}/{segment_2}'
+			path: '/ajax/comment-form/{entry_id}/{segment_1}/{segment_2}',
+			url: 'comment-form'
 		}
 	}
 
 	$(document).ready(function(){
 
-		statesIndex.register.clickId.addEventListener('click', function(event){
+		document.getElementById(states.register.clickId).addEventListener('click', function(event){
 			event.preventDefault();
-			ajaxContainer.addClass('none');
-			$.get(statesStart.register.path, 
-	        function(ret){
-	            ajaxContainer.replaceWith(ret);
-	        });
+			//hide current template
+			hideTemplate();
+			//load new template
+			loadTemplate(states.register.path);
+			// Add item to the history log
+	        history.pushState(states.register, document.title, '{site_url}/{segment_1}/{segment_2}/'+states.register.url);
 		}, false);
 
-		statesIndex.forgotpassword.clickId.addEventListener('click', function(event){
+		document.getElementById(states.forgotpassword.clickId).addEventListener('click', function(event){
 			event.preventDefault();
-			ajaxContainer.addClass('none');
-			$.get(statesStart.forgotpassword.path, 
-	        function(ret){
-	            ajaxContainer.replaceWith(ret);
-	        });
+			//hide current template
+			hideTemplate();
+			//load new template
+			loadTemplate(states.forgotpassword.path);
+			// Add item to the history log
+	        history.pushState(states.forgotpassword, document.title, '{site_url}/{segment_1}/{segment_2}/'+states.forgotpassword.url);
 		}, false);
+		// Store the initial content so we can revisit it later
+		history.pushState(states.commentsignin, document.title, '{site_url}/{segment_1}/{segment_2}/'+states.commentsignin.url);
+		//only needs to be on original template - the back function
+		$(window).on("popstate", function(e) {
+			if (e.originalEvent.state !== null) {
+				loadTemplate(states.commentsignin.path);
+			}
+		});
 
 	});
 	</script>

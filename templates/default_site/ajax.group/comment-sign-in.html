@@ -61,52 +61,67 @@
 
 	var states = {
 		commentsignin: {
-			path: '/ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}'
+			path: '/ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}',
+			url: 'comment-sign-in'
 		},
 		register: {
 			path: '/ajax/register/{segment_3}/{segment_4}/{segment_5}',
-			clickId: document.getElementById('register-link'),
-			backId: document.getElementById('cancel-registration'),
+			url: 'register',
+			clickId: 'register-link',
+			backId: 'cancel-registration',
 		},
 		forgotpassword: {
 			path: '/ajax/forgot-password/{segment_3}/{segment_4}/{segment_5}',
-			clickId: document.getElementById('forgot-link'),
-			backId: document.getElementById('cancel-password-reset'),
+			url: 'forgot-password',
+			clickId: 'forgot-link',
+			backId: 'cancel-password-reset',
 		},
 		commentform: {
-			path: '/ajax/comment-form/{segment_3}/{segment_4}/{segment_5}'
+			path: '/ajax/comment-form/{segment_3}/{segment_4}/{segment_5}',
+			url: 'comment-form'
 		}
 	}
 
-	$(document).ready(function(){
-
-		states.register.clickId.addEventListener('click', function(event){
+	document.getElementById(states.register.clickId).addEventListener('click', function(event){
 			event.preventDefault();
-			ajaxContainer.addClass('none');
-			$.get(states.register.path, 
-	        function(ret){
-	            ajaxContainer.replaceWith(ret);
-	        });
+			//hide current template
+			hideTemplate();
+			//load new template
+			loadTemplate(states.register.path);
+			// Add item to the history log
+	        history.pushState(states.register, document.title, '?'+states.register.url);
+	        // Store the initial content so we can revisit it later
+			history.replaceState(states.register, document.title, document.location.href);
 		}, false);
-
-		states.forgotpassword.clickId.addEventListener('click', function(event){
+	
+	document.getElementById(states.forgotpassword.clickId).addEventListener('click', function(event){
 			event.preventDefault();
-			ajaxContainer.addClass('none');
-			$.get(states.forgotpassword.path, 
-	        function(ret){
-	            ajaxContainer.replaceWith(ret);
-	        });
+			//hide current template
+			hideTemplate();
+			//load new template
+			loadTemplate(states.forgotpassword.path);
+			// Add item to the history log
+	        history.pushState(states.forgotpassword, document.title, '?'+states.forgotpassword.url);
+	        // Store the initial content so we can revisit it later
+			//history.replaceState(states.forgotpassword, document.title, document.location.href);
 		}, false);
-
-		$.getScript( "{site_url}/components/assets/js/ajax-functions.js" )
-		  .done(function( script, textStatus ) {
-		    console.log( textStatus );
-		  })
-		  .fail(function( jqxhr, settings, exception ) {
-		     console.log("Triggered ajaxError handler.");
-		});
-
+	// Store the initial content so we can revisit it later
+	history.pushState(states.commentsignin, document.title, '?'+states.commentsignin.url);
+	
+	$(window).on("popstate", function(e) {
+		if (e.originalEvent.state !== null) {
+			loadTemplate(states.commentsignin.path);
+		}
 	});
+
+	$.getScript( "{site_url}/components/assets/js/ajax-functions.js" )
+	  .done(function( script, textStatus ) {
+	    console.log( textStatus );
+	  })
+	  .fail(function( jqxhr, settings, exception ) {
+	     console.log("Triggered ajaxError handler.");
+	});
+
 	</script>
 
 </div>

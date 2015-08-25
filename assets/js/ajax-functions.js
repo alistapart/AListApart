@@ -42,6 +42,54 @@ function alert_msg(elementID, msg){
 //history api functions
 var ajaxContainer = $('.ajax-container');
 
+loadTemplate = function(path) {
+	$.get(path, 
+	function(ret){
+	    ajaxContainer.replaceWith(ret);
+	});
+};  
+
+hideTemplate = function() {
+	if (ajaxContainer.classList) {
+  		ajaxContainer.classList.add('none');
+	} else {
+		ajaxContainer.className += ' ' + 'none';
+	}
+}  
+
+// $(window).on("popstate", function(e) {
+// 	if (e.originalEvent.state !== null) {
+// 		loadTemplate(location.href);
+// 	}
+// });
+
+// var registerLink = document.getElementById(states.register.clickId);
+// var forgotPasswordLink = document.getElementById(states.forgotpassword.clickId);
+
+// console.log(registerLink);
+// console.log(forgotPasswordLink);
+
+// registerLink.addEventListener('click', function(event){
+// 	event.preventDefault();
+// 	//hide current template
+// 	hideTemplate();
+// 	//load new template
+// 	loadTemplate(states.register.path);
+// 	// Add item to the history log
+//     history.pushState(states.register, document.title, '?'+states.register.url);
+// }, false);
+
+// document.getElementById(states.forgotpassword.clickId).addEventListener('click', function(event){
+// 		event.preventDefault();
+// 		//hide current template
+// 		hideTemplate();
+// 		//load new template
+// 		loadTemplate(states.forgotpassword.path);
+// 		// Add item to the history log
+//         history.pushState(states.forgotpassword, document.title, '?'+states.forgotpassword.url);
+// 	}, false);
+
+
  
 
 
