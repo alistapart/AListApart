@@ -42,6 +42,7 @@ function alert_msg(elementID, msg){
 //history api functions
 var ajaxContainer = $('.ajax-container');
 
+ 
 function loadTemplate(statePath, state, stateParams) {
 	//hide current template
 	hideTemplate();
@@ -49,7 +50,6 @@ function loadTemplate(statePath, state, stateParams) {
   	$.get(statePath + state + stateParams, function(ret){
 		ajaxContainer.replaceWith(ret);
 	}, false);
-	return false;
 }  
 
 function hideTemplate() {

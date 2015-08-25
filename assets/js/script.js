@@ -850,40 +850,41 @@ $.fn.changeType = function(x, type) {
 
 }
 
-//comment form actions
+$(document).ready(function(){
 
-document.getElementById(states.register.clickId).addEventListener('click', function(event){
+	document.getElementById(states.register.clickId).addEventListener('click', function(event){
 
-	event.preventDefault();
-	//hide current template and load new template
-	loadTemplate(states.path, states.register.url, states.entry_id + states.segments);
-	// Add item to the history log
-	history.pushState(states.register, document.title, states.site_url + states.segments + states.register.url);
+		event.preventDefault();
+		//hide current template and load new template
+		loadTemplate(states.path, states.register.url, states.entry_id + states.segments);
+		// Add item to the history log
+		history.pushState(states.register, document.title, states.site_url + states.segments + states.register.url);
 
-}, false);
+	}, false);
 
-document.getElementById(states.forgotpassword.clickId).addEventListener('click', function(event){
+	document.getElementById(states.forgotpassword.clickId).addEventListener('click', function(event){
 
-	event.preventDefault();
-	//hide current template and load new template
-	loadTemplate(states.path, states.forgotpassword.url, states.entry_id + states.segments);
-	// Add item to the history log
-	history.pushState(states.forgotpassword, document.title, states.site_url + states.segments + states.forgotpassword.url);
+		event.preventDefault();
+		//hide current template and load new template
+		loadTemplate(states.path, states.forgotpassword.url, states.entry_id + states.segments);
+		// Add item to the history log
+		history.pushState(states.forgotpassword, document.title, states.site_url + states.segments + states.forgotpassword.url);
 
-}, false);
+	}, false);
 
-// Store the content so we can revisit it later and reload the page
-if (window.location.href == states.site_url + states.segments + states.register.url) {
+	// Store the content so we can revisit it later and reload the page
+	if (window.location.href == states.site_url + states.segments + states.register.url) {
 
-	loadTemplate(states.site_url + states.path, states.register.url, states.entry_id + states.segments);
+		loadTemplate(states.site_url + states.path, states.register.url, states.entry_id + states.segments);
 
-} else if (window.location.href == states.site_url + states.segments + states.forgotpassword.url) {
+	} else if (window.location.href == states.site_url + states.segments + states.forgotpassword.url) {
 
-	loadTemplate(states.site_url + states.path, states.forgotpassword.url, states.entry_id + states.segments);
+		loadTemplate(states.site_url + states.path, states.forgotpassword.url, states.entry_id + states.segments);
 
 
-} else if (window.location.href == states.site_url + states.segments + states.commentform.url) {
+	} else if (window.location.href == states.site_url + states.segments + states.commentform.url) {
 
-	loadTemplate(states.site_url + states.path, states.commentform.url, states.entry_id + states.segments);
+		loadTemplate(states.site_url + states.path, states.commentform.url, states.entry_id + states.segments);
 
-} 
+	} 
+});
