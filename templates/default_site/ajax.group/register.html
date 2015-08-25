@@ -96,38 +96,36 @@
 	<script type="text/javascript">
 
 	var states = {
+		segments: '/{segment_4}/{segment_5}/',
+		site_url: '{site_url}',
+		path: /ajax/,
+		entry_id: '/{segment_3}',
 		commentsignin: {
-			path: '/ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}',
 			url: 'comment-sign-in'
 		},
 		register: {
-			path: '/ajax/register/{segment_3}/{segment_4}/{segment_5}',
 			url: 'register',
 			clickId: 'register-link',
-			backId: 'cancel-registration',
+			backId: 'cancel-registration'
 		},
 		forgotpassword: {
-			path: '/ajax/forgot-password/{segment_3}/{segment_4}/{segment_5}',
 			url: 'forgot-password',
 			clickId: 'forgot-link',
-			backId: 'cancel-password-reset',
+			backId: 'cancel-password-reset'
 		},
 		commentform: {
-			path: '/ajax/comment-form/{segment_3}/{segment_4}/{segment_5}',
 			url: 'comment-form'
 		}
 	}
 
 	document.getElementById(states.register.backId).addEventListener('click', function(event){
+
 		event.preventDefault();
-		//hide current template
-		hideTemplate();
-		//load new template
-		loadTemplate(states.commentsignin.path);
+		//hide current template and load new template
+		loadTemplate(states.path, states.commentsignin.url, states.entry_id + states.segments);
 		// Add item to the history log
-        history.pushState(states.commentsignin, document.title, '{site_url}/{segment_4}/{segment_5}/'+states.commentsignin.url);
-        // Store the initial content so we can revisit it later
-		//history.replaceState(states.commentsignin, document.title, document.location.href);
+		history.pushState(states.commentsignin, document.title, states.site_url + states.segments + states.commentsignin.url);
+
 	}, false);
 
 	$.getScript( "{site_url}/components/assets/js/ajax-functions.js" )

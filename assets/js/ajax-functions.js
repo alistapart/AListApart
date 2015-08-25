@@ -42,14 +42,16 @@ function alert_msg(elementID, msg){
 //history api functions
 var ajaxContainer = $('.ajax-container');
 
-loadTemplate = function(path) {
-	$.get(path, 
-	function(ret){
-	    ajaxContainer.replaceWith(ret);
+function loadTemplate(statePath, state, stateParams) {
+	//hide current template
+	hideTemplate();
+	//load new template
+  	$.get(statePath + state + stateParams, function(ret){
+		ajaxContainer.replaceWith(ret);
 	});
-};  
+}  
 
-hideTemplate = function() {
+function hideTemplate() {
 	if (ajaxContainer.classList) {
   		ajaxContainer.classList.add('none');
 	} else {
@@ -57,37 +59,48 @@ hideTemplate = function() {
 	}
 }  
 
-// $(window).on("popstate", function(e) {
-// 	if (e.originalEvent.state !== null) {
-// 		loadTemplate(location.href);
-// 	}
-// });
+document.getElementById(states.register.clickId).addEventListener('click', function(event){
 
-// var registerLink = document.getElementById(states.register.clickId);
-// var forgotPasswordLink = document.getElementById(states.forgotpassword.clickId);
+	event.preventDefault();
+	//hide current template and load new template
+	loadTemplate(states.path, states.register.url, states.entry_id + states.segments);
+	// Add item to the history log
+	history.pushState(states.register, document.title, states.site_url + states.segments + states.register.url);
 
-// console.log(registerLink);
-// console.log(forgotPasswordLink);
+}, false);
 
-// registerLink.addEventListener('click', function(event){
-// 	event.preventDefault();
-// 	//hide current template
-// 	hideTemplate();
-// 	//load new template
-// 	loadTemplate(states.register.path);
-// 	// Add item to the history log
-//     history.pushState(states.register, document.title, '?'+states.register.url);
-// }, false);
+document.getElementById(states.forgotpassword.clickId).addEventListener('click', function(event){
 
-// document.getElementById(states.forgotpassword.clickId).addEventListener('click', function(event){
-// 		event.preventDefault();
-// 		//hide current template
-// 		hideTemplate();
-// 		//load new template
-// 		loadTemplate(states.forgotpassword.path);
-// 		// Add item to the history log
-//         history.pushState(states.forgotpassword, document.title, '?'+states.forgotpassword.url);
-// 	}, false);
+	event.preventDefault();
+	//hide current template and load new template
+	loadTemplate(states.path, states.forgotpassword.url, states.entry_id + states.segments);
+	// Add item to the history log
+	history.pushState(states.forgotpassword, document.title, states.site_url + states.segments + states.forgotpassword.url);
+
+}, false);
+
+//popstate event (associated with the back function)
+$(window).on("popstate", function(e) {
+	if (e.originalEvent.state !== null) {
+		loadTemplate(states.site_url + states.path, states.commentsignin.url, states.entry_id + states.segments);
+	}
+});
+
+// Store the content so we can revisit it later and reload the page
+if (document.location.href == states.site_url + states.segments + states.register.url) {
+
+	loadTemplate(states.site_url + states.path, states.register.url, states.entry_id + states.segments);
+
+} else if (document.location.href == states.site_url + states.segments + states.forgotpassword.url) {
+
+	loadTemplate(states.site_url + states.path, states.forgotpassword.url, states.entry_id + states.segments);
+
+} else if (document.location.href == states.site_url + states.segments + states.commentform.url) {
+
+	loadTemplate(states.site_url + states.path, states.commentform.url, states.entry_id + states.segments);
+
+}
+
 
 
  

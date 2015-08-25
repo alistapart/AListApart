@@ -60,57 +60,54 @@
 	<script type="text/javascript">
 
 	var states = {
+		segments: '/{segment_4}/{segment_5}/',
+		site_url: '{site_url}',
+		path: /ajax/,
+		entry_id: '/{segment_3}',
 		commentsignin: {
-			path: '/ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}',
 			url: 'comment-sign-in'
 		},
 		register: {
-			path: '/ajax/register/{segment_3}/{segment_4}/{segment_5}',
 			url: 'register',
 			clickId: 'register-link',
-			backId: 'cancel-registration',
+			backId: 'cancel-registration'
 		},
 		forgotpassword: {
-			path: '/ajax/forgot-password/{segment_3}/{segment_4}/{segment_5}',
 			url: 'forgot-password',
 			clickId: 'forgot-link',
-			backId: 'cancel-password-reset',
+			backId: 'cancel-password-reset'
 		},
 		commentform: {
-			path: '/ajax/comment-form/{segment_3}/{segment_4}/{segment_5}',
 			url: 'comment-form'
 		}
 	}
 
 	document.getElementById(states.register.clickId).addEventListener('click', function(event){
-			event.preventDefault();
-			//hide current template
-			hideTemplate();
-			//load new template
-			loadTemplate(states.register.path);
-			// Add item to the history log
-	        history.pushState(states.register, document.title, '?'+states.register.url);
-	        // Store the initial content so we can revisit it later
-			history.replaceState(states.register, document.title, document.location.href);
-		}, false);
-	
+
+		event.preventDefault();
+		//hide current template and load new template
+		loadTemplate(states.path, states.register.url, states.entry_id + states.segments);
+		// Add item to the history log
+		history.pushState(states.register, document.title, '{site_url}' + states.segments + states.register.url);
+
+	}, false);
+
 	document.getElementById(states.forgotpassword.clickId).addEventListener('click', function(event){
-			event.preventDefault();
-			//hide current template
-			hideTemplate();
-			//load new template
-			loadTemplate(states.forgotpassword.path);
-			// Add item to the history log
-	        history.pushState(states.forgotpassword, document.title, '?'+states.forgotpassword.url);
-	        // Store the initial content so we can revisit it later
-			//history.replaceState(states.forgotpassword, document.title, document.location.href);
-		}, false);
-	// Store the initial content so we can revisit it later
-	history.pushState(states.commentsignin, document.title, '?'+states.commentsignin.url);
-	
+
+		event.preventDefault();
+		//hide current template and load new template
+		loadTemplate(states.path, states.forgotpassword.url, states.entry_id + states.segments);
+		// Add item to the history log
+		history.pushState(states.forgotpassword, document.title, '{site_url}' + states.segments + states.forgotpassword.url);
+
+	}, false);
+	// Add current template to the history log
+	history.pushState(states.commentsignin, document.title, '{site_url}' + states.segments + states.commentsignin.url);
+
+	//popstate event only needs to be on original template (associated with the back function)
 	$(window).on("popstate", function(e) {
 		if (e.originalEvent.state !== null) {
-			loadTemplate(states.commentsignin.path);
+			loadTemplate('{site_url}' + states.path, states.commentsignin.url, states.entry_id + states.segments);
 		}
 	});
 
