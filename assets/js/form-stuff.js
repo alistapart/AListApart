@@ -43,6 +43,16 @@ $(document).ready(function (){
 
 		});
 
+		$(this).find('input[data-isvalid], textarea[data-isvalid]').each(function() {
+
+			if ($(this).val() != '') {
+
+				$(this).parent().find('.error-message').remove();
+
+			}
+
+		});
+
 		$(this).find('label.invalid input, label.invalid textarea').first().focus();
 
 		if (errors != 0) return false;
