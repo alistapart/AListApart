@@ -128,12 +128,19 @@
 
 	}, false);
 
+	//popstate event (associated with the back function)
+	$(window).on("popstate", function(e) {
+		if (e.originalEvent.state === null) {
+			loadTemplate(states.path, states.commentsignin.url, states.entry_id + states.segments);
+		}
+	});
+
 	$.getScript( "{site_url}/components/assets/js/ajax-functions.js" )
 	  .done(function( script, textStatus ) {
 	    console.log( textStatus );
 	  })
 	  .fail(function( jqxhr, settings, exception ) {
-	     console.log("Triggered ajaxError handler.");
+	     console.log("Triggered ajaxError handler on register.");
 	});
 
 	</script>

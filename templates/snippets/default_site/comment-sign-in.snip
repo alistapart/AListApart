@@ -86,6 +86,13 @@
 			url: 'comment-form'
 		}
 	}
+		
+	//popstate event (associated with the back function)
+	$(window).on("popstate", function(e) {
+		if (e.originalEvent.state !== null) {
+			loadTemplate(states.site_url + states.path, states.commentsignin.url, states.entry_id + states.segments);
+		}
+	});
 
 	</script>
 

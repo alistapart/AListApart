@@ -39,13 +39,7 @@ $(document).ready(function (){
 
 				$(this).parent().addClass('invalid');
 
-			};
-
-		});
-
-		$(this).find('input[data-isvalid], textarea[data-isvalid]').each(function() {
-
-			if ($(this).val() != '') {
+			} else if  ($.trim($(this).val()) != '') {
 
 				$(this).parent().find('.error-message').remove();
 

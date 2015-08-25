@@ -48,7 +48,8 @@ function loadTemplate(statePath, state, stateParams) {
 	//load new template
   	$.get(statePath + state + stateParams, function(ret){
 		ajaxContainer.replaceWith(ret);
-	});
+	}, false);
+	return false;
 }  
 
 function hideTemplate() {
@@ -57,49 +58,16 @@ function hideTemplate() {
 	} else {
 		ajaxContainer.className += ' ' + 'none';
 	}
-}  
+} 
+ 
 
-document.getElementById(states.register.clickId).addEventListener('click', function(event){
 
-	event.preventDefault();
-	//hide current template and load new template
-	loadTemplate(states.path, states.register.url, states.entry_id + states.segments);
-	// Add item to the history log
-	history.pushState(states.register, document.title, states.site_url + states.segments + states.register.url);
 
-}, false);
 
-document.getElementById(states.forgotpassword.clickId).addEventListener('click', function(event){
+  
+ 
 
-	event.preventDefault();
-	//hide current template and load new template
-	loadTemplate(states.path, states.forgotpassword.url, states.entry_id + states.segments);
-	// Add item to the history log
-	history.pushState(states.forgotpassword, document.title, states.site_url + states.segments + states.forgotpassword.url);
 
-}, false);
-
-//popstate event (associated with the back function)
-$(window).on("popstate", function(e) {
-	if (e.originalEvent.state !== null) {
-		loadTemplate(states.site_url + states.path, states.commentsignin.url, states.entry_id + states.segments);
-	}
-});
-
-// Store the content so we can revisit it later and reload the page
-if (document.location.href == states.site_url + states.segments + states.register.url) {
-
-	loadTemplate(states.site_url + states.path, states.register.url, states.entry_id + states.segments);
-
-} else if (document.location.href == states.site_url + states.segments + states.forgotpassword.url) {
-
-	loadTemplate(states.site_url + states.path, states.forgotpassword.url, states.entry_id + states.segments);
-
-} else if (document.location.href == states.site_url + states.segments + states.commentform.url) {
-
-	loadTemplate(states.site_url + states.path, states.commentform.url, states.entry_id + states.segments);
-
-}
 
 
 
