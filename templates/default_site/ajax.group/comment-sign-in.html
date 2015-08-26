@@ -60,8 +60,14 @@
 	<script type="text/javascript">
 
 	var states = {
+		currenturl: '/comment-sign-in',
 		currentstate: 'commentsignin',
-		segments: '/{segment_4}/{segment_5}/',
+		{if segment_4 == 'blog'}
+		segments: '/{segment_4}/{segment_5}/{segment_6}',
+		{/if}
+		{if segment_4 != 'blog'}
+		segments: '/{segment_4}/{segment_5}',
+		{/if}
 		site_url: '{site_url}',
 		path: /ajax/,
 		entry_id: '/{segment_3}',
@@ -71,28 +77,16 @@
 		register: {
 			url: 'register',
 			clickId: 'register-link',
-			backId: 'cancel-registration'
 		},
 		forgotpassword: {
 			url: 'forgot-password',
 			clickId: 'forgot-link',
-			backId: 'cancel-password-reset'
 		},
 		commentform: {
 			url: 'comment-form'
 		}
 	}
 
-	// Add current template to the history log
-	history.pushState(states.commentsignin, document.title, states.site_url + states.segments + states.commentsignin.url);
-
-	//popstate event only needs to be on original template (associated with the back function)
-	$(window).on("popstate", function(e) {
-		if (e.originalEvent.state !== null) {
-			loadTemplate('{site_url}' + states.path, states.commentsignin.url, states.entry_id + states.segments);
-		}
-
-	});
 	</script>
 
 	<script src="{site_url}/components/assets/js/form-stuff.js"></script>

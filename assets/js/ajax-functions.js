@@ -84,16 +84,17 @@ $(document).ready(function(){
 		loadTemplate(
 			states.path, 
 			states.register.url, 
-			states.entry_id + states.segments
+			states.entry_id + states.segments + '/'
 		);
 		// Add item to the history log
 		history.pushState(
 			states.register, 
 			document.title + states.register.url, 
-			states.site_url + states.segments + states.register.url
+			states.site_url + states.segments + '/' + states.register.url
 		);
 
 	});
+
 
 	$('#' + states.forgotpassword.clickId).on('click', function(event){
 
@@ -102,54 +103,54 @@ $(document).ready(function(){
 		loadTemplate(
 			states.path, 
 			states.forgotpassword.url, 
-			states.entry_id + states.segments
+			states.entry_id + states.segments + '/'
 		);
 		// Add item to the history log
 		history.pushState(
 			states.forgotpassword, 
 			document.title + states.forgotpassword.url, 
-			states.site_url + states.segments + states.forgotpassword.url
+			states.site_url + states.segments + '/' + states.forgotpassword.url
 		);
 
 	});
 
-	$('#' + states.register.backId).on('click', function(event){
+	$('#back-to-comment-signin').on('click', function(event){
 
 		event.preventDefault();
 		//hide current template and load new template
 		loadTemplate(
 			states.path, 
 			states.commentsignin.url, 
-			states.entry_id + states.segments
+			states.entry_id + states.segments + '/'
 		);
 		// Add item to the history log
 		history.pushState(
 			states.commentsignin, 
 			document.title + states.commentsignin.url, 
-			states.site_url + states.segments + states.commentsignin.url
+			states.site_url + states.segments + '/' + states.commentsignin.url
 		);
 
 	});	
 
-	$('#' + states.forgotpassword.backId).on('click', function(event){
+});// end document ready
 
-		event.preventDefault();
-		//hide current template and load new template
-		loadTemplate(
-			states.path, 
-			states.commentsignin.url, 
-			states.entry_id + states.segments
-		);
-		// Add item to the history log
-		history.pushState(
-			states.commentsignin, 
-			document.title + states.commentsignin.url, 
-			states.site_url + states.segments + states.commentsignin.url
-		);
+window.onload = function () {
+    if (typeof history.pushState === "function") {
+        history.replaceState(
+			states.currentstate, 
+			states.currenturl + document.title, 
+			states.site_url + states.segments + states.currenturl
+		); 
+		window.addEventListener('popstate', function() {
+			loadTemplate(
+				states.site_url + states.path, 
+				states.commentsignin.url, 
+				states.entry_id + states.segments + '/'
+			);
+		});      
+    }
+}
 
-	});	
-
-});
 
  
 

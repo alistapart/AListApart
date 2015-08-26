@@ -84,7 +84,7 @@
 					name="submit" 
 					value="Submit" 
 					class="button primary float-left">
-				<button id="cancel-registration" class="button secondary float-left">Cancel</button>
+				<button id="back-to-comment-signin" class="button secondary float-left">Cancel</button>
 			</p>
 			
 		</fieldset>
@@ -96,8 +96,14 @@
 	<script type="text/javascript">
 
 	var states = {
+		currenturl: '/register',
 		currentstate: 'register',
-		segments: '/{segment_4}/{segment_5}/',
+		{if segment_4 == 'blog'}
+		segments: '/{segment_4}/{segment_5}/{segment_6}',
+		{/if}
+		{if segment_4 != 'blog'}
+		segments: '/{segment_4}/{segment_5}',
+		{/if}
 		site_url: '{site_url}',
 		path: /ajax/,
 		entry_id: '/{segment_3}',
@@ -107,24 +113,16 @@
 		register: {
 			url: 'register',
 			clickId: 'register-link',
-			backId: 'cancel-registration'
 		},
 		forgotpassword: {
 			url: 'forgot-password',
-			clickId: 'forgot-link',
-			backId: 'cancel-password-reset'
+			clickId: 'forgot-link'
 		},
 		commentform: {
 			url: 'comment-form'
 		}
 	}
 
-	//popstate event (associated with the back function)
-	$(window).on("popstate", function(e) {
-		if (e.originalEvent.state === null) {
-			loadTemplate(states.path, states.commentsignin.url, states.entry_id + states.segments);
-		}
-	});
 	</script>
 
 	<script src="{site_url}/components/assets/js/form-stuff.js"></script>

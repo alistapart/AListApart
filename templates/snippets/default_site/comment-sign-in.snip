@@ -67,11 +67,8 @@
 	<script type="text/javascript">
 
 	var states = {
+		currenturl: '',
 		currentstate: 'commentsignin',
-		site_url: '{site_url}',
-		segments: '/{segment_1}/{segment_2}/',
-		path: /ajax/,
-		entry_id: '/{entry_id}',
 		commentsignin: {
 			url: 'comment-sign-in'
 		},
@@ -85,16 +82,17 @@
 		},
 		commentform: {
 			url: 'comment-form'
-		}
+		},
+		site_url: '{site_url}',
+		{if segment_1 == 'blog'}
+		segments: '/{segment_1}/{segment_2}/{segment_3}', 
+		{/if}
+		{if segment_1 != 'blog'}
+		segments: '/{segment_1}/{segment_2}', 
+		{/if}
+		path: /ajax/,
+		entry_id: '/{entry_id}'
 	}
-
-	
-	//popstate event (associated with the back function)
-	$(window).on("popstate", function(e) {
-		if (e.originalEvent.state !== null) {
-			loadTemplate(states.site_url + states.path, states.commentsignin.url, states.entry_id + states.segments);
-		}
-	});
 
 	</script>
 
