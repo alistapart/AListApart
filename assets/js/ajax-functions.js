@@ -21,19 +21,19 @@ var AlaAuth = {
 
 	}, // end customModal	
 
-	appendModal: function(elementID, msg){
+	appendModal: function(element, msg){
 
 		AlaAuth.customModal();
-		elementID.append("<div class='custom-modal'>"+msg+"</div>");
+		element.append("<div class='custom-modal'>"+msg+"</div>");
 
 	} // end appendModal 
 
 }; //end AlaAuth object
 
-function alert_msg(elementID, msg){
+function alert_msg(element, msg){
 	AlaAuth.customModal();
 	$(".custom-modal").remove();
-	elementID.append("<div class='custom-modal'><div class='container'><i class='laurel-small'></i>"+msg+''+'<p class="note">X Press any key or click anywhere to close this</p>'+"</div></div>");
+	element.append("<div class='custom-modal'><div class='container'><i class='laurel-small'></i>"+msg+''+'<p class="note">X Press any key or click anywhere to close this</p>'+"</div></div>");
 	var innerEl = $(".custom-modal .container");
 	var innerElHeight = innerEl.outerHeight();
 	innerEl.css('margin-top', '-'+innerElHeight/2+'px');
@@ -60,7 +60,6 @@ function hideTemplate() {
 	}
 } 
 
-
 function EEValidateSync() {
 	$('.ajax-container form').on('submit', function() {
 		$(this).find(':required').each(function() {
@@ -74,8 +73,83 @@ function EEValidateSync() {
 	});
 }
 
-EEValidateSync();
+$(document).ready(function(){
 
+	EEValidateSync();
+
+	$('#' + states.register.clickId).on('click', function(event){
+
+		event.preventDefault();
+		//hide current template and load new template
+		loadTemplate(
+			states.path, 
+			states.register.url, 
+			states.entry_id + states.segments
+		);
+		// Add item to the history log
+		history.pushState(
+			states.register, 
+			document.title + states.register.url, 
+			states.site_url + states.segments + states.register.url
+		);
+
+	});
+
+	$('#' + states.forgotpassword.clickId).on('click', function(event){
+
+		event.preventDefault();
+		//hide current template and load new template
+		loadTemplate(
+			states.path, 
+			states.forgotpassword.url, 
+			states.entry_id + states.segments
+		);
+		// Add item to the history log
+		history.pushState(
+			states.forgotpassword, 
+			document.title + states.forgotpassword.url, 
+			states.site_url + states.segments + states.forgotpassword.url
+		);
+
+	});
+
+	$('#' + states.register.backId).on('click', function(event){
+
+		event.preventDefault();
+		//hide current template and load new template
+		loadTemplate(
+			states.path, 
+			states.commentsignin.url, 
+			states.entry_id + states.segments
+		);
+		// Add item to the history log
+		history.pushState(
+			states.commentsignin, 
+			document.title + states.commentsignin.url, 
+			states.site_url + states.segments + states.commentsignin.url
+		);
+
+	});	
+
+	$('#' + states.forgotpassword.backId).on('click', function(event){
+
+		event.preventDefault();
+		//hide current template and load new template
+		loadTemplate(
+			states.path, 
+			states.commentsignin.url, 
+			states.entry_id + states.segments
+		);
+		// Add item to the history log
+		history.pushState(
+			states.commentsignin, 
+			document.title + states.commentsignin.url, 
+			states.site_url + states.segments + states.commentsignin.url
+		);
+
+	});	
+
+});
 
  
 

@@ -60,6 +60,7 @@
 	<script type="text/javascript">
 
 	var states = {
+		currentstate: 'commentsignin',
 		segments: '/{segment_4}/{segment_5}/',
 		site_url: '{site_url}',
 		path: /ajax/,
@@ -82,43 +83,19 @@
 		}
 	}
 
-	document.getElementById(states.register.clickId).addEventListener('click', function(event){
-
-		event.preventDefault();
-		//hide current template and load new template
-		loadTemplate(states.path, states.register.url, states.entry_id + states.segments);
-		// Add item to the history log
-		history.pushState(states.register, document.title, '{site_url}' + states.segments + states.register.url);
-
-	}, false);
-
-	document.getElementById(states.forgotpassword.clickId).addEventListener('click', function(event){
-
-		event.preventDefault();
-		//hide current template and load new template
-		loadTemplate(states.path, states.forgotpassword.url, states.entry_id + states.segments);
-		// Add item to the history log
-		history.pushState(states.forgotpassword, document.title, '{site_url}' + states.segments + states.forgotpassword.url);
-
-	}, false);
 	// Add current template to the history log
-	history.pushState(states.commentsignin, document.title, '{site_url}' + states.segments + states.commentsignin.url);
+	history.pushState(states.commentsignin, document.title, states.site_url + states.segments + states.commentsignin.url);
 
 	//popstate event only needs to be on original template (associated with the back function)
 	$(window).on("popstate", function(e) {
 		if (e.originalEvent.state !== null) {
 			loadTemplate('{site_url}' + states.path, states.commentsignin.url, states.entry_id + states.segments);
 		}
-	});
 
-	$.getScript( "{site_url}/components/assets/js/ajax-functions.js" )
-	  .done(function( script, textStatus ) {
-	    console.log( textStatus );
-	  })
-	  .fail(function( jqxhr, settings, exception ) {
-	     console.log("Triggered ajaxError handler on comment signin.");
 	});
-
 	</script>
+
+	<script src="{site_url}/components/assets/js/form-stuff.js"></script>
+	<script src="{site_url}/components/assets/js/ajax-functions.js"></script>
 
 </div>
