@@ -22,8 +22,12 @@ a:focus {
 }
 
 /*.hide-from-no-js is used in specialty templates*/
-.no-js .hide-from-no-js {
+.no-js .hide-from-no-js, .none {
 	display: none;
+}
+
+.none {
+	display: none!important;
 }
 
 :target:not(#comments):not(.global-nav) {
@@ -4955,7 +4959,7 @@ form.simple-form.wide-form label .error-message {
 	width: 100%;
 	background-color: white;
 	position: absolute;
-	top:0;
+	top:-2px;
 	left:0;
 	z-index: -1;
 	opacity: 1;

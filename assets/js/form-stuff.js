@@ -39,12 +39,7 @@ $(document).ready(function (){
 
 				$(this).parent().addClass('invalid');
 
-			} else if  ($.trim($(this).val()) != '') {
-
-				$(this).parent().find('.error-message').remove();
-
-			}
-
+			};
 		});
 
 		$(this).find('label.invalid input, label.invalid textarea').first().focus();
