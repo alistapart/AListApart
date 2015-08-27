@@ -72,7 +72,7 @@ $(document).ready(function(){
 	if(typeof states != "undefined") {
 
 		var numberOfEntries = window.history.length;
-		//console.log(numberOfEntries);
+		console.log(numberOfEntries);
 
 		$(window).on("popstate", function(e) {
 			// In conjunction with history.pushState, when the user clicks the back/forward buttons a popstate event is triggered
