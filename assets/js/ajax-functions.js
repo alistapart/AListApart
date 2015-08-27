@@ -76,12 +76,11 @@ $(window).on('load', function() {
 	var numberOfEntries = window.history.length;
 	console.log(numberOfEntries + ' ' + window.history.state);
 
-	setTimeout(function() { //Using setTimeout is a necessary hack to avoid multiple file loads
+	setTimeout(function() { //Using setTimeout is a necessary hack to avoid multiple file loads in webkit
 	    $(window).on('popstate', function(e) {
 	    	// In conjunction with history.pushState, when the user clicks the back/forward buttons a popstate event is triggered
-			//after a popstate event has fired load a template
 			if (e.originalEvent.state !== null) { //check if there are entries modified in the history stack and get the previous or next one
-				console.log('e.originalEvent.state !== null');
+				console.log(e.originalEvent.state);
 				loadTemplate(
 					e.originalEvent.state
 				);
@@ -89,11 +88,10 @@ $(window).on('load', function() {
 		});
 	}, 0);
 
-	setTimeout(function() { //Using setTimeout is a necessary hack to avoid multiple file loads
+	setTimeout(function() { //Using setTimeout is a necessary hack to avoid multiple file loads in webkit
 	    $(window).on('popstate', function(e) {
 	    	// In conjunction with history.pushState, when the user clicks the back/forward buttons a popstate event is triggered
-			//after a popstate event has fired load a template
-			if (e.originalEvent.state === null) { // if there are no entries in the history stack go to signin
+			if (e.originalEvent.state === null) { // if there are no entries in the history stack load the signin template
 				loadTemplate(
 					states.commentsignin
 				);
@@ -116,7 +114,7 @@ $(document).ready(function(){
 			loadTemplate(
 				states.register
 			);
-			// Add an entry to the history stack (modifies the history stack for the same document)
+			// Add an entry to the history stack (history.pushState modifies the history stack for the same document)
 			history.pushState(
 				states.register, 
 				document.title + states.register, 
@@ -132,7 +130,7 @@ $(document).ready(function(){
 			loadTemplate( 
 				states.password				
 			);
-			// Add an entry to the history stack (modifies the history stack for the same document)
+			// Add an entry to the history stack
 			history.pushState(
 				states.password, 
 				document.title + states.password, 
@@ -148,7 +146,7 @@ $(document).ready(function(){
 			loadTemplate(
 				states.commentsignin
 			);
-			// Add an entry to the history stack (modifies the history stack for the same document)
+			// Add an entry to the history stack
 			history.pushState(
 				states.commentsignin, 
 				document.title + states.commentsignin, 

@@ -65,9 +65,6 @@ ajax loaded
 		register: 'register',
 		password: 'forgot-password',
 		commentform: 'comment-form',
-		//current page
-		currenturl: 'comment-sign-in',
-		currentstate: 'comment-sign-in',
 		//segments
 		{if segment_4 == 'blog'}
 		segments: '/{segment_4}/{segment_5}/{segment_6}',
@@ -82,14 +79,12 @@ ajax loaded
 	}
 
 	$.when(
-	    $.getScript( "{site_url}/components/assets/js/form-stuff.js" ),
-	    $.getScript( "{site_url}/components/assets/js/ajax-functions.js" ),
-	    $.Deferred(function( deferred ){
-		        $( deferred.resolve );
+	    $.getScript("{site_url}/components/assets/js/form-stuff.js"),
+	    $.getScript("{site_url}/components/assets/js/ajax-functions.js"),
+	    $.Deferred(function(deferred){
+		        $(deferred.resolve);
 	    })
-	).done(function(){
-	   console.log('the scripts are all loaded');
-	});
+	);
 
 	</script>
 
