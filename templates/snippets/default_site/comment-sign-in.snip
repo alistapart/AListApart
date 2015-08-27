@@ -8,7 +8,7 @@
  	<div class="ajax-container">
  	
 	{exp:ajaxauth:login id="login_form" name="login_form" class="sign-in-form" return="ajax/comment-form/{entry_id}/{segment_1}/{url_title}" post_process="alert_msg"}
-		
+
 		<fieldset>
 
 	    	<legend class="center">Sign in with your A List Apart account to discuss this article.</legend>
@@ -59,16 +59,12 @@
 				value="Submit">
 
 		</fieldset>
-{error_container}
+
 		{loader}{/loader}
 	
 	{/exp:ajaxauth:login}
 
 	<script type="text/javascript">
-
-	var stateObj = { 
-		foo: "bar" 
-	};
 
 	var states = {
 		//globals

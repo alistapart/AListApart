@@ -870,13 +870,13 @@ if(typeof states != "undefined") //check that the current page has a states obje
 		);
 		return;
 	}
-	if (window.location.href == states.site_url + states.segments + '/' + states.commentform) {
-		console.log('script.js call');
-		loadTemplate(
-			states.commentform
-		);
-		return;
-	}
+	// if (window.location.href == states.site_url + states.segments + '/' + states.commentform) {
+	// 	console.log('script.js call');
+	// 	loadTemplate(
+	// 		states.commentform
+	// 	);
+	// 	return;
+	// }
 }
 
 	 

@@ -74,8 +74,8 @@ function EEValidateSync() {
 $(window).on('load', function() {
 	//log window.history
 	var numberOfEntries = window.history.length;
+if (window.location.href != states.site_url + states.segments + '/' + states.commentform) {
 	console.log(numberOfEntries + ' ' + window.history.state);
-
 	setTimeout(function() { //Using setTimeout is a necessary hack to avoid multiple file loads in webkit
 	    $(window).on('popstate', function(e) {
 	    	// In conjunction with history.pushState, when the user clicks the back/forward buttons a popstate event is triggered
@@ -98,7 +98,7 @@ $(window).on('load', function() {
 			} 
 		});
 	}, 0);
-
+}
 }); //end window onload
 
 $(document).ready(function(){
