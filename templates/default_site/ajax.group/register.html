@@ -84,7 +84,7 @@
 					name="submit" 
 					value="Submit" 
 					class="button primary float-left">
-				<button id="back-to-comment-signin" class="button secondary float-left">Cancel</button>
+				<button id="cancel-registration" class="button secondary float-left">Cancel</button>
 			</p>
 			
 		</fieldset>
@@ -96,8 +96,15 @@
 	<script type="text/javascript">
 
 	var states = {
-		currenturl: '/register',
+		//globals
+		commentsignin: 'comment-sign-in',
+		register: 'register',
+		password: 'forgot-password',
+		commentform: 'comment-form',
+		//current page
+		currenturl: 'register',
 		currentstate: 'register',
+		//segments
 		{if segment_4 == 'blog'}
 		segments: '/{segment_4}/{segment_5}/{segment_6}',
 		{/if}
@@ -105,28 +112,21 @@
 		segments: '/{segment_4}/{segment_5}',
 		{/if}
 		site_url: '{site_url}',
-		path: /ajax/,
+		tmpl_path: /ajax/,
 		entry_id: '/{segment_3}',
-		commentsignin: {
-			url: 'comment-sign-in'
-		},
-		register: {
-			url: 'register',
-			clickId: 'register-link',
-		},
-		forgotpassword: {
-			url: 'forgot-password',
-			clickId: 'forgot-link'
-		},
-		commentform: {
-			url: 'comment-form'
-		}
 	}
 
-	</script>
+	$.when(
+	    $.getScript( "{site_url}/components/assets/js/form-stuff.js" ),
+	    $.getScript( "{site_url}/components/assets/js/ajax-functions.js" ),
+	    $.Deferred(function( deferred ){
+		        $( deferred.resolve );
+	    })
+	).done(function(){
+	   console.log('the scripts are all loaded');
+	});
 
-	<script src="{site_url}/components/assets/js/form-stuff.js"></script>
-	<script src="{site_url}/components/assets/js/ajax-functions.js"></script>
+	</script>
 
 </div>
 

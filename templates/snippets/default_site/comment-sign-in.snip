@@ -66,23 +66,20 @@
 
 	<script type="text/javascript">
 
+	var stateObj = { 
+		foo: "bar" 
+	};
+
 	var states = {
+		//globals
+		commentsignin: 'comment-sign-in',
+		register: 'register',
+		password: 'forgot-password',
+		commentform: 'comment-form',
+		//current page
 		currenturl: '',
 		currentstate: 'commentsignin',
-		commentsignin: {
-			url: 'comment-sign-in'
-		},
-		register: {
-			url: 'register',
-			clickId: 'register-link'
-		},
-		forgotpassword: {
-			url: 'forgot-password',
-			clickId: 'forgot-link'
-		},
-		commentform: {
-			url: 'comment-form'
-		},
+		//segments
 		site_url: '{site_url}',
 		{if segment_1 == 'blog'}
 		segments: '/{segment_1}/{segment_2}/{segment_3}', 
@@ -90,7 +87,7 @@
 		{if segment_1 != 'blog'}
 		segments: '/{segment_1}/{segment_2}', 
 		{/if}
-		path: /ajax/,
+		tmpl_path: /ajax/,
 		entry_id: '/{entry_id}'
 	}
 

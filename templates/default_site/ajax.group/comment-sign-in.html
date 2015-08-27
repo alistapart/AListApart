@@ -56,40 +56,41 @@
 		{loader}{/loader}
 
 	{/exp:ajaxauth:login}
-
+ajax loaded
 	<script type="text/javascript">
 
 	var states = {
-		currenturl: '/comment-sign-in',
-		currentstate: 'commentsignin',
+		//globals
+		commentsignin: 'comment-sign-in',
+		register: 'register',
+		password: 'forgot-password',
+		commentform: 'comment-form',
+		//current page
+		currenturl: 'comment-sign-in',
+		currentstate: 'comment-sign-in',
+		//segments
 		{if segment_4 == 'blog'}
 		segments: '/{segment_4}/{segment_5}/{segment_6}',
 		{/if}
 		{if segment_4 != 'blog'}
 		segments: '/{segment_4}/{segment_5}',
 		{/if}
-		site_url: '{site_url}',
-		path: /ajax/,
 		entry_id: '/{segment_3}',
-		commentsignin: {
-			url: 'comment-sign-in'
-		},
-		register: {
-			url: 'register',
-			clickId: 'register-link',
-		},
-		forgotpassword: {
-			url: 'forgot-password',
-			clickId: 'forgot-link',
-		},
-		commentform: {
-			url: 'comment-form'
-		}
+		site_url: '{site_url}',
+		tmpl_path: /ajax/,
+		
 	}
 
-	</script>
+	$.when(
+	    $.getScript( "{site_url}/components/assets/js/form-stuff.js" ),
+	    $.getScript( "{site_url}/components/assets/js/ajax-functions.js" ),
+	    $.Deferred(function( deferred ){
+		        $( deferred.resolve );
+	    })
+	).done(function(){
+	   console.log('the scripts are all loaded');
+	});
 
-	<script src="{site_url}/components/assets/js/form-stuff.js"></script>
-	<script src="{site_url}/components/assets/js/ajax-functions.js"></script>
+	</script>
 
 </div>

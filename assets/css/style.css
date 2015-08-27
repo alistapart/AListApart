@@ -4934,7 +4934,7 @@ form.simple-form.wide-form label .error-message {
 	background-color: #fff;
 }
 .ajax-container.forgot-password-form {
-	min-height: 257px;
+	min-height: 267px;
 }
 .spinner {
 	position: absolute;
@@ -4959,7 +4959,7 @@ form.simple-form.wide-form label .error-message {
 	width: 100%;
 	background-color: white;
 	position: absolute;
-	top:-2px;
+	top:0px;
 	left:0;
 	z-index: -1;
 	opacity: 1;

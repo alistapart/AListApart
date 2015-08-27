@@ -850,35 +850,34 @@ $.fn.changeType = function(x, type) {
 
 }
 
-//history api helper
+//history api helper - this outside the ajax-functions.js because we don't want it loading on each XMLHttpRequest call
 $(document).ready(function(){
 
-	
-	// Store the content so we can revisit it later and reload the page
-	if (window.location.href == states.site_url + states.segments + '/' + states.register.url) {
-		loadTemplate(
-			states.site_url + states.path, 
-			states.register.url, 
-			states.entry_id + states.segments
+if(typeof states != "undefined") //check that the current page has a states object
+{
+	// When the pages refreshes show the correct template
+	if (window.location.href == states.site_url + states.segments + '/' + states.register) {
+		console.log('script.js call');
+		loadTemplate( 
+			states.register
 		);
 		return;
 	}
-	if (window.location.href == states.site_url + states.segments + '/' + states.forgotpassword.url) {
+	if (window.location.href == states.site_url + states.segments + '/' + states.password) {
+		console.log('script.js call');
 		loadTemplate(
-			states.site_url + states.path, 
-			states.forgotpassword.url, 
-			states.entry_id + states.segments
+			states.password
 		);
 		return;
 	}
-	if (window.location.href == states.site_url + states.segments + '/' + states.commentform.url) {
+	if (window.location.href == states.site_url + states.segments + '/' + states.commentform) {
+		console.log('script.js call');
 		loadTemplate(
-			states.site_url + states.path, 
-			states.commentform.url, 
-			states.entry_id + states.segments
+			states.commentform
 		);
 		return;
 	}
+}
 
 	 
 });

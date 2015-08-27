@@ -43,22 +43,14 @@ function alert_msg(element, msg){
 var ajaxContainer = $('.ajax-container');
 
  
-function loadTemplate(statePath, state, stateParams) {
+function loadTemplate(state) {
 	//hide current template
-	hideTemplate();
+	ajaxContainer.addClass('none');
 	//load new template
-  	$.get(statePath + state + stateParams, function(ret){
+  	$.get(states.site_url + states.tmpl_path + state + states.entry_id + states.segments, function(ret){
 		ajaxContainer.replaceWith(ret);
 	}, false);
 }  
-
-function hideTemplate() {
-	if (ajaxContainer.classList) {
-  		ajaxContainer.classList.add('none');
-	} else {
-		ajaxContainer.className += ' ' + 'none';
-	}
-} 
 
 function EEValidateSync() {
 	$('.ajax-container form').on('submit', function() {
@@ -77,77 +69,82 @@ $(document).ready(function(){
 
 	EEValidateSync();
 
-	$('#' + states.register.clickId).on('click', function(event){
+	if(typeof states != "undefined") {
 
-		event.preventDefault();
-		//hide current template and load new template
-		loadTemplate(
-			states.path, 
-			states.register.url, 
-			states.entry_id + states.segments + '/'
-		);
-		// Add item to the history log
-		history.pushState(
-			states.register, 
-			document.title + states.register.url, 
-			states.site_url + states.segments + '/' + states.register.url
-		);
+		var numberOfEntries = window.history.length;
+		//console.log(numberOfEntries);
 
-	});
+		$(window).on("popstate", function(e) {
+			// In conjunction with history.pushState, when the user clicks the back/forward buttons a popstate event is triggered
+			//after a popstate event has fired load a template
+			if (e.originalEvent.state !== null) { //check if there are entries modified in the history stack and get the previous or next one
+				loadTemplate(
+					e.originalEvent.state
+				);
+				return false;
+			} else if (e.originalEvent.state === null) { // if there are no entries in the history stack go to signin
+				loadTemplate(
+					states.commentsignin
+				);
+				return false;
+			}
+		});
 
+		$('#register-link').on('click', function(event){
 
-	$('#' + states.forgotpassword.clickId).on('click', function(event){
+			event.preventDefault();
+			//hide current template and load new template
+			loadTemplate(
+				states.register
+			);
+			// Add an entry to the history stack (modifies the history stack for the same document)
+			history.pushState(
+				states.register, 
+				document.title + states.register, 
+				states.site_url + states.segments + '/' + states.register
+			);
 
-		event.preventDefault();
-		//hide current template and load new template
-		loadTemplate(
-			states.path, 
-			states.forgotpassword.url, 
-			states.entry_id + states.segments + '/'
-		);
-		// Add item to the history log
-		history.pushState(
-			states.forgotpassword, 
-			document.title + states.forgotpassword.url, 
-			states.site_url + states.segments + '/' + states.forgotpassword.url
-		);
+		});
 
-	});
+		$('#forgot-link').on('click', function(event){
 
-	$('#back-to-comment-signin').on('click', function(event){
+			event.preventDefault();
+			//hide current template and load new template
+			loadTemplate( 
+				states.password				
+			);
+			// Add an entry to the history stack (modifies the history stack for the same document)
+			history.pushState(
+				states.password, 
+				document.title + states.password, 
+				states.site_url + states.segments + '/' + states.password
+			);
 
-		event.preventDefault();
-		//hide current template and load new template
-		loadTemplate(
-			states.path, 
-			states.commentsignin.url, 
-			states.entry_id + states.segments + '/'
-		);
-		// Add item to the history log
-		history.pushState(
-			states.commentsignin, 
-			document.title + states.commentsignin.url, 
-			states.site_url + states.segments + '/' + states.commentsignin.url
-		);
+		});
 
-	});	
+		$('#cancel-registration, #cancel-password-reset').on('click', function(event){
+
+			event.preventDefault();
+			//hide current template and load new template
+			loadTemplate(
+				states.commentsignin
+			);
+			// Add an entry to the history stack (modifies the history stack for the same document)
+			history.pushState(
+				states.commentsignin, 
+				document.title + states.commentsignin, 
+				states.site_url + states.segments + '/' + states.commentsignin
+			);
+
+		});	
+
+	} //end typeof states check
 
 });// end document ready
 
 window.onload = function () {
     if (typeof history.pushState === "function") {
-        history.replaceState(
-			states.currentstate, 
-			states.currenturl + document.title, 
-			states.site_url + states.segments + states.currenturl
-		); 
-		window.addEventListener('popstate', function() {
-			loadTemplate(
-				states.site_url + states.path, 
-				states.commentsignin.url, 
-				states.entry_id + states.segments + '/'
-			);
-		});      
+		//remember to check for history api support    
     }
 }
 
