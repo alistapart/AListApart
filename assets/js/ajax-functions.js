@@ -65,30 +65,49 @@ function EEValidateSync() {
 	});
 }
 
+/*
+* Using setTimeout is a necessary hack because WebKit fires a popstate event on document load, so then we get multiple file loads
+* https://code.google.com/p/chromium/issues/detail?id=63040
+* https://bugs.webkit.org/process_bug.cgi
+*/
+//on window load
+$(window).on('load', function() {
+	//log window.history
+	var numberOfEntries = window.history.length;
+	console.log(numberOfEntries + ' ' + window.history.state);
+
+	setTimeout(function() { //Using setTimeout is a necessary hack to avoid multiple file loads
+	    $(window).on('popstate', function(e) {
+	    	// In conjunction with history.pushState, when the user clicks the back/forward buttons a popstate event is triggered
+			//after a popstate event has fired load a template
+			if (e.originalEvent.state !== null) { //check if there are entries modified in the history stack and get the previous or next one
+				console.log('e.originalEvent.state !== null');
+				loadTemplate(
+					e.originalEvent.state
+				);
+			} 
+		});
+	}, 0);
+
+	setTimeout(function() { //Using setTimeout is a necessary hack to avoid multiple file loads
+	    $(window).on('popstate', function(e) {
+	    	// In conjunction with history.pushState, when the user clicks the back/forward buttons a popstate event is triggered
+			//after a popstate event has fired load a template
+			if (e.originalEvent.state === null) { // if there are no entries in the history stack go to signin
+				loadTemplate(
+					states.commentsignin
+				);
+			} 
+		});
+	}, 0);
+
+}); //end window onload
+
 $(document).ready(function(){
 
 	EEValidateSync();
 
 	if(typeof states != "undefined") {
-
-		var numberOfEntries = window.history.length;
-		console.log(numberOfEntries);
-
-		$(window).on("popstate", function(e) {
-			// In conjunction with history.pushState, when the user clicks the back/forward buttons a popstate event is triggered
-			//after a popstate event has fired load a template
-			if (e.originalEvent.state !== null) { //check if there are entries modified in the history stack and get the previous or next one
-				loadTemplate(
-					e.originalEvent.state
-				);
-				return false;
-			} else if (e.originalEvent.state === null) { // if there are no entries in the history stack go to signin
-				loadTemplate(
-					states.commentsignin
-				);
-				return false;
-			}
-		});
 
 		$('#register-link').on('click', function(event){
 
