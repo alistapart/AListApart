@@ -11,12 +11,12 @@ var AlaAuth = {
 		$(document).on('keyup click', function(e){ //click anywhere to close the modal, or hit any key
 		    var container = $(".custom-modal");
 
-		    // if (!container.is(e.target) // if the target of the click isn't the container
-		    //     && container.has(e.target).length === 0) // nor a descendant of the container
-		    // {
+		    if (!container.is(e.target) // if the target of the click isn't the container
+		        && container.has(e.target).length === 0) // nor a descendant of the container
+		    {
 		        container.hide();
 		        //$("#overlay").height('0').hide();
-		    // }
+		    }
 		});
 
 	}, // end customModal	
@@ -30,19 +30,18 @@ var AlaAuth = {
 
 }; //end AlaAuth object
 
-function alert_msg(element, msg){
+function alert_msg(msg){
 	AlaAuth.customModal();
 	$(".custom-modal").remove();
-	element.append("<div class='custom-modal'><div class='container'><i class='laurel-small'></i>"+msg+''+'<p class="note">X Press any key or click anywhere to close this</p>'+"</div></div>");
+	$('.commenter-signin').append("<div class='custom-modal'><div class='container'><i class='laurel-small'></i>"+msg+''+'<p class="note">X Press any key or click anywhere to close this</p>'+"</div></div>");
 	var innerEl = $(".custom-modal .container");
 	var innerElHeight = innerEl.outerHeight();
 	innerEl.css('margin-top', '-'+innerElHeight/2+'px');
 }	
 
-//history api functions
+
 var ajaxContainer = $('.ajax-container');
 
- 
 function loadTemplate(state) {
 	//hide current template
 	ajaxContainer.addClass('none');
@@ -52,56 +51,45 @@ function loadTemplate(state) {
 	}, false);
 }  
 
-function EEValidateSync() {
-	$('.ajax-container form').on('submit', function() {
-		$(this).find(':required').each(function() {
-			if ($.trim($(this).val()) != '') {
-				$(this).parent().find('.error-message').addClass('none');
-			} else 
-				if ($.trim($(this).val()) == '') {
-					$(this).parent().find('.error-message').removeClass('none');
-				}	 
-		});
-	});
-}
-
+//history api functions
 /*
-* Using setTimeout is a necessary hack because WebKit fires a popstate event on document load, so then we get multiple file loads
+* Using setTimeout with popstate is a necessary hack because WebKit fires a popstate event on document load, so then we get multiple file loads
 * https://code.google.com/p/chromium/issues/detail?id=63040
 * https://bugs.webkit.org/process_bug.cgi
 */
 //on window load
 $(window).on('load', function() {
-	//log window.history
-	var numberOfEntries = window.history.length;
-if (window.location.href != states.site_url + states.segments + '/' + states.commentform) {
-	console.log(numberOfEntries + ' ' + window.history.state);
+
 	setTimeout(function() { //Using setTimeout is a necessary hack to avoid multiple file loads in webkit
 	    $(window).on('popstate', function(e) {
 	    	// In conjunction with history.pushState, when the user clicks the back/forward buttons a popstate event is triggered
 			if (e.originalEvent.state !== null) { //check if there are entries modified in the history stack and get the previous or next one
-				console.log(e.originalEvent.state);
+				console.log('state(!== null): ' + e.originalEvent.state);
 				loadTemplate(
 					e.originalEvent.state
 				);
 			} 
 		});
 	}, 0);
-
+ 
 	setTimeout(function() { //Using setTimeout is a necessary hack to avoid multiple file loads in webkit
 	    $(window).on('popstate', function(e) {
 	    	// In conjunction with history.pushState, when the user clicks the back/forward buttons a popstate event is triggered
 			if (e.originalEvent.state === null) { // if there are no entries in the history stack load the signin template
+				console.log('state(=== null): ' + e.originalEvent.state);
 				loadTemplate(
 					states.commentsignin
 				);
 			} 
 		});
 	}, 0);
-}
+
 }); //end window onload
 
 $(document).ready(function(){
+	//log window.history
+	var numberOfEntries = window.history.length;
+	//console.log(numberOfEntries + ' ' + window.history.state);
 
 	EEValidateSync();
 

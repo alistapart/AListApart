@@ -1,6 +1,6 @@
 <div class="ajax-container">
-
-	{exp:ajaxauth:login	id="login_form"	name="login_form" class="sign-in-form" return="ajax/comment-form/{segment_3}/{segment_4}/{segment_5}" post_process="alert_msg"}
+ajax loaded {segment_1}/{segment_2}/{segment_3}/{segment_4}/{segment_5}/{segment_6}
+	{exp:ajaxauth:login	id="login_form"	name="login_form" class="sign-in-form" return="ajax/comment-form/{segment_3}/{segment_4}/{segment_5}"}
 
 		<fieldset>
 
@@ -56,7 +56,7 @@
 		{loader}{/loader}
 
 	{/exp:ajaxauth:login}
-ajax loaded
+
 	<script type="text/javascript">
 
 	var states = {
@@ -72,6 +72,7 @@ ajax loaded
 		{if segment_4 != 'blog'}
 		segments: '/{segment_4}/{segment_5}',
 		{/if}
+
 		entry_id: '/{segment_3}',
 		site_url: '{site_url}',
 		tmpl_path: /ajax/,

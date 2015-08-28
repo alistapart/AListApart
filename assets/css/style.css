@@ -4404,6 +4404,7 @@ input:valid {
 }
 
 label {
+	position: relative;
 	display: block;
 	font-size: 14px;
 }
@@ -4544,6 +4545,11 @@ label + .note {
 	-ms-transform: translateX(-50%);
 	-o-transform: translateX(-50%);
 	transform: translateX(-50%);
+}
+
+.invalid #comment-content_error {
+	top: auto;
+	bottom: -12px;
 }
 
 .good-show {

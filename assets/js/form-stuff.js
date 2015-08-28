@@ -150,3 +150,18 @@ function inputValidation(which, requiredState, valType, value) {
 	};
 
 };
+//for the ajax loaded forms to play nicely with inline EE validation
+function EEValidateSync() {
+	$('.ajax-container form').on('submit', function() {
+		$(this).find(':required').each(function() {
+			if ($.trim($(this).val()) != '') {
+				$(this).parent().find('.error-message').addClass('none');
+			} else 
+				if ($.trim($(this).val()) == '') {
+					$(this).parent().find('.error-message').removeClass('none');
+				}	 
+		});
+	});
+}
+
+ 

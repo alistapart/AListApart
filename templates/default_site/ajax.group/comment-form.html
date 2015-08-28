@@ -2,18 +2,17 @@
 
 {if segment_4 == 'article'}
 
-	{exp:comment:form entry_id="{segment_3}" channel="articles" return="{site_url}/article/{segment_5}#comment-form" id="comment-form" class="comment-form"}
+	{exp:comment:form entry_id="{segment_3}" channel="articles" return="{site_url}/article/{segment_5}/comment-form" id="comment-form" class="comment-form"}
 
 {if:elseif segment_4 == 'blog'}
 
-	{exp:comment:form entry_id="{segment_3}" channel="blog" return="{site_url}/blog/post/{segment_5}#comment-form" id="comment-form" class="comment-form"}
+	{exp:comment:form entry_id="{segment_3}" channel="blog" return="{site_url}/blog/post/{segment_5}/comment-form" id="comment-form" class="comment-form"}
 
 {if:elseif segment_4 == 'column'}
 
-	{exp:comment:form entry_id="{segment_3}" channel="columns" return="{site_url}/column/{segment_5}#comment-form" id="comment-form" class="comment-form"}
+	{exp:comment:form entry_id="{segment_3}" channel="columns" return="{site_url}/column/{segment_5}/comment-form" id="comment-form" class="comment-form"}
 
 {/if}
-
 		<fieldset>
     		<legend class="center">Discuss this article. We reserve the right to delete flames, trolls, and wood nymphs. <br>(The commenting engine will accept simple HTML tags.)</legend>
 			<label id="comment-content">
@@ -40,15 +39,15 @@
  
 			{if segment_4 == 'article'}
 
-				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='article/{segment_5}#commenter-signin'}">log out</a>
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='article/{segment_5}/comment-sign-in'}">log out</a>
 
 			{if:elseif segment_4 == 'blog'}
 
-				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='blog/post/{segment_5}#commenter-signin'}">log out</a>
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='blog/post/{segment_5}/comment-sign-in'}">log out</a>
 
 			{if:elseif segment_4 == 'column'}
 
-				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='column/{segment_5}#commenter-signin'}">log out</a>
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='column/{segment_5}/comment-sign-in'}">log out</a>
 
 			{/if}
 		 
@@ -60,9 +59,11 @@
 
 {/exp:comment:form}
 
-<script type="text/javascript">
+	<script type="text/javascript">
 
 	var states = {
+		//template specific
+		currentstate: 'comment-form',
 		//globals
 		commentsignin: 'comment-sign-in',
 		register: 'register',
@@ -75,11 +76,19 @@
 		{if segment_4 != 'blog'}
 		segments: '/{segment_4}/{segment_5}',
 		{/if}
+
 		entry_id: '/{segment_3}',
 		site_url: '{site_url}',
 		tmpl_path: /ajax/,
 		
 	}
+
+	if(typeof states != "undefined") {
+	 	if (states.currentstate == 'comment-form') {
+	 		$('#login-buttons').addClass('none');
+	 	}	
+	}
+	
 
 	$.when(
 	    $.getScript("{site_url}/components/assets/js/form-stuff.js"),
@@ -92,3 +101,4 @@
 	</script>
 
 </div>
+

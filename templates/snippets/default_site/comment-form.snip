@@ -1,6 +1,6 @@
 <ol class="article-comments form">
 
-<li id="comment-form" class="comment-form {if comment_total == 0}no-comments{/if}">
+<li id="comment-form" class="comment-form commenter-signin {if comment_total == 0}no-comments{/if}">
 	{if allow_comments}
 	<h3><label form="comment-form" for="comment-content">Got Something to Say?</label></h3>
 
@@ -9,22 +9,22 @@
 
  	{if segment_1 == 'comments'}
 	<!--javascript probably turned off -->
-	{exp:comment:form channel="articles|blog|columns" return="{site_url}/comments/{url_title}#comment-form" id="comment-form" class="comment-form"}
+	{exp:comment:form channel="articles|blog|columns" return="{site_url}/comments/{url_title}" id="comment-form" class="comment-form"}
 
 	{if:else}
 
 		{if channel_short_name == 'articles'}
 
-			{exp:comment:form channel="articles" return="{site_url}/article/{url_title}#comment-form" id="comment-form" class="comment-form"}
+			{exp:comment:form channel="articles" return="{site_url}/article/{url_title}" id="comment-form" class="comment-form"}
 
 
 		{if:elseif channel_short_name == 'blog'}
 
-			{exp:comment:form channel="blog" return="{site_url}/blog/post/{url_title}#comment-form" id="comment-form" class="comment-form"}
+			{exp:comment:form channel="blog" return="{site_url}/blog/post/{url_title}" id="comment-form" class="comment-form"}
 
 		{if:elseif channel_short_name == 'columns'}
 
-			{exp:comment:form channel="columns" return="{site_url}/column/{url_title}#comment-form" id="comment-form" class="comment-form"}
+			{exp:comment:form channel="columns" return="{site_url}/column/{url_title}" id="comment-form" class="comment-form"}
 
 		{/if}
 
@@ -53,20 +53,20 @@
 
 		{if segment_1 == 'comments'}
 	 	<!--javascript probably turned off -->
-	 	<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='comments/{url_title}#commenter-signin'}">log out</a>
+	 	<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='comments/{url_title}'}">log out</a>
 
 		{if:else}
 			{if channel_short_name == 'articles'}
 
-				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='article/{url_title}#commenter-signin'}">log out</a>
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='article/{url_title}/comment-sign-in'}">log out</a>
 
 			{if:elseif channel_short_name == 'blog'}
 
-				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='blog/post/{url_title}#commenter-signin'}">log out</a>
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='blog/post/{url_title}/comment-sign-in'}">log out</a>
 
 			{if:elseif channel_short_name == 'columns'}
 
-				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='column/{url_title}#commenter-signin'}">log out</a>
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='column/{url_title}/comment-sign-in'}">log out</a>
 
 			{/if}
 		{/if}
@@ -78,6 +78,32 @@
 		</div>
 
 	{/exp:comment:form}
+
+		<script type="text/javascript">
+
+	var states = {
+		//template specific
+		currentstate: 'comment-form',
+		//globals
+		commentsignin: 'comment-sign-in',
+		register: 'register',
+		password: 'forgot-password',
+		commentform: 'comment-form',
+		//segments
+		{if segment_4 == 'blog'}
+		segments: '/{segment_4}/{segment_5}/{segment_6}',
+		{/if}
+		{if segment_4 != 'blog'}
+		segments: '/{segment_4}/{segment_5}',
+		{/if}
+
+		entry_id: '/{segment_3}',
+		site_url: '{site_url}',
+		tmpl_path: /ajax/,
+		
+	}
+
+	</script>
 
 </li>
 </ol>
