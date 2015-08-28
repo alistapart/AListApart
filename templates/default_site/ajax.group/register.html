@@ -1,5 +1,8 @@
 <div class="ajax-container">
-
+{if logged_in}<!-- to account for hitting the back button after logging in-->
+	<p>You are already logged in. {if segment_4 == 'article'}<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='article/{segment_5}/comment-sign-in'}">Log out</a>{if:elseif segment_4 == 'blog'}<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='blog/post/{segment_5}/comment-sign-in'}">Log out</a>{if:elseif segment_4 == 'column'}<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='column/{segment_5}/comment-sign-in'}">Log out</a>{/if} or refresh this page.</p>
+{/if}
+{if logged_out}
 	{exp:ajaxauth:register id="sign-in-form" name="register_form" class="register-form" return="ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}" post_process="alert_msg"}
 			
 		<fieldset>
@@ -121,6 +124,6 @@
 	    })
 	);
 	</script>
-
+{/if}
 </div>
 
