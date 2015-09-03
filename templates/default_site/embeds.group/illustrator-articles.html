@@ -9,17 +9,20 @@
 				<ul class="entry-list">
 				{/if}
 					<li>
-						<h3 class="entry-title"><a href="/{if parents:channel_short_name == "columns"}column{if:elseif parents:channel_short_name == "blog"}blog/post{if:elseif parents:channel_short_name == "articles"}article{if:else}event{/if}/{parents:url_title}">{parents:title}</a></h3>
-						<p class="meta">
-						{if parents:channel_short_name == "articles"}
-						<time class="pubdate updated" datetime="{parents:entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{parents:entry_date format="%F %d, %Y"}</time></p>
-						{if:elseif parents:channel_short_name == "blog" || parents:channel_short_name == "events"}
-						<time class="pubdate updated" datetime="{parents:entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
-						</p>
-						{if:else}
-						<time class="pubdate updated" datetime="{parents:entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{parents:entry_date format="%F %d, %Y"}</time>
-						{/if}
-						</p>
+						{parents:article_illustration}
+						<figure class="illo-thumb">
+							<picture>
+								{if width > height}
+								<source srcset="{exp:ce_img:pair src="{url}" width="563" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="1126" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
+								<img src="{exp:ce_img:pair src="{url}" width="563" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
+								{/if}
+							</picture>
+							<figcaption style="font-family: sans-serif;
+font-size: 14px;"><a href=""><b>{parents:title}</b></a>, {entry_date format="%F %d, %Y"}</figcaption>
+						</figure>
+						{/parents:article_illustration}
+
+
 					</li>
 
 				{if parents:count == parents:total_results}</ul>{/if}
