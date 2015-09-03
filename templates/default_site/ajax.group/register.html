@@ -1,9 +1,7 @@
 <div class="ajax-container">
-{if logged_in}<!-- to account for hitting the back button after logging in-->
-	<p>You are already logged in. {if segment_4 == 'article'}<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='article/{segment_5}/comment-sign-in'}">Log out</a>{if:elseif segment_4 == 'blog'}<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='blog/post/{segment_5}/comment-sign-in'}">Log out</a>{if:elseif segment_4 == 'column'}<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='column/{segment_5}/comment-sign-in'}">Log out</a>{/if} or refresh this page.</p>
-{/if}
 {if logged_out}
-	{exp:ajaxauth:register id="sign-in-form" name="register_form" class="register-form" return="ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}" post_process="alert_msg"}
+
+	{exp:ajaxauth:register id="sign-in-form" name="register_form" class="register-form" return="ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}" post_process="AlaAuth.alertMsg"}
 			
 		<fieldset>
 
@@ -81,24 +79,34 @@
 					data-tabmaster="false">
 			</p>
 			
-			<p>
+			<p id="comment-submit-holder">
 				<input 
 					type="submit" 
 					name="submit" 
 					value="Submit" 
-					class="button primary float-left">
-				<button id="cancel-registration" class="button secondary float-left">Cancel</button>
+					class="submit button primary float-left">
+				<button id="comment-sign-in" class="button secondary float-left history-nav">Cancel</button>
 			</p>
 			
 		</fieldset>
 
-		{loader}{/loader}
-
 	{/exp:ajaxauth:register}
 
+{/if}
+
 	<script type="text/javascript">
+	
+	$.when(
+	    $.getScript("{site_url}/components/assets/js/form-stuff.js"),
+	    $.getScript("{site_url}/components/assets/js/ajax-functions.js"),
+	    $.Deferred(function(deferred){
+		        $(deferred.resolve);
+	    })
+	);
 
 	var states = {
+		//template specific
+		currentstate: 'register',
 		//globals
 		commentsignin: 'comment-sign-in',
 		register: 'register',
@@ -113,17 +121,21 @@
 		{/if}
 		site_url: '{site_url}',
 		tmpl_path: /ajax/,
-		entry_id: '/{segment_3}',
+		entry_id: '/{segment_3}'
 	}
 
-	$.when(
-	    $.getScript("{site_url}/components/assets/js/form-stuff.js"),
-	    $.getScript("{site_url}/components/assets/js/ajax-functions.js"),
-	    $.Deferred(function(deferred){
-		        $(deferred.resolve);
-	    })
-	);
 	</script>
+
+{if logged_in}<!-- account for hitting the back button after the comment-form -->
+
+	<script type="text/javascript">
+
+	AlaAuth.loadTemplate (
+		states.commentform
+	);
+	
+	</script>
+
 {/if}
 </div>
-
+ 

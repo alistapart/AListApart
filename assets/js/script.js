@@ -853,28 +853,26 @@ $.fn.changeType = function(x, type) {
 //history api helper - this outside the ajax-functions.js because we don't want it loading on each XMLHttpRequest call
 $(document).ready(function(){
 
-if(typeof states != "undefined") //check that the current page has a states object
-{
-	// When the pages refreshes show the correct template
-	if (window.location.href == states.site_url + states.segments + '/' + states.register) {
-		console.log('script.js call');
-		loadTemplate( 
-			states.register
-		);
-		return;
-	}
-	if (window.location.href == states.site_url + states.segments + '/' + states.password) {
-		console.log('script.js call');
-		loadTemplate(
-			states.password
-		);
-		return;
-	}
+	if(typeof states != "undefined") //check that the current page has a states object
+	{
+		// When the pages refreshes show the correct template
+		if (window.location.href == states.site_url + states.segments + '/' + states.register) {
+			console.log('script.js call');
+			AlaAuth.loadTemplate( 
+				states.register
+			);
+			return;
+		}
+		if (window.location.href == states.site_url + states.segments + '/' + states.password) {
+			console.log('script.js call');
+			AlaAuth.loadTemplate(
+				states.password
+			);
+			return;
+		}
 
-	
+	}//end states check
 
-
-}//end states check
 });
 
 

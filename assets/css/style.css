@@ -4450,6 +4450,20 @@ textarea:not([data-autoresize]) {
 	color: #222;
 }
 
+/* comment sign-in submit specific -- spinner */
+#comment-submit-holder {
+	position: relative;
+	float: left;
+}
+
+.js-spinner {
+    margin-left: 20px;
+}
+
+.extended {
+	text-align: left;
+}
+
 .main-content .form-heading {
 	margin-bottom: 12px;
 	font-family: "Franklin ITC Light", sans-serif;

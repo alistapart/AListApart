@@ -17,7 +17,6 @@
 
 			{exp:comment:form channel="articles" return="{site_url}/article/{url_title}" id="comment-form" class="comment-form"}
 
-
 		{if:elseif channel_short_name == 'blog'}
 
 			{exp:comment:form channel="blog" return="{site_url}/blog/post/{url_title}" id="comment-form" class="comment-form"}
@@ -73,35 +72,37 @@
 
 		</p>
 		
-		<input id="comment-submit" data-tabto="edit-profile-link" type="submit" value="Submit" class="button primary" />
+		<p id="comment-submit-holder">
+			<input id="comment-submit" data-tabto="edit-profile-link" type="submit" value="Submit" class="button primary">
+		</p>
 
 		</div>
 
 	{/exp:comment:form}
 
+		<script src="{site_url}/components/assets/js/ajax-functions.js"></script>
+
 		<script type="text/javascript">
 
-	var states = {
-		//template specific
-		currentstate: 'comment-form',
-		//globals
-		commentsignin: 'comment-sign-in',
-		register: 'register',
-		password: 'forgot-password',
-		commentform: 'comment-form',
-		//segments
-		{if segment_4 == 'blog'}
-		segments: '/{segment_4}/{segment_5}/{segment_6}',
-		{/if}
-		{if segment_4 != 'blog'}
-		segments: '/{segment_4}/{segment_5}',
-		{/if}
-
-		entry_id: '/{segment_3}',
-		site_url: '{site_url}',
-		tmpl_path: /ajax/,
-		
-	}
+		var states = {
+			//template specific
+			currentstate: 'comment-form',
+			//globals
+			commentsignin: 'comment-sign-in',
+			register: 'register',
+			password: 'forgot-password',
+			commentform: 'comment-form',
+			//segments
+			site_url: '{site_url}',
+			{if segment_1 == 'blog'}
+			segments: '/{segment_1}/{segment_2}/{segment_3}', 
+			{/if}
+			{if segment_1 != 'blog'}
+			segments: '/{segment_1}/{segment_2}', 
+			{/if}
+			tmpl_path: /ajax/,
+			entry_id: '/{entry_id}'		
+		}
 
 	</script>
 

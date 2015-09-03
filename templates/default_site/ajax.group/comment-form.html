@@ -6,7 +6,7 @@
 
 {if:elseif segment_4 == 'blog'}
 
-	{exp:comment:form entry_id="{segment_3}" channel="blog" return="{site_url}/blog/post/{segment_5}/comment-form" id="comment-form" class="comment-form"}
+	{exp:comment:form entry_id="{segment_3}" channel="blog" return="{site_url}/blog/post/{segment_6}/comment-form" id="comment-form" class="comment-form"}
 
 {if:elseif segment_4 == 'column'}
 
@@ -43,7 +43,7 @@
 
 			{if:elseif segment_4 == 'blog'}
 
-				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='blog/post/{segment_5}/comment-sign-in'}">log out</a>
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='blog/post/{segment_6}/comment-sign-in'}">log out</a>
 
 			{if:elseif segment_4 == 'column'}
 
@@ -53,13 +53,23 @@
 		 
 		</p>
 		
-		<input id="comment-submit" data-tabto="edit-profile-link" type="submit" value="Submit" class="button primary" />
+		<p id="comment-submit-holder">
+			<input id="comment-submit" data-tabto="edit-profile-link" type="submit" value="Submit" class="submit button primary">
+		</p>
 
 		</div>
 
 {/exp:comment:form}
 
 	<script type="text/javascript">
+
+	$.when(
+	    $.getScript("{site_url}/components/assets/js/form-stuff.js"),
+	    $.getScript("{site_url}/components/assets/js/ajax-functions.js"),
+	    $.Deferred(function(deferred){
+		        $(deferred.resolve);
+	    })
+	);
 
 	var states = {
 		//template specific
@@ -76,27 +86,10 @@
 		{if segment_4 != 'blog'}
 		segments: '/{segment_4}/{segment_5}',
 		{/if}
-
-		entry_id: '/{segment_3}',
 		site_url: '{site_url}',
 		tmpl_path: /ajax/,
-		
+		entry_id: '/{segment_3}'
 	}
-
-	if(typeof states != "undefined") {
-	 	if (states.currentstate == 'comment-form') {
-	 		$('#login-buttons').addClass('none');
-	 	}	
-	}
-	
-
-	$.when(
-	    $.getScript("{site_url}/components/assets/js/form-stuff.js"),
-	    $.getScript("{site_url}/components/assets/js/ajax-functions.js"),
-	    $.Deferred(function(deferred){
-		        $(deferred.resolve);
-	    })
-	);
 
 	</script>
 
