@@ -4444,6 +4444,10 @@ textarea:not([data-autoresize]) {
 	color: #fff;
 }
 
+.button.primary.inactive {
+	opacity: 0.4;
+}
+
 .button.secondary {
 	background: #fff;
 	border: 1px solid #ccc;
@@ -4457,11 +4461,7 @@ textarea:not([data-autoresize]) {
 }
 
 .js-spinner {
-    margin-left: 20px;
-}
 
-.extended {
-	text-align: left;
 }
 
 .main-content .form-heading {
@@ -4956,7 +4956,7 @@ form.simple-form.wide-form label .error-message {
 .ajax-container.forgot-password-form {
 	min-height: 267px;
 }
-.spinner {
+/*.spinner {
 	position: absolute;
 	top: 25%;
 	left: 50%;
@@ -4964,7 +4964,7 @@ form.simple-form.wide-form label .error-message {
 	width: 24px;
 	height: 24px;
 	background: #fff url(/components/assets/img/spinner_2.gif) center no-repeat;
-}
+}*/
 .laurel-small {
 	display: block;
 	width: 100%;

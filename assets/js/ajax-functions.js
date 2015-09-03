@@ -11,7 +11,7 @@ function supports_history_api() {
 var AlaAuth = {
 
 	alertMsg: function(msg){ 
-		// create and append a simple modal for form success / error msgs.
+		//create and append a simple modal for form success / error msgs.
 		$('.commenter-signin').append(
 			"<div class='custom-modal'><div class='container'><i class='laurel-small'></i>" + msg + '<p class="note">X Press any key or click anywhere to close this</p>' + "</div></div>"
 		);
@@ -52,24 +52,17 @@ $(document).ready(function(){
 	//this is a function in form.js that mutually excludes EE server validation and js validation
 	EEValidateSync();
 
-	//get the form x + y coordinates
-	// getFormPosition();
-
 	//check for history.api support
 	if (!supports_history_api()) { return; }
 	
 	//check that we're on an entry page and the states object exists
 	if(typeof states != "undefined") { 
 
-		//when the an entry page loads, use replaceState to apply a state to the current document, so event.state is never null
-		if (states.currentstate == 'commentsignin-index') {
-			//apply a state: replace the current document's state and url
-			history.replaceState(
-				states.commentsignin, 
-				'on ' + states.commentsignin, 
-				states.site_url + states.segments //no need to add the comment-sign-in url to each entry if logged out
-			);
-		}
+		/*
+		* when the document loads and while the user is signed in, 
+		* use replaceState to apply a state to the current document, 
+		* so event.state is never null, and the use gets to see the comment form
+		*/
 		if (states.currentstate == 'comment-form') {
 			//hide social sign-in btns
 			$('#login-buttons').addClass('none');
@@ -123,23 +116,24 @@ $(document).ready(function(){
 	  , zIndex: 2e9           // Use a high z-index by default
 	  , className: 'js-spinner none'  // CSS class to assign to the element
 	  , top: '50%'            // center vertically
-	  , left: '100%'           // center horizontally
+	  , left: '50%'           // center horizontally
 	  , shadow: false         // Whether to render a shadow
 	  , hwaccel: false        // Whether to use hardware acceleration (might be buggy)
 	  , position: 'absolute'  // Element positioning
 	};
 	var target = document.getElementById('comment-submit-holder');
 	var spinner = new Spinner(opts).spin(target);
-	//animate submit button
-
-	spinnerStart = function(){ 
+	spinnerStart = function(){
 		$('.js-spinner').removeClass('none');
+		$('#comment-submit-holder input').addClass('inactive');
 	}
 	spinnerStop = function(){ 
 		$('.js-spinner').addClass('none');
+		$('#comment-submit-holder input').removeClass('inactive');
 	}
 
 });// end document ready
+
 
 //handle the popstate event
 $(window).on('load', function() {
@@ -149,8 +143,13 @@ $(window).on('load', function() {
 	setTimeout(function() { 
 	    $(window).on('popstate', function(e) {
 	    	//check if there are modified entries in the history stack
+	    	if (e.originalEvent.state === null) { 
+				//load the comment sign in form
+				AlaAuth.loadTemplate(
+					states.commentsignin
+				);
+			} 
 			if (e.originalEvent.state !== null) { 
-				//console.log('state(!== null): ' + e.originalEvent.state);
 				//load the right content
 				AlaAuth.loadTemplate(
 					e.originalEvent.state

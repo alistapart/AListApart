@@ -861,14 +861,24 @@ $(document).ready(function(){
 			AlaAuth.loadTemplate( 
 				states.register
 			);
-			return;
+			history.replaceState(
+				states.register, 
+				'on ' + states.register, 
+				states.site_url + states.segments + '/' + states.register
+			);
+		 
 		}
 		if (window.location.href == states.site_url + states.segments + '/' + states.password) {
 			console.log('script.js call');
 			AlaAuth.loadTemplate(
 				states.password
 			);
-			return;
+			history.replaceState(
+				states.password, 
+				'on ' + states.password, 
+				states.site_url + states.segments + '/' + states.password 
+			);
+			 
 		}
 
 	}//end states check
