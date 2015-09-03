@@ -1,0 +1,29 @@
+
+				{exp:channel:entries channel="illustrators" status="open" orderby="date" show_expired="yes" sticky="no" author_id="{embed:author_id}"}
+
+				{parents field="article_illustrator"}
+
+				{if parents:count == "1"}
+				<h2 class="alt-small">Illustrations by {embed:real_name}</h2>
+
+				<ul class="entry-list">
+				{/if}
+					<li>
+						<h3 class="entry-title"><a href="/{if parents:channel_short_name == "columns"}column{if:elseif parents:channel_short_name == "blog"}blog/post{if:elseif parents:channel_short_name == "articles"}article{if:else}event{/if}/{parents:url_title}">{parents:title}</a></h3>
+						<p class="meta">
+						{if parents:channel_short_name == "articles"}
+						<time class="pubdate updated" datetime="{parents:entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{parents:entry_date format="%F %d, %Y"}</time></p>
+						{if:elseif parents:channel_short_name == "blog" || parents:channel_short_name == "events"}
+						<time class="pubdate updated" datetime="{parents:entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+						</p>
+						{if:else}
+						<time class="pubdate updated" datetime="{parents:entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{parents:entry_date format="%F %d, %Y"}</time>
+						{/if}
+						</p>
+					</li>
+
+				{if parents:count == parents:total_results}</ul>{/if}
+
+				{/parents}
+
+				{/exp:channel:entries}
