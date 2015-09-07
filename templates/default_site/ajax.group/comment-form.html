@@ -60,6 +60,25 @@
 {/exp:comment:form}
 
 	<script type="text/javascript">
+	var states = {
+			//template specific
+			currentstate: 'comment-form',
+			//globals
+			commentsignin: 'comment-sign-in',
+			register: 'register',
+			password: 'forgot-password',
+			commentform: 'comment-form',
+			//segments
+			{if segment_4 == 'blog'}
+			segments: '/{segment_4}/{segment_5}/{segment_6}',
+			{/if}
+			{if segment_4 != 'blog'}
+			segments: '/{segment_4}/{segment_5}',
+			{/if}
+			site_url: '{site_url}',
+			tmpl_path: /ajax/,
+			entry_id: '/{segment_3}'
+		}
 
 	$.when(
 	    $.getScript("{site_url}/components/assets/js/form-stuff.js"),
@@ -69,27 +88,7 @@
 	    })
 	);
 
-	var states = {
-		//template specific
-		currentstate: 'comment-form',
-		//globals
-		commentsignin: 'comment-sign-in',
-		register: 'register',
-		password: 'forgot-password',
-		commentform: 'comment-form',
-		//segments
-		{if segment_4 == 'blog'}
-		segments: '/{segment_4}/{segment_5}/{segment_6}',
-		{/if}
-		{if segment_4 != 'blog'}
-		segments: '/{segment_4}/{segment_5}',
-		{/if}
-		site_url: '{site_url}',
-		tmpl_path: /ajax/,
-		entry_id: '/{segment_3}'
-	}
-
-	</script>
-
+	</script> 
+	
 </div>
 

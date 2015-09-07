@@ -11,7 +11,7 @@
 	    	<legend class="center">Sign in with your A List Apart account to discuss this article.</legend>
 
 			<p>
-				<label for="login-name-here">Email / Username (<a id="register" class="history-nav" data-tabto="forgot-link" href="/tools/register" target="_blank">need an account?</a>)</label>
+				<label for="login-name-here">Email / Username (<a id="register" class="history-nav" data-tabto="forgot-password" href="/tools/register" target="_blank">need an account?</a>)</label>
 				<input
 					type="text"
 					id="login-name-here"
@@ -35,7 +35,8 @@
 					data-type="any"
 					data-isvalid=""
 					data-error="what's your password?"
-					data-tabto="register-link"
+					data-tabmaster="true"
+					data-tabto="register"
 					required>
 			</p>
 			<p class="screen-reader">
@@ -50,8 +51,8 @@
 				<input 
 					type="submit" 
 					id="comment-submit"
+					data-tabmaster="true"
 					class="button primary float-left" 
-					data-tabmaster="false" 
 					value="Submit">
 			</p>
 			
@@ -63,14 +64,6 @@
 
 	<script type="text/javascript">
 	
- 	$.when(
-	    $.getScript("{site_url}/components/assets/js/form-stuff.js"),
-	    $.getScript("{site_url}/components/assets/js/ajax-functions.js"),
-	    $.Deferred(function(deferred){
-		        $(deferred.resolve);
-	    })
-	);
-
 	var states = {
 		//globals
 		commentsignin: 'comment-sign-in',
@@ -89,6 +82,14 @@
 		entry_id: '/{segment_3}'
 	}
 
+	 $.when(
+	    $.getScript("{site_url}/components/assets/js/form-stuff.js"),
+	    $.getScript("{site_url}/components/assets/js/ajax-functions.js"),
+	    $.Deferred(function(deferred){
+		        $(deferred.resolve);
+	    })
+	);
+
 	</script>
 
 {if logged_in}<!-- account for hitting the back button after the comment-form -->
@@ -102,4 +103,5 @@
 	</script>
 
 {/if}
+
 </div>

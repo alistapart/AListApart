@@ -1,8 +1,11 @@
 <div class="ajax-container">
 {if logged_out}
 
-	{exp:ajaxauth:register id="sign-in-form" name="register_form" class="register-form" return="ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}" post_process="AlaAuth.alertMsg"}
-			
+	{if segment_4 == 'blog'}
+		{exp:ajaxauth:register id="sign-in-form" name="register_form" class="register-form" return="ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}/{segment_6}" post_process="AlaAuth.alertMsg"}
+	{if:else}
+		{exp:ajaxauth:register id="sign-in-form" name="register_form" class="register-form" return="ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}" post_process="AlaAuth.alertMsg"}
+	{/if}
 		<fieldset>
 
     	<legend class="center">Create an A List Apart account to discuss this article.</legend>
@@ -18,6 +21,8 @@
 					data-type="any" 
 					data-isvalid="{if username}yes{/if}"
 					data-error="who are you?"
+					data-tabmaster="true"
+					data-tabto="email"
 					autofocus
 					required>
 			</p>
@@ -34,6 +39,8 @@
 					data-type="email"
 					data-isvalid="{if email}yes{/if}"
 					data-error="are you sure this is your email address?"
+					data-tabmaster="true"
+					data-tabto="password"
 					required>
 			</p>
 
@@ -49,6 +56,8 @@
 					data-type="any"
 					data-isvalid=""
 					data-error="what's your new password?"
+					data-tabmaster="true"
+					data-tabto="password_confirm"
 					required>
 				<span class="note">Make it good.</span>
 			</p>
@@ -66,6 +75,8 @@
 					data-mustmatch="password"
 					data-isvalid="yes"
 					data-error="this needs to match the previous field."
+					data-tabmaster="true"
+					data-tabto="submit"
 					required>
 				<span class="note">Make it the same.</span>
 			</p>
@@ -81,7 +92,8 @@
 			
 			<p id="comment-submit-holder">
 				<input 
-					type="submit" 
+					type="submit"
+					id="submit" 
 					name="submit" 
 					value="Submit" 
 					class="submit button primary float-left">
@@ -96,14 +108,6 @@
 
 	<script type="text/javascript">
 	
-	$.when(
-	    $.getScript("{site_url}/components/assets/js/form-stuff.js"),
-	    $.getScript("{site_url}/components/assets/js/ajax-functions.js"),
-	    $.Deferred(function(deferred){
-		        $(deferred.resolve);
-	    })
-	);
-
 	var states = {
 		//globals
 		commentsignin: 'comment-sign-in',
@@ -121,6 +125,14 @@
 		tmpl_path: /ajax/,
 		entry_id: '/{segment_3}'
 	}
+
+	$.when(
+	    $.getScript("{site_url}/components/assets/js/form-stuff.js"),
+	    $.getScript("{site_url}/components/assets/js/ajax-functions.js"),
+	    $.Deferred(function(deferred){
+		        $(deferred.resolve);
+	    })
+	);
 
 	</script>
 
