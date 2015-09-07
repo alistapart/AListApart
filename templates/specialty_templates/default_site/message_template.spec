@@ -3,7 +3,10 @@
 <title>A List Apart: Would you like to register?</title>
 
 	<title>A List Apart: {heading}</title>
-
+<style>
+	html{height: 60%;}
+	.main-wrapper{padding-bottom: 60px}
+</style>
 </head>
 
 <body data-xid="{XID_HASH}">
@@ -14,7 +17,7 @@
 
 {current-user-info}
 
-<div role="main" class="main-wrapper single-column-display">
+<div role="main" class="main-wrapper single-column-display user-message-template">
 
 	<div class="col-holder">
 
@@ -25,8 +28,9 @@
 		{content}
 
 	 	{link} ∙ <a href="/tools/log-in">Log In</a>
-	 	
+
 		</div> 
+
 
 	</div>
 
