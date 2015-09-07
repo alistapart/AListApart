@@ -1,11 +1,14 @@
 {global-page-top}
 
-<title>A List Apart: Would you like to register?</title>
+<title>A List Apart: {heading}</title>
 
-	<title>A List Apart: {heading}</title>
 <style>
-	html{height: 60%;}
-	.main-wrapper{padding-bottom: 60px}
+	html { 
+		height: 65%;
+	}
+	.main-wrapper{
+		padding-bottom: 60px;
+	}
 </style>
 </head>
 
