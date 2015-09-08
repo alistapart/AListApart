@@ -1,5 +1,5 @@
 <subject>Enclosed is your activation code</subject>
-<h3>Thank you for registering with {site_name}. test</h3>
+<h3>Thank you for registering with {site_name}.</h3>
 <p>To activate your new account, please visit the following URL: {unwrap}{activation_url}{/unwrap}</p>
 <p>Thank You!</p>
 <p>{site_name}</p>
