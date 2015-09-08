@@ -4458,6 +4458,7 @@ textarea:not([data-autoresize]) {
 #comment-submit-holder {
 	position: relative;
 	float: left;
+	margin-right: 12px;
 }
 
 .js-spinner {

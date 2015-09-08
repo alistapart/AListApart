@@ -63,6 +63,14 @@
 {/if}
 
 	<script type="text/javascript">
+
+	$.when(
+	    $.getScript("{site_url}/components/assets/js/form-stuff.js"),
+	    $.getScript("{site_url}/components/assets/js/ajax-functions.js"),
+	    $.Deferred(function(deferred){
+		        $(deferred.resolve);
+	    })
+	);
 	
 	var states = {
 		//globals
@@ -81,14 +89,6 @@
 		tmpl_path: /ajax/,
 		entry_id: '/{segment_3}'
 	}
-
-	 $.when(
-	    $.getScript("{site_url}/components/assets/js/form-stuff.js"),
-	    $.getScript("{site_url}/components/assets/js/ajax-functions.js"),
-	    $.Deferred(function(deferred){
-		        $(deferred.resolve);
-	    })
-	);
 
 	</script>
 

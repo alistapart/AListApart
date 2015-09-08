@@ -90,13 +90,16 @@
 					data-tabmaster="false">
 			</p>
 			
-			<p id="comment-submit-holder">
+			<p id="comment-submit-holder" class="float-left">
 				<input 
 					type="submit"
 					id="submit" 
 					name="submit" 
 					value="Submit" 
 					class="submit button primary float-left">
+			</p>
+			
+			<p>
 				<button id="comment-sign-in" class="button secondary float-left history-nav">Cancel</button>
 			</p>
 			
@@ -107,7 +110,15 @@
 {/if}
 
 	<script type="text/javascript">
-	
+
+	$.when(
+	    $.getScript("{site_url}/components/assets/js/form-stuff.js"),
+	    $.getScript("{site_url}/components/assets/js/ajax-functions.js"),
+	    $.Deferred(function(deferred){
+		        $(deferred.resolve);
+	    })
+	);
+
 	var states = {
 		//globals
 		commentsignin: 'comment-sign-in',
@@ -125,14 +136,6 @@
 		tmpl_path: /ajax/,
 		entry_id: '/{segment_3}'
 	}
-
-	$.when(
-	    $.getScript("{site_url}/components/assets/js/form-stuff.js"),
-	    $.getScript("{site_url}/components/assets/js/ajax-functions.js"),
-	    $.Deferred(function(deferred){
-		        $(deferred.resolve);
-	    })
-	);
 
 	</script>
 

@@ -96,33 +96,12 @@ $(document).ready(function(){
 
 	} //end typeof states check
 
-	//console.log(formOffsetTop, formOffsetLeft);
-
 	//initiate spinner : this needs a cleanup
-	var opts = {
-		lines: 12             // The number of lines to draw
-	  , length: 7             // The length of each line
-	  , width: 3              // The line thickness
-	  , radius: 10            // The radius of the inner circle
-	  , scale: 0.75            // Scales overall size of the spinner
-	  , corners: 1            // Roundness (0..1)
-	  , color: '#333'         // #rgb or #rrggbb
-	  , opacity: 1/4          // Opacity of the lines
-	  , rotate: 0             // Rotation offset
-	  , direction: 1          // 1: clockwise, -1: counterclockwise
-	  , speed: 1              // Rounds per second
-	  , trail: 100            // Afterglow percentage
-	  , fps: 20               // Frames per second when using setTimeout()
-	  , zIndex: 2e9           // Use a high z-index by default
-	  , className: 'js-spinner none'  // CSS class to assign to the element
-	  , top: '50%'            // center vertically
-	  , left: '50%'           // center horizontally
-	  , shadow: false         // Whether to render a shadow
-	  , hwaccel: false        // Whether to use hardware acceleration (might be buggy)
-	  , position: 'absolute'  // Element positioning
+	var spinnerOpts = {
+		className: 'js-spinner none'  // CSS class to assign to the element
 	};
-	var target = document.getElementById('comment-submit-holder');
-	var spinner = new Spinner(opts).spin(target);
+	var spinnerTarget = document.getElementById('comment-submit-holder');
+	var spinner = new Spinner(spinnerOpts).spin(spinnerTarget);
 	spinnerStart = function(){
 		$('.js-spinner').removeClass('none');
 		$('#comment-submit-holder input').addClass('inactive');

@@ -1,13 +1,9 @@
 <subject>Enclosed is your activation code</subject>
+<h3>Thank you for registering with {site_name}. test</h3>
+<p>To activate your new account, please visit the following URL: {unwrap}{activation_url}{/unwrap}</p>
+<p>Thank You!</p>
+<p>{site_name}</p>
+<br/> 
+<a href="{site_url}" style="color:#3367d6;">{site_url}</a>
 
-Thank you for registering with {site_name}.
 
-To activate your new account, please visit the following URL:
-
-{unwrap}{activation_url}{/unwrap}
-
-Thank You!
-
-{site_name}
-
-{site_url}
