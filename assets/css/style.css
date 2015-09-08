@@ -2088,8 +2088,10 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 
 .main-content > ul.entry-list.illo-thumbs > li picture,
 .main-content > ul.entry-list.illo-thumbs > li img {
-	margin-bottom: 12px;
 	display: block;
+	max-height: 200px;
+	width: auto;
+	margin: 0 auto 12px;
 }
 
 margin-bottom: 12px;

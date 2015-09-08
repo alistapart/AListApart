@@ -1,0 +1,35 @@
+
+				{exp:channel:entries channel="articles" status="open" show_expired="yes" sticky="no" stop_before="2014-09-01 00:00" entry_id="NOT 15926|15288|15211|15210" limit="999"}
+
+				{if count == "1"}
+				<h2 class="alt-small">Illustrations by Kevin Cornell</h2>
+
+				<ul class="entry-list illo-thumbs">
+				{/if}
+
+					{if article_illustration != ""}
+					<li>
+						<figure class="illo-thumb">
+							{article_illustration}
+							{if width > height}
+							<picture>
+								<source srcset="{exp:ce_img:pair src="{url}" width="280" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="560" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
+								<img src="{exp:ce_img:pair src="{url}" width="280" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
+							</picture>
+							{if:else}
+							<picture>
+								<source srcset="{exp:ce_img:pair src="{url}" height="200" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" height="400" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
+								<img src="{exp:ce_img:pair src="{url}" height="200" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
+							</picture>
+							{/if}
+							{/article_illustration}
+							<figcaption><a href="">{title}</a>, {entry_date format="%F %d, %Y"}</figcaption>
+						</figure>
+
+
+					</li>
+					{/if}
+
+				{if count == total_results}</ul>{/if}
+
+				{/exp:channel:entries}
