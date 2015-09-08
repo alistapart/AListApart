@@ -1,7 +1,7 @@
-/*
-* Comment sign-in and comment form actions: 
-* Uses XMLHttpRequests and the history.api
-*/
+/**
+ * Comment sign-in and comment form actions: 
+ * Uses XMLHttpRequests and the history.api
+ */
 //check for history api support
 function supports_history_api() {
   return !!(window.history && history.pushState);
@@ -53,7 +53,7 @@ $(document).ready(function(){
 	
 	//check that we're on an entry page and the states object exists
 	if(typeof states != "undefined") { 
-		/*
+		/**
 		* when the document loads and while the user is signed in, 
 		* use replaceState to apply a state to the current document, 
 		* so event.state is never null, and the use gets to see the comment form
