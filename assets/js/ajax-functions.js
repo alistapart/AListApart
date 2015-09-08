@@ -18,7 +18,7 @@ var AlaAuth = {
 		//vertically center the modal content
 		var innerEl = $(".custom-modal .container");
 		var innerElHeight = innerEl.outerHeight();
-		innerEl.css('margin-top', '-'+innerElHeight/2+'px');
+		innerEl.css('margin-top', '-' + innerElHeight/2 + 'px');
 		//close the modal: click anywhere to close it, or hit any key
 		$(document).on('keyup click', function(){ //
 		    $(".custom-modal").remove();

@@ -4974,14 +4974,36 @@ form.simple-form.wide-form label .error-message {
 	margin-bottom: 8px;
 	background: #fff url(/components/assets/img/icon_navigation-laurel.svg) no-repeat center center;
 }
+@keyframes placeHolderShimmer{
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+.animated-background {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right,  #eeeeee 8%,#dddddd 18%,#eeeeee 33%);
+    background-repeat: no-repeat;
+    background-size: 600px 30px;
+    height: 30px;
+    position: relative;
+}
 .placeholder.loader {
 	min-height: 257px; 
 	height: 257px;
 	width: 100%;
 	background-color: white;
 	position: absolute;
-	top:0px;
-	left:0;
+	top: 0px;
+	margin-top: 4px;
+	left: 0;
 	z-index: -1;
 	opacity: 1;
 }

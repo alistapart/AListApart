@@ -18,8 +18,6 @@
 
 {global-nav}
 
-{current-user-info}
-
 <div role="main" class="main-wrapper single-column-display user-message-template">
 
 	<div class="col-holder">
@@ -40,7 +38,5 @@
 </div>
 
 {global-footer}
-
-{sponsor-top}
 
 {global-page-bottom}
