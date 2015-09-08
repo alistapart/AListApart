@@ -2078,11 +2078,13 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 }
 
 .main-content > ul.entry-list.illo-thumbs > li figcaption {
-	font-family: sans-serif;
 	font-size: 14px;
+	line-height: 20px;
+	font-family: "Franklin ITC Light", sans-serif;
 }
 
 .main-content > ul.entry-list.illo-thumbs > li figcaption a {
+	font-family: "Franklin ITC", sans-serif;
 	font-weight: bold;
 }
 
