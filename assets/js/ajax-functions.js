@@ -13,7 +13,7 @@ var AlaAuth = {
 	alertMsg: function(msg){ 
 		//create and append a simple modal for form success / error msgs.
 		$('.commenter-signin').append(
-			"<div class='custom-modal'><div class='container'><i class='laurel-small'></i>" + msg + '<p class="note">X Press any key or click anywhere to close this</p>' + "</div></div>"
+			"<div class='custom-modal'><div class='container'><i class='laurel-small'></i>" + msg + '<p class="note">Press any key or click anywhere to close this</p>' + "</div></div>"
 		);
 		//vertically center the modal content
 		var innerEl = $(".custom-modal .container");
