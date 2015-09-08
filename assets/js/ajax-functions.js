@@ -57,7 +57,6 @@ $(document).ready(function(){
 	
 	//check that we're on an entry page and the states object exists
 	if(typeof states != "undefined") { 
-
 		/*
 		* when the document loads and while the user is signed in, 
 		* use replaceState to apply a state to the current document, 
