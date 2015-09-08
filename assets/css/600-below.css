@@ -937,6 +937,17 @@
 		display: block;
 	}
 
+	.main-content > ul.entry-list.illo-thumbs > li,
+	.main-content > ul.entry-list.illo-thumbs > li picture,
+	.main-content > ul.entry-list.illo-thumbs > li img {
+		display: block;
+		width: 100%;
+	}
+
+	.main-content > ul.entry-list.illo-thumbs > li:nth-child(odd) {
+		margin-right: 0;
+	}
+
 }
 
 @media only screen and (max-width: 20em) { /* 320px */

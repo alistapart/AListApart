@@ -2065,13 +2065,35 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	margin-bottom: 24px;
 }
 
-.main-content > ul.entry-list > li.featured-comment {
-	position: relative;
-	margin-left: -12px;
-	padding: 28px 24px;
-	background: #f9f9f9;
-	border-radius: 12px;
+.main-content > ul.entry-list.illo-thumbs > li {
+	display: inline-block;
+	vertical-align: top;
+	width: 48%;
+	width: calc(50% - 1em);
+	line-height: 20px;
 }
+
+.main-content > ul.entry-list.illo-thumbs > li:nth-child(odd) {
+	margin-right: 1em;
+}
+
+.main-content > ul.entry-list.illo-thumbs > li figcaption {
+	font-family: sans-serif;
+	font-size: 14px;
+}
+
+.main-content > ul.entry-list.illo-thumbs > li figcaption a {
+	font-weight: bold;
+}
+
+.main-content > ul.entry-list.illo-thumbs > li picture,
+.main-content > ul.entry-list.illo-thumbs > li img {
+	margin-bottom: 12px;
+	display: block;
+}
+
+margin-bottom: 12px;
+display: block;
 
 .main-content > ul.entry-list > li.featured-comment:before {
 	content: "“";
