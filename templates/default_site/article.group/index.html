@@ -70,13 +70,16 @@
 
 				{if article_responsive_illo != ""}
 
-				<figure class="wide-hero responsive-hero" data-picture data-alt="">
-					{article_responsive_illo}
-					<div data-src="{exp:ce_img:pair src="{cell_1}" width="{cell_2}" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" {if cell_2 != ""}data-media="(max-width: {cell_2}px)"{/if}></div>
-					{/article_responsive_illo}
+				<figure class="wide-hero responsive-hero">
+					<picture>
 
-					<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-					<noscript>{article_illustration}<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt="" itemprop="image">{/article_illustration}</noscript>
+						{article_responsive_illo}
+						<source srcset="{exp:ce_img:pair src="{cell_1}" width="{cell_2}" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" {if cell_2 != ""}media="(min-width: {cell_2}px)"{/if}>
+						{/article_responsive_illo}
+
+						{article_illustration}<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">{/article_illustration}
+
+					</picture>
 
 					{exp:stash:get name="issue-number"}
 					{exp:stash:get name="illustrator-credit"}
