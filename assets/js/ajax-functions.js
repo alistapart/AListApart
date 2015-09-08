@@ -21,11 +21,7 @@ var AlaAuth = {
 		innerEl.css('margin-top', '-'+innerElHeight/2+'px');
 		//close the modal: click anywhere to close it, or hit any key
 		$(document).on('keyup click', function(){ //
-		    // if (!container.is(e.target) // if the target of the click isn't the container
-		    //     && container.has(e.target).length === 0) // nor a descendant of the container
-		    // {
-		        $(".custom-modal").remove();
-		    // }
+		    $(".custom-modal").remove();
 		});
 	},
 
