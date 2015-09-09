@@ -2,9 +2,9 @@
 {if logged_out}
 
 	{if segment_4 == 'blog'}
-		{exp:ajaxauth:register id="sign-in-form" name="register_form" class="register-form" return="ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}/{segment_6}" post_process="AlaAuth.alertMsg"}
+		{exp:ala_auth:register id="sign-in-form" name="register_form" class="register-form" return="ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}/{segment_6}" post_process="AlaAuth.alertMsg"}
 	{if:else}
-		{exp:ajaxauth:register id="sign-in-form" name="register_form" class="register-form" return="ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}" post_process="AlaAuth.alertMsg"}
+		{exp:ala_auth:register id="sign-in-form" name="register_form" class="register-form" return="ajax/comment-sign-in/{segment_3}/{segment_4}/{segment_5}" post_process="AlaAuth.alertMsg"}
 	{/if}
 		<fieldset>
 
@@ -105,7 +105,7 @@
 			
 		</fieldset>
 
-	{/exp:ajaxauth:register}
+	{/exp:ala_auth:register}
 
 {/if}
 
