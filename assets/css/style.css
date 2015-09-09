@@ -3426,7 +3426,7 @@ li.comment-form h4 {
 
 li.commenter-signin p,
 li.comment-form p {
-	margin-bottom: 12px;
+/*	margin-bottom: 12px;*/
 }
 
 .global-footer {
@@ -4364,10 +4364,14 @@ form {
 }
 
 form p {
-	margin: 0 0 18px;
+	margin: 0 0 16px;
 	position: relative;
 	font-size: 14px;
 	line-height: 2;
+}
+
+form p:last-child {
+	margin-bottom: 0px;
 }
 
 input[type="submit"]:focus {
@@ -4991,7 +4995,7 @@ form.simple-form.wide-form label .error-message {
     background: #f6f7f8;
     background: linear-gradient(to right,  #eeeeee 8%,#dddddd 18%,#eeeeee 33%);
     background-repeat: no-repeat;
-    background-size: 600px 30px;
+    background-size: 600px 18px;
     height: 30px;
     position: relative;
 }
@@ -5002,7 +5006,7 @@ form.simple-form.wide-form label .error-message {
 	background-color: white;
 	position: absolute;
 	top: 0px;
-	margin-top: 4px;
+	margin-top: 0px;
 	left: 0;
 	z-index: -1;
 	opacity: 1;
@@ -5024,7 +5028,7 @@ form.simple-form.wide-form label .error-message {
     /*visibility: hidden;*/
 }
 .placeholder.loader .field {
-	margin-top: 5px;
+	margin-top: 9px;
     margin-left: 0px;
     background-color: #fff;
     border: 1px solid #ccc;
