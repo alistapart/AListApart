@@ -45,7 +45,7 @@ a:focus {
 .buttonish,
 .buttonishish {
 	display: inline-block;
-	padding: 2px 9px;
+	padding: 2px 14px;
 	font-family: "Franklin ITC Light", sans-serif;
 	color: #fff;
 	text-decoration: none;
@@ -4062,8 +4062,7 @@ ul.bullets {
 .paginator {
 	margin-top: 30px;
 	text-align: center;
-	font-family: "Franklin ITC", sans-serif;
-	font-weight: bold;
+	font-family: "Franklin ITC Light", sans-serif;
 }
 
 .paginator ul,
@@ -4074,10 +4073,9 @@ ul.bullets {
 
 .paginator a {
 	display: inline-block;
-	padding: 2px 12px 0 12px;
-	font-size: 12px;
-	line-height: 24px;
-	text-transform: uppercase;
+	padding: 2px 16px 0 16px;
+	font-size: 14px;
+	line-height: 28px;
 	color: #fff;
 	background: #666;
 	border-radius: 15px;
