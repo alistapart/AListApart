@@ -118,7 +118,7 @@
     	width: 70%;
     	text-align: center;
     	margin: 0 auto;
-    	margin-top:6px;
+    	 
 	}
 	/* ----------------------	TOOLS	---------------------- */
 	.main-content.tools {
@@ -982,15 +982,11 @@
 		text-align: center;
 	}
 
-	.placeholder.loader {
-		min-height: 268px;
-	}
 
 	.placeholder.loader .label {
 		width: auto;
 	}
 	.placeholder.loader .top-header {
-		margin-top: 3px;
     	margin-left:0;
     	margin-bottom: 0px;
     	width: 100%;
@@ -1000,13 +996,26 @@
 }
 
 @media only screen and (max-width: 26.250em) { /* 420px */
-	
+
+	.outer-ajax-container, .ajax-container.forgot-password-form {
+		min-height: 288px;
+	}
+	@-moz-document url-prefix() { 
+		.outer-ajax-container, .ajax-container.forgot-password-form {
+	    	min-height: 292px;
+	    }
+    }
 	.placeholder.loader .top-header {
-    	margin-bottom: 38px;
+    	margin-bottom: 42px;
 	}
-	.ajax-container.forgot-password-form {
-    	min-height: 287px;
+
+	@-moz-document url-prefix() { 
+		.placeholder.loader .button {
+		    height: 46px;
+		    margin-top: 15px;
+		}
 	}
+
 }
 
 @media only screen and (max-width: 20em) { /* 320px */

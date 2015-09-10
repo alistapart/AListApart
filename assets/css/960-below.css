@@ -19,6 +19,14 @@
 	textarea { 
 		max-width: 525px;
 	}
+	.outer-ajax-container {
+    	min-height: 264px;
+    }
+    @-moz-document url-prefix() { 
+		.outer-ajax-container {
+	    	min-height: 269px;
+	    }
+    }
 	.form-heading, legend.center {
 		max-width: 525px;
 		text-align: left;

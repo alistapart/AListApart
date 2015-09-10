@@ -4463,6 +4463,7 @@ textarea:not([data-autoresize]) {
 	position: relative;
 	float: left;
 	margin-right: 12px;
+	margin-bottom: 0px;
 }
 
 .js-spinner {
@@ -4795,7 +4796,7 @@ img.commenter-avatar {
 /* Social login buttons
 -------------------------------------------------------------------------------*/
 #login-buttons {
-	margin-top: 18px;
+	margin-top: 16px;
 	text-align: left;
 }
 
@@ -4952,14 +4953,25 @@ form.simple-form.wide-form label .error-message {
 }
 /* Ajax states*/
 .outer-ajax-container {
-	min-height: 257px;
+	min-height: 264px;
 	position: relative;
+	margin-bottom: 16px;
+}
+@-moz-document url-prefix() { 
+  .outer-ajax-container {
+     min-height: 269px;
+  }
 }
 .ajax-container {
 	background-color: #fff;
 }
 .ajax-container.forgot-password-form {
-	min-height: 267px;
+	min-height: 264px;
+}
+@-moz-document url-prefix() { 
+  .ajax-container.forgot-password-form  {
+     min-height: 269px;
+  }
 }
 /*.spinner {
 	position: absolute;
@@ -5000,8 +5012,8 @@ form.simple-form.wide-form label .error-message {
     position: relative;
 }
 .placeholder.loader {
-	min-height: 257px; 
-	height: 257px;
+	min-height: 312px; 
+	height: 312px;
 	width: 100%;
 	background-color: white;
 	position: absolute;
@@ -5012,10 +5024,10 @@ form.simple-form.wide-form label .error-message {
 	opacity: 1;
 }
 .placeholder.loader .top-header {
-	margin-top: 3px;
+	margin-top: 0px;
     margin-left: 73px;
     background-color: #eee;
-    height: 18px;
+    height: 22px;
     width: 350px;
     /*visibility: hidden;*/
 }
@@ -5027,20 +5039,39 @@ form.simple-form.wide-form label .error-message {
     width: 230px;
     /*visibility: hidden;*/
 }
+@-moz-document url-prefix() { 
+  .placeholder.loader .label {
+     margin-top: 17px;
+     height: 20px;
+  }
+}
 .placeholder.loader .field {
-	margin-top: 9px;
+	margin-top: 8px;
     margin-left: 0px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 3px;
     box-shadow: inset 0px 0px 10px rgba(0,0,0,.15);
-    height: 47px;
+    height: 46px;
     width: 100%;
 }
+@-moz-document url-prefix() { 
+	.placeholder.loader .field { 
+		height: 49px;
+	    margin-top: 6px;
+	}
+}
 .placeholder.loader .button {
-	margin-top: 12px;
+	margin-top: 16px;
 	width:101px;
-	height: 47px;
+	height: 46px;
+}
+@-moz-document url-prefix() { 
+	.placeholder.loader .button  { 
+		height: 47px;
+	    margin-top: 16px;
+	    width:102px;
+	}
 }
 
 
