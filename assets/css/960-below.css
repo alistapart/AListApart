@@ -13,6 +13,16 @@
 	.issue-page .logo-holder + .illustrator-credit {
 		right: 0;
 	}
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	textarea { 
+		max-width: 525px;
+	}
+	.form-heading, legend.center {
+		max-width: 525px;
+		text-align: left;
+	}
 
 }
 

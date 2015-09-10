@@ -977,16 +977,32 @@
 		width: 100%;
 	}
 
-}
+	h3.form-heading, legend.center {
+		max-width: auto;
+		text-align: center;
+	}
 
-@media only screen and (max-width: 26.250em) { /* 420px */
+	.placeholder.loader {
+		min-height: 268px;
+	}
+
 	.placeholder.loader .label {
 		width: auto;
 	}
 	.placeholder.loader .top-header {
+		margin-top: 3px;
     	margin-left:0;
-    	margin-bottom: 38px;
+    	margin-bottom: 0px;
     	width: 100%;
+	}
+	 
+
+}
+
+@media only screen and (max-width: 26.250em) { /* 420px */
+	
+	.placeholder.loader .top-header {
+    	margin-bottom: 38px;
 	}
 	.ajax-container.forgot-password-form {
     	min-height: 287px;
