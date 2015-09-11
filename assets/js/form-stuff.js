@@ -9,6 +9,8 @@
 
 (function($){
 
+
+
 $(document).ready(function (){
 
 	$('form').each(function() {
@@ -33,11 +35,13 @@ $(document).ready(function (){
 
 				if ((errorMsg != '') && ($(this).attr('data-error') != '')) {
 
-					$(this).attr('data-error', '').parent().append('<small class="error-message" role="alert" id="' + $(this).attr('id') + '_error">' + errorMsg + '</span>');
+					$(this).attr('data-error', '').parent().append('<small class="error-message" role="alert" id="' + $(this).attr('id') + '_error">' + errorMsg + '</span>').addClass('invalid');
 
 				};
 
-				$(this).parent().addClass('invalid');
+				$('.invalid input').on('keyup', function() {
+				    $(this).next('.error-message').addClass('none');
+				});
 
 			};
 		});
@@ -71,8 +75,9 @@ $(document).ready(function (){
 
 });
 
-
 })(window.jQuery);
+
+
 
 // master validation
 

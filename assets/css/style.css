@@ -4499,9 +4499,13 @@ fieldset figure {
 
 fieldset legend {
 	line-height: 24px;
-	margin-bottom: 12px;
 	display: block;
 	width: 100%;
+}
+
+fieldset legend + * { /*hack to get webkit Safari to understand margin bottom for the legend tag*/
+    -webkit-margin-top-collapse : separate;
+    margin-top: 12px;
 }
 
 .ajaxauth_loader {
