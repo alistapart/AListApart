@@ -4368,6 +4368,7 @@ form p {
 	position: relative;
 	font-size: 14px;
 	line-height: 2;
+	max-width: 525px;
 }
 
 form p:last-child {
@@ -4556,14 +4557,15 @@ label + .note {
 	display: block;
 	position: absolute;
 	z-index: 100;
-	top: 62px;
-	top: 5.1em;
+	top: 65px;
+	top: 5.26em;
 	left: 49%;
 	background: #fff;
-	padding: 0 6px;
+	padding: 2px 6px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	color: #bb3825;
+	line-height: 1.4;
 	-webkit-transform: translateX(-50%);
 	-moz-transform: translateX(-50%);
 	-ms-transform: translateX(-50%);
