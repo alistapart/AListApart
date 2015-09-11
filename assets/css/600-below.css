@@ -995,11 +995,11 @@
 	.error-message {
 		/*bottom: -9px;
 		padding: 2px 6px;*/
-	/*	-webkit-transform: translateX(-50%);
-		-moz-transform: translateX(-50%);
-		-ms-transform: translateX(-50%);
-		-o-transform: translateX(-50%);
-		transform: translateX(-50%);*/
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
 		transform: none;
 		left: auto;
 		right: 0;
