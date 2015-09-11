@@ -981,11 +981,11 @@
 
 
 	.placeholder.loader .label {
-		width: auto;
+		min-width: 230px;
 	}
 	.placeholder.loader .top-header {
-    	margin-left:0;
-    	margin-bottom: 0px;
+    	margin-left: 0;
+    	margin-bottom: 4px;
     	width: 100%;
 	}
 	 
@@ -1011,7 +1011,7 @@
 	}
 
 	.placeholder.loader .top-header {
-    	margin-bottom: 42px;
+    	margin-bottom: 28px;
 	}
 
 	@-moz-document url-prefix() { 
