@@ -4736,6 +4736,7 @@ fieldset.check-radio.customized input[type="radio"]:checked + label:after {
 
 .article-comments textarea {
 	min-height: 150px;
+	margin: 0 auto;
 }
 
 .article-comments textarea.logged-in {
@@ -4750,6 +4751,7 @@ fieldset.check-radio.customized input[type="radio"]:checked + label:after {
 	top: -6px;
 	max-width: 525px;
 	min-height: 75px;
+	margin: 0 auto;
 	padding: 18px 102px 12px 12px;
 	text-align: left;
 	line-height: 16px;
