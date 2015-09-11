@@ -10,6 +10,7 @@ function supports_history_api() {
 
 //AlaAuth vars
 var ajaxContainer = $('.ajax-container');
+var placeholderLoader = $('.placeholder.loader');
 
 //Initiating AlaAuth object to hold form related functions
 var AlaAuth = {
@@ -30,6 +31,8 @@ var AlaAuth = {
 	},
 
 	loadTemplate: function(state) {
+		//show loader
+
 		//hide current template
 		ajaxContainer.addClass('none');
 		//load new template
@@ -55,11 +58,6 @@ var AlaAuth = {
 	spinnerStop: function(){ 
 		$('.js-spinner').addClass('none');
 		$('#comment-submit-holder input').removeClass('inactive');
-	},
-
-	resetValue: function(){
-		var resetText =  $(window).width() <= 420 ? 'Reset' : 'Reset password';
-		$('#reset-password').attr('value', resetText); 
 	}
 
 }; //end AlaAuth object
@@ -72,8 +70,8 @@ $(document).ready(function(){
 	//Initiate spinner
 	AlaAuth.spinnerInit();
 
-	//Change input value based on screen resolution
-	AlaAuth.resetValue();
+	//hide placeholder loader
+	placeholderLoader.addClass('none');
 
 	//check for history.api support
 	if (!supports_history_api()) { return; }
@@ -100,9 +98,12 @@ $(document).ready(function(){
 		//history.api nav clickhandler
 		$('.history-nav').on('click', function(event){
 
+			event.preventDefault();
 			var goToUrl = $(this).attr('id');
 
-			event.preventDefault();
+			//show placeholder loader
+			placeholderLoader.removeClass('none');
+
 			//hide current template and load new template
 			AlaAuth.loadTemplate(
 				goToUrl
@@ -152,10 +153,6 @@ $(window).on('load', function() {
 * https://bugs.webkit.org/process_bug.cgi
 */
 
-$(window).on('load resize scroll', function(){
-	//Change input value based on screen resolution
-	AlaAuth.resetValue();
-});
 
 
 

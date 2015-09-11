@@ -672,9 +672,9 @@
 		font-weight: 300;
 	}
 
-	.article-comments #login-buttons.active {
+	/*.article-comments #login-buttons.active {
 		height: 145px;
-	}
+	}*/
 
 	.article-comments #login-buttons li {
 		margin-bottom: 9px;
@@ -997,23 +997,37 @@
 
 @media only screen and (max-width: 26.250em) { /* 420px */
 
+	/* ----------------- COMMENT FORM STATES ---------------------- */
+
 	.outer-ajax-container, .ajax-container.forgot-password-form {
 		min-height: 288px;
 	}
-	@-moz-document url-prefix() { 
-		.outer-ajax-container, .ajax-container.forgot-password-form {
-	    	min-height: 292px;
-	    }
-    }
+
 	.placeholder.loader .top-header {
     	margin-bottom: 42px;
 	}
 
 	@-moz-document url-prefix() { 
-		.placeholder.loader .button {
-		    height: 46px;
-		    margin-top: 15px;
-		}
+		.outer-ajax-container, .ajax-container.forgot-password-form {
+	    	min-height: 292px;
+	    }
+    }
+
+	.button, .login-buttons li a {
+		font-size: 16px;
+	}
+
+	#comment-submit-holder {
+		margin-right: 8px;
+	}
+
+	.login-buttons li a {
+		padding: 12px 1px;
+	}
+
+	.login-buttons li.facebook a, .login-buttons li.twitter a {
+		padding-left: 32px;
+		background-position: 2px center;
 	}
 
 }
@@ -1069,5 +1083,21 @@
 	.partner-promos .arrow {
 		margin-left: 66px;
 	}
+
+	.login-buttons li.facebook a, .login-buttons li.twitter a {
+		/*padding-left: 32px;
+		background-position: 2px center;*/
+	}
+	.login-buttons li {
+		border-radius: 30px;
+	}
+	.login-buttons li a {
+		font-size: 14px;
+	}
+	.button {
+	    font-size: 14px;
+	    padding: 12px 20px;
+	}
+
 
 }

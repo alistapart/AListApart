@@ -5012,8 +5012,6 @@ form.simple-form.wide-form label .error-message {
     position: relative;
 }
 .placeholder.loader {
-	min-height: 312px; 
-	height: 312px;
 	width: 100%;
 	background-color: white;
 	position: absolute;
@@ -5029,7 +5027,6 @@ form.simple-form.wide-form label .error-message {
     background-color: #eee;
     height: 22px;
     width: 350px;
-    /*visibility: hidden;*/
 }
 .placeholder.loader .label {
 	margin-top: 18px;
@@ -5037,7 +5034,6 @@ form.simple-form.wide-form label .error-message {
     background-color: #eee;
     height: 18px;
     width: 230px;
-    /*visibility: hidden;*/
 }
 @-moz-document url-prefix() { 
   .placeholder.loader .label {
@@ -5063,15 +5059,10 @@ form.simple-form.wide-form label .error-message {
 }
 .placeholder.loader .button {
 	margin-top: 16px;
-	width:101px;
-	height: 46px;
+	float: left;
+	color: #bb3825;
 }
-@-moz-document url-prefix() { 
-	.placeholder.loader .button  { 
-		height: 47px;
-	    margin-top: 16px;
-	}
-}
+
 
 
 
