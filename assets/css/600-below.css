@@ -1012,6 +1012,7 @@
 
 	.placeholder.loader .top-header {
     	margin-bottom: 28px;
+    	visibility: hidden;
 	}
 
 	@-moz-document url-prefix() { 

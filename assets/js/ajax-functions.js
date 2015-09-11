@@ -130,12 +130,16 @@ $(window).on('load', function() {
 	    $(window).on('popstate', function(e) {
 	    	//check if there are modified entries in the history stack
 	    	if (e.originalEvent.state === null) { 
+	    		//show placeholder loader
+				placeholderLoader.removeClass('none');
 				//load the comment sign in form
 				AlaAuth.loadTemplate(
 					states.commentsignin
 				);
 			} 
 			if (e.originalEvent.state !== null) { 
+				//show placeholder loader
+				placeholderLoader.removeClass('none');
 				//load the right content based on the state
 				AlaAuth.loadTemplate(
 					e.originalEvent.state
