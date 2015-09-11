@@ -1010,6 +1010,11 @@
 		min-height: 288px;
 	}
 
+	.animated-background {
+		animation-name: none;
+		background: #eee;
+	}
+
 	.placeholder.loader .top-header {
     	margin-bottom: 28px;
     	visibility: hidden;

@@ -5013,7 +5013,7 @@ form.simple-form.wide-form label .error-message {
     background: linear-gradient(to right,  #eeeeee 8%,#dddddd 18%,#eeeeee 25%);
     background-repeat: no-repeat;
     background-size: 600px 18px;
-    height: 30px;
+    height: 18px;
     position: relative;
 }
 .placeholder.loader {
