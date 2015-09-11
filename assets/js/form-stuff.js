@@ -39,10 +39,6 @@ $(document).ready(function (){
 
 				};
 
-				$('.invalid input').on('keyup', function() {
-				    $(this).next('.error-message').addClass('none');
-				});
-
 			};
 		});
 
@@ -73,6 +69,10 @@ $(document).ready(function (){
 
 	});
 
+});
+
+$(document).on('keyup','.invalid input', function() {
+    $(this).next('.error-message').addClass('none');
 });
 
 })(window.jQuery);
