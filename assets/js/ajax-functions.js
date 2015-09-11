@@ -7,6 +7,9 @@ function supports_history_api() {
   return !!(window.history && history.pushState);
 }
 
+//AlaAuth vars
+var ajaxContainer = $('.ajax-container');
+
 //Initiating AlaAuth object to hold form related functions
 var AlaAuth = {
 
@@ -20,7 +23,7 @@ var AlaAuth = {
 		var innerElHeight = innerEl.outerHeight();
 		innerEl.css('margin-top', '-' + innerElHeight/2 + 'px');
 		//close the modal: click anywhere to close it, or hit any key
-		$(document).on('keyup click', function(){ //
+		$(document).on('keyup click touchstart', function(){ //
 		    $(".custom-modal").remove();
 		});
 	},
@@ -59,9 +62,6 @@ var AlaAuth = {
 	}
 
 }; //end AlaAuth object
-
-//AlaAuth vars
-var ajaxContainer = $('.ajax-container');
 	
 $(document).ready(function(){
 
@@ -149,7 +149,7 @@ $(window).on('load', function() {
 * https://bugs.webkit.org/process_bug.cgi
 */
 
-$(window).on("load resize scroll",function(){
+$(window).on('load resize scroll', function(){
 	//Change input value based on screen resolution
 	AlaAuth.resetValue();
 });
