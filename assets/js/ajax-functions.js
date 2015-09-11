@@ -32,6 +32,30 @@ var AlaAuth = {
 	  	$.get(states.site_url + states.tmpl_path + state + states.entry_id + states.segments, function(ret){
 			ajaxContainer.replaceWith(ret);
 		}, false);
+	},
+
+	spinnerInit: function(){
+		//initiate spinner
+		var spinnerOpts = {
+			className: 'js-spinner none'  // CSS class to assign to the element
+		};
+		var spinnerTarget = document.getElementById('comment-submit-holder');
+		var spinner = new Spinner(spinnerOpts).spin(spinnerTarget);
+	},
+
+	spinnerStart: function(){
+		$('.js-spinner').removeClass('none');
+		$('#comment-submit-holder input').addClass('inactive');
+	},
+
+	spinnerStop: function(){ 
+		$('.js-spinner').addClass('none');
+		$('#comment-submit-holder input').removeClass('inactive');
+	},
+
+	resetValue: function(){
+		var resetText =  $(window).width() <= 420 ? 'Reset' : 'Reset password';
+		$('#reset-password').attr('value', resetText); 
 	}
 
 }; //end AlaAuth object
@@ -41,12 +65,11 @@ var ajaxContainer = $('.ajax-container');
 	
 $(document).ready(function(){
 
-	//log window.history
-	var numberOfEntries = window.history.length;
-	console.log(numberOfEntries + ' ' + window.history.state);
-
-	//this is a function in form.js that mutually excludes EE server validation and js validation
+	//this is a function in form.js that mutually excludes EE server validation and our js custom validation
 	EEValidateSync();
+
+	//Initiate spinner
+	AlaAuth.spinnerInit();
 
 	//check for history.api support
 	if (!supports_history_api()) { return; }
@@ -91,21 +114,6 @@ $(document).ready(function(){
 
 	} //end typeof states check
 
-	//initiate spinner : this needs a cleanup
-	var spinnerOpts = {
-		className: 'js-spinner none'  // CSS class to assign to the element
-	};
-	var spinnerTarget = document.getElementById('comment-submit-holder');
-	var spinner = new Spinner(spinnerOpts).spin(spinnerTarget);
-	spinnerStart = function(){
-		$('.js-spinner').removeClass('none');
-		$('#comment-submit-holder input').addClass('inactive');
-	}
-	spinnerStop = function(){ 
-		$('.js-spinner').addClass('none');
-		$('#comment-submit-holder input').removeClass('inactive');
-	}
-
 });// end document ready
 
 
@@ -140,6 +148,11 @@ $(window).on('load', function() {
 * https://code.google.com/p/chromium/issues/detail?id=63040
 * https://bugs.webkit.org/process_bug.cgi
 */
+
+$(window).on("load resize scroll",function(){
+	//Change input value based on screen resolution
+	AlaAuth.resetValue();
+});
 
 
 
