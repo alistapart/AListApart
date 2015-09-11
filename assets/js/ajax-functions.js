@@ -2,6 +2,7 @@
  * Comment sign-in and comment form actions: 
  * Uses XMLHttpRequests and the history.api
  */
+
 //check for history api support
 function supports_history_api() {
   return !!(window.history && history.pushState);
@@ -71,6 +72,9 @@ $(document).ready(function(){
 	//Initiate spinner
 	AlaAuth.spinnerInit();
 
+	//Change input value based on screen resolution
+	AlaAuth.resetValue();
+
 	//check for history.api support
 	if (!supports_history_api()) { return; }
 	
@@ -79,7 +83,7 @@ $(document).ready(function(){
 		/**
 		* when the document loads and while the user is signed in, 
 		* use replaceState to apply a state to the current document, 
-		* so event.state is never null, and the use gets to see the comment form
+		* so event.state is never null, and the user gets to see the comment form
 		*/
 		if (states.currentstate == 'comment-form') {
 			//hide social sign-in btns
@@ -116,7 +120,6 @@ $(document).ready(function(){
 
 });// end document ready
 
-
 //handle the popstate event
 $(window).on('load', function() {
 	//check for history.api support
@@ -132,7 +135,7 @@ $(window).on('load', function() {
 				);
 			} 
 			if (e.originalEvent.state !== null) { 
-				//load the right content
+				//load the right content based on the state
 				AlaAuth.loadTemplate(
 					e.originalEvent.state
 				);
