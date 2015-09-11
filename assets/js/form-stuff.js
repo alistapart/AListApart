@@ -35,10 +35,10 @@ $(document).ready(function (){
 
 				if ((errorMsg != '') && ($(this).attr('data-error') != '')) {
 
-					$(this).attr('data-error', '').parent().append('<small class="error-message" role="alert" id="' + $(this).attr('id') + '_error">' + errorMsg + '</span>').addClass('invalid');
+					$(this).attr('data-error', '').parent().append('<small class="error-message" role="alert" id="' + $(this).attr('id') + '_error">' + errorMsg + '</small>').addClass('invalid');
 
 				};
-
+				$(this).parent().addClass('invalid');
 			};
 		});
 
@@ -72,7 +72,9 @@ $(document).ready(function (){
 });
 
 $(document).on('keyup','.invalid input', function() {
-    $(this).next('.error-message').addClass('none');
+		
+ 	$(this).next('.error-message').addClass('none');
+
 });
 
 })(window.jQuery);

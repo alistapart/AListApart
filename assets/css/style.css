@@ -4548,11 +4548,11 @@ label + .note {
 	font-size: .85em;
 }
 
-.error-message {
+/*.error-message {
 	display: none;
-}
+}*/
 
-.invalid .error-message {
+.error-message {
 	display: block;
 	position: absolute;
 	z-index: 100;
