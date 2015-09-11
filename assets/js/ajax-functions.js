@@ -71,7 +71,7 @@ $(document).ready(function(){
 	AlaAuth.spinnerInit();
 
 	//hide placeholder loader
-	placeholderLoader.addClass('none');
+	//placeholderLoader.addClass('none');
 
 	//check for history.api support
 	if (!supports_history_api()) { return; }
