@@ -5023,13 +5023,14 @@ form.simple-form.wide-form label .error-message {
 	top: 0px;
 	margin-top: 0px;
 	left: 0;
-	z-index: -1;
+	z-index: 1;
 	opacity: 1;
 }
 .placeholder.loader .top-header {
     margin-left: 73px;
     margin-bottom: 4px;
     background-color: #eee;
+    color: #eee;
     height: 18px;
     width: 350px;
     float: left;
@@ -5038,6 +5039,7 @@ form.simple-form.wide-form label .error-message {
 	margin-top: 18px;
     margin-left: 0px;
     background-color: #eee;
+    color: #eee;
     height: 18px;
     width: 230px;
     clear: both;
@@ -5053,6 +5055,7 @@ form.simple-form.wide-form label .error-message {
 	margin-top: 8px;
     margin-left: 0px;
     background-color: #fff;
+    color: #fff;
     border: 1px solid #ccc;
     border-radius: 3px;
     box-shadow: inset 0px 0px 10px rgba(0,0,0,.15);
