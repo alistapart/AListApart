@@ -13,7 +13,8 @@
 								?>
 								<img class="commenter-avatar" src="<?php echo $grav_url; ?>" width="60" height="60" alt="" />
 								{/if}
-								<p class="comment-byline">
+								<p class="comment-byline"> 
+
 									<span class="commenter-name" aria-label="commenter name">
 										{if url}
 										<a href="{url}">{name}</a>
@@ -23,13 +24,18 @@
 										{name}
 										{/if}
 										<?php
+										$articleAuthor = '{exp:user:authors entry_id="{embed:entry_id}" dynamic="off" limit="1"}{member_id}{/exp:user:authors}';
 										$commentAuthor = '{author_id}';
-										$commentAuthor = (string)$commentAuthor;
+										//$commentAuthor = (string)$commentAuthor;
 										//echo $articleAuthor . ' ' . $commentAuthor; // both the same, when commenter is author
+										
 										if ("$articleAuthor" == "$commentAuthor") {
 											echo 'true'; // BUT DONT EVALUATE AS THE SAME FUUUUUUU
 										};
 										?>
+
+
+										 
 									</span>
 									<time datetime="{comment_date}" aria-label="comment posted on"><a href="/comments/{url_title}#{comment_id}">{comment_date format="%g:%i %a on %F %d, %Y"}</a></time>
 								</p>

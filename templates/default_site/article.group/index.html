@@ -293,7 +293,10 @@
 				<div class="column-holder unequal-columns">
 
 					<section id="comments" class="column comment-holder">
-
+						<?php
+						$articleAuthor = '{embed="embeds/article-authors-test" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}';
+						echo $articleAuthor;
+						?>
 						{if comment_total > 0}
 							<h1 class="classy" itemprop="commentCount">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
 
