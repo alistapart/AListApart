@@ -22,6 +22,14 @@
 										{if:else}
 										{name}
 										{/if}
+										<?php
+										$commentAuthor = '{author_id}';
+										$commentAuthor = (string)$commentAuthor;
+										//echo $articleAuthor . ' ' . $commentAuthor; // both the same, when commenter is author
+										if ("$articleAuthor" == "$commentAuthor") {
+											echo 'true'; // BUT DONT EVALUATE AS THE SAME FUUUUUUU
+										};
+										?>
 									</span>
 									<time datetime="{comment_date}" aria-label="comment posted on"><a href="/comments/{url_title}#{comment_id}">{comment_date format="%g:%i %a on %F %d, %Y"}</a></time>
 								</p>
