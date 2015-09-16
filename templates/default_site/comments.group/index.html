@@ -14,8 +14,6 @@
 
 	<title>Comments on the A List Apart {if channel_short_name == "columns"}Column{if:elseif channel_short_name == "blog"}Blog Post{if:else}Article{/if} {title}</title>
 
-	{embed="embeds/article-author-styles" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
-
 	<link rel="canonical" href="{site_url}/{segment_1}/{url_title}"/>
 
 </head>
@@ -62,7 +60,7 @@
 
 						<a href="/{if channel_short_name == "columns"}column{if:elseif channel_short_name == "blog"}blog/post{if:else}article{/if}/{url_title}" class="buttonishish">Back to the {if channel_short_name == "columns"}Column{if:elseif channel_short_name == "blog"}Post{if:else}Article{/if}</a>
 
-						
+
 						{/exp:channel:entries}
 
 						<ol class="article-comments" id="comments-parent" data-xid="{XID_HASH}">
