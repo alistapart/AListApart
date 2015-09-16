@@ -1,7 +1,7 @@
 {exp:user:authors entry_id="{embed:entry_id}" dynamic="off"}
 {exp:stash:set name="author-id"}{member_id}{/exp:stash:set}
 
-{exp:user:entries channel="articles|blog|columns" status="open|In Progress" user_author_id="{member_id}" limit="2" dynamic="no"}
+{exp:user:entries channel="articles|blog|columns" status="open" user_author_id="{member_id}" limit="2" dynamic="no"}
 
 {if {entry_id} != {exp:stash:get name="entry-id"}}
 <section class="follow-up">
