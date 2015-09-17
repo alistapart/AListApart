@@ -16,21 +16,6 @@
 
 	<link rel="canonical" href="{site_url}/{segment_1}/{url_title}"/>
 
-	<style>
-	{exp:user:authors backspace="1"}
-	.member_{author_id},{/exp:user:authors} {
-		border: 1px solid rgba(0,0,0,.4) !important;
-	}
-
-	{exp:user:authors backspace="1"}
-	.member_{author_id}::before,{/exp:user:authors} {
-		/*box-shadow: inset 0 0 18px -8px rgba(255,161,161,.9);*/
-		content: url(/components/assets/img/laurel-white-2.svg) !important;
-		padding-top: 3px !important;
-		height: 23px !important;
-	}
-	</style>
-
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -74,6 +59,7 @@
 						<h1 class="classy">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
 
 						<a href="/{if channel_short_name == "columns"}column{if:elseif channel_short_name == "blog"}blog/post{if:else}article{/if}/{url_title}" class="buttonishish">Back to the {if channel_short_name == "columns"}Column{if:elseif channel_short_name == "blog"}Post{if:else}Article{/if}</a>
+
 
 						{/exp:channel:entries}
 

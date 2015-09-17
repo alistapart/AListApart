@@ -1,5 +1,5 @@
-			{exp:channel:entries channel="blog" limit="1" entry_id="{embed:entry_id}" status="open|In Progress"}
-			{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|blog|columns" status="open|In Progress"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
+			{exp:channel:entries channel="blog" limit="1" entry_id="{embed:entry_id}" status="open"}
+			{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|blog|columns" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
 			{exp:stash:set name="entry-id"}{entry_id}{/exp:stash:set}
  			<aside id="related" class="sidebar var1">
 			<i class="widget-branding ala"></i>

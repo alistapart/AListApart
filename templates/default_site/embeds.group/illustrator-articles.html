@@ -1,0 +1,29 @@
+
+				{exp:channel:entries channel="illustrators" status="open" orderby="date" show_expired="yes" sticky="no" author_id="{embed:author_id}"}
+
+				{parents field="article_illustrator"}
+
+				{if parents:count == "1"}
+				<h2 class="alt-small">Illustrations by {embed:real_name}</h2>
+
+				<ul class="entry-list illo-thumbs">
+				{/if}
+					<li>
+						{parents:article_illustration}
+						<figure class="illo-thumb">
+							<picture>
+								<source srcset="{exp:ce_img:pair src="{url}" width="280" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="560" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
+								<img src="{exp:ce_img:pair src="{url}" width="280" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
+							</picture>
+							<figcaption><a href="">{parents:title}</a>&nbsp;·&nbsp;{parents:entry_date format="%F %d, %Y"}</figcaption>
+						</figure>
+						{/parents:article_illustration}
+
+
+					</li>
+
+				{if parents:count == parents:total_results}</ul>{/if}
+
+				{/parents}
+
+				{/exp:channel:entries}

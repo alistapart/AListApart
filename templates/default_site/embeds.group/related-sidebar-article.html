@@ -1,5 +1,5 @@
-			{exp:channel:entries channel="articles" limit="1" entry_id="{embed:entry_id}" status="open|In Progress"}
-			{exp:playa:parents channel="issues" status="open|In Progress"}{exp:stash:set name="total-children"}{exp:playa:total_children}{/exp:stash:set}{/exp:playa:parents}
+			{exp:channel:entries channel="articles" limit="1" entry_id="{embed:entry_id}" status="open"}
+			{exp:playa:parents channel="issues" status="open"}{exp:stash:set name="total-children"}{exp:playa:total_children}{/exp:stash:set}{/exp:playa:parents}
 			{exp:stash:set name="entry-id"}{entry_id}{/exp:stash:set}
 			<aside id="related" class="sidebar var1">
 				<i class="widget-branding ala"></i>
@@ -31,10 +31,10 @@
 			{/if}
 			<!-- if a follow up has not been selected, and the issue has two articles show the other article -->
 			{if article_follow_up == ""}
-			{exp:playa:parents channel="issues" status="open|In Progress"}
+			{exp:playa:parents channel="issues" status="open"}
 			{if {exp:stash:get name="total-children"} > 1}
 				{exp:stash:set name="issue-number"}{issue_number}{/exp:stash:set}
-				{exp:playa:children child_id="not {embed:entry_id}" status="open|In Progress"}
+				{exp:playa:children child_id="not {embed:entry_id}" status="open"}
 					<section>
 						{if count == "1"}
 						{article_illustration}
@@ -54,10 +54,10 @@
 				{/exp:playa:children}
 			{if:elseif {exp:stash:get name="total-children"} == 1}
 				<section class="follow-up">
-				{exp:user:authors}{screen_name}{/exp:user:authors}  
+				{exp:user:authors}{screen_name}{/exp:user:authors}
 					{embed="embeds/recently-by-author" entry_id="{entry_id}"}
-				 
-			 
+
+
 				</section>
 			{/if}
 			{/exp:playa:parents}
@@ -66,7 +66,7 @@
 			<!-- start second block --><!-- show related articles if they exist -->
 				<section class="related-articles">
 					<h1>Further reading</h1>
-					{article_related_content status="open|In Progress"}
+					{article_related_content status="open"}
 					<article>
 					<h2><a href="{site_url}/{if article_related_content:channel_short_name=='blog'}{article_related_content:channel_short_name}/post/{article_related_content:url_title}{if:elseif article_related_content:channel_short_name=='articles'}article/{article_related_content:url_title}{if:elseif article_related_content:channel_short_name=='columns'}column/{article_related_content:url_title}{/if}" data-trackevent="Related sidebar: Related by editor">{article_related_content:title}</a></h2>
 					<p>{exp:strip_html}
@@ -86,8 +86,8 @@
 					{embed="embeds/primary-category-logic" id="{entry_id}"}
 				{/if}
 			{/if}
-			{if article_follow_up == ""} 
-			{exp:playa:parents channel="issues" status="open|In Progress"}
+			{if article_follow_up == ""}
+			{exp:playa:parents channel="issues" status="open"}
 					{if {exp:stash:get name="total-children"} == 1}
 						<section class="related-articles">
 						{embed="embeds/event-entries"}

@@ -1,4 +1,10 @@
-							<li {if count == total_results}name="latest"{/if} id="{comment_id}" data-count="{count}" class="comment member_{author_id}">
+
+<?php
+$articleAuthor = '{exp:user:authors entry_id="{embed:entry_id}" dynamic="off" limit="1"}{member_id}{/exp:user:authors}';
+$commentAuthor = '{author_id}';
+?>
+							<li {if count == total_results}name="latest"{/if} id="{comment_id}" data-count="{count}" <?php
+							if ("$articleAuthor" == "$commentAuthor") echo 'class="article-author"'; ?>">
 								{if avatar != ""}
 								{exp:ce_img:single src="{avatar_url}" width="60" height="60" crop="yes" class="commenter-avatar" alt=""}
 								{if:elseif photo_filename}
@@ -14,6 +20,7 @@
 								<img class="commenter-avatar" src="<?php echo $grav_url; ?>" width="60" height="60" alt="" />
 								{/if}
 								<p class="comment-byline">
+
 									<span class="commenter-name" aria-label="commenter name">
 										{if url}
 										<a href="{url}">{name}</a>
@@ -23,6 +30,12 @@
 										{name}
 										{/if}
 									</span>
+
+									<?php
+									if ("$articleAuthor" == "$commentAuthor") {
+										echo '<span class="commenter-is-author">(article author)</span>';
+									};
+									?>
 									<time datetime="{comment_date}" aria-label="comment posted on"><a href="/comments/{url_title}#{comment_id}">{comment_date format="%g:%i %a on %F %d, %Y"}</a></time>
 								</p>
 								<div itemprop="comment" class="comment-body">

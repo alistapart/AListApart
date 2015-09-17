@@ -62,7 +62,7 @@ a:focus {
 .buttonish,
 .buttonishish {
 	display: inline-block;
-	padding: 2px 9px;
+	padding: 2px 14px;
 	font-family: "Franklin ITC Light", sans-serif;
 	color: #fff;
 	text-decoration: none;
@@ -2086,13 +2086,39 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	margin-bottom: 24px;
 }
 
-.main-content > ul.entry-list > li.featured-comment {
-	position: relative;
-	margin-left: -12px;
-	padding: 28px 24px;
-	background: #f9f9f9;
-	border-radius: 12px;
+.main-content > ul.entry-list.illo-thumbs > li {
+	display: inline-block;
+	vertical-align: top;
+	width: 48%;
+	width: calc(50% - 1em);
+	line-height: 20px;
 }
+
+.main-content > ul.entry-list.illo-thumbs > li:nth-child(odd) {
+	margin-right: 1em;
+}
+
+.main-content > ul.entry-list.illo-thumbs > li figcaption {
+	font-size: 14px;
+	line-height: 20px;
+	font-family: "Franklin ITC Light", sans-serif;
+}
+
+.main-content > ul.entry-list.illo-thumbs > li figcaption a {
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: bold;
+}
+
+.main-content > ul.entry-list.illo-thumbs > li picture,
+.main-content > ul.entry-list.illo-thumbs > li img {
+	display: block;
+	max-height: 200px;
+	width: auto;
+	margin: 0 auto 12px;
+}
+
+margin-bottom: 12px;
+display: block;
 
 .main-content > ul.entry-list > li.featured-comment:before {
 	content: "“";
@@ -2590,9 +2616,11 @@ h3.alternate {
 	color: #888;
 }
 
-.main-content > figure, .main-content > .illustration {
+.main-content > figure,
+.main-content > .illustration {
 	margin-top:36px;
 	margin-bottom:36px;
+	overflow: hidden;
 }
 
 .main-content > figure table {
@@ -3257,8 +3285,11 @@ ol.article-comments > li:not([data-count]):not(.commenter-signin):not(.comment-f
 	margin-right: 30px;
 }
 
-ol.article-comments li.author-comment {
-	background: #fcfcfc;
+ol.article-comments li.article-author .commenter-name:before {
+	content: url(/components/assets/img/icon_navigation-laurel.svg);
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 3px;
 }
 
 ol.article-comments li.system-message {
@@ -3780,8 +3811,7 @@ ul.bullets {
 .paginator {
 	margin-top: 30px;
 	text-align: center;
-	font-family: "Franklin ITC", sans-serif;
-	font-weight: bold;
+	font-family: "Franklin ITC Light", sans-serif;
 }
 
 .paginator ul,
@@ -3792,10 +3822,9 @@ ul.bullets {
 
 .paginator a {
 	display: inline-block;
-	padding: 2px 12px 0 12px;
-	font-size: 12px;
-	line-height: 24px;
-	text-transform: uppercase;
+	padding: 2px 16px 0 16px;
+	font-size: 14px;
+	line-height: 28px;
 	color: #fff;
 	background: #666;
 	border-radius: 15px;

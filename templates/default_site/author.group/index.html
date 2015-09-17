@@ -65,6 +65,12 @@
 
 				{embed="embeds/author-articles" author_id="{member_id}" real_name="{screen_name}"}
 
+				{if screen_name == "Kevin Cornell"}
+				{embed="embeds/illustrator-articles-kevin"}
+				{if:else}
+				{embed="embeds/illustrator-articles" author_id="{member_id}" real_name="{screen_name}"}
+				{/if}
+
 {/exp:user:stats}
 
 			</article><!--
