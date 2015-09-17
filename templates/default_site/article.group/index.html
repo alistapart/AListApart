@@ -206,8 +206,8 @@
 				{/if}
 
 				<!-- START RELATED SIDEBAR -->
-				{exp:stash:set name="total-children"}{exp:playa:parents channel="issues" status="open|In Progress"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
-				{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|blog|columns" status="open|In Progress"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
+				{exp:stash:set name="total-children"}{exp:playa:parents channel="issues" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
+				{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|blog|columns" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
 				{exp:stash:set name="entry-id"}{entry_id}{/exp:stash:set}
 				<aside id="related" class="sidebar var1">
 				<i class="widget-branding ala"></i>
@@ -239,10 +239,10 @@
 				{if '{exp:stash:get name="has-parents"}' == ''}
 					{if '{exp:stash:get name="total-children"}' > 1}
 					<section>
-					{exp:playa:parents channel="issues" status="open|In Progress"}
+					{exp:playa:parents channel="issues" status="open"}
 					{exp:stash:set name="issue-number-sidebar"}{issue_number}{/exp:stash:set}
 					{exp:stash:set name="article-illo-sidebar"}{issue_number}{/exp:stash:set}
-					{exp:playa:children status="open|In Progress"}
+					{exp:playa:children status="open"}
 					{if entry_id != {exp:stash:get name="entry-id"}}
 						{article_illustration}
 						<figure class="sidebar-hero {if width > height}wideone{/if}" data-picture data-alt="">

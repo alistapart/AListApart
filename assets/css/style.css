@@ -3266,8 +3266,11 @@ ol.article-comments > li:not([data-count]):not(.commenter-signin):not(.comment-f
 	margin-right: 30px;
 }
 
-ol.article-comments li.author-comment {
-	background: #fcfcfc;
+ol.article-comments li.article-author .commenter-name:before {
+	content: url(/components/assets/img/icon_navigation-laurel.svg);
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 3px;
 }
 
 ol.article-comments li.system-message {
