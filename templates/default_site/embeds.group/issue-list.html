@@ -14,7 +14,7 @@
 						<h3 class="entry-title"><a href="/article/{url_title}">{title}</a></h3>
 						<p class="meta">
 							by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} ·
-							<time class="pubdate updated" datetime="{exp:playa:parents}{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}{/exp:playa:parents}</time>
+							<time class="pubdate updated" datetime="{exp:playa:parents channel='issues'}{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}{/exp:playa:parents">{exp:playa:parents channel='issues'}{entry_date format="%F %d, %Y"}{/exp:playa:parents}</time>
 							{if comment_total > 0}
 							 · <a class="comment-count" href="/article/{url_title}#comments">{comment_total} Comment{if comment_total > 1}s{/if}</a>
 							 {/if}
