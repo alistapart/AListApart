@@ -3,8 +3,7 @@
 $articleAuthor = '{exp:user:authors entry_id="{embed:entry_id}" dynamic="off" limit="1"}{member_id}{/exp:user:authors}';
 $commentAuthor = '{author_id}';
 ?>
-							<li {if count == total_results}name="latest"{/if} id="{comment_id}" data-count="{count}" <?php
-							if ("$articleAuthor" == "$commentAuthor") echo 'class="article-author"'; ?>">
+							<li {if count == total_results}name="latest"{/if} id="{comment_id}" data-count="{count}" class="comment<?php if ("$articleAuthor" == "$commentAuthor") echo ' article-author';?>">
 								{if avatar != ""}
 								{exp:ce_img:single src="{avatar_url}" width="60" height="60" crop="yes" class="commenter-avatar" alt=""}
 								{if:elseif photo_filename}
