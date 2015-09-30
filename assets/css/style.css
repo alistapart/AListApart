@@ -2617,6 +2617,8 @@ h3.alternate {
 
 .main-content > figure table th,
 .main-content > figure table td {
+	margin-left: auto;
+	margin-right: auto;
 	padding: 12px;
 	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
