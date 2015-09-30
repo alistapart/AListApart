@@ -2611,7 +2611,7 @@ h3.alternate {
 	border-bottom: 1px dotted #bfbfbf;
 }
 
-.main-content > figure table tr:nth-child(odd) td {
+.main-content > figure table tr:nth-child(even) td {
 	background: #eee;
 }
 
@@ -2623,6 +2623,11 @@ h3.alternate {
 	font-style: normal;
 	text-align: left;
 	padding: 4px 6px;
+}
+
+.main-content > figure table th {
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: Bold;
 }
 
 .main-content > figure table td {
