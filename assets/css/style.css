@@ -887,13 +887,15 @@ aside.column.more-content .item-summary {
 	display: block;
 }
 
-.item-summary.article > h1 {
+.item-summary.article > h1,
+.item-summary.article > .summary-title {
 	margin-bottom: 2px;
 	font-size: 18px;
 	line-height: 24px;
 }
 
-.item-summary:not(.article) > h1 {
+.item-summary:not(.article) > h1,
+.item-summary:not(.article) > .summary-title {
 	/* font-size: 14px;
 	line-height: 18px;
 	font-style: italic; */
@@ -902,7 +904,8 @@ aside.column.more-content .item-summary {
 	line-height: 24px;
 }
 
-.item-summary:not(.topic) > h1 a {
+.item-summary:not(.topic) > h1 a,
+.item-summary:not(.topic) > .summary-title a {
 	color: #222;
 }
 
