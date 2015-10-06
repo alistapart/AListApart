@@ -887,13 +887,15 @@ aside.column.more-content .item-summary {
 	display: block;
 }
 
-.item-summary.article > h1 {
+.item-summary.article > h1,
+.item-summary.article > .summary-title {
 	margin-bottom: 2px;
 	font-size: 18px;
 	line-height: 24px;
 }
 
-.item-summary:not(.article) > h1 {
+.item-summary:not(.article) > h1,
+.item-summary:not(.article) > .summary-title {
 	/* font-size: 14px;
 	line-height: 18px;
 	font-style: italic; */
@@ -902,7 +904,8 @@ aside.column.more-content .item-summary {
 	line-height: 24px;
 }
 
-.item-summary:not(.topic) > h1 a {
+.item-summary:not(.topic) > h1 a,
+.item-summary:not(.topic) > .summary-title a {
 	color: #222;
 }
 
@@ -2632,7 +2635,7 @@ h3.alternate {
 	border-bottom: 1px dotted #bfbfbf;
 }
 
-.main-content > figure table tr:nth-child(odd) td {
+.main-content > figure table tr:nth-child(even) td {
 	background: #eee;
 }
 
@@ -2644,6 +2647,11 @@ h3.alternate {
 	font-style: normal;
 	text-align: left;
 	padding: 4px 6px;
+}
+
+.main-content > figure table th {
+	font-family: "Franklin ITC", sans-serif;
+	font-weight: Bold;
 }
 
 .main-content > figure table td {
@@ -3199,7 +3207,7 @@ ol.article-comments > li .comment-tools {
 	top: 17px;
 	display: none;
 	margin-left: 72px;
-	margin-right: -6px;
+	margin-right: -32px;
 	padding-right: 6px;
 	background: #fff;
 	font-family: "Franklin ITC Light", sans-serif;
@@ -3548,7 +3556,8 @@ li.comment-form p {
 	outline: 10px solid rgba(255,255,255,.5);
 }
 
-.partner-promos h1 {
+.partner-promos h1,
+.partner-promos .promo-title {
 	font-family: "Franklin ITC", sans-serif;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -4381,7 +4390,7 @@ instructions #666666, italic, 14px*/
 
 input[readonly] {
 	border-color: #ddd !important;
-	color: #aaa !important;	
+	color: #aaa !important;
 	font-style: italic;
 }
 
@@ -4954,12 +4963,12 @@ form.simple-form.wide-form label .error-message {
 .custom-modal {
 	position: absolute;
 	top: 0;
-	left: 0; 
+	left: 0;
 	width: 100%;
 	height: 100%;
 	background-color: white;
 	padding: 0 0px;
-	z-index: 2;	
+	z-index: 2;
 	background: rgb(255, 255, 255); /* Fallback for older browsers without RGBA-support */
     background: rgba(255, 255, 255, 0.8);
 	text-align: center;
@@ -4970,7 +4979,7 @@ form.simple-form.wide-form label .error-message {
 	margin-top: 12px;
 	color: #999;
 	font-style: normal;
-	text-align: center;	
+	text-align: center;
 	width: 100%;
 }
 .custom-modal .container {
@@ -4991,7 +5000,7 @@ form.simple-form.wide-form label .error-message {
 	position: relative;
 	margin-bottom: 16px;
 }
-@-moz-document url-prefix() { 
+@-moz-document url-prefix() {
   .outer-ajax-container {
      min-height: 269px;
   }
@@ -5002,7 +5011,7 @@ form.simple-form.wide-form label .error-message {
 .ajax-container.forgot-password-form {
 	min-height: 264px;
 }
-@-moz-document url-prefix() { 
+@-moz-document url-prefix() {
   .ajax-container.forgot-password-form  {
      min-height: 269px;
   }
@@ -5074,7 +5083,7 @@ form.simple-form.wide-form label .error-message {
     clear: both;
     float: left;
 }
-@-moz-document url-prefix() { 
+@-moz-document url-prefix() {
   .placeholder.loader .label {
      margin-top: 17px;
      height: 20px;
@@ -5092,8 +5101,8 @@ form.simple-form.wide-form label .error-message {
     width: 100%;
     float: left;
 }
-@-moz-document url-prefix() { 
-	.placeholder.loader .field { 
+@-moz-document url-prefix() {
+	.placeholder.loader .field {
 		height: 49px;
 	    margin-top: 6px;
 	}
