@@ -11,19 +11,21 @@
 					<li>
 						<figure class="illo-thumb">
 							{article_illustration}
+							<a href="/article/{parents:url_title}">
 							{if width > height}
 							<picture>
-								<source srcset="{exp:ce_img:pair src="{url}" width="280" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="560" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
+								<source srcset="{exp:ce_img:pair src="{url}" width="280" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="560" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
 								<img src="{exp:ce_img:pair src="{url}" width="280" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
 							</picture>
 							{if:else}
 							<picture>
-								<source srcset="{exp:ce_img:pair src="{url}" height="200" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" height="400" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
+								<source srcset="{exp:ce_img:pair src="{url}" height="200" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" height="400" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
 								<img src="{exp:ce_img:pair src="{url}" height="200" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
 							</picture>
 							{/if}
+							</a>
 							{/article_illustration}
-							<figcaption><a href="">{title}</a>&nbsp;·&nbsp;{entry_date format="%F %d, %Y"}</figcaption>
+							<figcaption><a href="/article/{parents:url_title}">{title}</a>&nbsp;·&nbsp;{entry_date format="%F %d, %Y"}</figcaption>
 						</figure>
 
 
