@@ -8,9 +8,7 @@
 
 {global-page-top}
 
-<title>A List Apart: Would you like to register?</title>
-
-<!-- <link rel="stylesheet" href="{assets_path}css/editables.css" /> -->
+<title>A List Apart: Log in</title>
 
 </head>
 
@@ -28,7 +26,7 @@
 
 		<div class="main-content tools">
 
-		<h1 class="basic-title">{if logged_in}Logged in.{if:else}Log In{/if}</h1>
+		<h1 class="basic-title">{if logged_in}Logged in.{if:else}Log in{/if}</h1>
 
 	{if logged_in}
 
@@ -42,7 +40,7 @@
 		form_class="sign-in-form"}
 
 		<p>
-			<label for="username">Username / Email Address (<a tabindex="4" href="/tools/register">need an account?</a>)</label>
+			<label for="username">Email (<a tabindex="4" href="/tools/register">Need an account?</a>)</label>
 			<input
 				type="text"
 				id="username"
@@ -53,12 +51,12 @@
 				data-validate="onblur"
 				data-type="any"
 				data-isvalid=""
-				data-error="who are you?"
+				data-error="What’s your email address?"
 				required>
 		</p>
 
 		<p class="password-field">
-			<label for="login_password">Password (<a tabindex="5" href="/tools/forgot-password">forgotten it?</a>)</label>
+			<label for="login_password">Password (<a tabindex="5" href="/tools/forgot-password">Forgot?</a>)</label>
 			<input
 				type="password"
 				id="login_password"
@@ -68,7 +66,7 @@
 				data-validate="onblur"
 				data-type="any"
 				data-isvalid=""
-				data-error="what's your password?"
+				data-error="What's your password?"
 				required>
 		</p>
 
@@ -105,7 +103,7 @@
 
 		<aside id="login-buttons">
 
-			<h4 class="form-heading small">Or log in with:</h4>
+			<h4 class="form-heading small">Or,  log in with</h4>
 
 			<ul class="login-buttons">
 

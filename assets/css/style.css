@@ -26,6 +26,14 @@ a:focus {
 	display: none;
 }
 
+.hide-from-js {
+	display: none;
+}
+
+.no-js .hide-from-js {
+	display: block;
+}
+
 .none {
 	display: none!important;
 }
@@ -4562,9 +4570,10 @@ input + button {
 -------------------------------------------------------------------------------*/
 .note {
 	position: relative;
+	display: inline-block;
 	margin-top: 6px;
 	font-size: 14px;
-	line-height: 1.6em;
+	line-height: 1.4;
 	font-style: italic;
 	color: #666;
 }

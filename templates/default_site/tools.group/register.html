@@ -8,7 +8,7 @@
 
 {global-page-top}
 
-<title>A List Apart: Would you like to register?</title>
+<title>A List Apart: Register</title>
 
 </head>
 
@@ -26,11 +26,12 @@
 
 		<div class="main-content tools">
 
-		<h1 class="basic-title">Register</h1>
+		<h1 class="basic-title">Register!</h1>
 		
 		{if segment_3 == 'email-sent'}
 
-		<p>Got it. Be on the lookout for an email with a link to activate your new account. <a href="{site_url}/<?php echo ee()->session->tracker['2']; ?>">Head back.</a></p> 
+		<p>Got it. Be on the lookout for an email with a link to activate your new account. 
+		<a href="{site_url}/<?php echo ee()->session->tracker['2']; ?>">Head back.</a></p> 
 
 		{if:else}
 
@@ -39,8 +40,8 @@
 			form_id="sign-in-form"
 			form_class="sign-in-form"}
 
-			<p>
-				<label for="username">Username: required</label>
+			<p class="hide-from-js">
+				<label for="username">Username (required)</label>
 				<input 
 					type="text"
 					id="username" 
@@ -49,13 +50,31 @@
 					data-validate="onblur"
 					data-type="any" 
 					data-isvalid=""
-					data-error="who are you?"
+					data-error="What’s your email address?"
 					autofocus
-					required>
+					required
+					value="default">
+				<span class="note">Choose wisely—if you want to change it later, you’ll need to contact us.</span>
 			</p>
 
 			<p>
-				<label for="email">Email: required</label>
+				<label for="screen_name">Screen name (required)</label>
+				<input 
+					type="text"
+					id="screen_name" 
+					name="screen_name"
+					aria-describedby="screen-name_error"
+					data-validate="onblur"
+					data-type="any" 
+					data-isvalid=""
+					data-error="What’s your screen name?"
+					autofocus
+					required>
+				<span class="note">Your name as it will appear on A List Apart.</span>
+			</p>
+
+			<p>
+				<label for="email">Email (required)</label>
 				<input 
 					type="email"
 					id="email" 
@@ -65,12 +84,12 @@
 					data-validate="onblur"
 					data-type="email"
 					data-isvalid="{if email}yes{/if}"
-					data-error="are you sure this is your email address?"
+					data-error="Are you sure this is your email address?"
 					required>
 			</p>
 
 			<p class="password-field">
-				<label for="password">Password: required</label>
+				<label for="password">Password (required)</label>
 				<input 
 					type="password"
 					id="password" 
@@ -80,13 +99,13 @@
 					data-validate="onblur"
 					data-type="any"
 					data-isvalid=""
-					data-error="what's your new password?"
+					data-error="What’s your new password?"
 					required>
-				<span class="note">Make it good.</span>
+				<span class="note">At least six characters. Consider using a phrase—it’s more secure.</span>
 			</p>
 
-			<p class="password-field">
-				<label for="password_confirm">Password Confirmation: required</label>
+			<p class="password-field hide-from-js">
+				<label for="password_confirm">Confirm password (required)</label>
 				<input
 					type="password"
 					id="password_confirm"
@@ -97,9 +116,9 @@
 					data-type="matching"
 					data-mustmatch="password"
 					data-isvalid="yes"
-					data-error="this needs to match the previous field."
+					data-error="This needs to match the previous field."
 					required>
-				<span class="note">Make it the same.</span>
+				<span class="note">This needs to match the password you just entered.</span>
 			</p>
 
 			<p class="screen-reader">
@@ -119,10 +138,23 @@
 			</p>
 
 			{/exp:freemember:register}
-
+<script>
+$(document).ready(function(){
+	$('#sign-in-form').on('submit', function(event){
+		//substitute username with email
+		var email = document.getElementById("email");
+		var username = document.getElementById("username");
+		username.value = email.value;
+		//substitute password_confirm with password
+		var password = document.getElementById("password");
+		var password_confirm = document.getElementById("password_confirm");
+		password_confirm.value = password.value;
+	});
+});
+</script>
 			<aside id="login-buttons">
 			
-				<h4 class="form-heading small">Or sign in with:</h4>
+				<h4 class="form-heading small">Or, sign in with</h4>
 
 				<ul class="login-buttons">
 
