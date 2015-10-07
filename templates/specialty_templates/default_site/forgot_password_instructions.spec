@@ -1,9 +1,2 @@
 <subject>Password Reset Request</subject>
-<div style="font-family:georgia,serif;font-size:14px;margin-bottom:0px">
-<h1 style="font-family:arial,sans-serif;font-size:20px;margin-bottom:0px">Hi,</h1>
-Someone, hopefully you, has requested a password reset for the account attached to your email address in A List Apart's system. If you'd like to make it happen, go to this address:
-{reset_url}
-If you'd rather not change your password, go ahead ignore this message. The link will expire in 24 hours.
-<p><strong>A List Apart</strong></p>
-<a href="{site_url}" style="color:#3367d6;"><img src="http://alistapart.com/components/assets/img/ala-laurel.gif" width="50" /></a>
-</div>
+<div style="font-family:georgia,serif;font-size:14px;line-height:22px;margin-bottom:0px;max-width:600px;"><h1 style="font-family:arial,sans-serif;font-size:20px;">Need your password reset?</h1><p style="margin:0px;margin-top:16px;">Hi {name},</p><p style="margin:0px;margin-top:11px;">Someone, hopefully you, has requested a password reset for the account attached to your email address in <cite>A List Apart</cite>'s system. <br>To reset your password, go to this address:</p><p style="margin:0px;margin-top:11px;">{reset_url}</p><p style="margin:0px;margin-top:11px;">If you'd rather not change your password, feel free to ignore this message. The link will expire in 24 hours.</p><p style="margin:0px;margin-top:16px;"><cite>A List Apart</cite><br><a href="{site_url}" style="color:#3367d6;"><img src="http://alistapart.com/components/assets/img/ala-laurel.gif" width="40" /></a></p></div>
