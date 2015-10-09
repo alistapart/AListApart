@@ -67,6 +67,10 @@ a:focus {
 	text-align: center;
 }
 
+.undertone {
+	color: #999;
+}
+
 .buttonish,
 .buttonishish {
 	display: inline-block;
@@ -2127,9 +2131,6 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	width: auto;
 	margin: 0 auto 12px;
 }
-
-margin-bottom: 12px;
-display: block;
 
 .main-content > ul.entry-list > li.featured-comment:before {
 	content: "“";
@@ -4354,6 +4355,7 @@ body.modal {
 -------------------------------------------------------------------------------*/
 .main-content.tools {
 	margin: 0 auto;
+	margin-bottom: 54px;
 	width: 60%;
 }
 
@@ -4364,14 +4366,6 @@ body.modal {
 
 /* Forms UI
 -------------------------------------------------------------------------------*/
-/*all elements aligned left
-all fields and buttons normal weight
-labels 14px
-fields 18px, border 1px #cccccc, border-radius 3px
-buttons 18px, border-radius %50
-primary button red with white type
-secondary button white with #222222 type, #cccccc border
-instructions #666666, italic, 14px*/
 
 /* take control over placeholders */
 ::-webkit-input-placeholder {

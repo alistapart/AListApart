@@ -64,6 +64,9 @@ var AlaAuth = {
 	
 $(document).ready(function(){
 
+	//this is a function in form.js that simplifies register by substituting username + pass confirm fields
+	simplifyRegister();
+
 	//this is a function in form.js that mutually excludes EE server validation and our js custom validation
 	EEValidateSync();
 

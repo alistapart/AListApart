@@ -7,9 +7,8 @@
 
 // sample CSS: html[data-useragent*='Chrome/13.0'] { ... }
 
+
 (function($){
-
-
 
 $(document).ready(function (){
 
@@ -157,7 +156,11 @@ function inputValidation(which, requiredState, valType, value) {
 	};
 
 };
-//for the ajax loaded forms to play nicely with inline EE validation
+/* EE Validate Sync function:
+* for the ajax loaded comment forms specifically 
+* so they play nicely with inline EE validation
+* shows either one or the other
+*/
 function EEValidateSync() {
 	$('.ajax-container form').on('submit', function() {
 		$(this).find(':required').each(function() {
@@ -170,5 +173,34 @@ function EEValidateSync() {
 		});
 	});
 }
+
+/* Simplify Register function: 
+* substitute username with email 
+* and password_confirm with password
+*/
+function simplifyRegister() {
+	var sign_in_form = document.getElementById("sign-in-form"),
+		edit_account = document.getElementById("edit-account-form"),
+		email = document.getElementById("email"),
+		username = document.getElementById("username"),
+		password = document.getElementById("password"),
+		password_confirm = document.getElementById("password_confirm");
+
+	if (signInForm !== null) {
+		sign_in_form.addEventListener("submit", function(){
+			//substitute username with email
+			username.value = email.value;
+			//substitute password_confirm with password
+			password_confirm.value = password.value;
+		}, false);
+	}
+	if (edit_account !== null) {
+		edit_account.addEventListener("submit", function(){
+			//substitute password_confirm with password
+			password_confirm.value = password.value;
+		}, false);
+	}
+}
+simplifyRegister();
 
  

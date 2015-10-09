@@ -8,7 +8,7 @@
 
 {global-page-top}
 
-<title>A List Apart: Register</title>
+<title>A List Apart: Register!</title>
 
 </head>
 
@@ -40,25 +40,8 @@
 			form_id="sign-in-form"
 			form_class="sign-in-form"}
 
-			<p class="hide-from-js">
-				<label for="username">Username (required)</label>
-				<input 
-					type="text"
-					id="username" 
-					name="username"
-					aria-describedby="username_error"
-					data-validate="onblur"
-					data-type="any" 
-					data-isvalid=""
-					data-error="What’s your email address?"
-					autofocus
-					required
-					value="default">
-				<span class="note">Choose wisely—if you want to change it later, you’ll need to contact us.</span>
-			</p>
-
 			<p>
-				<label for="screen_name">Screen name (required)</label>
+				<label for="screen_name">Screen name <span class="undertone">(required)</span></label>
 				<input 
 					type="text"
 					id="screen_name" 
@@ -68,13 +51,15 @@
 					data-type="any" 
 					data-isvalid=""
 					data-error="What’s your screen name?"
+					data-tabmaster="true"
+					data-tabto="email"
 					autofocus
 					required>
-				<span class="note">Your name as it will appear on A List Apart.</span>
+				<span class="note">Your name as it will appear on <cite>A List Apart</cite>.</span>
 			</p>
 
 			<p>
-				<label for="email">Email (required)</label>
+				<label for="email">Email <span class="undertone">(required)</span></label>
 				<input 
 					type="email"
 					id="email" 
@@ -85,11 +70,29 @@
 					data-type="email"
 					data-isvalid="{if email}yes{/if}"
 					data-error="Are you sure this is your email address?"
+					data-tabmaster="true"
+					data-tabto="password"
+					required>
+			</p>
+
+			<p class="hide-from-js">
+				<label for="username">Email confirmation <span class="undertone">(required)</span></label>
+				<input 
+					type="text"
+					id="username" 
+					name="username"
+					aria-describedby="username_confirm_error"
+					data-validate="onblur"
+					data-type="matching"
+					data-mustmatch="email" 
+					data-isvalid=""
+					data-error="This needs to match the previous field."
+					autofocus
 					required>
 			</p>
 
 			<p class="password-field">
-				<label for="password">Password (required)</label>
+				<label for="password">Password <span class="undertone">(required)</span></label>
 				<input 
 					type="password"
 					id="password" 
@@ -100,12 +103,14 @@
 					data-type="any"
 					data-isvalid=""
 					data-error="What’s your new password?"
+					data-tabmaster="true"
+					data-tabto="submit"
 					required>
 				<span class="note">At least six characters. Consider using a phrase—it’s more secure.</span>
 			</p>
 
 			<p class="password-field hide-from-js">
-				<label for="password_confirm">Confirm password (required)</label>
+				<label for="password_confirm">Confirm password <span class="undertone">(required)</span></label>
 				<input
 					type="password"
 					id="password_confirm"
@@ -126,32 +131,21 @@
 				<input
 					type="text"
 					id="honeepot"
-					name="honeepot">
+					name="honeepot"
+					data-tabmaster="false">
 			</p>
 			
 			<p>
 				<input 
-					type="submit" 
+					type="submit"
+					id="submit" 
 					name="submit" 
 					value="Submit" 
-					class="button primary">
+					class="submit button primary">
 			</p>
 
 			{/exp:freemember:register}
-<script>
-$(document).ready(function(){
-	$('#sign-in-form').on('submit', function(event){
-		//substitute username with email
-		var email = document.getElementById("email");
-		var username = document.getElementById("username");
-		username.value = email.value;
-		//substitute password_confirm with password
-		var password = document.getElementById("password");
-		var password_confirm = document.getElementById("password_confirm");
-		password_confirm.value = password.value;
-	});
-});
-</script>
+
 			<aside id="login-buttons">
 			
 				<h4 class="form-heading small">Or, sign in with</h4>

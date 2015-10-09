@@ -2,7 +2,7 @@
 
 	<li id="commenter-signin" class="commenter-signin {if comment_total == 0}no-comments{/if}">
 
-	<h3 class="form-heading">Got Something to Say?</h3>
+	<h3 class="form-heading">Got something to say?</h3>
  	
  	<div class="outer-ajax-container">
 
@@ -14,10 +14,10 @@
 		{/if}
 			<fieldset>
 
-		    	<legend class="center">Sign in with your A List Apart account to discuss this article.</legend>
+		    	<legend class="center">Sign in to add your voice to the discussion.</legend>
 
 				<p>
-					<label for="login-name-here">Email / Username (<a id="register" class="history-nav" data-tabto="forgot-password" href="/tools/register" target="_blank">need an account?</a>)</label>
+					<label for="login-name-here">Email (<a id="register" class="history-nav" data-tabto="forgot-password" href="/tools/register" target="_blank">Need an account?</a>)</label>
 					<input
 						type="text"
 						id="login-name-here"
@@ -25,14 +25,14 @@
 						data-validate="onblur"
 						data-type="any"
 						data-isvalid=""
-						data-error="who are you?"
+						data-error="What’s your email address?"
 						data-tabmaster="true"
 						data-tabto="login_password"
 						required>
 				</p>
 
 				<p class="password-field">
-					<label for="login_password">Password (<a id="forgot-password" class="history-nav" data-tabto="comment-submit" href="/tools/forgot-password" target="_blank">forgotten it?</a>)</label>
+					<label for="login_password">Password (<a id="forgot-password" class="history-nav" data-tabto="comment-submit" href="/tools/forgot-password" target="_blank">Forgot?</a>)</label>
 					<input
 						type="password"
 						id="login_password"
@@ -41,7 +41,7 @@
 						data-validate="onblur"
 						data-type="any"
 						data-isvalid=""
-						data-error="what's your password?"
+						data-error="What’s your password?"
 						data-tabmaster="true"
 						data-tabto="register"
 						required>
@@ -108,7 +108,7 @@
 	
 	<div id="login-buttons" class="active">
 	
-		<h4 class="form-heading">Or sign in with:</h4>
+		<h4 class="form-heading">Or, sign in with</h4>
 
 		<ul class="login-buttons">
 			<li class="twitter">

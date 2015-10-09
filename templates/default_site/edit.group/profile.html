@@ -24,7 +24,7 @@
 
 	<div class="col-holder">
 
-		<div class="main-content tools">
+		<article class="main-content tools">
 
 		<h1 class="basic-title">The ALA Profile Editor</h1>
 		
@@ -117,25 +117,15 @@
 		{exp:user:edit
 			dynamic="off"
 			return="/edit/profile/"
-			form:class="perfect-form-demo"}
+			form:class="perfect-form-demo"
+			form:id="edit-account-form"}
 
 			<fieldset>
 
-				<legend class="form-heading">The Basics</legend>
+				<legend class="form-heading">Basic Stuff</legend>
 
 				<p>
-					<label for="username">Username:</label>
-					<input 
-						type="text" 
-						id="username" 
-						name="username" 
-						value="{username}" 
-						readonly>
-					<span class="note">Readonly. If you must change this, get in touch.</span>
-				</p>
-
-				<p>
-					<label for="email">Email:</label>
+					<label for="email">Email</label>
 					<input 
 						type="email" 
 						id="email" 
@@ -145,12 +135,12 @@
 						data-validate="onblur"
 						data-type="email"
 						data-isvalid=""
-						data-error="are you sure this is your email address?"
+						data-error="Are you sure this is your email address?"
 						required>
 				</p>
 
 				<p>
-					<label for="screen_name">Visible name:</label>	
+					<label for="screen_name">Screen name</label>	
 					<input 
 						type="text" 
 						id="screen_name" 
@@ -160,14 +150,15 @@
 						data-validate="onblur"
 						data-type="any"
 						data-isvalid=""
-						data-error="how do you want to be identified on the site?"
+						data-error="How do you want to be identified on the site?"
 						required>
+					<span class="note">Your name as it will appear on <cite>A List Apart</cite>.</span>
 				</p>
 
 				{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
 
 				<p>
-					<label for="first_name">First name:</label>	
+					<label for="first_name">First name</label>	
 					<input type="text"
 						id="first_name"
 						name="first_name"
@@ -176,12 +167,12 @@
 						data-validate="onblur"
 						data-type="any"
 						data-isvalid=""
-						data-error="what's your first name?"
+						data-error="What’s your first name?"
 						required>
 				</p>
 
 				<p>
-					<label for="last_name">Last name:</label>
+					<label for="last_name">Last name</label>
 					<input 
 						type="text"
 						id="last_name" 
@@ -191,14 +182,14 @@
 						data-validate="onblur"
 						data-type="any"
 						data-isvalid=""
-						data-error="what's your last name?"
+						data-error="What’s your last name?"
 						required>
 				</p>
 
 				{/if}
 
 				<p class="password-field">
-					<label for="password">Password: required</label>
+					<label for="password">New password</label>
 					<input 
 						type="password"
 						id="password" 
@@ -208,13 +199,14 @@
 						data-validate="onblur"
 						data-type="any"
 						data-isvalid=""
-						data-error="what's your new password?"
-						required>
-					<span class="note">Make it good.</span>
+						data-error="What’s your new password?"
+						data-tabmaster="true"
+						data-tabto="current_password">
+					<span class="note">At least six characters. Consider using a phrase—it’s more secure.</span>
 				</p>
 
-				<p class="password-field">
-					<label for="password_confirm">Password Confirmation: required</label>
+				<p class="password-field hide-from-js">
+					<label for="password_confirm">Confirm password <span class="undertone">(required)</span></label>
 					<input
 						type="password"
 						id="password_confirm"
@@ -225,13 +217,12 @@
 						data-type="matching"
 						data-mustmatch="password"
 						data-isvalid="yes"
-						data-error="this needs to match the previous field."
-						required>
-					<span class="note">Make it the same.</span>
+						data-error="This needs to match the previous field.">
+					<span class="note">This needs to match the password you just entered.</span>
 				</p>
 
 				<p class="password-field">
-					<label for="current_password">Submit your current password to continue: (<a href="/tools/forgot-password">forgotten it?</a>)</label>
+					<label for="current_password">Submit your current password to continue. (<a href="/tools/forgot-password" id="forgot" data-tabmaster="true" data-tabto="submit">Forgot?</a>)</label>
 					<input 
 						type="password"
 						id="current_password" 
@@ -240,27 +231,33 @@
 						data-validate="onblur"
 						data-type="any"
 						data-isvalid=""
-						data-error="for your security, we need your current password"
+						data-error="For your security, we need your current password."
+						data-tabmaster="true"
+						data-tabto="forgot"
 						required>
 				</p>
-
-				</fieldset>
 
 				<p class="screen-reader">
 					<label for="honeepot">Don't put anything here</label>
 					<input
 						type="text"
 						id="honeepot"
-						name="honeepot">
+						name="honeepot"
+						data-tabmaster="false">
 				</p>
 				
 				<p>
 					<input 
-						type="submit" 
+						type="submit"
+						id="submit" 
 						name="submit" 
 						value="Submit" 
 						class="button primary">
 				</p>
+
+			</fieldset>
+
+				
 
 		{/exp:user:edit}
 
@@ -276,65 +273,66 @@
 				<legend class="form-heading">Social Stuff</legend>
 
 				<p>
-					<label for="personal_url">Personal URL:</label>
+					<label for="personal_url">URL</label>
 					<input 
 						type="text" 
 						id="personal_url" 
 						name="url" 
 						value="{url}">
-					<span class="note">no http, no trailing slash</span>
+					<!-- <span class="note">no http, no trailing slash</span> -->
 				</p>
 				
 				<p>
-					<label for="twitter_username">Twitter:</label>
+					<label for="twitter_username">Twitter</label>
 					<input 
 						type="text" 
 						id="twitter_username" 
 						name="twitter_username" 
 						value="{twitter}">
-					<span class="note">username only, no @</span>
+					<!-- <span class="note">username only, no @</span> -->
 				</p>
 				
 				<p>
-					<label for="facebook_username">Facebook:</label>	
+					<label for="facebook_username">Facebook</label>	
 					<input 
 						type="text" 
 						id="facebook_username" 
 						name="facebook_username" 
 						value="{facebook}">
-					<span class="note">username only</span>
+					<span class="note">Username only.</span>
 				</p>
 
 				<p>
-					<label for="github_username">GitHub:</label>	
+					<label for="github_username">GitHub</label>	
 					<input 
 						type="text" 
 						id="github_username" 
 						name="github_username" 
 						value="{github}">
-					<span class="note">username only</span>
+					<span class="note">Username only.</span>
 				</p>
 
 				<p>
-					<label for="dribbble_username">Dribbble:</label>	
+					<label for="dribbble_username">Dribbble</label>	
 					<input 
 						type="text" 
 						id="dribbble_username" 
 						name="dribbble_username" 
 						value="{dribbble}">
-					<span class="note">username only</span>
+					<span class="note">Username only.</span>
 				</p>
 
 				<p>
-					<label for="googleplus">Google+:</label>	
+					<label for="googleplus">Google+</label>	
 					<input 
 						type="text" 
 						id="googleplus" 
 						name="googleplus" 
 						value="{googleplus}">
-					<span class="note">until this gets smarter, add the whole URL for your profile</span><br>
-					<span class="note">example 1: http://google.com/+TimMurtaugh</span><br>
-					<span class="note">example 2: https://plus.google.com/104877852135164107223‎</span><br>
+					<span class="note">Add the whole URL for your profile. For example:</span><br>
+					<span class="note">http://google.com/+TimMurtaugh</span><br>
+					<span class="note">or</span><br>
+					<span class="note">https://plus.google.com/104877852135164107223‎</span><br>
 				</p>
 
 			</fieldset>
@@ -343,27 +341,36 @@
 				
 				<p>
 					<label for="bio">Bio</label>
-					<textarea id="bio" name="bio" data-autoresize style="height: 100px;">{bio}</textarea>
-					<span class="note">links encouraged</span>
+					<textarea 
+						id="bio" 
+						name="bio" 
+						data-autoresize style="height: 100px;"
+						data-tabmaster="true"
+						data-tabto="submit-social">
+						{bio}
+					</textarea>
+					<span class="note">Feel free to link to stuff you’re proud of.</span>
 				</p>
 				
-			</fieldset>
+				<p class="screen-reader">
+					<label for="honeepot">Don't put anything here</label>
+					<input
+						type="text"
+						id="honeepot"
+						name="honeepot"
+						data-tabmaster="false">
+				</p>
+				
+				<p>
+					<input 
+						type="submit"
+						id="submit-social"  
+						name="submit" 
+						value="Submit" 
+						class="button primary">
+				</p>
 
-			<p class="screen-reader">
-				<label for="honeepot">Don't put anything here</label>
-				<input
-					type="text"
-					id="honeepot"
-					name="honeepot">
-			</p>
-			
-			<p>
-				<input 
-					type="submit" 
-					name="submit" 
-					value="Submit" 
-					class="button primary">
-			</p>
+			</fieldset>
 
 		{/exp:user:edit}
 
@@ -378,7 +385,7 @@
 
 				<legend class="form-heading">Avatar</legend> 
 
-				<p>Avatars should be square, and at least 200x200. If you sign in via Twitter, we probably grabbed your avatar from there. You can replace it.</p>
+				<p>Avatars should be square, and at least 200px by 200px. If you signed in via Twitter or Facebook, we probably grabbed your avatar from there. You can replace it.</p>
 
 				<figure>
 				{if avatar_filename != ""}
@@ -392,22 +399,22 @@
 				</figure>
 
 				<p>
-					<label for="avatar_filename">Upload an avatar:</label>
+					<label for="avatar_filename">Upload an avatar</label>
 					<input 
 						type="file" 
 						id="avatar_filename" 
 						name="avatar_filename">
 				</p>
 
-			</fieldset>
+				<p>
+					<input 
+						type="submit" 
+						name="submit" 
+						value="Submit" 
+						class="button primary">
+				</p>
 
-			<p>
-				<input 
-					type="submit" 
-					name="submit" 
-					value="Submit" 
-					class="button primary">
-			</p>
+			</fieldset>
 
 		{/exp:user:edit}
 
@@ -424,7 +431,7 @@
 
 				<legend class="form-heading">Author Photo</legend>
 
-				<p>Author photos should be at least 250x250. Our editors may crop and resize if needed.</p>
+				<p>Author photos should be at least 400px by 400px. We’ll crop and resize if necessary.</p>
 
 				<figure>
 				{if photo_filename != ""}
@@ -436,28 +443,28 @@
 				</figure>
 
 				<p>
-					<label for="photo_filename">Upload photo:</label>
+					<label for="photo_filename">Upload photo</label>
 					<input 
 						type="file" 
 						id="photo_filename" 
 						name="photo_filename">
 				</p>
 
-			</fieldset>
+				<p>
+					<input 
+						type="submit" 
+						name="submit" 
+						value="Submit" 
+						class="button primary">
+				</p>
 
-			<p>
-				<input 
-					type="submit" 
-					name="submit" 
-					value="Submit" 
-					class="button primary">
-			</p>
+			</fieldset>
 
 {/exp:user:edit}
 
 {/if}
 
-		</div>
+		</article>
 
 	</div>
 

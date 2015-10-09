@@ -8,27 +8,28 @@
 	{/if}
 		<fieldset>
 
-    	<legend class="center">Create an A List Apart account to discuss this article.</legend>
+    	<legend class="center">Create an <cite>A List Apart</cite> account to add your voice to the discussion.</legend>
 		
 			<p>
-				<label for="username">Username: required</label>
+				<label for="screen_name">Screen name <span class="undertone">(required)</span></label>
 				<input 
 					type="text"
-					id="username" 
-					name="username"
-					aria-describedby="username_error"
+					id="screen_name" 
+					name="screen_name"
+					aria-describedby="screen-name_error"
 					data-validate="onblur"
 					data-type="any" 
-					data-isvalid="{if username}yes{/if}"
-					data-error="who are you?"
+					data-isvalid=""
+					data-error="What’s your screen name?"
 					data-tabmaster="true"
 					data-tabto="email"
 					autofocus
 					required>
+				<span class="note">Your name as it will appear on <cite>A List Apart</cite>.</span>
 			</p>
 
 			<p>
-				<label for="email">Email: required</label>
+				<label for="email">Email <span class="undertone">(required)</span></label>
 				<input 
 					type="email"
 					id="email" 
@@ -38,14 +39,14 @@
 					data-validate="onblur"
 					data-type="email"
 					data-isvalid="{if email}yes{/if}"
-					data-error="are you sure this is your email address?"
+					data-error="Are you sure this is your email address?"
 					data-tabmaster="true"
 					data-tabto="password"
 					required>
 			</p>
 
 			<p class="password-field">
-				<label for="password">Password: required</label>
+				<label for="password">Password <span class="undertone">(required)</span></label>
 				<input 
 					type="password"
 					id="password" 
@@ -55,30 +56,11 @@
 					data-validate="onblur"
 					data-type="any"
 					data-isvalid=""
-					data-error="what's your new password?"
-					data-tabmaster="true"
-					data-tabto="password_confirm"
-					required>
-				<span class="note">Make it good.</span>
-			</p>
-
-			<p class="password-field">
-				<label for="password_confirm">Password Confirmation: required</label>
-				<input
-					type="password"
-					id="password_confirm"
-					name="password_confirm"
-					value=""
-					aria-describedby="password_confirm_error"
-					data-validate="onblur"
-					data-type="matching"
-					data-mustmatch="password"
-					data-isvalid="yes"
-					data-error="this needs to match the previous field."
+					data-error="What’s your new password?"
 					data-tabmaster="true"
 					data-tabto="submit"
 					required>
-				<span class="note">Make it the same.</span>
+				<span class="note">At least six characters. Consider using a phrase—it’s more secure.</span>
 			</p>
 
 			<p class="screen-reader">
