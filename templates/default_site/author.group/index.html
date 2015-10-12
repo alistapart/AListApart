@@ -47,11 +47,11 @@
 				{/if}
 
 					<h1>{screen_name}</h1>
-
+		
 					{if url OR twitter OR facebook OR dribbble OR github OR googleplus}
 					<ul class="fancy-links">
-						{if url}<li><a href="{url}">{url}</a></li>{/if}
-						{if twitter}<li><a class="twitter" href="http://twitter.com/{twitter}">{twitter}</a></li>{/if}
+						{if url}<li><a href="http://{exp:parse_url omit='scheme'}{url}{/exp:parse_url}">{url}</a></li>{/if}
+						{if twitter}<li><a class="twitter" href="http://twitter.com/{exp:low_replace find='@' replace=''}{twitter}{/exp:low_replace}">{exp:low_replace find='@' replace=''}{twitter}{/exp:low_replace}</a></li>{/if}
 						{if facebook}<li><a class="facebook" href="http://facebook.com/{facebook}">{facebook}</a></li>{/if}
 						{if dribbble}<li><a class="dribbble" href="http://dribbble.com/{dribbble}">{dribbble}</a></li>{/if}
 						{if github}<li><a class="github" href="http://github.com/{github}">{github}</a></li>{/if}
