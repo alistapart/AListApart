@@ -26,14 +26,15 @@
 
 		<div class="main-content tools">
 
-		<h1 class="basic-title">Register!</h1>
-		
 		{if segment_3 == 'email-sent'}
 
-		<p>Got it. Be on the lookout for an email with a link to activate your new account. 
-		<a href="{site_url}/<?php echo ee()->session->tracker['2']; ?>">Head back.</a></p> 
+		<h1 class="basic-title">Thanks for registering.</h1>
+
+		<p>We’ll send you an email with a link to activate your new account. <a href="{site_url}/<?php echo ee()->session->tracker['2']; ?>">Go back.</a></p> 
 
 		{if:else}
+
+		<h1 class="basic-title">Register!</h1>
 
 		{exp:freemember:register
 			return="/tools/register/email-sent"
