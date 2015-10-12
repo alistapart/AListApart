@@ -186,7 +186,7 @@ function simplifyRegister() {
 		password = document.getElementById("password"),
 		password_confirm = document.getElementById("password_confirm");
 
-	if (signInForm !== null) {
+	if(sign_in_form) {
 		sign_in_form.addEventListener("submit", function(){
 			//substitute username with email
 			username.value = email.value;
@@ -194,7 +194,7 @@ function simplifyRegister() {
 			password_confirm.value = password.value;
 		}, false);
 	}
-	if (edit_account !== null) {
+	if(edit_account) {
 		edit_account.addEventListener("submit", function(){
 			//substitute password_confirm with password
 			password_confirm.value = password.value;
@@ -203,4 +203,3 @@ function simplifyRegister() {
 }
 simplifyRegister();
 
- 
