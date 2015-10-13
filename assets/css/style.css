@@ -2088,7 +2088,9 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	font-size: 16px;
 }
 
-.main-content > iframe {
+.main-content > iframe,
+.main-content > .iframe,
+.main-content > .video {
 	margin-bottom: 24px !important;
 }
 
