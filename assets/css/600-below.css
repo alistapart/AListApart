@@ -1,58 +1,66 @@
 @media only screen and (max-width: 47.9375em) { /* 767px */
 
-	.event-details {
+	.event-copy .event-details {
 		float: none;
 		width: 100%;
+		margin-left: 0;
+		margin-bottom: 24px;
+		border-left: 0;
 	}
 
-	.event-details + .event-copy {
+	.event-copy .event-details + .event-copy {
 		margin-top: 24px;
 		margin-right: 0;
 		padding-right: 0;
 		border-right: 0;
 	}
 
-	.event-details .logistics .logistics-block {
+	.event-copy .event-details .logistics .logistics-block {
 		display: inline-block;
 		vertical-align: top;
 		width: 45%;
-		padding-right: 18px;
+		margin-bottom: 1em;
 		text-align: left;
 	}
 
-	.event-details .logistics-block.bordered {
-		width: 100%;
-		text-align: center;
+	.event-copy .event-details .logistics .logistics-block:first-of-type {
+		padding-right: 18px;
 	}
 
-	.event-details .logistics span {
+	.event-copy .event-details .logistics-block.bordered {
+		width: 100%;
+		text-align: center;
+		padding-top: 1em;
+	}
+
+	.event-copy .event-details .logistics span {
 		display: inline;
 		padding: 0;
 	}
 
-	.event-details .logistics span.where {
+	.event-copy .event-details .logistics span.where {
 		display: block;
 	}
 
-	.event-details .logistics span.what1:after {
+	.event-copy .event-details .logistics span.what1:after {
 		content: ", ";
 	}
 
-	.event-details .logistics span.time {
+	.event-copy .event-details .logistics span.time {
 		display: inline-block;
 		clear: both;
 	}
 
-	.event-details .logistics span.register-link {
+	.event-copy .event-details .logistics span.register-link {
 		display: block;
 	}
 
-	.event-details .logistics span.big-number,
-	.event-details .logistics span.register-link a {
+	.event-copy .event-details .logistics span.big-number,
+	.event-copy .event-details .logistics span.register-link a {
 		font-size: 16px;
 	}
 
-	.event-details .logistics span.register-link a {
+	.event-copy .event-details .logistics span.register-link a {
 		display: inline;
 	}
 
@@ -989,7 +997,7 @@
     	margin-bottom: 4px;
     	width: 100%;
 	}
-	 
+
 	.error-message {
 		-webkit-transform: none;
 		-moz-transform: none;
@@ -1021,7 +1029,7 @@
     	visibility: hidden;
 	}
 
-	@-moz-document url-prefix() { 
+	@-moz-document url-prefix() {
 		.outer-ajax-container, .ajax-container.forgot-password-form {
 	    	min-height: 292px;
 	    }
@@ -1043,7 +1051,7 @@
 		padding-left: 32px;
 		background-position: 2px center;
 	}
-	
+
 	.main-content > ul.entry-list.illo-thumbs > li,
 	.main-content > ul.entry-list.illo-thumbs > li picture,
 	.main-content > ul.entry-list.illo-thumbs > li img {
