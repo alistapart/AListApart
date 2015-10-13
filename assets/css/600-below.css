@@ -64,6 +64,22 @@
 		display: inline;
 	}
 
+	.simple-form label {
+		width: 100%;
+	}
+
+	ul.people-list li span {
+		margin-left: 85px;
+	}
+
+	label.list {
+		margin-bottom: 6px;
+	}
+
+	.main-wrapper.stacker {
+		overflow: hidden;
+	}
+
 	.two-column-display .main-content,
 	.two-column-display .secondary-column {
 		display: block;
@@ -657,6 +673,17 @@
 	.item-summary:not(.topic) {
 		width: auto;
 		margin-right: 0;
+		margin-bottom: 2em;
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	.previous-column {
+		margin-bottom: 0;
+	}
+
+	.item-summary .column-summary-header {
+		margin-bottom: .065em;
 	}
 
 	.item-summary > figure {

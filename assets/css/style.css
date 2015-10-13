@@ -470,7 +470,7 @@ ul.inline-items li {
 }
 
 .section-sub-title.serif + p {
-	margin-top: 2em;
+	margin-top: 1em;
 }
 
 .main-content.form-content p {
@@ -613,7 +613,7 @@ ul.inline-items li {
 .item-summary.columnist {
 	width: 49%;
 	width: calc(50% - 3px);
-	margin: 0;
+	margin: 0 0 2em;
 }
 
 .item-summary:nth-child(even) {
