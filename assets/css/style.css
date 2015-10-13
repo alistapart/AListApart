@@ -2186,48 +2186,48 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	min-height: 102px;
 }
 
-.article-layout .main-content > p,
-.article-layout .main-content > pre,
-.article-layout .main-content > ol,
-.article-layout .main-content > ul,
-.article-layout .main-content > figure,
-.article-layout .main-content > div.illustration,
+.article-layout .main-content p,
+.article-layout .main-content pre,
+.article-layout .main-content ol,
+.article-layout .main-content ul,
+.article-layout .main-content figure,
+.article-layout .main-content div.illustration,
 .article-layout .main-content .entry-footnotes {
 	margin-right: 132px;
 	margin-left: 132px;
 }
 
-.article-layout .main-content > figure.full-width {
+.article-layout .main-content figure.full-width {
 	margin-left: 0;
 	margin-right: 0;
 }
 
-.main-content > figure iframe,
-.main-content > figure video,
-.main-content > figure object,
-.main-content > figure video object {
+.main-content figure iframe,
+.main-content figure video,
+.main-content figure object,
+.main-content figure video object {
 	display: block;
 	max-width: 100%;
 	margin: 0 auto;
 }
 
-.article-layout .main-content > * b,
-.article-layout .main-content > * strong {
+.article-layout .main-content * b,
+.article-layout .main-content * strong {
 	font-weight: bold;
 }
 
-.article-layout .main-content > ol ul {
+.article-layout .main-content ol ul {
 	margin: 18px 0;
 	list-style: disc;
 }
 
 /* why are these !important ? */
-.article-layout .main-content:not(.wide-video) > iframe {
+.article-layout .main-content:not(.wide-video) iframe {
 	margin-right: 132px !important;
 	margin-left: 132px !important;
 }
 
-.article-layout .main-content > p small {
+.article-layout .main-content p small {
 	display: block;
 	font-size: 14px;
 	line-height: 24px;
