@@ -4357,7 +4357,7 @@ body.modal {
 -------------------------------------------------------------------------------*/
 .main-content.tools {
 	margin: 0 auto;
-	margin-bottom: 54px;
+	margin-bottom: 62px;
 	width: 60%;
 }
 
@@ -4411,9 +4411,19 @@ form p {
 	margin: 0 0 16px;
 	position: relative;
 	font-size: 14px;
-	line-height: 2;
+	line-height: 1;
 	max-width: 525px;
+	word-spacing: -100%;
 }
+
+form p label, form p input {
+	line-height: 2;
+}
+
+form p span {
+	line-height: 1.2;
+}
+
 
 form p:last-child {
 	margin-bottom: 0px;
@@ -4562,6 +4572,10 @@ input + button {
 	margin-left: 12px;
 }
 
+#avatar_filename, #photo_filename {
+	line-height: 1;
+}
+
 /* Ported from editables.css
 -------------------------------------------------------------------------------*/
 .note {
@@ -4582,10 +4596,10 @@ figure .note {
 	/*z-index: -10;*/ /*do we need this?*/
 }
 
-label + .note {
+/*label + .note {
 	margin-top: -2em;
 	margin-bottom: 2em;
-}
+}*/
 
 .password-mask {
 	position: absolute;
