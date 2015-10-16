@@ -4420,7 +4420,7 @@ form p {
 	word-spacing: -100%;
 }
 
-form p label, form p input {
+form p label {
 	line-height: 2;
 }
 
