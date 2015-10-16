@@ -4411,7 +4411,7 @@ form p {
 	margin: 0 0 16px;
 	position: relative;
 	font-size: 14px;
-	line-height: 1;
+	line-height: 1.4;
 	max-width: 525px;
 	word-spacing: -100%;
 }
@@ -4453,6 +4453,11 @@ textarea {
 	-o-transition: box-shadow 100ms ease-in;
 	-ms-transition: box-shadow 100ms ease-in;
 	transition: box-shadow 100ms ease-in;
+}
+
+input[type="file"] {
+	font-family: 'Franklin ITC Light', sans-serif;
+	font-size: 14px;
 }
 
 textarea:focus,
