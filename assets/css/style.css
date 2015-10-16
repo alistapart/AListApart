@@ -4825,7 +4825,7 @@ fieldset.check-radio.customized input[type="radio"]:checked + label:after {
 	text-align: left;
 	line-height: 16px;
 	font-size: 14px;
-	background: #ededed; position: relative;
+	background: #ededed;
 	border-bottom-right-radius: 3px;
 	border-bottom-left-radius: 3px;
 }
