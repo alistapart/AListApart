@@ -3481,6 +3481,10 @@ li.comment-form p {
 /*	margin-bottom: 12px;*/
 }
 
+li.comment-form p + form {
+	margin-top: 12px;
+}
+
 .global-footer {
 	position: relative;
 	/* bottom: 0; */
@@ -4807,6 +4811,7 @@ fieldset.check-radio.customized input[type="radio"]:checked + label:after {
 	position: relative;
 	z-index: 10;
 	margin-bottom: 0;
+	max-width: 525px;
 }
 
 .article-comments .commenter-info {
