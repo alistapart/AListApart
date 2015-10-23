@@ -15,6 +15,10 @@
 
 							<h2>{if {current_time} < {expiration_date} }Date & Time{if:else}Aired{/if}</h2>
 
+							<meta itemprop="startDate" content="{entry_date format="%Y-%m-%dT%H:%i"}">
+							<meta itemprop="isLiveBroadcast" content="True">
+							<meta itemprop="duration" content="T60M00S">
+						
 							<time>
 								<span class="weekday">{entry_date format="%l"}</span> 
 								<span class="big-number">{entry_date format="%d"}</span> 
