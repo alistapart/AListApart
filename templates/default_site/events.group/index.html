@@ -59,7 +59,7 @@
 				</header>
 
 				<meta itemprop="organizer" content="A List Apart">
-				
+
 				<?php 
 					$videoUrl = "{events_video_url}";
 					$urlArray = parse_url($videoUrl, PHP_URL_PATH);
@@ -185,7 +185,7 @@
 				{event_participants:participant_object}
 				<article class="item-summary article columnist">
 
-					<header class="column-summary-header">
+					<header class="column-summary-header" itemscope itemtype="http://schema.org/BroadcastEvent">
 
 						<img class="restrain" src="{event_participants:participant_object:author_avatar}" alt="photo of {event_participants:participant_object:title}">
 

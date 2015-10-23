@@ -157,13 +157,13 @@
 				{event_participants:participant_object}
 				<article class="item-summary article columnist">
 
-					<header class="column-summary-header">
+					<header class="column-summary-header" itemscope itemtype="http://schema.org/BroadcastEvent">
 
 						<img class="restrain" src="{event_participants:participant_object:author_avatar}" alt="photo of {event_participants:participant_object:title}">
 
 						<span class="event-role">{event_participants:participant_title}</span>
 
-						<h1 itemprop="performer">{event_participants:participant_object:title}</h1>
+						<h1 itemprop="performer" >{event_participants:participant_object:title}</h1>
 
 					</header>
 
