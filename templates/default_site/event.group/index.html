@@ -42,17 +42,37 @@
 
 		<div class="col-holder">
 
-			<section class="main-content">
+			<section class="main-content" itemscope itemtype="http://schema.org/BroadcastEvent">
 
 				<header class="author-header">
 
-					<h1>{title}</h1>
+					<h1 itemprop="name">{title}</h1>
 
 				</header>
 
+				<meta itemprop="organizer" content="A List Apart">
+				
+				<?php 
+					$videoUrl = "{events_video_url}";
+					$urlArray = parse_url($videoUrl, PHP_URL_PATH);
+					$segments = explode('/', $urlArray);
+					$numSegments = count($segments); 
+					$videoID = $segments[$numSegments - 1]; 
+				?>
+				
 				{if events_video_url}
+					<meta itemprop="description" content="{event_deck}">
 					{event_deck}
-					<figure class="video">
+					<figure class="video" itemscope itemtype="http://schema.org/VideoObject">
+						<meta itemprop="name" content="{title}">
+						<meta itemprop="description" content="Video for {title} event">
+						<meta itemprop="duration" content="T60M00S">
+						<meta itemprop="thumbnailUrl" content="http://img.youtube.com/vi/<?php echo $videoID; ?>/0.jpg">
+						<meta itemprop="embedURL" content="{events_video_url}">
+						<meta itemprop="uploadDate" content="2011-07-05T08:00:00+08:00">
+						<meta itemprop="height" content="315">
+						<meta itemprop="width" content="560">
+						{if event_transcript}<meta itemprop="transcript" content="{event_transcript}{event_transcript_2}">{/if}
 						<iframe width="560" height="315" src="{events_video_url}" frameborder="0" allowfullscreen></iframe>
 					</figure>
 					{event-details}
