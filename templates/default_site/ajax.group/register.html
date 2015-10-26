@@ -45,6 +45,22 @@
 					required>
 			</p>
 
+			<p class="hide-from-js">
+				<label for="username">Email confirmation <span class="undertone">(required)</span></label>
+				<input 
+					type="text"
+					id="username" 
+					name="username"
+					aria-describedby="username_confirm_error"
+					data-validate="onblur"
+					data-type="matching"
+					data-mustmatch="email" 
+					data-isvalid=""
+					data-error="This needs to match the previous field."
+					autofocus
+					required>
+			</p>
+
 			<p class="password-field">
 				<label for="password">Password <span class="undertone">(required)</span></label>
 				<input 
@@ -61,6 +77,23 @@
 					data-tabto="submit"
 					required>
 				<span class="note">At least six characters. Consider using a phrase—it’s more secure.</span>
+			</p>
+
+			<p class="password-field hide-from-js">
+				<label for="password_confirm">Confirm password <span class="undertone">(required)</span></label>
+				<input
+					type="password"
+					id="password_confirm"
+					name="password_confirm"
+					value=""
+					aria-describedby="password_confirm_error"
+					data-validate="onblur"
+					data-type="matching"
+					data-mustmatch="password"
+					data-isvalid="yes"
+					data-error="This needs to match the previous field."
+					required>
+				<span class="note">This needs to match the password you just entered.</span>
 			</p>
 
 			<p class="screen-reader">
