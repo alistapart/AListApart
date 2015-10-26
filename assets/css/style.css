@@ -2769,6 +2769,19 @@ h3.alternate {
 	content: "—";
 }
 
+.main-content > figure.quote > blockquote ul {
+	list-style-type: disc;
+	margin-left: 40px;
+}
+
+.main-content > figure.quote > blockquote em {
+	font-style: normal;
+}
+
+.main-content > figure.quote > blockquote strong, .main-content > figure.quote > blockquote b {
+	font-weight: bold;
+}
+
 .main-content > figure.tweet {
 	border-left: 0;
 }
@@ -2782,6 +2795,7 @@ h3.alternate {
 	padding: 0 12px;
 	border-left: 1px dotted #bfbfbf;
 }
+
 
 .col-holder .main-content pre {
 	margin-left: 0;
