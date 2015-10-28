@@ -4211,7 +4211,10 @@ body.modal {
 	body.printable .global-footer .affiliates,
 	body.printable .global-footer .promo-holder,
 	body.printable .deadly-subtitle,
-	body.printable .content-minutiae .minutiae-block:not(:first-child),
+	body.printable .email-promo,
+	body.printable .content-minutiae,
+	body.printable #related,
+	.go-to-nav,
 	.sponsor-top,
 	.the-deck.in-article,
 	.job-board.in-article {
