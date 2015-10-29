@@ -2774,7 +2774,7 @@ h3.alternate {
 	margin-left: 40px;
 }
 
-.main-content > figure.quote > blockquote em {
+.main-content > figure.quote > blockquote em, .main-content > figure.quote > blockquote cite {
 	font-style: normal;
 }
 
