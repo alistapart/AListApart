@@ -1,6 +1,6 @@
 @media only screen and (max-width: 47.9375em) { /* 767px */
 
-	.event-copy .event-details {
+	.main-content, .event-copy .event-details {
 		float: none;
 		width: 100%;
 		margin-left: 0;
