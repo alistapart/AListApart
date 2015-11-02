@@ -1,6 +1,6 @@
 @media only screen and (max-width: 47.9375em) { /* 767px */
 
-	.main-content, .event-copy .event-details {
+	.main-content .event-details {
 		float: none;
 		width: 100%;
 		margin-left: 0;
@@ -8,14 +8,14 @@
 		border-left: 0;
 	}
 
-	.event-copy .event-details + .event-copy {
+	.main-content .event-details + .event-copy {
 		margin-top: 24px;
 		margin-right: 0;
 		padding-right: 0;
 		border-right: 0;
 	}
 
-	.event-copy .event-details .logistics .logistics-block {
+	.main-content .logistics .logistics-block {
 		display: inline-block;
 		vertical-align: top;
 		width: 45%;
@@ -23,44 +23,44 @@
 		text-align: left;
 	}
 
-	.event-copy .event-details .logistics .logistics-block:first-of-type {
+	.main-content .logistics .logistics-block:first-of-type {
 		padding-right: 18px;
 	}
 
-	.event-copy .event-details .logistics-block.bordered {
+	.main-content .logistics-block.bordered {
 		width: 100%;
 		text-align: center;
 		padding-top: 1em;
 	}
 
-	.event-copy .event-details .logistics span {
+	.main-content .logistics span {
 		display: inline;
 		padding: 0;
 	}
 
-	.event-copy .event-details .logistics span.where {
+	.main-content .logistics span.where {
 		display: block;
 	}
 
-	.event-copy .event-details .logistics span.what1:after {
+	.main-content .logistics span.what1:after {
 		content: ", ";
 	}
 
-	.event-copy .event-details .logistics span.time {
+	.main-content .logistics span.time {
 		display: inline-block;
 		clear: both;
 	}
 
-	.event-copy .event-details .logistics span.register-link {
+	.main-content .logistics span.register-link {
 		display: block;
 	}
 
-	.event-copy .event-details .logistics span.big-number,
-	.event-copy .event-details .logistics span.register-link a {
+	.main-content .logistics span.big-number,
+	.main-content .logistics span.register-link a {
 		font-size: 16px;
 	}
 
-	.event-copy .event-details .logistics span.register-link a {
+	.main-content .logistics span.register-link a {
 		display: inline;
 	}
 
