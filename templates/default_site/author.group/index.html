@@ -28,7 +28,7 @@
 
 		<div class="col-holder">
 
-			<article class="main-content">
+			<article class="main-content" itemscope itemtype="http://schema.org/Person">
 
 				<h1 class="basic-title">Author</h1>
 
@@ -46,22 +46,22 @@
 				<header class="author-header no-photo">
 				{/if}
 
-					<h1>{screen_name}</h1>
+					<h1 itemprop="name">{screen_name}</h1>
 
 					{if url OR twitter OR facebook OR dribbble OR github OR googleplus}
 					<ul class="fancy-links">
-						{if url}<li><a href="http://{exp:low_replace find='http://' replace=''}{url}{/exp:low_replace}">{url}</a></li>{/if}
-						{if twitter}<li><a class="twitter" href="http://twitter.com/{exp:low_replace find='@' replace=''}{twitter}{/exp:low_replace}">{exp:low_replace find='@' replace=''}{twitter}{/exp:low_replace}</a></li>{/if}
-						{if facebook}<li><a class="facebook" href="http://facebook.com/{facebook}">{facebook}</a></li>{/if}
-						{if dribbble}<li><a class="dribbble" href="http://dribbble.com/{dribbble}">{dribbble}</a></li>{/if}
-						{if github}<li><a class="github" href="http://github.com/{github}">{github}</a></li>{/if}
-						{if googleplus}<li><a class="googleplus" href="{googleplus}">{exp:parse_url parts="path" omit="/|+"}{googleplus}{/exp:parse_url}</a></li>{/if}
+						{if url}<li><a href="http://{exp:low_replace find='http://' replace=''}{url}{/exp:low_replace}" itemprop="url">{url}</a></li>{/if}
+						{if twitter}<li><a class="twitter" href="http://twitter.com/{exp:low_replace find='@' replace=''}{twitter}{/exp:low_replace}" itemprop="url">{exp:low_replace find='@' replace=''}{twitter}{/exp:low_replace}</a></li>{/if}
+						{if facebook}<li><a class="facebook" href="http://facebook.com/{facebook}" itemprop="url">{facebook}</a></li>{/if}
+						{if dribbble}<li><a class="dribbble" href="http://dribbble.com/{dribbble}" itemprop="url">{dribbble}</a></li>{/if}
+						{if github}<li><a class="github" href="http://github.com/{github}" itemprop="url">{github}</a></li>{/if}
+						{if googleplus}<li><a class="googleplus" href="{googleplus}" itemprop="url">{exp:parse_url parts="path" omit="/|+"}{googleplus}{/exp:parse_url}</a></li>{/if}
 					</ul>
 					{/if}
 
 				</header>
 
-				<p class="author-bio">{bio}</p>
+				<p class="author-bio" itemprop="descirption">{bio}</p>
 
 				{embed="embeds/author-articles" author_id="{member_id}" real_name="{screen_name}"}
 
