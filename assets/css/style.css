@@ -2637,18 +2637,27 @@ h3.alternate {
 	overflow: hidden;
 }
 
+th {
+	vertical-align: top;
+	font-size: 16px;
+}
+
 .main-content > figure table {
 	min-width: 75%;
 	margin-left: auto;
 	margin-right: auto;
-	border-top: 1px dotted #bfbfbf;
+	border-top: 1px solid #bfbfbf;
 }
 
 .main-content > figure table tbody {
-	border-bottom: 1px dotted #bfbfbf;
+	border-bottom: 1px solid #bfbfbf;
 }
 
-.main-content > figure table tr:nth-child(even) td {
+.main-content > figure table :not(tbody) tr:nth-child(even) td {
+	background: #eee;
+}
+
+.main-content > figure table tbody tr:nth-child(odd) td {
 	background: #eee;
 }
 
@@ -2658,7 +2667,7 @@ h3.alternate {
 	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 	font-style: normal;
-	text-align: left;
+	/*text-align: left;*/
 	padding: 4px 6px;
 }
 
@@ -2667,9 +2676,14 @@ h3.alternate {
 	font-weight: Bold;
 }
 
-.main-content > figure table td {
+.main-content > figure table th, .main-content > figure table td  {
 	font-size: 16px;
-	padding: 2px 6px;
+	line-height: 22px;
+	padding: 12px 9px;
+}
+
+.main-content > figure table thead th, .main-content > figure table th[scope="row"], .main-content > figure table th[scope="col"] {
+	font-size: 18px;
 }
 
 .main-content > figure table + figcaption {
@@ -2683,6 +2697,61 @@ h3.alternate {
 	padding: 0 6px;
 	margin: 0;
 }
+
+/*--- NEW TABLE STYLES ---*/
+
+.main-content > figure table.zebraless tr td, .main-content > figure table.zebraless tbody tr td {
+	background: none;
+}
+
+th, td {
+	text-align: left;
+}
+
+table code {
+	background: none;
+}
+
+table b, table strong {
+	font-family: "Franklin ITC", sans-serif;
+}
+
+table code b, table strong code {
+	font-family: "Menlo", monospace;
+}
+
+table .center {
+	text-align: center;
+}
+
+/*--- Vertical dividers ---*/
+.col-1 tr :nth-child(1):not(code), .col-2 tr :nth-child(2):not(code), .col-3 tr :nth-child(3):not(code), .col-4 tr :nth-child(4):not(code) {
+	border-left: 1px solid #bfbfbf;
+}
+
+/*--- Background ---*/
+table .bg {
+	background: #eee!important;
+}
+
+/*--- Borders ---*/
+table .lb, table .lb {
+    border-left: 1px solid #bfbfbf;
+}
+table .rb, table .rb {
+    border-right: 1px solid #bfbfbf;
+}
+table .tb, table .tb {
+    border-top: 1px solid #bfbfbf;
+}
+table .bb, table .bb {
+    border-bottom: 1px solid #bfbfbf;
+}
+
+
+
+/*--- END NEW TABLE STYLES ---*/
+
 
 .main-content > figure img,
 .main-content > div.illustration img {
