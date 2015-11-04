@@ -2725,7 +2725,7 @@ table .center {
 }
 
 /*--- Vertical dividers ---*/
-.col-1 tr :nth-child(1):not(code), .col-2 tr :nth-child(2):not(code), .col-3 tr :nth-child(3):not(code), .col-4 tr :nth-child(4):not(code) {
+.col-1 tr :nth-child(1):not(code), .col-2 tr :nth-child(2):not(code), .col-3 tr :nth-child(3):not(code):not(span), .col-4 tr :nth-child(4):not(code) {
 	border-left: 1px solid #bfbfbf;
 }
 
@@ -4060,6 +4060,12 @@ body.modal {
 
 .main-content .gist pre {
 	white-space: pre;
+}
+
+.main-content > figure figcaption.gist-caption {
+	font-size: 16px;
+	font-family: georgia, serif;
+	font-style: normal; 
 }
 
 .event-promo {
