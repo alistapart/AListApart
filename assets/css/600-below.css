@@ -1,3 +1,5 @@
+
+
 @media only screen and (max-width: 47.9375em) { /* 767px */
 
 	.main-content .event-details {
@@ -141,7 +143,56 @@
 	.main-content.tools {
 		width: 80%;
 	}
-
+	/* ----------------------	RESPONSIVE TABLES	---------------------- */
+	table {
+	    display: block;
+	    width: 100%;
+	    /*
+	     * make everything display block so it 
+	     * aligns vertically
+	     */
+	    /* Labeling
+	     * adding a data-title attribute to the cells
+	     * lets us add text before the content to provide
+	     * the missing context
+	     * 
+	     * Markup: 
+	     *   <td data-title="Column Header">Content Here</td>
+	     * 
+	     * Display:
+	     *   Column Header: Content Here
+	     */
+	}
+	table caption {
+		display: block;
+	}
+	table thead {
+		display: none;
+		visibility: hidden;
+	}
+	table tbody, table tr, table th, table td {
+		border: 0;
+		display: block;
+		padding: 0;
+		text-align: left;
+		white-space: normal;
+	}
+	table tr {
+		margin-bottom: 1.5em;
+	}
+	table th[data-title]:before,
+	table td[data-title]:before {
+		content: attr(data-title) ": ";
+		font-weight: bold;
+		font-family: "Franklin ITC", sans-serif;
+	}
+	table th:not([data-title]) {
+		font-weight: bold;
+		font-family: "Franklin ITC", sans-serif;
+	}
+	table td:empty {
+		display: none;
+	}
 }
 
 
