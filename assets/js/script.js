@@ -850,7 +850,7 @@ $.fn.changeType = function(x, type) {
 
 }
 
-//history api helper - this outside the ajax-functions.js because we don't want it loading on each XMLHttpRequest call
+//history api helper - this is outside the ajax-functions.js because we don't want it loading on each XMLHttpRequest call
 $(document).ready(function(){
 
 	if(typeof states != "undefined") //check that the current page has a states object
