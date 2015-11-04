@@ -36,7 +36,7 @@ var AlaAuth = {
 		//hide current template
 		ajaxContainer.addClass('none');
 		//load new template
-	  	$.get(states.site_url + states.tmpl_path + state + states.entry_id + states.segments, function(ret){
+	  	$.get(states.site_url + states.tmpl_path + state + '/' + states.entry_id + states.segments, function(ret){
 			ajaxContainer.replaceWith(ret);
 		}, false);
 	},
