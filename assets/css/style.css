@@ -2698,6 +2698,15 @@ th {
 	margin: 0;
 }
 
+caption {
+	font-family: "Franklin ITC", sans-serif;
+	font-size: 18px;
+	line-height: 22px;
+	font-weight: normal;
+	border-top: 1px solid #bfbfbf;
+	padding: 9px 0;
+}
+
 /*--- NEW TABLE STYLES ---*/
 
 .main-content > figure table.zebraless tr td, .main-content > figure table.zebraless tbody tr td {
