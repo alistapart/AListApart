@@ -144,7 +144,7 @@
 		width: 80%;
 	}
 	/* ----------------------	RESPONSIVE TABLES	---------------------- */
-	table {
+	table:not(.not-rwd) {
 	    display: block;
 	    width: 100%;
 	    /*
@@ -164,16 +164,20 @@
 	     */
 	}
 
-	table caption {
+	.not-rwd {
+
+	}
+
+	table:not(.not-rwd) caption {
 		display: block;
 	}
 
-	table thead {
+	table:not(.not-rwd) thead {
 		display: none;
 		visibility: hidden;
 	}
 
-	table tbody, table tr, table th, table td {
+	table:not(.not-rwd) tbody, table:not(.not-rwd) tr, table:not(.not-rwd) th, table:not(.not-rwd) td {
 		border: 0;
 		display: block;
 		padding: 0;
@@ -181,7 +185,7 @@
 		white-space: normal;
 	}
 
-	table tr {
+	table:not(.not-rwd) tr {
 		margin-bottom: 1em;
 	}
 
@@ -205,7 +209,7 @@
 		display: none;
 	}
 	/*--- Turn off zebra striping ---*/
-	.main-content > figure table tbody tr:nth-child(odd) td {
+	.main-content > figure table:not(.not-rwd) tbody tr:nth-child(odd) td {
      	background: none; 
 	}
 	/*--- Turn off column borders ---*/
@@ -224,7 +228,7 @@
 	}
 	
 	/*for tables up to entry_id 16246 before responsive table implementation using the data-title attribute*/
-	figure.no-rwd {
+	figure.not-rwd {
 		overflow: auto;
 	}
 }
