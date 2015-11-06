@@ -147,6 +147,8 @@
 	figure:not(.not-rwd) table {
 	    display: block;
 	    width: 100%;
+	    color: black;
+
 	    /*
 	     * make everything display block so it 
 	     * aligns vertically
