@@ -222,9 +222,10 @@
 		padding-top: 8px;
 		padding-bottom: 8px;
 	}
-
-	figure.not-rwd {
-		overflow: auto; 
+	
+	/*for tables up to entry_id 16246 before responsive table implementation using the data-title attribute*/
+	figure.no-rwd {
+		overflow: auto;
 	}
 }
 
