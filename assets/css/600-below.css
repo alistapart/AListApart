@@ -147,7 +147,7 @@
 	figure:not(.not-rwd) table {
 	    display: block;
 	    width: 100%;
-	    color: black;
+	    border-bottom: 1px solid #bfbfbf;
 
 	    /*
 	     * make everything display block so it 
@@ -186,9 +186,18 @@
 	figure:not(.not-rwd) table tr {
 		margin-bottom: 1em;
 	}
+	
+	figure:not(.not-rwd) .gist table {
+		display: table;
+	}
 
-	.gist table tr {
+	figure:not(.not-rwd) .gist table tr {
+		display: table-row;
 		margin-bottom: 0;
+	}
+
+	figure:not(.not-rwd) .gist table td {
+		display: table-cell;
 	}
 
 	table th[data-title]:before,
