@@ -144,7 +144,7 @@
 		width: 80%;
 	}
 	/* ----------------------	RESPONSIVE TABLES	---------------------- */
-	table:not(.not-rwd) {
+	figure:not(.not-rwd) table {
 	    display: block;
 	    width: 100%;
 	    /*
@@ -164,20 +164,16 @@
 	     */
 	}
 
-	.not-rwd {
-
-	}
-
-	table:not(.not-rwd) caption {
+	figure:not(.not-rwd) table caption {
 		display: block;
 	}
 
-	table:not(.not-rwd) thead {
+	figure:not(.not-rwd) table thead {
 		display: none;
 		visibility: hidden;
 	}
 
-	table:not(.not-rwd) tbody, table:not(.not-rwd) tr, table:not(.not-rwd) th, table:not(.not-rwd) td {
+	figure:not(.not-rwd) table tbody, table:not(.not-rwd) tr, figure:not(.not-rwd) table th, figure:not(.not-rwd) table td {
 		border: 0;
 		display: block;
 		padding: 0;
@@ -185,7 +181,7 @@
 		white-space: normal;
 	}
 
-	table:not(.not-rwd) tr {
+	figure:not(.not-rwd) table tr {
 		margin-bottom: 1em;
 	}
 
@@ -209,7 +205,7 @@
 		display: none;
 	}
 	/*--- Turn off zebra striping ---*/
-	.main-content > figure table:not(.not-rwd) tbody tr:nth-child(odd) td {
+	.main-content > figure:not(.not-rwd) table tbody tr:nth-child(odd) td {
      	background: none; 
 	}
 	/*--- Turn off column borders ---*/
