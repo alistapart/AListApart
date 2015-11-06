@@ -144,7 +144,7 @@
 		width: 80%;
 	}
 	/* ----------------------	RESPONSIVE TABLES	---------------------- */
-	table:not(.not-rwd) {
+	table {
 	    display: block;
 	    width: 100%;
 	    /*
@@ -164,16 +164,16 @@
 	     */
 	}
 
-	table:not(.not-rwd) caption {
+	table caption {
 		display: block;
 	}
 
-	table:not(.not-rwd) thead {
+	table thead {
 		display: none;
 		visibility: hidden;
 	}
 
-	table:not(.not-rwd)table:not(.not-rwd) tbody, table:not(.not-rwd) tr, table:not(.not-rwd) th, table:not(.not-rwd) td {
+	table tbody, table tr, table th, table td {
 		border: 0;
 		display: block;
 		padding: 0;
@@ -181,7 +181,7 @@
 		white-space: normal;
 	}
 
-	table:not(.not-rwd) tr {
+	table tr {
 		margin-bottom: 1em;
 	}
 
@@ -189,23 +189,23 @@
 		margin-bottom: 0;
 	}
 
-	table:not(.not-rwd) th[data-title]:before,
-	table:not(.not-rwd) td[data-title]:before {
+	table th[data-title]:before,
+	table td[data-title]:before {
 		content: attr(data-title) ": ";
 		font-weight: bold;
 		font-family: "Franklin ITC", sans-serif;
 	}
 
-	table:not(.not-rwd) th:not([data-title]) {
+	table th:not([data-title]) {
 		font-weight: bold;
 		font-family: "Franklin ITC", sans-serif;
 	}
 
-	table:not(.not-rwd) td:empty {
+	table td:empty {
 		display: none;
 	}
 	/*--- Turn off zebra striping ---*/
-	.main-content > figure table:not(.not-rwd) tbody tr:nth-child(odd) td {
+	.main-content > figure table tbody tr:nth-child(odd) td {
      	background: none; 
 	}
 	/*--- Turn off column borders ---*/
@@ -213,12 +213,12 @@
 		border: none;
 	}
 
-	table:not(.not-rwd) caption {
+	caption {
 		border: none;
 		border-bottom: 1px solid #bfbfbf;
 	}
 
-	.main-content > figure table:not(.not-rwd) th, .main-content > figure table:not(.not-rwd) td {
+	.main-content > figure table th, .main-content > figure table td {
 		padding-top: 8px;
 		padding-bottom: 8px;
 	}
