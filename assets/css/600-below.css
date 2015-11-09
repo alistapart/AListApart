@@ -175,7 +175,7 @@
 		visibility: hidden;
 	}
 
-	figure:not(.not-rwd) table tbody, table:not(.not-rwd) tr, figure:not(.not-rwd) table th, figure:not(.not-rwd) table td {
+	figure:not(.not-rwd) table tbody, figure:not(.not-rwd) table tr, figure:not(.not-rwd) table th, figure:not(.not-rwd) table td {
 		border: 0;
 		display: block;
 		padding: 0;
