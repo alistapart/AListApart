@@ -16,12 +16,10 @@ a {
 	text-decoration: none;
 }
 
-/*
 a:hover,
 a:focus {
 	text-decoration: underline;
 }
-*/
 
 /*.hide-from-no-js is used in specialty templates*/
 .no-js .hide-from-no-js, .none {
@@ -85,13 +83,11 @@ a:focus {
 	font-style: normal;
 }
 
-/*
 .buttonish:hover,
 .buttonishish:hover {
 	text-decoration: none;
 	background: #444;
 }
-*/
 
 html:not(.no-js) .buttonish {
 	position: relative;
@@ -379,7 +375,6 @@ ul.inline-items li {
 
 @media only screen and (min-width: 37.5em) { /* 600px */
 
-/*
 	.main-search:hover input[type=search],
 	.main-search input[type=search]:valid,
 	.main-search input[type=search]:focus,
@@ -389,7 +384,6 @@ ul.inline-items li {
 		padding: 3px 9px;
 		opacity: 1;
 	}
-*/
 
 }
 
@@ -1158,11 +1152,9 @@ html[data-useragent*='MSIE'] .tall-hero .issue-number {
 	bottom: auto;
 }
 
-/*
 .issue-number:hover {
 	text-decoration: none;
 }
-*/
 
 a.issue-number:focus {
 	outline: 1px dotted #be4337;
@@ -1754,13 +1746,11 @@ ul.fancy-links li a.googleplus {
 	transition: background 200ms ease-in;
 }
 
-/*
 .alphabits a:hover {
 	text-decoration: none;
 	background: #ddd;
 	cursor: pointer;
 }
-*/
 
 .alphabits a.arrow {
 	position: absolute;
@@ -1975,13 +1965,11 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	border-right: 18px solid transparent;
 }
 
-/*
 .comment-bubble:hover {
 	color: #2555c3;
 	background-color: #fff;
 	text-decoration: none;
 }
-*/
 
 .content-minutiae .minutiae-block {
 	margin-bottom: 18px;
@@ -2071,22 +2059,18 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	width: 45%
 }
 
-/*
 .content-minutiae ul.propagation-enablers li a:hover {
 	color: #2555c3;
 	background-color: #fff;
 }
-*/
 
 .content-minutiae ul.propagation-enablers li a:focus {
 	outline: 1px dotted #2555c3;
 }
 
-/*
 .content-minutiae ul.propagation-enablers li a:hover svg {
 	fill: #2555c3;
 }
-*/
 
 .main-content > p,
 .main-content > pre,
@@ -2896,16 +2880,15 @@ table .bb, table .bb {
 	margin-left: 0;
 }
 
-/*
+
 .hentry .main-content *[id*="figure"]:hover,
 .hentry .main-content *[id*="figure"]:target,
 .hentry .main-content *[id*="snippet"]:hover,
 .hentry .main-content *[id*="snippet"]:target {
 	position: relative;
 }
-*/
 
-/*
+
 .hentry .main-content *[id*="figure"]:hover:after,
 .hentry .main-content *[id*="figure"]:target:after,
 .hentry .main-content *[id*="snippet"]:hover:after,
@@ -2924,7 +2907,6 @@ table .bb, table .bb {
 	text-transform: none;
 	vertical-align: middle;
 }
-*/
 
 .subhead-anchor {
 	color: #666;
@@ -2936,7 +2918,6 @@ table .bb, table .bb {
 	vertical-align: middle;
 }
 
-/*
 .hentry .main-content h2:hover .subhead-anchor,
 .hentry .main-content h3:hover .subhead-anchor,
 .hentry .main-content h4:hover .subhead-anchor,
@@ -2944,13 +2925,10 @@ table .bb, table .bb {
 .hentry .main-content h6:hover .subhead-anchor {
   display: inline-block;
 }
-*/
 
-/*
 .subhead-anchor:hover {
   text-decoration: underline;
 }
-*/
 
 .entry-footnotes {
 	padding-top: 12px;
@@ -3408,11 +3386,9 @@ ol.article-comments > li .comment-tools .comment-id {
 	color: #ccc;
 }
 
-/*
 ol.article-comments > li .comment-tools a:hover {
 	background: #444;
 }
-*/
 
 ol.article-comments > li .comment-tools a:focus {
 	outline: 1px dotted #666;
@@ -3685,12 +3661,10 @@ li.comment-form p + form {
 	text-decoration: none;
 }
 
-/*
 .partner-promos a:hover	{
 	background: rgba(255,255,255,.5);
 	outline: 10px solid rgba(255,255,255,.5);
 }
-*/
 
 .partner-promos h1,
 .partner-promos .promo-title {
@@ -3706,11 +3680,9 @@ li.comment-form p + form {
 	display: inline-block;
 }
 
-/*
 .partner-promos .arrow:hover {
 	text-decoration: underline;
 }
-*/
 
 .partner-promos .arrow:after {
 	content: " ›";
@@ -4005,12 +3977,10 @@ ul.bullets {
 	content: "\00A0\00A0\21E2";
 }
 
-/*
 .paginator a:hover {
 	text-decoration:none;
 	background: #444;
 }
-*/
 
 html.modal {
 	height: 100%;
@@ -4105,7 +4075,7 @@ body.modal {
 .main-content > figure figcaption.gist-caption {
 	font-size: 16px;
 	font-family: georgia, serif;
-	font-style: normal;
+	font-style: normal; 
 }
 
 .event-promo {
@@ -5063,12 +5033,10 @@ img.commenter-avatar {
 	background-image: url(/components/assets/img/icon_login-laurel.png);
 }
 
-/*
 .login-buttons li:hover, .login-buttons li a:hover {
 	background-color: #efefef;
 	text-decoration: none;
 }
-*/
 
 /* Stuff I'm not sure where is used
 -------------------------------------------------------------------------------*/
