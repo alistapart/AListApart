@@ -9,7 +9,7 @@
     xmlns:content="http://purl.org/rss/1.0/modules/content/">
 
     <channel>
-    
+
     <title><![CDATA[A List Apart: The Full Feed with Sponsors]]></title>
     <link>http://alistapart.com</link>
     <description>Articles, columns, and blog posts for people who make web sites.</description>
@@ -17,7 +17,7 @@
     <dc:creator>The fine folks at A List Apart</dc:creator>
     <dc:rights>Copyright {gmt_date format="%Y"}</dc:rights>
     <dc:date>{gmt_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
-    
+
 {exp:channel:entries channel="issues|columns|blog|link_posts|rss_only|rss_sponsorships" limit="20" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no"}
 	{if channel_short_name == "issues"}
 	{exp:playa:children field="issue_articles"}
@@ -26,7 +26,7 @@
       <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
       <link>http://alistapart.com/article/{url_title}</link>
       <guid>http://alistapart.com/article/{url_title}</guid>
-      <description><![CDATA[{article_content}{if article_footnotes}<h3>Footnotes</h3><ul class="the-footnotes">{article_footnotes}<li id="note{row_count}">{row_count}. {cell_1}</li>{/article_footnotes}</ul>{/if}]]></description>
+      <description><![CDATA[{if article_editors_note}<p><b>A note from the editors:</b> {article_editors_note}</p>{/if}{article_content}{if article_footnotes}<h3>Footnotes</h3><ul class="the-footnotes">{article_footnotes}<li id="note{row_count}">{row_count}. {cell_1}</li>{/article_footnotes}</ul>{/if}]]></description>
       <dc:subject><![CDATA[{modern-categories-for-rss}]]></dc:subject>
       <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
     </item>
@@ -37,7 +37,7 @@
       <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
       <link>http://alistapart.com/column/{url_title}</link>
       <guid>http://alistapart.com/column/{url_title}</guid>
-      <description><![CDATA[{column_content}{if column_footnotes}<h3>Footnotes</h3><ul class="the-footnotes">{column_footnotes}<li id="note{row_count}">{row_count}. {cell_1}</li>{/column_footnotes}</ul>{/if}]]></description>
+      <description><![CDATA[{if column_editors_note}<p><b>A note from the editors:</b> {column_editors_note}</p>{/if}{column_content}{if column_footnotes}<h3>Footnotes</h3><ul class="the-footnotes">{column_footnotes}<li id="note{row_count}">{row_count}. {cell_1}</li>{/column_footnotes}</ul>{/if}]]></description>
       <dc:subject><![CDATA[{modern-categories-for-rss}]]></dc:subject>
       <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
     </item>
@@ -47,7 +47,7 @@
       <author>{embed="embeds/article-authors-for-rss" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</author>
       <link>http://alistapart.com/blog/post/{url_title}</link>
       <guid>http://alistapart.com/blog/post/{url_title}</guid>
-      <description><![CDATA[{blog_content}]]></description>
+      <description><![CDATA[{if blog_editors_note}<p><b>A note from the editors:</b> {blog_editors_note}</p>{/if}{blog_content}]]></description>
       <dc:subject><![CDATA[{modern-categories-for-rss}]]></dc:subject>
       <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
     </item>
@@ -80,7 +80,7 @@
     </item>
     {/if}
 {/exp:channel:entries}
-    
+
     </channel>
 </rss>
 
