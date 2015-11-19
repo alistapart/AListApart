@@ -1,5 +1,5 @@
  <root>
- {exp:ac_memberlist sort="last_name ASC" offset="400" limit="200" group_id="1|6|7"}
+ {exp:ac_memberlist sort="last_name ASC" limit="200" group_id="1|6|7"}
     <author>
         <username>{username}</username>
         <screenName><![CDATA[{screen_name}]]></screenName>
