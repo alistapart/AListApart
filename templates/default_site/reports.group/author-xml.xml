@@ -1,0 +1,21 @@
+ <root>
+ {exp:ac_memberlist sort="last_name ASC" offset="400" limit="200" group_id="1|6|7"}
+    <author>
+        <username>{username}</username>
+        <screenName><![CDATA[{screen_name}]]></screenName>
+        <firstname><![CDATA[{first_name}]]></firstname>
+        <lastname><![CDATA[{last_name}]]></lastname>
+        <photofilename>{photo_filename}</photofilename>
+        <avatarfilename>{avatar_filename}</avatarfilename>
+        <bio><![CDATA[{bio}]]></bio>
+        <url><![CDATA[{url}]]></url>
+        <twitter><![CDATA[{twitter}]]></twitter>
+        <facebook><![CDATA[{facebook}]]></facebook>
+        <dribbble><![CDATA[{dribbble}]]></dribbble>
+        <github><![CDATA[{github}]]></github>
+        <googleplus><![CDATA[{googleplus}]]></googleplus>
+        <authorarticlesids><![CDATA[{embed="embeds/author-articles-ids" author_id="{member_id}" real_name="{screen_name}"}]]></authorarticlesids>
+        <illustratorarticlesids><![CDATA[{embed="embeds/illustrator-articles-ids" author_id="{member_id}" real_name="{screen_name}"}]]></illustratorarticlesids>
+    </author>
+ {/exp:ac_memberlist}
+ </root>
