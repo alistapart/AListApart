@@ -58,6 +58,7 @@
 
 				{if article_illustration OR article_legacy_illo}
 				{exp:stash:set name="illustrator-credit"}
+				{if article_suppress_credit != "y"}
 				<p class="illustrator-credit" itemprop="contributor" itemscope itemtype="http://schema.org/Person">Illustration by
 					{if "{article_illustrator:entry_id}" != ""}
 					{article_illustrator}
@@ -67,6 +68,7 @@
 					<a href="/author/kcornell" itemprop="url"><span itemprop="name">Kevin Cornell</span></a>
 					{/if}
 				</p>
+				{/if}
 				{/exp:stash:set}
 				{/if}
 
@@ -84,7 +86,7 @@
 					</picture>
 
 					{exp:stash:get name="issue-number"}
-					{if article_suppress_credit != "y"}{exp:stash:get name="illustrator-credit"}{/if}
+					{exp:stash:get name="illustrator-credit"}
 				</figure>
 
 				{if:else}
