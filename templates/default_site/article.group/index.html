@@ -84,7 +84,7 @@
 					</picture>
 
 					{exp:stash:get name="issue-number"}
-					{exp:stash:get name="illustrator-credit"}
+					{if article_suppress_credit != "y"}{exp:stash:get name="illustrator-credit"}{/if}
 				</figure>
 
 				{if:else}
