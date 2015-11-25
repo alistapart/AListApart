@@ -1,8 +1,9 @@
+
 {if segment_2}
 
-{exp:user:stats username="{segment_2}"}
+{exp:channel:entries channel="contributors" username="{segment_2}"}
 
-{if user_no_results}{redirect="404"}{/if}
+{if no_results}{redirect="404"}{/if}
 
 {global-page-top}
 
@@ -32,46 +33,40 @@
 
 				<h1 class="basic-title">Author</h1>
 
-				{if photo_filename != ""}
+				{if contributor_avatar}
 				<header class="author-header">
-
-					<img src="{exp:ce_img:pair src="{photo_url}{photo_filename}" width="120" height="120" crop="yes"}{made}{/exp:ce_img:pair}" alt=""/>
-
-				{!--if:elseif avatar_filename}
-				<header class="author-header">
-
-					<img src="{avatar_url}{avatar_filename}" width="120" alt="">--}
-
+				 
+					<img src="{exp:ce_img:pair src="{contributor_avatar}" width="120" height="120" crop="yes"}{made}{/exp:ce_img:pair}" alt=">Image of {screen_name}"/>
 				{if:else}
 				<header class="author-header no-photo">
 				{/if}
 
 					<h1 itemprop="name">{screen_name}</h1>
 
-					{if url OR twitter OR facebook OR dribbble OR github OR googleplus}
+					{if contributor_url OR contributor_twitter OR contributor_facebook OR contributor_dribbble OR contributor_github OR contributor_googleplus}
 					<ul class="fancy-links">
-						{if url}<li><a href="http://{exp:low_replace find='http://' replace=''}{url}{/exp:low_replace}" itemprop="url">{url}</a></li>{/if}
-						{if twitter}<li><a class="twitter" href="http://twitter.com/{exp:low_replace find='@' replace=''}{twitter}{/exp:low_replace}" itemprop="url">{exp:low_replace find='@' replace=''}{twitter}{/exp:low_replace}</a></li>{/if}
-						{if facebook}<li><a class="facebook" href="http://facebook.com/{facebook}" itemprop="url">{facebook}</a></li>{/if}
-						{if dribbble}<li><a class="dribbble" href="http://dribbble.com/{dribbble}" itemprop="url">{dribbble}</a></li>{/if}
-						{if github}<li><a class="github" href="http://github.com/{github}" itemprop="url">{github}</a></li>{/if}
-						{if googleplus}<li><a class="googleplus" href="{googleplus}" itemprop="url">{exp:parse_url parts="path" omit="/|+"}{googleplus}{/exp:parse_url}</a></li>{/if}
+						{if contributor_url}<li><a href="http://{exp:low_replace find='http://' replace=''}{url}{/exp:low_replace}" itemprop="url">{contributor_url}</a></li>{/if}
+						{if contributor_twitter}<li><a class="twitter" href="http://twitter.com/{exp:low_replace find='@' replace=''}{twitter}{/exp:low_replace}" itemprop="url">{exp:low_replace find='@' replace=''}{contributor_twitter}{/exp:low_replace}</a></li>{/if}
+						{if contributor_facebook}<li><a class="facebook" href="http://facebook.com/{facebook}" itemprop="url">{contributor_facebook}</a></li>{/if}
+						{if contributor_dribbble}<li><a class="dribbble" href="http://dribbble.com/{dribbble}" itemprop="url">{contributor_dribbble}</a></li>{/if}
+						{if contributor_github}<li><a class="github" href="http://github.com/{github}" itemprop="url">{contributor_github}</a></li>{/if}
+						{if contributor_googleplus}<li><a class="googleplus" href="{googleplus}" itemprop="url">{exp:parse_url parts="path" omit="/|+"}{contributor_googleplus}{/exp:parse_url}</a></li>{/if}
 					</ul>
 					{/if}
 
 				</header>
 
-				<p class="author-bio" itemprop="descirption">{bio}</p>
+				<p class="author-bio" itemprop="descirption">{contributor_bio}</p>
 
-				{embed="embeds/author-articles" author_id="{member_id}" real_name="{screen_name}"}
+				{embed="embeds/author-articles" author_id="{author_id}" real_name="{screen_name}"}
 
 				{if screen_name == "Kevin Cornell"}
 				{embed="embeds/illustrator-articles-kevin"}
 				{if:else}
-				{embed="embeds/illustrator-articles" author_id="{member_id}" real_name="{screen_name}"}
+				{embed="embeds/illustrator-articles" author_id="{author_id}" real_name="{screen_name}"}
 				{/if}
 
-{/exp:user:stats}
+{/exp:channel:entries}
 
 			</article><!--
 
