@@ -2,17 +2,17 @@
 
 	{event_description}
 
-	<h2>Featuring</h2>
+	<h2>Featuring asd</h2>
 
 	<ul class="people-list">
 	{event_participants}
 	<li>
 			{event_participants:participant_object}
-			<img src="{event_participants:participant_object:author_avatar}" alt="photo of {event_participants:participant_object:title}">
+			<img src="{event_participants:participant_object:contributor_avatar}{event_participants:participant_object:author_avatar}" alt="photo of {event_participants:participant_object:title}">
 
 			<a class="name-link"><span itemprop="performer">{event_participants:participant_object:title}</span></a>
 
-			<span>{event_participants:participant_object:author_blurb}</span>
+			<span>{event_participants:participant_object:contributor_blurb}{event_participants:participant_object:author_blurb}</span>
 			{/event_participants:participant_object}
 
 	</li>
