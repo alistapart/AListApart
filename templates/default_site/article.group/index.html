@@ -213,7 +213,7 @@
 				{exp:stash:set name="total-children"}{exp:playa:parents channel="issues" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
 				{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|blog|columns" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
 				{exp:stash:set name="entry-id"}{entry_id}{/exp:stash:set}
-				<aside id="related" class="sidebar var1">
+				<aside id="related" class="sidebar var1 nocontent">
 				<i class="widget-branding ala"></i>
 				{if '{exp:stash:get name="has-parents"}' >= 1}
 				<!-- start first block--><!-- if this article has a follow up - show the follow up -->
@@ -282,7 +282,7 @@
 				</aside>
 				<!-- END RELATED SIDEBAR -->
 
-				<footer class="entry-footer">
+				<footer class="entry-footer nocontent">
 
 					{embed="embeds/article-author-bio" entry_author="{author_id}" entry_id="{entry_id}"}
 
