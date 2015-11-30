@@ -27,10 +27,8 @@ var autoprefixerOptions = { browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
 
 gulp.task('sass', function () {
   return gulp.src(input)
-    //.pipe(sourcemaps.init())
     .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(concat('style.css'))
-    //.pipe(sourcemaps.write())
     .pipe(autoprefixer(autoprefixerOptions))
     .pipe(gulp.dest(output));
 });
