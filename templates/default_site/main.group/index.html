@@ -80,72 +80,23 @@
 			<div class="column-holder">
 
 				<div class="variable-column">
+					
+				{exp:channel:entries channel="blog|columns|articles|events" limit="3" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc"}
+				
+				<article class="item-summary article">
 
-					<h3>Columnists</h3>
+					<h4 class="summary-title"><a href="/blog/post/{url_title}">{title}</a></h4>
 
-					{exp:channel:entries channel="columns" limit="1" dynamic="no" status="open" show_future_entries="no"}
+					<p>{article_mini_deck}{blog_mini_deck}{column_mini_deck}{event_deck}</p>
 
-					<article class="item-summary article">
+					<footer>
+						{embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="/blog/post/{url_title}">{entry_date format="%F %d, %Y"}</a></time>
+					</footer>
 
-						{categories show_group="4"}<span class="column-name">{if category_description}{category_description}{if:else}{category_name}{/if}</span>{/categories}
+				</article>
 
-						<h4 class="summary-title"><a href="/column/{url_title}">{title}</a></h4>
-
-						{embed="embeds/column-author-photo-small" entry_author="{author_id}" entry_id="{entry_id}"}
-
-						<p>{column_intro}</p>
-
-						<footer class="byline">
-							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
-						</footer>
-
-					</article>
-
-					{/exp:channel:entries}
-
-				</div><!--
-
-				--><div class="variable-column">
-
-					<h3>From the Blog</h3>
-
-					{exp:channel:entries channel="blog|link_posts" limit="2" dynamic="off" status="open" show_future_entries="no" sticky="no"}
-
-					{if channel_short_name == "link_posts"}
-
-					<article class="item-summary link-post">
-
-						<h4 class="summary-title"><a href="{blog_target_url}">{title}</a></h4>
-
-						{if blog_description}<p>{blog_description}</p>{/if}
-
-						<footer>
-							{exp:parse_url parts="host"}{blog_target_url}{/exp:parse_url}
-							{blog_attribution}
-							 ∙ ℅ <a class="attribution-link" href="{cell_2}">{cell_1}</a>
-							{/blog_attribution}
-						</footer>
-
-					</article>
-
-					{if:else}
-
-					<article class="item-summary article">
-
-						<h4 class="summary-title"><a href="/blog/post/{url_title}">{title}</a></h4>
-
-						{if blog_intro}<p>{blog_intro}</p>{/if}
-
-						<footer>
-							{embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
-							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="/blog/post/{url_title}">{entry_date format="%F %d, %Y"}</a></time>
-						</footer>
-
-					</article>
-
-					{/if}
-
-					{/exp:channel:entries}
+				{/exp:channel:entries}
 
 				</div><!--
 
@@ -154,6 +105,30 @@
 					{ads}<!--
 
 					-->{ad-bsa-text}
+
+				</div>
+
+			</div>
+			<div class="column-holder">
+
+				<div class="variable-column">
+					
+				{exp:channel:entries channel="blog|columns|articles|events" offset="4" limit="4" dynamic="off" status="open" show_future_entries="no" sticky="no"}
+				
+				<article class="item-summary article">
+
+					<h4 class="summary-title"><a href="/blog/post/{url_title}">{title}</a></h4>
+
+					<p>{article_mini_deck}{blog_mini_deck}{column_mini_deck}{event_deck}</p>
+
+					<footer>
+						{embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="/blog/post/{url_title}">{entry_date format="%F %d, %Y"}</a></time>
+					</footer>
+
+				</article>
+
+				{/exp:channel:entries}
 
 				</div>
 
