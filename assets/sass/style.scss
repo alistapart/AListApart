@@ -976,6 +976,8 @@ aside.column.more-content .item-summary {
 .item-summary:not(.topic) > h1 a,
 .item-summary:not(.topic) > .summary-title a {
 	color: $text;
+	color: $link;
+	font-family: $sans-serif;
 }
 
 .item-summary.topic > h1 {

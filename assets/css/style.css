@@ -901,6 +901,8 @@ aside.column.more-content .item-summary {
 .item-summary:not(.topic) > h1 a,
 .item-summary:not(.topic) > .summary-title a {
   color: #222;
+  color: #2455c3;
+  font-family: "Franklin ITC", sans-serif;
 }
 
 .item-summary.topic > h1 {
