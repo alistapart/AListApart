@@ -7,7 +7,7 @@
 		<title>A List Apart: The Articles</title>
 
 		<link rel="canonical" href="{site_url}/{segment_1}{if segment_2}/{segment_2}{/if}{if segment_3}/{segment_3}{/if}"/>
-		{exp:channel:entries limit="10" channel="issues" status="open" dynamic="off" show_future_entries="no" paginate="top"}{paginate}{if next_page}<link rel="next" href="{auto_path}" />{/if}
+		{exp:channel:entries limit="10" channel="issues|articles|blog|columns|posts" status="open" dynamic="off" show_future_entries="no" paginate="top"}{paginate}{if next_page}<link rel="next" href="{auto_path}" />{/if}
 		{if previous_page}<link rel="prev" href="{auto_path}" />{/if}{/paginate}{/exp:channel:entries}
 
 	</head>
@@ -28,6 +28,36 @@
 
 					<h1 class="basic-title">The Articles</h1>
 
+					{exp:channel:entries channel="articles|blog|columns|posts" limit="10" status="open" dynamic="on" show_future_entries="no" orderby="entry_date" sort="desc" sticky="no"}
+					
+					{if no_results}
+					{redirect="404"}
+					{/if}
+
+					<ul class="entry-list">
+
+						<li>
+
+						<h3 class="entry-title"><a href="/article/{url_title}">{title}</a></h3>
+
+						<p class="meta">
+
+							by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} ·
+							<time class="pubdate updated" datetime="{exp:playa:parents channel='issues'}{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}{/exp:playa:parents">{entry_date format="%F %d, %Y"}</time>
+							{if comment_total > 0}
+							 · <a class="comment-count" href="/article/{url_title}#comments">{comment_total} Comment{if comment_total > 1}s{/if}</a>
+							 {/if} · {channel_short_name}
+
+						</p>
+
+						<p>{exp:strip_html}{article_deck}{blog_intro}{column_intro}{/exp:strip_html}</p>
+
+					</li>
+
+					</ul>
+
+					{/exp:channel:entries}
+
 					{if segment_3}
 
 						{embed="embeds/issue-list" offset="{segment_3}"}
@@ -44,7 +74,7 @@
 
 					{sponsor-top}
 
-					{even-more-from-ala}
+					{more-from-ala-sidebar}
 
 					{ad-bsa-text}
 
