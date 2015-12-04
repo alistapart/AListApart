@@ -81,59 +81,62 @@
 
 				<div class="variable-column">
 					
-				{exp:channel:entries channel="blog|columns|articles|events" limit="3" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc"}
-				
-				<article class="item-summary article">
+					{exp:channel:entries channel="blog|columns|articles|events" limit="3" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc"}
+					
+					<article class="item-summary article">
 
-					<h4 class="summary-title"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{title}</a></h4>
+						<h4 class="summary-title"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{title}</a></h4>
 
-					<p>{article_mini_deck}{blog_mini_deck}{column_mini_deck}{event_deck}</p>
+						<p>{article_mini_deck}{blog_mini_deck}{column_mini_deck}{event_deck}</p>
 
-					<footer>
-						{embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
-						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %d, %Y"}</a></time>
-					</footer>
+						<footer>
+							{embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %d, %Y"}</a></time>
+						</footer>
 
-				</article>
+					</article>
 
-				{/exp:channel:entries}
+					{/exp:channel:entries}
+					<div class="fixed-column ads">
 
-				</div><!--
+						<script src="/{assets_path}/js/libs/htmlParser.js"></script>
+						<script src="/{assets_path}/js/libs/postscribe.js"></script>
+						<aside id="deck-target" class="the-deck"></aside>
 
-				--><div class="fixed-column">
+					</div>
 
-					{ads}<!--
-
-					-->{ad-bsa-text}
-
-				</div>
-
-			</div>
-			<div class="column-holder">
+				</div>	 
 
 				<div class="variable-column">
 					
-				{exp:channel:entries channel="blog|columns|articles|events" offset="3" limit="3" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc"}
-				
-				<article class="item-summary article">
+					{exp:channel:entries channel="blog|columns|articles|events" offset="3" limit="3" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc"}
+					
+					<article class="item-summary article">
 
-					<h4 class="summary-title"><a href="/blog/post/{url_title}">{title}</a></h4>
+						<h4 class="summary-title"><a href="/blog/post/{url_title}">{title}</a></h4>
 
-					<p>{article_mini_deck}{blog_mini_deck}{column_mini_deck}{event_deck}</p>
+						<p>{article_mini_deck}{blog_mini_deck}{column_mini_deck}{event_deck}</p>
 
-					<footer>
-						{embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
-						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="/blog/post/{url_title}">{entry_date format="%F %d, %Y"}</a></time>
-					</footer>
+						<footer>
+							{embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="/blog/post/{url_title}">{entry_date format="%F %d, %Y"}</a></time>
+						</footer>
 
-				</article>
+					</article>
 
-				{/exp:channel:entries}
+					{/exp:channel:entries}
+
+					 <div class="fixed-column ads">
+						
+						<aside id="job-board-target" class="job-board"></aside>
+						{ad-bsa-text}
+
+					</div>
 
 				</div>
 
 			</div>
-
+		
 			<aside class="ala-slug">A List Apart explores the design, development, and meaning of web content, with a special focus on web standards and best practices. Explore our <a href="/articles">articles</a> or find out more <a href="/about">about us</a>.</aside>
 
 		</div>
@@ -149,3 +152,4 @@
 {global-footer}
 
 {global-page-bottom}
+
