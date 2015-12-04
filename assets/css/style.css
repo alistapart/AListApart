@@ -898,6 +898,10 @@ aside.column.more-content .item-summary {
   line-height: 24px;
 }
 
+.item-summary.topic {
+  width: 100%;
+}
+
 .item-summary:not(.topic) > h1 a,
 .item-summary:not(.topic) > .summary-title a {
   color: #222;
@@ -3099,6 +3103,7 @@ pre.editing code {
   width: 960px;
   max-width: 100%;
   margin: 0 auto;
+  position: relative;
 }
 
 .column {
@@ -3112,6 +3117,16 @@ pre.editing code {
 .fixed-column {
   display: inline-block;
   vertical-align: top;
+}
+
+#home-page .variable-column {
+  max-width: 75%;
+}
+
+#home-page .fixed-column {
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
 
 .fixed-column {
