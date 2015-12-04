@@ -98,6 +98,17 @@
 	font-style: normal;
 }
 
+#home-page .job-board {
+	margin-top: 0px;
+	text-align: left;
+}
+
+#home-page .job-board a {
+
+	font-family: "Franklin ITC Light", sans-serif;
+	font-weight: normal;
+}
+
 .job-board h4, 
 .sponsor-lower h4 {
 	text-transform: uppercase;

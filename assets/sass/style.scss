@@ -976,7 +976,6 @@ aside.column.more-content .item-summary {
 .item-summary:not(.topic) > h1 a,
 .item-summary:not(.topic) > .summary-title a {
 	color: $text;
-	color: $link;
 	font-family: $sans-serif;
 }
 
@@ -3210,6 +3209,10 @@ pre.editing code {
 	width: 960px;
 	max-width: 100%;
 	margin: 0 auto;
+}
+
+.column-holder + .column-holder {
+	// margin-top: -70px;
 }
 
 .column {
