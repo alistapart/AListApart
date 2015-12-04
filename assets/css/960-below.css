@@ -32,6 +32,14 @@
 		text-align: left;
 	}
 
+	#home-page .variable-column {
+		width: auto;
+	}
+
+	#home-page .fixed-column {
+		position:static;
+	}
+
 }
 
 @media only screen and (max-width: 78em) {
