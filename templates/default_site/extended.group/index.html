@@ -1,6 +1,6 @@
 {if segment_2 != ""}
 
-{exp:channel:entries channel="articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
+{exp:channel:entries channel="legacy_articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
 
 {global-page-top}
 
@@ -36,10 +36,10 @@
 
 			</header>
 
-			{if article_extended_intro}
+			{if legacy_article_extended_intro}
 			<div class="main-content">
 
-				<p class="editors-note"><b>A note from the editors:</b> {article_extended_intro}</p>
+				<p class="editors-note"><b>A note from the editors:</b> {legacy_article_extended_intro}</p>
 
 			</div>
 			{/if}
@@ -48,7 +48,7 @@
 
 				<p class="buttonish-holder"><a href="/article/{url_title}" class="buttonishish">Back to the article</a></p>
 
-				{article_extended}
+				{legacy_article_extended}
 
 				<p class="buttonish-holder"><a href="/article/{url_title}" class="buttonishish">Back to the article</a></p>
 
