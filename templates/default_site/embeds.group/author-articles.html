@@ -1,4 +1,4 @@
-				{exp:user:entries channel="articles|blog|columns|events" dynamic="no" status="open" user_author_id="{embed:author_id}" orderby="date" show_expired="yes" show_future_entries="yes" sticky="no"}
+				{exp:user:entries channel="articles|legacy_articles|blog|columns|events" dynamic="no" status="open" user_author_id="{embed:author_id}" orderby="date" show_expired="yes" show_future_entries="yes" sticky="no"}
 
 				{if count == "1"}
 				<h2 class="alt-small">Contributions by {embed:real_name}</h2>
@@ -6,11 +6,12 @@
 				<ul class="entry-list">
 				{/if}
 					<li>
-						<h3 class="entry-title"><a href="/{if channel_short_name == "columns"}column{if:elseif channel_short_name == "blog"}blog/post{if:elseif channel_short_name == "articles"}article{if:else}event{/if}/{url_title}">{title}</a></h3>
-						{if channel_short_name == "articles"}
+						<h3 class="entry-title"><a href='/{if channel_short_name == "columns"}column{if:elseif channel_short_name == "blog"}blog/post{if:elseif channel_short_name == "articles" || channel_short_name == "legacy_articles"}article{if:else}event{/if}/{url_title}'>{title}</a></h3>
+						{if channel_short_name == "articles" || channel_short_name == "legacy_articles"}
 						<p class="meta">
-						{exp:playa:parents channel="issues"}<a href="/issue/{issue_number}">Issue&nbsp;{issue_number}</a>{/exp:playa:parents}&nbsp;·&nbsp;<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time></p>
-						<p>{article_deck}</p>
+						<!-- {exp:playa:parents channel="issues"}<a href="/issue/{issue_number}">Issue&nbsp;{issue_number}</a>{/exp:playa:parents}&nbsp;·&nbsp; -->
+						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time></p>
+						<p>{article_deck}{legacy_article_deck}</p>
 						{if:elseif channel_short_name == "blog" || channel_short_name == "events"}
 						<p class="meta">
 						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
