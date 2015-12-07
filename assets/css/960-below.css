@@ -32,13 +32,7 @@
 		text-align: left;
 	}
 
-	#home-page .variable-column {
-		width: auto;
-	}
 
-	#home-page .fixed-column {
-		position:static;
-	}
 
 }
 
@@ -691,6 +685,15 @@
 
 	.variable-column:first-child > .item-summary {
 		width: 100%;
+	}
+
+		
+	#home-page .variable-column {
+		width: auto;
+	}
+
+	#home-page .fixed-column {
+		position:static;
 	}
 
 
