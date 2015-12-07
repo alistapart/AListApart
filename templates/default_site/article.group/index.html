@@ -1,4 +1,4 @@
-{exp:channel:entries channel="articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
+{exp:channel:entries channel="articles|legacy_articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
 
 {if no_results}
 {redirect="404"}
@@ -10,15 +10,15 @@
 
 	<link rel="alternate" type="application/rss+xml" title="A feed for comments on this article" href="/comments/feed/{url_title}" />
 
-	{article_custom_head}
+	{legacy_article_custom_head}
 
 	{embed="embeds/article-author-styles" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
 
-	{exp:stash:set name="safe-description"}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{if article_mini_deck}{article_mini_deck}{if:elseif article_deck}{article_deck}{/if}{/exp:low_replace}{/exp:strip_html}{/exp:stash:set}
+	{exp:stash:set name="safe-description"}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{if article_mini_deck || legacy_article_mini_deck}{article_mini_deck}{legacy_article_mini_deck}{if:elseif article_deck || legacy_article_deck}{article_deck}{legacy_article_deck}{/if}{/exp:low_replace}{/exp:strip_html}{/exp:stash:set}
 
-	{if article_custom_css}
+	{if legacy_article_custom_css}
 	<style>
-		{article_custom_css}
+		{legacy_article_custom_css}
 	</style>
 	{/if}
 
@@ -36,7 +36,7 @@
 	<meta property="og:title" content="{title}" />
 	<meta property="og:description" content="{exp:stash:get name="safe-description"}" />
 	<meta property="og:url" content="http://alistapart.com/article/{url_title}" />
-	<meta property="og:image" content="{article_illustration}{url}{/article_illustration}" />
+	<meta property="og:image" content="{legacy_article_illustration}{url}{/legacy_article_illustration}{article_responsive_illo}{url}{/article_responsive_illo}" />
 
 </head>
 
@@ -56,14 +56,14 @@
 
 				{exp:stash:set name="issue-number"}{exp:playa:parents status="open|In Progress"}<span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue"><a href="/issue/{issue_number}" class="issue-number" itemprop="url" ><span class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a></span> {/exp:playa:parents}{/exp:stash:set}
 
-				{if article_illustration OR article_legacy_illo}
+				{if legacy_article_illustration OR legacy_article_legacy_illo}
 				{exp:stash:set name="illustrator-credit"}
-				{if article_suppress_credit != "y"}
+				{if legacy_article_suppress_credit != "y"}
 				<p class="illustrator-credit" itemprop="contributor" itemscope itemtype="http://schema.org/Person">Illustration by
-					{if "{article_illustrator:entry_id}" != ""}
-					{article_illustrator}
-					{embed="embeds/article-illustrator-link" entry_id="{article_illustrator:entry_id}"}
-					{/article_illustrator}
+					{if "{legacy_article_illustrator:entry_id}" != ""}
+					{legacy_article_illustrator}
+					{embed="embeds/article-illustrator-link" entry_id="{legacy_article_illustrator:entry_id}"}
+					{/legacy_article_illustrator}
 					{if:else}
 					<a href="/author/kcornell" itemprop="url"><span itemprop="name">Kevin Cornell</span></a>
 					{/if}
@@ -72,7 +72,7 @@
 				{/exp:stash:set}
 				{/if}
 
-				{if article_responsive_illo != ""}
+				{if article_responsive_illo!= "" || legacy_article_responsive_illo != ""}
 
 				<figure class="wide-hero responsive-hero">
 					<picture>
@@ -81,7 +81,11 @@
 						<source srcset="{exp:ce_img:pair src="{cell_1}" width="{cell_2}" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" {if cell_2 != ""}media="(min-width: {cell_2}px)"{/if}>
 						{/article_responsive_illo}
 
-						{article_illustration}<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">{/article_illustration}
+						{legacy_article_responsive_illo}
+						<source srcset="{exp:ce_img:pair src="{cell_1}" width="{cell_2}" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" {if cell_2 != ""}media="(min-width: {cell_2}px)"{/if}>
+						{/legacy_article_responsive_illo}
+
+						{legacy_article_illustration}<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt="{legacy_article_illo_description}" itemprop="image">{/legacy_article_illustration}
 
 					</picture>
 
@@ -91,27 +95,27 @@
 
 				{if:else}
 
-				{if article_illustration}
+				{if legacy_article_illustration}
 
-				{article_illustration}
+				{legacy_article_illustration}
 				<figure class="wide-hero">
 					<picture>
 						{if width > height}
 						<source srcset="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="1920" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
-						<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
+						<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{legacy_article_illo_description}" itemprop="image">
 						{if:else}
 						<source srcset="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="696" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 960px)">
-						<img src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
+						<img src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{legacy_article_illo_description}" itemprop="image">
 						{/if}
 					</picture>
 					{exp:stash:get name="issue-number"}
 					{exp:stash:get name="illustrator-credit"}
 				</figure>
-				{/article_illustration}
+				{/legacy_article_illustration}
 
-				{if:elseif article_legacy_illo}
+				{if:elseif legacy_article_legacy_illo}
 				<figure class="wide-hero">
-				{article_legacy_illo}
+				{legacy_article_legacy_illo}
 				{exp:stash:get name="issue-number"}
 				{exp:stash:get name="illustrator-credit"}
 				</figure>
@@ -153,28 +157,28 @@
 
 			</header>
 
-			{if article_series}
+			{if article_series || legacy_article_series}
 				{article-series-logic}
 			{/if}
 
-			{if article_editors_note}
+			{if article_editors_note || legacy_article_editors_note}
 			<div class="main-content pre-article">
-				<p class="editors-note"><b>A note from the editors:</b> {article_editors_note}</p>
+				<p class="editors-note"><b>A note from the editors:</b> {article_editors_note}{legacy_article_editors_note}</p>
 			</div>
 			{/if}
 
-			{article_outdated}
-			{if article_age_flag == 'y'}
+			{legacy_article_outdated}
+			{if legacy_article_age_flag == 'y'}
 			<div class="main-content pre-article">
 			   <p class="editors-note var1"><b>{if custom_note}{custom_note}{if:else}Technical information may be out of date.{/if}</b> {if updated_entry}For more recent approaches, read {updated_entry}<a href="{site_url}/{if "{channel_short_name}" == "blog"}blog/post/{if:elseif "{channel_short_name}" == "columns"}column/{if:elseif "{channel_short_name}" == "articles"}article/{/if}{url_title}" title="{title}">{title}</a>{/updated_entry}.{/if}</p>
 			</div>
 			{/if}
-			{/article_outdated}
+			{/legacy_article_outdated}
 
-			{if article_opening_blockquote}
+			{if article_opening_blockquote || legacy_article_opening_blockquote}
 			<div class="main-content">
 
-				{article_opening_blockquote}
+				{article_opening_blockquote}{legacy_article_opening_blockquote}
 
 			</div>
 			{/if}
@@ -191,11 +195,11 @@
 
 				{/exp:hop_inject:injection}
 
-				{article_content}
+				{article_content}{legacy_article_content}
 
 				{/exp:hop_inject}
 
-				{if article_footnotes}
+				{if article_footnotes || legacy_article_footnotes}
 				<section class="entry-footnotes">
 
 					<h1>Notes</h1>
@@ -204,6 +208,9 @@
 						{article_footnotes}
 						<li id="note{row_count}"><a class="count" href="#ref{row_count}">{row_count}. </a>{cell_1}</li>
 						{/article_footnotes}
+						{legacy_article_footnotes}
+						<li id="note{row_count}"><a class="count" href="#ref{row_count}">{row_count}. </a>{cell_1}</li>
+						{/legacy_article_footnotes}
 					</ul>
 
 				</section>
@@ -211,7 +218,7 @@
 
 				<!-- START RELATED SIDEBAR -->
 				{exp:stash:set name="total-children"}{exp:playa:parents channel="issues" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
-				{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|blog|columns" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
+				{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|legacy_articles|blog|columns" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
 				{exp:stash:set name="entry-id"}{entry_id}{/exp:stash:set}
 				<aside id="related" class="sidebar var1 nocontent">
 				<i class="widget-branding ala"></i>
@@ -219,19 +226,19 @@
 				<!-- start first block--><!-- if this article has a follow up - show the follow up -->
 					<section class="follow-up">
 						<h1>Follow-up</h1>
-						{exp:playa:parents channel="articles|columns|blog"}
+						{exp:playa:parents channel="articles|legacy_articles|columns|blog"}
 						<article>
-							<h1><a href="{site_url}/{if channel_short_name=='blog'}{channel_short_name}/post/{url_title}{if:elseif channel_short_name=='articles'}article/{url_title}{if:elseif channel_short_name=='columns'}column/{url_title}{/if}" data-trackevent="Related sidebar: Follow up">{title}</a></h1>
-							{if blog_follow_up_note OR article_follow_up_note OR column_follow_up_note}
-								<p>{exp:strip_html}{blog_follow_up_note}{article_follow_up_note}{column_follow_up_note}{/exp:strip_html}</p>
+							<h1><a href="{site_url}/{if channel_short_name=='blog'}{channel_short_name}/post/{url_title}{if:elseif channel_short_name=='articles' || channel_short_name=='legacy_articles'}article/{url_title}{if:elseif channel_short_name=='columns'}column/{url_title}{/if}" data-trackevent="Related sidebar: Follow up">{title}</a></h1>
+							{if blog_follow_up_note OR article_follow_up_note OR legacy_article_follow_up_note OR column_follow_up_note}
+								<p>{exp:strip_html}{blog_follow_up_note}{article_follow_up_note}{legacy_article_follow_up_note}{column_follow_up_note}{/exp:strip_html}</p>
 							{if:else}
 								<p>{exp:strip_html}
 									{if channel_short_name=='blog'}
 										{if blog_mini_deck}{blog_mini_deck}{if:elseif blog_intro}{exp:trunchtml chars="130" inline="..."}{blog_intro}{/exp:trunchtml}{/if}
 									{if:elseif channel_short_name=='columns'}
 										{if column_mini_deck}{column_mini_deck}{if:elseif column_intro}{exp:trunchtml chars="130" inline="..."}{column_intro}{/exp:trunchtml}{/if}
-									{if:elseif channel_short_name=='articles'}
-										{if article_mini_deck}{article_mini_deck}{if:elseif article_deck}{exp:trunchtml chars="130" inline="..."}{article_deck}{/exp:trunchtml}{/if}
+									{if:elseif channel_short_name=='articles' || channel_short_name=='legacy_articles'}
+										{if article_mini_deck || legacy_article_mini_deck}{article_mini_deck}{legacy_article_mini_deck}{if:elseif article_deck || legacy_article_deck}{exp:trunchtml chars="130" inline="..."}{article_deck}{legacy_article_deck}{/exp:trunchtml}{/if}
 									{/if}
 								{/exp:strip_html}</p>
 							{/if}
@@ -248,17 +255,17 @@
 					{exp:stash:set name="article-illo-sidebar"}{issue_number}{/exp:stash:set}
 					{exp:playa:children status="open"}
 					{if entry_id != {exp:stash:get name="entry-id"}}
-						{article_illustration}
+						{legacy_article_illustration}
 						<figure class="sidebar-hero {if width > height}wideone{/if}" data-picture data-alt="">
 							<div data-src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}"></div>
 							<div data-src="{exp:ce_img:pair src="{url}" width="644" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" data-media="(min-width: 600px) and (min-device-pixel-ratio: 2.0)"></div>
 							<noscript><img src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
 						</figure>
-						{/article_illustration}
-						<h1>Also in Issue №&nbsp;{exp:stash:get name="issue-number-sidebar"}</h1>
+						{/legacy_article_illustration}
+						<!-- <h1>Also in Issue №&nbsp;{exp:stash:get name="issue-number-sidebar"}</h1> -->
 						<article>
 						<h1><a href="/article/{url_title}" data-trackevent="Related sidebar: Also in issue">{title}</a></h1>
-						<p>{exp:strip_html}{if article_mini_deck}<p>{article_mini_deck}</p>{if:elseif article_deck}<p>{exp:trunchtml chars="130" inline="..."}{article_deck}{/exp:trunchtml}</p>{/if}{/exp:strip_html}</p>
+						<p>{exp:strip_html}{if legacy_article_mini_deck}<p>{legacy_article_mini_deck}</p>{if:elseif legacy_article_deck}<p>{exp:trunchtml chars="130" inline="..."}{legacy_article_deck}{/exp:trunchtml}</p>{/if}{/exp:strip_html}</p>
 						</article>
 					{/if}
 					{/exp:playa:children}
@@ -345,21 +352,21 @@
 
 	{sponsor-top}
 
-	{exp:channel:entries channel="articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
+	{exp:channel:entries channel="legacy_articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
 
-	{if article_custom_body_load}
+	{if legacy_article_custom_body_load}
 	<script>
 	$(window).load(function() {
 		// this comment prevents EE from trying to parse the previous curly brace
-		{article_custom_body_load}
+		{legacy_article_custom_body_load}
 
 	});
 	</script>
 	{/if}
 
-	{if article_custom_javascript}
+	{if legacy_article_custom_javascript}
 	<script>
-		{article_custom_javascript}
+		{legacy_article_custom_javascript}
 	</script>
 	{/if}
 
