@@ -7,7 +7,7 @@
 		<title>A List Apart: The Articles</title>
 
 		<link rel="canonical" href="{site_url}/{segment_1}{if segment_2}/{segment_2}{/if}{if segment_3}/{segment_3}{/if}"/>
-		{exp:channel:entries limit="10" channel="issues|articles|blog|columns|posts" status="open" dynamic="off" show_future_entries="no" paginate="top"}{paginate}{if next_page}<link rel="next" href="{auto_path}" />{/if}
+		{exp:channel:entries limit="10" channel="issues|articles|legacy_articles|blog|columns|posts" status="open" dynamic="off" show_future_entries="no" paginate="top"}{paginate}{if next_page}<link rel="next" href="{auto_path}" />{/if}
 		{if previous_page}<link rel="prev" href="{auto_path}" />{/if}{/paginate}{/exp:channel:entries}
 
 	</head>
@@ -16,7 +16,7 @@
 
 	{primary-logo}
 
-   {global-nav}
+   	{global-nav}
 
 	{current-user-info}
 
@@ -28,7 +28,7 @@
 
 					<h1 class="basic-title">The Articles</h1>
 
-					{exp:channel:entries channel="articles|blog|columns|posts" limit="10" status="open" dynamic="on" show_future_entries="no" orderby="entry_date" sort="desc" sticky="no"}
+					{exp:channel:entries channel="articles|legacy_articles|blog|columns|posts" limit="10" status="open" dynamic="on" show_future_entries="no" orderby="entry_date" sort="desc" sticky="no"}
 					
 					{if no_results}
 					{redirect="404"}
@@ -50,21 +50,30 @@
 
 						</p>
 
-						<p>{exp:strip_html}{article_deck}{blog_intro}{column_intro}{/exp:strip_html}</p>
+						<p>{exp:strip_html}{article_deck}{legacy_article_deck}{blog_intro}{column_intro}{/exp:strip_html}</p>
 
 					</li>
 
 					</ul>
+
+					{paginate}
+					<nav class="paginator" role="toolbar">
+						<ul>
+			        		{if next_page}
+			        			<li><a class="previous" href="{auto_path}">Previous</a></li>
+				        	{/if}
+			        		{if previous_page}
+			            			<li><a class="next" href="{auto_path}">Next</a></li>
+			        		{/if}
+						</ul>
+					</nav>
+					{/paginate}
 
 					{/exp:channel:entries}
 
 					{if segment_3}
 
 						{embed="embeds/issue-list" offset="{segment_3}"}
-
-					{if:else}
-
-						{embed="embeds/issue-list" offset="0"}
 
 					{/if}
 
