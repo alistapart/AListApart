@@ -23,14 +23,17 @@
 
 				<ul class="entry-list">
 
-				{exp:channel:entries channel="articles" dynamic="off" search:article_translations="not IS_EMPTY" limit="999"}
+				{exp:channel:entries channel="articles|legacy_articles" dynamic="off" search:legacy_article_translations="not IS_EMPTY" limit="999"}
 
-					<li>{title}
+					<li>{if article_translations || legacy_article_translations}{title}{/if}
 
 						<ul class="bullets">
 							{article_translations}
 							<li><a href="{cell_2}">{cell_1}</a></li>
 							{/article_translations}
+							{legacy_article_translations}
+							<li><a href="{cell_2}">{cell_1}</a></li>
+							{/legacy_article_translations}
 						</ul>
 
 					</li>
