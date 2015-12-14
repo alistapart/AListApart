@@ -1051,11 +1051,29 @@ aside.column.more-content .item-summary {
 	font-style: italic;
 }
 
+.item-summary.sidebar ul + ul {
+	margin-bottom:24px;
+}
+
+.item-summary.sidebar li {
+	font-style: normal;
+}
+
+.item-summary.sidebar li.parent-topic {
+	border-top: none;
+	font-family: $sans-serif; 
+	font-size: 16px;
+}
+
 .item-summary li a {
 	position: relative;
 	display: block;
 	color: $text;
 }
+
+// .item-summary.sidebar li.parent-topic a {
+// 	color: $link;
+// }
 
 .item-summary li a span {
 	position: absolute;

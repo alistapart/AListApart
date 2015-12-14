@@ -976,6 +976,20 @@ aside.column.more-content .item-summary {
   font-style: italic;
 }
 
+.item-summary.sidebar ul + ul {
+  margin-bottom: 24px;
+}
+
+.item-summary.sidebar li {
+  font-style: normal;
+}
+
+.item-summary.sidebar li.parent-topic {
+  border-top: none;
+  font-family: "Franklin ITC", sans-serif;
+  font-size: 16px;
+}
+
 .item-summary li a {
   position: relative;
   display: block;
