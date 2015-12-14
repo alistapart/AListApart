@@ -911,6 +911,10 @@ aside.column.more-content .item-summary {
 }
 
 .item-summary.topic {
+  width: 216px;
+}
+
+.item-summary.topic.sidebar {
   width: 100%;
 }
 
