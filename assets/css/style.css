@@ -610,8 +610,16 @@ ul.inline-items li {
   padding: 0 12px 0 0;
 }
 
+#home-page .item-summary:nth-child(even) {
+  padding: 0 0 0 0;
+}
+
 .item-summary:nth-child(odd) {
   padding: 0 0 0 12px;
+}
+
+#home-page .item-summary:nth-child(odd) {
+  padding: 0 0 0 0;
 }
 
 aside.column.more-content .item-summary {
@@ -624,6 +632,10 @@ aside.column.more-content .item-summary {
 
 .item-summary:nth-of-type(4n) {
   margin-right: 0;
+}
+
+#home-page .item-summary:nth-of-type(4n) {
+  margin-right: 24px;
 }
 
 .item-summary .column-summary-header {
