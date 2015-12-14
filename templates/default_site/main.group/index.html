@@ -96,7 +96,8 @@
 
 					</article>
 
-					{/exp:channel:entries}	
+					{/exp:channel:entries}
+
 					<div class="fixed-column ads">
 
 						<script src="/{assets_path}/js/libs/htmlParser.js"></script>
@@ -105,26 +106,26 @@
 						<aside id="job-board-target" class="job-board"></aside>
 						{ad-bsa-text}
 
-					</div>			 
-					
+					</div>
+
 					{exp:channel:entries channel="blog|columns|articles|events" offset="3" limit="3" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc"}
 					
 					<article class="item-summary article">
 
-						<h4 class="summary-title"><a href="/blog/post/{url_title}">{title}</a></h4>
+						<h4 class="summary-title"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{title}</a></h4>
 
 						<p>{article_mini_deck}{blog_mini_deck}{column_mini_deck}{event_deck}</p>
 
 						<footer>
 							{embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
-							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="/blog/post/{url_title}">{entry_date format="%F %d, %Y"}</a></time>
+							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %d, %Y"}</a></time>
 						</footer>
 
 					</article>
 
 					{/exp:channel:entries}
-					</div>	
-
+					
+				</div>	
 				
 			</div>
 		
