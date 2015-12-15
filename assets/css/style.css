@@ -925,6 +925,7 @@ aside.column.more-content .item-summary {
 
 .item-summary.topic.sidebar {
   width: 100%;
+  margin-bottom: 0px;
 }
 
 .item-summary:not(.topic) > h1 a,
@@ -989,8 +990,12 @@ aside.column.more-content .item-summary {
   font-style: italic;
 }
 
-.item-summary.sidebar ul + ul {
+.item-summary.sidebar ul {
   margin-bottom: 24px;
+}
+
+.item-summary.sidebar ul:last-child {
+  margin-bottom: 0px;
 }
 
 .item-summary.sidebar li {
