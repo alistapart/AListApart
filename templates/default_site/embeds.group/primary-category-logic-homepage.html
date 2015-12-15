@@ -1,0 +1,6 @@
+{exp:query sql="SELECT primary_category_id FROM exp_primary_category WHERE entry_id='{embed:id}'"}
+   {embed="embeds/primary-category-homepage-mfa" category_id="{primary_category_id}" exclude="{embed:id}"}
+   {if no_results}
+   {embed="embeds/primary-category-fallback-homepage-mfa" category_id="{primary_category_id}" exclude="{embed:id}"}
+   {/if}
+{/exp:query}
