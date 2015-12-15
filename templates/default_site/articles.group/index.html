@@ -38,7 +38,7 @@
 
 						<li>
 
-						<h3 class="entry-title"><a href="/article/{url_title}">{title}</a></h3>
+						<h3 class="entry-title"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{title}</a></h3>
 
 						<p class="meta">
 
@@ -46,7 +46,7 @@
 							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
 							{if comment_total > 0}
 							 · <a class="comment-count" href="/article/{url_title}#comments">{comment_total} Comment{if comment_total > 1}s{/if}</a>
-							 {/if} · {channel_short_name}
+							 {/if}
 
 						</p>
 
@@ -83,7 +83,13 @@
 
 					{sponsor-top}
 
+					<script src="/{assets_path}/js/libs/htmlParser.js"></script>
+					<script src="/{assets_path}/js/libs/postscribe.js"></script>
+					<aside id="deck-target" class="the-deck"></aside>
+
 					{even-more-from-ala}
+
+					<aside id="job-board-target" class="job-board"></aside>
 
 					{ad-bsa-text}
 
