@@ -593,6 +593,15 @@ ul.inline-items li {
   font-style: normal;
 }
 
+.aside-author {
+  font-family: "Franklin ITC Light", sans-serif;
+  font-size: 15px;
+}
+
+.aside-author a {
+  font-family: "Franklin ITC", sans-serif;
+}
+
 .item-summary {
   display: inline-block;
   vertical-align: top;

@@ -660,6 +660,15 @@ ul.inline-items li {
 	font-style: normal;
 }
 
+.aside-author {
+	font-family: $sans-serif-light;
+	font-size: 15px;
+}
+
+.aside-author a {
+	font-family: $sans-serif;
+}
+
 .item-summary {
 	display: inline-block;
 	vertical-align: top;
