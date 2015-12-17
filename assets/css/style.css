@@ -41,6 +41,12 @@ a:focus {
   display: none !important;
 }
 
+.hide {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
 :target:not(#comments):not(.global-nav) {
   -webkit-animation: target-fade 2s 1;
   -moz-animation: target-fade 2s 1;
