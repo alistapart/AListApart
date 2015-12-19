@@ -35,7 +35,7 @@
 
 				<header class="author-header">
 
-					<span class="column-name featured">{embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</span>
+					<span class="column-name featured" itemprop="author" itemscope itemtype="http://schema.org/Person">by {blog_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{blog_authors:url_title}"><span itemprop="name">{blog_authors:title}</span></a>, {/blog_authors}</span>
 
 					<h1><a href="/blog/post/{url_title}">{title}</a></h1>
 
