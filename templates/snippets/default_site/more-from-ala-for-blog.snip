@@ -29,7 +29,7 @@
 							<li>
 								<h3 class="entry-title"><a href="/article/{url_title}">{title}</a></h3>
 								<p class="meta">
-									by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+									by <span itemprop="author" itemscope itemtype="http://schema.org/Person">by {blog_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{blog_authors:url_title}"><span itemprop="name">{blog_authors:title}</span></a>, {/blog_authors}</span>
 									{if comment_total > 0}
 									 · <a class="comment-count" href="/article/{url_title}#comments">{comment_total} Comment{if comment_total > 1}s{/if}</a>
 									 {/if}
