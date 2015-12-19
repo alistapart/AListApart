@@ -1,0 +1,16 @@
+
+						{exp:channel:entries channel="contributors" entry_id="{embed:entry-id}" dynamic="no"}
+						 
+							<h3>More from this Author</h3>
+							
+							<ul class="author-more">
+							{parents channel="articles|legacy_articles|blog|columns" field="article_authors|legacy_article_authors|column_authors|blog_authors" limit="4" status="open|In Progress"}
+							 
+								<li><a href="{if parents:channel_short_name == 'columns'}/column/{if:elseif parents:channel_short_name == 'blog'}/blog/{if:else}{/if}{parents:url_title}">{parents:title}</a></li>
+
+							{/parents}
+							 </ul> 			
+
+						{/exp:channel:entries}
+
+
