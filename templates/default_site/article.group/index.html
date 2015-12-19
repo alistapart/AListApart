@@ -68,29 +68,29 @@
 				{/if}
 
 				{if article_responsive_illo}
-
+				{article_responsive_illo}
 				<figure class="wide-hero">
 					<picture>
-						{if width > height}
-						<source srcset="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="1920" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
-						<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{legacy_article_illo_description}" itemprop="image">
+						{if {cell_1}{width}{/cell_1} > {cell_1}{height}{/cell_1}}
+						<source srcset="{exp:ce_img:pair src="{cell_1}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{cell_1}" width="1920" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
+						<img src="{exp:ce_img:pair src="{cell_1}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
 						{if:else}
-						<source srcset="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="696" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 960px)">
-						<img src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{legacy_article_illo_description}" itemprop="image">
+						<source srcset="{exp:ce_img:pair src="{cell_1}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{cell_1}" width="696" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 960px)">
+						<img src="{exp:ce_img:pair src="{cell_1}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
 						{/if}
 					</picture>
 					{exp:stash:get name="illustrator-credit"}
 				</figure>
-
+				{/article_responsive_illo}
 				{/if}
 
 				<h1 class="entry-title" itemprop="headline">{title}</h1>
 
 				<p class="entry-details">
 
-					<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {embed="embeds/article-authors-primary" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</span>
+					<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {article_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{article_authors:url_title}"><span itemprop="name">{article_authors:title}</span></a>, {/article_authors}</span>
 
-					{exp:playa:parents status="open|In Progress"}<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}" itemprop="datePublished">{entry_date format="%F %d, %Y"}</time>{/exp:playa:parents}
+					<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}" itemprop="datePublished">{entry_date format="%F %d, %Y"}</time>
 
 					<span class="entry-meta optional-break">
 
@@ -100,44 +100,34 @@
 
 				</p>
 
-				{exp:playa:parents status="open|In Progress" show_future_entries="yes"}
 				{if status != "open" OR {entry_date} > {current_time}}
 				<p class="meta warning" style="display: inline-block; background: #ffffef; outline: 3px solid #ffffef;">
 
 					{if status != "open"}
-					<strong>Please note:</strong> This issue has not yet been set to "open."
+					<strong>Please note:</strong> This article has not yet been set to "open."
 					{if:else}
-					<strong>Please note:</strong> This issue is ready, and will go live when it hits its publish time.
+					<strong>Please note:</strong> This article is ready, and will go live when it hits its publish time.
 					{/if}
 
 				</p>
 				{/if}
-				{/exp:playa:parents}
-
+			
 			</header>
 
-			{if article_series || legacy_article_series}
+			{if article_series}
 				{article-series-logic}
 			{/if}
 
-			{if article_editors_note || legacy_article_editors_note}
+			{if article_editors_note}
 			<div class="main-content pre-article">
-				<p class="editors-note"><b>A note from the editors:</b> {article_editors_note}{legacy_article_editors_note}</p>
+				<p class="editors-note"><b>A note from the editors:</b> {article_editors_note}</p>
 			</div>
 			{/if}
 
-			{legacy_article_outdated}
-			{if legacy_article_age_flag == 'y'}
-			<div class="main-content pre-article">
-			   <p class="editors-note var1"><b>{if custom_note}{custom_note}{if:else}Technical information may be out of date.{/if}</b> {if updated_entry}For more recent approaches, read {updated_entry}<a href="{site_url}/{if "{channel_short_name}" == "blog"}blog/post/{if:elseif "{channel_short_name}" == "columns"}column/{if:elseif "{channel_short_name}" == "articles"}article/{/if}{url_title}" title="{title}">{title}</a>{/updated_entry}.{/if}</p>
-			</div>
-			{/if}
-			{/legacy_article_outdated}
-
-			{if article_opening_blockquote || legacy_article_opening_blockquote}
+			{if article_opening_blockquote}
 			<div class="main-content">
 
-				{article_opening_blockquote}{legacy_article_opening_blockquote}
+				{article_opening_blockquote}
 
 			</div>
 			{/if}
@@ -176,7 +166,6 @@
 				{/if}
 
 				<!-- START RELATED SIDEBAR -->
-				{exp:stash:set name="total-children"}{exp:playa:parents channel="issues" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
 				{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|legacy_articles|blog|columns" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
 				{exp:stash:set name="entry-id"}{entry_id}{/exp:stash:set}
 				<aside id="related" class="sidebar var1 nocontent">
@@ -205,35 +194,6 @@
 						{/exp:playa:parents}
 					</section>
 				{/if}
-				<!-- if this article does not have a follow up, and the issue has two articles show the other article -->
-				{if '{exp:stash:get name="has-parents"}' == ''}
-					{if '{exp:stash:get name="total-children"}' > 1}
-					<section>
-					{exp:playa:parents channel="issues" status="open"}
-					{exp:stash:set name="issue-number-sidebar"}{issue_number}{/exp:stash:set}
-					{exp:stash:set name="article-illo-sidebar"}{issue_number}{/exp:stash:set}
-					{exp:playa:children status="open"}
-					{if entry_id != {exp:stash:get name="entry-id"}}
-						{legacy_article_illustration}
-						<figure class="sidebar-hero {if width > height}wideone{/if}" data-picture data-alt="">
-							<div data-src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}"></div>
-							<div data-src="{exp:ce_img:pair src="{url}" width="644" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" data-media="(min-width: 600px) and (min-device-pixel-ratio: 2.0)"></div>
-							<noscript><img src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
-						</figure>
-						{/legacy_article_illustration}
-						<h1>Also in Issue №&nbsp;{exp:stash:get name="issue-number-sidebar"}</h1>
-						<article>
-						<h1><a href="/article/{url_title}" data-trackevent="Related sidebar: Also in issue">{title}</a></h1>
-						<p>{exp:strip_html}{if legacy_article_mini_deck}<p>{legacy_article_mini_deck}</p>{if:elseif legacy_article_deck}<p>{exp:trunchtml chars="130" inline="..."}{legacy_article_deck}{/exp:trunchtml}</p>{/if}{/exp:strip_html}</p>
-						</article>
-					{/if}
-					{/exp:playa:children}
-					{/exp:playa:parents}
-					</section>
-					{if:elseif '{exp:stash:get name="total-children"}' == 1}
-						{embed="embeds/recently-by-author" entry_id="{entry_id}"}
-					{/if}
-				{/if}<!-- end first block -->
 				<!-- show categories -->
 				{if "{categories}{category_url_title}{/categories}"!=""}
 					{embed="embeds/primary-category-logic" id="{entry_id}"}
@@ -250,7 +210,22 @@
 
 				<footer class="entry-footer nocontent">
 
-					{embed="embeds/article-author-bio" entry_author="{author_id}" entry_id="{entry_id}"}
+				{if article_authors:total_results > 1}<h1>About the Authors</h1>{if:elseif article_authors:total_results == "1"}<h1>About the Author</h1>{/if}
+
+				{article_authors}
+
+				<div class="byline author vcard">
+
+					<a class="photo" href="/author/{username}"><img src="{exp:ce_img:pair src="{article_authors:contributor_avatar}{url}{/article_authors:contributor_avatar}" width="120" height="120" crop="yes"}{made}{/exp:ce_img:pair}" alt=""></a>
+
+					<h2><a class="fn" href="/author/{username}">{article_authors:title}</a></h2>
+
+					<div class="author-bio">{article_authors:bio}</div>
+
+					{embed="embeds/author-entries" entry-id="{article_authors:entry_id}"}
+
+				</div>
+				{/article_authors}
 
 				</footer>
 
@@ -274,7 +249,6 @@
 							{if:else}
 								{comment-form}
 							{/if}
-
 
 						{if:else}
 
@@ -567,7 +541,22 @@
 
 				<footer class="entry-footer nocontent">
 
-					{embed="embeds/article-author-bio" entry_author="{author_id}" entry_id="{entry_id}"}
+				{if legacy_article_authors:total_results > 1}<h1>About the Authors</h1>{if:elseif legacy_article_authors:total_results == "1"}<h1>About the Author</h1>{/if}
+
+				{legacy_article_authors}
+
+				<div class="byline author vcard">
+
+					<a class="photo" href="/author/{username}"><img src="{exp:ce_img:pair src="{legacy_article_authors:contributor_avatar}{url}{/legacy_article_authors:contributor_avatar}" width="120" height="120" crop="yes"}{made}{/exp:ce_img:pair}" alt=""></a>
+
+					<h2><a class="fn" href="/author/{username}">{legacy_article_authors:title}</a></h2>
+
+					<div class="author-bio">{legacy_article_authors:bio}</div>
+
+					{embed="embeds/author-entries" entry-id="{legacy_article_authors:entry_id}"}
+
+				</div>
+				{/legacy_article_authors}
 
 				</footer>
 
