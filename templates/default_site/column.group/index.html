@@ -134,7 +134,22 @@
 
 			<footer class="entry-footer nocontent">
 
-				{embed="embeds/column-author-bio" entry_author="{author_id}" entry_id="{entry_id}"}
+				{if column_authors:total_results > 1}<h1>About the Authors</h1>{if:elseif column_authors:total_results == "1"}<h1>About the Author</h1>{/if}
+
+				{column_authors}
+
+				<div class="byline author vcard">
+
+					<a class="photo" href="/author/{username}"><img src="{exp:ce_img:pair src="{column_authors:contributor_avatar}{url}{/column_authors:contributor_avatar}" width="120" height="120" crop="yes"}{made}{/exp:ce_img:pair}" alt=""></a>
+
+					<h2><a class="fn" href="/author/{username}">{column_authors:title}</a></h2>
+
+					<div class="author-bio">{column_authors:bio}</div>
+
+					{embed="embeds/author-entries" entry-id="{column_authors:entry_id}"}
+
+				</div>
+				{/column_authors}
 
 			</footer>
 
