@@ -1,7 +1,7 @@
 
 						<h1 class="classy">More from ALA</h1>
 
-						{exp:channel:entries channel="blog|link_posts|columns|articles|events" limit="6" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc"}
+						{exp:channel:entries channel="blog|link_posts|columns|articles|legacy_articles|events" limit="6" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc"}
 					
 						<article class="item-summary article">
 
@@ -22,7 +22,7 @@
 							{/if}
 							</p>
 
-							<p>{article_mini_deck}{blog_mini_deck}{column_mini_deck}{event_deck}</p>
+							<p>{article_mini_deck}{legacy_article_mini_deck}{blog_mini_deck}{column_mini_deck}{event_deck}</p>
 
 							<footer class="byline">
 								{if "{categories}{category_url_title}{/categories}"!=""}
