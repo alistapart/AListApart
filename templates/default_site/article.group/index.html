@@ -472,7 +472,7 @@
 				<!-- START RELATED SIDEBAR -->
 				{exp:stash:set name="total-children"}{exp:playa:parents channel="issues" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
 				{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|legacy_articles|blog|columns" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
-				{exp:stash:set name="entry-id"}{entry_id}{/exp:stash:set}
+				{exp:stash:set name="current-entry-id"}{entry_id}{/exp:stash:set}
 				<aside id="related" class="sidebar var1 nocontent">
 				<i class="widget-branding ala"></i>
 				{if '{exp:stash:get name="has-parents"}' >= 1}
@@ -525,7 +525,9 @@
 					{/exp:playa:parents}
 					</section>
 					{if:elseif '{exp:stash:get name="total-children"}' == 1}
-						{embed="embeds/recently-by-author" entry_id="{entry_id}"}
+						{legacy_article_authors}
+						{embed="embeds/recently-by-author" current-entry-id="{exp:stash:get name="current-entry-id"}" entry-id="{legacy_article_authors:entry_id}"}
+					{/legacy_article_authors}
 					{/if}
 				{/if}<!-- end first block -->
 				<!-- show categories -->
@@ -556,7 +558,7 @@
 
 					<div class="author-bio">{legacy_article_authors:bio}</div>
 
-					{embed="embeds/author-entries" entry-id="{legacy_article_authors:entry_id}"}
+					{embed="embeds/author-entries" current-entry-id="{exp:stash:get name="current-entry-id"}" entry-id="{legacy_article_authors:entry_id}"}
 
 				</div>
 				{/legacy_article_authors}
