@@ -1906,13 +1906,13 @@ ul.secondary-nav li a.active {
   font-style: normal;
 }
 
+.home-page .issue-header {
+  margin-bottom: 12px;
+}
+
 .compact-issue .issue-header time {
   font-size: 16px;
   line-height: 16px;
-}
-
-.home-page .issue-header time {
-   margin-bottom: 12px;
 }
 
 .issue-header time.new:before {
