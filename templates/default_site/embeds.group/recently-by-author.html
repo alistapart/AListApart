@@ -5,7 +5,7 @@
 							<h1>Recently by {embed:author_name} {screen_name}</h1>
 
 							<article>
-								<h1><a href="{if parents:channel_short_name == 'columns'}/column/{if:elseif parents:channel_short_name == 'blog'}/blog/post/{if:else}{/if}{parents:url_title}">{parents:title}</a></h1>
+								<h1><a href="{site_url}{if parents:channel_short_name == 'columns'}/column/{if:elseif parents:channel_short_name == 'blog'}/blog/post/{if:else}/article/{parents:url_title}{/if}">{parents:title}</a></h1>
 								<p>{exp:strip_html}
 								{if parents:channel_short_name=='blog'}
 									{if parents:blog_mini_deck}{parents:blog_mini_deck}{if:elseif parents:blog_intro}{exp:trunchtml chars="130" inline="..."}{parents:blog_intro}{/exp:trunchtml}{/if}

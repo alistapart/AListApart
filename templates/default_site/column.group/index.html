@@ -145,11 +145,12 @@
 					<h2><a class="fn" href="/author/{username}">{column_authors:title}</a></h2>
 
 					<div class="author-bio">{column_authors:bio}</div>
-
-					{embed="embeds/author-entries" entry-id="{column_authors:entry_id}"}
+					
+					{embed="embeds/author-entries" current-entry-id="{entry_id}" entry-id="{column_authors:entry_id}"}
 
 				</div>
 				{/column_authors}
+
 
 			</footer>
 

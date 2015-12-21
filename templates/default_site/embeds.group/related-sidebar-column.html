@@ -1,25 +1,22 @@
 {exp:channel:entries channel="columns" limit="1" entry_id="{embed:entry_id}" status="open"}
 			{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|blog|columns" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
-			{exp:stash:set name="entry-id"}{entry_id}{/exp:stash:set}
+			{exp:stash:set name="current-entry-id"}{entry_id}{/exp:stash:set}
 			<aside id="related" class="sidebar var1 nocontent">
 			<i class="widget-branding ala"></i>
 			{if '{exp:stash:get name="has-parents"}' >= 1}
 			<!-- start first block--><!-- if this article has a follow up - show the follow up -->
 				<section class="follow-up">
-					<h1>Follow-up</h1>
-					{exp:playa:parents channel="articles|columns|blog"}
-					<article>
-						<h1><a href="{site_url}/{if channel_short_name=='blog'}{channel_short_name}/post/{url_title}{if:elseif channel_short_name=='articles'}article/{url_title}{if:elseif channel_short_name=='columns'}column/{url_title}{/if}" data-trackevent="Related sidebar: Follow up">{title}</a></h1>
-						{if blog_follow_up_note OR article_follow_up_note OR column_follow_up_note}
-							<p>{exp:strip_html}{blog_follow_up_note}{article_follow_up_note}{column_follow_up_note}{/exp:strip_html}</p>
+					<h1><a href="{site_url}/{if channel_short_name=='blog'}{channel_short_name}/post/{url_title}{if:elseif channel_short_name=='columns'}column/{url_title}{if:else}article/{url_title}{/if}" data-trackevent="Related sidebar: Follow up">{title}</a></h1>
+						{if blog_follow_up_note OR article_follow_up_note OR legacy_article_follow_up_note OR column_follow_up_note}
+							<p>{exp:strip_html}{blog_follow_up_note}{article_follow_up_note}{legacy_article_follow_up_note}{column_follow_up_note}{/exp:strip_html}</p>
 						{if:else}
 							<p>{exp:strip_html}
 								{if channel_short_name=='blog'}
 									{if blog_mini_deck}{blog_mini_deck}{if:elseif blog_intro}{exp:trunchtml chars="130" inline="..."}{blog_intro}{/exp:trunchtml}{/if}
 								{if:elseif channel_short_name=='columns'}
 									{if column_mini_deck}{column_mini_deck}{if:elseif column_intro}{exp:trunchtml chars="130" inline="..."}{column_intro}{/exp:trunchtml}{/if}
-								{if:elseif channel_short_name=='articles'}
-									{if article_mini_deck}{article_mini_deck}{if:elseif article_deck}{exp:trunchtml chars="130" inline="..."}{article_deck}{/exp:trunchtml}{/if}
+								{if:elseif channel_short_name=='articles' || channel_short_name=='legacy_articles'}
+									{if article_mini_deck || legacy_article_mini_deck}{article_mini_deck}{legacy_article_mini_deck}{if:elseif article_deck || legacy_article_deck}{exp:trunchtml chars="130" inline="..."}{article_deck}{legacy_article_deck}{/exp:trunchtml}{/if}
 								{/if}
 							{/exp:strip_html}</p>
 						{/if}
@@ -29,7 +26,9 @@
 			{/if}
 			<!-- if this article does not have a follow up, and the issue has two articles show the other article -->
 			{if '{exp:stash:get name="has-parents"}' == ''}
-				{embed="embeds/recently-by-author" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+				{column_authors}
+					{embed="embeds/recently-by-author" current-entry-id="{exp:stash:get name="current-entry-id"}" entry-id="{column_authors:entry_id}"}
+				{/column_authors}
 			{/if}
 			{if "{categories}{category_url_title}{/categories}" != ""}
 				{embed="embeds/primary-category-logic" id="{entry_id}"}
