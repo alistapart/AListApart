@@ -144,11 +144,11 @@
 
 				{/exp:hop_inject:injection}
 
-				{article_content}{legacy_article_content}
+				{article_content}
 
 				{/exp:hop_inject}
 
-				{if article_footnotes || legacy_article_footnotes}
+				{if article_footnotes}
 				<section class="entry-footnotes">
 
 					<h1>Notes</h1>
@@ -157,9 +157,6 @@
 						{article_footnotes}
 						<li id="note{row_count}"><a class="count" href="#ref{row_count}">{row_count}. </a>{cell_1}</li>
 						{/article_footnotes}
-						{legacy_article_footnotes}
-						<li id="note{row_count}"><a class="count" href="#ref{row_count}">{row_count}. </a>{cell_1}</li>
-						{/legacy_article_footnotes}
 					</ul>
 
 				</section>
@@ -167,9 +164,15 @@
 
 				<!-- START RELATED SIDEBAR -->
 				{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|legacy_articles|blog|columns" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
-				{exp:stash:set name="entry-id"}{entry_id}{/exp:stash:set}
+				{exp:stash:set name="current-entry-id"}{entry_id}{/exp:stash:set}
 				<aside id="related" class="sidebar var1 nocontent">
 				<i class="widget-branding ala"></i>
+				<!-- if this article does not have a follow up show recent articles by this author -->
+				{if '{exp:stash:get name="has-parents"}' == ''}
+					{article_authors}
+						{embed="embeds/recently-by-author" current-entry-id="{exp:stash:get name="current-entry-id"}" entry-id="{article_authors:entry_id}"}
+					{/article_authors}
+				{/if}<!-- end first block -->
 				{if '{exp:stash:get name="has-parents"}' >= 1}
 				<!-- start first block--><!-- if this article has a follow up - show the follow up -->
 					<section class="follow-up">
