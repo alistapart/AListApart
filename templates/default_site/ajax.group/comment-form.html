@@ -2,7 +2,7 @@
 
 {if segment_4 == 'article'}
 
-	{exp:comment:form entry_id="{segment_3}" channel="articles" return="{site_url}/article/{segment_5}/comment-form" id="comment-form" class="comment-form"}
+	{exp:comment:form entry_id="{segment_3}" channel="articles|legacy_articles" return="{site_url}/article/{segment_5}/comment-form" id="comment-form" class="comment-form"}
 
 {if:elseif segment_4 == 'blog'}
 
