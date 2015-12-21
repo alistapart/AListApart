@@ -225,7 +225,7 @@
 
 					<div class="author-bio">{article_authors:bio}</div>
 
-					{embed="embeds/author-entries" entry-id="{article_authors:entry_id}"}
+					{embed="embeds/author-entries" current-entry-id="{exp:stash:get name="current-entry-id"}" entry-id="{article_authors:entry_id}"}
 
 				</div>
 				{/article_authors}
