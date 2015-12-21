@@ -10,7 +10,7 @@
 						<h3 class="entry-title"><a href="/column/{url_title}">{title}</a></h3>
 						{/if}
 						<p class="meta">
-							by {if channel_short_name == 'blog'}
+							{if channel_short_name == 'blog'}
 							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {blog_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{blog_authors:url_title}"><span itemprop="name">{blog_authors:title}</span></a>, {/blog_authors}</span>
 							{/if}
 							{if channel_short_name == 'columns'}
