@@ -443,7 +443,7 @@
 
 				{exp:hop_inject:injection separator="2" position="before"}
 
-				{content-minutiae}
+				{legacy-content-minutiae}
 
 				{ads-article}
 
@@ -507,7 +507,7 @@
 					{exp:stash:set name="issue-number-sidebar"}{issue_number}{/exp:stash:set}
 					{exp:stash:set name="article-illo-sidebar"}{issue_number}{/exp:stash:set}
 					{exp:playa:children status="open"}
-					{if entry_id != {exp:stash:get name="entry-id"}}
+					{if entry_id != {exp:stash:get name="current-entry-id"}}
 						{legacy_article_illustration}
 						<figure class="sidebar-hero {if width > height}wideone{/if}" data-picture data-alt="">
 							<div data-src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}"></div>
