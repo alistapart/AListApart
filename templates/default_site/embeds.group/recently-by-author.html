@@ -1,26 +1,22 @@
-{exp:user:authors entry_id="{embed:entry_id}" dynamic="off"}
-{exp:stash:set name="author-id"}{member_id}{/exp:stash:set}
+							{exp:channel:entries channel="contributors" entry_id="{embed:entry-id}" dynamic="no"}
+							<section class="follow-up">
+							{parents channel="articles|legacy_articles|blog|columns" field="article_authors|legacy_article_authors|column_authors|blog_authors" limit="1" status="open" entry_id="not {embed:current-entry-id}"}
 
-{exp:user:entries channel="articles|legacy_articles|blog|columns" status="open" user_author_id="{member_id}" limit="2" dynamic="no"}
+							<h1>Recently by {embed:author_name} {screen_name}</h1>
 
-{if {entry_id} != {exp:stash:get name="entry-id"}}
-<section class="follow-up">
-<h1>Recently by {embed:author_name} {screen_name}</h1>
+							<article>
+								<h1><a href="{if parents:channel_short_name == 'columns'}/column/{if:elseif parents:channel_short_name == 'blog'}/blog/post/{if:else}{/if}{parents:url_title}">{parents:title}</a></h1>
+								<p>{exp:strip_html}
+								{if parents:channel_short_name=='blog'}
+									{if parents:blog_mini_deck}{parents:blog_mini_deck}{if:elseif parents:blog_intro}{exp:trunchtml chars="130" inline="..."}{parents:blog_intro}{/exp:trunchtml}{/if}
+								{if:elseif parents:channel_short_name=='columns'}
+									{if parents:column_mini_deck}{parents:column_mini_deck}{if:elseif parents:column_intro}{exp:trunchtml chars="130" inline="..."}{parents:column_intro}{/exp:trunchtml}{/if}
+								{if:else}
+									{if parents:article_mini_deck || parents:legacy_article_mini_deck}{parents:article_mini_deck}{parents:legacy_article_mini_deck}{if:elseif parents:article_deck || parents:legacy_article_deck}{exp:trunchtml chars="130" inline="..."}{parents:article_deck}{parents:legacy_article_deck}{/exp:trunchtml}{/if}
+								{/if}
+								{/exp:strip_html}</p>
+							</article>
 
-<article>
-	<h1><a href="{site_url}/{if channel_short_name=='blog'}{channel_short_name}/post/{url_title}{if:elseif channel_short_name=='articles' || channel_short_name=='legacy_articles'}article/{url_title}{if:elseif channel_short_name=='columns'}column/{url_title}{/if}" data-trackevent="Related sidebar: Recently by author">{title}</a></h1>
-	<p>{exp:strip_html}
-	{if channel_short_name=='blog'}
-		{if blog_mini_deck}{blog_mini_deck}{if:elseif blog_intro}{exp:trunchtml chars="130" inline="..."}{blog_intro}{/exp:trunchtml}{/if}
-	{if:elseif channel_short_name=='columns'}
-		{if column_mini_deck}{column_mini_deck}{if:elseif column_intro}{exp:trunchtml chars="130" inline="..."}{column_intro}{/exp:trunchtml}{/if}
-	{if:elseif channel_short_name=='articles' || channel_short_name=='legacy_articles'}
-		{if article_mini_deck || legacy_article_mini_deck}{article_mini_deck}{legacy_article_mini_deck}{if:elseif article_deck || legacy_article_deck}{exp:trunchtml chars="130" inline="..."}{article_deck}{legacy_article_deck}{/exp:trunchtml}{/if}
-	{/if}
-	{/exp:strip_html}</p>
-</article>
-</section>
-{/if}
-{/exp:user:entries}
-
-{/exp:user:authors}
+							</section>
+							{/parents}
+							{/exp:channel:entries}
