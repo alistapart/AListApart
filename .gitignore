@@ -1,0 +1,6 @@
+.DS_Store
+robots.txt
+
+#node_modules
+node_modules/
+node_modules/*
