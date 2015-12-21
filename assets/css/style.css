@@ -1911,6 +1911,10 @@ ul.secondary-nav li a.active {
   line-height: 16px;
 }
 
+.home-page .issue-header time {
+   margin-bottom: 12px;
+}
+
 .issue-header time.new:before {
   content: "New!";
   display: inline-block;
