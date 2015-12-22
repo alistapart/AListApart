@@ -14,8 +14,10 @@
 {global-nav}
 
 {current-user-info}
+		
+	{exp:query sql="SELECT entry_id AS latest_feature_id FROM exp_channel_data WHERE field_id_177 = '1' LIMIT 1"}
 
-	{exp:channel:entries channel="articles" limit="1" status="open" dynamic="off" show_future_entries="no"}
+	{exp:channel:entries channel="articles" entry_id='{latest_feature_id}' limit="1" status="open" dynamic="off" show_future_entries="no"}
 
 	{if article_responsive_illo}
 	{article_responsive_illo}
@@ -32,7 +34,7 @@
 		{exp:stash:get name="illustrator-credit"}
 	</figure>
 	{/article_responsive_illo}
-	{/if}
+	
 
 	<div role="main" class="main-wrapper">
 
@@ -64,7 +66,9 @@
 
 			</article>
 
-			{/exp:channel:entries}
+	{/if}
+	{/exp:channel:entries}
+	{/exp:query}
 
 		</section>
 
