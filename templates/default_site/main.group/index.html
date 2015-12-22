@@ -15,7 +15,7 @@
 
 {current-user-info}
 		
-	{exp:query sql="SELECT entry_id AS latest_feature_id FROM exp_channel_data WHERE field_id_177 = '1' LIMIT 1"}
+	{exp:query sql="SELECT entry_id AS latest_feature_id FROM exp_channel_data WHERE field_id_177 = '1' ORDER BY entry_id DESC LIMIT 1"}
 
 	{exp:channel:entries channel="articles" entry_id='{latest_feature_id}' limit="1" status="open" dynamic="off" show_future_entries="no"}
 
