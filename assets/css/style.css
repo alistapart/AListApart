@@ -1906,6 +1906,10 @@ ul.secondary-nav li a.active {
   font-style: normal;
 }
 
+.home-page .issue-header {
+  margin-bottom: 12px;
+}
+
 .compact-issue .issue-header time {
   font-size: 16px;
   line-height: 16px;

@@ -58,7 +58,7 @@ $monospace: "Menlo", monospace;
 
 html,
 body {
-	font-family: $serif; 
+	font-family: $serif;
 	font-style: normal;
 	font-size: 18px;
 	line-height: 30px;
@@ -1085,7 +1085,7 @@ aside.column.more-content .item-summary {
 
 .item-summary.sidebar li.parent-topic {
 	border-top: none;
-	font-family: $sans-serif; 
+	font-family: $sans-serif;
 	font-size: 16px;
 }
 
@@ -1997,6 +1997,10 @@ ul.secondary-nav li a.active {
 	font-family: $sans-serif;
 	font-weight: bold;
 	font-style: normal;
+}
+
+.home-page .issue-header {
+	margin-bottom: 12px;
 }
 
 .compact-issue .issue-header time {
@@ -4203,7 +4207,7 @@ body.modal {
 .main-content > figure figcaption.gist-caption {
 	font-size: 16px;
 	font-family: $serif;
-	font-style: normal; 
+	font-style: normal;
 }
 
 .event-promo {
