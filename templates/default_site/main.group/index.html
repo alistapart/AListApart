@@ -1,3 +1,5 @@
+{exp:stash:set name="main_feature_id"}{exp:query sql="SELECT entry_id AS latest_feature_id FROM exp_channel_data WHERE field_id_177 = '1' AND channel_id='18' ORDER BY entry_id DESC LIMIT 1"}{latest_feature_id}{/exp:query}{/exp:stash:set}
+
 {global-page-top}
 
 	<title>A List Apart: For People Who Make Websites</title>
@@ -15,7 +17,7 @@
 
 {current-user-info}
 		
-	{exp:query sql="SELECT entry_id AS latest_feature_id FROM exp_channel_data WHERE field_id_177 = '1' ORDER BY entry_id DESC LIMIT 1"}
+	{exp:query sql="SELECT entry_id AS latest_feature_id FROM exp_channel_data WHERE field_id_177 = '1' AND channel_id='18' ORDER BY entry_id DESC LIMIT 1"}
 
 	{exp:channel:entries channel="articles" entry_id='{latest_feature_id}' limit="1" status="open" dynamic="off" show_future_entries="no"}
 
@@ -80,8 +82,8 @@
 
 				<div class="variable-column">
 					
-					{exp:channel:entries channel="blog|columns|articles|events" limit="3" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc"}
-					
+					{exp:channel:entries channel="blog|columns|articles|events" limit="4" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc"}
+					{if entry_id != "{exp:stash:get name='main_feature_id'}"}
 					<article class="item-summary article">
 
 						<h4 class="summary-title"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{title}</a></h4>
@@ -111,7 +113,7 @@
 						</footer>
 
 					</article>
-
+					{/if}
 					{/exp:channel:entries}
 
 					<div class="fixed-column ads">
