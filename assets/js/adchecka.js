@@ -1,1 +1,1 @@
-document.write('<div id="adsense" style="position: absolute; bottom: 0; visibility: hidden;">ad block checker. just countin\'.</div>');
+document.write('<div id="adsense" class="hide">ad block checker. just countin\'.</div>');
