@@ -58,7 +58,7 @@ $monospace: "Menlo", monospace;
 
 html,
 body {
-	font-family: $serif; 
+	font-family: $serif;
 	font-style: normal;
 	font-size: 18px;
 	line-height: 30px;
@@ -2243,6 +2243,14 @@ html[data-useragent*='MSIE'] .issue-header time.new:before {
 	min-height: 102px;
 }
 
+.article-layout .main-content > hr {
+   width: 50%;
+   margin-top: 36px;
+   margin-bottom: 36px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
 .article-layout .main-content > p,
 .article-layout .main-content > pre,
 .article-layout .main-content > ol,
@@ -4133,7 +4141,7 @@ body.modal {
 .main-content > figure figcaption.gist-caption {
 	font-size: 16px;
 	font-family: $serif;
-	font-style: normal; 
+	font-style: normal;
 }
 
 .event-promo {
