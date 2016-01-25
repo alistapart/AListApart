@@ -1,4 +1,4 @@
-{exp:rss:feed channel="articles" status="open" show_future_entries="no"}
+{exp:rss:feed channel="articles|legacy_articles" status="open" show_future_entries="no"}
 
 <?xml version="1.0" encoding="{encoding}"?>
 <rss version="2.0"
