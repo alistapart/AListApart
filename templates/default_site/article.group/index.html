@@ -134,6 +134,35 @@
 
 			<div class="main-content" itemprop="articleBody">
 
+				<?php 
+
+				$this->EE =& get_instance();
+
+				// $blocks = array(
+				// 		'p' => '<p>',
+				// 		'ul' => '<ul>',
+				// 		'blockquote' => '<blockquote>',
+				// 		'div' => '<div>',
+				// 		'figure' => '<figure>'
+				// );
+
+				// $block_elements = 0;
+
+				// if (strpos($this->EE->TMPL->tagdata, $blocks)) {
+				// 	$block_elements = explode($blocks, $this->EE->TMPL->tagdata);
+				// }
+
+				// $blockCount = sizeof($block_elements);
+
+				// $dom = new DOMDocument();
+				// $dom -> loadHTML("<li></li><li></li><li></li>");
+				// $block_elements = $this->EE->TMPL->tagdata->getElementsByTagName("li");
+				// foreach ($block_elements as $block_element){
+				// 	$i++;
+				// }
+				// echo 'output:'.$this->EE->TMPL->tagdata;
+				?>
+
 				{exp:hop_inject where="<p>" always_inject="y"}
 
 				{exp:hop_inject:injection separator="2" position="before"}
@@ -163,7 +192,8 @@
 
 				</section>
 				{/if}
-
+				
+				{if article_hide_related_sidebar != "y"}
 				<!-- START RELATED SIDEBAR -->
 				{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|legacy_articles|blog|columns" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
 				{exp:stash:set name="current-entry-id"}{entry_id}{/exp:stash:set}
@@ -212,6 +242,7 @@
 				{/if}
 				</aside>
 				<!-- END RELATED SIDEBAR -->
+				{/if}
 
 				<footer class="entry-footer nocontent">
 
@@ -470,7 +501,8 @@
 
 				</section>
 				{/if}
-
+				
+				{if legacy_article_hide_related_sidebar != "y"}
 				<!-- START RELATED SIDEBAR -->
 				{exp:stash:set name="total-children"}{exp:playa:parents channel="issues" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
 				{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|legacy_articles|blog|columns" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
@@ -545,6 +577,7 @@
 				{/if}
 				</aside>
 				<!-- END RELATED SIDEBAR -->
+				{/if}
 
 				<footer class="entry-footer nocontent">
 
