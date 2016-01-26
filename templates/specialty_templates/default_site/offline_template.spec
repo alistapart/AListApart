@@ -28,11 +28,9 @@
 
 <div class="wrapper" style="position: absolute; top: 50%; left: 50%; width: 50%; height: 50%; margin-left: -25%; margin-top: -25%; text-align: center; font-size: 1.4em;">
 
-	<h1 style="margin-bottom: 2em;"><img src="assets/img/promo-logo.png" alt="The Web's 25th Anniversary"></h1>
-
-	<p style="margin-bottom: 1em;">Brought to you by <a href="http://www.w3.org/People/Berners-Lee/">Tim Berners-Lee</a>, <a href="http://www.w3.org/">W3C</a> and the <a href="http://www.webfoundation.org/">World Wide Web Foundation</a>.</p>
-		
-	<p><strong>Coming soon.</strong></p>
+<p>We’re doing some maintenance for 15-20 minutes, will be back soon!</p>
+<p>We apologize for any inconvenience.</p>
+<p>A List Apart</p>
 
 </div>
   
