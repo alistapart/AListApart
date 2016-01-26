@@ -608,6 +608,10 @@ ul.inline-items li {
   font-family: "Franklin ITC", sans-serif;
 }
 
+.item-summary .aside-author {
+  line-height: 20px;
+}
+
 .item-summary {
   display: inline-block;
   vertical-align: top;
