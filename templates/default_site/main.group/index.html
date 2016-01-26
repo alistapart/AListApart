@@ -72,9 +72,10 @@
 	{/if}
 	{/exp:channel:entries}
 	{/exp:query}
-
+	
 	{!--TEMPORARY TILL WE POST NEW FEATURE --}
 	{exp:channel:entries channel="issues" limit="1" status="open" dynamic="off" show_future_entries="no"}
+	{if show_on_homepage == 'y'}
 
 	{exp:stash:set name="issue-number"}<span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue"><a itemprop="url" href="/issue/{issue_number}" class="issue-number"><span class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a>{/exp:stash:set}
 
@@ -126,11 +127,13 @@
 
 			</article>
 
-			{/exp:playa:children}
-
-			{/exp:channel:entries}
+		{/exp:playa:children}
 
 		</section>
+		{/if}
+		{/exp:channel:entries}
+
+		
 		{!--END TEMPORARY TILL WE POST NEW FEATURE --}
 		<div class="multi-column-display">
 
