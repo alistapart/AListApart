@@ -3118,6 +3118,7 @@ pre.editing code {
 
 .entry-footer .byline + .byline {
   margin-top: 24px;
+  clear: left;
 }
 
 .entry-footer .byline .author-bio,
