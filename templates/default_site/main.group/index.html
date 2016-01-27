@@ -146,9 +146,38 @@
 					{exp:channel:entries channel="blog|columns|articles|legacy_articles|events" limit="3" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
 					{if entry_id != "{exp:stash:get name='main_feature_id'}"}
 					<article class="item-summary article">
-
+						
 						<h4 class="summary-title"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{title}</a></h4>
-
+						{if article_responsive_illo}
+						{article_responsive_illo}
+						<figure class="wide-hero">
+							<picture>
+								{if {cell_1}{width}{/cell_1} > {cell_1}{height}{/cell_1}}
+								<source srcset="{exp:ce_img:pair src="{cell_1}" width="280" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{cell_1}" width="1920" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
+								<img src="{exp:ce_img:pair src="{cell_1}" width="280" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
+								{if:else}
+								<source srcset="{exp:ce_img:pair src="{cell_1}" width="280" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{cell_1}" width="696" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 960px)">
+								<img src="{exp:ce_img:pair src="{cell_1}" width="280" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
+								{/if}
+							</picture>
+						</figure>
+						{/article_responsive_illo}
+						{/if}
+						{if legacy_article_illustration}
+						{legacy_article_illustration}
+						<figure style="padding-top:0;margin-top:0;">
+							<picture>
+								{if width > height}
+								<source srcset="{exp:ce_img:pair src="{url}" width="216" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="1920" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
+								<img src="{exp:ce_img:pair src="{url}" width="216" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{legacy_article_illo_description}" itemprop="image">
+								{if:else}
+								<source srcset="{exp:ce_img:pair src="{url}" width="216" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="696" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 960px)">
+								<img src="{exp:ce_img:pair src="{url}" width="216" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{legacy_article_illo_description}" itemprop="image">
+								{/if}
+							</picture>
+						</figure>
+						{/legacy_article_illustration}
+						{/if}
 						<p class="aside-author">
 							{if channel_short_name == 'blog'}
 							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {blog_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{blog_authors:url_title}"><span itemprop="name">{blog_authors:title}</span></a>, {/blog_authors}</span>
@@ -191,7 +220,36 @@
 					<article class="item-summary article">
 
 						<h4 class="summary-title"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{title}</a></h4>
-
+						{if article_responsive_illo}
+						{article_responsive_illo}
+						<figure class="wide-hero">
+							<picture>
+								{if {cell_1}{width}{/cell_1} > {cell_1}{height}{/cell_1}}
+								<source srcset="{exp:ce_img:pair src="{cell_1}" width="280" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{cell_1}" width="1920" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
+								<img src="{exp:ce_img:pair src="{cell_1}" width="280" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
+								{if:else}
+								<source srcset="{exp:ce_img:pair src="{cell_1}" width="280" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{cell_1}" width="696" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 960px)">
+								<img src="{exp:ce_img:pair src="{cell_1}" width="280" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
+								{/if}
+							</picture>
+						</figure>
+						{/article_responsive_illo}
+						{/if}
+						{if legacy_article_illustration}
+						{legacy_article_illustration}
+						<figure style="padding-top:0;margin-top:0;">
+							<picture>
+								{if width > height}
+								<source srcset="{exp:ce_img:pair src="{url}" width="216" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="1920" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
+								<img src="{exp:ce_img:pair src="{url}" width="216" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{legacy_article_illo_description}" itemprop="image">
+								{if:else}
+								<source srcset="{exp:ce_img:pair src="{url}" width="216" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="696" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 960px)">
+								<img src="{exp:ce_img:pair src="{url}" width="216" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{legacy_article_illo_description}" itemprop="image">
+								{/if}
+							</picture>
+						</figure>
+						{/legacy_article_illustration}
+						{/if}
 						<p class="aside-author">
 							{if channel_short_name == 'blog'}
 							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {blog_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{blog_authors:url_title}"><span itemprop="name">{blog_authors:title}</span></a>, {/blog_authors}</span>
