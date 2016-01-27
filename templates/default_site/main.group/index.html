@@ -167,11 +167,7 @@
 						<p>{article_mini_deck}{legacy_article_mini_deck}{blog_mini_deck}{column_mini_deck}{event_deck}</p>
 
 						<footer>
-						<!-- {if primary_categories}
-						{primary_categories}<a href="/topic/{primary_category_url_title}">{primary_category_name}</a>{/primary_categories} ·  
-						{if:else}
-						{categories limit="1"}<a href="/topic/{category_url_title}">{category_name}</a>{/categories} ·  
-						{/if} -->
+						
 							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %d, %Y"}</a></time>
 						</footer>
 
@@ -214,11 +210,7 @@
 						<p>{article_mini_deck}{legacy_article_mini_deck}{blog_mini_deck}{column_mini_deck}</p>
 
 						<footer>
-						<!-- {if primary_categories}
-						{primary_categories}<a href="/topic/{primary_category_url_title}">{primary_category_name}</a>{/primary_categories} · 
-						{if:else}
-						{categories limit="1"}<a href="/topic/{category_url_title}">{category_name}</a>{/categories} ·  
-						{/if}  -->
+						
 						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %d, %Y"}</a></time>
 
 						</footer>
