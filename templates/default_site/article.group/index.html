@@ -5,7 +5,7 @@
 {global-page-top}
 
 {exp:channel:entries channel="articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
-{!--START CONTENT FROM ARTICLES CHANNEL - GO TO LINE 269 FOR LEGACY CHANNEL CONTENT--}
+{!--START CONTENT FROM ARTICLES CHANNEL - GO TO LINE 281 FOR LEGACY CHANNEL CONTENT--}
 
 	<title>{title} · An A List Apart Article</title>
 
@@ -328,7 +328,7 @@
 		<article class="article-layout hentry" itemscope itemtype="http://www.schema.org/Article">
 
 			<header class="entry-header">
-sdfdfa
+
 				{exp:stash:set name="issue-number"}{exp:playa:parents status="open|In Progress"}<span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue"><a href="/issue/{issue_number}" class="issue-number" itemprop="url" ><span class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a></span> {/exp:playa:parents}{/exp:stash:set}
 
 				{if legacy_article_illustration OR legacy_article_legacy_illo}

@@ -78,9 +78,9 @@
 	{if show_on_homepage == 'y'}
 
 	{exp:stash:set name="issue-number"}<span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue"><a itemprop="url" href="/issue/{issue_number}" class="issue-number"><span class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a>{/exp:stash:set}
-
+	
+	<figure itemscope itemtype="http://schema.org/ImageObject" class="wide-hero" style="min-height: 120px;">
 	{issue_illustration}
-	<figure itemscope itemtype="http://schema.org/ImageObject" class="wide-hero">
 		<picture>
 			{if width > height}
 			<source srcset="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="1920" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
@@ -91,8 +91,8 @@
 			{/if}
 		</picture>
 		{exp:stash:get name="issue-number"}
-	</figure>
 	{/issue_illustration}
+	</figure>
 
 	<div role="main" class="main-wrapper">
 
