@@ -1,19 +1,15 @@
-{exp:channel:entries channel="articles|legacy_articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
-
 {if no_results}
 {redirect="404"}
 {/if}
 
 {global-page-top}
 
+{exp:channel:entries channel="articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
+{!--START CONTENT FROM ARTICLES CHANNEL - GO TO LINE 269 FOR LEGACY CHANNEL CONTENT--}
+
 	<title>{title} · An A List Apart Article</title>
 
 	<link rel="alternate" type="application/rss+xml" title="A feed for comments on this article" href="/comments/feed/{url_title}" />
-
-{exp:switchee variable="{channel_short_name}" parse="inward"}
-
-{case value="articles"}
-{!--START CONTENT FROM ARTICLES CHANNEL - GO TO LINE 269 FOR LEGACY CHANNEL CONTENT--}
 
 	{embed="embeds/article-author-styles" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
 
@@ -280,11 +276,16 @@
 
 					</section>
 {!--END CONTENT FROM ARTICLES CHANNEL --}
-{/case}
+{/exp:channel:entries}
 
-{case value="legacy_articles"}
+{exp:channel:entries channel="legacy_articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
 {!--START CONTENT FROM LEGACY ARTICLE CHANNEL --}
-{legacy_article_custom_head}
+
+	<title>{title} · An A List Apart Article</title>
+
+	<link rel="alternate" type="application/rss+xml" title="A feed for comments on this article" href="/comments/feed/{url_title}" />
+
+	{legacy_article_custom_head}
 
 	{embed="embeds/article-author-styles" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
 
@@ -327,7 +328,7 @@
 		<article class="article-layout hentry" itemscope itemtype="http://www.schema.org/Article">
 
 			<header class="entry-header">
-
+sdfdfa
 				{exp:stash:set name="issue-number"}{exp:playa:parents status="open|In Progress"}<span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue"><a href="/issue/{issue_number}" class="issue-number" itemprop="url" ><span class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a></span> {/exp:playa:parents}{/exp:stash:set}
 
 				{if legacy_article_illustration OR legacy_article_legacy_illo}
@@ -616,9 +617,7 @@
 
 					</section>
 {!--END CONTENT FROM LEGACY ARTICLE CHANNEL --}
-{/case}
-
-{/exp:switchee}
+ 
 
 {/exp:channel:entries}
 
