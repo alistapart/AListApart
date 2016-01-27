@@ -329,7 +329,7 @@
 
 			<header class="entry-header">
 
-				{exp:stash:set name="issue-number"}{exp:playa:parents status="open|In Progress"}<span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue"><a href="/issue/{issue_number}" class="issue-number" itemprop="url" ><span class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a></span> {/exp:playa:parents}{/exp:stash:set}
+				{exp:stash:set name="issue-number"}{if legacy_article_illustration OR legacy_article_legacy_illo}{exp:playa:parents status="open|In Progress"}<span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue"><a href="/issue/{issue_number}" class="issue-number" itemprop="url" ><span class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a></span> {/exp:playa:parents}{/if}{/exp:stash:set}
 
 				{if legacy_article_illustration OR legacy_article_legacy_illo}
 				{exp:stash:set name="illustrator-credit"}
