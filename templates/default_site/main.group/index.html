@@ -143,7 +143,7 @@
 
 				<div class="variable-column">
 					
-					{exp:channel:entries channel="blog|columns|articles|events" limit="3" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc"}
+					{exp:channel:entries channel="blog|columns|articles|legacy_articles" limit="3" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
 					{if entry_id != "{exp:stash:get name='main_feature_id'}"}
 					<article class="item-summary article">
 
@@ -164,12 +164,14 @@
 							{/if}
 						</p>
 
-						<p>{article_mini_deck}{blog_mini_deck}{column_mini_deck}{event_deck}</p>
+						<p>{article_mini_deck}{legacy_article_mini_deck}{blog_mini_deck}{column_mini_deck}{event_deck}</p>
 
 						<footer>
-							{if "{categories}{category_url_title}{/categories}"!=""}
-							{embed="embeds/primary-category-logic-homepage" id="{entry_id}"}
-							·{/if}
+						{if primary_categories}
+						{primary_categories}<a href="/topic/{primary_category_url_title}">{primary_category_name}</a>{/primary_categories} ·  
+						{if:else}
+						{categories limit="1"}<a href="/topic/{category_url_title}">{category_name}</a>{/categories} ·  
+						{/if}
 							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %d, %Y"}</a></time>
 						</footer>
 
@@ -188,7 +190,7 @@
 
 					</div>
 
-					{exp:channel:entries channel="blog|columns|articles|events" offset="3" limit="6" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc"}
+					{exp:channel:entries channel="blog|columns|articles|legacy_articles|events" offset="3" limit="6" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
 					
 					<article class="item-summary article">
 
@@ -209,12 +211,14 @@
 							{/if}
 						</p>
 
-						<p>{article_mini_deck}{blog_mini_deck}{column_mini_deck}{event_deck}</p>
+						<p>{article_mini_deck}{legacy_article_mini_deck}{blog_mini_deck}{column_mini_deck}{event_deck}</p>
 
 						<footer>
-						{if "{categories}{category_url_title}{/categories}"!=""}
-						{embed="embeds/primary-category-logic-homepage" id="{entry_id}"}
-						·{/if} 
+						{if primary_categories}
+						{primary_categories}<a href="/topic/{primary_category_url_title}">{primary_category_name}</a>{/primary_categories} · 
+						{if:else}
+						{categories limit="1"}<a href="/topic/{category_url_title}">{category_name}</a>{/categories} ·  
+						{/if} 
 						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %d, %Y"}</a></time>
 
 						</footer>
