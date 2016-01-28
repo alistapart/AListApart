@@ -12,7 +12,7 @@
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>The Web at 25 (Coming Soon)</title>
+	<title>A List Apart Maintenance Mode</title>
 	
 	<meta name="google-site-verification" content="" />
 	
