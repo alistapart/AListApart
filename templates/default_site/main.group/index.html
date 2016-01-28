@@ -143,7 +143,7 @@
 
 				<div class="variable-column">
 					
-					{exp:channel:entries channel="blog|columns|articles|legacy_articles|events" limit="3" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
+					{exp:channel:entries channel="blog|columns|articles|legacy_articles" limit="3" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination" entry_id="not 18601"}
 					{if entry_id != "{exp:stash:get name='main_feature_id'}"}
 					<article class="item-summary article">
 						
@@ -164,7 +164,7 @@
 							{/if}
 						</p>
 
-						<p>{article_mini_deck}{legacy_article_mini_deck}{blog_mini_deck}{column_mini_deck}{event_deck}</p>
+						<p>{article_mini_deck}{legacy_article_mini_deck}{blog_mini_deck}{column_mini_deck}</p>
 
 						<footer>
 						{categories limit="1"}<a href="/topic/{category_url_title}">{category_name}</a>{/categories} · 
