@@ -1,0 +1,19 @@
+{exp:stash:set name="entry-id"}{entry_id}{/exp:stash:set}
+{exp:stash:set name="series-total"}{exp:playa:children field="blog_series"}{exp:playa:total_parents}{/exp:playa:children}{/exp:stash:set}
+{exp:stash:set name="series-count-ext"}{exp:playa:children field="blog_series"}{exp:playa:parents}{if count == 1}one{if:elseif count == 2}two{if:elseif count == 3}three{if:elseif count == 4}four{if:else}{count}{/if}{/exp:playa:parents}{/exp:playa:children}{/exp:stash:set}
+
+<div class="main-content pre-article">
+   <p class="editors-note var1">
+   {if {exp:stash:get name="series-total"} == 1}
+      <em>This blog post is part {exp:stash:get name="series-count-ext"} of a series.</em> Look for the next installment coming soon.
+   {if:else}
+      {exp:playa:children field="blog_series"}
+
+         {exp:stash:set name="series-count-int"}{exp:playa:parents orderby="date" sort="asc"}{if {exp:stash:get name="entry-id"} == {entry_id}}{if count == 1}one{if:elseif count == 2}two{if:elseif count == 3}three{if:elseif count == 4}four{if:else}{count}{/if}{/if}{/exp:playa:parents}{/exp:stash:set}
+
+         <em>This blog post is part {exp:stash:get name="series-count-int"} of a series.</em> Read {exp:playa:parents orderby="date" sort="asc"}{if {exp:stash:get name="entry-id"} != {entry_id}} part {if count == 1}one, {if:elseif count == 2}two, {if:elseif count == 3}three, {if:elseif count == 4}four, {if:else}{count}{/if} <span class="punctuation-helper"><a href="{site_url}/{if "{channel_short_name}" == "blog"}blog/post/{if:elseif "{channel_short_name}" == "columns"}column/{if:elseif "{channel_short_name}" == "articles"}article/{/if}{url_title}" class="series">{title}</a></span>{/if}{/exp:playa:parents}
+
+      {/exp:playa:children}
+   {/if}
+   </p>
+</div>

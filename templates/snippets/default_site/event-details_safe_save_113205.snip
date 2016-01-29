@@ -1,0 +1,37 @@
+				<div class="event-details">
+
+					<div class="logistics">
+						{if event_format}
+						<div class="logistics-block">
+
+							<h2>Format</h2>
+
+							{event_format}
+
+						</div>
+						{/if}
+						{if expiration_date}
+						<div class="logistics-block">
+
+							<h2>{if {current_time} < {expiration_date} }Date & Time{if:else}Aired{/if}</h2>
+
+							<time>
+								<span class="weekday">{entry_date format="%l"}</span>
+								<span class="big-number">{entry_date format="%d"}</span>
+								<span class="month-year">{entry_date format="%F %Y"}</span>
+								<span class="time">{entry_date format="%g"}&ndash;{expiration_date format="%g %A %T"}</span>
+							</time>
+
+						</div>{/if}<!--
+
+						--><div class="logistics-block bordered">
+
+								<a href="#archive" class="arrow-link">View past events</a>
+
+						</div>
+
+					</div>
+
+				{event_sponsor_ad_code}
+
+				</div>

@@ -1,0 +1,26 @@
+
+				<div class="aside-breaker"><b>Article Continues Below</b></div>
+
+				<aside class="content-minutiae">
+
+					{comment-bubble}
+
+					{share-block}
+
+					{if legacy_article_translations OR member_group == "1" || member_group == "6" || member_group == "7" || member_group == "8"}
+					<div class="minutiae-block translation-block">
+
+						<h1>Translations</h1>
+						<ul>
+							{legacy_article_translations}
+							<li><a href="{cell_2}">{cell_1}</a></li>
+							{/legacy_article_translations}
+							{if member_group == "1" || member_group == "6" || member_group == "7" || member_group == "8"}
+							<li><a href="/tools/legacy-translations/{url_title}">+ add a link</a></li>
+							{/if}
+						</ul>
+
+					</div>
+					{/if}
+
+				</aside>

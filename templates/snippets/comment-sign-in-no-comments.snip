@@ -1,0 +1,147 @@
+
+							<li id="commenter-signin" class="commenter-signin {if comment_total == 0}no-comments{/if}">
+							
+								<h3>Got Something to Say?</h3>
+								
+								<p>Discuss this article. We reserve the right to delete flames, trolls, and wood nymphs.</p>
+								
+								<!-- I don't know why, but I had to move the login form above the login options so that EE would generate the current_url correctly. -->
+								{if segment_1 == 'comments'}
+										<!--javascript probably turned off -->
+										{exp:freemember:login return="comments/{url_title}#comments" form_id="sign-in-form" form_class="sign-in-form"}
+
+								{if:else}
+
+									{if channel_short_name == 'articles'}
+
+										{exp:freemember:login return="article/{url_title}#comments" form_id="sign-in-form" form_class="sign-in-form"}
+					 
+									{if:elseif channel_short_name == 'blog'}
+
+										{exp:freemember:login return="blog/post/{url_title}#comments" form_id="sign-in-form" form_class="sign-in-form"}
+
+									{if:elseif channel_short_name == 'columns'}
+
+										{exp:freemember:login return="column/{url_title}#comments" form_id="sign-in-form" form_class="sign-in-form"}
+									
+									{/if}
+
+								{/if}
+								
+									<label for="login-name-here">
+										Username <small>(<a id="show-registration-form" href="/utilities/register">need an account?</a>)</small>
+										<input id="login-name-here" name="username" type="text" required="required" />
+									</label>
+								
+									<label for="login_password">
+										Password <small>(<a id="show-forgot-password-form" href="/utilities/forgot-password">forgotten it?</a>)</small>
+										<input id="login_password" name="password" type="password" required="required" />
+									</label>
+									
+									<input type="submit" value="Submit" />
+									
+									<p class="never-mind">(<a id="cancel-login" href="{exp:current_url:full_url}/login-return">never mind</a>)</p>
+								
+								{/exp:freemember:login}
+								
+								<div id="login-buttons" class="active">
+									<h4>Sign in with:</h4>
+								
+									<ul class="login-buttons">
+										<li class="twitter">
+									{if segment_1 == 'comments'}
+										<!--javascript probably turned off -->
+										<a href="{site_url}/?ACT=154&provider=twitter&RET={site_url}/comments/{url_title}#comments">Twitter</a>
+									{if:else}
+										{if channel_short_name == 'articles'}
+						 					<a href="{site_url}/?ACT=154&provider=twitter&RET={site_url}/article/{url_title}#comments">Twitter</a>
+										{if:elseif channel_short_name == 'blog'}
+											<a href="{site_url}/?ACT=154&provider=twitter&RET={site_url}/blog/post/{url_title}#comments">Twitter</a>
+										{if:elseif channel_short_name == 'columns'}
+											<a href="{site_url}/?ACT=154&provider=twitter&RET={site_url}/column/{url_title}#comments">Twitter</a>
+										{/if}
+									{/if}
+
+										</li>
+										<li class="facebook">
+									{if segment_1 == 'comments'}
+										<!--javascript probably turned off -->
+										<a href="{site_url}/?ACT=154&provider=facebook&RET={site_url}/comments/{url_title}#comments">Twitter</a>
+									{if:else}
+										{if channel_short_name == 'articles'}
+						 					<a href="{site_url}/?ACT=154&provider=facebook&RET={site_url}/article/{url_title}#comments">Facebook</a>
+										{if:elseif channel_short_name == 'blog'}
+											<a href="{site_url}/?ACT=154&provider=facebook&RET={site_url}/blog/post/{url_title}#comments">Facebook</a>
+										{if:elseif channel_short_name == 'columns'}
+											<a href="{site_url}/?ACT=154&provider=facebook&RET={site_url}/column/{url_title}#comments">Facebook</a>
+										{/if}
+
+									{/if}
+
+										</li>
+										<li class="ala"><a id="show-native-login" href="/tools/login">A List Apart</a></li>
+									</ul>
+									
+								</div>
+								
+								{exp:user:forgot_password}
+								
+									<h4>We can reset that for you:</h4>
+ 
+									<label for="reset-email-here">
+								        Your email address
+								        <input id="reset-email-here" type="email" name="email" />
+								    </label>
+								    
+									<input type="submit" value="Reset Password" />
+									
+									<p class="never-mind">(<a id="cancel-password-reset" href="{exp:current_url:full_url}/login-return">never mind</a>)</p>
+								 
+								{/exp:user:forgot_password}
+								
+								{exp:user:register return="{current_path}/login-return" form:id="register-form" form:class="sign-in-form"}
+								
+									<h4>Create an account:</h4>
+									
+									<label for="new-username-here">
+										New username
+										<input id="new-username-here" type="text" name="username" placeholder="jsmith" required="required" />
+									</label>
+									
+									<label for="new-screen-name">
+										New screen name
+										<input id="new-screen-name" name="screen_name" type="text" placeholder="Jane Smith" required="required" />
+									</label>
+									
+									<label for="new-email-here">
+										New email address
+										<input id="new-email-here" type="email" name="email" placeholder="you@yours.com" required="required" />
+									</label>
+									
+									<label for="new-password-here">
+										New password
+										<input id="new-password-here" type="password" name="password" required="required" />
+									</label>
+									
+									<label for="new-password-confirm-here">
+										Confirm new password
+										<input id="new-password-confirm-here" type="password" name="password_confirm" required="required" />
+									</label>
+									
+									{if captcha}
+									<label for="captcha">
+										Please enter in the word you see below:
+										<input type="text" name="captcha" />
+										<p>{captcha}</p>
+									</label>
+									{/if}
+									
+									<input type="submit" value="Submit" />
+									
+									<p class="never-mind">(<a id="cancel-registration" href="{exp:current_url:full_url}/login-return">never mind</a>)</p>
+								 
+								{/exp:user:register}
+							
+							</li>
+	
+	

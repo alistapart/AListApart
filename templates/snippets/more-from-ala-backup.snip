@@ -1,0 +1,23 @@
+
+						<h1 class="classy">More from ALA</h1>
+
+						{exp:channel:entries channel="blog|link_posts|columns|articles|events" limit="6" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc"}
+					
+						<article class="item-summary article">
+
+							<h4 class="summary-title"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{title}</a></h4>
+
+							<p class="aside-author">by {embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</p>
+
+							<p>{article_mini_deck}{blog_mini_deck}{column_mini_deck}{event_deck}</p>
+
+							<footer class="byline">
+								{if "{categories}{category_url_title}{/categories}"!=""}
+								{embed="embeds/primary-category-logic-homepage" id="{entry_id}"}
+								·{/if}
+								<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %d, %Y"}</a></time>
+							</footer>
+
+						</article>
+
+						{/exp:channel:entries}

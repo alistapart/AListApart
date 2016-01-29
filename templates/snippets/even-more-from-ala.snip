@@ -1,0 +1,19 @@
+						<h2>Topics</h2>
+								
+ 						<article class="item-summary topic sidebar">
+							
+							{exp:channel:categories style="linear" category_group="3" parent_only="yes" channel="articles"}
+
+							<ul>
+							{exp:gwcode_categories cat_id="{category_id}" incl_self="yes" style="linear" entry_count="yes" group_id="3"}
+							<li{if {depth} == 1} class="parent-topic"{/if}>
+							<a href="/topic/{cat_url_title}">
+								{cat_name}{if {depth} == 2}<span>{entry_count}</span>{/if}
+							</a>
+							</li>
+							{/exp:gwcode_categories}
+							</ul>
+
+						 	{/exp:channel:categories}
+
+ 						</article> 
