@@ -235,6 +235,16 @@ html:not(.no-js) .buttonish:before {
 
 }
 
+#home-page .wide-hero {
+	min-height: 120px;
+}
+
+@media only screen and (min-width: 2200px) { 
+	#home-page .wide-hero {
+		min-height: 160px;
+	}
+}
+
 .deadly-subtitle {
 	display: block;
 	width: 100%;

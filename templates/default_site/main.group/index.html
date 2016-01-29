@@ -79,7 +79,17 @@
 
 	{exp:stash:set name="issue-number"}<span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue"><a itemprop="url" href="/issue/{issue_number}" class="issue-number"><span class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a>{/exp:stash:set}
 	
-	<figure itemscope itemtype="http://schema.org/ImageObject" class="wide-hero" style="min-height: 120px;">
+	<figure itemscope itemtype="http://schema.org/ImageObject" class="wide-hero">
+	<style>
+	#home-page .wide-hero {
+		min-height: 120px;
+	}
+	@media only screen and (min-width: 2200px) { 
+	  #home-page .wide-hero {
+		  min-height: 160px;
+	  }
+	}
+	</style>
 	{issue_illustration}
 		<picture>
 			{if width > height}
