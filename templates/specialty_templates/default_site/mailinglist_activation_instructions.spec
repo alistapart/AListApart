@@ -1,6 +1,5 @@
 <subject>Email Confirmation</subject>
 
-
 Thank you for joining the "{mailing_list}" mailing list!
 
 Please click the link below to confirm your email.

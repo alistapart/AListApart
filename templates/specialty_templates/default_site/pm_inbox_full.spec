@@ -2,7 +2,6 @@
 
 
 
-
 {recipient_name},
 
 {sender_name} has just attempted to send you a Private Message,

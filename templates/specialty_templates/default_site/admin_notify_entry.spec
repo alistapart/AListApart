@@ -2,7 +2,6 @@
 
 
 
-
 A new entry has been posted in the following channel:
 {channel_name}
 

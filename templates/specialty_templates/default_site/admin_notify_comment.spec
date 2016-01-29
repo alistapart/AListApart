@@ -2,7 +2,6 @@
 
 
 
-
 You have just received a comment for the following channel:
 {channel_name}
 

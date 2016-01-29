@@ -2,7 +2,6 @@
 
 
 
-
 {name},
 
 Your membership account has been activated and is ready for use.

@@ -3,7 +3,6 @@
 
 
 
-
 {recipient_name},
 
 {sender_name} has just sent you a Private Message titled â€˜{message_subject}â€™.

@@ -2,7 +2,6 @@
 
 
 
-
 Responses have been added to the entry you subscribed to at:
 {channel_name}
 

@@ -2,7 +2,6 @@
 
 
 
-
 New member registration site: {site_name}
 
 Screen name: {name}

@@ -2,7 +2,6 @@
 
 
 
-
 A new mailing list subscription has been accepted.
 
 Email Address: {email}
