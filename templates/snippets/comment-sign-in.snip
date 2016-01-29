@@ -116,7 +116,7 @@
 			<!--javascript probably turned off -->
 			<a href="{site_url}/?ACT=154&provider=twitter&RET={site_url}/comments/{url_title}#comment-form">Twitter</a>
 		{if:else}
-			{if channel_short_name == 'articles'}
+			{if channel_short_name == 'articles' || channel_short_name == 'legacy_articles'}
 				<a href="{site_url}/?ACT=154&provider=twitter&RET={site_url}/article/{url_title}#comment-form">Twitter</a>
 			{if:elseif channel_short_name == 'blog'}
 				<a href="{site_url}/?ACT=154&provider=twitter&RET={site_url}/blog/post/{url_title}#comment-form">Twitter</a>
@@ -131,7 +131,7 @@
 			<!--javascript probably turned off -->
 			<a href="{site_url}/?ACT=154&provider=facebook&RET={site_url}/comments/{url_title}#comment-form">Facebook</a>
 		{if:else}
-			{if channel_short_name == 'articles'}
+			{if channel_short_name == 'articles' || channel_short_name == 'legacy_articles'}
 				<a href="{site_url}/?ACT=154&provider=facebook&RET={site_url}/article/{url_title}#comment-form">Facebook</a>
 			{if:elseif channel_short_name == 'blog'}
 				<a href="{site_url}/?ACT=154&provider=facebook&RET={site_url}/blog/post/{url_title}#comment-form">Facebook</a>
