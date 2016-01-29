@@ -1,6 +1,8 @@
 <subject>New comments have been added</subject>
 
 
+
+
 Responses have been added to the entry you subscribed to at:
 {channel_name}
 

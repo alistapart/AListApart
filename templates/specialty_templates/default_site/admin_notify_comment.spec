@@ -1,6 +1,8 @@
 <subject>You have just received a comment</subject>
 
 
+
+
 You have just received a comment for the following channel:
 {channel_name}
 

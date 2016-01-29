@@ -2,9 +2,11 @@
 
 
 
+
+
 {recipient_name},
 
-{sender_name} has just sent you a Private Message titled ‘{message_subject}’.
+{sender_name} has just sent you a Private Message titled â€˜{message_subject}â€™.
 
 You can see the Private Message by logging in and viewing your inbox at:
 {site_url}/

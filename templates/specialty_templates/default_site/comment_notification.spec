@@ -1,6 +1,8 @@
 <subject>Someone just responded to your comment</subject>
 
 
+
+
 {name_of_commenter} just responded to the entry you subscribed to at:
 {channel_name}
 

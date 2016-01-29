@@ -1,36 +1,65 @@
 
 						<h1 class="classy">More from ALA</h1>
 
-						{exp:channel:entries channel="blog|link_posts|columns|articles|legacy_articles|events" limit="6" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc"}
-					
+						{exp:channel:entries channel="columns" limit="2" dynamic="no" url_title="not {segment_2}" status="open" show_future_entries="no"}
+
+						{if count == "1"}
+						<h2>Columns</h2>
+						{/if}
+
+						{if channel_short_name == "columns"}
 						<article class="item-summary article">
 
-							<h4 class="summary-title"><a href="{if channel_short_name == "columns"}/column/{if:elseif channel_short_name == "blog"}/blog/post/{if:elseif channel_short_name == "events"}/event/{if:else}/article/{/if}{url_title}">{title}</a></h4>
+							{categories show_group="4"}<span class="column-name">{if category_description}{category_description}{if:else}{category_name}{/if}</span>{/categories}
 
-							<p class="aside-author">
-							{if channel_short_name == 'blog'}
-							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {blog_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{blog_authors:url_title}"><span itemprop="name">{blog_authors:title}</span></a>, {/blog_authors}</span>
-							{/if}
-							{if channel_short_name == 'columns'}
-							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {column_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{column_authors:url_title}"><span itemprop="name">{column_authors:title}</span></a>, {/column_authors}</span>
-							{/if}
-							{if channel_short_name == 'articles'}
-							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {article_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{article_authors:url_title}"><span itemprop="name">{article_authors:title}</span></a>, {/article_authors}</span>
-							{/if}
-							{if channel_short_name == 'legacy_articles'}
-							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {legacy_article_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{legacy_article_authors:url_title}"><span itemprop="name">{legacy_article_authors:title}</span></a>, {/legacy_article_authors}</span>
-							{/if}
-							</p>
+							<h1><a href="/column/{url_title}" data-trackevent="More from ALA: column">{title}</a></h1>
 
-							<p>{article_mini_deck}{legacy_article_mini_deck}{blog_mini_deck}{column_mini_deck}{event_deck}</p>
+							{embed="embeds/column-author-photo-small" entry_author="{author_id}" entry_id="{entry_id}"}
+
+							{if column_mini_deck}<p>{column_mini_deck}</p>{if:elseif column_intro}<p>{exp:trunchtml chars="175" inline="..."}{column_intro}{/exp:trunchtml}</p>{/if}
 
 							<footer class="byline">
-								{if "{categories}{category_url_title}{/categories}"!=""}
-								{embed="embeds/primary-category-logic-homepage" id="{entry_id}"}
-								·{/if}
-								<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %d, %Y"}</a></time>
+								<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
 							</footer>
 
 						</article>
+						{/if}
+						{/exp:channel:entries}
 
-					{/exp:channel:entries}
+						{exp:channel:entries channel="blog|link_posts" limit="5" dynamic="no" status="open" show_future_entries="no" sticky="no"}
+
+						{if count == "1"}
+						<h2>From the Blog</h2>
+						{/if}
+
+						{if channel_short_name == "blog" && segment_3 != url_title}
+						<article class="item-summary article">
+
+							<h1><a href="/blog/post/{url_title}" data-trackevent="More from ALA: blog">{title}</a></h1>
+
+						{if blog_mini_deck}<p>{blog_mini_deck}</p>{if:elseif blog_intro}<p>{exp:trunchtml chars="175" inline="..."}{blog_intro}{/exp:trunchtml}</p>{/if}
+
+							<footer>
+								{embed="embeds/article-authors" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+								<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="/blog/post/{url_title}" data-trackevent="More from ALA: blog">{entry_date format="%F %d, %Y"}</a></time>
+							</footer>
+
+						</article>
+						{if:elseif channel_short_name == "link_posts" && segment_3 != url_title}
+						<article class="item-summary link-post">
+
+							<h1><a href="{blog_target_url}" data-trackevent="More from ALA: link post">{title}</a></h1>
+
+							{if blog_description}<p>{blog_description}</p>{/if}
+
+							<footer>
+								{exp:parse_url parts="host"}{blog_target_url}{/exp:parse_url}
+								{blog_attribution}
+								 ∙ ℅ <a class="attribution-link" href="{cell_2}">{cell_1}</a>
+								{/blog_attribution}
+							</footer>
+
+						</article>
+						{/if}
+
+						{/exp:channel:entries}

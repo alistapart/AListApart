@@ -8,6 +8,8 @@
 			<li><a href="/" title="Home" itemprop="url"><span itemprop="name">Home</span></a></li>
 			{if current_domain == "dev.alistapart.com"}<li><a href="/" style="color: #fff; background: green; padding: 3px 9px; border-radius: 12px;">Dev Site</a>{/if}
 			<li {if segment_1 == "articles" || segment_1 == "article"}class="active"{/if}><a href="/articles" itemprop="url"><span itemprop="name">Articles</span></a></li>
+			<li {if segment_1 == "columns" || segment_1 == "column"}class="active"{/if}><a href="/columns" itemprop="url"><span itemprop="name">Columns</span></a></li>
+			<li {if segment_1 == "blog"}class="active"{/if}><a href="/blog">Blog</a></li>
 			<li {if segment_1 == "events" || segment_1 == "event"}class="active"{/if}><a href="/events" itemprop="url"><span itemprop="name">Events</span></a></li>
 			<li {if segment_1 == "topics" || segment_1 == "topic"}class="active"{/if}><a href="/topics" itemprop="url"><span itemprop="name">Topics</span></a></li>
 			<li {if segment_1 == "about" && segment_2 == "contribute"}class="active"{/if}><a href="/about/contribute" itemprop="url"><span itemprop="name">Write for us</span></a></li>

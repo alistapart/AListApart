@@ -9,13 +9,13 @@
 
  	{if segment_1 == 'comments'}
 	<!--javascript probably turned off -->
-	{exp:comment:form channel="articles|legacy_articles|blog|columns" return="{site_url}/comments/{url_title}" id="comment-form" class="comment-form"}
+	{exp:comment:form channel="articles|blog|columns" return="{site_url}/comments/{url_title}" id="comment-form" class="comment-form"}
 
 	{if:else}
 
-		{if channel_short_name == 'articles' || channel_short_name == 'legacy_articles'}
+		{if channel_short_name == 'articles'}
 
-			{exp:comment:form channel="articles|legacy_articles" return="{site_url}/article/{url_title}" id="comment-form" class="comment-form"}
+			{exp:comment:form channel="articles" return="{site_url}/article/{url_title}" id="comment-form" class="comment-form"}
 
 		{if:elseif channel_short_name == 'blog'}
 
@@ -55,7 +55,7 @@
 	 	<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='comments/{url_title}'}">log out</a>
 
 		{if:else}
-			{if channel_short_name == 'articles' || channel_short_name == 'legacy_articles'}
+			{if channel_short_name == 'articles'}
 
 				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='article/{url_title}/comment-sign-in'}">log out</a>
 

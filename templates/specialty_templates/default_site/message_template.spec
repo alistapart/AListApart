@@ -28,7 +28,7 @@
 
 		<div id="ee-errors">{content}</div>
 
-	 	{link} ∙ <a href="/tools/log-in">Log In</a>
+	 	{link} âˆ™ <a href="/tools/log-in">Log In</a>
 
 		</div> 
 

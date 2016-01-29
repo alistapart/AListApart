@@ -1,6 +1,8 @@
 <subject>Notification of new member registration</subject>
 
 
+
+
 New member registration site: {site_name}
 
 Screen name: {name}

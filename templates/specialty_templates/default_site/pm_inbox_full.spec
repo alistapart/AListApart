@@ -1,6 +1,8 @@
 <subject>Your private message mailbox is full</subject>
 
 
+
+
 {recipient_name},
 
 {sender_name} has just attempted to send you a Private Message,
