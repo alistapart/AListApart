@@ -1,4 +1,4 @@
-{exp:stash:set name="main_feature_id"}{exp:query sql="SELECT entry_id AS latest_feature_id FROM exp_channel_data WHERE field_id_177 = '1' AND channel_id='18' ORDER BY entry_id DESC LIMIT 1"}{latest_feature_id}{/exp:query}{/exp:stash:set}
+{exp:stash:set name="main_feature_id"}{exp:channel:entries channel="articles" limit="1" status="open" dynamic="off" show_future_entries="no"}{entry_id}{/{exp:channel:entries}{/exp:stash:set}
 
 {global-page-top}
 
@@ -16,11 +16,8 @@
 {global-nav}
 
 {current-user-info}
-		
-	{exp:query sql="SELECT entry_id AS latest_feature_id FROM exp_channel_data WHERE field_id_177 = '1' AND channel_id='18' ORDER BY entry_id DESC LIMIT 1"}
 
-	{exp:channel:entries channel="articles" entry_id='{latest_feature_id}' limit="1" status="open" dynamic="off" show_future_entries="no"}
-
+	{exp:channel:entries channel="articles" limit="1" status="open" dynamic="off" show_future_entries="no"}
 	{if article_responsive_illo}
 	{article_responsive_illo}
 	<figure class="wide-hero">
@@ -71,12 +68,12 @@
 
 	{/if}
 	{/exp:channel:entries}
-	{/exp:query}
-	
+
 	{!--TEMPORARY TILL WE POST NEW FEATURE --}
+	{exp:stash:set name="temp_main_feature_id"}{exp:channel:entries channel="issues" limit="1" status="open" dynamic="off" show_future_entries="no"}{exp:playa:children field="issue_articles"}{entry_id}{/exp:playa:children}{/exp:channel:entries}{/exp:stash:set}
 	{exp:channel:entries channel="issues" limit="1" status="open" dynamic="off" show_future_entries="no"}
 	{if show_on_homepage == 'y'}
-
+	
 	{exp:stash:set name="issue-number"}<span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue"><a itemprop="url" href="/issue/{issue_number}" class="issue-number"><span class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a>{/exp:stash:set}
 	
 	<figure itemscope itemtype="http://schema.org/ImageObject" class="wide-hero">
@@ -142,8 +139,6 @@
 		</section>
 		{/if}
 		{/exp:channel:entries}
-
-		
 		{!--END TEMPORARY TILL WE POST NEW FEATURE --}
 		<div class="multi-column-display">
 
@@ -153,8 +148,8 @@
 
 				<div class="variable-column">
 					
-					{exp:channel:entries channel="blog|columns|articles|legacy_articles" limit="3" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination" entry_id="not 18601"}
-					{if entry_id != "{exp:stash:get name='main_feature_id'}"}
+					{exp:channel:entries channel="blog|columns|articles|legacy_articles" limit="4" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
+					{if entry_id != "{exp:stash:get name='temp_main_feature_id'}"}
 					<article class="item-summary article">
 						
 						<h4 class="summary-title"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{title}</a></h4>
@@ -196,7 +191,7 @@
 
 					</div>
 
-					{exp:channel:entries channel="blog|columns|articles|legacy_articles" offset="3" limit="6" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
+					{exp:channel:entries channel="blog|columns|articles|legacy_articles" offset="4" limit="6" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
 					
 					<article class="item-summary article">
 
