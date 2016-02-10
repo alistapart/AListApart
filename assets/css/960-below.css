@@ -92,7 +92,7 @@
 		vertical-align: top;
 	}
 
-	.article-layout .main-content .sidebar.var1 section:only-child {
+	.article-layout .main-content .sidebar.var1 section:only-of-type {
 		position: relative;
 		width: calc(100% - 12px);
 		display: inline-block;
