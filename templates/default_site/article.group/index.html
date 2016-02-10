@@ -180,9 +180,9 @@
 				<i class="widget-branding ala"></i>
 				<!-- if this article does not have a follow up show recent articles by this author -->
 				{if '{exp:stash:get name="has-parents"}' == ''}
-					{article_authors}
-						{embed="embeds/recently-by-author" current-entry-id="{exp:stash:get name="current-entry-id"}" entry-id="{article_authors:entry_id}"}
-					{/article_authors}
+				
+					{embed="embeds/recently-by-author" current-entry-id="{exp:stash:get name="current-entry-id"}" entry-id="{article_authors:entry_id}"}
+				 
 				{/if}<!-- end first block -->
 				{if '{exp:stash:get name="has-parents"}' >= 1}
 				<!-- start first block--><!-- if this article has a follow up - show the follow up -->
@@ -543,10 +543,8 @@
 					{/exp:playa:parents}
 					</section>
 					{if:elseif '{exp:stash:get name="total-children"}' == 1}
-						{legacy_article_authors}
 						{embed="embeds/recently-by-author" current-entry-id="{exp:stash:get name="current-entry-id"}" entry-id="{legacy_article_authors:entry_id}"}
-					{/legacy_article_authors}
-					{/if}
+ 					{/if}
 				{/if}<!-- end first block -->
 				<!-- show categories -->
 				{if "{categories}{category_url_title}{/categories}"!=""}
