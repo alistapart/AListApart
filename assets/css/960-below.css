@@ -92,6 +92,13 @@
 		vertical-align: top;
 	}
 
+	.article-layout .main-content .sidebar.var1 section:last-child {
+		position: relative;
+		width: calc(100% - 12px);
+		display: inline-block;
+		vertical-align: top;
+	}
+
 	.article-layout .main-content .sidebar.var1 section + section {
 		margin-left: 12px;
 		padding-left: 24px;
