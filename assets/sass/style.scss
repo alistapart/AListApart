@@ -475,8 +475,12 @@ ul.inline-items li {
 
 .home-page .main-wrapper,
 .issue-page .main-wrapper {
-	padding-top: 0;
+	// padding-top: 0;
 	/* padding-bottom: 378px; */
+}
+
+.home-page .main-wrapper.no-illo {
+	margin-top: 96px;
 }
 
 .issue-page .multi-column-display {
@@ -1167,7 +1171,7 @@ aside.column.more-content .item-summary {
 
 .home-page:not(.alt-layout) .wide-hero,
 .issue-page .wide-hero {
-	padding-top: 96px;
+	padding-top: 70px;
 }
 
 .home-page.alt-layout .wide-hero {
