@@ -4,6 +4,10 @@
 
 	{exp:comment:form entry_id="{segment_3}" channel="articles|legacy_articles" return="{site_url}/article/{segment_5}/comment-form" id="comment-form" class="comment-form"}
 
+{if:elseif segment_4 == 'preview'}
+
+	{exp:comment:form entry_id="{segment_3}" channel="articles|legacy_articles" return="{site_url}/preview/{segment_5}/comment-form" id="comment-form" class="comment-form"}
+
 {if:elseif segment_4 == 'blog'}
 
 	{exp:comment:form entry_id="{segment_3}" channel="blog" return="{site_url}/blog/post/{segment_6}/comment-form" id="comment-form" class="comment-form"}
@@ -40,6 +44,10 @@
 			{if segment_4 == 'article'}
 
 				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='article/{segment_5}/comment-sign-in'}">log out</a>
+
+			{if:elseif segment_4 == 'preview'}
+
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='preview/{segment_5}/comment-sign-in'}">log out</a>
 
 			{if:elseif segment_4 == 'blog'}
 
