@@ -11,6 +11,10 @@
 	<!--javascript probably turned off -->
 	{exp:comment:form channel="articles|legacy_articles|blog|columns" return="{site_url}/comments/{url_title}" id="comment-form" class="comment-form"}
 
+	{if:elseif segment_1 == 'preview'}
+
+	{exp:comment:form channel="articles|legacy_articles|blog|columns" return="{site_url}/preview/{url_title}" id="comment-form" class="comment-form"}
+
 	{if:else}
 
 		{if channel_short_name == 'articles' || channel_short_name == 'legacy_articles'}
@@ -53,6 +57,10 @@
 		{if segment_1 == 'comments'}
 	 	<!--javascript probably turned off -->
 	 	<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='comments/{url_title}'}">log out</a>
+
+	 	{if:elseif segment_1 == 'preview'}
+	 	<!--javascript probably turned off -->
+	 	<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='preview/{url_title}/comment-sign-in'}">log out</a>
 
 		{if:else}
 			{if channel_short_name == 'articles' || channel_short_name == 'legacy_articles'}
