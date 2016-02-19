@@ -1,4 +1,3 @@
-
 {if segment_2}
 
 {exp:channel:entries channel="contributors" username="{segment_2}"}
@@ -41,7 +40,7 @@
 				<header class="author-header no-photo">
 				{/if}
 
-					<h1 itemprop="name">{screen_name}</h1>
+					<h1 itemprop="name">{contributor_first_name} {contributor_last_name}</h1>
 
 					{if contributor_url OR contributor_twitter OR contributor_facebook OR contributor_dribbble OR contributor_github OR contributor_googleplus}
 					<ul class="fancy-links">
