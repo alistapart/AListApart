@@ -40,9 +40,9 @@
 					</nav>
 
 					<ol id="alpha-target" class="secondary-nav compressed alpha-container">
-					{exp:ac_memberlist sort="last_name ASC" limit="999"	group_id="1|6|7"}
-						<li data-letter="<?php $firstLetter = substr("{last_name}", 0); echo strtolower($firstLetter[0]); ?>"><a href="/author/{username}">{screen_name}</a></li>
-					{/exp:ac_memberlist}
+					{exp:channel:entries channel="contributors" dynamic="no" orderby="contributor_last_name" sort="asc" limit="999"}
+						<li data-letter="<?php $firstLetter = substr("{contributor_last_name}", 0); echo strtolower($firstLetter[0]); ?>"><a href="/author/{url_title}">{contributor_first_name} {contributor_last_name}</a></li>
+					{/exp:channel:entries}
 					</ol>
 
 				</div>
