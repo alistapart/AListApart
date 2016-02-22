@@ -6,7 +6,7 @@
 
 {global-page-top}
 
-	<title>A List Apart Author: {screen_name}</title>
+	<title>A List Apart Author: {contributor_first_name} {contributor_last_name}</title>
 
 	<link rel="canonical" href="{site_url}/author/{segment_2}"/>
 
@@ -57,12 +57,39 @@
 
 				<p class="author-bio" itemprop="descirption">{contributor_bio}</p>
 
-				{embed="embeds/author-articles" author_id="{author_id}" real_name="{screen_name}"}
+				{parents channel="articles|legacy_articles|blog|columns|events" field="article_authors|legacy_article_authors|column_authors|blog_authors" limit="999" status="open"}
+				{if parents:count == "1"}
+					<h2 class="alt-small">Contributions by {contributor_first_name} {contributor_last_name}</h2>
+					
+					<ul class="entry-list">
+				{/if}
+						<li><h3 class="entry-title"><a href="{if parents:channel_short_name == 'columns'}/column/{if:elseif parents:channel_short_name == 'blog'}/blog/post/{if:else}{/if}{parents:url_title}">{parents:title}</a></h3>
+						{if parents:channel_short_name == "articles" || parents:channel_short_name == "legacy_articles"}
+						<p class="meta">
+							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+						</p>
+						<p>{parents:article_deck}{parents:legacy_article_deck}</p>
+						{if:elseif parents:channel_short_name == "blog" || parents:channel_short_name == "events"}
+						<p class="meta">
+						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+						</p>
+
+						<p>{parents:blog_intro}{parents:event_deck}</p>
+						{if:else}
+						<p class="meta">
+						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+						</p>
+
+						<p>{parents:column_intro}</p>
+				{/if}
+
+				{/parents}
+				{if parents:count == parents:total_results}</ul>{/if}	
 
 				{if screen_name == "Kevin Cornell"}
 				{embed="embeds/illustrator-articles-kevin"}
 				{if:else}
-				{embed="embeds/illustrator-articles" author_id="{author_id}" real_name="{screen_name}"}
+				{embed="embeds/illustrator-articles" author_id="{author_id}" real_name="{contributor_first_name} {contributor_last_name}"}
 				{/if}
 
 {/exp:channel:entries}
