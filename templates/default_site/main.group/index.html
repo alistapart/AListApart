@@ -29,10 +29,9 @@
 
 {current-user-info}
 
-	
+	<div role="main" class="main-wrapper">
 	{exp:stash:parse}
 	{exp:channel:entries channel="articles" entry_id="{stash:entry-id-1}|{stash:entry-id-2}" sort="asc" status="open" dynamic="off" show_future_entries="no"}	
-	<div role="main" class="main-wrapper{if {entry_id} == {stash:entry-id-2}}{if !article_responsive_illo} no-illo{/if}{/if}">
 	{if {entry_id} == {stash:entry-id-2}}
 		{if article_responsive_illo}
 		<figure class="wide-hero">
@@ -51,7 +50,7 @@
 		</figure>
 		{/if}
     {/if}
-		<section class="main-content">
+		<section class="main-content{if !article_responsive_illo} no-illo{/if}">
 
 			<header class="issue-header">
 
