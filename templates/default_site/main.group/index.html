@@ -118,7 +118,7 @@
 
 						<footer>
 						{categories limit="1"}<a href="/topic/{category_url_title}">{category_name}</a>{/categories} · 
-							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %d, %Y"}</a></time>
+							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %j, %Y"}</a></time>
 						</footer>
 
 					</article>
@@ -151,7 +151,7 @@
 
 						<footer>
 						{categories limit="1"}<a href="/topic/{category_url_title}">{category_name}</a>{/categories} · 
-							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %d, %Y"}</a></time>
+							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %j, %Y"}</a></time>
 						</footer>
 
 					</article>
@@ -195,7 +195,7 @@
 
 						<footer>
 						{categories limit="1"}<a href="/topic/{category_url_title}">{category_name}</a>{/categories} · 
-						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %d, %Y"}</a></time>
+						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%jT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %j, %Y"}</a></time>
 
 						</footer>
 
