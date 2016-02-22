@@ -54,9 +54,10 @@
 		<section class="main-content">
 
 			<header class="issue-header">
-
+				 
+				{if {entry_id} == {stash:entry-id-2}}
 				<time class="pubdate updated new" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%M %d, %Y"}</time>
-
+				{/if}
 			</header>
 
 			<article class="entry-header">
