@@ -1,4 +1,16 @@
-{exp:stash:set name="main_feature_id"}{exp:channel:entries channel="articles" limit="1" status="open" dynamic="off" show_future_entries="no"}{entry_id}{/exp:channel:entries}{/exp:stash:set}
+{exp:stash:set name="entry-id-1" parse_tags="yes"}
+{exp:query sql="SELECT exp_channel_titles.entry_id,	exp_channel_data.field_id_197 FROM exp_channel_titles INNER JOIN exp_channel_data WHERE exp_channel_titles.channel_id = '18' AND exp_channel_titles.entry_id = exp_channel_data.entry_id AND exp_channel_titles.status = 'open' AND 				exp_channel_titles.entry_date <= {current_time} AND field_id_197 = 'y' ORDER BY exp_channel_titles.entry_date DESC LIMIT 1"}
+{entry_id}
+{/exp:query}
+{/exp:stash:set}
+
+{exp:stash:set name="entry-id-2" parse_tags="yes"}
+{exp:query sql="SELECT exp_channel_titles.entry_id,	exp_channel_data.field_id_197 FROM exp_channel_titles INNER JOIN exp_channel_data WHERE exp_channel_titles.channel_id = '18' AND exp_channel_titles.entry_id = exp_channel_data.entry_id AND exp_channel_titles.status = 'open' AND 				exp_channel_titles.entry_date <= {current_time} AND field_id_197 = '' ORDER BY exp_channel_titles.entry_date DESC LIMIT 1"}
+{entry_id}
+{/exp:query}
+{/exp:stash:set}
+
+{exp:stash:set name="limit-entries" parse_tags="yes"}{if {exp:stash:not_empty name='entry-id-1'}}5{if:else}4{/if}{/exp:stash:set}
 
 {global-page-top}
 
@@ -16,18 +28,6 @@
 {global-nav}
 
 {current-user-info}
-
-	{exp:stash:set name="entry-id-1" parse_tags="yes"}
-	{exp:query sql="SELECT exp_channel_titles.entry_id,	exp_channel_data.field_id_197 FROM exp_channel_titles INNER JOIN exp_channel_data WHERE exp_channel_titles.channel_id = '18' AND exp_channel_titles.entry_id = exp_channel_data.entry_id AND exp_channel_titles.status = 'open' AND 				exp_channel_titles.entry_date <= {current_time} AND field_id_197 = 'y' ORDER BY exp_channel_titles.entry_date DESC LIMIT 1"}
-	{entry_id}
-	{/exp:query}
-	{/exp:stash:set}
-
-	{exp:stash:set name="entry-id-2" parse_tags="yes"}
-	{exp:query sql="SELECT exp_channel_titles.entry_id,	exp_channel_data.field_id_197 FROM exp_channel_titles INNER JOIN exp_channel_data WHERE exp_channel_titles.channel_id = '18' AND exp_channel_titles.entry_id = exp_channel_data.entry_id AND exp_channel_titles.status = 'open' AND 				exp_channel_titles.entry_date <= {current_time} AND field_id_197 = '' ORDER BY exp_channel_titles.entry_date DESC LIMIT 1"}
-	{entry_id}
-	{/exp:query}
-	{/exp:stash:set}
 
 	<div role="main" class="main-wrapper{if !article_responsive_illo} no-illo{/if}">
 	{exp:stash:parse}
@@ -54,7 +54,7 @@
 		<section class="main-content">
 
 			<header class="issue-header">
-				 
+
 				{if {entry_id} == {stash:entry-id-2}}
 				<time class="pubdate updated new" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%M %d, %Y"}</time>
 				{/if}
@@ -93,7 +93,7 @@
 				<div class="variable-column">
 					{exp:stash:parse}
 					{if {exp:stash:not_empty name='entry-id-1'}}
-					{exp:channel:entries parse="inward" channel="blog|columns|articles|legacy_articles" limit="5" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
+					{exp:channel:entries parse="inward" channel="blog|columns|articles|legacy_articles" limit="{stash:limit-entries}" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
 					{if {entry_id} != {stash:entry-id-1} && {entry_id} != {stash:entry-id-2}}
 					<article class="item-summary article">
 						
@@ -170,7 +170,7 @@
 
 					</div>
 
-					{exp:channel:entries channel="blog|columns|articles|legacy_articles" offset="4" limit="6" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
+					{exp:channel:entries channel="blog|columns|articles|legacy_articles" offset="5" limit="6" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
 					
 					<article class="item-summary article">
 
