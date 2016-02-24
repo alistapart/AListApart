@@ -57,7 +57,7 @@
 
 				<p class="author-bio" itemprop="descirption">{contributor_bio}</p>
 
-				{parents channel="articles|legacy_articles|blog|columns|events" field="article_authors|legacy_article_authors|column_authors|blog_authors" limit="999" status="open"}
+				{parents channel="articles|legacy_articles|blog|columns|events" field="article_authors|legacy_article_authors|column_authors|blog_authors" limit="999" status="open" orderby="date" sort="desc"}
 				{if parents:count == "1"}
 					<h2 class="alt-small">Contributions by {contributor_first_name} {contributor_last_name}</h2>
 					
@@ -66,18 +66,18 @@
 						<li><h3 class="entry-title"><a href="{site_url}{if parents:channel_short_name == 'columns'}/column/{if:elseif parents:channel_short_name == 'blog'}/blog/post/{if:else}/article/{/if}{parents:url_title}">{parents:title}</a></h3>
 						{if parents:channel_short_name == "articles" || parents:channel_short_name == "legacy_articles"}
 						<p class="meta">
-							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+							<time class="pubdate updated" datetime="{parents:entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{parents:entry_date format="%F %d, %Y"}</time>
 						</p>
 						<p>{parents:article_deck}{parents:legacy_article_deck}</p>
 						{if:elseif parents:channel_short_name == "blog" || parents:channel_short_name == "events"}
 						<p class="meta">
-						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+						<time class="pubdate updated" datetime="{parents:entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{parents:entry_date format="%F %d, %Y"}</time>
 						</p>
 
 						<p>{parents:blog_intro}{parents:event_deck}</p>
 						{if:else}
 						<p class="meta">
-						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+						<time class="pubdate updated" datetime="{parents:entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{parents:entry_date format="%F %d, %Y"}</time>
 						</p>
 
 						<p>{parents:column_intro}</p>
