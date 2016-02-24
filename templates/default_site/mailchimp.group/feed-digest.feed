@@ -1,4 +1,4 @@
-{exp:rss:feed channel="issues|columns|blog" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-14 days')) ?>"}
+{exp:rss:feed channel="articles" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-24 days')) ?>"}
 
 <?xml version="1.0" encoding="{encoding}"?>
 <rss version="2.0"
@@ -18,13 +18,13 @@
     <dc:rights>Copyright {gmt_date format="%Y"}</dc:rights>
     <dc:date>{gmt_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
 
-{exp:channel:entries channel="issues" limit="1" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-14 days')) ?>"}
+{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-24 days')) ?>"}
 
   <item>
-      <title><![CDATA[Issue № {issue_number}: {title}]]></title>
+      <title><![CDATA[{title}]]></title>
       <author></author>
-      <link>{site_url}/issue/{issue_number}</link>
-      <guid>{site_url}/issue/{issue_number}</guid>
+      <link>{site_url}/article/{url_title}</link>
+      <guid>{site_url}/article/{url_title}</guid>
       <description></description>
       <content:encoded><![CDATA[
 
@@ -38,10 +38,11 @@
 
                         <td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
 
-                            <div style="text-align: center;"><span style="line-height:20.7999992370605px"><i>A List Apart</i> Presents:<br><i style="color: #bb3825; font-weight: bold;">Issue № {issue_number}</i></div>
-
-              <p style="text-align: center;"><span style="line-height:20.7999992370605px">{issue_illustration}<img src="{site_url}/{exp:ce_img:pair src="{url}" width="480" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" style="display: block; padding: 0; color: #666666; text-decoration: none; font-family: Helvetica, arial, sans-serif; font-size: 16px; width: 100% ! important; height: auto ! important;" alt="A List Apart Issue № {issue_number}">{/issue_illustration}</span></p>
-              <p class="issue-description" style="text-align: center;"><i>{issue_description}</i></p>
+                            {if count == 1}<div style="text-align: center;"><span style="line-height:20.7999992370605px"><i>A List Apart</i> Presents:</div>
+                            {if article_responsive_illo}
+                            <p style="text-align: center;"><span style="line-height:20.7999992370605px">{article_responsive_illo}<img src="{site_url}/{exp:ce_img:pair src="{cell_1}" width="480" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" style="display: block; padding: 0; color: #666666; text-decoration: none; font-family: Helvetica, arial, sans-serif; font-size: 16px; width: 100% ! important; height: auto ! important;" alt="{if article_illo_description}{article_illo_description}{if:else}{title}{/if}">{/article_responsive_illo}</span></p>
+                            {/if}
+                            {/if}
 
                         </td>
                     </tr>
@@ -52,7 +53,7 @@
     </tbody>
 </table>
 
-{exp:playa:children field="issue_articles"}
+ 
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
     <tbody class="mcnTextBlockOuter">
         <tr>
@@ -65,7 +66,7 @@
 
 <h2 class="mc-toc-title" style="text-align: center;"><a href="{site_url}/article/{url_title}" target="_blank">{title}</a></h2>
 
-<div style="text-align: center; padding: 0 0 24px; line-height: 26px;"><em>By {embed="embeds/article-authors-for-rss-2" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</em>
+<div style="text-align: center; padding: 0 0 24px; line-height: 26px;"><em>By {article_authors backspace="2"}{article_authors:title}, {/article_authors}</em>
 
 <p>{article_deck}</p></div>
 
@@ -78,16 +79,14 @@
     </tbody>
 </table>
 
-{/exp:playa:children}
+ 
 
 
 ]]></content:encoded>
       <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
     </item>
     
-    {if total_results != 0}
-    {embed="mailchimp/digest-embed" issuedate="{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"}
-    {/if}
+   
 
 {/exp:channel:entries}
 
