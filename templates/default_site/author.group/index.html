@@ -63,7 +63,7 @@
 					
 					<ul class="entry-list">
 				{/if}
-						<li><h3 class="entry-title"><a href="{if parents:channel_short_name == 'columns'}/column/{if:elseif parents:channel_short_name == 'blog'}/blog/post/{if:else}{/if}{parents:url_title}">{parents:title}</a></h3>
+						<li><h3 class="entry-title"><a href="{site_url}{if parents:channel_short_name == 'columns'}/column/{if:elseif parents:channel_short_name == 'blog'}/blog/post/{if:else}/article/{/if}{parents:url_title}">{parents:title}</a></h3>
 						{if parents:channel_short_name == "articles" || parents:channel_short_name == "legacy_articles"}
 						<p class="meta">
 							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
