@@ -22,70 +22,61 @@
 
 {exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-24 days')) ?>"}
 
-  <item>
-      <title><![CDATA[{title}]]></title>
-      <dc:creator><![CDATA[{article_authors backspace="2"}{article_authors:title}, {/article_authors}]]></dc:creator>
-      <link>{site_url}/article/{url_title}</link>
-      <guid>{site_url}/article/{url_title}</guid>
-      <description><![CDATA[{article_mini_deck}]]></description>
-      <content:encoded><![CDATA[
+<item>
+    <title><![CDATA[{title}]]></title>
+    <dc:creator><![CDATA[{article_authors backspace="2"}{article_authors:title}, {/article_authors}]]></dc:creator>
+    <link>{site_url}/article/{url_title}</link>
+    <guid>{site_url}/article/{url_title}</guid>
+    <description><![CDATA[{article_mini_deck}]]></description>
+    <content:encoded><![CDATA[
 
-      <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
-    <tbody class="mcnTextBlockOuter">
-        <tr>
-            <td valign="top" class="mcnTextBlockInner">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
+            <tbody class="mcnTextBlockOuter">
+                <tr>
+                    <td valign="top" class="mcnTextBlockInner">
+                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextContentContainer">
+                            <tbody>
+                                <tr>
+                                    <td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
+                                    {if count == 1}
+                                        <div style="text-align: center;"><span style="line-height:20.7999992370605px"><i>A List Apart</i> Presents:</div>
+                                        {if article_responsive_illo}
+                                        <p style="text-align: center;"><span style="line-height:20.7999992370605px">{article_responsive_illo}<img src="{site_url}/{exp:ce_img:pair src="{cell_1}" width="480" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" style="display: block; padding: 0; color: #666666; text-decoration: none; font-family: Helvetica, arial, sans-serif; font-size: 16px; width: 100% ! important; height: auto ! important;" alt="{if article_illo_description}{article_illo_description}{if:else}{title}{/if}">{/article_responsive_illo}</span></p>
+                                        {/if}
+                                    {/if}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
+            <tbody class="mcnTextBlockOuter">
+                <tr>
+                    <td valign="top" class="mcnTextBlockInner">
+                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextContentContainer">
+                            <tbody>
+                                <tr>
+                                    <td valign="top" class="mcnTextContent" style="padding: 12px 30px; text-align: center;">
+                                        <h2 class="mc-toc-title" style="text-align: center;"><a href="{site_url}/article/{url_title}" target="_blank">{title}</a></h2>
+                                        <div style="text-align: center; padding: 0 0 24px; line-height: 26px;">
+                                        <em>By {article_authors backspace="2"}{article_authors:title}, {/article_authors}</em>
+                                        <p>{article_deck}</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextContentContainer">
-                    <tbody><tr>
-
-                        <td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
-
-                            {if count == 1}<div style="text-align: center;"><span style="line-height:20.7999992370605px"><i>A List Apart</i> Presents:</div>
-                            {if article_responsive_illo}
-                            <p style="text-align: center;"><span style="line-height:20.7999992370605px">{article_responsive_illo}<img src="{site_url}/{exp:ce_img:pair src="{cell_1}" width="480" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" style="display: block; padding: 0; color: #666666; text-decoration: none; font-family: Helvetica, arial, sans-serif; font-size: 16px; width: 100% ! important; height: auto ! important;" alt="{if article_illo_description}{article_illo_description}{if:else}{title}{/if}">{/article_responsive_illo}</span></p>
-                            {/if}
-                            {/if}
-
-                        </td>
-                    </tr>
-                </tbody></table>
-
-            </td>
-        </tr>
-    </tbody>
-</table>
-
- 
-<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
-    <tbody class="mcnTextBlockOuter">
-        <tr>
-            <td valign="top" class="mcnTextBlockInner">
-
-                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextContentContainer">
-                    <tbody><tr>
-
-                        <td valign="top" class="mcnTextContent" style="padding: 12px 30px; text-align: center;">
-
-<h2 class="mc-toc-title" style="text-align: center;"><a href="{site_url}/article/{url_title}" target="_blank">{title}</a></h2>
-
-<div style="text-align: center; padding: 0 0 24px; line-height: 26px;"><em>By {article_authors backspace="2"}{article_authors:title}, {/article_authors}</em>
-
-<p>{article_deck}</p></div>
-
-                        </td>
-                    </tr>
-                </tbody></table>
-
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-]]></content:encoded>
-      <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
-    </item>
-    
-   
+    ]]></content:encoded>
+    <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
+</item>
 
 {/exp:channel:entries}
 
