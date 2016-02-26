@@ -40,10 +40,11 @@
                                     <td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
                                     {if count == 1}
                                         <div style="text-align: center;"><span style="line-height:20.7999992370605px"><i>A List Apart</i> Presents:</div>
-                                        {if article_responsive_illo}
-                                        <p style="text-align: center;"><span style="line-height:20.7999992370605px">{article_responsive_illo}<img src="{site_url}/{exp:ce_img:pair src="{cell_1}" width="480" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" style="display: block; padding: 0; color: #666666; text-decoration: none; font-family: Helvetica, arial, sans-serif; font-size: 16px; width: 100% ! important; height: auto ! important;" alt="{if article_illo_description}{article_illo_description}{if:else}{title}{/if}">{/article_responsive_illo}</span></p>
-                                        {/if}
                                     {/if}
+                                     
+                                        <p style="text-align: center;"><span style="line-height:20.7999992370605px">{article_responsive_illo}<img src="{site_url}/{exp:ce_img:pair src="{cell_1}" width="480" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" style="display: block; padding: 0; color: #666666; text-decoration: none; font-family: Helvetica, arial, sans-serif; font-size: 16px; width: 100% ! important; height: auto ! important;" alt="{if article_illo_description}{article_illo_description}{if:else}{title}{/if}">{/article_responsive_illo}</span></p>
+                                     
+                                    
                                     </td>
                                 </tr>
                             </tbody>
