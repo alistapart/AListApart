@@ -30,7 +30,7 @@
     <content:encoded><![CDATA[
     {exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-24 days')) ?>"}
 
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
+        {if count == 1}<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
             <tbody class="mcnTextBlockOuter">
                 <tr>
                     <td valign="top" class="mcnTextBlockInner">
@@ -38,13 +38,10 @@
                             <tbody>
                                 <tr>
                                     <td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
-                                   
-                                        {if count == 1}<div style="text-align: center;"><span style="line-height:20.7999992370605px"><i>A List Apart</i> Presents:  
+                                        <div style="text-align: center;"><span style="line-height:20.7999992370605px"><i>A List Apart</i> Presents:  
                                         {if article_responsive_illo}                                   
                                         <p style="text-align: center;"><span style="line-height:20.7999992370605px">{article_responsive_illo}<img src="{site_url}/{exp:ce_img:pair src="{cell_1}" width="480" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" style="display: block; padding: 0; color: #666666; text-decoration: none; font-family: Helvetica, arial, sans-serif; font-size: 16px; max-width:480px; height: auto ! important;" alt="{title}">{/article_responsive_illo}</span></p>{/if}
-                                        </div>
-                                        {/if}
-                                    
+                                        </div>                                    
                                     </td>
                                 </tr>
                             </tbody>
@@ -52,7 +49,7 @@
                     </td>
                 </tr>
             </tbody>
-        </table>
+        </table>{/if}
         <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
             <tbody class="mcnTextBlockOuter">
                 <tr>
