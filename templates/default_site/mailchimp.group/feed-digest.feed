@@ -19,15 +19,16 @@
     <dc:rights>Copyright {gmt_date format="%Y"}</dc:rights>
     <dc:date>{gmt_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
     <atom:link href="{site_url}/mailchimp/feed-digest" rel="self" type="application/rss+xml" />
- {exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-24 days')) ?>"}
-<item>
 
+
+<item>
     <title><![CDATA[{title}]]></title>
     <dc:creator><![CDATA[{article_authors backspace="2"}{article_authors:title}, {/article_authors}]]></dc:creator>
     <link>{site_url}/article/{url_title}</link>
     <guid>{site_url}/article/{url_title}</guid>
     <description><![CDATA[{article_mini_deck}]]></description>
     <content:encoded><![CDATA[
+    {exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-24 days')) ?>"}
 
         <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
             <tbody class="mcnTextBlockOuter">
@@ -74,11 +75,11 @@
             </tbody>
         </table>
 
-   ]]></content:encoded>
+   {/exp:channel:entries}    ]]></content:encoded>
     <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date> 
 
 </item>
-    {/exp:channel:entries} 
+ 
 
 
     </channel>
