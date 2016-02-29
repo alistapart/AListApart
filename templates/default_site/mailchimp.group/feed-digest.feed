@@ -38,21 +38,15 @@
                             <tbody>
                                 <tr>
                                     <td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
-                                   
-                                        <div style="text-align: center;"><span style="line-height:20.7999992370605px"><i>A List Apart</i> Presents:                                     
-                                        <p style="text-align: center;"><span style="line-height:20.7999992370605px">{article_responsive_illo}<img src="{site_url}/{exp:ce_img:pair src="{cell_1}" width="480" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" style="display: block; padding: 0; color: #666666; text-decoration: none; font-family: Helvetica, arial, sans-serif; font-size: 16px; max-width:480px; height: auto ! important;" alt="{title}">{/article_responsive_illo}</span></p>
-                                        </div>
-                                    
+                                        {if count == 1}<div style="text-align: center;"><span style="line-height:20.7999992370605px"><i>A List Apart</i> Presents:</div>                                     
+                                        {if article_responsive_illo}<p style="text-align: center;"><span style="line-height:20.7999992370605px">{article_responsive_illo}<img src="{site_url}/{exp:ce_img:pair src="{cell_1}" width="480" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" style="display: block; padding: 0; color: #666666; text-decoration: none; font-family: Helvetica, arial, sans-serif; font-size: 16px; max-width:480px; height: auto ! important;" alt="{title}">{/article_responsive_illo}</span></p>{/if}
+                                        {/if}
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </td>
                 </tr>
-            </tbody>
-        </table>
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
-            <tbody class="mcnTextBlockOuter">
                 <tr>
                     <td valign="top" class="mcnTextBlockInner">
                         <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextContentContainer">
@@ -72,6 +66,7 @@
                 </tr>
             </tbody>
         </table>
+        
 
     ]]></content:encoded>
     <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
