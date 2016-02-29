@@ -61,7 +61,7 @@
                                         <h2 class="mc-toc-title" style="text-align: center;"><a href="{site_url}/article/{url_title}" target="_blank">{title}</a></h2>
                                         <div style="text-align: center; padding: 0 0 24px; line-height: 26px;">
                                         <em>By {article_authors backspace="2"}{article_authors:title}, {/article_authors}</em>
-                                        <p>{article_mini_deck}</p>
+                                        <p>{article_deck}</p>
                                         </div>
                                     </td>
                                 </tr>
