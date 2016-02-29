@@ -22,11 +22,11 @@
 
 
 <item>
-    <title><![CDATA[{title}]]></title>
-    <dc:creator><![CDATA[{article_authors backspace="2"}{article_authors:title}, {/article_authors}]]></dc:creator>
-    <link>{site_url}/article/{url_title}</link>
-    <guid>{site_url}/article/{url_title}</guid>
-    <description><![CDATA[{article_mini_deck}]]></description>
+    <title><![CDATA[{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-24 days')) ?>"}{title}, {/exp:channel:entries}]]></title>
+    <dc:creator><![CDATA[{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-24 days')) ?>"}{article_authors backspace="2"}{article_authors:title}, {/article_authors}, {/exp:channel:entries}]]></dc:creator>
+    <link>{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-24 days')) ?>"}{site_url}/article/{url_title}, {/exp:channel:entries}</link>
+    <guid>{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-24 days')) ?>"}{site_url}/article/{url_title}, {/exp:channel:entries}</guid>
+    <description><![CDATA[{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-24 days')) ?>"}{article_mini_deck}, {/exp:channel:entries}]]></description>
     <content:encoded><![CDATA[
     {exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-24 days')) ?>"}
 
