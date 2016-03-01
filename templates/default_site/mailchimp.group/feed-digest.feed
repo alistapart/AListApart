@@ -11,9 +11,9 @@
 
     <channel>
 
-    <title><![CDATA[Your bi-weekly digest for <?php echo date('F j') ?>]]></title>
+    <title><![CDATA[Your biweekly digest for <?php echo date('F j') ?>]]></title>
     <link>http://alistapart.com</link>
-    <description>ALA's bi-weekly update</description>
+    <description>ALA's biweekly update</description>
     <dc:language>{channel_language}</dc:language>
     <dc:creator>The fine folks at A List Apart</dc:creator>
     <dc:rights>Copyright {gmt_date format="%Y"}</dc:rights>
