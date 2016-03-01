@@ -1324,13 +1324,13 @@ a.issue-number:focus {
 .entry-header .entry-title:first-child,
 .entry-header .issue-number + .entry-title {
   margin-top: 75px;
+  width: 96%;
 }
 
 .home-page .entry-header .entry-title:first-child,
 .issue-page .entry-header .entry-title:first-child {
   margin-top: 0;
   padding: 0;
-  width: 96%;
 }
 
 .home-page .entry-header .entry-title a,
