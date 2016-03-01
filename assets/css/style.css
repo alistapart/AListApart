@@ -1330,6 +1330,7 @@ a.issue-number:focus {
 .issue-page .entry-header .entry-title:first-child {
   margin-top: 0;
   padding: 0;
+  width: 96%;
 }
 
 .home-page .entry-header .entry-title a,
