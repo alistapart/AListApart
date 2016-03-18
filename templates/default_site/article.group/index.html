@@ -1,11 +1,11 @@
-{if no_results}
-{redirect="404"}
-{/if}
-
 {global-page-top}
 
 {exp:channel:entries channel="articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
 {!--START CONTENT FROM ARTICLES CHANNEL - GO TO LINE 281 FOR LEGACY CHANNEL CONTENT--}
+
+{if no_results}
+{redirect="404"}
+{/if}
 
 	<title>{title} · An A List Apart Article</title>
 
@@ -107,7 +107,7 @@
 
 				</p>
 				{/if}
-			
+
 			</header>
 
 			{if article_series}
@@ -143,11 +143,11 @@
 					{/exp:hop_inject:injection}
 
 					{article_content}
-					
+
 					{article_content_overflow}
 
 					{/exp:hop_inject}
-				
+
 				{if:else}
 
 					{content-minutiae-blog}
@@ -171,7 +171,7 @@
 
 				</section>
 				{/if}
-				
+
 				{if article_hide_related_sidebar != "y"}
 				<!-- START RELATED SIDEBAR -->
 				{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|legacy_articles|blog|columns" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
@@ -180,9 +180,9 @@
 				<i class="widget-branding ala"></i>
 				<!-- if this article does not have a follow up show recent articles by this author -->
 				{if '{exp:stash:get name="has-parents"}' == ''}
-				
+
 					{embed="embeds/recently-by-author" current-entry-id="{exp:stash:get name="current-entry-id"}" entry-id="{article_authors:entry_id}"}
-				 
+
 				{/if}<!-- end first block -->
 				{if '{exp:stash:get name="has-parents"}' >= 1}
 				<!-- start first block--><!-- if this article has a follow up - show the follow up -->
@@ -236,7 +236,7 @@
 					<h2><a class="fn" href="/author/{article_authors:url_title}">{article_authors:title}</a></h2>
 
 					<div class="author-bio">{article_authors:contributor_bio}</div>
-					
+
 					{embed="embeds/author-entries" current-entry-id="{entry_id}" entry-id="{article_authors:entry_id}"}
 
 				</div>
@@ -280,6 +280,10 @@
 
 {exp:channel:entries channel="legacy_articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
 {!--START CONTENT FROM LEGACY ARTICLE CHANNEL --}
+
+{if no_results}
+{redirect="404"}
+{/if}
 
 	<title>{title} · An A List Apart Article</title>
 
@@ -476,7 +480,7 @@
 					<h1>Notes</h1>
 
 					<ul class="the-footnotes">
-						
+
 						{legacy_article_footnotes}
 						<li id="note{row_count}"><a class="count" href="#ref{row_count}">{row_count}. </a>{cell_1}</li>
 						{/legacy_article_footnotes}
@@ -485,7 +489,7 @@
 
 				</section>
 				{/if}
-				
+
 				{if legacy_article_hide_related_sidebar != "y"}
 				<!-- START RELATED SIDEBAR -->
 				{exp:stash:set name="total-children"}{exp:playa:parents channel="issues" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
@@ -615,7 +619,7 @@
 
 					</section>
 {!--END CONTENT FROM LEGACY ARTICLE CHANNEL --}
- 
+
 
 {/exp:channel:entries}
 
