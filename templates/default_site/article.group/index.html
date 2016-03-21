@@ -1,10 +1,12 @@
+{exp:channel:entries channel="articles|legacy_articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
+
 {if no_results}
-{redirect="404"}
+	{redirect="404"}
 {/if}
 
 {global-page-top}
 
-{exp:channel:entries channel="articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
+{if channel_short_name=='articles'}
 {!--START CONTENT FROM ARTICLES CHANNEL - GO TO LINE 281 FOR LEGACY CHANNEL CONTENT--}
 
 	<title>{title} · An A List Apart Article</title>
@@ -276,9 +278,9 @@
 
 					</section>
 {!--END CONTENT FROM ARTICLES CHANNEL --}
-{/exp:channel:entries}
+{/if}
 
-{exp:channel:entries channel="legacy_articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
+{if channel_short_name=='legacy_articles'}
 {!--START CONTENT FROM LEGACY ARTICLE CHANNEL --}
 
 	<title>{title} · An A List Apart Article</title>
@@ -617,7 +619,7 @@
 {!--END CONTENT FROM LEGACY ARTICLE CHANNEL --}
  
 
-{/exp:channel:entries}
+{/if}
 
 					<aside class="column more-content">
 
