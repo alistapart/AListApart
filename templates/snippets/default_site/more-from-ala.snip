@@ -2,7 +2,7 @@
 						<h1 class="classy">More from ALA</h1>
 
 						{exp:channel:entries channel="blog|link_posts|columns|articles|legacy_articles|events" limit="6" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc"}
-					
+						{if url_title != segment_2}
 						<article class="item-summary article">
 
 							<h4 class="summary-title"><a href="{if channel_short_name == "columns"}/column/{if:elseif channel_short_name == "blog"}/blog/post/{if:elseif channel_short_name == "events"}/event/{if:else}/article/{/if}{url_title}">{title}</a></h4>
@@ -32,5 +32,5 @@
 							</footer>
 
 						</article>
-
+						{/if}
 					{/exp:channel:entries}
