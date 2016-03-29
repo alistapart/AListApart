@@ -5246,3 +5246,15 @@ form.simple-form.wide-form label .error-message {
   float: left;
   color: #bb3825;
 }
+
+// Let's see if we can neuter the Genius annotator
+
+// hides the yellow indication of an annotation
+genius-referent {
+background: transparent !important;
+cursor: text !important;
+}
+// hides the "Annotate" popup that appears when you select text
+genius-pre-annotation-prompt {
+display: none !important;
+}

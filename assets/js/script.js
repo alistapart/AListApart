@@ -5,8 +5,16 @@ b.setAttribute('data-platform', navigator.platform);
 
 $(document).ready(function(){
 
-
 	$('.global-nav').addClass('deluxe');
+
+	// attempts to neuter any existing Genius annotations
+	$('genius-referent')
+	  .attr('data-genius-style-id','')
+	  .attr('data-genius-featured-referent','')
+	  .attr('data-genius-referent-id','')
+	  .attr('data-genius-wrapped-path','')
+	  .attr('data-genius-api-path','')
+	  .attr('data-genius-annotator-id','');
 
 	$('.go-to-nav').click (function(event){
 
@@ -858,15 +866,15 @@ $(document).ready(function(){
 		// When the pages refreshes show the correct template
 		if (window.location.href == states.site_url + states.segments + '/' + states.register) {
 			console.log('script.js call');
-			AlaAuth.loadTemplate( 
+			AlaAuth.loadTemplate(
 				states.register
 			);
 			history.replaceState(
-				states.register, 
-				'on ' + states.register, 
+				states.register,
+				'on ' + states.register,
 				states.site_url + states.segments + '/' + states.register
 			);
-		 
+
 		}
 		if (window.location.href == states.site_url + states.segments + '/' + states.password) {
 			console.log('script.js call');
@@ -874,11 +882,11 @@ $(document).ready(function(){
 				states.password
 			);
 			history.replaceState(
-				states.password, 
-				'on ' + states.password, 
-				states.site_url + states.segments + '/' + states.password 
+				states.password,
+				'on ' + states.password,
+				states.site_url + states.segments + '/' + states.password
 			);
-			 
+
 		}
 
 	}//end states check
