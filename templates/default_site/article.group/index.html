@@ -179,12 +179,12 @@
 				{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|legacy_articles|blog|columns" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
 				{exp:stash:set name="current-entry-id"}{entry_id}{/exp:stash:set}
 				<aside id="related" class="sidebar var1 nocontent">
-				<i class="widget-branding ala"></i>
+				<i class="widget-branding ala"></i>				
 				<!-- if this article does not have a follow up show recent articles by this author -->
 				{if '{exp:stash:get name="has-parents"}' == ''}
-				
+				{article_authors}
 					{embed="embeds/recently-by-author" current-entry-id="{exp:stash:get name="current-entry-id"}" entry-id="{article_authors:entry_id}"}
-				 
+				{/article_authors}
 				{/if}<!-- end first block -->
 				{if '{exp:stash:get name="has-parents"}' >= 1}
 				<!-- start first block--><!-- if this article has a follow up - show the follow up -->
@@ -226,7 +226,6 @@
 				{/if}
 
 				<footer class="entry-footer nocontent">
-
 				{if article_authors:total_results > 1}<h1>About the Authors</h1>{if:elseif article_authors:total_results == "1"}<h1>About the Author</h1>{/if}
 
 				{article_authors}
@@ -243,7 +242,6 @@
 
 				</div>
 				{/article_authors}
-
 				</footer>
 
 				{email-promo}
@@ -547,7 +545,9 @@
 					{/exp:playa:parents}
 					</section>
 					{if:elseif '{exp:stash:get name="total-children"}' == 1}
+					{legacy_article_authors}
 						{embed="embeds/recently-by-author" current-entry-id="{exp:stash:get name="current-entry-id"}" entry-id="{legacy_article_authors:entry_id}"}
+					{/legacy_article_authors}
  					{/if}
 				{/if}<!-- end first block -->
 				<!-- show categories -->
