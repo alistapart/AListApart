@@ -1,0 +1,224 @@
+{exp:stash:set name="entry-id-1" parse_tags="yes"}
+{exp:query sql="SELECT exp_channel_titles.entry_id,	exp_channel_data.field_id_197 FROM exp_channel_titles INNER JOIN exp_channel_data WHERE exp_channel_titles.channel_id = '18' AND exp_channel_titles.entry_id = exp_channel_data.entry_id AND exp_channel_titles.status = 'open' AND exp_channel_titles.entry_date <= {current_time} AND field_id_197 = 'y' ORDER BY exp_channel_titles.entry_date DESC LIMIT 1"}
+{entry_id}
+{/exp:query}
+{/exp:stash:set}
+
+{exp:stash:set name="entry-id-2" parse_tags="yes"}
+{exp:query sql="SELECT exp_channel_titles.entry_id,	exp_channel_data.field_id_197 FROM exp_channel_titles INNER JOIN exp_channel_data WHERE exp_channel_titles.channel_id = '18' AND exp_channel_titles.entry_id = exp_channel_data.entry_id AND exp_channel_titles.status = 'open' AND exp_channel_titles.entry_date <= {current_time} AND field_id_197 = '' ORDER BY exp_channel_titles.entry_date DESC LIMIT 1"}
+{entry_id}
+{/exp:query}
+{/exp:stash:set}
+
+{exp:stash:set name="limit-entries" parse_tags="yes"}{if {exp:stash:not_empty name='entry-id-1'}}5{if:else}4{/if}{/exp:stash:set}
+
+{global-page-top}
+
+	<title>A List Apart: For People Who Make Websites</title>
+	<meta name="description" content="A List Apart explores the design, development, and meaning of web content, with a special focus on web standards and best practices.">
+
+	<link rel="canonical" href="http://alistapart.com"/>
+
+</head>
+
+<body id="home-page" class="home-page" itemscope itemtype="http://schema.org/WebPage">
+
+{primary-logo}
+
+{global-nav}
+
+{current-user-info}
+
+	<div role="main" class="main-wrapper">
+	{exp:stash:parse}
+	{exp:channel:entries channel="articles" entry_id="{stash:entry-id-1}|{stash:entry-id-2}" sort="desc" status="open" dynamic="off" show_future_entries="no"}	
+	{if count == 1}
+		{if article_responsive_illo}
+		<figure class="wide-hero">
+		{article_responsive_illo}
+			<picture>
+				{if {cell_1}{width}{/cell_1} > {cell_1}{height}{/cell_1}}
+				<source srcset="{exp:ce_img:pair src="{cell_1}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{cell_1}" width="1920" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
+				<img src="{exp:ce_img:pair src="{cell_1}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
+				{if:else}
+				<source srcset="{exp:ce_img:pair src="{cell_1}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{cell_1}" width="696" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 960px)">
+				<img src="{exp:ce_img:pair src="{cell_1}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{article_illo_description}" itemprop="image">
+				{/if}
+			</picture>
+			{exp:stash:get name="illustrator-credit"}
+		{/article_responsive_illo}
+		</figure>
+		{/if}
+    {/if}
+		<section class="main-content{if !article_responsive_illo} no-illo{/if}">
+
+			<header class="issue-header">
+
+			{if count == 1}
+				<time class="pubdate updated new" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%M %d, %Y"}</time>
+			{/if}
+			</header>
+
+			<article class="entry-header">
+
+				<h2 class="entry-title"><a href="/article/{url_title}">{title}</a></h2>
+
+				<p class="entry-details">
+
+					<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {article_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{article_authors:url_title}"><span itemprop="name">{article_authors:title}</span></a>, {/article_authors}</span>
+
+					{if comment_total == 1}
+					 · <a class="comment-count" href="/article/{url_title}#comments">1 Comment</a>
+					{if:elseif comment_total > 1}
+					 · <a class="comment-count" href="/article/{url_title}#comments">{comment_total} Comments</a>
+					{/if}
+
+				</p>
+
+				<p class="entry-summary">{article_deck}</p>
+
+			</article>
+		</section>
+		
+	{/exp:channel:entries}
+	{/exp:stash:parse}
+
+		<div class="multi-column-display"> 
+
+			<h2 class="classy">More from A List Apart</h2>
+
+			<div class="column-holder">
+
+				<div class="variable-column">
+					{exp:stash:parse}
+					{if {exp:stash:not_empty name='entry-id-1'}}
+					{exp:channel:entries parse="inward" channel="blog|columns|articles|legacy_articles" limit="{stash:limit-entries}" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
+					{if {entry_id} != {stash:entry-id-1} && {entry_id} != {stash:entry-id-2}}
+					<article class="item-summary article">
+						
+						<h4 class="summary-title"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{title}</a></h4>
+
+						<p class="aside-author">
+							{if channel_short_name == 'blog'}
+							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {blog_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{blog_authors:url_title}"><span itemprop="name">{blog_authors:title}</span></a>, {/blog_authors}</span>
+							{/if}
+							{if channel_short_name == 'columns'}
+							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {column_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{column_authors:url_title}"><span itemprop="name">{column_authors:title}</span></a>, {/column_authors}</span>
+							{/if}
+							{if channel_short_name == 'articles'}
+							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {article_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{article_authors:url_title}"><span itemprop="name">{article_authors:title}</span></a>, {/article_authors}</span>
+							{/if}
+							{if channel_short_name == 'legacy_articles'}
+							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {legacy_article_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{legacy_article_authors:url_title}"><span itemprop="name">{legacy_article_authors:title}</span></a>, {/legacy_article_authors}</span>
+							{/if}
+						</p>
+
+						<p>{article_mini_deck}{legacy_article_mini_deck}{blog_mini_deck}{column_mini_deck}</p>
+
+						<footer>
+						{categories limit="1"}<a href="/topic/{category_url_title}">{category_name}</a>{/categories} · 
+							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %j, %Y"}</a></time>
+						</footer>
+
+					</article>
+					{/if}
+					{/exp:channel:entries}
+					{/if}
+					{if {exp:stash:is_empty name='entry-id-1'}}
+					{exp:channel:entries parse="inward" channel="blog|columns|articles|legacy_articles" limit="4" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
+					{if {entry_id} != {stash:entry-id-2}}
+					<article class="item-summary article">
+						
+						<h4 class="summary-title"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{title}</a></h4>
+
+						<p class="aside-author">
+							{if channel_short_name == 'blog'}
+							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {blog_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{blog_authors:url_title}"><span itemprop="name">{blog_authors:title}</span></a>, {/blog_authors}</span>
+							{/if}
+							{if channel_short_name == 'columns'}
+							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {column_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{column_authors:url_title}"><span itemprop="name">{column_authors:title}</span></a>, {/column_authors}</span>
+							{/if}
+							{if channel_short_name == 'articles'}
+							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {article_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{article_authors:url_title}"><span itemprop="name">{article_authors:title}</span></a>, {/article_authors}</span>
+							{/if}
+							{if channel_short_name == 'legacy_articles'}
+							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {legacy_article_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{legacy_article_authors:url_title}"><span itemprop="name">{legacy_article_authors:title}</span></a>, {/legacy_article_authors}</span>
+							{/if}
+						</p>
+
+						<p>{article_mini_deck}{legacy_article_mini_deck}{blog_mini_deck}{column_mini_deck}</p>
+
+						<footer>
+						{categories limit="1"}<a href="/topic/{category_url_title}">{category_name}</a>{/categories} · 
+							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %j, %Y"}</a></time>
+						</footer>
+
+					</article>
+					{/if}
+					{/exp:channel:entries}
+					{/if}
+					{/exp:stash:parse}
+
+					<div class="fixed-column ads">
+
+						<script src="/{assets_path}/js/libs/htmlParser.js"></script>
+						<script src="/{assets_path}/js/libs/postscribe.js"></script>
+						<aside id="deck-target" class="the-deck"></aside>
+						<aside id="job-board-target" class="job-board"></aside>
+						{ad-bsa-text}
+
+					</div>
+
+					{exp:channel:entries channel="blog|columns|articles|legacy_articles" offset="5" limit="6" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
+					
+					<article class="item-summary article">
+
+						<h4 class="summary-title"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{title}</a></h4>
+						
+						<p class="aside-author">
+							{if channel_short_name == 'blog'}
+							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {blog_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{blog_authors:url_title}"><span itemprop="name">{blog_authors:title}</span></a>, {/blog_authors}</span>
+							{/if}
+							{if channel_short_name == 'columns'}
+							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {column_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{column_authors:url_title}"><span itemprop="name">{column_authors:title}</span></a>, {/column_authors}</span>
+							{/if}
+							{if channel_short_name == 'articles'}
+							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {article_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{article_authors:url_title}"><span itemprop="name">{article_authors:title}</span></a>, {/article_authors}</span>
+							{/if}
+							{if channel_short_name == 'legacy_articles'}
+							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {legacy_article_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{legacy_article_authors:url_title}"><span itemprop="name">{legacy_article_authors:title}</span></a>, {/legacy_article_authors}</span>
+							{/if}
+						</p>
+
+						<p>{article_mini_deck}{legacy_article_mini_deck}{blog_mini_deck}{column_mini_deck}</p>
+
+						<footer>
+						{categories limit="1"}<a href="/topic/{category_url_title}">{category_name}</a>{/categories} · 
+						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%jT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %j, %Y"}</a></time>
+
+						</footer>
+
+					</article>
+
+					{/exp:channel:entries}
+					
+				</div>	
+
+			</div>
+		
+			<aside class="ala-slug">A List Apart explores the design, development, and meaning of web content, with a special focus on web standards and best practices. Explore our <a href="/articles">articles</a> or find out more <a href="/about">about us</a>.</aside>
+
+		</div>
+
+		<!--
+
+		-->
+
+	</div>
+
+{sponsor-top}
+
+{global-footer}
+
+{global-page-bottom}
+
