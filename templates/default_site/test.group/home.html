@@ -1,11 +1,11 @@
 {exp:stash:set name="entry-id-1" parse_tags="yes"}
-{exp:query sql="SELECT exp_channel_titles.entry_id,	exp_channel_data.field_id_197 FROM exp_channel_titles INNER JOIN exp_channel_data WHERE exp_channel_titles.channel_id = '18' AND exp_channel_titles.entry_id = exp_channel_data.entry_id AND exp_channel_titles.status = 'open' AND exp_channel_titles.entry_date <= {current_time} AND field_id_197 = 'y' ORDER BY exp_channel_titles.entry_date DESC LIMIT 1"}
+{exp:query sql="SELECT exp_channel_titles.entry_id,	exp_channel_data.field_id_197 FROM exp_channel_titles INNER JOIN exp_channel_data WHERE exp_channel_titles.channel_id = '18' AND exp_channel_titles.entry_id = exp_channel_data.entry_id AND exp_channel_titles.status = 'In Progress' AND exp_channel_titles.entry_date <= {current_time} AND field_id_197 = 'y' ORDER BY exp_channel_titles.entry_date DESC LIMIT 1"}
 {entry_id}
 {/exp:query}
 {/exp:stash:set}
 
 {exp:stash:set name="entry-id-2" parse_tags="yes"}
-{exp:query sql="SELECT exp_channel_titles.entry_id,	exp_channel_data.field_id_197 FROM exp_channel_titles INNER JOIN exp_channel_data WHERE exp_channel_titles.channel_id = '18' AND exp_channel_titles.entry_id = exp_channel_data.entry_id AND exp_channel_titles.status = 'open' AND exp_channel_titles.entry_date <= {current_time} AND field_id_197 = '' ORDER BY exp_channel_titles.entry_date DESC LIMIT 1"}
+{exp:query sql="SELECT exp_channel_titles.entry_id,	exp_channel_data.field_id_197 FROM exp_channel_titles INNER JOIN exp_channel_data WHERE exp_channel_titles.channel_id = '18' AND exp_channel_titles.entry_id = exp_channel_data.entry_id AND exp_channel_titles.status = 'In Progress' AND exp_channel_titles.entry_date <= {current_time} AND field_id_197 = '' ORDER BY exp_channel_titles.entry_date DESC LIMIT 1"}
 {entry_id}
 {/exp:query}
 {/exp:stash:set}
@@ -31,7 +31,7 @@
 
 	<div role="main" class="main-wrapper">
 	{exp:stash:parse}
-	{exp:channel:entries channel="articles" entry_id="{stash:entry-id-1}|{stash:entry-id-2}" sort="desc" status="open" dynamic="off" show_future_entries="no"}	
+	{exp:channel:entries channel="articles" entry_id="{stash:entry-id-1}|{stash:entry-id-2}" sort="desc" status="In Progress" dynamic="off" show_future_entries="no"}	
 	{if count == 1}
 		{if article_responsive_illo}
 		<figure class="wide-hero">
