@@ -567,6 +567,7 @@ var loadCommentCount = function() {
 	$.get("/comments/comment-count/" + loadWhichCommentCount, function(ret){
 
 		$('#comment-count').replaceWith(ret);
+		console.log('comment count loaded');
 
 	}, false)
 	.error(function() {
