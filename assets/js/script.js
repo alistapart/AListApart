@@ -502,13 +502,9 @@ function showSponsorImage() {
 
 var autoLoadComments = function() {
 
-	//loadCommentsButton = $("#load-comments");
+	loadCommentsButton = $("#load-comments");
 
 	loadThoseComments();
-
-	//loadCommentCountButton = $("#load-comment-count");
-
-	loadCommentCount();
 
 }
 
@@ -567,17 +563,12 @@ var loadCommentCount = function() {
 	$.get("/comments/comment-count/" + loadWhichCommentCount, function(ret){
 
 		$('#comment-count').replaceWith(ret);
-		console.log('comment count loaded');
 
-	}, false)
-	.error(function() {
-
-		commentCountLoaded = false;
-
-	});
-
+	}, false);
 
 };
+
+loadCommentCount();
 
 
 
