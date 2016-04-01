@@ -3,7 +3,7 @@
    {if comment_total == 1}
       1 comment
    {if:elseif comment_total > 1}
-      {comment_total} comments
+      <span id="comment-count" data-url-title="{url_title}">{comment_total}</span> comments
    {if:elseif allow_comments}
       no comments yet
    {if:else}

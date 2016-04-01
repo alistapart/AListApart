@@ -502,9 +502,13 @@ function showSponsorImage() {
 
 var autoLoadComments = function() {
 
-	loadCommentsButton = $("#load-comments");
+	//loadCommentsButton = $("#load-comments");
 
 	loadThoseComments();
+
+	//loadCommentCountButton = $("#load-comment-count");
+
+	loadCommentCount();
 
 }
 
@@ -555,6 +559,25 @@ var loadThoseComments = function(target) {
 	};
 
 };
+
+var loadCommentCount = function() {
+
+	loadWhichCommentCount = $("#comment-count").attr("data-url-title");
+
+	$.get("/comments/comment-count/" + loadWhichCommentCount, function(ret){
+
+		$('#comment-count').replaceWith(ret);
+
+	}, false)
+	.error(function() {
+
+		commentCountLoaded = false;
+
+	});
+
+
+};
+
 
 
 
