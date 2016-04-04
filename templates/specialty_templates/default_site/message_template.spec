@@ -28,7 +28,7 @@
 
 		<div id="ee-errors">{content}</div>
 
-	 	{link} âˆ™ <a href="/tools/log-in">Log In</a>
+	 	{link}{if logged_out} · <a href="/tools/log-in">Log In</a>{/if}
 
 		</div> 
 
