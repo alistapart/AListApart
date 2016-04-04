@@ -558,11 +558,11 @@ var loadThoseComments = function(target) {
 
 var loadCommentCount = function() {
 
-	loadWhichCommentCount = $(".comment-count-js").attr("data-url-title");
+	loadWhichCommentCount = $("#comments h1").attr("data-url-title");
 
 	$.get("/comments/comment-count/" + loadWhichCommentCount, function(ret){
 
-		$('.comment-count-js').replaceWith(ret);
+		$('#comments h1 span, .comment-bubble span').replaceWith(ret);
 
 	}, false)
 	.done(function() {
@@ -763,6 +763,9 @@ $.fn.CommentEditor = function(options) {
 				$('#' + id).fadeOut('fast');
 				getHash = hash;
 			});
+			//reload comment count
+			loadCommentCount();
+
 		}
 	}
 
