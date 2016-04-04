@@ -564,7 +564,12 @@ var loadCommentCount = function() {
 
 		$('.comment-count-js').replaceWith(ret);
 
-	}, false);
+	}, false)
+	.done(function() {
+	  console.log('comment count load complete');
+	}).error(function() {
+		console.log('error');
+	});
 
 };
 
