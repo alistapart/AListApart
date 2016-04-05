@@ -562,7 +562,13 @@ var loadCommentCount = function() {
 
 	$.get("/comments/comment-count/" + loadWhichCommentCount, function(ret){
 
-		$('#comments h1 span, .comment-bubble span').replaceWith(ret);
+		$('#comments h1 span').replaceWith(ret);
+
+	}, false);
+
+	$.get("/comments/comment-count-bubble/" + loadWhichCommentCount, function(ret){
+
+		$('.comment-bubble span').replaceWith(ret);
 
 	}, false);
 
