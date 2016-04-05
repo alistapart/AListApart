@@ -44,6 +44,9 @@ $(document).ready(function(){
 	   $('html').removeClass('show-nav');
 	});
 
+	$('.load-comments-no-js').addClass('none');
+	$('#load-comments').addClass('buttonish new');
+
 	$('[data-fallback]').on('error', function(){
 
 		var fallback = $(this).attr('data-fallback');
@@ -504,7 +507,7 @@ var autoLoadComments = function() {
 
 	loadCommentsButton = $("#load-comments");
 
-	loadThoseComments();
+	//loadThoseComments();
 
 }
 
@@ -515,6 +518,8 @@ var loadThoseComments = function(target) {
 	newTarget = target;
 
 	loadWhichComments = $("#load-comments").attr("data-url-title");
+
+	$("#load-comments").addClass('buttonish');
 
 	// unbind this stuff to prevent multiple loads (not working)
 	$(window).unbind("scrollend");
@@ -548,7 +553,7 @@ var loadThoseComments = function(target) {
 
 			commentsLoaded = false;
 
-			//console.log('WHERE ARE THE COMMENTS');
+			// console.log('WHERE ARE THE COMMENTS');
 
 		});
 
@@ -556,6 +561,23 @@ var loadThoseComments = function(target) {
 
 };
 
+var loadWhichComments = $("#load-comments").attr("data-url-title");
+
+var loadComments = function() { 
+
+	$.get("/comments/embed-comments/" + loadWhichComments, function(data) {
+ 	
+		$(".article-comments.form").before(data).trigger("comments-appended");
+
+ 		$("#load-comments").remove();
+
+	})
+	.done(function() {
+		console.log('comments loaded');
+	});
+
+};
+ 
 var loadCommentCount = function() {
 
 	loadWhichCommentCount = $("#comments h1").attr("data-url-title");
@@ -575,6 +597,8 @@ var loadCommentCount = function() {
 };
 
 loadCommentCount();
+loadComments();
+
 
 
 

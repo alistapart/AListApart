@@ -126,6 +126,10 @@ html:not(.no-js) .buttonish:before {
   left: -24px;
 }
 
+html:not(.no-js) .buttonish.new {
+  padding: 2px 110px 2px 36px;
+}
+
 .head-east-young-man {
   float: right;
 }
@@ -1324,7 +1328,6 @@ a.issue-number:focus {
 .entry-header .entry-title:first-child,
 .entry-header .issue-number + .entry-title {
   margin-top: 75px;
-  width: 96%;
 }
 
 .home-page .entry-header .entry-title:first-child,
@@ -5245,16 +5248,4 @@ form.simple-form.wide-form label .error-message {
   margin-top: 16px;
   float: left;
   color: #bb3825;
-}
-
-// Let's see if we can neuter the Genius annotator
-
-// hides the yellow indication of an annotation
-genius-referent {
-background: transparent !important;
-cursor: text !important;
-}
-// hides the "Annotate" popup that appears when you select text
-genius-pre-annotation-prompt {
-display: none !important;
 }

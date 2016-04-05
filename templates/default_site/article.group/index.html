@@ -257,9 +257,10 @@
 							<h1 class="classy" itemprop="commentCount" data-url-title="{url_title}">
 							{if comment_total > 0}<span>{comment_total} Reader Comment{if comment_total > 1}s{/if}</span>{/if}
 							{if comment_total == 0}No Comments{if allow_comments} (yet){/if}{/if}</h1>
-
-							{if comment_total > 0}<a href="/comments/{url_title}" id="load-comments" data-url-title="{url_title}" class="buttonish">Load Comments</a>{/if}
-
+							
+							{if comment_total > 0}<a href="/comments/{url_title}" class="load-comments-no-js buttonish">Load Comments</a>{/if} 
+							<span id="load-comments" data-url-title="{url_title}"></span> 
+							
 							{if logged_out}
 								{comment-sign-in}
 							{if:else}
