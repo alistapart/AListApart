@@ -787,9 +787,10 @@ $.fn.CommentEditor = function(options) {
 				$('input[name=XID]').val(hash);
 				$('#' + id).fadeOut('fast');
 				getHash = hash;
+				//reload comment count
+				loadCommentCount();
+				console.log('comment count loaded after comment deleted');
 			});
-			//reload comment count
-			loadCommentCount();
 
 		}
 	}
