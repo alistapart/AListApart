@@ -1,6 +1,6 @@
 <div class="ajax-container">
 ajax comment sign in
-{if logged_out}
+{!--if logged_out--}
 
 	{if segment_4 == 'blog'}
 		{exp:ala_auth:login id="login_form" name="login_form" class="sign-in-form" return="ajax/comment-form/{segment_3}/{segment_4}/{segment_5}/{segment_6}" post_process="AlaAuth.alertMsg"}
@@ -61,7 +61,7 @@ ajax comment sign in
 
 	{/exp:ala_auth:login}
 
-{/if}
+{!--/if--}
 
 	<script type="text/javascript">
 
@@ -93,7 +93,7 @@ ajax comment sign in
 
 	</script>
 
-{if logged_in}<!-- account for hitting the back button after the comment-form -->
+{!--if logged_in}<!-- account for hitting the back button after the comment-form -->
 
 	<script type="text/javascript">
 
@@ -103,6 +103,6 @@ ajax comment sign in
 	
 	</script>
 
-{/if}
+{/if--}
 
 </div>
