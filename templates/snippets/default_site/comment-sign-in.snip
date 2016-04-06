@@ -1,11 +1,11 @@
 <ol class="article-comments form">
-
+no ajax
 	<li id="commenter-signin" class="commenter-signin {if comment_total == 0}no-comments{/if}">
 
 	<h3 class="form-heading">Got something to say?</h3>
  	
  	<div class="outer-ajax-container">
-
+	
 	 	<div class="ajax-container">
 	 	{if segment_1 == 'blog'}
 			{exp:ala_auth:login id="login_form" name="login_form" class="sign-in-form" return="ajax/comment-form/{entry_id}/{segment_1}/{segment_2}/{url_title}" post_process="AlaAuth.alertMsg"}
@@ -145,6 +145,15 @@
 
 	</div>
 {/if}
+
+	<script type="text/javascript">
+
+	AlaAuth.loadTemplate (
+		states.commentsignin
+	);
+
+	</script>
+	
 	</li>
 
 </ol>

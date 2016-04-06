@@ -261,12 +261,13 @@
 							
 							{if comment_total > 0}<a href="/comments/{url_title}" class="load-comments-no-js buttonish">Load Comments</a>{/if} 
 							<span id="load-comments" data-url-title="{url_title}"></span> 
-							
+							<div class="comment-form-wrapper">
 							{if logged_out}
 								{comment-sign-in}
 							{if:else}
 								{comment-form}
 							{/if}
+							</div>
 
 					</section>
 
