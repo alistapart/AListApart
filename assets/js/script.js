@@ -503,63 +503,63 @@ function showSponsorImage() {
 
 };
 
-var autoLoadComments = function() {
+// var autoLoadComments = function() {
 
-	loadCommentsButton = $("#load-comments");
+// 	loadCommentsButton = $("#load-comments");
 
-	//loadThoseComments();
+// 	//loadThoseComments();
 
-}
+// }
 
-commentsLoaded = false;
+// commentsLoaded = false;
 
-var loadThoseComments = function(target) {
+// var loadThoseComments = function(target) {
 
-	newTarget = target;
+// 	newTarget = target;
 
-	loadWhichComments = $("#load-comments").attr("data-url-title");
+// 	loadWhichComments = $("#load-comments").attr("data-url-title");
 
-	$("#load-comments").addClass('buttonish');
+// 	$("#load-comments").addClass('buttonish');
 
-	// unbind this stuff to prevent multiple loads (not working)
-	$(window).unbind("scrollend");
-	$("body").removeClass("comments-exist");
+// 	// unbind this stuff to prevent multiple loads (not working)
+// 	$(window).unbind("scrollend");
+// 	$("body").removeClass("comments-exist");
 
-	if (commentsLoaded == false) {
+// 	if (commentsLoaded == false) {
 
-		commentsLoaded = true;
+// 		commentsLoaded = true;
 
-		$.get("/comments/embed-comments/" + loadWhichComments, function(data) {
+// 		$.get("/comments/embed-comments/" + loadWhichComments, function(data) {
 
-			$(".article-comments.form").before(data).trigger("comments-appended");
+// 			$(".article-comments.form").before(data).trigger("comments-appended");
 
-			commentsLoaded = true;
+// 			commentsLoaded = true;
 
-			$("#load-comments").remove();
+// 			$("#load-comments").remove();
 
-			// if (newTarget) {
+// 			// if (newTarget) {
 
-			// 	whereIsIt = $("#" + newTarget).position();
+// 			// 	whereIsIt = $("#" + newTarget).position();
 
-			// 	window.scrollTo(0,whereIsIt.top);
+// 			// 	window.scrollTo(0,whereIsIt.top);
 
-			// }
+// 			// }
 
-		})
-		.done(function() {
-			var fullDocHeight = $(document).height();
-		})
-		.error(function() {
+// 		})
+// 		.done(function() {
+// 			var fullDocHeight = $(document).height();
+// 		})
+// 		.error(function() {
 
-			commentsLoaded = false;
+// 			commentsLoaded = false;
 
-			// console.log('WHERE ARE THE COMMENTS');
+// 			// console.log('WHERE ARE THE COMMENTS');
 
-		});
+// 		});
 
-	};
+// 	};
 
-};
+// };
 
 var loadWhichComments = $("#load-comments").attr("data-url-title");
 
@@ -599,9 +599,21 @@ var loadCommentCount = function() {
 
 	$.get("/comments/comment-count-bubble/" + loadWhichCommentCount, function(ret){
 
-		$('.comment-bubble span').replaceWith(ret);
+		$('.comment-bubble-articles span').replaceWith(ret);
 
 	}, false);
+
+	$.get("/comments/comment-count-bubble-blog/" + loadWhichCommentCount, function(ret){
+
+		$('.comment-bubble-blog span').replaceWith(ret);
+
+	}, false)
+	.done(function() {
+		console.log('comment count loaded');
+	})
+	.error(function() {
+		console.log('comment count load error');
+	});
 
 };
 
@@ -631,23 +643,23 @@ $(window).bind('exitBreakpoint600',function() {
 
 });
 
-$(window).bind('enterBreakpoint600',function() {
+// $(window).bind('enterBreakpoint600',function() {
 
-	//$("#home-page .global-nav").clone().prependTo(".logo-holder");
+// 	//$("#home-page .global-nav").clone().prependTo(".logo-holder");
 
-	if (($("body").is(".comments-exist")) && ($("#load-comments").length != -1)) {
+// 	if (($("body").is(".comments-exist")) && ($("#load-comments").length != -1)) {
 
-		autoLoadComments();
+// 		autoLoadComments();
 
-		$(window).scrollStopped(function(){
+// 		$(window).scrollStopped(function(){
 
-			autoLoadComments();
+// 			autoLoadComments();
 
-		});
+// 		});
 
-	};
+// 	};
 
-});
+// });
 
 $.fn.scrollStopped = function(callback) {
     $(this).scroll(function(){

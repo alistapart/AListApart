@@ -38,7 +38,13 @@ var AlaAuth = {
 		//load new template
 	  	$.get(states.site_url + states.tmpl_path + state + '/' + states.entry_id + states.segments, function(ret){
 			ajaxContainer.replaceWith(ret);
-		}, false);
+		}, false)
+		.done(function() {
+			console.log('template loaded:' + states.site_url + states.tmpl_path + state + '/' + states.entry_id + states.segments);
+		})
+		.error(function() {
+			console.log('template load error');
+		});
 	},
 
 	spinnerInit: function(){
