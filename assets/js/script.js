@@ -574,6 +574,9 @@ var loadComments = function() {
 	})
 	.done(function() {
 		console.log('comments loaded');
+	})
+	.error(function() {
+		console.log('comments load error');
 	});
 
 };
@@ -586,7 +589,13 @@ var loadCommentCount = function() {
 
 		$('#comments h1 span').replaceWith(ret);
 
-	}, false);
+	}, false)
+	.done(function() {
+		console.log('comment count loaded');
+	})
+	.error(function() {
+		console.log('comment count load error');
+	});
 
 	$.get("/comments/comment-count-bubble/" + loadWhichCommentCount, function(ret){
 
