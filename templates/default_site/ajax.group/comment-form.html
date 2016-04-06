@@ -1,6 +1,5 @@
 <div class="ajax-container comment-form">
-ajax commentform
-{if logged_in}logged_in{if:else}logged_out{/if}
+
 {if segment_4 == 'article'}
 
 	{exp:comment:form entry_id="{segment_3}" channel="articles|legacy_articles" return="{site_url}/article/{segment_5}/comment-form" id="comment-form" class="comment-form"}
