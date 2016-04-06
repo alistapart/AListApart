@@ -1,3 +1,11 @@
 {exp:channel:entries channel="articles" url_title="{segment_3}" limit="1" status="open|In Progress"}
-{if comment_total > 0}<span>{comment_total}</span>{/if}
-{if comment_total == 0}No Comments{if allow_comments} (yet){/if}{/if}{/exp:channel:entries}
+  {if comment_total == 1}
+      <span>1 comment</span>
+   {if:elseif comment_total > 1}
+      <span>{comment_total} comments</span>
+   {if:elseif allow_comments}
+      <span>no comments yet</span>
+   {if:else}
+      <span>no comments</span>
+   {/if}
+{/exp:channel:entries}

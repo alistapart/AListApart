@@ -126,10 +126,6 @@ html:not(.no-js) .buttonish:before {
   left: -24px;
 }
 
-html:not(.no-js) .buttonish.new {
-  padding: 2px 110px 2px 36px;
-}
-
 .head-east-young-man {
   float: right;
 }
