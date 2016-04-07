@@ -258,7 +258,7 @@
 							{if comment_total > 0}<span>{comment_total} Reader Comment{if comment_total > 1}s{/if}</span>{/if}
 							{if comment_total == 0}<span>No Comments{if allow_comments} (yet){/if}<span>{/if}
 							</h1>
-							
+							{embed="tools/logged-in-check"}
 							{if comment_total > 0}<a href="/comments/{url_title}" class="load-comments-no-js buttonish">Load Comments</a>{/if} 
 							<span id="load-comments" data-url-title="{url_title}"></span> 
 							<div class="comment-form-wrapper">
