@@ -621,9 +621,6 @@ loadCommentCount();
 loadComments();
 
 
-
-
-
 $(window).setBreakpoints({
 // use only largest available vs use all available
     distinct: true,
