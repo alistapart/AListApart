@@ -125,7 +125,7 @@
 					{/exp:channel:entries}
 					{/if}
 					{if {exp:stash:is_empty name='entry-id-1'}}
-					{exp:channel:entries parse="inward" channel="blog|columns|articles|legacy_articles" limit="4" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
+					{exp:channel:entries parse="inward" channel="blog|columns|articles|legacy_articles" offset="1" limit="3" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
 					{if {entry_id} != {stash:entry-id-2}}
 					<article class="item-summary article">
 						
@@ -169,7 +169,7 @@
 
 					</div>
 
-					{exp:channel:entries channel="blog|columns|articles|legacy_articles" offset="5" limit="6" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
+					{exp:channel:entries channel="blog|columns|articles|legacy_articles" offset="4" limit="6" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
 					
 					<article class="item-summary article">
 
