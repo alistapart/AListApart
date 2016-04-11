@@ -232,7 +232,7 @@
 
 				<div class="byline author vcard">
 
-					{if article_authors:contributor_avatar}<a class="photo" href="/author/{article_authors:url_title}"><img src="{exp:ce_img:pair src='{article_authors:contributor_avatar}{url}{/article_authors:contributor_avatar}' width='120' height='120' crop='yes'}{made}{/exp:ce_img:pair}" alt="Image of {article_authors:title}"></a>{/if}
+					{if '{article_authors:contributor_avatar}{url}{/article_authors:contributor_avatar}' != ''}<a class="photo" href="/author/{article_authors:url_title}"><img src="{exp:ce_img:pair src='{article_authors:contributor_avatar}{url}{/article_authors:contributor_avatar}' width='120' height='120' crop='yes'}{made}{/exp:ce_img:pair}" alt="Image of {article_authors:title}"></a>{/if}
 
 					<h2><a class="fn" href="/author/{article_authors:url_title}">{article_authors:title}</a></h2>
 
@@ -241,7 +241,9 @@
 					{embed="embeds/author-entries" current-entry-id="{entry_id}" entry-id="{article_authors:entry_id}"}
 
 				</div>
+
 				{/article_authors}
+
 				</footer>
 
 				{email-promo}
@@ -568,15 +570,16 @@
 
 				<div class="byline author vcard">
 
-					{if legacy_article_authors:contributor_avatar}<a class="photo" href="/author/{legacy_article_authors:url_title}"><img src="{exp:ce_img:pair src="{legacy_article_authors:contributor_avatar}{url}{/legacy_article_authors:contributor_avatar}" width="120" height="120" crop="yes"}{made}{/exp:ce_img:pair}" alt=""></a>{/if}
+					{if '{legacy_article_authors:contributor_avatar}{url}{/legacy_article_authors:contributor_avatar}' != ''}<a class="photo" href="/author/{legacy_article_authors:url_title}"><img src="{exp:ce_img:pair src="{legacy_article_authors:contributor_avatar}{url}{/legacy_article_authors:contributor_avatar}" width="120" height="120" crop="yes"}{made}{/exp:ce_img:pair}" alt=""></a>{/if}
 
 					<h2><a class="fn" href="/author/{legacy_article_authors:url_title}">{legacy_article_authors:title}</a></h2>
 
-					<div class="author-bio">{legacy_article_authors:bio}</div>
+					<div class="author-bio">{legacy_article_authors:contributor_bio}</div>
 
-					{embed="embeds/author-entries" current-entry-id="{exp:stash:get name="current-entry-id"}" entry-id="{legacy_article_authors:entry_id}"}
+					{embed="embeds/author-entries" current-entry-id="{entry_id}" entry-id="{legacy_article_authors:entry_id}"}
 
 				</div>
+				
 				{/legacy_article_authors}
 
 				</footer>
