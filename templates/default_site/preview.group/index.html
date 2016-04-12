@@ -232,7 +232,7 @@
 
 				<div class="byline author vcard">
 
-					{if article_authors:contributor_avatar}<a class="photo" href="/author/{article_authors:url_title}"><img src="{exp:ce_img:pair src='{article_authors:contributor_avatar}{url}{/article_authors:contributor_avatar}' width='120' height='120' crop='yes'}{made}{/exp:ce_img:pair}" alt="Image of {article_authors:title}"></a>{/if}
+					{if '{article_authors:contributor_avatar}{url}{/article_authors:contributor_avatar}' != ''}<a class="photo" href="/author/{article_authors:url_title}"><img src="{exp:ce_img:pair src='{article_authors:contributor_avatar}{url}{/article_authors:contributor_avatar}' width='120' height='120' crop='yes'}{made}{/exp:ce_img:pair}" alt="Image of {article_authors:title}"></a>{/if}
 
 					<h2><a class="fn" href="/author/{article_authors:url_title}">{article_authors:title}</a></h2>
 
@@ -241,7 +241,9 @@
 					{embed="embeds/author-entries" current-entry-id="{entry_id}" entry-id="{article_authors:entry_id}"}
 
 				</div>
+
 				{/article_authors}
+
 				</footer>
 
 				{email-promo}
@@ -250,14 +252,17 @@
 
 			<div class="post-article">
 
-				<div class="column-holder unequal-columns">
+				<div class="column-holder unequal-columns"> 
 
 					<section id="comments" class="column comment-holder">
 
-						{if comment_total > 0}
-							<h1 class="classy" itemprop="commentCount">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
-
-							<a href="/comments/{url_title}" id="load-comments" data-url-title="{url_title}" class="buttonish">Load Comments</a>
+							<h1 class="classy" itemprop="commentCount" data-url-title="{url_title}">
+							{if comment_total > 0}<span>{comment_total} Reader Comment{if comment_total > 1}s{/if}</span>{/if}
+							{if comment_total == 0}<span>No Comments{if allow_comments} (yet){/if}<span>{/if}
+							</h1>
+							
+							{if comment_total > 0}<a href="/comments/{url_title}" class="load-comments-no-js buttonish">Load Comments</a>{/if} 
+							<span id="load-comments" data-url-title="{url_title}"></span> 
 
 							{if logged_out}
 								{comment-sign-in}
@@ -265,16 +270,8 @@
 								{comment-form}
 							{/if}
 
-						{if:else}
-
-							<h1 class="classy">No Comments{if allow_comments} (yet){/if}</h1>
-
-							{if logged_in}<ol class="article-comments"> {comment-form}</ol>
-		 					{if:else}<ol class="article-comments"> {comment-sign-in}</ol>{/if}
-
-						{/if}
-
 					</section>
+
 {!--END CONTENT FROM ARTICLES CHANNEL --}
 {/if}
 
@@ -573,15 +570,16 @@
 
 				<div class="byline author vcard">
 
-					{if legacy_article_authors:contributor_avatar}<a class="photo" href="/author/{legacy_article_authors:url_title}"><img src="{exp:ce_img:pair src="{legacy_article_authors:contributor_avatar}{url}{/legacy_article_authors:contributor_avatar}" width="120" height="120" crop="yes"}{made}{/exp:ce_img:pair}" alt=""></a>{/if}
+					{if '{legacy_article_authors:contributor_avatar}{url}{/legacy_article_authors:contributor_avatar}' != ''}<a class="photo" href="/author/{legacy_article_authors:url_title}"><img src="{exp:ce_img:pair src="{legacy_article_authors:contributor_avatar}{url}{/legacy_article_authors:contributor_avatar}" width="120" height="120" crop="yes"}{made}{/exp:ce_img:pair}" alt=""></a>{/if}
 
 					<h2><a class="fn" href="/author/{legacy_article_authors:url_title}">{legacy_article_authors:title}</a></h2>
 
-					<div class="author-bio">{legacy_article_authors:bio}</div>
+					<div class="author-bio">{legacy_article_authors:contributor_bio}</div>
 
-					{embed="embeds/author-entries" current-entry-id="{exp:stash:get name="current-entry-id"}" entry-id="{legacy_article_authors:entry_id}"}
+					{embed="embeds/author-entries" current-entry-id="{entry_id}" entry-id="{legacy_article_authors:entry_id}"}
 
 				</div>
+				
 				{/legacy_article_authors}
 
 				</footer>
@@ -596,26 +594,20 @@
 
 					<section id="comments" class="column comment-holder">
 
-						{if comment_total > 0}
-							<h1 class="classy" itemprop="commentCount">{comment_total} Reader Comment{if comment_total > 1}s{/if}</h1>
-
-							<a href="/comments/{url_title}" id="load-comments" data-url-title="{url_title}" class="buttonish">Load Comments</a>
-
+							<h1 class="classy" itemprop="commentCount" data-url-title="{url_title}">
+							{if comment_total > 0}<span>{comment_total} Reader Comment{if comment_total > 1}s{/if}</span>{/if}
+							{if comment_total == 0}<span>No Comments{if allow_comments} (yet){/if}<span>{/if}
+							</h1>
+							
+							{if comment_total > 0}<a href="/comments/{url_title}" class="load-comments-no-js buttonish">Load Comments</a>{/if} 
+							<span id="load-comments" data-url-title="{url_title}"></span> 
+							<div class="comment-form-wrapper">
 							{if logged_out}
 								{comment-sign-in}
 							{if:else}
 								{comment-form}
 							{/if}
-
-
-						{if:else}
-
-							<h1 class="classy">No Comments{if allow_comments} (yet){/if}</h1>
-
-							{if logged_in}<ol class="article-comments"> {comment-form}</ol>
-		 					{if:else}<ol class="article-comments"> {comment-sign-in}</ol>{/if}
-
-						{/if}
+							</div>
 
 					</section>
 {!--END CONTENT FROM LEGACY ARTICLE CHANNEL --}
