@@ -13,5 +13,5 @@ $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) 
 ?>
 <img class="commenters-avatar" src="<?php echo $grav_url; ?>" width="40" height="40" alt="" />
 {/if}
-{screen_name}&nbsp;&nbsp; <a id="edit-profile-link" data-tabto="log-out-link" href="/edit/profile">edit profile</a>&nbsp;·&nbsp;<!--<span class="user-url">{url}</span>-->
+{screen_name}&nbsp;&nbsp; <a id="edit-profile-link" data-tabto="log-out-link" href="/edit/profile/{username}">edit profile</a>&nbsp;·&nbsp;<!--<span class="user-url">{url}</span>-->
 {/exp:user:stats}

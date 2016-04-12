@@ -116,7 +116,7 @@
 
 		{exp:user:edit
 			dynamic="off"
-			return="/edit/profile/"
+			return="/edit/profile/{segment_3}"
 			form:class="perfect-form-demo"
 			form:id="edit-account-form"}
 
@@ -154,39 +154,6 @@
 						required>
 					<span class="note">Your name as it will appear on <cite>A List Apart</cite>.</span>
 				</p>
-
-				{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
-
-				<p>
-					<label for="first_name">First name</label>	
-					<input type="text"
-						id="first_name"
-						name="first_name"
-						value="{first_name}"
-						aria-describedby="first_name_error" 
-						data-validate="onblur"
-						data-type="any"
-						data-isvalid=""
-						data-error="What’s your first name?"
-						required>
-				</p>
-
-				<p>
-					<label for="last_name">Last name</label>
-					<input 
-						type="text"
-						id="last_name" 
-						aria-describedby="last_name_error" 
-						name="last_name" 
-						value="{last_name}"
-						data-validate="onblur"
-						data-type="any"
-						data-isvalid=""
-						data-error="What’s your last name?"
-						required>
-				</p>
-
-				{/if}
 
 				<p class="password-field">
 					<label for="password">Enter a new password (if you want one)</label>
@@ -257,15 +224,172 @@
 
 			</fieldset>
 
-				
-
 		{/exp:user:edit}
 
 		<hr class="spacer large">
+		
+		{if member_group == '1' OR member_group == '6' OR member_group == '7'}
+
+		{exp:channel:form channel="contributors" url_title="{segment_3}" return="/edit/profile/{segment_3}"}
+
+		<fieldset>
+
+			<legend class="form-heading">Name</legend>
+
+			<p>
+				<label for="first_name">First name</label>	
+				<input type="text"
+					id="contributor_first_name"
+					name="contributor_first_name"
+					value="{contributor_first_name}"
+					placeholder="{contributor_first_name}" 
+					aria-describedby="first_name_error" 
+					data-validate="onblur"
+					data-type="any"
+					data-isvalid=""
+					data-error="What’s your first name?"
+					required>
+			</p>
+
+			<p>
+				<label for="first_name">Last name</label>	
+				<input type="text"
+					id="contributor_last_name"
+					name="contributor_last_name"
+					value="{contributor_last_name}"
+					placeholder="{contributor_last_name}" 
+					aria-describedby="last_name_error" 
+					data-validate="onblur"
+					data-type="any"
+					data-isvalid=""
+					data-error="What’s your last name?"
+					required>
+			</p>
+
+			<p class="screen-reader">
+				<label for="honeepot">Don't put anything here</label>
+				<input
+					type="text"
+					id="honeepot"
+					name="honeepot"
+					data-tabmaster="false">
+			</p>
+			
+			<p>
+				<input 
+					type="submit"
+					id="submit-social"  
+					name="submit" 
+					value="Submit" 
+					class="button primary">
+			</p>
+
+		</fieldset>
+
+		<hr class="spacer large">
+
+		<fieldset>
+
+			<legend class="form-heading">Social Stuff</legend>
+
+			<p>
+				<label for="contributor_url">URL</label>
+				<input 
+					type="text" 
+					id="contributor_url" 
+					name="contributor_url" 
+					value="{contributor_url}">
+			</p>
+			
+			<p>
+				<label for="contributor_twitter">Twitter</label>
+				<input 
+					type="text" 
+					id="contributor_twitter" 
+					name="contributor_twitter" 
+					value="{exp:low_replace find='@' replace=''}{contributor_twitter}{/exp:low_replace}">
+			</p>
+			
+			<p>
+				<label for="contributor_facebook">Facebook</label>	
+				<input 
+					type="text" 
+					id="contributor_facebook" 
+					name="contributor_facebook" 
+					value="{contributor_facebook}">
+				<span class="note">Username only.</span>
+			</p>
+
+			<p>
+				<label for="contributor_github">GitHub</label>	
+				<input 
+					type="text" 
+					id="contributor_github" 
+					name="contributor_github" 
+					value="{contributor_github}">
+				<span class="note">Username only.</span>
+			</p>
+
+			<p>
+				<label for="contributor_dribbble">Dribbble</label>	
+				<input 
+					type="text" 
+					id="contributor_dribbble" 
+					name="contributor_dribbble" 
+					value="{contributor_dribbble}">
+				<span class="note">Username only.</span>
+			</p>
+
+			<p>
+				<label for="contributor_googleplus">Google+</label>	
+				<input 
+					type="text" 
+					id="contributor_googleplus" 
+					name="contributor_googleplus" 
+					value="{contributor_googleplus}">
+				<span class="note">Add the whole URL for your profile. For example:</span><br>
+				<span class="note">http://google.com/+TimMurtaugh</span><br>
+				<span class="note">or</span><br>
+				<span class="note">https://plus.google.com/104877852135164107223‎</span>
+			</p>
+			
+			<p>
+				<label for="contributor_bio">Bio</label>
+				<textarea 
+					id="contributor_bio" 
+					name="contributor_bio" 
+					data-autoresize style="height: 100px;"
+					data-tabmaster="true"
+					data-tabto="submit-social">{contributor_bio}</textarea>
+				<span class="note">Feel free to link to stuff you’re proud of.</span></p>
+			
+			<p class="screen-reader">
+				<label for="honeepot">Don't put anything here</label>
+				<input
+					type="text"
+					id="honeepot"
+					name="honeepot"
+					data-tabmaster="false">
+			</p>
+			
+			<p>
+				<input 
+					type="submit"
+					id="submit-social"  
+					name="submit" 
+					value="Submit" 
+					class="button primary">
+			</p>
+
+		</fieldset>
+
+		{/exp:channel:form}
+
+		{if:else}
 
 		{exp:user:edit
 			dynamic="off"
-			return="/edit/profile/"
+			return="/edit/profile/{segment_3}"
 			form:class="perfect-form-demo"
 			form:id="edit-social-links-form"}
 
@@ -341,9 +465,7 @@
 						name="bio" 
 						data-autoresize style="height: 100px;"
 						data-tabmaster="true"
-						data-tabto="submit-social">
-						{bio}
-					</textarea>
+						data-tabto="submit-social">{bio}</textarea>
 					<span class="note">Feel free to link to stuff you’re proud of.</span></p>
 				
 				<p class="screen-reader">
@@ -368,11 +490,13 @@
 
 		{/exp:user:edit}
 
+		{/if}
+
 		<hr class="spacer large">
 
 		{exp:user:edit
 			dynamic="off"
-			return="/edit/profile/"
+			return="/edit/profile/{segment_3}"
 			form:class="perfect-form-demo"}
 
 			<fieldset>
@@ -412,49 +536,54 @@
 
 		{/exp:user:edit}
 
-		{if group_id == "1" OR group_id == "6" OR group_id == "7" OR group_id == "10"}
-
 		<hr class="spacer large">
 
-		{exp:user:edit
-			dynamic="off"
-			return="/edit/profile/"
-			form:class="perfect-form-demo"}
+		{if member_group == '1' OR member_group == '6' OR member_group == '7'}
 
-			<fieldset>
+		{exp:channel:form channel="contributors" url_title="{segment_3}" return="/edit/profile/{segment_3}"}
 
-				<legend class="form-heading">Author Photo</legend>
+		<fieldset>
+ 
+			<legend class="form-heading">Author Photo</legend>
 
-				<p>Author photos should be at least 400px by 400px. We’ll crop and resize if necessary.</p>
+			<p>Author photos should be at least 400px by 400px. We’ll crop and resize if necessary.</p>
 
-				<figure>
-				{if photo_filename != ""}
-					<img style="max-width: 100%;" src="{photo_url}{photo_filename}" />
-					{if photo_width < "400" OR photo_height < "400"}
-					<span class="note">(at {photo_width}x{photo_height} this photo is smaller than we would like)</span>
-					{/if}
+			<figure>
+			{if '{contributor_avatar}{url}{/contributor_avatar}' != ''} 
+			{contributor_avatar}
+				<img src="{url}">
+				{if {width} < "400" OR {height} < "400"}
+				<span class="note">(at {width}x{height} this avatar is smaller than we would like)</span>
 				{/if}
-				</figure>
+		 	{/contributor_avatar}
+			{if:else}
+				<img src="{site_url}/{assets_path}/img/avatar_generic-commenter_grey.png">
+			{/if}
+			</figure>
 
-				<p>
-					<label for="photo_filename">Upload photo</label>
-					<input 
-						type="file" 
-						id="photo_filename" 
-						name="photo_filename">
-				</p>
+			<p>
+				<label for="contributor_avatar">Upload a photo</label>
+	 			
+				<input 
+					type="file" 
+					id="contributor_avatar" 
+					name="contributor_avatar">
 
-				<p>
-					<input 
-						type="submit" 
-						name="submit" 
-						value="Submit" 
-						class="button primary">
-				</p>
+				<input type="hidden" name="contributor_avatar_filedir" value="7">
+				<input type="hidden" name="contributor_avatar_hidden_file" value="{contributor_avatar}{filename}{/contributor_avatar}" />
+			</p>
 
-			</fieldset>
+			<p>
+				<input 
+					type="submit" 
+					name="submit" 
+					value="Submit" 
+					class="button primary">
+			</p>
 
-		{/exp:user:edit}
+		</fieldset>
+
+		{/exp:channel:form}
 
 		{/if}
 
