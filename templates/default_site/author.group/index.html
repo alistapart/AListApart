@@ -45,11 +45,11 @@
 					{if contributor_url OR contributor_twitter OR contributor_facebook OR contributor_dribbble OR contributor_github OR contributor_googleplus}
 					<ul class="fancy-links">
 						{if contributor_url}<li><a href="http://{exp:low_replace find='http://' replace=''}{url}{/exp:low_replace}" itemprop="url">{contributor_url}</a></li>{/if}
-						{if contributor_twitter}<li><a class="twitter" href="http://twitter.com/{exp:low_replace find='@' replace=''}{twitter}{/exp:low_replace}" itemprop="url">{exp:low_replace find='@' replace=''}{contributor_twitter}{/exp:low_replace}</a></li>{/if}
-						{if contributor_facebook}<li><a class="facebook" href="http://facebook.com/{facebook}" itemprop="url">{contributor_facebook}</a></li>{/if}
-						{if contributor_dribbble}<li><a class="dribbble" href="http://dribbble.com/{dribbble}" itemprop="url">{contributor_dribbble}</a></li>{/if}
-						{if contributor_github}<li><a class="github" href="http://github.com/{github}" itemprop="url">{contributor_github}</a></li>{/if}
-						{if contributor_googleplus}<li><a class="googleplus" href="{googleplus}" itemprop="url">{exp:parse_url parts="path" omit="/|+"}{contributor_googleplus}{/exp:parse_url}</a></li>{/if}
+						{if contributor_twitter}<li><a class="twitter" href="http://twitter.com/{exp:low_replace find='@' replace=''}{contributor_twitter}{/exp:low_replace}" itemprop="url">{exp:low_replace find='@' replace=''}{contributor_twitter}{/exp:low_replace}</a></li>{/if}
+						{if contributor_facebook}<li><a class="facebook" href="http://facebook.com/{contributor_facebook}" itemprop="url">{contributor_facebook}</a></li>{/if}
+						{if contributor_dribbble}<li><a class="dribbble" href="http://dribbble.com/{contributor_dribbble}" itemprop="url">{contributor_dribbble}</a></li>{/if}
+						{if contributor_github}<li><a class="github" href="http://github.com/{contributor_github}" itemprop="url">{contributor_github}</a></li>{/if}
+						{if contributor_googleplus}<li><a class="googleplus" href="{contributor_googleplus}" itemprop="url">{exp:parse_url parts="path" omit="/|+"}{contributor_googleplus}{/exp:parse_url}</a></li>{/if}
 					</ul>
 					{/if}
 
