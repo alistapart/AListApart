@@ -2,20 +2,43 @@
 {exp:stash:set name="article-author-2"}{exp:channel:entries entry_id="{entry_id}" dynamic="off"}{article_authors limit="1" offset="1"}{article_authors:url_title}{/article_authors}{blog_authors limit="1" offset="1"}{blog_authors:url_title}{/blog_authors}{column_authors limit="1" offset="1"}{column_authors:url_title}{/column_authors}{/exp:channel:entries}{/exp:stash:set}
 {exp:stash:set name="article-author-3"}{exp:channel:entries entry_id="{entry_id}" dynamic="off"}{article_authors limit="1" offset="2"}{article_authors:url_title}{/article_authors}{blog_authors limit="1" offset="2"}{blog_authors:url_title}{/blog_authors}{column_authors limit="1" offset="2"}{column_authors:url_title}{/column_authors}{/exp:channel:entries}{/exp:stash:set}
 {exp:stash:set name="article-author-4"}{exp:channel:entries entry_id="{entry_id}" dynamic="off"}{article_authors limit="1" offset="3"}{article_authors:url_title}{/article_authors}{blog_authors limit="1" offset="3"}{blog_authors:url_title}{/blog_authors}{column_authors limit="1" offset="3"}{column_authors:url_title}{/column_authors}{/exp:channel:entries}{/exp:stash:set}
-							<li {if count == total_results}name="latest"{/if} id="{comment_id}" data-count="{count}" class="comment{if "{exp:stash:get name='article-author-1'}" == "{username}" OR "{exp:stash:get name='article-author-2'}" == "{username}" OR "{exp:stash:get name='article-author-3'}" == "{username}" OR "{exp:stash:get name='article-author-4'}" == "{username}"} article-author{/if}">
-								{if avatar != ""}
-								{exp:ce_img:single src="{avatar_url}" width="60" height="60" crop="yes" class="commenter-avatar" alt=""}
-								{if:elseif photo_filename}
-								{exp:ce_img:single src="{photo_url}" width="60" height="60" crop="yes" class="commenter-avatar" alt=""}
-								{if:else}
-								<?php
-								$email = "{email}";
-								$default = "//alistapart.com/components/assets/img/avatar_generic-commenter_grey.png";
-								$size = 60;
 
-								$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
-								?>
-								<img class="commenter-avatar" src="<?php echo $grav_url; ?>" width="60" height="60" alt="" />
+
+
+							<li {if count == total_results}name="latest"{/if} id="{comment_id}" data-count="{count}" class="comment{if "{exp:stash:get name='article-author-1'}" == "{username}" OR "{exp:stash:get name='article-author-2'}" == "{username}" OR "{exp:stash:get name='article-author-3'}" == "{username}" OR "{exp:stash:get name='article-author-4'}" == "{username}"} article-author{/if}">
+								<!-- if author -->
+								{if "{exp:stash:get name='article-author-1'}" == "{username}" OR "{exp:stash:get name='article-author-2'}" == "{username}" OR "{exp:stash:get name='article-author-3'}" == "{username}" OR "{exp:stash:get name='article-author-4'}" == "{username}"}
+									{if avatar != ""}
+										{exp:ce_img:single src="{avatar_url}" width="60" height="60" crop="yes" class="commenter-avatar" alt=""}
+									{if:else}
+										{exp:channel:entries entry_id="{entry_id}"}{article_authors}<img class="commenter-avatar" src="{exp:ce_img:pair src='{article_authors:contributor_avatar}' width='60' height='60' crop='yes'}{made}{/exp:ce_img:pair}" width="60" height="60" alt="" />{/article_authors}{/exp:channel:entries}
+									{/if}
+								{if:else}
+									<!-- if admin or editor -->
+									{if member_group == '1' OR member_group == '7' OR member_group == '10'}
+										{if avatar != ""}
+											{exp:ce_img:single src="{avatar_url}" width="60" height="60" crop="yes" class="commenter-avatar" alt=""}
+										{if:else}
+											{exp:channel:entries url_title="{username}" dynamic="off"}<img class="commenter-avatar" src="{exp:ce_img:pair src='{contributor_avatar}' width='60' height='60' crop='yes'}{made}{/exp:ce_img:pair}" width="60" height="60" alt="" />{/exp:channel:entries}
+										{/if}
+									<!-- if member -->
+									{if:else}
+										{if avatar != ""}
+										{exp:ce_img:single src="{avatar_url}" width="60" height="60" crop="yes" class="commenter-avatar" alt=""}
+										{if:elseif photo_filename}
+										{exp:ce_img:single src="{photo_url}" width="60" height="60" crop="yes" class="commenter-avatar" alt=""}
+										{if:else}
+										<?php
+										$email = "{email}";
+										$default = "//alistapart.com/components/assets/img/avatar_generic-commenter_grey.png";
+										$size = 60;
+
+										$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
+										?>
+										<img class="commenter-avatar" src="<?php echo $grav_url; ?>" width="60" height="60" alt="" />
+										{/if}
+									{/if}
+
 								{/if}
 								<p class="comment-byline">
  
