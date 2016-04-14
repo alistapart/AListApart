@@ -14,20 +14,11 @@
 										{exp:channel:entries entry_id="{entry_id}"}{article_authors}<img class="commenter-avatar" src="{exp:ce_img:pair src='{article_authors:contributor_avatar}' width='60' height='60' crop='yes'}{made}{/exp:ce_img:pair}" width="60" height="60" alt="" />{/article_authors}{/exp:channel:entries}
 									{/if}
 								{if:else}
-									<!-- if admin or editor -->
-									{if member_group == '1' OR member_group == '7' OR member_group == '10'}
-										{if avatar != ""}
-											{exp:ce_img:single src="{avatar_url}" width="60" height="60" crop="yes" class="commenter-avatar" alt=""}
-										{if:else}
-											{exp:channel:entries url_title="{username}" dynamic="off"}<img class="commenter-avatar" src="{exp:ce_img:pair src='{contributor_avatar}' width='60' height='60' crop='yes'}{made}{/exp:ce_img:pair}" width="60" height="60" alt="" />{/exp:channel:entries}
-										{/if}
-									<!-- if member -->
-									{if:else}
-										{if avatar != ""}
+									{if avatar != ""}
 										{exp:ce_img:single src="{avatar_url}" width="60" height="60" crop="yes" class="commenter-avatar" alt=""}
-										{if:elseif photo_filename}
+									{if:elseif photo_filename}
 										{exp:ce_img:single src="{photo_url}" width="60" height="60" crop="yes" class="commenter-avatar" alt=""}
-										{if:else}
+									{if:else}
 										<?php
 										$email = "{email}";
 										$default = "//alistapart.com/components/assets/img/avatar_generic-commenter_grey.png";
@@ -36,9 +27,7 @@
 										$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
 										?>
 										<img class="commenter-avatar" src="<?php echo $grav_url; ?>" width="60" height="60" alt="" />
-										{/if}
 									{/if}
-
 								{/if}
 								<p class="comment-byline">
  
