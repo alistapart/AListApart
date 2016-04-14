@@ -239,8 +239,9 @@
 		overflow: auto;
 	}
 
-			#home-page .variable-column {
+	#home-page .variable-column {
 		width: auto;
+		max-width: 100%;
 	}
 
 	#home-page .fixed-column {
