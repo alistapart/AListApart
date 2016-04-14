@@ -9,7 +9,7 @@ $email = "{email}";
 $default = "http://alistapart.com/components/assets/img/avatar_generic-commenter_grey.png";
 $size = 40;
 $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
-'http://www.gravatar.com/avatar/'.md5($email).'fs='.$imageWidth;
+'http://www.gravatar.com/avatar/'.md5($email).'fs='.$size;
 ?>
 <img class="commenters-avatar" src="<?php echo $grav_url; ?>" width="40" height="40" alt="" />
 {/if}
