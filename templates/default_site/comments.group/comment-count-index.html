@@ -1,0 +1,11 @@
+{exp:channel:entries channel="articles" url_title="{segment_3}" limit="1" show_future_entries="yes" status="open|In Progress"}
+	{if comment_total > 0}
+	<span class="comments" data-url-title="{url_title}">
+	{if comment_total == 1}
+	 · <a class="comment-count" href="/article/{url_title}#comments">1 Comment</a>
+	{if:elseif comment_total > 1}
+	 · <a class="comment-count" href="/article/{url_title}#comments">{comment_total} Comments</a>
+	{/if}
+	</span>
+	{/if}
+{/exp:channel:entries}
