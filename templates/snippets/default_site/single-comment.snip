@@ -3,8 +3,6 @@
 {exp:stash:set name="article-author-3"}{exp:channel:entries entry_id="{entry_id}" dynamic="off"}{article_authors limit="1" offset="2"}{article_authors:url_title}{/article_authors}{blog_authors limit="1" offset="2"}{blog_authors:url_title}{/blog_authors}{column_authors limit="1" offset="2"}{column_authors:url_title}{/column_authors}{/exp:channel:entries}{/exp:stash:set}
 {exp:stash:set name="article-author-4"}{exp:channel:entries entry_id="{entry_id}" dynamic="off"}{article_authors limit="1" offset="3"}{article_authors:url_title}{/article_authors}{blog_authors limit="1" offset="3"}{blog_authors:url_title}{/blog_authors}{column_authors limit="1" offset="3"}{column_authors:url_title}{/column_authors}{/exp:channel:entries}{/exp:stash:set}
 
-
-
 							<li {if count == total_results}name="latest"{/if} id="{comment_id}" data-count="{count}" class="comment{if "{exp:stash:get name='article-author-1'}" == "{username}" OR "{exp:stash:get name='article-author-2'}" == "{username}" OR "{exp:stash:get name='article-author-3'}" == "{username}" OR "{exp:stash:get name='article-author-4'}" == "{username}"} article-author{/if}">
 								<!-- if author -->
 								{if "{exp:stash:get name='article-author-1'}" == "{username}" OR "{exp:stash:get name='article-author-2'}" == "{username}" OR "{exp:stash:get name='article-author-3'}" == "{username}" OR "{exp:stash:get name='article-author-4'}" == "{username}"}
