@@ -565,18 +565,14 @@ var loadWhichComments = $("#load-comments").attr("data-url-title");
 
 var loadComments = function() { 
 
-	if(typeof currentPage != "undefined") //check that the current page has a currentPage variable
-	{
-		if (currentPage == 'article' || currentPage == 'column' || currentPage == 'blog') {
-			$.get("/comments/embed-comments/" + loadWhichComments, function(data) {
-		 	
-				$(".article-comments.form").before(data).trigger("comments-appended");
 
-		 		$("#load-comments").remove();
+	$.get("/comments/embed-comments/" + loadWhichComments, function(data) {
+ 	
+		$(".article-comments.form").before(data).trigger("comments-appended");
 
-			});
-		}
-	}
+ 		$("#load-comments").remove();
+
+	});
 
 };
  
@@ -587,31 +583,31 @@ var loadCommentCount = function() {
 	loadCommentCountArticles = $(".meta .comments").attr("data-url-title");
 
 	 
-			$.get("/comments/comment-count-comment-form/" + loadWhichCommentCount, function(ret){
+	$.get("/comments/comment-count-comment-form/" + loadWhichCommentCount, function(ret){
 
-				$('#comments h1 span').replaceWith(ret);
+		$('#comments h1 span').replaceWith(ret);
 
-			}, false);
+	}, false);
 
-			$.get("/comments/comment-count-bubble/" + loadWhichCommentCount, function(ret){
+	$.get("/comments/comment-count-bubble/" + loadWhichCommentCount, function(ret){
 
-				$('.comment-bubble-articles span').replaceWith(ret);
+		$('.comment-bubble-articles span').replaceWith(ret);
 
-			}, false);
-	 
-		 
-			$.get("/comments/comment-count-bubble-blog/" + loadWhichCommentCount, function(ret){
+	}, false);
 
-				$('.comment-bubble-blog span').replaceWith(ret);
+ 
+	$.get("/comments/comment-count-bubble-blog/" + loadWhichCommentCount, function(ret){
 
-			}, false);
-		 
-		 
-			$.get("/comments/comment-count-index/" + loadCommentCountIndex, function(ret){
+		$('.comment-bubble-blog span').replaceWith(ret);
 
-				$('#home-page .comments').replaceWith(ret);
+	}, false);
+ 
+ 
+	$.get("/comments/comment-count-index/" + loadCommentCountIndex, function(ret){
 
-			}, false);
+		$('#home-page .comments').replaceWith(ret);
+
+	}, false);
 };
 
 loadCommentCount();
