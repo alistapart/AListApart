@@ -583,7 +583,7 @@ var loadComments = function() {
 var loadCommentCount = function() {
 
 	loadWhichCommentCount = $("#comments h1").attr("data-url-title");
-	loadCommentCountIndex = $("#home-page .comments").attr("data-url-title");
+	loadCommentCountIndex = $(".entry-details").attr("data-url-title");
 	loadCommentCountArticles = $(".meta .comments").attr("data-url-title");
 
 	if(typeof states != "undefined") //check that the current page has a states object

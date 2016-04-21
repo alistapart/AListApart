@@ -63,11 +63,11 @@
 
 				<h2 class="entry-title"><a href="/article/{url_title}">{title}</a></h2>
 
-				<p class="entry-details">
+				<p class="entry-details" data-url-title="{url_title}">
 
 					<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {article_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{article_authors:url_title}"><span itemprop="name">{article_authors:title}</span></a>, {/article_authors}</span>
 					{if comment_total > 0}
-					<span class="comments" data-url-title="{url_title}">
+					<span class="comments">
 					{if comment_total == 1}
 					 · <a class="comment-count" href="/article/{url_title}#comments">1 Comment</a>
 					{if:elseif comment_total > 1}
