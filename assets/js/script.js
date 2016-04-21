@@ -614,6 +614,7 @@ var loadCommentCount = function() {
 	}
  	
  	if ($('body').hasClass('home-page')) {
+ 		console.log('home');
 		$.get("/comments/comment-count-index/" + loadCommentCountIndex, function(ret){
 
 			$('#home-page .comments').replaceWith(ret);
