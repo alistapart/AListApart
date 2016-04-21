@@ -565,14 +565,18 @@ var loadWhichComments = $("#load-comments").attr("data-url-title");
 
 var loadComments = function() { 
 
+	if(typeof states != "undefined") //check that the current page has a states object
+	{
+		if (states.page == 'article' || states.page == 'column' || states.page == 'blog') {
+			$.get("/comments/embed-comments/" + loadWhichComments, function(data) {
+		 	
+				$(".article-comments.form").before(data).trigger("comments-appended");
 
-	$.get("/comments/embed-comments/" + loadWhichComments, function(data) {
- 	
-		$(".article-comments.form").before(data).trigger("comments-appended");
+		 		$("#load-comments").remove();
 
- 		$("#load-comments").remove();
-
-	});
+			});
+		}
+	}
 
 };
  
@@ -582,32 +586,40 @@ var loadCommentCount = function() {
 	loadCommentCountIndex = $("#home-page .comments").attr("data-url-title");
 	loadCommentCountArticles = $(".meta .comments").attr("data-url-title");
 
-	 
-	$.get("/comments/comment-count-comment-form/" + loadWhichCommentCount, function(ret){
+	if(typeof states != "undefined") //check that the current page has a states object
+	{
+		if (states.page == 'article' || states.page == 'column' || states.page == 'blog') {
+			$.get("/comments/comment-count-comment-form/" + loadWhichCommentCount, function(ret){
 
-		$('#comments h1 span').replaceWith(ret);
+				$('#comments h1 span').replaceWith(ret);
 
-	}, false);
+			}, false);
+			console.log('comment-count-comment-form fired');
+		}
+		if (states.page == 'article' || states.page == 'column') {
+			$.get("/comments/comment-count-bubble/" + loadWhichCommentCount, function(ret){
 
-	$.get("/comments/comment-count-bubble/" + loadWhichCommentCount, function(ret){
+				$('.comment-bubble-articles span').replaceWith(ret);
 
-		$('.comment-bubble-articles span').replaceWith(ret);
+			}, false);
+			console.log('comment-count-bubble fired');
+		}
+		if (states.page == 'blog') { 
+			$.get("/comments/comment-count-bubble-blog/" + loadWhichCommentCount, function(ret){
 
-	}, false);
+				$('.comment-bubble-blog span').replaceWith(ret);
 
- 
-	$.get("/comments/comment-count-bubble-blog/" + loadWhichCommentCount, function(ret){
+			}, false);
+		}
+	}
+ 	
+ 	if ($('body').hasClass('home-page')) {
+		$.get("/comments/comment-count-index/" + loadCommentCountIndex, function(ret){
 
-		$('.comment-bubble-blog span').replaceWith(ret);
+			$('#home-page .comments').replaceWith(ret);
 
-	}, false);
- 
- 
-	$.get("/comments/comment-count-index/" + loadCommentCountIndex, function(ret){
-
-		$('#home-page .comments').replaceWith(ret);
-
-	}, false);
+		}, false);
+	}
 };
 
 loadCommentCount();
