@@ -612,10 +612,6 @@ var loadCommentCount = function() {
 				$('#home-page .comments').replaceWith(ret);
 
 			}, false);
-	 
-
-	}
-
 };
 
 loadCommentCount();
