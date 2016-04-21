@@ -586,9 +586,7 @@ var loadCommentCount = function() {
 	loadCommentCountIndex = $("#home-page .comments").attr("data-url-title");
 	loadCommentCountArticles = $(".meta .comments").attr("data-url-title");
 
-	if(typeof currentPage != "undefined") //check that the current page has a currentPage variable
-	{
-		if (currentPage == 'article' || currentPage == 'column') {
+	 
 			$.get("/comments/comment-count-comment-form/" + loadWhichCommentCount, function(ret){
 
 				$('#comments h1 span').replaceWith(ret);
@@ -600,21 +598,21 @@ var loadCommentCount = function() {
 				$('.comment-bubble-articles span').replaceWith(ret);
 
 			}, false);
-		}
-		if (currentPage == 'blog') {
+	 
+		 
 			$.get("/comments/comment-count-bubble-blog/" + loadWhichCommentCount, function(ret){
 
 				$('.comment-bubble-blog span').replaceWith(ret);
 
 			}, false);
-		}
-		if (currentPage == 'home') {
+		 
+		 
 			$.get("/comments/comment-count-index/" + loadCommentCountIndex, function(ret){
 
 				$('#home-page .comments').replaceWith(ret);
 
 			}, false);
-		}
+	 
 
 	}
 
