@@ -620,23 +620,23 @@ var loadCommentCount = function() {
 	}
 };
 
-var loadTranslations = function() { 
+// var loadTranslations = function() { 
 
-	translationUrlTitle = $("#comments h1").attr("data-url-title");
-	if(typeof states != "undefined") //check that the current page has a states object
-	{
-		if (states.page == 'article' || states.page == 'column' || states.page == 'blog') {
-			$.get("/ajax/translations/" + translationUrlTitle, function(ret) {
+// 	translationUrlTitle = $("#comments h1").attr("data-url-title");
+// 	if(typeof states != "undefined") //check that the current page has a states object
+// 	{
+// 		if (states.page == 'article' || states.page == 'column' || states.page == 'blog') {
+// 			$.get("/ajax/translations/" + translationUrlTitle, function(ret) {
 		 	
-				$('.minutiae-block.translation-block').replaceWith(ret);
+// 				$('.minutiae-block.translation-block').replaceWith(ret);
 
-			});
-		}
-	}
+// 			});
+// 		}
+// 	}
 
-};
+// };
 
-loadTranslations();
+// loadTranslations();
 loadCommentCount();
 loadComments();
 

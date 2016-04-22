@@ -61,7 +61,26 @@ var AlaAuth = {
 	}
 
 }; //end AlaAuth object
-	
+
+var AlaPostLoad = {
+	//post load translations snippet
+	loadTranslations: function() { 
+
+		translationUrlTitle = $("#comments h1").attr("data-url-title");
+		if(typeof states != "undefined") //check that the current page has a states object
+		{
+			if (states.page == 'article' || states.page == 'column' || states.page == 'blog') {
+				$.get("/ajax/translations/" + translationUrlTitle, function(ret) {
+			 	
+					$('.minutiae-block.translation-block').replaceWith(ret);
+
+				});
+			}
+		}
+	}
+
+};
+
 $(document).ready(function(){
 
 	//this is a function in form.js that simplifies register by substituting username + pass confirm fields
