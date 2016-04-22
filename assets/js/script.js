@@ -622,7 +622,7 @@ var loadCommentCount = function() {
 
 var loadTranslations = function() { 
 
-	translationUrlTitle = $(".content-minutiae").attr("data-url-title");
+	translationUrlTitle = $("#comments h1").attr("data-url-title");
 	if(typeof states != "undefined") //check that the current page has a states object
 	{
 		if (states.page == 'article' || states.page == 'column' || states.page == 'blog') {
