@@ -584,7 +584,6 @@ var loadCommentCount = function() {
 
 	loadWhichCommentCount = $("#comments h1").attr("data-url-title");
 	loadCommentCountIndex = $(".entry-details").attr("data-url-title");
-	loadCommentCountArticles = $(".meta .comments").attr("data-url-title");
 
 	if(typeof states != "undefined") //check that the current page has a states object
 	{
@@ -594,7 +593,6 @@ var loadCommentCount = function() {
 				$('#comments h1 span').replaceWith(ret);
 
 			}, false);
-			console.log('comment-count-comment-form fired');
 		}
 		if (states.page == 'article' || states.page == 'column') {
 			$.get("/comments/comment-count-bubble/" + loadWhichCommentCount, function(ret){
@@ -602,7 +600,6 @@ var loadCommentCount = function() {
 				$('.comment-bubble-articles span').replaceWith(ret);
 
 			}, false);
-			console.log('comment-count-bubble fired');
 		}
 		if (states.page == 'blog') { 
 			$.get("/comments/comment-count-bubble-blog/" + loadWhichCommentCount, function(ret){
@@ -623,6 +620,23 @@ var loadCommentCount = function() {
 	}
 };
 
+var loadTranslations = function() { 
+
+	translationUrlTitle = $(".content-minutiae").attr("data-url-title");
+	if(typeof states != "undefined") //check that the current page has a states object
+	{
+		if (states.page == 'article' || states.page == 'column' || states.page == 'blog') {
+			$.get("/ajax/translations/" + translationUrlTitle, function(ret) {
+		 	
+				$('.minutiae-block.translation-block').replaceWith(ret);
+
+			});
+		}
+	}
+
+};
+
+loadTranslations();
 loadCommentCount();
 loadComments();
 
