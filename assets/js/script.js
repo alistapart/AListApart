@@ -580,64 +580,69 @@ var loadComments = function() {
 
 };
  
-var loadCommentCount = function() {
+var dataUrlTitle = $("#comments h1").attr("data-url-title");
 
-	loadWhichCommentCount = $("#comments h1").attr("data-url-title");
-	loadCommentCountIndex = $(".entry-details").attr("data-url-title");
+var AlaPostLoad = {
+	//post load translations snippet
+	loadTranslations: function() { 
+		
+		var translationBlock = $('.minutiae-block.translation-block');
 
-	if(typeof states != "undefined") //check that the current page has a states object
-	{
-		if (states.page == 'article' || states.page == 'column' || states.page == 'blog') {
-			$.get("/comments/comment-count-comment-form/" + loadWhichCommentCount, function(ret){
-
-				$('#comments h1 span').replaceWith(ret);
-
-			}, false);
+		if(typeof states != "undefined") { //check that the current page has a states object
+			if (states.page == 'article' || states.page == 'column' || states.page == 'blog') {
+				
+				$.get("/ajax/translations/" + dataUrlTitle, function(ret) {
+					translationBlock.replaceWith(ret);
+				});
+	
+			}
 		}
-		if (states.page == 'article' || states.page == 'column') {
-			$.get("/comments/comment-count-bubble/" + loadWhichCommentCount, function(ret){
+	},
+	//post load comment count
+	loadCommentCount: function() {
 
-				$('.comment-bubble-articles span').replaceWith(ret);
+		var commentCountIndex = $(".entry-details").attr("data-url-title");
 
-			}, false);
+		if(typeof states != "undefined") //check that the current page has a states object
+		{
+			if (states.page == 'article' || states.page == 'column' || states.page == 'blog') {
+				$.get("/comments/comment-count-comment-form/" + dataUrlTitle, function(ret){
+
+					$('#comments h1 span').replaceWith(ret);
+
+				}, false);
+			}
+			if (states.page == 'article' || states.page == 'column') {
+				$.get("/comments/comment-count-bubble/" + dataUrlTitle, function(ret){
+
+					$('.comment-bubble-articles span').replaceWith(ret);
+
+				}, false);
+			}
+			if (states.page == 'blog') { 
+				$.get("/comments/comment-count-bubble-blog/" + dataUrlTitle, function(ret){
+
+					$('.comment-bubble-blog span').replaceWith(ret);
+
+				}, false);
+			}
 		}
-		if (states.page == 'blog') { 
-			$.get("/comments/comment-count-bubble-blog/" + loadWhichCommentCount, function(ret){
+	 	
+	 	if ($('body').hasClass('home-page')) {
+	 		console.log('home');
+			$.get("/comments/comment-count-index/" + commentCountIndex, function(ret){
 
-				$('.comment-bubble-blog span').replaceWith(ret);
+				$('#home-page .comments').replaceWith(ret);
 
 			}, false);
 		}
 	}
- 	
- 	if ($('body').hasClass('home-page')) {
- 		console.log('home');
-		$.get("/comments/comment-count-index/" + loadCommentCountIndex, function(ret){
 
-			$('#home-page .comments').replaceWith(ret);
-
-		}, false);
-	}
 };
 
-// var loadTranslations = function() { 
-
-// 	translationUrlTitle = $("#comments h1").attr("data-url-title");
-// 	if(typeof states != "undefined") //check that the current page has a states object
-// 	{
-// 		if (states.page == 'article' || states.page == 'column' || states.page == 'blog') {
-// 			$.get("/ajax/translations/" + translationUrlTitle, function(ret) {
-		 	
-// 				$('.minutiae-block.translation-block').replaceWith(ret);
-
-// 			});
-// 		}
-// 	}
-
-// };
-
-// loadTranslations();
-loadCommentCount();
+ //post load parts of the page to bypass cloudflare caching
+AlaPostLoad.loadTranslations();
+AlaPostLoad.loadCommentCount();
 loadComments();
 
 
