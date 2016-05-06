@@ -3,7 +3,7 @@
 {if logged_in}
 
 	{if segment_4 == 'article'}
-
+		
 		{exp:comment:form entry_id="{segment_3}" channel="articles|legacy_articles" return="{site_url}/article/{segment_5}/comment-form" id="comment-form" class="comment-form"}
 
 	{if:elseif segment_4 == 'preview'}
@@ -71,6 +71,69 @@
 
 {/if}
 
+{if logged_out}
+
+	{if segment_4 == 'blog'}
+		{exp:ala_auth:login id="login_form" name="login_form" class="sign-in-form" return="ajax/comment-form/{segment_3}/{segment_4}/{segment_5}/{segment_6}" post_process="AlaAuth.alertMsg"}
+	{if:else}
+		{exp:ala_auth:login id="login_form" name="login_form" class="sign-in-form" return="ajax/comment-form/{segment_3}/{segment_4}/{segment_5}" post_process="AlaAuth.alertMsg"}
+	{/if}
+		<fieldset>
+
+	    	<legend class="center">Sign in to add your voice to the discussion.</legend>
+
+			<p>
+				<label for="login-name-here">Email (<a id="register" class="history-nav" data-tabto="forgot-password" href="/tools/register" target="_blank">Need an account?</a>)</label>
+				<input
+					type="text"
+					id="login-name-here"
+					name="username"
+					data-validate="onblur"
+					data-type="any"
+					data-isvalid=""
+					data-error="What’s your email address?"
+					data-tabmaster="true"
+					data-tabto="login_password"
+					required>
+			</p>
+			<p class="password-field">
+				<label for="login_password">Password (<a id="forgot-password" class="history-nav" data-tabto="comment-submit" href="/tools/forgot-password" target="_blank">Forgot it?</a>)</label>
+				<input
+					type="password"
+					id="login_password"
+					name="password"
+					required="required"
+					data-validate="onblur"
+					data-type="any"
+					data-isvalid=""
+					data-error="What’s your password?"
+					data-tabmaster="true"
+					data-tabto="register"
+					required>
+			</p>
+			<p class="screen-reader">
+				<label for="honeepot">Don't put anything here</label>
+				<input 
+					type="text" 
+					id="honeepot" 
+					name="honeepot"
+					data-tabmaster="false">
+			</p>
+			<p id="comment-submit-holder">
+				<input 
+					type="submit" 
+					id="comment-submit"
+					data-tabmaster="true"
+					class="button primary float-left" 
+					value="Submit">
+			</p>
+			
+		</fieldset>
+
+	{/exp:ala_auth:login}
+
+{/if}
+
 	<script type="text/javascript">
 
 	$.when(
@@ -103,14 +166,6 @@
 		}
 
 	</script> 
-{if logged_out}
-	<script type="text/javascript">
 
-		AlaAuth.loadTemplate (
-			states.commentsignin
-		);
-		
-	</script>
-{/if}	
 </div>
 

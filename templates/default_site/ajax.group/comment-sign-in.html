@@ -63,7 +63,78 @@
 
 {/if}
 
-	<script type="text/javascript">
+{if logged_in}<!-- account for hitting the back button after the comment-form -->
+	
+	{if segment_4 == 'article'}
+		
+		{exp:comment:form entry_id="{segment_3}" channel="articles|legacy_articles" return="{site_url}/article/{segment_5}/comment-form" id="comment-form" class="comment-form"}
+
+	{if:elseif segment_4 == 'preview'}
+
+		{exp:comment:form entry_id="{segment_3}" channel="articles|legacy_articles" return="{site_url}/preview/{segment_5}/comment-form" id="comment-form" class="comment-form"}
+
+	{if:elseif segment_4 == 'blog'}
+
+		{exp:comment:form entry_id="{segment_3}" channel="blog" return="{site_url}/blog/post/{segment_6}/comment-form" id="comment-form" class="comment-form"}
+
+	{if:elseif segment_4 == 'column'}
+
+		{exp:comment:form entry_id="{segment_3}" channel="columns" return="{site_url}/column/{segment_5}/comment-form" id="comment-form" class="comment-form"}
+
+	{/if}
+		<fieldset>
+    		<legend class="center">Discuss this article. We reserve the right to delete flames, trolls, and wood nymphs. <br>(The commenting engine will accept simple HTML tags.)</legend>
+			<label id="comment-content">
+			<textarea id="comment-content" aria-describedby="comment-content_error" class="logged-in" name="comment"
+				data-tabmaster="true"
+				data-tabto="comment-submit"
+				data-autoresize
+				data-validate="onblur"
+				data-type="any"
+				data-isvalid=""
+				data-error="aww, we know you have something to say"
+				required /></textarea>
+			</label>
+		</fieldset>
+		
+		<div class="commenter-info">
+
+		<p class="screen-reader">
+		  <label for="honeepot">Don't put anything here</label>
+		  <input type="text" name="honeepot" id="honeepot" />
+		</p>
+
+		<p>{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
+ 
+			{if segment_4 == 'article'}
+
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='article/{segment_5}/comment-sign-in'}">log out</a>
+
+			{if:elseif segment_4 == 'preview'}
+
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='preview/{segment_5}/comment-sign-in'}">log out</a>
+
+			{if:elseif segment_4 == 'blog'}
+
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='blog/post/{segment_6}/comment-sign-in'}">log out</a>
+
+			{if:elseif segment_4 == 'column'}
+
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='column/{segment_5}/comment-sign-in'}">log out</a>
+
+			{/if}
+		 
+		</p>
+	
+		<input id="comment-submit" data-tabto="edit-profile-link" type="submit" value="Submit" class="submit button primary">
+
+		</div>
+
+	{/exp:comment:form}
+
+{/if}
+
+<script type="text/javascript">
 
 	$.when(
 	    $.getScript("{site_url}/components/assets/js/form-stuff.js"),
@@ -93,17 +164,5 @@
 	}
 
 	</script>
-
-{if logged_in}<!-- account for hitting the back button after the comment-form -->
-
-	<script type="text/javascript">
-
-	AlaAuth.loadTemplate (
-		states.commentform
-	);
-	
-	</script>
-
-{/if}
 
 </div>
