@@ -1,5 +1,5 @@
 {exp:channel:entries channel="articles|legacy_articles|blog|columns" url_title="{segment_3}" limit="1" show_future_entries="yes" status="open|In Progress"}
-	{if article_translations OR member_group == "1" || member_group == "6" || member_group == "7" || member_group == "8"}
+	{if article_translations OR member_group == "1" OR member_group == "6" OR member_group == "7" OR member_group == "8"}
 	<div class="minutiae-block translation-block" data-loaded>
 
 		<h1>Translations.</h1>
@@ -12,6 +12,8 @@
 				<li><a href="/tools/translations/{url_title}">+ add a link</a></li>
 				{if:elseif channel_short_name == 'legacy_articles'}
 				<li><a href="/tools/legacy-translations/{url_title}">+ add a link</a></li>
+				{if:elseif channel_short_name == 'column'}
+				<li><a href="/tools/column-translations/{url_title}">+ add a link</a></li>
 				{/if}
 			{/if}
 		</ul>
