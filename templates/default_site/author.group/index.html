@@ -34,7 +34,7 @@
 
 				{if contributor_avatar}
 				<header class="author-header">
-				 
+
 					<img src="{exp:ce_img:pair src='{contributor_avatar}' width='120' height='120' crop='yes'}{made}{/exp:ce_img:pair}" alt="Image of {contributor_first_name} {contributor_last_name}"/>
 				{if:else}
 				<header class="author-header no-photo">
@@ -44,7 +44,8 @@
 
 					{if contributor_url OR contributor_twitter OR contributor_facebook OR contributor_dribbble OR contributor_github OR contributor_googleplus}
 					<ul class="fancy-links">
-						{if contributor_url}<li><a href="http://{exp:low_replace find='http://' replace=''}{url}{/exp:low_replace}" itemprop="url">{contributor_url}</a></li>{/if}
+						{if contributor_url}<li><a href="http://{exp:low_replace find='http://' replace=''}{contributor_url}{/exp:low_replace}" itemprop="url">{contributor_url}</a></li>
+						{if:elseif url != ''}<li><a href="http://{exp:low_replace find='http://' replace=''}{url}{/exp:low_replace}" itemprop="url">{url}</a></li>{/if}
 						{if contributor_twitter}<li><a class="twitter" href="http://twitter.com/{exp:low_replace find='@' replace=''}{contributor_twitter}{/exp:low_replace}" itemprop="url">{exp:low_replace find='@' replace=''}{contributor_twitter}{/exp:low_replace}</a></li>{/if}
 						{if contributor_facebook}<li><a class="facebook" href="http://facebook.com/{contributor_facebook}" itemprop="url">{contributor_facebook}</a></li>{/if}
 						{if contributor_dribbble}<li><a class="dribbble" href="http://dribbble.com/{contributor_dribbble}" itemprop="url">{contributor_dribbble}</a></li>{/if}
@@ -60,7 +61,7 @@
 				{parents channel="articles|legacy_articles|blog|columns|events" field="article_authors|legacy_article_authors|column_authors|blog_authors" limit="999" status="open" orderby="date" sort="desc"}
 				{if parents:count == "1"}
 					<h2 class="alt-small">Contributions by {contributor_first_name} {contributor_last_name}</h2>
-					
+
 					<ul class="entry-list">
 				{/if}
 						<li><h3 class="entry-title"><a href="{site_url}{if parents:channel_short_name == 'columns'}/column/{if:elseif parents:channel_short_name == 'blog'}/blog/post/{if:else}/article/{/if}{parents:url_title}">{parents:title}</a></h3>
@@ -84,7 +85,7 @@
 				{/if}
 
 				{/parents}
-				{if parents:count == parents:total_results}</ul>{/if}	
+				{if parents:count == parents:total_results}</ul>{/if}
 
 				{if screen_name == "Kevin Cornell"}
 				{embed="embeds/illustrator-articles-kevin"}
