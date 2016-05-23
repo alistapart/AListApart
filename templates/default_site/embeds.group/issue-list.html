@@ -19,14 +19,14 @@
 							 · <a class="comment-count" href="/article/{url_title}#comments">{comment_total} Comment{if comment_total > 1}s{/if}</a>
 							 {/if}
 						</p>
-						<p>{exp:strip_html}{article_deck}{/exp:strip_html}</p>
+						<p>{exp:xhtml:light}{exp:strip_html}{article_deck}{/exp:strip_html}{/exp:xhtml:light}</p>
 					</li>
 
 					{if no_children}<li><span style="padding: .2em; background: yellow;">This issue is missing its articles!</span> If you happen to know where they are, please <a href="/contact">let us know</a>.</li>{/if}
 					{/exp:playa:children}
 
 				</ul>
-				
+
 				{paginate}
 					<nav class="paginator" role="toolbar">
 						<ul>

@@ -8,7 +8,7 @@
 <article>
 <h2><a href="{site_url}/events/{url_title}">{title}</a></h2>
 
-<p>{exp:strip_html}{event_deck}{/exp:strip_html}</p>
+<p>{exp:xhtml:light}{exp:strip_html}{event_deck}{/exp:strip_html}{/exp:xhtml:light}</p>
 </article>
 
 {/exp:channel:entries}

@@ -10,7 +10,7 @@
 				{article_follow_up}
 				<article>
 					{entry}<h1><a href="{site_url}/{if channel_short_name=='blog'}{channel_short_name}/post/{url_title}{if:elseif channel_short_name=='articles'}article/{url_title}{if:elseif channel_short_name=='columns'}column/{url_title}{/if}" data-trackevent="Related sidebar: Follow up">{title}</a></h1>{/entry}
-					<p>{exp:strip_html}
+					<p>{exp:xhtml:light}{exp:strip_html}
 					{if note}
 						{note}
 					{if:else}
@@ -24,7 +24,7 @@
 							{/if}
 						{/entry}
 					{/if}
-					{/exp:strip_html}</p>
+					{/exp:strip_html}{/exp:xhtml:light}</p>
 				</article>
 				{/article_follow_up}
 				</section>
@@ -48,7 +48,7 @@
 						{/if}
 							<article>
 							<h1><a href="/article/{url_title}" data-trackevent="Related sidebar: Also in issue">{title}</a></h1>
-							<p>{exp:strip_html}{if article_mini_deck}<p>{article_mini_deck}</p>{if:elseif article_deck}<p>{exp:trunchtml chars="130" inline="..."}{article_deck}{/exp:trunchtml}</p>{/if}{/exp:strip_html}</p>
+							<p>{exp:xhtml:light}{exp:strip_html}{if article_mini_deck}<p>{article_mini_deck}</p>{if:elseif article_deck}<p>{exp:trunchtml chars="130" inline="..."}{article_deck}{/exp:trunchtml}</p>{/if}{/exp:strip_html}{/exp:xhtml:light}</p>
 							</article>
 						</section>
 				{/exp:playa:children}
@@ -69,7 +69,7 @@
 					{article_related_content status="open"}
 					<article>
 					<h2><a href="{site_url}/{if article_related_content:channel_short_name=='blog'}{article_related_content:channel_short_name}/post/{article_related_content:url_title}{if:elseif article_related_content:channel_short_name=='articles'}article/{article_related_content:url_title}{if:elseif article_related_content:channel_short_name=='columns'}column/{article_related_content:url_title}{/if}" data-trackevent="Related sidebar: Related by editor">{article_related_content:title}</a></h2>
-					<p>{exp:strip_html}
+					<p>{exp:xhtml:light}{exp:strip_html}
 					{if article_related_content:channel_short_name=='columns'}
 						{if article_related_content:column_mini_deck}{article_related_content:column_mini_deck}{if:elseif article_related_content:column_intro}{exp:trunchtml chars="130" inline="..."}{article_related_content:column_intro}{/exp:trunchtml}{/if}
 					{if:elseif article_related_content:channel_short_name=='blog'}
@@ -77,7 +77,7 @@
 					{if:elseif article_related_content:channel_short_name=='articles'}
 						{if article_related_content:article_mini_deck}{article_related_content:article_mini_deck}{if:elseif article_related_content:article_deck}{exp:trunchtml chars="130" inline="..."}{article_related_content:article_deck}{/exp:trunchtml}{/if}
 					{/if}
-					{/exp:strip_html}</p>
+					{/exp:strip_html}{/exp:xhtml:light}</p>
 					</article>
 					{/article_related_content}
 				</section>

@@ -10,7 +10,7 @@
 
 	{embed="embeds/article-author-styles" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
 
-	{exp:stash:set name="safe-description"}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{if column_mini_deck}{column_mini_deck}{if:elseif column_intro}{column_intro}{/if}{/exp:low_replace}{/exp:strip_html}{/exp:stash:set}
+	{exp:stash:set name="safe-description"}{exp:xhtml:light}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{if column_mini_deck}{column_mini_deck}{if:elseif column_intro}{column_intro}{/if}{/exp:low_replace}{/exp:strip_html}{/exp:xhtml:light}{/exp:stash:set}
 
 	<meta name="description" content="{exp:stash:get name="safe-description"}">
 	<meta name="author" content="{embed="embeds/article-authors-no-html" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}">
@@ -145,7 +145,7 @@
 					<h2><a class="fn" href="/author/{username}">{column_authors:title}</a></h2>
 
 					<div class="author-bio">{column_authors:bio}</div>
-					
+
 					{embed="embeds/author-entries" current-entry-id="{entry_id}" entry-id="{column_authors:entry_id}"}
 
 				</div>
@@ -168,9 +168,9 @@
 							{if comment_total > 0}<span>{comment_total} Reader Comment{if comment_total > 1}s{/if}</span>{/if}
 							{if comment_total == 0}<span>No Comments{if allow_comments} (yet){/if}<span>{/if}
 							</h1>
-							
-							{if comment_total > 0}<a href="/comments/{url_title}" class="load-comments-no-js buttonish">Load Comments</a>{/if} 
-							<span id="load-comments" data-url-title="{url_title}"></span> 
+
+							{if comment_total > 0}<a href="/comments/{url_title}" class="load-comments-no-js buttonish">Load Comments</a>{/if}
+							<span id="load-comments" data-url-title="{url_title}"></span>
 							<div class="comment-form-wrapper">
 							{if logged_out}
 								{comment-sign-in}

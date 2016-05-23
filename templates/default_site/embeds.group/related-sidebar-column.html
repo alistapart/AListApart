@@ -10,7 +10,7 @@
 						{if blog_follow_up_note OR article_follow_up_note OR legacy_article_follow_up_note OR column_follow_up_note}
 							<p>{exp:strip_html}{blog_follow_up_note}{article_follow_up_note}{legacy_article_follow_up_note}{column_follow_up_note}{/exp:strip_html}</p>
 						{if:else}
-							<p>{exp:strip_html}
+							<p>{exp:xhtml:light}{exp:strip_html}
 								{if channel_short_name=='blog'}
 									{if blog_mini_deck}{blog_mini_deck}{if:elseif blog_intro}{exp:trunchtml chars="130" inline="..."}{blog_intro}{/exp:trunchtml}{/if}
 								{if:elseif channel_short_name=='columns'}
@@ -18,7 +18,7 @@
 								{if:elseif channel_short_name=='articles' || channel_short_name=='legacy_articles'}
 									{if article_mini_deck || legacy_article_mini_deck}{article_mini_deck}{legacy_article_mini_deck}{if:elseif article_deck || legacy_article_deck}{exp:trunchtml chars="130" inline="..."}{article_deck}{legacy_article_deck}{/exp:trunchtml}{/if}
 								{/if}
-							{/exp:strip_html}</p>
+							{/exp:strip_html}{/exp:xhtml:light}</p>
 						{/if}
 					</article>
 					{/exp:playa:parents}

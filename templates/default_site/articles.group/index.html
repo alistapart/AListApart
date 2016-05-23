@@ -29,7 +29,7 @@
 					<h1 class="basic-title">The Articles</h1>
 
 					{exp:channel:entries channel="articles|legacy_articles|blog|columns|posts" limit="10" status="open" dynamic="on" show_future_entries="no" orderby="entry_date" sort="desc" sticky="no"}
-					
+
 					{if no_results}
 					{redirect="404"}
 					{/if}
@@ -61,7 +61,7 @@
 
 						</p>
 
-						<p>{exp:strip_html}{article_deck}{if legacy_article_deck}{legacy_article_deck}{/if}{blog_intro}{column_intro}{/exp:strip_html}</p>
+						<p>{exp:xhtml:light}{exp:strip_html}{article_deck}{if legacy_article_deck}{legacy_article_deck}{/if}{blog_intro}{column_intro}{/exp:strip_html}{/exp:xhtml:light}</p>
 
 					</li>
 
@@ -101,10 +101,10 @@
 					{even-more-from-ala}
 
 					{ad-bsa-text}
-					
+
 					<aside id="job-board-target" class="job-board"></aside>
 
-					
+
 
 				</div>
 

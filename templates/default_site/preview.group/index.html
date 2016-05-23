@@ -15,7 +15,7 @@
 
 	{embed="embeds/article-author-styles" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
 
-	{exp:stash:set name="safe-description"}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{if article_mini_deck}{article_mini_deck}{if:elseif article_deck}{article_deck}{/if}{/exp:low_replace}{/exp:strip_html}{/exp:stash:set}
+	{exp:stash:set name="safe-description"}{exp:xhtml:light}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{if article_mini_deck}{article_mini_deck}{if:elseif article_deck}{article_deck}{/if}{/exp:low_replace}{/exp:strip_html}{/exp:xhtml:light}{/exp:stash:set}
 
 	<link rel="canonical" href="{site_url}/{segment_1}/{url_title}"/>
 
@@ -109,7 +109,7 @@
 
 				</p>
 				{/if}
-			
+
 			</header>
 
 			{if article_series}
@@ -145,11 +145,11 @@
 					{/exp:hop_inject:injection}
 
 					{article_content}
-					
+
 					{article_content_overflow}
 
 					{/exp:hop_inject}
-				
+
 				{if:else}
 
 					{content-minutiae-blog}
@@ -173,13 +173,13 @@
 
 				</section>
 				{/if}
-				
+
 				{if article_hide_related_sidebar != "y"}
 				<!-- START RELATED SIDEBAR -->
 				{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|legacy_articles|blog|columns" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
 				{exp:stash:set name="current-entry-id"}{entry_id}{/exp:stash:set}
 				<aside id="related" class="sidebar var1 nocontent">
-				<i class="widget-branding ala"></i>				
+				<i class="widget-branding ala"></i>
 				<!-- if this article does not have a follow up show recent articles by this author -->
 				{if '{exp:stash:get name="has-parents"}' == ''}
 				{article_authors}
@@ -196,7 +196,7 @@
 							{if blog_follow_up_note OR article_follow_up_note OR legacy_article_follow_up_note OR column_follow_up_note}
 								<p>{exp:strip_html}{blog_follow_up_note}{article_follow_up_note}{legacy_article_follow_up_note}{column_follow_up_note}{/exp:strip_html}</p>
 							{if:else}
-								<p>{exp:strip_html}
+								<p>{exp:xhtml:light}{exp:strip_html}
 									{if channel_short_name=='blog'}
 										{if blog_mini_deck}{blog_mini_deck}{if:elseif blog_intro}{exp:trunchtml chars="130" inline="..."}{blog_intro}{/exp:trunchtml}{/if}
 									{if:elseif channel_short_name=='columns'}
@@ -204,7 +204,7 @@
 									{if:elseif channel_short_name=='articles' || channel_short_name=='legacy_articles'}
 										{if article_mini_deck || legacy_article_mini_deck}{article_mini_deck}{legacy_article_mini_deck}{if:elseif article_deck || legacy_article_deck}{exp:trunchtml chars="130" inline="..."}{article_deck}{legacy_article_deck}{/exp:trunchtml}{/if}
 									{/if}
-								{/exp:strip_html}</p>
+								{/exp:strip_html}{/exp:xhtml:light}</p>
 							{/if}
 						</article>
 						{/exp:playa:parents}
@@ -237,7 +237,7 @@
 					<h2><a class="fn" href="/author/{article_authors:url_title}">{article_authors:title}</a></h2>
 
 					<div class="author-bio">{article_authors:contributor_bio}</div>
-					
+
 					{embed="embeds/author-entries" current-entry-id="{entry_id}" entry-id="{article_authors:entry_id}"}
 
 				</div>
@@ -252,7 +252,7 @@
 
 			<div class="post-article">
 
-				<div class="column-holder unequal-columns"> 
+				<div class="column-holder unequal-columns">
 
 					<section id="comments" class="column comment-holder">
 
@@ -260,9 +260,9 @@
 							{if comment_total > 0}<span>{comment_total} Reader Comment{if comment_total > 1}s{/if}</span>{/if}
 							{if comment_total == 0}<span>No Comments{if allow_comments} (yet){/if}<span>{/if}
 							</h1>
-							
-							{if comment_total > 0}<a href="/comments/{url_title}" class="load-comments-no-js buttonish">Load Comments</a>{/if} 
-							<span id="load-comments" data-url-title="{url_title}"></span> 
+
+							{if comment_total > 0}<a href="/comments/{url_title}" class="load-comments-no-js buttonish">Load Comments</a>{/if}
+							<span id="load-comments" data-url-title="{url_title}"></span>
 
 							{if logged_out}
 								{comment-sign-in}
@@ -475,7 +475,7 @@
 					<h1>Notes</h1>
 
 					<ul class="the-footnotes">
-						
+
 						{legacy_article_footnotes}
 						<li id="note{row_count}"><a class="count" href="#ref{row_count}">{row_count}. </a>{cell_1}</li>
 						{/legacy_article_footnotes}
@@ -484,7 +484,7 @@
 
 				</section>
 				{/if}
-				
+
 				{if legacy_article_hide_related_sidebar != "y"}
 				<!-- START RELATED SIDEBAR -->
 				{exp:stash:set name="total-children"}{exp:playa:parents channel="issues" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
@@ -579,7 +579,7 @@
 					{embed="embeds/author-entries" current-entry-id="{entry_id}" entry-id="{legacy_article_authors:entry_id}"}
 
 				</div>
-				
+
 				{/legacy_article_authors}
 
 				</footer>
@@ -598,9 +598,9 @@
 							{if comment_total > 0}<span>{comment_total} Reader Comment{if comment_total > 1}s{/if}</span>{/if}
 							{if comment_total == 0}<span>No Comments{if allow_comments} (yet){/if}<span>{/if}
 							</h1>
-							
-							{if comment_total > 0}<a href="/comments/{url_title}" class="load-comments-no-js buttonish">Load Comments</a>{/if} 
-							<span id="load-comments" data-url-title="{url_title}"></span> 
+
+							{if comment_total > 0}<a href="/comments/{url_title}" class="load-comments-no-js buttonish">Load Comments</a>{/if}
+							<span id="load-comments" data-url-title="{url_title}"></span>
 							<div class="comment-form-wrapper">
 							{if logged_out}
 								{comment-sign-in}
