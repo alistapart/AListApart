@@ -31,7 +31,7 @@
 
 	<div role="main" class="main-wrapper">
 	{exp:stash:parse}
-	{exp:channel:entries channel="articles" entry_id="{stash:entry-id-1}|{stash:entry-id-2}" sort="desc" status="In Progress" dynamic="off" show_future_entries="no"}	
+	{exp:channel:entries channel="articles" entry_id="{stash:entry-id-1}|{stash:entry-id-2}" sort="desc" status="In Progress" dynamic="off" show_future_entries="no"}
 	{if count == 1}
 		{if article_responsive_illo}
 		<figure class="wide-hero">
@@ -79,11 +79,11 @@
 
 			</article>
 		</section>
-		
+
 	{/exp:channel:entries}
 	{/exp:stash:parse}
 
-		<div class="multi-column-display"> 
+		<div class="multi-column-display">
 
 			<h2 class="classy">More from A List Apart</h2>
 
@@ -95,7 +95,7 @@
 					{exp:channel:entries parse="inward" channel="blog|columns|articles|legacy_articles" limit="{stash:limit-entries}" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
 					{if {entry_id} != {stash:entry-id-1} && {entry_id} != {stash:entry-id-2}}
 					<article class="item-summary article">
-						
+
 						<h4 class="summary-title"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{title}</a></h4>
 
 						<p class="aside-author">
@@ -116,7 +116,7 @@
 						<p>{article_mini_deck}{legacy_article_mini_deck}{blog_mini_deck}{column_mini_deck}</p>
 
 						<footer>
-						{categories limit="1"}<a href="/topic/{category_url_title}">{category_name}</a>{/categories} · 
+						{categories limit="1"}<a href="/topic/{category_url_title}">{category_name}</a>{/categories} ·
 							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %j, %Y"}</a></time>
 						</footer>
 
@@ -128,7 +128,7 @@
 					{exp:channel:entries parse="inward" channel="blog|columns|articles|legacy_articles" limit="4" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
 					{if {entry_id} != {stash:entry-id-2}}
 					<article class="item-summary article">
-						
+
 						<h4 class="summary-title"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{title}</a></h4>
 
 						<p class="aside-author">
@@ -149,7 +149,7 @@
 						<p>{article_mini_deck}{legacy_article_mini_deck}{blog_mini_deck}{column_mini_deck}</p>
 
 						<footer>
-						{categories limit="1"}<a href="/topic/{category_url_title}">{category_name}</a>{/categories} · 
+						{categories limit="1"}<a href="/topic/{category_url_title}">{category_name}</a>{/categories} ·
 							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %j, %Y"}</a></time>
 						</footer>
 
@@ -163,18 +163,18 @@
 
 						<script src="/{assets_path}/js/libs/htmlParser.js"></script>
 						<script src="/{assets_path}/js/libs/postscribe.js"></script>
-						<aside id="deck-target" class="the-deck"></aside>
-						<aside id="job-board-target" class="job-board"></aside>
+						<aside id="deck-target" class="the-deck ad"></aside>
+						<aside id="job-board-target" class="job-board ad"></aside>
 						{ad-bsa-text}
 
 					</div>
 
 					{exp:channel:entries channel="blog|columns|articles|legacy_articles" offset="5" limit="6" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
-					
+
 					<article class="item-summary article">
 
 						<h4 class="summary-title"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{title}</a></h4>
-						
+
 						<p class="aside-author">
 							{if channel_short_name == 'blog'}
 							<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {blog_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{blog_authors:url_title}"><span itemprop="name">{blog_authors:title}</span></a>, {/blog_authors}</span>
@@ -193,7 +193,7 @@
 						<p>{article_mini_deck}{legacy_article_mini_deck}{blog_mini_deck}{column_mini_deck}</p>
 
 						<footer>
-						{categories limit="1"}<a href="/topic/{category_url_title}">{category_name}</a>{/categories} · 
+						{categories limit="1"}<a href="/topic/{category_url_title}">{category_name}</a>{/categories} ·
 						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%jT%H:%i:%s%Q"}"><a href="{if channel_short_name == "columns"}column/{if:elseif channel_short_name == "blog"}blog/post/{if:elseif channel_short_name == "events"}event/{if:else}article/{/if}{url_title}">{entry_date format="%F %j, %Y"}</a></time>
 
 						</footer>
@@ -201,11 +201,11 @@
 					</article>
 
 					{/exp:channel:entries}
-					
-				</div>	
+
+				</div>
 
 			</div>
-		
+
 			<aside class="ala-slug">A List Apart explores the design, development, and meaning of web content, with a special focus on web standards and best practices. Explore our <a href="/articles">articles</a> or find out more <a href="/about">about us</a>.</aside>
 
 		</div>
