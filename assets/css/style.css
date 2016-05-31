@@ -1468,7 +1468,7 @@ footer a.aside-author + time:before {
 .article-layout .author-header,
 .article-layout .blog-header,
 .article-layout .entry-header {
-  width: 960px;
+  width: 100%;
   max-width: 100%;
   margin-top: 72px;
   margin-bottom: 36px;
@@ -4600,6 +4600,12 @@ textarea:not([data-autoresize]) {
   color: #222;
 }
 
+.button.text-like {
+  background: none;
+  border: none;
+  color: #222;
+}
+
 /* comment sign-in submit specific -- spinner */
 #comment-submit-holder {
   position: relative;
@@ -5004,6 +5010,12 @@ img.commenter-avatar {
 .login-buttons li:hover, .login-buttons li a:hover {
   background-color: #efefef;
   text-decoration: none;
+}
+
+/* Comment form: Add translation
+-------------------------------------------------------------------------------*/
+.add-translation {
+  text-align: left;
 }
 
 /* Stuff I'm not sure where is used

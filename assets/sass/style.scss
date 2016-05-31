@@ -4786,6 +4786,12 @@ textarea:not([data-autoresize]) {
 	color: $text;
 }
 
+.button.text-like {
+  background: none;
+  border: none;
+  color: $text;
+}
+
 /* comment sign-in submit specific -- spinner */
 #comment-submit-holder {
 	position: relative;
@@ -5199,6 +5205,12 @@ img.commenter-avatar {
 .login-buttons li:hover, .login-buttons li a:hover {
 	background-color: $efefef;
 	text-decoration: none;
+}
+
+/* Comment form: Add translation
+-------------------------------------------------------------------------------*/
+.add-translation {
+	text-align: left;
 }
 
 /* Stuff I'm not sure where is used
