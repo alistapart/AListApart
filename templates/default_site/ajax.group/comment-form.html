@@ -41,27 +41,36 @@
 		  <input type="text" name="honeepot" id="honeepot" />
 		</p>
 
-		<p>{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
+		<p>
+			{embed="embeds/logged-in-user-mini-profile" logged_in_user_name="<?php echo $this->EE->session->userdata['username']; ?>"}
  
 			{if segment_4 == 'article'}
 
-				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='article/{segment_5}/comment-sign-in'}">log out</a>
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='article/{segment_5}/comment-sign-in'}">log out</a>&nbsp;
 
 			{if:elseif segment_4 == 'preview'}
 
-				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='preview/{segment_5}/comment-sign-in'}">log out</a>
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='preview/{segment_5}/comment-sign-in'}">log out</a>&nbsp;
 
 			{if:elseif segment_4 == 'blog'}
 
-				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='blog/post/{segment_6}/comment-sign-in'}">log out</a>
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='blog/post/{segment_6}/comment-sign-in'}">log out</a>&nbsp;
 
 			{if:elseif segment_4 == 'column'}
 
-				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='column/{segment_5}/comment-sign-in'}">log out</a>
+				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='column/{segment_5}/comment-sign-in'}">log out</a>&nbsp;
+
+			{/if}
+
+			{if member_group == "1" OR member_group == "7" OR member_group == "8"}
+
+				+&nbsp;<a href="/tools/translations/{segment_5}">add a translation</a>
 
 			{/if}
 		 
 		</p>
+
+		
 	
 		<input id="comment-submit" data-tabto="edit-profile-link" type="submit" value="Submit" class="submit button primary">
 
