@@ -1468,7 +1468,7 @@ footer a.aside-author + time:before {
 .article-layout .author-header,
 .article-layout .blog-header,
 .article-layout .entry-header {
-  width: 100%;
+  width: 960px;
   max-width: 100%;
   margin-top: 72px;
   margin-bottom: 36px;
