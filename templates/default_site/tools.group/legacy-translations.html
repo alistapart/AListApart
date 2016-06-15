@@ -36,7 +36,7 @@
 			
 			<h3 class="form-heading">Add a link</h3>
 
-			{exp:channel:form channel="legacy_articles" include_jquery="no" json="yes" safecracker_head="no" class="editForm" id="editForm{entry_id}" entry_id="{entry_id}" return="/article/URL_TITLE"}
+			{exp:channel:form channel="legacy_articles"}
 
 			<input type="hidden" name="legacy_article_translations[row_order][]" value="row_new_0" />
 			
@@ -68,8 +68,7 @@
 
 			{/exp:channel:form}
 
-			{safecracker-js}
-
+	 
 			{if no_results} <p><b>Error</b>: You must request a valid article.</p> {/if}
 
 			{/exp:channel:entries}
