@@ -1,51 +1,34 @@
 <!-- javascript starts here -->
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
 <script>
 // remap jQuery to $
-
-
-
-
-// pre-submit callback 
-function showRequest(formData, jqForm, options) { 
-   //alert('test');
-	return true;
-	
-};
- 
-// function showResponse(responseText, statusText, xhr, $form)  {
-// alert('showResponse');
-//     location.reload();
-// };
+(function($){})(window.jQuery);
 
 // ASSIGN FUNCTIONS ON DOMREADY
 $(document).ready(function (){
 
-    // $('.editForm').ajaxForm({
-    //     target:         '#ajaxResponse',
-    //     beforeSubmit:   showRequest,
-    //     //success:        showResponse,
-    //     dataType:       'json'
-    // });
-
-    $('.editForm').on('submit', function(event){
-        event.preventDefault();
-        var form = $(this);
-        var post_url = form.attr('action');
-        var post_data = form.serialize();
-        $("#output").load(location.href + " #output");
-        $.ajax({
-            type: 'POST',
-            url: post_url, 
-            data: post_data,
-            dataType: 'json',
-            encode: true
-        })
-
-    });    
+	$('.editForm').ajaxForm({
+		target:			'#ajaxResponse',
+		beforeSubmit:	showRequest,
+		success:		showResponse,
+		dataType:		'json'
+	});
     
 });
+
+// pre-submit callback 
+function showRequest(formData, jqForm, options) { 
+   // alert();
+	return true;
+	
+};
+ 
+function showResponse(responseText, statusText, xhr, $form)  {
+
+    location.reload();
+
+};
 
 
 /*!

@@ -30,13 +30,13 @@
 			
 			{if article_translations:total_rows > 0}<h3>Translations</h3>
 
-			<p id="output">{article_translations}{row_count}. {cell_1}, {cell_2}<br>{/article_translations}</p>{/if}
+			<p>{article_translations}{row_count}. {cell_1}, {cell_2}<br>{/article_translations}</p>{/if}
 
 			<p><a href="/article/{segment_3}">Return to the Article</a></p>
 			
 			<h3 class="form-heading">Add a link</h3>
 
-			{exp:channel:form channel="articles" include_jquery="no" json="yes" datepicker="no" safecracker_head="no" class="editForm" id="editForm{entry_id}" entry_id="{entry_id}" return="/article/URL_TITLE"}
+			{exp:channel:form channel="articles" include_jquery="no" json="yes" safecracker_head="no" class="editForm" id="editForm{entry_id}" entry_id="{entry_id}" return="/article/URL_TITLE"}
 
 			<input type="hidden" name="article_translations[row_order][]" value="row_new_0" />
 			
@@ -68,31 +68,7 @@
 
 			{/exp:channel:form}
 
-			<script>
-				$(document).ready(function (){
-				    $('.editForm').on('submit', function(event){
-				        event.preventDefault();
-				        var form = $(this);
-				        var post_url = form.attr('action');
-				        var post_data = form.serialize();
-				        $("#output").load(location.href + " #output");
-				        setTimeout(function(){ 
-				        	form[0].reset();
-				        }, 1000);
-				        $.ajax({
-				            type: 'POST',
-				            url: post_url, 
-				            data: post_data
-				        })
-				        .done(function() {
-					      $("#ajaxResponse").text("Login successful");
-					    })
-					    .fail(function() {
-					      $("#ajaxResponse").text("Login failed");
-					    });
-				    });    
-				});
-			</script>
+			{safecracker-js}
 
 			{if no_results} <p><b>Error</b>: You must request a valid article.</p> {/if}
 

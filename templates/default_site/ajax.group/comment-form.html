@@ -61,28 +61,17 @@
 				<a id="log-out-link" data-tabmaster="false" href="{exp:freemember:logout_url return='column/{segment_5}/comment-sign-in'}">log out</a>&nbsp;
 
 			{/if}
-			<?php 
-				$entry_id = '{segment_3}';
-				
-				$query = $this->EE->db->query("SELECT channel_id FROM exp_channel_data WHERE entry_id = '$entry_id'");
-		        if ($query->num_rows() > 0) {
-		            $channel_id = $query->row('channel_id');
-		        }
-		        $query = $this->EE->db->query("SELECT channel_name FROM exp_channels WHERE channel_id = '$channel_id'");
-		        if ($query->num_rows() > 0) {
-		            $channel_name = $query->row('channel_name');
-		        }
-			?>
+
 			{if member_group == "1" OR member_group == "7" OR member_group == "8"}
-				<?php if( $channel_name == 'articles' ) : ?>
+
 				+&nbsp;<a href="/tools/translations/{segment_5}">add a translation</a>
-				<?php elseif( $channel_name == 'legacy_articles' ) : ?>
-				+&nbsp;<a href="/tools/legacy-translations/{segment_5}">add a translation</a>
-				<?php endif; ?>
+
 			{/if}
 		 
 		</p>
 
+		
+	
 		<input id="comment-submit" data-tabto="edit-profile-link" type="submit" value="Submit" class="submit button primary">
 
 		</div>
