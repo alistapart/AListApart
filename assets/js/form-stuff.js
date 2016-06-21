@@ -162,7 +162,7 @@ function inputValidation(which, requiredState, valType, value) {
 * shows either one or the other
 */
 function EEValidateSync() {
-	$('.ajax-container form').on('submit', function() {
+	$('.ajax-container form, .editForm').on('submit', function() {
 		$(this).find(':required').each(function() {
 			if ($.trim($(this).val()) != '') {
 				$(this).parent().find('.error-message').addClass('none');
