@@ -4800,8 +4800,9 @@ textarea:not([data-autoresize]) {
 	margin-bottom: 0px;
 }
 
-.js-spinner {
-
+#spinner {
+	position: relative;
+	display: inline-block;
 }
 
 .main-content .form-heading {

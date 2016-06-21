@@ -1065,7 +1065,7 @@ aside.column.more-content .item-summary {
   .wide-hero.responsive-hero {
     width: 1400px;
     max-width: 1400px;
-    margin: -12px auto 0 auto;
+    margin: -12px -200px 0 -200px;
   }
 }
 
@@ -4612,6 +4612,11 @@ textarea:not([data-autoresize]) {
   float: left;
   margin-right: 12px;
   margin-bottom: 0px;
+}
+
+#spinner {
+  position: relative;
+  display: inline-block;
 }
 
 .main-content .form-heading {
