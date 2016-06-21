@@ -5023,6 +5023,10 @@ img.commenter-avatar {
   text-align: left;
 }
 
+#translation-rows {
+  margin-bottom: 24px;
+}
+
 /* Stuff I'm not sure where is used
 -------------------------------------------------------------------------------*/
 /*.article-comments #login-buttons,

@@ -28,9 +28,17 @@
 
 			<h2>Article title: {title}</h2>
 			
-			{if legacy_article_translations:total_rows > 0}<h3>Translations</h3>
+			{if legacy_article_translations:total_rows > 0}<h3>Translations</h3>{/if}
+			
+			<div id="translation-rows">
 
-			<p id="output">{legacy_article_translations}{row_count}. {cell_1}, {cell_2}<br>{/legacy_article_translations}</p>{/if}
+				{if legacy_article_translations:total_rows > 0}
+
+				<p id="output">{legacy_article_translations}{row_count}. {cell_1}, {cell_2}<br>{/legacy_article_translations}</p>
+
+				{/if}
+			
+			</div>
 
 			<p><a href="/article/{segment_3}">Return to the Article</a></p>
 			
@@ -122,7 +130,7 @@
 				            url: post_url, 
 				            data: post_data
 				        }).done(function(event) {
-				        	$("#output").load(location.href + " #output");
+				        	$("#translation-rows").load(location.href + " #output");
 				        	form[0].reset();
 				        	spinnerStop();
 					    });
