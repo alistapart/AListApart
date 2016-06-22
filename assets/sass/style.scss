@@ -5214,9 +5214,17 @@ img.commenter-avatar {
 	text-align: left;
 }
 
-#translation-rows {
+#translations {
 	margin-bottom: 24px;
 }
+
+#translations h3 {
+	font-family: $sans-serif;
+	font-weight: bold;
+	font-style: normal;
+	text-transform: uppercase;
+	margin-bottom:3px;
+} 
 
 /* Stuff I'm not sure where is used
 -------------------------------------------------------------------------------*/

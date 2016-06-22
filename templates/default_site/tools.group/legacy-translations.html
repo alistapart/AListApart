@@ -27,17 +27,17 @@
 			{exp:channel:entries channel="legacy_articles" require_entry="yes" limit="1" url_title="{segment_3}" disable="categories|category_fields|member_data"}
 
 			<h2>Article title: {title}</h2>
-			
-			{if legacy_article_translations:total_rows > 0}<h3>Translations</h3>{/if}
-			
-			<div id="translation-rows">
+
+			<div id="translations">
 
 				{if legacy_article_translations:total_rows > 0}
 
-				<p id="output">{legacy_article_translations}{row_count}. {cell_1}, {cell_2}<br>{/legacy_article_translations}</p>
+				<h3>Translations</h3>
+
+				<p>{legacy_article_translations}{row_count}. {cell_1}, {cell_2}<br>{/legacy_article_translations}</p>
 
 				{/if}
-			
+				
 			</div>
 
 			<p><a href="/article/{segment_3}">Return to the Article</a></p>
@@ -130,7 +130,9 @@
 				            url: post_url, 
 				            data: post_data
 				        }).done(function(event) {
-				        	$("#translation-rows").load(location.href + " #output");
+				        	$.get(location.href, function(e) {
+							    $('#translations').html($(e).find('#translations h3, #translations p'));
+							}, 'html');
 				        	form[0].reset();
 				        	spinnerStop();
 					    });
