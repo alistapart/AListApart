@@ -641,8 +641,8 @@ var AlaPostLoad = {
 };
 
  //post load parts of the page to bypass cloudflare caching
-//AlaPostLoad.loadTranslations();
-//AlaPostLoad.loadCommentCount();
+// AlaPostLoad.loadTranslations();
+// AlaPostLoad.loadCommentCount();
 loadComments();
 
 
