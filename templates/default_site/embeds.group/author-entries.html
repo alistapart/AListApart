@@ -3,13 +3,13 @@
 						{parents channel="articles|legacy_articles|blog|columns" field="article_authors|legacy_article_authors|column_authors|blog_authors" limit="4" status="open" entry_id="not {embed:current-entry-id}"}
 						{if parents:count == "1"}
 							<h3>More from this Author</h3>
-							
+
 							<ul class="author-more">
 						{/if}
-								<li><a href="{if parents:channel_short_name == 'columns'}/column/{if:elseif parents:channel_short_name == 'blog'}/blog/post/{if:else}{/if}{parents:url_title}">{parents:title}</a></li>
+								<li><a href="/{if parents:channel_short_name == 'columns'}column{if:elseif parents:channel_short_name == 'blog'}blog/post{if:elseif parents:channel_short_name == 'articles' OR parents:channel_short_name == 'legacy_articles'}article{/if}/{parents:url_title}">{parents:title}</a></li>
 
 						{/parents}
-						{if parents:count == parents:total_results}</ul>{/if}			
+						{if parents:count == parents:total_results}</ul>{/if}
 
 						{/exp:channel:entries}
 
