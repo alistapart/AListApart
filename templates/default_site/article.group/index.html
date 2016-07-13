@@ -346,16 +346,18 @@
 
 				{if legacy_article_responsive_illo != ""}
 
-				<figure class="wide-hero responsive-hero">
+				<figure itemscope itemtype="http://schema.org/ImageObject" class="wide-hero responsive-hero">
+
 					<picture>
 
-						{legacy_article_responsive_illo}
-						<source srcset="{exp:ce_img:pair src="{cell_1}" width="{cell_2}" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" {if cell_2 != ""}media="(min-width: {cell_2}px)"{/if}>
+						{legacy_article_responsive_illo sort="desc"}
+						<source  srcset="{exp:ce_img:pair src='{cell_1}' width='{if cell_2 != ''}{cell_2}{/if}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src='{cell_1}' width='2577' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 2x" {if cell_2 != ''}media="(max-width: {cell_2}px)"{/if}>
 						{/legacy_article_responsive_illo}
-
-						{legacy_article_illustration}<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt="{legacy_article_illo_description}" itemprop="image">{/legacy_article_illustration}
-
-					</picture>
+						{legacy_article_responsive_illo sort="desc" limit='1'}
+						<img src="{exp:ce_img:pair src='{cell_1}' width='{cell_2}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" srcset="{exp:ce_img:pair src='{cell_1}' width='{cell_2}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" alt="">
+						{/legacy_article_responsive_illo}
+						
+ 					</picture>
 
 					{exp:stash:get name="issue-number"}
 					{exp:stash:get name="illustrator-credit"}
