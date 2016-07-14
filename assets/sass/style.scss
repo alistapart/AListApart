@@ -473,10 +473,8 @@ ul.inline-items li {
 	margin-top: 0;
 }
 
-.home-page .main-wrapper,
 .issue-page .main-wrapper {
-	// padding-top: 0;
-	/* padding-bottom: 378px; */
+	padding-top: 0;
 }
 
 .home-page .main-wrapper.no-illo {
@@ -1169,9 +1167,12 @@ aside.column.more-content .item-summary {
 	overflow: hidden;
 }
 
-.home-page:not(.alt-layout) .wide-hero,
-.issue-page .wide-hero {
+.home-page:not(.alt-layout) .wide-hero {
 	padding-top: 0px;
+}
+
+.issue-page .wide-hero {
+	padding-top: 120px;
 }
 
 .home-page.alt-layout .wide-hero {
@@ -1207,6 +1208,16 @@ aside.column.more-content .item-summary {
 	text-align: center;
 	font-style: normal;
 
+}
+
+.no-illo .issue-number {
+	 font-size: 20px;
+	 color: $accent-primary;
+}
+
+.no-illo .issue-number:after {
+	content: " · ";
+	font-size: 20px;
 }
 
 .entry-header .illustrator-credit,
