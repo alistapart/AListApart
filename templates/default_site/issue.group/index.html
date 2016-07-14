@@ -33,17 +33,17 @@
 	</figure>
 	{/issue_illustration}
 
-	{if issue_illustration == ""}
-	<a class="issue-number" href="/issue/{issue_number}"><span class="badge">Issue №</span> {issue_number}</a>
-	{/if}
-
 	<div role="main" class="main-wrapper">
 
 		<div class="col-holder">
 
 			<section class="main-content">
 
-			<header class="issue-header {if issue_illustration == ""}no-illo{/if}">
+			<header class="issue-header {if issue_illustration == ''}no-illo{/if}">
+				
+				{if issue_illustration == ""}
+				<span class="issue-number">Issue № {issue_number}</span>
+				{/if}
 
 				<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%M %d, %Y"}</time>
 
@@ -86,9 +86,9 @@
 
 			{/exp:playa:children}
 
-			{/exp:channel:entries}
-
 		</section>
+
+		{/exp:channel:entries}
 
 		<div class="multi-column-display">
 
@@ -190,6 +190,8 @@
 		-->
 
 	</div>
+
+</div>
 
 {sponsor-top}
 
