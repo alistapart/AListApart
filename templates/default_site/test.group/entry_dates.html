@@ -1,0 +1,173 @@
+<?php
+
+/* 
+Title:  
+Purpose - Change old article dates
+Author - Michelle Kondou
+*/
+
+
+$this->EE =& get_instance();
+
+ee()->load->dbforge();
+
+//----------------------------------------
+// Variables
+//----------------------------------------
+$issues = []; //save data for printing
+$articles = []; //save data for printing
+
+//----------------------------------------
+// Create database table
+//----------------------------------------
+
+$old_issues = array(
+	'issue_id'		=> array('type' => 'INT', 			'unsigned' => TRUE,		'default' => '0'),
+	'article_id'	=> array('type' => 'INT', 			'unsigned' => TRUE,		'default' => '0'),
+	'issue_title'	=> array('type' => 'VARCHAR', 		'constraint' => 250,	'default' => ''),
+	'article_title'	=> array('type' => 'VARCHAR', 		'constraint' => 250,	'default' => ''),
+	'issue_date'	=> array('type' => 'INT', 			'unsigned' => TRUE,		'default' => '0'),
+	'article_date'	=> array('type' => 'INT', 			'unsigned' => TRUE,		'default' => '0'),
+	'issue_year'	=> array('type' => 'CHAR', 			'constraint' => 4, 		'default' => ''),
+	'issue_month'	=> array('type' => 'CHAR', 			'constraint' => 2, 		'default' => ''),
+	'issue_day'		=> array('type' => 'CHAR', 			'constraint' => 3, 		'default' => ''),
+	'article_year'	=> array('type' => 'CHAR', 			'constraint' => 4, 		'default' => ''),
+	'article_month'	=> array('type' => 'CHAR', 			'constraint' => 2, 		'default' => ''),
+	'article_day'	=> array('type' => 'CHAR', 			'constraint' => 3, 		'default' => '')
+);
+
+// ee()->dbforge->add_field($old_issues);
+// ee()->dbforge->add_key('article_id', TRUE);
+// ee()->dbforge->create_table('aa_old_issues', TRUE);
+
+$old_issue_articles = array(
+	'article_id'		=> array('type' => 'INT', 			'unsigned' => TRUE,		'default' => '0'),
+	'issue_id'			=> array('type' => 'INT', 			'unsigned' => TRUE,		'default' => '0'),
+	'article_title'		=> array('type' => 'VARCHAR', 		'constraint' => 250,	'default' => ''),
+	'article_date'		=> array('type' => 'INT', 			'unsigned' => TRUE,		'default' => '0'),
+	'article_year'		=> array('type' => 'CHAR', 			'constraint' => 4, 		'default' => ''),
+	'article_month'		=> array('type' => 'CHAR', 			'constraint' => 2, 		'default' => ''),
+	'article_day'		=> array('type' => 'CHAR', 			'constraint' => 3, 		'default' => '')
+);
+
+// ee()->dbforge->add_field($old_issue_articles);
+// ee()->dbforge->add_key('article_id', TRUE);
+// ee()->dbforge->create_table('aa_old_issue_article_data', TRUE);
+
+//----------------------------------------
+// Query, insert and update data
+//----------------------------------------
+
+$query = ee()->db->query("
+
+	SELECT pr.parent_entry_id, pr.child_entry_id, ct.title, ct.entry_date, ct.year, ct.month, ct.day  
+	FROM exp_playa_relationships pr
+	LEFT JOIN exp_channel_titles ct
+	ON  pr.parent_entry_id=ct.entry_id
+	WHERE ct.channel_id = '3' AND pr.parent_entry_id < 14568 AND ct.status = 'open'
+	ORDER BY pr.parent_entry_id ASC
+
+");
+
+if ($query->num_rows() > 0) {
+	
+	$row = $query->row('parent_entry_id'); 
+
+	foreach ($query->result_array() as $row)
+	{
+		
+		$data = array(
+			'article_id' 	=> $row['child_entry_id'],
+			'issue_id'		=> $row['parent_entry_id'],
+			'issue_title'	=> $row['title'],
+			'issue_date' 	=> $row['entry_date'],
+			'issue_year' 	=> $row['year'],
+			'issue_month' 	=> $row['month'],
+			'issue_day' 	=> $row['day']
+		);
+
+		//$update = ee()->db->insert('aa_old_issues', $data);
+ 		
+		array_push($issues, $data);
+	}
+
+}
+
+$query = ee()->db->query("
+
+	SELECT pr.parent_entry_id, pr.child_entry_id, ct.title, ct.entry_date, ct.year, ct.month, ct.day,  ct.comment_expiration_date  
+	FROM exp_playa_relationships pr
+	LEFT JOIN exp_channel_titles ct
+	ON  pr.child_entry_id = ct.entry_id
+	WHERE ct.channel_id = '2' AND pr.parent_entry_id < 14568 AND ct.status = 'open'
+	ORDER BY pr.child_entry_id ASC
+
+");
+
+if ($query->num_rows() > 0) {
+	
+	$row = $query->row('child_entry_id');
+
+	foreach ($query->result_array() as $row)
+	{
+		
+		$data = array(
+			'article_id' 	=> $row['child_entry_id'],
+			'issue_id'		=> $row['parent_entry_id'],
+			'article_title'	=> $row['title'],
+			'article_date' 	=> $row['entry_date'],
+			'article_year' 	=> $row['year'],
+			'article_month' => $row['month'],
+			'article_day' 	=> $row['day']
+		);
+
+		//$update = ee()->db->insert('aa_old_issue_article_data', $data);
+ 
+		array_push($articles, $data);
+	}
+}
+
+$update = "
+	UPDATE exp_aa_old_issues aa  
+	LEFT JOIN exp_aa_old_issue_article_data bb 
+	ON bb.article_id = aa.article_id 
+	SET aa.article_title = bb.article_title, aa.article_date = bb.article_date, aa.article_year = bb.article_year, aa.article_month = bb.article_month, aa.article_day = bb.article_day
+	WHERE bb.article_id = aa.article_id 
+";
+
+//$this->EE->db->query($update);
+
+$update = "
+	UPDATE exp_channel_titles ct 
+	LEFT JOIN exp_aa_old_issues oi 
+	ON ct.entry_id = oi.article_id 
+	SET ct.entry_date = oi.issue_date, ct.year = oi.issue_year, ct.month = oi.issue_month, ct.day = oi.issue_day
+	WHERE ct.entry_id = oi.article_id
+";
+
+//$this->EE->db->query($update);
+
+$update = "
+	UPDATE exp_aa_old_issues aa  
+	LEFT JOIN exp_channel_titles bb 
+	ON bb.entry_id = aa.article_id 
+	SET aa.article_date = bb.entry_date, aa.article_year = bb.year, aa.article_month = bb.month, aa.article_day = bb.day
+	WHERE bb.entry_id = aa.article_id 
+";
+
+//$this->EE->db->query($update);
+
+echo ee()->db->affected_rows()." rows were updated.";
+
+
+echo '<pre>';
+print_r($issues);
+echo '</pre>';
+
+echo '<pre>';
+print_r($articles);
+echo '</pre>';
+
+/* @end */
+
+?>
