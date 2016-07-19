@@ -4,3 +4,4 @@ robots.txt
 #node_modules
 node_modules/
 node_modules/*
+templates/default_site/test.group/index.html
