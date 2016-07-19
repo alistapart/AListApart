@@ -22,7 +22,7 @@
 	{if channel_short_name == "articles"}
     <item>
       <title><![CDATA[{exp:strip_html}{title}{/exp:strip_html}]]></title>
-      <author>by {article_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{article_authors:url_title}">{article_authors:title}</a>, {/article_authors}</author>
+      <author>by {article_authors backspace="2"}{article_authors:title}, {/article_authors}</author>
       <link>http://alistapart.com/article/{url_title}</link>
       <guid>http://alistapart.com/article/{url_title}</guid>
       <description><![CDATA[{if article_editors_note}<p><b>A note from the editors:</b> {article_editors_note}</p>{/if}{article_content}{if article_footnotes}<h3>Footnotes</h3><ul class="the-footnotes">{article_footnotes}<li id="note{row_count}">{row_count}. {cell_1}</li>{/article_footnotes}</ul>{/if}]]></description>
