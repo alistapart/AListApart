@@ -22,7 +22,6 @@
 	{if channel_short_name == "articles"}
     <item>
       <title><![CDATA[{exp:strip_html}{title}{/exp:strip_html}]]></title>
-      <author>by {article_authors backspace="2"}{article_authors:title}, {/article_authors}</author>
       <link>http://alistapart.com/article/{url_title}</link>
       <guid>http://alistapart.com/article/{url_title}</guid>
       <description><![CDATA[{if article_editors_note}<p><b>A note from the editors:</b> {article_editors_note}</p>{/if}{article_content}{if article_footnotes}<h3>Footnotes</h3><ul class="the-footnotes">{article_footnotes}<li id="note{row_count}">{row_count}. {cell_1}</li>{/article_footnotes}</ul>{/if}]]></description>
@@ -32,7 +31,6 @@
   {if:elseif channel_short_name == "legacy_articles"}
     <item>
         <title><![CDATA[{exp:strip_html}{title}{/exp:strip_html}]]></title>
-        <author>by {legacy_article_authors backspace="2"}{legacy_article_authors:title}, {/legacy_article_authors}</author>
         <link>http://alistapart.com/article/{url_title}</link>
         <guid>http://alistapart.com/article/{url_title}</guid>
         <description><![CDATA[{if legacy_article_editors_note}<p><b>A note from the editors:</b> {legacy_article_editors_note}</p>{/if}{legacy_article_content}{if legacy_article_footnotes}<h3>Footnotes</h3><ul class="the-footnotes">{legacy_article_footnotes}<li id="note{row_count}">{row_count}. {cell_1}</li>{/legacy_article_footnotes}</ul>{/if}]]></description>
