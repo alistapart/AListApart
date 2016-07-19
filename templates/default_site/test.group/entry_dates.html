@@ -36,9 +36,9 @@ $old_issues = array(
 	'article_day'	=> array('type' => 'CHAR', 			'constraint' => 3, 		'default' => '')
 );
 
-// ee()->dbforge->add_field($old_issues);
-// ee()->dbforge->add_key('article_id', TRUE);
-// ee()->dbforge->create_table('aa_old_issues', TRUE);
+ee()->dbforge->add_field($old_issues);
+ee()->dbforge->add_key('article_id', TRUE);
+ee()->dbforge->create_table('aa_old_issues', TRUE);
 
 $old_issue_articles = array(
 	'article_id'		=> array('type' => 'INT', 			'unsigned' => TRUE,		'default' => '0'),
@@ -50,9 +50,9 @@ $old_issue_articles = array(
 	'article_day'		=> array('type' => 'CHAR', 			'constraint' => 3, 		'default' => '')
 );
 
-// ee()->dbforge->add_field($old_issue_articles);
-// ee()->dbforge->add_key('article_id', TRUE);
-// ee()->dbforge->create_table('aa_old_issue_article_data', TRUE);
+ee()->dbforge->add_field($old_issue_articles);
+ee()->dbforge->add_key('article_id', TRUE);
+ee()->dbforge->create_table('aa_old_issue_article_data', TRUE);
 
 //----------------------------------------
 // Query, insert and update data
