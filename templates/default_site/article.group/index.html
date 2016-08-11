@@ -72,6 +72,7 @@
 				<meta itemprop="url" content="{cell_1}{url}{/cell_1}">
         <meta itemprop="width" content="{cell_1}{width}{/cell_1}">
         <meta itemprop="height" content="{cell_1}{height}{/cell_1}">
+        <meta itemprop="description" content="{if article_illo_description}{article_illo_description}{if:else}Illustration for the {title} article {/if}">
 					<picture>
 						{if "{cell_1}{width}{/cell_1}" > "{cell_1}{height}{/cell_1}"}
 						<source srcset="{exp:ce_img:pair src='{cell_1}' width='960' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src='{cell_1}' width='1920' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
