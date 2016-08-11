@@ -26,17 +26,17 @@
 	<meta name="twitter:site" content="@alistapart">
 	<meta name="twitter:title" content="{title}">
 	<meta name="twitter:description" content="{exp:stash:get name="safe-description"}">
-	<meta name="twitter:url" content="http://alistapart.com/article/{url_title}">
+	<meta name="twitter:url" content="{site_url}/article/{url_title}">
 
 	<meta property="og:title" content="{title}" />
 	<meta property="og:description" content="{exp:stash:get name="safe-description"}" />
-	<meta property="og:url" content="http://alistapart.com/article/{url_title}" />
+	<meta property="og:url" content="{site_url}/article/{url_title}" />
 	<meta property="og:image" content="{article_responsive_illo}{cell_1}{url}{/cell_1}{/article_responsive_illo}" />
 
 </head>
 
-<body class="printable {if comment_total > 0}comments-exist{/if}" itemscope itemtype="http://schema.org/WebPage">
-
+<body class="printable {if comment_total > 0}comments-exist{/if}" itemscope itemtype="http://schema.org/Article">
+<link itemprop="mainEntityOfPage" href="{site_url}/article/{url_title}" />
 {primary-logo}
 
 {global-nav}
@@ -45,7 +45,7 @@
 
 	<div role="main" class="main-wrapper">
 
-		<article class="article-layout hentry" itemscope itemtype="http://www.schema.org/Article">
+		<article class="article-layout hentry">
 
 			<header class="entry-header">
 
