@@ -58,7 +58,7 @@
 					{embed="embeds/article-illustrator-link" entry_id="{article_illustrator:entry_id}"}
 					{/article_illustrator}
 					{if:else}
-					<a href="/author/kcornell" itemprop="url"><span itemprop="name">Kevin Cornell</span></a>
+					<a href="/author/kcornell" itemprop="sameAs"><span itemprop="name">Kevin Cornell</span></a>
 					{/if}
 				</p>
 				{/if}
@@ -92,7 +92,7 @@
 				<p class="entry-details">
 					<meta itemprop="description" content="{exp:strip_html}{article_mini_deck}{/exp:strip_html}"/>
 
-					<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {article_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{article_authors:url_title}"><span itemprop="name">{article_authors:title}</span></a>, {/article_authors}</span>
+					<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {article_authors backspace="2"}<a itemprop="sameAs" class="author" rel="author" href="/author/{article_authors:url_title}"><span itemprop="name">{article_authors:title}</span></a>, {/article_authors}</span>
 
 					<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}" itemprop="datePublished">{entry_date format="%F %d, %Y"}</time>
 					<meta itemprop="dateModified" content="{edit_date format="%Y-%m-%dT%H:%i:%s%Q"}">
@@ -344,7 +344,7 @@
 					{embed="embeds/article-illustrator-link" entry_id="{legacy_article_illustrator:entry_id}"}
 					{/legacy_article_illustrator}
 					{if:else}
-					<a href="/author/kcornell" itemprop="url"><span itemprop="name">Kevin Cornell</span></a>
+					<a href="/author/kcornell" itemprop="sameAs"><span itemprop="name">Kevin Cornell</span></a>
 					{/if}
 				</p>
 				{/if}
@@ -414,7 +414,7 @@
 				<p class="entry-details">
 					<meta itemprop="description" content="{exp:strip_html}{legacy_article_mini_deck}{/exp:strip_html}"/>
 
-					<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {legacy_article_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{legacy_article_authors:url_title}"><span itemprop="name">{legacy_article_authors:title}</span></a>, {/legacy_article_authors}</span>
+					<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {legacy_article_authors backspace="2"}<a itemprop="sameAs" class="author" rel="author" href="/author/{legacy_article_authors:url_title}"><span itemprop="name">{legacy_article_authors:title}</span></a>, {/legacy_article_authors}</span>
 
 					{exp:playa:parents status="open|In Progress"}<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}" itemprop="datePublished">{entry_date format="%F %d, %Y"}</time>
 					<meta itemprop="dateModified" content="{edit_date format="%Y-%m-%dT%H:%i:%s%Q"}">{/exp:playa:parents}
