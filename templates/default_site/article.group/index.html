@@ -76,7 +76,7 @@
 					<picture>
 						{if "{cell_1}{width}{/cell_1}" > "{cell_1}{height}{/cell_1}"}
 						<source srcset="{exp:ce_img:pair src='{cell_1}' width='960' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src='{cell_1}' width='1920' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
-						<img src="{exp:ce_img:pair src='{cell_1}' width='960' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" alt="{article_illo_description}">
+						<img src="{exp:ce_img:pair src='{cell_1}' width='960' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" alt="{if article_illo_description}{article_illo_description}{if:else}Illustration for the {title} article {/if}" itemprop="contentUrl">
 						{if:else}
 						<source srcset="{exp:ce_img:pair src='{cell_1}' width='348' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src='{cell_1}' width='696' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 2x" media="(min-width: 960px)">
 						<img src="{exp:ce_img:pair src='{cell_1}' width='348' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" alt="{if article_illo_description}{article_illo_description}{if:else}Illustration for the {title} article {/if}" itemprop="contentUrl">
