@@ -68,6 +68,7 @@
 				{if article_responsive_illo}
 				{article_responsive_illo}
 				<figure class="wide-hero" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+				<meta itemprop="representativeOfPage" content="true">
 				<meta itemprop="url" content="{cell_1}{url}{/cell_1}">
         <meta itemprop="width" content="{cell_1}{width}{/cell_1}">
         <meta itemprop="height" content="{cell_1}{height}{/cell_1}">
@@ -352,6 +353,7 @@
 				{if legacy_article_responsive_illo != ""}
 
 				<figure class="wide-hero responsive-hero" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+				<meta itemprop="representativeOfPage" content="true">
 				<meta itemprop="url" content="{legacy_article_responsive_illo limit='1'}{cell_1}{url}{/cell_1}{/legacy_article_responsive_illo}">
         <meta itemprop="width" content="{legacy_article_responsive_illo limit='1'}{if cell_2 != ''}{cell_2}{if:else}{cell_1}{width}{/cell_1}{/if}{/legacy_article_responsive_illo}">
         <meta itemprop="height" content="{legacy_article_responsive_illo limit='1'}{cell_1}{height}{/cell_1}{/legacy_article_responsive_illo}">
@@ -373,6 +375,7 @@
 
 				{legacy_article_illustration}
 				<figure class="wide-hero" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+				<meta itemprop="representativeOfPage" content="true">
 				<meta itemprop="url" content="{url}">
         <meta itemprop="width" content="{width}">
         <meta itemprop="height" content="{height}">
