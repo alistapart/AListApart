@@ -316,7 +316,8 @@
 
 </head>
 
-<body class="printable {if comment_total > 0}comments-exist{/if}" itemscope itemtype="http://schema.org/WebPage">
+<body class="printable {if comment_total > 0}comments-exist{/if}" itemscope itemtype="http://schema.org/Article">
+<link itemprop="mainEntityOfPage" href="{site_url}/article/{url_title}" />
 
 {primary-logo}
 
@@ -326,7 +327,7 @@
 
 	<div role="main" class="main-wrapper">
 
-		<article class="article-layout hentry" itemscope itemtype="http://www.schema.org/Article">
+		<article class="article-layout hentry">
 
 			<header class="entry-header">
 
@@ -350,19 +351,18 @@
 
 				{if legacy_article_responsive_illo != ""}
 
-				<figure itemscope itemtype="http://schema.org/ImageObject" class="wide-hero responsive-hero">
-
+				<figure class="wide-hero responsive-hero" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+				<meta itemprop="url" content="{legacy_article_responsive_illo limit='1'}{cell_1}{url}{/cell_1}{/legacy_article_responsive_illo}">
+        <meta itemprop="width" content="{legacy_article_responsive_illo limit='1'}{if cell_2 != ''}{cell_2}{if:else}{cell_1}{width}{/cell_1}{/if}{/legacy_article_responsive_illo}">
+        <meta itemprop="height" content="{legacy_article_responsive_illo limit='1'}{cell_1}{height}{/cell_1}{/legacy_article_responsive_illo}">
 					<picture>
-
 						{legacy_article_responsive_illo sort="desc"}
-						<source  srcset="{exp:ce_img:pair src='{cell_1}' width='{if cell_2 != ''}{cell_2}{/if}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src='{cell_1}' width='2577' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 2x" {if cell_2 != ''}media="(max-width: {cell_2}px)"{/if}>
+						<source  srcset="{exp:ce_img:pair src='{cell_1}' width='{if cell_2 != ''}{cell_2}{/if}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src='{cell_1}' width='{width}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 2x" {if cell_2 != ''}media="(max-width: {cell_2}px)"{/if}>
 						{/legacy_article_responsive_illo}
 						{legacy_article_responsive_illo sort="desc" limit='1'}
 						<img src="{exp:ce_img:pair src='{cell_1}' width='{cell_2}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" srcset="{exp:ce_img:pair src='{cell_1}' width='{cell_2}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" alt="">
 						{/legacy_article_responsive_illo}
-						
  					</picture>
-
 					{exp:stash:get name="issue-number"}
 					{exp:stash:get name="illustrator-credit"}
 				</figure>
@@ -372,7 +372,10 @@
 				{if legacy_article_illustration}
 
 				{legacy_article_illustration}
-				<figure class="wide-hero">
+				<figure class="wide-hero" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+				<meta itemprop="url" content="{url}">
+        <meta itemprop="width" content="{width}">
+        <meta itemprop="height" content="{height}">
 					<picture>
 						{if width > height}
 						<source srcset="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="1920" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
@@ -388,7 +391,10 @@
 				{/legacy_article_illustration}
 
 				{if:elseif legacy_article_legacy_illo}
-				<figure class="wide-hero">
+				<figure class="wide-hero" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+				<meta itemprop="url" content="{legacy_article_legacy_illo}{url}{legacy_article_legacy_illo}">
+        <meta itemprop="width" content="{legacy_article_legacy_illo}{width}{/legacy_article_legacy_illo}">
+        <meta itemprop="height" content="{legacy_article_legacy_illo}{height}{/legacy_article_legacy_illo}">
 				{legacy_article_legacy_illo}
 				{exp:stash:get name="issue-number"}
 				{exp:stash:get name="illustrator-credit"}
@@ -405,7 +411,8 @@
 
 					<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {legacy_article_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{legacy_article_authors:url_title}"><span itemprop="name">{legacy_article_authors:title}</span></a>, {/legacy_article_authors}</span>
 
-					{exp:playa:parents status="open|In Progress"}<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}" itemprop="datePublished">{entry_date format="%F %d, %Y"}</time>{/exp:playa:parents}
+					{exp:playa:parents status="open|In Progress"}<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}" itemprop="datePublished">{entry_date format="%F %d, %Y"}</time>
+					<meta itemprop="dateModified" content="{edit_date format="%Y-%m-%dT%H:%i:%s%Q"}">{/exp:playa:parents}
 
 					<span class="entry-meta optional-break">
 
