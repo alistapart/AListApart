@@ -88,6 +88,7 @@
 				<h1 class="entry-title" itemprop="headline">{title}</h1>
 
 				<p class="entry-details">
+					<meta itemprop="description" content="{article_mini_deck}"/>
 
 					<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {article_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{article_authors:url_title}"><span itemprop="name">{article_authors:title}</span></a>, {/article_authors}</span>
 
@@ -99,7 +100,6 @@
 						Published in {modern-categories}
 
 					</span>
-
 				</p>
 
 				{if status != "open" OR {entry_date} > {current_time}}
@@ -408,6 +408,7 @@
 				<h1 class="entry-title" itemprop="headline">{title}</h1>
 
 				<p class="entry-details">
+					<meta itemprop="description" content="{legacy_article_mini_deck}"/>
 
 					<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {legacy_article_authors backspace="2"}<a itemprop="url" class="author" rel="author" href="/author/{legacy_article_authors:url_title}"><span itemprop="name">{legacy_article_authors:title}</span></a>, {/legacy_article_authors}</span>
 
@@ -419,7 +420,6 @@
 						Published in {modern-categories}
 
 					</span>
-
 				</p>
 
 				{exp:playa:parents status="open|In Progress" show_future_entries="yes"}
