@@ -79,7 +79,7 @@
 						<img src="{exp:ce_img:pair src='{cell_1}' width='960' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" alt="{article_illo_description}">
 						{if:else}
 						<source srcset="{exp:ce_img:pair src='{cell_1}' width='348' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src='{cell_1}' width='696' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 2x" media="(min-width: 960px)">
-						<img src="{exp:ce_img:pair src='{cell_1}' width='348' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" alt="{article_illo_description}">
+						<img src="{exp:ce_img:pair src='{cell_1}' width='348' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" alt="{if article_illo_description}{article_illo_description}{if:else}Illustration for the {title} article {/if}" itemprop="contentUrl">
 						{/if}
 					</picture>
 					{exp:stash:get name="illustrator-credit"}
@@ -363,7 +363,7 @@
 						<source  srcset="{exp:ce_img:pair src='{cell_1}' width='{if cell_2 != ''}{cell_2}{/if}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src='{cell_1}' width='{width}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 2x" {if cell_2 != ''}media="(max-width: {cell_2}px)"{/if}>
 						{/legacy_article_responsive_illo}
 						{legacy_article_responsive_illo sort="desc" limit='1'}
-						<img src="{exp:ce_img:pair src='{cell_1}' width='{cell_2}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" srcset="{exp:ce_img:pair src='{cell_1}' width='{cell_2}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" alt="">
+						<img src="{exp:ce_img:pair src='{cell_1}' width='{cell_2}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" srcset="{exp:ce_img:pair src='{cell_1}' width='{cell_2}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" alt="" itemprop="contentUrl">
 						{/legacy_article_responsive_illo}
  					</picture>
 					{exp:stash:get name="issue-number"}
@@ -386,7 +386,7 @@
 						<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{legacy_article_illo_description}" itemprop="image">
 						{if:else}
 						<source srcset="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="696" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 960px)">
-						<img src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{legacy_article_illo_description}" itemprop="image">
+						<img src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{legacy_article_illo_description}" itemprop="contentUrl">
 						{/if}
 					</picture>
 					{exp:stash:get name="issue-number"}
