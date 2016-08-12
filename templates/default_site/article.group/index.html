@@ -394,14 +394,9 @@
 				</figure>
 				{/legacy_article_illustration}
 
-				{if:elseif legacy_article_legacy_illo}
+				{if:elseif legacy_article_legacy_illo != ''}
 				<figure class="wide-hero" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-				<meta itemprop="url" content="{legacy_article_legacy_illo}{url}{legacy_article_legacy_illo}">
-        <meta itemprop="width" content="{legacy_article_legacy_illo}{width}{/legacy_article_legacy_illo}">
-        <meta itemprop="height" content="{legacy_article_legacy_illo}{height}{/legacy_article_legacy_illo}">
 				{legacy_article_legacy_illo}
-				{exp:stash:get name="issue-number"}
-				{exp:stash:get name="illustrator-credit"}
 				</figure>
 				{if:else}
 				{exp:stash:get name="issue-number"}
