@@ -15,7 +15,7 @@
 
 	{embed="embeds/article-author-styles" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
 
-	{exp:stash:set name="safe-description"}{exp:xhtml:light}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{if article_mini_deck}{article_mini_deck}{if:elseif article_deck}{article_deck}{/if}{/exp:low_replace}{/exp:strip_html}{/exp:xhtml:light}{/exp:stash:set}
+	{exp:stash:set name="safe-description"}{exp:ala_typography:inline}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{if article_mini_deck}{article_mini_deck}{if:elseif article_deck}{article_deck}{/if}{/exp:low_replace}{/exp:strip_html}{/exp:ala_typography:inline}{/exp:stash:set}
 
 	<link rel="canonical" href="{site_url}/{segment_1}/{url_title}"/>
 
@@ -202,7 +202,7 @@
 							{if blog_follow_up_note OR article_follow_up_note OR legacy_article_follow_up_note OR column_follow_up_note}
 								<p>{exp:strip_html}{blog_follow_up_note}{article_follow_up_note}{legacy_article_follow_up_note}{column_follow_up_note}{/exp:strip_html}</p>
 							{if:else}
-								<p>{exp:xhtml:light}{exp:strip_html}
+								<p>{exp:ala_typography:inline}{exp:strip_html}
 									{if channel_short_name=='blog'}
 										{if blog_mini_deck}{blog_mini_deck}{if:elseif blog_intro}{exp:trunchtml chars="130" inline="..."}{blog_intro}{/exp:trunchtml}{/if}
 									{if:elseif channel_short_name=='columns'}
@@ -210,7 +210,7 @@
 									{if:elseif channel_short_name=='articles' || channel_short_name=='legacy_articles'}
 										{if article_mini_deck || legacy_article_mini_deck}{article_mini_deck}{legacy_article_mini_deck}{if:elseif article_deck || legacy_article_deck}{exp:trunchtml chars="130" inline="..."}{article_deck}{legacy_article_deck}{/exp:trunchtml}{/if}
 									{/if}
-								{/exp:strip_html}{/exp:xhtml:light}</p>
+								{/exp:strip_html}{/exp:ala_typography:inline}</p>
 							{/if}
 						</article>
 						{/exp:playa:parents}
