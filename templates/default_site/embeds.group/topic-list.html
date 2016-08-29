@@ -1,5 +1,3 @@
-
-
 				<ul class="entry-list">
 				{exp:channel:entries category="{embed:cat_id}" offset="{embed:offset}" channel="articles|legacy_articles|columns" limit="20" status="open" dynamic="off" paginate="bottom"}
 
@@ -25,9 +23,9 @@
 							<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
 						</p>
 						{if channel_short_name == "articles" || channel_short_name == "legacy_articles"}
-						<p>{exp:xhtml:light}{exp:strip_html}{article_deck}{legacy_article_deck}{/exp:strip_html}{/exp:xhtml:light}</p>
+						<p>{exp:ala_typography:inline}{exp:strip_html}{article_deck}{legacy_article_deck}{/exp:strip_html}{/exp:ala_typography:inline}</p>
 						{if:else}
-						<p>{exp:xhtml:light}{exp:strip_html}{column_intro}{/exp:strip_html}{/exp:xhtml:light}</p>
+						<p>{exp:ala_typography:inline}{exp:strip_html}{column_intro}{/exp:strip_html}{/exp:ala_typography:inline}</p>
 						{/if}
 					</li>
 					{paginate}
