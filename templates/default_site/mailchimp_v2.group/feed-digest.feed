@@ -67,7 +67,7 @@
 
 <div style="text-align: center; padding: 0 0 24px; line-height: 26px;"><em>By {embed="embeds/article-authors-for-rss-2" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}</em>
 
-<p>{exp:xhtml:light}{article_deck}{/exp:xhtml:light}</p></div>
+<p>{exp:ala_typography:inline}{article_deck}{/exp:ala_typography:inline}</p></div>
 
                         </td>
                     </tr>
