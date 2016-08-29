@@ -10,7 +10,7 @@
 
 	{embed="embeds/article-author-styles" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
 
-	{exp:stash:set name="safe-description"}{exp:xhtml:light}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{if column_mini_deck}{column_mini_deck}{if:elseif column_intro}{column_intro}{/if}{/exp:low_replace}{/exp:strip_html}{/exp:xhtml:light}{/exp:stash:set}
+	{exp:stash:set name="safe-description"}{exp:ala_typography:inline}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{if column_mini_deck}{column_mini_deck}{if:elseif column_intro}{column_intro}{/if}{/exp:low_replace}{/exp:strip_html}{/exp:ala_typography:inline}{/exp:stash:set}
 
 	<meta name="description" content="{exp:stash:get name="safe-description"}">
 	<meta name="author" content="{embed="embeds/article-authors-no-html" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}">
