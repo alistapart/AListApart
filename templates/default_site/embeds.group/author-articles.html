@@ -11,19 +11,19 @@
 						<p class="meta">
 						<!-- {exp:playa:parents channel="issues"}<a href="/issue/{issue_number}">Issue&nbsp;{issue_number}</a>{/exp:playa:parents}&nbsp;·&nbsp; -->
 						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time></p>
-						<p>{exp:xhtml:light}{article_deck}{legacy_article_deck}{/exp:xhtml:light}</p>
+						<p>{exp:ala_typography:inline}{article_deck}{legacy_article_deck}{/exp:ala_typography:inline}</p>
 						{if:elseif channel_short_name == "blog" || channel_short_name == "events"}
 						<p class="meta">
 						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
 						</p>
 
-						<p>{exp:xhtml:light}{blog_intro}{event_deck}{/exp:xhtml:light}</p>
+						<p>{exp:ala_typography:inline}{blog_intro}{event_deck}{/exp:ala_typography:inline}</p>
 						{if:else}
 						<p class="meta">
 						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
 						</p>
 
-						<p>{exp:xhtml:light}{column_intro}{/exp:xhtml:light}</p>
+						<p>{exp:ala_typography:inline}{column_intro}{/exp:ala_typography:inline}</p>
 						{/if}
 					</li>
 
