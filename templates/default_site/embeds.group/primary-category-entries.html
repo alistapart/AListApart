@@ -14,7 +14,7 @@
 {exp:channel:entries category="{embed:category_id}" entry_id="NOT {embed:exclude}" channel="articles|legacy_articles|columns|blog" limit="2"  show_future_entries="yes" status="open|In Progress" dynamic="off"}
 
    <h2><a href="{site_url}/{if channel_short_name=='blog'}{channel_short_name}/post/{url_title}{if:elseif channel_short_name=='articles' || channel_short_name=='legacy_articles'}article/{url_title}{if:elseif channel_short_name=='columns'}column/{url_title}{/if}">{title}</a></h2>
-   <p>{exp:xhtml:light}{exp:strip_html}
+   <p>{exp:ala_typography:inline}{exp:strip_html}
    {if channel_short_name=='columns'}
       {if column_mini_deck}{column_mini_deck}{if:elseif column_intro}{exp:trunchtml chars="130" inline="..."}{column_intro}{/exp:trunchtml}{/if}
    {if:elseif channel_short_name=='blog'}
@@ -22,7 +22,7 @@
    {if:elseif channel_short_name=='articles' || channel_short_name=='legacy_articles'}
       {if article_mini_deck || legacy_article_mini_deck}{article_mini_deck}{legacy_article_mini_deck}{if:elseif article_deck || legacy_article_deck}{exp:trunchtml chars="130" inline="..."}{article_deck}{legacy_article_deck}{/exp:trunchtml}{/if}
    {/if}
-   {/exp:strip_html}{/exp:xhtml:light}</p>
+   {/exp:strip_html}{/exp:ala_typography:inline}</p>
 
 {/exp:channel:entries}
 
