@@ -7,7 +7,7 @@
 
 							<article>
 								<h1><a href="{site_url}{if parents:channel_short_name == 'columns'}/column/{if:elseif parents:channel_short_name == 'blog'}/blog/post/{if:else}/article/{parents:url_title}{/if}">{parents:title}</a></h1>
-								<p>{exp:xhtml:light}{exp:strip_html}
+								<p>{exp:ala_typography:inline}{exp:strip_html}
 								{if parents:channel_short_name=='blog'}
 									{if parents:blog_mini_deck}{parents:blog_mini_deck}{if:elseif parents:blog_intro}{exp:trunchtml chars="130" inline="..."}{parents:blog_intro}{/exp:trunchtml}{/if}
 								{if:elseif parents:channel_short_name=='columns'}
@@ -15,7 +15,7 @@
 								{if:else}
 									{if parents:article_mini_deck || parents:legacy_article_mini_deck}{parents:article_mini_deck}{parents:legacy_article_mini_deck}{if:elseif parents:article_deck || parents:legacy_article_deck}{exp:trunchtml chars="130" inline="..."}{parents:article_deck}{parents:legacy_article_deck}{/exp:trunchtml}{/if}
 								{/if}
-								{/exp:strip_html}{/exp:xhtml:light}</p>
+								{/exp:strip_html}{/exp:ala_typography:inline}</p>
 							</article>
 							</section>
 							{/parents}
