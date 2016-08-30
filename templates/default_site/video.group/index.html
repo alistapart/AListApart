@@ -10,7 +10,7 @@
 
 	<title>The A List Apart Reference Library: {title}</title>
 
-	{exp:stash:set name="safe-description"}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{video_description}{/exp:low_replace}{/exp:strip_html}{/exp:stash:set}
+	{exp:stash:set name="safe-description"}{exp:strip_html}{video_description}{/exp:strip_html}{/exp:stash:set}
 
 	<meta name="description" content="{exp:stash:get name="safe-description"}">
 
