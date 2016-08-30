@@ -14,7 +14,7 @@
 
 	{embed="embeds/article-author-styles" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
 
-	{exp:stash:set name="safe-description"}{exp:ala_typography:inline}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{if blog_mini_deck}{blog_mini_deck}{if:elseif blog_intro}{blog_intro}{/if}{/exp:low_replace}{/exp:strip_html}{/exp:ala_typography:inline}{/exp:stash:set}
+	{exp:stash:set name="safe-description"}{exp:ala_typography:inline}{exp:strip_html}{if blog_mini_deck}{blog_mini_deck}{if:elseif blog_intro}{blog_intro}{/if}{/exp:strip_html}{/exp:ala_typography:inline}{/exp:stash:set}
 
 	<meta name="description" content="{exp:stash:get name="safe-description"}">
 	<meta name="author" content="{embed="embeds/article-authors-no-html" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}">

@@ -8,7 +8,7 @@
 
 	<title>{title} · An A List Apart Events</title>
 
-	{exp:stash:set name="safe-description"}{exp:ala_typography:inline}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{event_deck}{/exp:low_replace}{/exp:strip_html}{/exp:ala_typography:inline}{/exp:stash:set}
+	{exp:stash:set name="safe-description"}{exp:ala_typography:inline}{exp:strip_html}{event_deck}{/exp:strip_html}{/exp:ala_typography:inline}{/exp:stash:set}
 
 	<meta name="description" content="{exp:stash:get name="safe-description"}">
 	<meta name="author" content="{embed="embeds/article-authors-no-html" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}">
