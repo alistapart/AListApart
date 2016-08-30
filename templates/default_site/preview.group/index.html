@@ -286,7 +286,7 @@
 
 	{embed="embeds/article-author-styles" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
 
-	{exp:stash:set name="safe-description"}{exp:strip_html}{exp:low_replace find="QUOTE" replace="'"}{if legacy_article_mini_deck}{legacy_article_mini_deck}{if:elseif legacy_article_deck}{legacy_article_deck}{/if}{/exp:low_replace}{/exp:strip_html}{/exp:stash:set}
+	{exp:stash:set name="safe-description"}{exp:strip_html}{if legacy_article_mini_deck}{legacy_article_mini_deck}{if:elseif legacy_article_deck}{legacy_article_deck}{/if}{/exp:strip_html}{/exp:stash:set}
 
 	{if legacy_article_custom_css}
 	<style>
