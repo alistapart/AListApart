@@ -3829,29 +3829,13 @@ ul.bullets {
 
 .job-board h4 {
   text-transform: uppercase;
-  font-family: "Franklin ITC", sans-serif;
-  font-weight: bold;
   color: #bb3825;
-}
-
-.job-board .job {
-  font-family: "Franklin ITC", sans-serif;
-  font-weight: bold;
 }
 
 .job-board.in-article {
   margin-top: 2px;
   margin-bottom: 4em;
-  padding: 0 1em;
-}
-
-.job-board.in-article h4,
-.job-board.in-article .job {
-  font-family: "Franklin ITC Light", sans-serif;
-}
-
-.job-board.in-article .job {
-  font-weight: normal;
+  padding: 0;
 }
 
 .job-board.in-article .board-link {

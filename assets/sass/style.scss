@@ -3961,29 +3961,13 @@ ul.bullets {
 
 .job-board h4 {
 	text-transform: uppercase;
-	font-family: $sans-serif;
-	font-weight: bold;
 	color: $accent-primary;
-}
-
-.job-board .job {
-	font-family: $sans-serif;
-	font-weight: bold;
 }
 
 .job-board.in-article {
 	margin-top: 2px;
 	margin-bottom: 4em;
-	padding: 0 1em;
-}
-
-.job-board.in-article h4,
-.job-board.in-article .job {
-	font-family: $sans-serif-light;
-}
-
-.job-board.in-article .job {
-	font-weight: normal;
+	padding: 0;
 }
 
 .job-board.in-article .board-link {
