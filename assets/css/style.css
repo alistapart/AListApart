@@ -3242,41 +3242,6 @@ pre.editing code {
   margin-bottom: 6px;
 }
 
-.fixed-column .the-deck {
-  display: block;
-  height: auto;
-  padding: 12px;
-  background: #f0f0f0;
-  border-radius: 3px;
-  margin-top: 0px;
-}
-
-.fixed-column .the-deck .deck-inner,
-.fixed-column .the-deck .deck-inner a img,
-.fixed-column .the-deck .deck-inner p.ads {
-  display: block;
-  padding-left: 0;
-}
-
-.fixed-column .the-deck .deck-inner a {
-  display: block;
-  width: 120px;
-  height: 90px;
-  margin: 0 auto 12px;
-}
-
-.fixed-column .the-deck .deck-inner p {
-  text-align: center;
-}
-
-.fixed-column .the-deck .deck-inner p a {
-  display: inline;
-}
-
-.fixed-column .the-deck .deck-inner a img {
-  position: static;
-}
-
 .unequal-columns .column {
   width: 600px;
 }
@@ -3852,41 +3817,7 @@ ul.bullets {
   display: none;
 }
 
-.the-deck {
-  position: relative;
-  /* display: table; */
-  vertical-align: middle;
-  /* height: 90px; */
-  margin: 24px 0;
-  line-height: 22px;
-  font-family: "Franklin ITC Light", sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 12px;
-  padding: 12px;
-  background: #f0f0f0;
-  border-radius: 3px;
-  min-height: 114px;
-}
-
-.no-top .secondary-column .the-deck {
-  margin-top: 0;
-}
-
-.the-deck.in-article {
-  background: #fff;
-  border: 1px solid #e8e8e8;
-  display: block;
-  padding: 1em 1em;
-  text-align: center;
-}
-
-.the-deck.in-article img {
-  margin-bottom: 1.5em;
-  position: static;
-}
-
-.the-deck.in-article, .job-board {
+.job-board {
   font-family: "Franklin ITC Light", sans-serif;
   line-height: 21px;
   margin: 0 0 3em;
@@ -3909,40 +3840,6 @@ ul.bullets {
 
 .job-board.in-article .board-link {
   font-size: 12px;
-}
-
-.the-deck.in-article .deck-inner {
-  display: block;
-  padding-left: 0;
-  vertical-align: middle;
-}
-
-.more-content .the-deck:first-child {
-  margin-top: 0;
-}
-
-.the-deck .deck-inner {
-  display: table-cell;
-  vertical-align: middle;
-  padding-left: 132px;
-}
-
-.the-deck a {
-  color: #666;
-}
-
-.the-deck img {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-}
-
-.the-deck p.ads {
-  font-size: 14px;
-}
-
-.the-deck p.ads a {
-  color: #2455c3;
 }
 
 .job-board {
@@ -4320,7 +4217,6 @@ body.modal {
   body.printable #related,
   .go-to-nav,
   .sponsor-top,
-  .the-deck.in-article,
   .job-board.in-article {
     display: none !important;
   }
