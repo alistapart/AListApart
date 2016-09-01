@@ -568,40 +568,12 @@
 		padding-left: 0;
 	}
 
-	aside.the-deck,
 	aside.job-board {
 		display: block;
 		vertical-align: top;
 		width: auto;
 		min-width: none;
 		margin: 24px 0;
-	}
-
-	.the-deck .deck-inner,
-	.the-deck .deck-inner a img,
-	.the-deck .deck-inner p.ads {
-		display: block;
-		padding-left: 0;
-	}
-
-	.the-deck .deck-inner a {
-		display: block;
-		width: 120px;
-		height: 90px;
-		margin: 0 auto 12px;
-	}
-
-	.the-deck .deck-inner p {
-		text-align: center;
-	}
-
-	.the-deck .deck-inner p a {
-		display: inline;
-	}
-
-	.the-deck .deck-inner a img {
-		position: static;
-
 	}
 
 	.global-footer {

@@ -929,27 +929,6 @@
 		border-right: 9px solid transparent;
 	}
 
-	.the-deck.in-article {
-		border: 0;
-		min-height: 90px;
-		padding: 0 1em;
-		text-align: left;
-	}
-
-	.the-deck.in-article .deck-inner p {
-		text-align: left;
-	}
-
-	.the-deck.in-article .deck-inner a {
-		display: inline;
-		margin: 0;
-	}
-
-	.the-deck.in-article img {
-		float: left;
-		margin-right: 1em;
-	}
-
 
 	/* ----------------------	COLUMNS	 ---------------------- */
 
