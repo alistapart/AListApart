@@ -3818,37 +3818,13 @@ ul.bullets {
 }
 
 .job-board {
-  font-family: "Franklin ITC Light", sans-serif;
-  line-height: 21px;
-  margin: 0 0 3em;
-  background: #fff;
-}
-
-.job-board.in-article {
-  margin-bottom: 4em;
-  padding: 0 1em;
-}
-
-.job-board.in-article h4 {
-  font-family: "Franklin ITC Light", sans-serif;
-}
-
-.job-board.in-article .job {
-  font-family: "Franklin ITC Light", sans-serif;
-  font-weight: normal;
-}
-
-.job-board.in-article .board-link {
-  font-size: 12px;
-}
-
-.job-board {
   margin: 36px 0;
   font-size: 14px;
   line-height: 24px;
   font-family: "Franklin ITC Light", sans-serif;
   font-weight: normal;
   font-style: normal;
+  background: #fff;
 }
 
 .job-board h4 {
@@ -3861,6 +3837,25 @@ ul.bullets {
 .job-board .job {
   font-family: "Franklin ITC", sans-serif;
   font-weight: bold;
+}
+
+.job-board.in-article {
+  margin-top: 2px;
+  margin-bottom: 4em;
+  padding: 0 1em;
+}
+
+.job-board.in-article h4,
+.job-board.in-article .job {
+  font-family: "Franklin ITC Light", sans-serif;
+}
+
+.job-board.in-article .job {
+  font-weight: normal;
+}
+
+.job-board.in-article .board-link {
+  font-size: 12px;
 }
 
 .paginator {
