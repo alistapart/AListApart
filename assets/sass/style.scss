@@ -3979,10 +3979,11 @@ ul.bullets {
   margin: 0 auto 3em;
   padding: .5em;
   max-width: 960px;
-  border: solid 1px #e6e6e6;
+  border: solid 1px $e6e6e6;
   border-radius: 6px;
-  background-color: #f7f7f7;
+  background-color: #f0f0f0;
   box-shadow: inset 0 1px hsla(0, 0%, 100%, .3);
+  font-family: $sans-serif-light;
   font-size: 1.2em;
   line-height: 1.5;
   flex-flow: row nowrap;
@@ -4000,14 +4001,28 @@ ul.bullets {
 .bsa-apiads a:after {
   margin-left: 8px;
   padding: 2px 6px;
-  border: solid 1px #222222;
+  border: solid 1px $hex_999;
   border-radius: 3px;
   content: "AD";
+  font-family: $sans-serif;
+  font-size: 14px;
+  color: #777;
+  vertical-align: middle;
 }
+
+.bsa-apiads a:after {
+	white-space:pre;
+ 	// content: " Ad via BuySellAds";
+ 	// border: none;
+ 	// font-family: $sans-serif-light;
+ 	// color: $hex_999;
+ 	// padding: 0;
+ 	// margin: 0;
+ }
 
 .bsa-apiads a {
   color: inherit;
-  font-family: "Franklin ITC",sans-serif;
+  font-family: $sans-serif;
   transition: color .15s ease-in-out;
 }
 
@@ -4015,6 +4030,106 @@ ul.bullets {
   color: #4d4d4d;
   text-decoration: none;
 }
+
+.bsa-apiads--vertical {
+	display: block;
+	text-align: center;
+	border-radius: 3px;
+	margin-bottom: 36px;
+}
+
+.bsa-apiads--flex {
+	display: flex;
+	align-items: flex-start;
+	text-align: left;
+	border-radius: 3px;
+}
+
+.bsa-apiads.bsa-apiads--vertical .bsa-apiads--flex a {
+	line-height: 22px;
+}
+
+.bsa-apiads.bsa-apiads--vertical a:after {
+ 	content: "\A Ad via BuySellAds";
+ 	border: none;
+ 	font-family: $sans-serif-light;
+ 	color: $hex_999;
+ 	padding: 0;
+ 	margin: 0;
+ }
+
+.bsa-apiads.bsa-apiads--vertical .bsa-apiads--flex a:after {
+ 	content: "Ad via BuySellAds";
+ 	border: none;
+ 	font-family: $sans-serif-light;
+ 	color: $hex_999;
+ 	padding: 0;
+ 	margin: 0;
+ }
+
+.bsa-apiads.bsa-apiads--vertical .bsa-apiads--flex .bsa-apiads-logo {
+	margin-top: 6px;
+	margin-right: 12px;
+}
+
+.bsa-apiads.bsa-apiads--vertical .bsa-apiads--flex .bsa-apiads-logo.small {
+	margin-top: 6px;
+	margin-right: 12px;
+	border-radius: 20px;
+	width: 40px;
+}
+
+.bsa-apiads.bsa-apiads--vertical .bsa-apiads-logo {
+	margin-right: 0;
+  width: 80px;
+  border-radius: 0;
+  margin: 0 auto;
+  margin-bottom: 6px;
+	border-radius: 3px;
+}
+
+.bsa-apiads.bsa-apiads--vertical a {
+	display: inline-block;
+	font-family: $sans-serif-light;
+	font-size: 14px;
+	line-height: 24px;			
+ }
+
+ .bsa-apiads.bsa-apiads--vertical a:after {
+
+ }
+
+.bsa-apiads span {
+	font-size: 12px;
+	color: $hex_666;
+}
+	
+ 		
+ // -.fixed-column .the-deck .deck-inner,		
+ // -.fixed-column .the-deck .deck-inner a img,		
+ // -.fixed-column .the-deck .deck-inner p.ads {		
+ // -  display: block;		
+ // -  padding-left: 0;		
+ // -}		
+ // -		
+ // -.fixed-column .the-deck .deck-inner a {		
+ // -  display: block;		
+ // -  width: 120px;		
+ // -  height: 90px;		
+ // -  margin: 0 auto 12px;		
+ // -}		
+ // -		
+ // -.fixed-column .the-deck .deck-inner p {		
+ // -  text-align: center;		
+ // -}		
+ // -		
+ // -.fixed-column .the-deck .deck-inner p a {		
+ // -  display: inline;		
+ // -}		
+ // -		
+ // -.fixed-column .the-deck .deck-inner a img {		
+ // -  position: static;		
+ // -}
 
 .paginator {
 	margin-top: 30px;

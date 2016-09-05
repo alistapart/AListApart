@@ -3852,8 +3852,9 @@ ul.bullets {
   max-width: 960px;
   border: solid 1px #e6e6e6;
   border-radius: 6px;
-  background-color: #f7f7f7;
+  background-color: #f0f0f0;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
+  font-family: "Franklin ITC Light", sans-serif;
   font-size: 1.2em;
   line-height: 1.5;
   -webkit-flex-flow: row nowrap;
@@ -3879,14 +3880,22 @@ ul.bullets {
 .bsa-apiads a:after {
   margin-left: 8px;
   padding: 2px 6px;
-  border: solid 1px #222222;
+  border: solid 1px #999;
   border-radius: 3px;
   content: "AD";
+  font-family: "Franklin ITC", sans-serif;
+  font-size: 14px;
+  color: #777;
+  vertical-align: middle;
+}
+
+.bsa-apiads a:after {
+  white-space: pre;
 }
 
 .bsa-apiads a {
   color: inherit;
-  font-family: "Franklin ITC",sans-serif;
+  font-family: "Franklin ITC", sans-serif;
   -webkit-transition: color .15s ease-in-out;
   transition: color .15s ease-in-out;
 }
@@ -3894,6 +3903,81 @@ ul.bullets {
 .bsa-apiads a:hover {
   color: #4d4d4d;
   text-decoration: none;
+}
+
+.bsa-apiads--vertical {
+  display: block;
+  text-align: center;
+  border-radius: 3px;
+  margin-bottom: 36px;
+}
+
+.bsa-apiads--flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  text-align: left;
+  border-radius: 3px;
+}
+
+.bsa-apiads.bsa-apiads--vertical .bsa-apiads--flex a {
+  line-height: 22px;
+}
+
+.bsa-apiads.bsa-apiads--vertical a:after {
+  content: "\A Ad via BuySellAds";
+  border: none;
+  font-family: "Franklin ITC Light", sans-serif;
+  color: #999;
+  padding: 0;
+  margin: 0;
+}
+
+.bsa-apiads.bsa-apiads--vertical .bsa-apiads--flex a:after {
+  content: "Ad via BuySellAds";
+  border: none;
+  font-family: "Franklin ITC Light", sans-serif;
+  color: #999;
+  padding: 0;
+  margin: 0;
+}
+
+.bsa-apiads.bsa-apiads--vertical .bsa-apiads--flex .bsa-apiads-logo {
+  margin-top: 6px;
+  margin-right: 12px;
+}
+
+.bsa-apiads.bsa-apiads--vertical .bsa-apiads--flex .bsa-apiads-logo.small {
+  margin-top: 6px;
+  margin-right: 12px;
+  border-radius: 20px;
+  width: 40px;
+}
+
+.bsa-apiads.bsa-apiads--vertical .bsa-apiads-logo {
+  margin-right: 0;
+  width: 80px;
+  border-radius: 0;
+  margin: 0 auto;
+  margin-bottom: 6px;
+  border-radius: 3px;
+}
+
+.bsa-apiads.bsa-apiads--vertical a {
+  display: inline-block;
+  font-family: "Franklin ITC Light", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.bsa-apiads span {
+  font-size: 12px;
+  color: #666;
 }
 
 .paginator {
