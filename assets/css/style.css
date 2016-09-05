@@ -1756,6 +1756,10 @@ ul.fancy-links li a.googleplus {
   margin-top: 0;
 }
 
+.secondary-column .item-summary.topic.sidebar {
+  margin-bottom: 36px;
+}
+
 .alphabits {
   position: relative;
   height: 24px;
