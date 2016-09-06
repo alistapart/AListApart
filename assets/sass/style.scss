@@ -3953,6 +3953,15 @@ ul.bullets {
 	display: none;
 }
 
+
+/*------------------------------------*\
+  #ADS
+\*------------------------------------*/
+
+/**
+ * Job Board
+ */
+
 .job-board {
 	margin: 36px 0;
 	font-size: 14px;
@@ -3978,31 +3987,107 @@ ul.bullets {
 	font-size: 12px;
 }
 
+
+/**
+ * BuySellAds
+ */
+
 .bsa-apiads {
   display: flex;
-  margin: 0 auto 3em;
+  margin: 0 auto 36px;
   padding: .5em;
   max-width: 960px;
   border: solid 1px $e6e6e6;
-  border-radius: 6px;
+  border-radius: 3px;
   background-color: #f0f0f0;
   box-shadow: inset 0 1px hsla(0, 0%, 100%, .3);
   font-family: $sans-serif-light;
-  font-size: 1.2em;
-  line-height: 1.5;
   flex-flow: row nowrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+}
+
+/**
+ * When the BSA ad is in an article visually align it with the article body 
+ * text starting point:
+ * 1. Push it down 8px to account for the article text line-height (30).
+ */
+.utility-side-bar .bsa-apiads {
+	margin-top: 8px; /* 1 */
 }
 
 .bsa-apiads-logo {
   display: block;
-  margin-right: 10px;
+	margin-right: 10px;
   width: 40px;
   border-radius: 20px;
 }
 
+/**
+ * Visually align the BSA logo with the ad text starting point:
+ * 1. Push it down 6px to account for the text line-height (22).
+ */
+.bsa-apiads-logo--rectangle {
+	width: 80px;
+  border-radius: 3px;
+  margin-top: 6px; /* 1 */
+  margin-bottom: 6px;
+  margin-right: 12px;
+}
+
+.bsa-apiads a {
+  display: inline-block;
+	font-size: 14px;
+	line-height: 22px;
+	color: inherit;
+	transition: color .15s ease-in-out;
+}
+
 .bsa-apiads a:after {
+	white-space: pre;
+ 	content: " Ad via BuySellAds";
+ 	line-height: 22px;
+ 	color: $hex_999;
+ }
+
+.bsa-apiads a:hover {
+  color: #4d4d4d;
+  text-decoration: none;
+}
+
+.bsa-apiads span {
+	font-size: 12px;
+	color: $hex_666;
+}
+
+.bsa-apiads--block {
+	display: block;
+	text-align: center;
+	border-radius: 3px;
+}
+
+.bsa-apiads--block .bsa-apiads-logo {
+	width: 80px;
+  border-radius: 3px;
+  margin: 0 auto 6px;
+}
+
+.bsa-apiads--block .bsa-apiads a:after {
+	content: "\A Ad via BuySellAds";
+}
+
+.bsa-apiads.bsa-apiads--featured {
+	border-radius: 6px;
+	align-items: center;
+}
+
+.bsa-apiads.bsa-apiads--featured a {
+	font-family: $sans-serif;
+	font-size: 1.2em;
+  line-height: 1.5;
+}
+
+.bsa-apiads.bsa-apiads--featured a:after {
   margin-left: 8px;
   padding: 2px 6px;
   border: solid 1px $hex_999;
@@ -4014,133 +4099,19 @@ ul.bullets {
   vertical-align: middle;
 }
 
-.bsa-apiads a:after {
-	white-space:pre;
- 	// content: " Ad via BuySellAds";
- 	// border: none;
- 	// font-family: $sans-serif-light;
- 	// color: $hex_999;
- 	// padding: 0;
- 	// margin: 0;
- }
-
-.bsa-apiads a {
-  color: inherit;
-  font-family: $sans-serif;
-  transition: color .15s ease-in-out;
-}
-
-.bsa-apiads a:hover {
-  color: #4d4d4d;
-  text-decoration: none;
-}
-
-.bsa-apiads--vertical {
-	display: block;
-	text-align: center;
-	border-radius: 3px;
-	margin-bottom: 36px;
-	margin-top: 7px;
-}
-
-.bsa-apiads--flex {
-	display: flex;
-	align-items: flex-start;
-	text-align: left;
-	border-radius: 3px;
-}
-
-.bsa-apiads.bsa-apiads--vertical .bsa-apiads--flex a {
-	line-height: 22px;
-}
-
-.bsa-apiads.bsa-apiads--vertical a:after {
- 	content: "\A Ad via BuySellAds";
- 	border: none;
- 	font-family: $sans-serif-light;
- 	color: $hex_999;
- 	padding: 0;
- 	margin: 0;
- }
-
-.bsa-apiads.bsa-apiads--vertical .bsa-apiads--flex a:after {
- 	content: "Ad via BuySellAds";
- 	border: none;
- 	font-family: $sans-serif-light;
- 	color: $hex_999;
- 	padding: 0;
- 	margin: 0;
- }
-
-.bsa-apiads.bsa-apiads--vertical .bsa-apiads--flex .bsa-apiads-logo {
-	margin-top: 6px;
-	margin-right: 12px;
-}
-
-.bsa-apiads.bsa-apiads--vertical .bsa-apiads--flex .bsa-apiads-logo.small {
-	margin-top: 6px;
-	margin-right: 12px;
-	border-radius: 20px;
-	width: 40px;
-}
-
-.bsa-apiads.bsa-apiads--vertical .bsa-apiads-logo {
-	margin-right: 0;
-  width: 80px;
-  border-radius: 0;
-  margin: 0 auto;
-  margin-bottom: 6px;
-	border-radius: 3px;
-}
-
-.bsa-apiads.bsa-apiads--vertical a {
-	display: inline-block;
-	font-family: $sans-serif-light;
-	font-size: 14px;
-	line-height: 24px;			
- }
-
- .bsa-apiads.bsa-apiads--vertical a:after {
-
- }
-
-.bsa-apiads span {
-	font-size: 12px;
-	color: $hex_666;
-}
-	
- 		
- // -.fixed-column .the-deck .deck-inner,		
- // -.fixed-column .the-deck .deck-inner a img,		
- // -.fixed-column .the-deck .deck-inner p.ads {		
- // -  display: block;		
- // -  padding-left: 0;		
- // -}		
- // -		
- // -.fixed-column .the-deck .deck-inner a {		
- // -  display: block;		
- // -  width: 120px;		
- // -  height: 90px;		
- // -  margin: 0 auto 12px;		
- // -}		
- // -		
- // -.fixed-column .the-deck .deck-inner p {		
- // -  text-align: center;		
- // -}		
- // -		
- // -.fixed-column .the-deck .deck-inner p a {		
- // -  display: inline;		
- // -}		
- // -		
- // -.fixed-column .the-deck .deck-inner a img {		
- // -  position: static;		
- // -}
-
 .paginator {
 	margin-top: 30px;
 	text-align: center;
 	font-family: $sans-serif-light;
 }
+
+/*------------------------------------*\
+  #MODULES
+\*------------------------------------*/
+
+/**
+ * Paginator
+ */
 
 .paginator ul,
 .paginator li {
@@ -4190,6 +4161,10 @@ ul.bullets {
 	text-decoration:none;
 	background: $hex_444;
 }
+
+/**
+ * Modal
+ */
 
 html.modal {
 	height: 100%;

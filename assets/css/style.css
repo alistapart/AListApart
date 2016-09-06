@@ -3821,6 +3821,11 @@ ul.bullets {
   display: none;
 }
 
+/*------------------------------------*  #ADS
+\*------------------------------------*/
+/**
+ * Job Board
+ */
 .job-board {
   margin: 36px 0;
   font-size: 14px;
@@ -3846,32 +3851,43 @@ ul.bullets {
   font-size: 12px;
 }
 
+/**
+ * BuySellAds
+ */
 .bsa-apiads {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 auto 3em;
+  margin: 0 auto 36px;
   padding: .5em;
   max-width: 960px;
   border: solid 1px #e6e6e6;
-  border-radius: 6px;
+  border-radius: 3px;
   background-color: #f0f0f0;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
   font-family: "Franklin ITC Light", sans-serif;
-  font-size: 1.2em;
-  line-height: 1.5;
   -webkit-flex-flow: row nowrap;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+/**
+ * When the BSA ad is in an article visually align it with the article body 
+ * text starting point:
+ * 1. Push it down 8px to account for the article text line-height (30).
+ */
+.utility-side-bar .bsa-apiads {
+  margin-top: 8px;
+  /* 1 */
 }
 
 .bsa-apiads-logo {
@@ -3881,7 +3897,76 @@ ul.bullets {
   border-radius: 20px;
 }
 
+/**
+ * Visually align the BSA logo with the ad text starting point:
+ * 1. Push it down 6px to account for the text line-height (22).
+ */
+.bsa-apiads-logo--rectangle {
+  width: 80px;
+  border-radius: 3px;
+  margin-top: 6px;
+  /* 1 */
+  margin-bottom: 6px;
+  margin-right: 12px;
+}
+
+.bsa-apiads a {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 22px;
+  color: inherit;
+  -webkit-transition: color .15s ease-in-out;
+  transition: color .15s ease-in-out;
+}
+
 .bsa-apiads a:after {
+  white-space: pre;
+  content: " Ad via BuySellAds";
+  line-height: 22px;
+  color: #999;
+}
+
+.bsa-apiads a:hover {
+  color: #4d4d4d;
+  text-decoration: none;
+}
+
+.bsa-apiads span {
+  font-size: 12px;
+  color: #666;
+}
+
+.bsa-apiads--block {
+  display: block;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.bsa-apiads--block .bsa-apiads-logo {
+  width: 80px;
+  border-radius: 3px;
+  margin: 0 auto 6px;
+}
+
+.bsa-apiads--block .bsa-apiads a:after {
+  content: "\A Ad via BuySellAds";
+}
+
+.bsa-apiads.bsa-apiads--featured {
+  border-radius: 6px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bsa-apiads.bsa-apiads--featured a {
+  font-family: "Franklin ITC", sans-serif;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+.bsa-apiads.bsa-apiads--featured a:after {
   margin-left: 8px;
   padding: 2px 6px;
   border: solid 1px #999;
@@ -3893,104 +3978,17 @@ ul.bullets {
   vertical-align: middle;
 }
 
-.bsa-apiads a:after {
-  white-space: pre;
-}
-
-.bsa-apiads a {
-  color: inherit;
-  font-family: "Franklin ITC", sans-serif;
-  -webkit-transition: color .15s ease-in-out;
-  transition: color .15s ease-in-out;
-}
-
-.bsa-apiads a:hover {
-  color: #4d4d4d;
-  text-decoration: none;
-}
-
-.bsa-apiads--vertical {
-  display: block;
-  text-align: center;
-  border-radius: 3px;
-  margin-bottom: 36px;
-  margin-top: 7px;
-}
-
-.bsa-apiads--flex {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  text-align: left;
-  border-radius: 3px;
-}
-
-.bsa-apiads.bsa-apiads--vertical .bsa-apiads--flex a {
-  line-height: 22px;
-}
-
-.bsa-apiads.bsa-apiads--vertical a:after {
-  content: "\A Ad via BuySellAds";
-  border: none;
-  font-family: "Franklin ITC Light", sans-serif;
-  color: #999;
-  padding: 0;
-  margin: 0;
-}
-
-.bsa-apiads.bsa-apiads--vertical .bsa-apiads--flex a:after {
-  content: "Ad via BuySellAds";
-  border: none;
-  font-family: "Franklin ITC Light", sans-serif;
-  color: #999;
-  padding: 0;
-  margin: 0;
-}
-
-.bsa-apiads.bsa-apiads--vertical .bsa-apiads--flex .bsa-apiads-logo {
-  margin-top: 6px;
-  margin-right: 12px;
-}
-
-.bsa-apiads.bsa-apiads--vertical .bsa-apiads--flex .bsa-apiads-logo.small {
-  margin-top: 6px;
-  margin-right: 12px;
-  border-radius: 20px;
-  width: 40px;
-}
-
-.bsa-apiads.bsa-apiads--vertical .bsa-apiads-logo {
-  margin-right: 0;
-  width: 80px;
-  border-radius: 0;
-  margin: 0 auto;
-  margin-bottom: 6px;
-  border-radius: 3px;
-}
-
-.bsa-apiads.bsa-apiads--vertical a {
-  display: inline-block;
-  font-family: "Franklin ITC Light", sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-}
-
-.bsa-apiads span {
-  font-size: 12px;
-  color: #666;
-}
-
 .paginator {
   margin-top: 30px;
   text-align: center;
   font-family: "Franklin ITC Light", sans-serif;
 }
 
+/*------------------------------------*  #MODULES
+\*------------------------------------*/
+/**
+ * Paginator
+ */
 .paginator ul,
 .paginator li {
   display: inline-block;
@@ -4036,6 +4034,9 @@ ul.bullets {
   background: #444;
 }
 
+/**
+ * Modal
+ */
 html.modal {
   height: 100%;
   width: 100%;
