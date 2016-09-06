@@ -140,18 +140,18 @@
 
 			{content-minutiae}
 
-				<script src="/{assets_path}/js/libs/htmlParser.js"></script>
-				<script src="/{assets_path}/js/libs/postscribe.js"></script>
+			<script src="/{assets_path}/js/libs/htmlParser.js"></script>
+			<script src="/{assets_path}/js/libs/postscribe.js"></script>
 
-				<div class="utility-side-bar">{embed="embeds/bsa_ads"}
-					<aside id="job-board-target" class="job-board in-article ad"></aside>
-				</div>
+			<div class="utility-side-bar">{embed="embeds/bsa_ads"}
+				<aside id="job-board-target" class="job-board in-article ad"></aside>
+			</div>
 
 			{/exp:hop_inject:injection}
 
 				{article_content}
 
-			{article_content_overflow}
+				{article_content_overflow}
 
 			{/exp:hop_inject}
 
@@ -159,7 +159,12 @@
 
 			{content-minutiae-blog}
 
-			{ads-article}
+			<script src="/{assets_path}/js/libs/htmlParser.js"></script>
+			<script src="/{assets_path}/js/libs/postscribe.js"></script>
+
+			<div class="utility-side-bar">{embed="embeds/bsa_ads"}
+				<aside id="job-board-target" class="job-board in-article ad"></aside>
+			</div>
 
 			{article_content}
 
