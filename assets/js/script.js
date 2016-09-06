@@ -636,14 +636,35 @@ var AlaPostLoad = {
 
 			}, false);
 		}
+	}, 
+	//post load bsa ads
+	loadBsaAds: function() { 
+		
+		var bsaAds = $('.bsa-apiads');
+
+		if(bsaAds.length >= 1){
+
+			$.get("/ajax/bsa_ads/", function(ret) {
+					bsaAds.replaceWith(ret);
+				});
+
+		}
 	}
 
 };
 
- //post load parts of the page to bypass cloudflare caching
-// AlaPostLoad.loadTranslations();
-// AlaPostLoad.loadCommentCount();
-loadComments();
+/**
+ * Post load parts of the page via ajax to bypass cloudflare caching.
+ * 1. BSA Ads.
+ * 2. Article comments.
+ * 3. Not invoking the loadCommentCount and loadTranslations functions to cut 
+ *		down the calls to uncached templates (Arcustech server overload issues).
+ *		The comment count is updated when a new comment is submitted and when 
+ *		the page loads. Not when a comment is deleted via JS. A translation
+ *		being added is very rare. Translation loading is a TODO.
+ */
+//AlaPostLoad.loadBsaAds(); //1
+loadComments(); //2
 
 
 $(window).setBreakpoints({
