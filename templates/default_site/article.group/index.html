@@ -118,9 +118,7 @@
 
 			</header>
 
-			{if article_series}
-				{article-series-logic}
-			{/if}
+			{if article_series}{article-series-logic}{/if}
 
 			{if article_editors_note}
 			<div class="main-content pre-article">
@@ -129,42 +127,43 @@
 			{/if}
 
 			{if article_opening_blockquote}
-			<div class="main-content">
-
-				{article_opening_blockquote}
-
-			</div>
+			<div class="main-content">{article_opening_blockquote}</div>
 			{/if}
 
 			<div class="main-content" itemprop="articleBody">
 
-				{if article_short_post != "y"}
+			{if article_short_post != "y"}
 
-					{exp:hop_inject where="<p>" always_inject="y"}
+			{exp:hop_inject where="<p>" always_inject="y"}
 
-					{exp:hop_inject:injection separator="2" position="before"}
+			{exp:hop_inject:injection separator="2" position="before"}
 
-					{content-minutiae}
+			{content-minutiae}
 
-					{ads-article}
+				<script src="/{assets_path}/js/libs/htmlParser.js"></script>
+				<script src="/{assets_path}/js/libs/postscribe.js"></script>
 
-					{/exp:hop_inject:injection}
+				<div class="utility-side-bar">{embed="embeds/bsa_ads"}
+					<aside id="job-board-target" class="job-board in-article ad"></aside>
+				</div>
 
-					{article_content}
+			{/exp:hop_inject:injection}
 
-					{article_content_overflow}
+				{article_content}
 
-					{/exp:hop_inject}
+			{article_content_overflow}
 
-				{if:else}
+			{/exp:hop_inject}
 
-					{content-minutiae-blog}
+			{if:else}
 
-					{ads-article}
+			{content-minutiae-blog}
 
-					{article_content}
+			{ads-article}
 
-				{/if}
+			{article_content}
+
+			{/if}
 
 				{if article_footnotes}
 				<section class="entry-footnotes">
