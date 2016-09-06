@@ -3949,12 +3949,19 @@ ul.bullets {
   margin: 0 auto 6px;
 }
 
-.bsa-apiads--block .bsa-apiads p:after {
+.bsa-apiads--block p:after {
   content: "\A Ad via BuySellAds";
 }
 
 .bsa-apiads.bsa-apiads--featured {
   border-radius: 6px;
+}
+
+.bsa-apiads.bsa-apiads--featured .bsa-apiads-logo {
+  margin-top: 0;
+}
+
+.bsa-apiads.bsa-apiads--featured a {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
