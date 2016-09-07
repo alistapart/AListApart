@@ -1050,6 +1050,39 @@
 
 }
 
+@media only screen and (max-width: 37.5em) and (min-width: 20em) { /* 600px / 320px */
+
+	/*------------------------------------*\
+		#ADS
+	\*------------------------------------*/
+
+	/**
+	 * BuySellAds
+	 */
+
+ .bsa-apiads a {
+		display: flex;
+		flex-flow: row nowrap;
+	  align-items: flex-start;
+	  text-align: left;
+	}
+
+	.bsa-apiads-logo {
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-right: 12px; /* 1 */
+	}
+
+	.bsa-apiads p {
+		margin-top: -6px; /* 1 */
+	}
+
+	.bsa-apiads p:after {
+		content: "Ad via BuySellAds"; /* 2 */
+	}
+
+}
+
 @media only screen and (max-width: 30.6875em) { /* 491px */
 
 	.event-details .logistics span.weekday,
