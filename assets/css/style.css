@@ -3975,8 +3975,8 @@ ul.bullets {
 }
 
 /**
- * Fix for IE < 10 when the BSA logo and text are floated left (IE < 9 doesn't
- * support flexbox).
+ * Fixes for IE < 10 when the BSA logo and text are floated left (IE < 9 
+ * doesn't support flexbox).
  */
 .ie9 .secondary-column .bsa-apiads a {
   display: block;
