@@ -4005,7 +4005,8 @@ ul.bullets {
 /**
  * When the BSA ad is in an article visually align it with the article body 
  * text starting point:
- * 1. Push it down 8px to account for the article text line-height (30).
+ * 1. Push it down 8px (magic number) to account for the article text 
+ * 		line-height (30).
  */
 .utility-side-bar .bsa-apiads {
 	margin-top: 8px; /* 1 */
@@ -4033,8 +4034,8 @@ ul.bullets {
 
 /**
  * BSA logo:
- * 1. Push it down 5px to get equal	visual distance of content from the top 
- * 		and bottom of the container.
+ * 1. Push it down 5px (magic number) to get equal visual distance of content
+ * 		from the top and bottom of the container.
  */
 .bsa-apiads-logo {
 	width: 80px;
@@ -4043,8 +4044,7 @@ ul.bullets {
 }
 
 /**
- * When the BSA logo and text are floated left, visually align it with the 
- * ad text starting point:
+ * When the BSA logo and text are floated left:
  * 1. Push the text on the left of the logo 12px right.
  */
 .secondary-column .bsa-apiads-logo {
