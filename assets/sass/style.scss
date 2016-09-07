@@ -3994,8 +3994,7 @@ ul.bullets {
 
 .bsa-apiads {
   margin: 0 auto 36px;
-  padding: .5em;
-  max-width: 960px;
+  padding: 12px;
   border: solid 1px $e6e6e6;
   border-radius: 3px;
   background-color: #f0f0f0;
@@ -4012,22 +4011,46 @@ ul.bullets {
 	margin-top: 8px; /* 1 */
 }
 
-/**
- * Visually align the BSA logo with the ad text starting point:
- * 1. Push it down 6px to account for the text line-height (22).
- */
-.bsa-apiads-logo {
-	margin-top: 6px; /* 1 */
-	margin-right: 10px;
-  width: 40px;
-  border-radius: 20px;
+.bsa-apiads a {
+	display: block;
+	text-align: center;
+	line-height: 1;
 }
 
-.bsa-apiads-logo--rectangle {
+.bsa-apiads a:hover {
+  text-decoration: none;
+}
+
+/**
+ * On pages with wider sidebars float the BSA logo and text:
+ */
+.secondary-column .bsa-apiads a {
+	display: flex;
+	flex-flow: row nowrap;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/**
+ * BSA logo:
+ * 1. Push it down 5px to get equal	visual distance of content from the top 
+ * 		and bottom of the container.
+ */
+.bsa-apiads-logo {
 	width: 80px;
   border-radius: 3px;
-  margin-bottom: 6px;
-  margin-right: 12px;
+  margin: 5px auto 10px; /* 1 */
+}
+
+/**
+ * When the BSA logo and text are floated left, visually align it with the 
+ * ad text starting point:
+ * 1. Push the text on the left of the logo 12px right.
+ */
+.secondary-column .bsa-apiads-logo {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: 12px; /* 1 */
 }
 
 .bsa-apiads p {
@@ -4038,80 +4061,30 @@ ul.bullets {
 	transition: color .15s ease-in-out;
 }
 
-.bsa-apiads p:after {
-	white-space: pre;
- 	content: " Ad via BuySellAds";
- 	line-height: 22px;
- 	color: $hex_999;
- }
-
-.bsa-apiads a {
-	display: flex;
-	flex-flow: row nowrap;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.bsa-apiads a:hover {
-  text-decoration: none;
-}
-
 .bsa-apiads a:hover p {
   color: #4d4d4d;
-  text-decoration: none;
 }
 
-.bsa-apiads--block a {
-	display: block;
-	text-align: center;
-	border-radius: 3px;
+.bsa-apiads p:after {
+	white-space: pre;
+ 	content: "\A Ad via BuySellAds";
+ 	color: $hex_999;
 }
 
-.bsa-apiads--block .bsa-apiads-logo {
-	width: 80px;
-  border-radius: 3px;
-  margin: 0 auto 6px;
+/**
+ * When the BSA logo and text are floated left:
+ * 1. Lift the <p> up 6px to align it with the image (accounts for <p> 
+ * 		line-height).
+ * 2. Make the BuySellAds tagline appear right after the text, not on a newline
+ */
+.secondary-column .bsa-apiads p {
+	margin-top: -6px; /* 1 */
 }
 
-.bsa-apiads--block p:after {
-	content: "\A Ad via BuySellAds";
+.secondary-column .bsa-apiads p:after {
+	content: "Ad via BuySellAds"; /* 2 */
 }
 
-.bsa-apiads.bsa-apiads--featured {
-	border-radius: 6px;
-}
-
-.bsa-apiads.bsa-apiads--featured .bsa-apiads-logo {
-	margin-top: 0;
-} 
-
-.bsa-apiads.bsa-apiads--featured a { 
-	align-items: center;
-}
-
-.bsa-apiads.bsa-apiads--featured p {
-	font-family: $sans-serif;
-	font-size: 1.2em;
-  line-height: 1.5;
-}
-
-.bsa-apiads.bsa-apiads--featured p:after {
-  margin-left: 8px;
-  padding: 2px 6px;
-  border: solid 1px $hex_999;
-  border-radius: 3px;
-  content: "AD";
-  font-family: $sans-serif;
-  font-size: 14px;
-  color: #777;
-  vertical-align: middle;
-}
-
-.paginator {
-	margin-top: 30px;
-	text-align: center;
-	font-family: $sans-serif-light;
-}
 
 /*------------------------------------*\
   #MODULES
@@ -4120,6 +4093,12 @@ ul.bullets {
 /**
  * Paginator
  */
+
+.paginator {
+	margin-top: 30px;
+	text-align: center;
+	font-family: $sans-serif-light;
+}
 
 .paginator ul,
 .paginator li {

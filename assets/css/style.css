@@ -3856,8 +3856,7 @@ ul.bullets {
  */
 .bsa-apiads {
   margin: 0 auto 36px;
-  padding: .5em;
-  max-width: 960px;
+  padding: 12px;
   border: solid 1px #e6e6e6;
   border-radius: 3px;
   background-color: #f0f0f0;
@@ -3875,42 +3874,20 @@ ul.bullets {
   /* 1 */
 }
 
-/**
- * Visually align the BSA logo with the ad text starting point:
- * 1. Push it down 6px to account for the text line-height (22).
- */
-.bsa-apiads-logo {
-  margin-top: 6px;
-  /* 1 */
-  margin-right: 10px;
-  width: 40px;
-  border-radius: 20px;
-}
-
-.bsa-apiads-logo--rectangle {
-  width: 80px;
-  border-radius: 3px;
-  margin-bottom: 6px;
-  margin-right: 12px;
-}
-
-.bsa-apiads p {
-  display: inline-block;
-  font-size: 14px;
-  line-height: 22px;
-  color: #222;
-  -webkit-transition: color .15s ease-in-out;
-  transition: color .15s ease-in-out;
-}
-
-.bsa-apiads p:after {
-  white-space: pre;
-  content: " Ad via BuySellAds";
-  line-height: 22px;
-  color: #999;
-}
-
 .bsa-apiads a {
+  display: block;
+  text-align: center;
+  line-height: 1;
+}
+
+.bsa-apiads a:hover {
+  text-decoration: none;
+}
+
+/**
+ * On pages with wider sidebars float the BSA logo and text:
+ */
+.secondary-column .bsa-apiads a {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3922,74 +3899,66 @@ ul.bullets {
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  text-align: left;
 }
 
-.bsa-apiads a:hover {
-  text-decoration: none;
+/**
+ * BSA logo:
+ * 1. Push it down 5px to get equal	visual distance of content from the top 
+ * 		and bottom of the container.
+ */
+.bsa-apiads-logo {
+  width: 80px;
+  border-radius: 3px;
+  margin: 5px auto 10px;
+  /* 1 */
+}
+
+/**
+ * When the BSA logo and text are floated left, visually align it with the 
+ * ad text starting point:
+ * 1. Push the text on the left of the logo 12px right.
+ */
+.secondary-column .bsa-apiads-logo {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 12px;
+  /* 1 */
+}
+
+.bsa-apiads p {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 22px;
+  color: #222;
+  -webkit-transition: color .15s ease-in-out;
+  transition: color .15s ease-in-out;
 }
 
 .bsa-apiads a:hover p {
   color: #4d4d4d;
-  text-decoration: none;
 }
 
-.bsa-apiads--block a {
-  display: block;
-  text-align: center;
-  border-radius: 3px;
-}
-
-.bsa-apiads--block .bsa-apiads-logo {
-  width: 80px;
-  border-radius: 3px;
-  margin: 0 auto 6px;
-}
-
-.bsa-apiads--block p:after {
+.bsa-apiads p:after {
+  white-space: pre;
   content: "\A Ad via BuySellAds";
+  color: #999;
 }
 
-.bsa-apiads.bsa-apiads--featured {
-  border-radius: 6px;
+/**
+ * When the BSA logo and text are floated left:
+ * 1. Lift the <p> up 6px to align it with the image (accounts for <p> 
+ * 		line-height).
+ * 2. Make the BuySellAds tagline appear right after the text, not on a newline
+ */
+.secondary-column .bsa-apiads p {
+  margin-top: -6px;
+  /* 1 */
 }
 
-.bsa-apiads.bsa-apiads--featured .bsa-apiads-logo {
-  margin-top: 0;
-}
-
-.bsa-apiads.bsa-apiads--featured a {
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.bsa-apiads.bsa-apiads--featured p {
-  font-family: "Franklin ITC", sans-serif;
-  font-size: 1.2em;
-  line-height: 1.5;
-}
-
-.bsa-apiads.bsa-apiads--featured p:after {
-  margin-left: 8px;
-  padding: 2px 6px;
-  border: solid 1px #999;
-  border-radius: 3px;
-  content: "AD";
-  font-family: "Franklin ITC", sans-serif;
-  font-size: 14px;
-  color: #777;
-  vertical-align: middle;
-}
-
-.paginator {
-  margin-top: 30px;
-  text-align: center;
-  font-family: "Franklin ITC Light", sans-serif;
+.secondary-column .bsa-apiads p:after {
+  content: "Ad via BuySellAds";
+  /* 2 */
 }
 
 /*------------------------------------*  #MODULES
@@ -3997,6 +3966,12 @@ ul.bullets {
 /**
  * Paginator
  */
+.paginator {
+  margin-top: 30px;
+  text-align: center;
+  font-family: "Franklin ITC Light", sans-serif;
+}
+
 .paginator ul,
 .paginator li {
   display: inline-block;
