@@ -162,15 +162,7 @@
 					{/if}
 					{/exp:stash:parse}
 
-					<div class="fixed-column ads">
-
-						<script src="/{assets_path}/js/libs/htmlParser.js"></script>
-						<script src="/{assets_path}/js/libs/postscribe.js"></script>
-						{bsa_apiads}
-						<aside id="job-board-target" class="job-board ad"></aside>
-						{ad-bsa-text}
-
-					</div>
+					<div class="fixed-column ads">{ads}{ad-bsa-text}</div>
 
 					{exp:channel:entries channel="blog|columns|articles|legacy_articles" offset="4" limit="6" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
 
