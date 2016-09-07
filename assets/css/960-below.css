@@ -181,11 +181,6 @@
 
 @media only screen and (max-width: 61.5em) { /* 984px */
 
-
-	body {
-
-	}
-
 	.global-nav {
 		padding: 0 12px;
 	}
@@ -745,6 +740,39 @@
 
 	.secondary-column .sponsor-top {
 		right: auto;
+	}
+
+}
+
+@media only screen and (max-width: 61.5em) and (min-width: 37.5em) { /* 964px / 600px */
+
+	/*------------------------------------*\
+		#ADS
+	\*------------------------------------*/
+
+	/**
+	 * BuySellAds
+	 */
+
+	.variable-column .bsa-apiads a {
+		display: flex;
+		flex-flow: row nowrap;
+	  align-items: flex-start;
+	  text-align: left;
+	}
+
+	.variable-column .bsa-apiads-logo {
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-right: 12px; /* 1 */
+	}
+
+	.variable-column .bsa-apiads p {
+		margin-top: -6px; /* 1 */
+	}
+
+	.variable-column .bsa-apiads p:after {
+		content: "Ad via BuySellAds"; /* 2 */
 	}
 
 }
