@@ -3907,30 +3907,31 @@ ul.bullets {
  * BSA logo:
  * 1. Push it down 5px (magic number) to get equal visual distance of content
  * 		from the top and bottom of the container.
- * 2. Fix for IE (11, 10, fixed in Edge): column flex items don't always
- *		preserve intrinsic aspect ratios
  */
 .bsa-apiads-logo {
   width: 80px;
   border-radius: 3px;
   margin: 5px auto 10px;
   /* 1 */
-  -webkit-box-flex: 0;
-  -webkit-flex: none;
-      -ms-flex: none;
-          flex: none;
-  /* 2 */
 }
 
 /**
  * When the BSA logo and text are floated left:
  * 1. Push the text on the left of the logo 12px right.
+ * 2. Fix for IE (11, 10, fixed in Edge), to get the right image aspect ratio. 
+ * 		Bug: column flex items don't always preserve intrinsic aspect ratios
+ *		credit: http://goo.gl/5M6YZO
  */
 .secondary-column .bsa-apiads-logo {
   margin-top: 0;
   margin-bottom: 0;
   margin-right: 12px;
   /* 1 */
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+      -ms-flex: none;
+          flex: none;
+  /* 2 */
 }
 
 .bsa-apiads p {
@@ -3956,16 +3957,44 @@ ul.bullets {
  * When the BSA logo and text are floated left:
  * 1. Lift the <p> up 6px to align it with the image (accounts for <p> 
  * 		line-height).
- * 2. Make the BuySellAds tagline appear right after the text, not on a newline
+ * 2. Fix for IE 10, to prevent text from overflowing its container. 
+ * 		Bug: column flex items don't always preserve intrinsic aspect ratios
+ *		credit: http://goo.gl/5M6YZO
+ * 3. Make the BuySellAds tagline appear right after the text, not on a newline
  */
 .secondary-column .bsa-apiads p {
   margin-top: -6px;
   /* 1 */
+  -ms-flex: 0 1 auto;
+  /* 2 */
 }
 
 .secondary-column .bsa-apiads p:after {
   content: "Ad via BuySellAds";
-  /* 2 */
+  /* 3 */
+}
+
+/**
+ * Fix for IE < 10 when the BSA logo and text are floated left (IE < 9 doesn't
+ * support flexbox).
+ */
+.ie9 .secondary-column .bsa-apiads a {
+  display: block;
+  overflow: hidden;
+}
+
+.ie9 .secondary-column .bsa-apiads p {
+  float: right;
+  max-width: 204px;
+  line-height: 30px;
+}
+
+.ie8 .secondary-column .bsa-apiads p {
+  max-width: 199px;
+}
+
+.ie8 .secondary-column .bsa-apiads-logo {
+  vertical-align: top;
 }
 
 /*------------------------------------*  #MODULES
