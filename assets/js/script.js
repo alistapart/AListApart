@@ -640,20 +640,22 @@ var AlaPostLoad = {
 	//post load bsa ads
 	loadBsaAds: function() { 
 		
-		var bsaAds = $('.bsa-apiads');
+		var request = new XMLHttpRequest();
+		request.open('GET', '/ajax/bsa_ads/', true);
 
-		if(bsaAds.length >= 1){
-
-			$.get("/ajax/bsa_ads/", function(ret) {
-					bsaAds.replaceWith(ret);
-				});
-
-		}
+		request.onload = function() {
+		  if (request.status >= 200 && request.status < 400) {
+		    var data = request.responseText;
+		    var bsaAds = document.getElementById('bsa-apiads');
+		    bsaAds.outerHTML = data;
+		  } 
+		};
+		request.send();
 	}
 
 };
 
-/**
+/*
  * Post load parts of the page via ajax to bypass cloudflare caching.
  * 1. BSA Ads.
  * 2. Article comments.
