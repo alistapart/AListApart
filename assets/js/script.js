@@ -670,6 +670,7 @@ AlaPostLoad.loadBsaAds(); //1
 loadComments(); //2
 
 
+
 $(window).setBreakpoints({
 // use only largest available vs use all available
     distinct: true,
