@@ -744,16 +744,11 @@
 
 }
 
-@media only screen and (max-width: 61.5em) and (min-width: 37.5em) { /* 964px / 600px */
-
-	/*------------------------------------*\
-		#ADS
-	\*------------------------------------*/
+@media only screen and (max-width: 61.5em) and (min-width: 26.250em) { /* 964px / 420px */
 
 	/**
-	 * BuySellAds
+	 * BuySellAds on home page
 	 */
-
 	.variable-column .bsa-apiads a {
 		display: flex;
 		flex-flow: row nowrap;
@@ -764,15 +759,59 @@
 	.variable-column .bsa-apiads-logo {
 		margin-top: 0;
 		margin-bottom: 0;
-		margin-right: 12px; /* 1 */
+		margin-right: 12px;
 	}
 
 	.variable-column .bsa-apiads p {
-		margin-top: -6px; /* 1 */
+		margin-top: -6px;
 	}
 
 	.variable-column .bsa-apiads p:after {
-		content: "Ad via BuySellAds"; /* 2 */
+		content: "Ad via BuySellAds";
+	}
+
+	/**
+	 * BSA Ads Preload
+	 */
+	.variable-column .bsa-apiads.bsa-apiads--preload {
+		min-width: 320px;
+		min-height: 107px;
+		background-image: url('/components/assets/img/bsa_ad-placeholder--wide.svg');
+		background-position: left center;
+	}
+
+}
+
+@media only screen and (max-width: 61.5em) and (min-width: 768px) { /* 964px / 768px */
+
+	/**
+	* BuySellAds on pages with sidebar
+	*/
+	.secondary-column .bsa-apiads a {
+		display: block;
+		text-align: center;
+	}
+
+	.secondary-column .bsa-apiads-logo {
+		width: 80px;
+		height: 80px;
+	  border-radius: 3px;
+	  margin: 5px auto 10px; /* 1 */
+	}
+
+	.secondary-column .bsa-apiads p {
+		margin-top: 0px;
+	}
+
+	.secondary-column .bsa-apiads p:after {
+		content: "\A Ad via BuySellAds";
+	}
+
+	.secondary-column .bsa-apiads.bsa-apiads--preload {
+		min-width: 216px;
+		min-height: 209px;
+		background-image: url('/components/assets/img/bsa_ad-placeholder.svg');
+		background-position: center center;
 	}
 
 }

@@ -1073,6 +1073,16 @@
 		margin-right: 12px; /* 1 */
 	}
 
+		/**
+	 * BSA Ads Preload
+	 */
+	.bsa-apiads.bsa-apiads--preload {
+		min-width: 320px;
+		min-height: 107px;
+		background-image: url('/components/assets/img/bsa_ad-placeholder--wide.svg');
+		background-position: left center;
+	}
+
 	.bsa-apiads p {
 		margin-top: -6px; /* 1 */
 	}

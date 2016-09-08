@@ -4039,6 +4039,7 @@ ul.bullets {
  */
 .bsa-apiads-logo {
 	width: 80px;
+	height: 80px;
   border-radius: 3px;
   margin: 5px auto 10px; /* 1 */
 }
@@ -4091,6 +4092,25 @@ ul.bullets {
 
 .secondary-column .bsa-apiads p:after {
 	content: "Ad via BuySellAds"; /* 3 */
+}
+
+/**
+ * BSA Ads Preload
+ */
+.bsa-apiads.bsa-apiads--preload {
+	min-width: 216px;
+	min-height: 209px;
+	padding: 0;
+	background-image: url('/components/assets/img/bsa_ad-placeholder.svg');
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.secondary-column .bsa-apiads.bsa-apiads--preload {
+	min-width: 320px;
+	min-height: 107px;
+	background-image: url('/components/assets/img/bsa_ad-placeholder--wide.svg');
+	background-position: left center;
 }
 
 /**
