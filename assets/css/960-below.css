@@ -766,10 +766,6 @@
 		margin-top: -6px;
 	}
 
-	.variable-column .bsa-apiads p:after {
-		content: "Ad via BuySellAds";
-	}
-
 	/**
 	 * BSA Ads Preload
 	 */
@@ -801,10 +797,6 @@
 
 	.secondary-column .bsa-apiads p {
 		margin-top: 0px;
-	}
-
-	.secondary-column .bsa-apiads p:after {
-		content: "\A Ad via BuySellAds";
 	}
 
 	.secondary-column .bsa-apiads.bsa-apiads--preload {

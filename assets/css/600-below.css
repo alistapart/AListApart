@@ -1050,7 +1050,7 @@
 
 }
 
-@media only screen and (max-width: 37.5em) and (min-width: 20em) { /* 600px / 320px */
+@media only screen and (max-width: 37.5em) and (min-width: 26.250em) { /* 600px / 420px */
 
 	/*------------------------------------*\
 		#ADS
@@ -1085,10 +1085,6 @@
 
 	.bsa-apiads p {
 		margin-top: -6px; /* 1 */
-	}
-
-	.bsa-apiads p:after {
-		content: "Ad via BuySellAds"; /* 2 */
 	}
 
 }

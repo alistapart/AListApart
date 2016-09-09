@@ -3906,11 +3906,11 @@ ul.bullets {
 /**
  * BSA logo:
  * 1. Push it down 5px (magic number) to get equal visual distance of content
- * 		from the top and bottom of the container.
+ * 		from the top and bottom of the container element.
  */
 .bsa-apiads-logo {
-  width: 80px;
-  height: 80px;
+  max-width: 80px;
+  max-height: 80px;
   border-radius: 3px;
   margin: 5px auto 10px;
   /* 1 */
@@ -3921,7 +3921,7 @@ ul.bullets {
  * 1. Push the text on the left of the logo 12px right.
  * 2. Fix for IE (11, 10, fixed in Edge), to get the right image aspect ratio. 
  * 		Bug: column flex items don't always preserve intrinsic aspect ratios
- *		credit: http://goo.gl/5M6YZO
+ *		@docs: http://goo.gl/5M6YZO
  */
 .secondary-column .bsa-apiads-logo {
   margin-top: 0;
@@ -3936,7 +3936,6 @@ ul.bullets {
 }
 
 .bsa-apiads p {
-  display: inline-block;
   font-size: 14px;
   line-height: 22px;
   color: #222;
@@ -3944,24 +3943,27 @@ ul.bullets {
   transition: color .15s ease-in-out;
 }
 
+.bsa-apiads p a {
+  color: #2455c3;
+}
+
 .bsa-apiads a:hover p {
   color: #4d4d4d;
 }
 
-.bsa-apiads p:after {
-  white-space: pre;
-  content: "\A Ad via BuySellAds";
+.bsa-apiads .ad-bug {
+  display: block;
   color: #999;
 }
 
 /**
  * When the BSA logo and text are floated left:
- * 1. Lift the <p> up 6px to align it with the image (accounts for <p> 
- * 		line-height).
+ * 1. Lift the <p> up 6px (magic number) to align it exactly with the image 
+ * 		(accounts	for <p> line-height).
  * 2. Fix for IE 10, to prevent text from overflowing its container. 
  * 		Bug: column flex items don't always preserve intrinsic aspect ratios
- *		credit: http://goo.gl/5M6YZO
- * 3. Make the BuySellAds tagline appear right after the text, not on a newline
+ *		@docs: http://goo.gl/5M6YZO
+ * 3. Show the ad bug inline.
  */
 .secondary-column .bsa-apiads p {
   margin-top: -6px;
@@ -3970,19 +3972,22 @@ ul.bullets {
   /* 2 */
 }
 
-.secondary-column .bsa-apiads p:after {
-  content: "Ad via BuySellAds";
+.secondary-column .bsa-apiads .ad-bug {
+  display: inline;
   /* 3 */
 }
 
 /**
- * BSA Ads Preload
+ * BSA Ads Preload: show a placeholder until the ad loads.
+ * 1. Using a background image instead of inline svg because we need to swap 
+ *		placeholders in different resolutions.
  */
 .bsa-apiads.bsa-apiads--preload {
   min-width: 216px;
   min-height: 209px;
   padding: 0;
   background-image: url("/components/assets/img/bsa_ad-placeholder.svg");
+  /* 1 */
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -3991,11 +3996,12 @@ ul.bullets {
   min-width: 320px;
   min-height: 107px;
   background-image: url("/components/assets/img/bsa_ad-placeholder--wide.svg");
+  /* 1 */
   background-position: left center;
 }
 
 /**
- * Fixes for IE < 10 when the BSA logo and text are floated left (IE < 9 
+ * Fixes for IE < 10 when the BSA logo and text are floated left (IE < 10 
  * doesn't support flexbox).
  */
 .ie9 .secondary-column .bsa-apiads a {
