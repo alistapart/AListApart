@@ -4,6 +4,6 @@
                         <img class="bsa-apiads-logo" src="{bsa_image}">
                         <p>{bsa_description} {if bsa_ad_bug}<span class="ad-bug">{bsa_ad_bug}</span>{/if}</p>
                       </a>
-                      <img src="{bsa_pixel}" class="none">
+                      {if bsa_pixel}<img src="{bsa_pixel}" class="none">{/if}
                     </aside>
                     {/exp:ala_bsa_ads}
