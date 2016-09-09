@@ -1,5 +1,14 @@
             <script src="/{assets_path}/js/libs/htmlParser.js"></script>
 						<script src="/{assets_path}/js/libs/postscribe.js"></script>
-            <div id="bsa-apiads" class="bsa-apiads bsa-apiads--preload"></div>
+            <!-- <div id="bsa-apiads" class="bsa-apiads bsa-apiads--preload"></div> -->
+            {exp:ala_bsa_ads}
+            <aside class="bsa-apiads">
+              <a href="{bsa_statlink}" target="_blank">
+                <img class="bsa-apiads-logo" src="http://{bsa_image}">
+                <p>{bsa_description} <span class="ad-bug">Ad via BuySellAds</span></p>
+              </a>
+              {if bsa_pixel}<img src="{bsa_pixel}" class="none">{/if}
+            </aside>
+            {/exp:ala_bsa_ads}
 						<aside id="job-board-target" class="job-board ad"></aside>
 
