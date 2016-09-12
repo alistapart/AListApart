@@ -666,7 +666,7 @@ var AlaPostLoad = {
  *		the page loads. Not when a comment is deleted via JS. A translation
  *		being added is very rare. Translation loading is a TODO.
  */
-//AlaPostLoad.loadBsaAds(); //1
+AlaPostLoad.loadBsaAds(); //1
 loadComments(); //2
 
 
