@@ -4036,12 +4036,18 @@ ul.bullets {
  * BSA logo:
  * 1. Push it down 5px (magic number) to get equal visual distance of content
  * 		from the top and bottom of the container element.
+ * 2. Give the logo a container of 80px so the text doesn't jump down when the 
+ *		image loads.
  */
 .bsa-apiads-logo {
 	max-width: 80px;
 	max-height: 80px;
   border-radius: 3px;
   margin: 5px auto 10px; /* 1 */
+}
+
+.bsa-apiads-logo__container {
+	height: 80px; /* 2 */
 }
 
 /**

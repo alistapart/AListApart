@@ -1,7 +1,9 @@
                     {exp:ala_bsa_ads}
                     <aside class="bsa-apiads">
                       <a href="{bsa_statlink}" target="_blank">
-                        <img class="bsa-apiads-logo" src="{bsa_image}">
+                        <div class="bsa-apiads-logo__container">
+                          <img class="bsa-apiads-logo" src="http:{bsa_image}">
+                        </div>
                         <p>{bsa_description} <span class="ad-bug">Ad via BuySellAds</span></p>
                       </a>
                       {if bsa_pixel}<img src="{bsa_pixel}" class="none">{/if}
