@@ -757,9 +757,7 @@
 	}
 
 	.variable-column .bsa-apiads-logo__container {
-		margin-top: 0;
-		margin-bottom: 0;
-		margin-right: 12px;
+		margin: 0 12px 0 0;
 	}
 
 	.variable-column .bsa-apiads p {
@@ -789,11 +787,11 @@
 	}
 
 	.secondary-column .bsa-apiads-logo__container {
-	  margin: 5px auto 10px; /* 1 */
+	  margin: 5px 0 12px; 
 	}
 
 	.secondary-column .bsa-apiads p {
-		margin-top: 0px;
+		margin-top: 0;
 	}
 
 	.secondary-column .bsa-apiads.bsa-apiads--preload {

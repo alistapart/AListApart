@@ -1067,9 +1067,7 @@
 	}
 
 	.bsa-apiads-logo__container {
-		margin-top: 0;
-		margin-bottom: 0;
-		margin-right: 12px; /* 1 */
+		margin: 0 12px 0 0;
 	}
 
 		/**

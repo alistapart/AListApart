@@ -4052,15 +4052,13 @@ ul.bullets {
 
 /**
  * When the BSA logo and text are floated left:
- * 1. Push the text on the left of the logo 12px right.
+ * 1. Push the text on the left of the logo container 12px right.
  * 2. Fix for IE (11, 10, fixed in Edge), to get the right image aspect ratio. 
  * 		Bug: column flex items don't always preserve intrinsic aspect ratios
  *		@docs: http://goo.gl/5M6YZO
  */
 .secondary-column .bsa-apiads-logo__container {
-	margin-top: 0;
-	margin-bottom: 0;
-	margin-right: 12px; /* 1 */
+	margin: 0 12px 0 0; /* 1 */
 	flex: none; /* 2 */
 }
 
