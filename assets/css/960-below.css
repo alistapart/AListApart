@@ -756,7 +756,7 @@
 	  text-align: left;
 	}
 
-	.variable-column .bsa-apiads-logo {
+	.variable-column .bsa-apiads-logo__container {
 		margin-top: 0;
 		margin-bottom: 0;
 		margin-right: 12px;
@@ -788,10 +788,7 @@
 		text-align: center;
 	}
 
-	.secondary-column .bsa-apiads-logo {
-		width: 80px;
-		height: 80px;
-	  border-radius: 3px;
+	.secondary-column .bsa-apiads-logo__container {
 	  margin: 5px auto 10px; /* 1 */
 	}
 

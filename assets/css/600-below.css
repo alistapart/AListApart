@@ -13,8 +13,7 @@
 	.main-content .event-details + .event-copy {
 		margin-top: 24px;
 		margin-right: 0;
-		padding-right: 0;
-		border-right: 0;
+		padding-right: 0`		border-right: 0;
 	}
 
 	.main-content .logistics .logistics-block {
@@ -1067,7 +1066,7 @@
 	  text-align: left;
 	}
 
-	.bsa-apiads-logo {
+	.bsa-apiads-logo__container {
 		margin-top: 0;
 		margin-bottom: 0;
 		margin-right: 12px; /* 1 */
