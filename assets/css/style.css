@@ -4009,12 +4009,16 @@ ul.bullets {
  * Fixes for IE < 10 when the BSA logo and text are floated left (IE < 10 
  * doesn't support flexbox).
  */
-.ie9 .secondary-column .bsa-apiads a {
+.lt-ie10 .secondary-column .bsa-apiads a {
   display: block;
   overflow: hidden;
 }
 
-.ie9 .secondary-column .bsa-apiads p {
+.lt-ie10 .secondary-column .bsa-apiads-logo__container {
+  float: left;
+}
+
+.lt-ie10 .secondary-column .bsa-apiads p {
   float: right;
   max-width: 204px;
 }
