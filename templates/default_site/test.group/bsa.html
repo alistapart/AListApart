@@ -1,3 +1,22 @@
+<?php 
+
+ 
+  $ip =  $_SERVER['REMOTE_ADDR'];
+  $json = 'https://srv.buysellads.com/ads/CVADLKQE.json?&forwardedip=' . $ip;
+
+  $cf_1 = $_SERVER["HTTP_CF_CONNECTING_IP"]; //real visitor ip address
+
+  $cf_2 = $_SERVER["HTTP_CF_IPCOUNTRY"]; //country of visitor
+
+  $cf_3 = $_SERVER["HTTP_CF_RAY"]; 
+
+  $cf_4 = $_SERVER["HTTP_CF_VISITOR"]; //http or https
+
+  echo $ip . '+' . $cf_1  . '+' . $cf_2 . '+' . $cf_3 . '+' . $cf_4;
+ 
+
+?>
+
 {exp:ala_bsa_ads}
 <aside class="bsa-apiads">
   <a href="{bsa_statlink}" target="_blank">
