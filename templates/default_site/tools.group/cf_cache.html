@@ -1,0 +1,15 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+ 
+include PATH_THIRD . 'cloudflare_mk/libraries/cloudflare_mk.class.php';
+include PATH_THIRD . 'cloudflare_mk/libraries/encrypt.php';
+
+$base_url = ee()->config->item('site_url');
+
+// --------------------------------------
+// 2. CREATE CLOUDFLARE OBJECT
+// --------------------------------------
+$cf = new Cloudflare_mk(1);
+//purge the cache for the entry that has been updated
+$response = $cf->purge_files([$base_url . '/comments/embed-comments/'. $_GET['url']]);
+
+?>
