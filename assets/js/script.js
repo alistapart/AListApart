@@ -856,7 +856,7 @@ $.fn.CommentEditor = function(options) {
 				$('#' + id).fadeOut('fast');
 				getHash = hash;
 				//reload comment count
-				loadCommentCount();
+				AlaPostLoad.loadCommentCount();
 				console.log('comment count loaded after comment deleted');
 			});
 
