@@ -31,7 +31,7 @@
 
 	<div role="main" class="main-wrapper">
 	{exp:stash:parse}
-	{exp:channel:entries channel="articles" entry_id="{stash:entry-id-1}|{stash:entry-id-2}" sort="desc" status="open" dynamic="off" show_future_entries="no"}
+	{exp:channel:entries channel="articles" entry_id="{stash:entry-id-1}|{stash:entry-id-2}" sort="asc" status="open" dynamic="off" show_future_entries="no"}
 	{if count == 1}
 		{if article_responsive_illo}
 		<figure class="wide-hero">
