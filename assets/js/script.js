@@ -858,7 +858,20 @@ $.fn.CommentEditor = function(options) {
 				//reload comment count
 				AlaPostLoad.loadCommentCount();
 				console.log('comment count loaded after comment deleted');
+
 			});
+
+			var urlTitle = $("#comments h1").attr("data-url-title");
+console.log(urlTitle);
+			 $.ajax ({
+	        url: "/tools/cf_cache",
+	        type: "GET",
+	        dataType:'json',
+	        data: ({url: urlTitle}),
+	        success: function(data){
+         		console.log(data);
+	        }
+	      });
 
 		}
 	}
