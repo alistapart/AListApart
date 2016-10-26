@@ -862,7 +862,7 @@ $.fn.CommentEditor = function(options) {
 			});
 
 			var urlTitle = $("#comments h1").attr("data-url-title");
-console.log(urlTitle);
+
 			 $.ajax ({
 	        url: "/tools/cf_cache",
 	        type: "GET",
@@ -878,25 +878,59 @@ console.log(urlTitle);
 
 	function saveComment(id) {
 
-	if (getHash == null) {
-		getHash = $("#comments-parent").data('xid');
-	}
-	var content = $("#"+id).find('.edit-comment'+' textarea').val(),
-	data = {comment: content, comment_id: id, XID: getHash};
-
-	$.post(OPT.url, data, function (res) {
-		if (res.error) {
-			return $.error('Could not save comment.');
+		if (getHash == null) {
+			getHash = $("#comments-parent").data('xid');
 		}
+		var content = $("#"+id).find('.edit-comment'+' textarea').val(),
+		data = {comment: content, comment_id: id, XID: getHash};
 
-		hash = res.XID;
-		$('input[name=XID]').val(hash);
-		$("#"+id).find('.comment-body').html(res.comment);
-		hideEditor(id);
-		getHash = hash;
-	});
+		$.post(OPT.url, data, function (res) {
+			if (res.error) {
+				return $.error('Could not save comment.');
+			}
+
+			hash = res.XID;
+			$('input[name=XID]').val(hash);
+			$("#"+id).find('.comment-body').html(res.comment);
+			hideEditor(id);
+			getHash = hash;
+		});
+
+		var urlTitle = $("#comments h1").attr("data-url-title");
+
+		$.ajax ({
+		  url: "/tools/cf_cache",
+		  type: "GET",
+		  dataType:'json',
+		  data: ({url: urlTitle}),
+		  success: function(data){
+		 		console.log(data);
+		  }
+		});
+
 	}
 };
+
+function commentSubmit(){
+	$('#comment-form').on('submit', function(event){
+		
+
+		var urlTitle = $("#comments h1").attr("data-url-title");
+
+		$.ajax ({
+		  url: "/tools/cf_cache",
+		  type: "GET",
+		  dataType:'json',
+		  data: ({url: urlTitle}),
+		  success: function(data){
+		 		console.log(data);
+		  }
+		});
+		console.log('comment submitted');
+	});
+}
+
+commentSubmit();
 
 /*
 		Functions for auto-resizing textareas.
