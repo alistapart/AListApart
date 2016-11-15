@@ -1,4 +1,4 @@
-{exp:rss:feed channel="articles" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-13 days')) ?>"}
+{exp:rss:feed channel="articles" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-20 days')) ?>"}
 
 <?xml version="1.0" encoding="{encoding}"?>
 <rss version="2.0"
@@ -22,7 +22,7 @@
 
 
 <item>
-    <title><![CDATA[{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-13 days')) ?>"}{title}, {/exp:channel:entries}]]></title>
+    <title><![CDATA[{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-20 days')) ?>"}{title}, {/exp:channel:entries}]]></title>
     <dc:creator><![CDATA[{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-13 days')) ?>"}{article_authors backspace="2"}{article_authors:title}, {/article_authors}, {/exp:channel:entries}]]></dc:creator>
     <link>{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-13 days')) ?>"}{site_url}/article/{url_title}, {/exp:channel:entries}</link>
     <guid>{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-13 days')) ?>"}{site_url}/article/{url_title}, {/exp:channel:entries}</guid>
