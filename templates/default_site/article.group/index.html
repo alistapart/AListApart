@@ -242,7 +242,7 @@
 
 				</div>
 
-				<section class="author-book">
+				<aside class="author-book">
 
 					{if '{article_authors:book_cover}{url}{/article_authors:book_cover}' != ''} 
 					<figure class="author-book__cover">
@@ -251,13 +251,13 @@
 					{/if}
 					<article class="author-book__description">
 						{if '{article_authors:book_purchase_url}' != ''}
-						<a class="author-book__purchase-url" href="{article_authors:book_purchase_url}" target="_blank"><mark>Buy now</mark> <span>from a Book Apart ›</span></a> 
+						<a class="author-book__purchase-url" href="{article_authors:book_purchase_url}" target="_blank"><mark>Buy now</mark> <span>from a Book Apart ›</span><img src="{article_authors:amazon_tracker_src}" width="1" height="1" border="0"></a> 
 						{/if}
 						<h2>{article_authors:book_title} <span class="author-book__author-name">by {article_authors:contributor_first_name} {article_authors:contributor_last_name}</span></h2>
 						<p>{article_authors:book_description}</p>
 					</article>
 
-				</section>
+				</aside>
 
 				{/article_authors}
 
