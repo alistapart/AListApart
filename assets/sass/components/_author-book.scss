@@ -117,12 +117,20 @@
 
 }
 
+@media only screen and (max-width: 390px) { 
+  .author-book__cover,
+  .entry-footer .author-book__cover  {
+    margin-right: 12px;
+  }
+}
+
 @media only screen and (max-width: 20em) { /* 320px */
   /**
    * Author Book Snippet
    */
-  .author-book__cover  {
-    float: none;
-    min-width: 50%;
+  .author-book__purchase-url span::before {
+    content: "";
+    display: table;
+    height: 1px;
   }
 }
