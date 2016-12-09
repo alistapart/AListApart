@@ -5426,6 +5426,11 @@ form.simple-form.wide-form label .error-message {
   line-height: 1;
 }
 
+.author-book__purchase-url img {
+  border: none !important;
+  margin: 0px !important;
+}
+
 .author-book__author-name {
   font-family: "Franklin ITC Light", sans-serif;
   font-weight: normal;
@@ -5450,6 +5455,21 @@ form.simple-form.wide-form label .error-message {
   /*2*/
   margin-right: 22px;
   /*2*/
+}
+
+.entry-footer .author-book__description h2 {
+  padding: 0;
+}
+
+@media only screen and (max-width: 61.5em) {
+  /* 984px */
+  .entry-footer .author-book {
+    width: auto;
+    /*1*/
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 24px;
+  }
 }
 
 @media only screen and (max-width: 767px) {

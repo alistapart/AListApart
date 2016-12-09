@@ -58,6 +58,11 @@
   font-style: normal;
   line-height: 1;
 }
+//1x1 amazon tracker
+.author-book__purchase-url img {
+  border: none !important; 
+  margin: 0px !important;
+}
 
 .author-book__author-name {
   font-family: $sans-serif-light;
@@ -81,7 +86,19 @@
   margin-left: 9px;   /*2*/
   margin-right: 22px; /*2*/
 } 
+
+.entry-footer .author-book__description h2 {
+  padding: 0;
+}
  
+@media only screen and (max-width: 61.5em) { /* 984px */
+  .entry-footer .author-book {
+    width: auto; /*1*/
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 24px;
+  } 
+}
 
 @media only screen and (max-width: 767px) { 
   .author-book__cover  {
