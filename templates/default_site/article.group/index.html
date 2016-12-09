@@ -241,9 +241,9 @@
 					{embed="embeds/author-entries" current-entry-id="{entry_id}" entry-id="{article_authors:entry_id}"}
 
 				</div>
-
+				
+				{if '{article_authors:book_title}' != ''}
 				<aside class="author-book">
-
 					{if '{article_authors:book_cover}{url}{/article_authors:book_cover}' != ''} 
 					<figure class="author-book__cover">
 						<img src="{exp:ce_img:pair src='{article_authors:book_cover}{url}{/article_authors:book_cover}' width='120' crop='no'}{made}{/exp:ce_img:pair}" alt="{book_title}"/>
@@ -251,14 +251,14 @@
 					{/if}
 					<article class="author-book__description">
 						{if '{article_authors:book_purchase_url}' != ''}
-						<a class="author-book__purchase-url" href="{article_authors:book_purchase_url}" target="_blank"><mark>Buy now</mark> <span>from a Book Apart ›</span><img src="{article_authors:amazon_tracker_src}" width="1" height="1" border="0"></a> 
+						<a class="author-book__purchase-url" href="{article_authors:book_purchase_url}" target="_blank"><mark>Buy now</mark> <span>from a Book Apart ›</span>{if '{article_authors:book_purchase_url}' != ''}<img src="{article_authors:amazon_tracker_src}" width="1" height="1">{/if}</a> 
 						{/if}
 						<h2>{article_authors:book_title} <span class="author-book__author-name">by {article_authors:contributor_first_name} {article_authors:contributor_last_name}</span></h2>
 						<p>{article_authors:book_description}</p>
 					</article>
-
 				</aside>
-
+				{/if}
+				
 				{/article_authors}
 
 				</footer>
