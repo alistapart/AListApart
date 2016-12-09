@@ -5390,6 +5390,10 @@ form.simple-form.wide-form label .error-message {
           flex-shrink: 1;
 }
 
+.author-book__cover img {
+  border: 1px solid #ccc;
+}
+
 .author-book__description {
   font-size: 14px;
   line-height: 24px;
@@ -5466,11 +5470,18 @@ form.simple-form.wide-form label .error-message {
     float: left;
     max-width: 30%;
     min-width: 80px;
-    margin-right: 12px;
+    margin-right: 24px;
     margin-bottom: 6px;
   }
   .author-book__description {
     max-width: 100%;
+  }
+  .entry-footer .author-book__cover {
+    min-width: 120px;
+    margin-left: 0;
+    /*2*/
+    margin-right: 24px;
+    /*2*/
   }
 }
 
