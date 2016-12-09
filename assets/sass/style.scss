@@ -56,6 +56,8 @@ $sans-serif-light: "Franklin ITC Light", sans-serif;
 $serif: georgia, serif;
 $monospace: "Menlo", monospace;
 
+
+
 html,
 body {
 	font-family: $serif;
@@ -3271,7 +3273,7 @@ pre.editing code {
 
 .entry-footer .byline .author-bio,
 .entry-footer .byline .author-more {
-	margin-bottom: 12px;
+	margin-bottom: 24px;
 	font-size: 14px;
 	line-height: 24px;
 }
@@ -3288,11 +3290,7 @@ pre.editing code {
 }
 
 .author-more li {
-	display: inline;
-}
-
-.author-more li:not(:last-child):after {
-	content: ', ';
+	display: block;
 }
 
 .var1 .punctuation-helper:last-of-type:after {
@@ -3991,7 +3989,6 @@ ul.bullets {
 /**
  * BuySellAds
  */
-
 .bsa-apiads {
   margin: 0 auto 36px;
   padding: 12px;
@@ -5506,6 +5503,7 @@ form.simple-form.wide-form label .error-message {
 }
 
 
-
+//imports
+@import 'components/author-book';
 
 

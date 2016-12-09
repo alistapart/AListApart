@@ -1,0 +1,117 @@
+//  ---------------------------------------------------------------------------
+//  This file contains all styles related to the author book component.
+//  ---------------------------------------------------------------------------
+
+/**
+ * Author Book Snippet
+ */
+.author-book {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/**
+ * Author Book Cover:
+ * 1. Give the cover container a min-width so it doesn't overlap with
+ *    the text in Safari. @docs http://goo.gl/TRwgiV
+ */
+.author-book__cover {
+  min-width: 141px;
+  margin-right: 24px;
+  flex-shrink: 1;
+}
+
+.author-book__description {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.author-book__description h2 {
+  margin-top: 6px;
+  margin-bottom: 3px;
+  font-family: $sans-serif;
+  font-size: 18px;
+}
+
+.author-book__purchase-url {
+  font-family: $sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $text;
+}
+
+.author-book__purchase-url:hover {
+  text-decoration: none;
+}
+
+.author-book__purchase-url mark {
+  border-radius: 4px;
+  padding: 1px 4px;
+  background-color: $link;
+  color: $white;
+  font-style: normal;
+  line-height: 1;
+}
+
+.author-book__author-name {
+  font-family: $sans-serif-light;
+  font-weight: normal;
+}
+
+/**
+ *  Author book snippet in article
+ *  1. Adjust container size
+ *  2. Align book cover with author image - author image is rounded with border
+ */
+.entry-footer .author-book {
+  width: 696px; /*1*/
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 24px;
+} 
+
+.entry-footer .author-book__cover {
+  margin-left: 9px;   /*2*/
+  margin-right: 22px; /*2*/
+} 
+ 
+
+@media only screen and (max-width: 767px) { 
+  .author-book__cover  {
+    max-width: 15%;
+  }
+}
+
+@media only screen and (max-width: 37.5em) { /*600px*/
+  /**
+   * Author Book Snippet
+   */
+  .author-book {
+    display: block;
+  }
+
+  .author-book__cover  {
+    float: left;
+    max-width: 30%;
+    min-width: 80px;
+    margin-right: 12px;
+    margin-bottom: 6px;
+  }
+
+  .author-book__description {
+    max-width: 100%;
+  }
+
+}
+
+@media only screen and (max-width: 20em) { /* 320px */
+  /**
+   * Author Book Snippet
+   */
+  .author-book__cover  {
+    float: none;
+    min-width: 50%;
+  }
+}

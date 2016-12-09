@@ -3156,7 +3156,7 @@ pre.editing code {
 
 .entry-footer .byline .author-bio,
 .entry-footer .byline .author-more {
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-size: 14px;
   line-height: 24px;
 }
@@ -3173,11 +3173,7 @@ pre.editing code {
 }
 
 .author-more li {
-  display: inline;
-}
-
-.author-more li:not(:last-child):after {
-  content: ', ';
+  display: block;
 }
 
 .var1 .punctuation-helper:last-of-type:after {
@@ -3841,16 +3837,6 @@ ul.bullets {
   color: #bb3825;
 }
 
-.job-board h4 + a {
-   display: block;
-   line-height: 24px;
-   margin-bottom: 6px;
-}
-
-.job-board h4 + a img {
-   display: block;
-}
-
 .job-board.in-article {
   margin-top: 2px;
   margin-bottom: 4em;
@@ -3875,9 +3861,9 @@ ul.bullets {
 }
 
 /**
- * When the BSA ad is in an article visually align it with the article body
+ * When the BSA ad is in an article visually align it with the article body 
  * text starting point:
- * 1. Push it down 8px (magic number) to account for the article text
+ * 1. Push it down 8px (magic number) to account for the article text 
  * 		line-height (30).
  */
 .utility-side-bar .bsa-apiads {
@@ -3917,7 +3903,7 @@ ul.bullets {
  * BSA logo:
  * 1. Give the logo container a min-width of 80px so it doesn't overlap with
  * 		the text in Safari. @docs http://goo.gl/TRwgiV
- * 2. Give the logo a container of 80px so the text doesn't jump down when the
+ * 2. Give the logo a container of 80px so the text doesn't jump down when the 
  *		image loads.
  * 3. Push it down 5px (magic number) to get equal visual distance of content
  * 		from the top and bottom of the container element.
@@ -3940,7 +3926,7 @@ ul.bullets {
 /**
  * When the BSA logo and text are floated left:
  * 1. Push the text on the left of the logo container 12px right.
- * 2. Fix for IE (11, 10, fixed in Edge), to get the right image aspect ratio.
+ * 2. Fix for IE (11, 10, fixed in Edge), to get the right image aspect ratio. 
  * 		Bug: column flex items don't always preserve intrinsic aspect ratios
  *		@docs: http://goo.gl/5M6YZO
  */
@@ -3977,9 +3963,9 @@ ul.bullets {
 
 /**
  * When the BSA logo and text are floated left:
- * 1. Lift the <p> up 6px (magic number) to align it exactly with the image
+ * 1. Lift the <p> up 6px (magic number) to align it exactly with the image 
  * 		(accounts	for <p> line-height).
- * 2. Fix for IE 10, to prevent text from overflowing its container.
+ * 2. Fix for IE 10, to prevent text from overflowing its container. 
  * 		Bug: column flex items don't always preserve intrinsic aspect ratios
  *		@docs: http://goo.gl/5M6YZO
  * 3. Show the ad bug inline.
@@ -3998,7 +3984,7 @@ ul.bullets {
 
 /**
  * BSA Ads Preload: show a placeholder until the ad loads.
- * 1. Using a background image instead of inline svg because we need to swap
+ * 1. Using a background image instead of inline svg because we need to swap 
  *		placeholders in different resolutions.
  */
 .bsa-apiads.bsa-apiads--preload {
@@ -4020,7 +4006,7 @@ ul.bullets {
 }
 
 /**
- * Fixes for IE < 10 when the BSA logo and text are floated left (IE < 10
+ * Fixes for IE < 10 when the BSA logo and text are floated left (IE < 10 
  * doesn't support flexbox).
  */
 .lt-ie10 .secondary-column .bsa-apiads a {
@@ -5371,4 +5357,129 @@ form.simple-form.wide-form label .error-message {
   margin-top: 16px;
   float: left;
   color: #bb3825;
+}
+
+/**
+ * Author Book Snippet
+ */
+.author-book {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  text-align: left;
+}
+
+/**
+ * Author Book Cover:
+ * 1. Give the cover container a min-width so it doesn't overlap with
+ *    the text in Safari. @docs http://goo.gl/TRwgiV
+ */
+.author-book__cover {
+  min-width: 141px;
+  margin-right: 24px;
+  -webkit-flex-shrink: 1;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
+}
+
+.author-book__description {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.author-book__description h2 {
+  margin-top: 6px;
+  margin-bottom: 3px;
+  font-family: "Franklin ITC", sans-serif;
+  font-size: 18px;
+}
+
+.author-book__purchase-url {
+  font-family: "Franklin ITC", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #222;
+}
+
+.author-book__purchase-url:hover {
+  text-decoration: none;
+}
+
+.author-book__purchase-url mark {
+  border-radius: 4px;
+  padding: 1px 4px;
+  background-color: #2455c3;
+  color: #fff;
+  font-style: normal;
+  line-height: 1;
+}
+
+.author-book__author-name {
+  font-family: "Franklin ITC Light", sans-serif;
+  font-weight: normal;
+}
+
+/**
+ *  Author book snippet in article
+ *  1. Adjust container size
+ *  2. Align book cover with author image - author image is rounded with border
+ */
+.entry-footer .author-book {
+  width: 696px;
+  /*1*/
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 24px;
+}
+
+.entry-footer .author-book__cover {
+  margin-left: 9px;
+  /*2*/
+  margin-right: 22px;
+  /*2*/
+}
+
+@media only screen and (max-width: 767px) {
+  .author-book__cover {
+    max-width: 15%;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  /*600px*/
+  /**
+   * Author Book Snippet
+   */
+  .author-book {
+    display: block;
+  }
+  .author-book__cover {
+    float: left;
+    max-width: 30%;
+    min-width: 80px;
+    margin-right: 12px;
+    margin-bottom: 6px;
+  }
+  .author-book__description {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 20em) {
+  /* 320px */
+  /**
+   * Author Book Snippet
+   */
+  .author-book__cover {
+    float: none;
+    min-width: 50%;
+  }
 }
