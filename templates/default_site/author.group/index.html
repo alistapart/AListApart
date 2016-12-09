@@ -57,7 +57,20 @@
 				</header>
 
 				<p class="author-bio" itemprop="descirption">{contributor_bio}</p>
-
+				
+				<section class="author-book">
+					{if book_cover} 
+					<figure class="author-book__cover">
+						<img src="{exp:ce_img:pair src='{book_cover}' width='141'}{made}{/exp:ce_img:pair}" alt="{book_title}"/>
+					</figure>
+					{/if}
+					<article class="author-book__description">
+						<a class="author-book__purchase-url" href="{book_purchase_url}"><mark>Buy now</mark> from a Book Apart ›</a> 
+						<h2>{book_title} <span class="author-book__author-name">by {contributor_first_name} {contributor_last_name}</span></h2>
+						<p>{book_description}</p>
+					</article>
+				</section>
+						
 				{parents channel="articles|legacy_articles|blog|columns|events" field="article_authors|legacy_article_authors|column_authors|blog_authors" limit="999" status="open" orderby="date" sort="desc"}
 				{if parents:count == "1"}
 					<h2 class="alt-small">Contributions by {contributor_first_name} {contributor_last_name}</h2>
