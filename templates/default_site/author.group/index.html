@@ -66,8 +66,8 @@
 					</figure>
 					{/if}
 					<article class="author-book__description">
-						{if article_authors:book_purchase_url}
-						<a class="author-book__purchase-url" href="https://www.amazon.com/{article_authors:book_purchase_url}/tag=alistapart0b-20"><mark>Buy now</mark> <span>from a Book Apart ›</span></a>
+						{if book_purchase_url}
+						<a class="author-book__purchase-url" href="https://www.amazon.com/{book_purchase_url}/tag=alistapart0b-20"><mark>Buy now</mark> <span>from a Book Apart ›</span></a>
 						{/if} 
 						<h2>{book_title} <span class="author-book__author-name">by {contributor_first_name} {contributor_last_name}</span></h2>
 						<p>{book_description}</p>
