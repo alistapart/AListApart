@@ -62,7 +62,10 @@
 				<aside class="author-book">
 					{if book_cover} 
 					<figure class="author-book__cover">
-						<img src="{exp:ce_img:pair src='{book_cover}' width='141'}{made}{/exp:ce_img:pair}" alt="{book_title}"/>
+						{if book_purchase_url}
+						<a class="author-book__purchase-url" href="https://www.amazon.com/{book_purchase_url}/tag=alistapart0b-20">{/if}
+							<img src="{exp:ce_img:pair src='{book_cover}' width='141'}{made}{/exp:ce_img:pair}" alt="{book_title}"/>
+						{if book_purchase_url}</a>{/if}
 					</figure>
 					{/if}
 					<article class="author-book__description">

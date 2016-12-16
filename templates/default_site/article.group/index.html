@@ -246,7 +246,10 @@
 				<aside class="author-book">
 					{if '{article_authors:book_cover}{url}{/article_authors:book_cover}' != ''} 
 					<figure class="author-book__cover">
+						{if '{article_authors:book_purchase_url}' != ''}
+						<a class="author-book__purchase-url" href="https://www.amazon.com/{article_authors:book_purchase_url}/tag=alistapart0b-20">{/if}
 						<img src="{exp:ce_img:pair src='{article_authors:book_cover}{url}{/article_authors:book_cover}' width='120' crop='no'}{made}{/exp:ce_img:pair}" alt="{book_title}"/>
+						{if '{article_authors:book_purchase_url}' != ''}</a>{/if}
 					</figure>
 					{/if}
 					<article class="author-book__description">
