@@ -5434,11 +5434,6 @@ form.simple-form.wide-form label .error-message {
   line-height: 1;
 }
 
-.author-book__purchase-url img {
-  border: none !important;
-  margin: 0px !important;
-}
-
 .author-book__author-name {
   font-family: "Franklin ITC Light", sans-serif;
   font-weight: normal;
