@@ -4153,6 +4153,14 @@ ul.bullets {
 .bsa-tall {
 	margin-bottom: 36px;
 }
+/**
+ * When the BSA logo and text are floated left:
+ * 1. Push the ad down 9px (magic number) to align it exactly with the text 
+ * 		(accounts	for <p> line-height).
+ */
+.utility-side-bar .bsa-tall {
+	margin-top: 9px;
+}
 
 /*------------------------------------*\
   #MODULES
