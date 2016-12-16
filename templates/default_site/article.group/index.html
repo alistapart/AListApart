@@ -251,14 +251,14 @@
 					{/if}
 					<article class="author-book__description">
 						{if '{article_authors:book_purchase_url}' != ''}
-						<a class="author-book__purchase-url" href="{article_authors:book_purchase_url}" target="_blank"><mark>Buy now</mark> <span>from a Book Apart ›</span>{if '{article_authors:book_purchase_url}' != ''}<img src="{article_authors:amazon_tracker_src}" width="1" height="1">{/if}</a> 
+						<a class="author-book__purchase-url" href="https://www.amazon.com/{article_authors:book_purchase_url}/tag=alistapart0b-20"><mark>Buy now</mark> <span>from a Book Apart ›</span></a> 
 						{/if}
 						<h2>{article_authors:book_title} <span class="author-book__author-name">by {article_authors:contributor_first_name} {article_authors:contributor_last_name}</span></h2>
 						<p>{article_authors:book_description}</p>
 					</article>
 				</aside>
 				{/if}
-				
+
 				{/article_authors}
 
 				</footer>

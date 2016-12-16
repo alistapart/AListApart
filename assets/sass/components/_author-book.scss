@@ -46,7 +46,8 @@
   color: $text;
 }
 
-.author-book__purchase-url:hover {
+.author-book__purchase-url:hover,
+.author-book__purchase-url:focus {
   text-decoration: none;
 }
 
