@@ -154,7 +154,7 @@
 
 			{content-minutiae-blog}
 
-			<div class="utility-side-bar">{ads-new}</div>
+			<div class="utility-side-bar">{ads}</div>
 
 			{article_content}
 
@@ -253,10 +253,9 @@
 					</figure>
 					{/if}
 					<article class="author-book__description">
-						{if '{article_authors:book_purchase_url}' != ''}
-						<a class="author-book__purchase-url" href="https://www.amazon.com/{article_authors:book_purchase_url}/tag=alistapart0b-20"><mark>Author's Latest</mark> <span><!-- from a Book Apart --> ›</span></a> 
-						{/if}
-						<h2>{article_authors:book_title} <span class="author-book__author-name">by {article_authors:contributor_first_name} {article_authors:contributor_last_name}</span></h2>
+						<mark>Author's Latest</mark> 
+						<h2>{if '{article_authors:book_purchase_url}' != ''}
+						<a class="author-book__purchase-url" href="https://www.amazon.com/{article_authors:book_purchase_url}/tag=alistapart0b-20">{/if}{article_authors:book_title} <span class="author-book__author-name">by {article_authors:contributor_first_name} {article_authors:contributor_last_name}</span>{if '{article_authors:book_purchase_url}' != ''}</a>{/if}</h2>
 						<p>{article_authors:book_description}</p>
 					</article>
 				</aside>

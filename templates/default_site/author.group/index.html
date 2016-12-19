@@ -69,10 +69,8 @@
 					</figure>
 					{/if}
 					<article class="author-book__description">
-						{if book_purchase_url}
-						<a class="author-book__purchase-url" href="https://www.amazon.com/{book_purchase_url}/tag=alistapart0b-20"><mark>Author's Latest</mark> <span>f<!-- rom a Book Apart --> ›</span></a>
-						{/if} 
-						<h2>{book_title} <span class="author-book__author-name">by {contributor_first_name} {contributor_last_name}</span></h2>
+						<mark>Author's Latest</mark>
+						<h2>{if book_purchase_url}<a class="author-book__purchase-url" href="https://www.amazon.com/{book_purchase_url}/tag=alistapart0b-20">{/if}{book_title} <span class="author-book__author-name">by {contributor_first_name} {contributor_last_name}</span>{if book_purchase_url}</a>{/if}</h2>
 						<p>{book_description}</p>
 					</article>
 				</aside>
