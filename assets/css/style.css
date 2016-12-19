@@ -5423,21 +5423,20 @@ form.simple-form.wide-form label .error-message {
 }
 
 .author-book__purchase-url {
-  font-family: "Franklin ITC", sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
   color: #222;
 }
 
-.author-book__purchase-url:hover,
 .author-book__purchase-url:focus {
   text-decoration: none;
 }
 
-.author-book__purchase-url mark {
+.author-book mark {
   border-radius: 4px;
   padding: 1px 4px;
   background-color: #2455c3;
+  font-family: "Franklin ITC", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
   color: #fff;
   font-style: normal;
   line-height: 1;

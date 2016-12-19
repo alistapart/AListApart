@@ -40,21 +40,20 @@
 }
 
 .author-book__purchase-url {
-  font-family: $sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
   color: $text;
 }
 
-.author-book__purchase-url:hover,
 .author-book__purchase-url:focus {
   text-decoration: none;
 }
 
-.author-book__purchase-url mark {
+.author-book mark {
   border-radius: 4px;
   padding: 1px 4px;
   background-color: $link;
+  font-family: $sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
   color: $white;
   font-style: normal;
   line-height: 1;
