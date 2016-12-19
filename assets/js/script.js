@@ -666,7 +666,7 @@ var AlaPostLoad = {
  *		the page loads. Not when a comment is deleted via JS. A translation
  *		being added is very rare. Translation loading is a TODO.
  */
-AlaPostLoad.loadBsaAds(); //1
+//AlaPostLoad.loadBsaAds(); //1
 loadComments(); //2
 
 
@@ -914,7 +914,6 @@ $.fn.CommentEditor = function(options) {
 function commentSubmit(){
 	$('#comment-form').on('submit', function(event){
 		
-
 		var urlTitle = $("#comments h1").attr("data-url-title");
 
 		$.ajax ({
@@ -931,6 +930,7 @@ function commentSubmit(){
 }
 
 commentSubmit();
+
 
 /*
 		Functions for auto-resizing textareas.
