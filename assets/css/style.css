@@ -5393,6 +5393,10 @@ form.simple-form.wide-form label .error-message {
   text-align: left;
 }
 
+.author-profile .author-book {
+  margin-bottom: 24px;
+}
+
 /**
  * Author Book Cover:
  * 1. Give the cover container a min-width so it doesn't overlap with
@@ -5422,8 +5426,16 @@ form.simple-form.wide-form label .error-message {
   font-size: 18px;
 }
 
+.author-profile .author-book__description h2 {
+  margin-top: 0;
+}
+
 .author-book__purchase-url {
   color: #222;
+}
+
+.author-profile .author-book__purchase-url {
+  color: #2455c3;
 }
 
 .author-book__purchase-url:focus {

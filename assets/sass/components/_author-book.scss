@@ -12,6 +12,10 @@
   text-align: left;
 }
 
+.author-profile .author-book {
+  margin-bottom: 24px;
+}
+
 /**
  * Author Book Cover:
  * 1. Give the cover container a min-width so it doesn't overlap with
@@ -39,8 +43,16 @@
   font-size: 18px;
 }
 
+.author-profile .author-book__description h2 {
+  margin-top: 0;
+}
+
 .author-book__purchase-url {
   color: $text;
+}
+
+.author-profile .author-book__purchase-url {
+  color: $link;
 }
 
 .author-book__purchase-url:focus {

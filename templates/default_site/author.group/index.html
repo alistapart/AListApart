@@ -16,7 +16,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
+<body class="author-profile" itemscope itemtype="http://schema.org/WebPage">
 
 {primary-logo}
 
@@ -57,6 +57,11 @@
 				</header>
 
 				<p class="author-bio" itemprop="descirption">{contributor_bio}</p>
+				{parents channel="articles|legacy_articles|blog|columns|events" field="article_authors|legacy_article_authors|column_authors|blog_authors" limit="999" status="open" orderby="date" sort="desc"}
+				{if parents:count == "1"}
+				<h2 class="alt-small">Also from this author</h2>
+				{/if}
+				{/parents}
 
 				{if book_title}
 				<aside class="author-book">
@@ -69,7 +74,6 @@
 					</figure>
 					{/if}
 					<article class="author-book__description">
-						<mark>Author's Latest</mark>
 						<h2>{if book_purchase_url}<a class="author-book__purchase-url" href="https://www.amazon.com/{book_purchase_url}/tag=alistapart0b-20">{/if}{book_title} <span class="author-book__author-name">by {contributor_first_name} {contributor_last_name}</span>{if book_purchase_url}</a>{/if}</h2>
 						<p>{book_description}</p>
 					</article>
@@ -78,8 +82,6 @@
 
 				{parents channel="articles|legacy_articles|blog|columns|events" field="article_authors|legacy_article_authors|column_authors|blog_authors" limit="999" status="open" orderby="date" sort="desc"}
 				{if parents:count == "1"}
-					<h2 class="alt-small">Contributions by {contributor_first_name} {contributor_last_name}</h2>
-
 					<ul class="entry-list">
 				{/if}
 						<li><h3 class="entry-title"><a href="{site_url}{if parents:channel_short_name == 'columns'}/column/{if:elseif parents:channel_short_name == 'blog'}/blog/post/{if:else}/article/{/if}{parents:url_title}">{parents:title}</a></h3>
