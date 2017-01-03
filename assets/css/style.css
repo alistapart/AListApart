@@ -5430,12 +5430,17 @@ form.simple-form.wide-form label .error-message {
   margin-top: 0;
 }
 
-.author-book__purchase-url {
+h2 .author-book__purchase-url {
   color: #222;
 }
 
+.author-book__purchase-url,
 .author-profile .author-book__purchase-url {
   color: #2455c3;
+}
+
+.author-book__purchase-url--bottom {
+  font-family: "Franklin ITC", sans-serif;
 }
 
 .author-book__purchase-url:focus {
@@ -5445,7 +5450,7 @@ form.simple-form.wide-form label .error-message {
 .author-book mark {
   border-radius: 4px;
   padding: 1px 4px;
-  background-color: #2455c3;
+  background-color: #bb3825;
   font-family: "Franklin ITC", sans-serif;
   font-weight: bold;
   text-transform: uppercase;

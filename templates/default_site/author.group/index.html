@@ -68,14 +68,15 @@
 					{if book_cover} 
 					<figure class="author-book__cover">
 						{if book_purchase_url}
-						<a class="author-book__purchase-url" href="https://www.amazon.com/{book_purchase_url}/tag=alistapart0b-20">{/if}
+						<a class="author-book__purchase-url" href="{book_purchase_url}">{/if}
 							<img src="{exp:ce_img:pair src='{book_cover}' width='141'}{made}{/exp:ce_img:pair}" alt="{book_title}"/>
 						{if book_purchase_url}</a>{/if}
 					</figure>
 					{/if}
 					<article class="author-book__description">
-						<h2>{if book_purchase_url}<a class="author-book__purchase-url" href="https://www.amazon.com/{book_purchase_url}/tag=alistapart0b-20">{/if}{book_title} <span class="author-book__author-name">by {contributor_first_name} {contributor_last_name}</span>{if book_purchase_url}</a>{/if}</h2>
+						<h2>{if book_purchase_url}<a class="author-book__purchase-url" href="{book_purchase_url}">{/if}{book_title} <span class="author-book__author-name">by {contributor_first_name} {contributor_last_name}</span>{if book_purchase_url}</a>{/if}</h2>
 						<p>{book_description}</p>
+						{if book_purchase_url}<a class="author-book__purchase-url--bottom" href="{book_purchase_url}">Buy now</a>{/if}
 					</article>
 				</aside>
 				{/if}	

@@ -247,7 +247,7 @@
 					{if '{article_authors:book_cover}{url}{/article_authors:book_cover}' != ''} 
 					<figure class="author-book__cover">
 						{if '{article_authors:book_purchase_url}' != ''}
-						<a class="author-book__purchase-url" href="https://www.amazon.com/{article_authors:book_purchase_url}/tag=alistapart0b-20">{/if}
+						<a class="author-book__purchase-url" href="{article_authors:book_purchase_url}">{/if}
 						<img src="{exp:ce_img:pair src='{article_authors:book_cover}{url}{/article_authors:book_cover}' width='120' crop='no'}{made}{/exp:ce_img:pair}" alt="{book_title}"/>
 						{if '{article_authors:book_purchase_url}' != ''}</a>{/if}
 					</figure>
@@ -255,9 +255,11 @@
 					<article class="author-book__description">
 						<mark>Also from this author</mark> 
 						<h2>{if '{article_authors:book_purchase_url}' != ''}
-						<a class="author-book__purchase-url" href="https://www.amazon.com/{article_authors:book_purchase_url}/tag=alistapart0b-20">{/if}{article_authors:book_title} <span class="author-book__author-name">by {article_authors:contributor_first_name} {article_authors:contributor_last_name}</span>{if '{article_authors:book_purchase_url}' != ''}</a>{/if}</h2>
+						<a class="author-book__purchase-url" href="{article_authors:book_purchase_url}">{/if}{article_authors:book_title} <span class="author-book__author-name">by {article_authors:contributor_first_name} {article_authors:contributor_last_name}</span>{if '{article_authors:book_purchase_url}' != ''}</a>{/if}</h2>
 						<p>{article_authors:book_description}</p>
+						{if '{article_authors:book_purchase_url}' != ''}<a class="author-book__purchase-url--bottom" href="{article_authors:book_purchase_url}">Buy now</a>{/if}
 					</article>
+					
 				</aside>
 				{/if}
 

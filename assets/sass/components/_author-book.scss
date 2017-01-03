@@ -47,12 +47,17 @@
   margin-top: 0;
 }
 
-.author-book__purchase-url {
+h2 .author-book__purchase-url {
   color: $text;
 }
 
+.author-book__purchase-url,
 .author-profile .author-book__purchase-url {
   color: $link;
+}
+
+.author-book__purchase-url--bottom {
+  font-family: $sans-serif;
 }
 
 .author-book__purchase-url:focus {
@@ -62,7 +67,7 @@
 .author-book mark {
   border-radius: 4px;
   padding: 1px 4px;
-  background-color: $link;
+  background-color: $accent-primary;
   font-family: $sans-serif;
   font-weight: bold;
   text-transform: uppercase;
@@ -70,6 +75,10 @@
   font-style: normal;
   line-height: 1;
 }
+// .author-book mark {
+//   background-color: transparent;
+//   color: $accent-primary; 
+// }
 
 .author-book__author-name {
   font-family: $sans-serif-light;
