@@ -607,6 +607,27 @@
 
 				</div>
 
+				{if '{legacy_article_authors:book_title}' != ''}
+				<aside class="author-book">
+					{if '{legacy_article_authors:book_cover}{url}{/legacy_article_authors:book_cover}' != ''} 
+					<figure class="author-book__cover">
+						{if '{legacy_article_authors:book_purchase_url}' != ''}
+						<a class="author-book__purchase-url" href="{article_authors:book_purchase_url}">{/if}
+						<img src="{exp:ce_img:pair src='{legacy_article_authors:book_cover}{url}{/legacy_article_authors:book_cover}' width='120' crop='no'}{made}{/exp:ce_img:pair}" alt="{legacy_article_authors:book_title}"/>
+						{if '{legacy_article_authors:book_purchase_url}' != ''}</a>{/if}
+					</figure>
+					{/if}
+					<article class="author-book__description">
+						<mark>Also from this author</mark> 
+						<h2>{if '{legacy_article_authors:book_purchase_url}' != ''}
+						<a class="author-book__purchase-url" href="{legacy_article_authors:book_purchase_url}">{/if}{legacy_article_authors:book_title} <span class="author-book__author-name">by {legacy_article_authors:contributor_first_name} {legacy_article_authors:contributor_last_name}</span>{if '{legacy_article_authors:book_purchase_url}' != ''}</a>{/if}</h2>
+						<p>{legacy_article_authors:book_description}</p>
+						{if '{legacy_article_authors:book_purchase_url}' != ''}<a class="author-book__purchase-url--bottom" href="{legacy_article_authors:book_purchase_url}">Buy now</a>{/if}
+					</article>
+					
+				</aside>
+				{/if}
+
 				{/legacy_article_authors}
 
 				</footer>
