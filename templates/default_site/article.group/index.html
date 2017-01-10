@@ -348,7 +348,7 @@
 
 			<header class="entry-header">
 
-				{exp:stash:set name="issue-number"}{if legacy_article_illustration OR legacy_article_legacy_illo}{exp:playa:parents status="open|In Progress"}<span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue"><a href="/issue/{issue_number}" class="issue-number" itemprop="url" ><span class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a></span> {/exp:playa:parents}{/if}{/exp:stash:set}
+				{exp:stash:set name="issue-number"}{if legacy_article_illustration OR legacy_article_legacy_illo}{exp:playa:parents channel="issues" status="open|In Progress"}<span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue"><a href="/issue/{issue_number}" class="issue-number" itemprop="url" ><span class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a></span> {/exp:playa:parents}{/if}{/exp:stash:set}
 
 				{if legacy_article_illustration OR legacy_article_legacy_illo}
 				{exp:stash:set name="illustrator-credit"}
@@ -426,7 +426,7 @@
 
 					<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {legacy_article_authors backspace="2"}<a itemprop="sameAs" class="author" rel="author" href="/author/{legacy_article_authors:url_title}"><span itemprop="name">{legacy_article_authors:title}</span></a>, {/legacy_article_authors}</span>
 
-					{exp:playa:parents status="open|In Progress"}<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}" itemprop="datePublished">{entry_date format="%F %d, %Y"}</time>
+					{exp:playa:parents channel="issues" status="open|In Progress"}<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}" itemprop="datePublished">{entry_date format="%F %d, %Y"}</time>
 					<meta itemprop="dateModified" content="{edit_date format="%Y-%m-%dT%H:%i:%s%Q"}">{/exp:playa:parents}
 
 					<span class="entry-meta optional-break">
