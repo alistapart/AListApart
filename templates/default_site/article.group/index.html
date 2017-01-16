@@ -257,7 +257,7 @@
 						<h2>{if '{article_authors:book_purchase_url}' != ''}
 						<a class="author-book__purchase-url" href="{article_authors:book_purchase_url}">{/if}{article_authors:book_title} <span class="author-book__author-name">by {article_authors:contributor_first_name} {article_authors:contributor_last_name}</span>{if '{article_authors:book_purchase_url}' != ''}</a>{/if}</h2>
 						<p>{article_authors:book_description}</p>
-						{if '{article_authors:book_purchase_url}' != ''}<a class="author-book__purchase-url--bottom" href="{article_authors:book_purchase_url}">Buy now</a>{/if}
+						{if '{article_authors:book_purchase_url}' != ''}<a class="author-book__purchase-url--cta" href="{article_authors:book_purchase_url}"><span>➝</span> Buy now</a>{/if}
 					</article>
 					
 				</aside>
@@ -622,7 +622,7 @@
 						<h2>{if '{legacy_article_authors:book_purchase_url}' != ''}
 						<a class="author-book__purchase-url" href="{legacy_article_authors:book_purchase_url}">{/if}{legacy_article_authors:book_title} <span class="author-book__author-name">by {legacy_article_authors:contributor_first_name} {legacy_article_authors:contributor_last_name}</span>{if '{legacy_article_authors:book_purchase_url}' != ''}</a>{/if}</h2>
 						<p>{legacy_article_authors:book_description}</p>
-						{if '{legacy_article_authors:book_purchase_url}' != ''}<a class="author-book__purchase-url--bottom" href="{legacy_article_authors:book_purchase_url}">Buy now</a>{/if}
+						{if '{legacy_article_authors:book_purchase_url}' != ''}<a class="author-book__purchase-url--cta" href="{legacy_article_authors:book_purchase_url}"><span>➝</span> Buy now</a>{/if}
 					</article>
 					
 				</aside>

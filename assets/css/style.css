@@ -5439,8 +5439,14 @@ h2 .author-book__purchase-url {
   color: #2455c3;
 }
 
-.author-book__purchase-url--bottom {
+.author-book__purchase-url--cta {
   font-family: "Franklin ITC", sans-serif;
+}
+
+.author-book__purchase-url--cta span {
+  font-size: 21px;
+  display: inline-block;
+  vertical-align: bottom;
 }
 
 .author-book__purchase-url:focus {

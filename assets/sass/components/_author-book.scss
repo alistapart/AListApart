@@ -56,8 +56,14 @@ h2 .author-book__purchase-url {
   color: $link;
 }
 
-.author-book__purchase-url--bottom {
+.author-book__purchase-url--cta {
   font-family: $sans-serif;
+}
+
+.author-book__purchase-url--cta span {
+  font-size: 21px;
+  display: inline-block;
+  vertical-align: bottom;
 }
 
 .author-book__purchase-url:focus {
@@ -75,10 +81,6 @@ h2 .author-book__purchase-url {
   font-style: normal;
   line-height: 1;
 }
-// .author-book mark {
-//   background-color: transparent;
-//   color: $accent-primary; 
-// }
 
 .author-book__author-name {
   font-family: $sans-serif-light;
