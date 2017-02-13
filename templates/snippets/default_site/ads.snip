@@ -1,7 +1,15 @@
             <script src="/{assets_path}/js/libs/htmlParser.js"></script>
             <script src="/{assets_path}/js/libs/postscribe.js"></script>
             <!-- BuySellAds PRO Zone Code (Sidebar Sponsor) -->
-            <div id="bsap_2374" class="bsaPROrocks bsa-tall" data-serve="CVAIC27J"></div>
+            {exp:ala_bsa_ads}
+            <div class="bsa-apiads bsa-apiads--featured">
+              <a href="{bsa_statlink}" target="_blank">
+                <img class="bsa-apiads-logo" src="{bsa_image}">
+                <p>{bsa_description}</p>
+              </a>
+              {bsa_pixel}
+            </div>
+            {/exp:ala_bsa_ads}
             <!-- End BuySellAds PRO Zone Code -->
             <aside id="job-board-target" class="job-board ad"></aside>
 
