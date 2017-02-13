@@ -3942,10 +3942,11 @@ ul.bullets {
 
 .bsa-apiads p {
   font-size: 14px;
-  line-height: 22px;
+  line-height: 20px;
   color: #222;
   -webkit-transition: color .15s ease-in-out;
   transition: color .15s ease-in-out;
+  margin-top: 12px;
 }
 
 .bsa-apiads p a {
