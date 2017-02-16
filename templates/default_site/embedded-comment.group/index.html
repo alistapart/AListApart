@@ -24,10 +24,10 @@
 		{if:else}
 			<?php
 			$email = "{email}";
-			$default = "http://alistapart.com/components/assets/img/avatar_generic-commenter_grey.png";
+			$default = "https://alistapart.com/components/assets/img/avatar_generic-commenter_grey.png";
 			$size = 60;
 			
-			$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
+			$grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
 			?>
 			<img class="commenter-avatar" src="<?php echo $grav_url; ?>" width="60" height="60" alt="" />
 		{/if}
