@@ -11,7 +11,7 @@ $size = 40;
 $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
 'http://www.gravatar.com/avatar/'.md5($email).'fs='.$size;
 ?>
-<img class="commenters-avatar" src="<?php echo $grav_url; ?>" width="40" height="40" alt="" />
+<img class="commenters-avatar" src="<?php echo $default; ?>" width="40" height="40" alt="" />
 {/if}
 {screen_name}&nbsp;&nbsp; <a id="edit-profile-link" data-tabto="log-out-link" href="/edit/profile/{username}">edit profile</a>&nbsp;·&nbsp;
 {/exp:user:stats}

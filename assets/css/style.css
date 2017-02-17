@@ -3930,7 +3930,7 @@ ul.bullets {
  * 		Bug: column flex items don't always preserve intrinsic aspect ratios
  *		@docs: http://goo.gl/5M6YZO
  */
-.secondary-column .bsa-apiads-logo__container {
+.secondary-column .bsa-apiads-logo {
   margin: 0 12px 0 0;
   /* 1 */
   -webkit-box-flex: 0;
