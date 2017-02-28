@@ -1,11 +1,265 @@
-{exp:ala_bsa_ads}
-<aside class="bsa-apiads">
-  <a href="{bsa_statlink}" target="_blank">
-    <div class="bsa-apiads-logo__container">
-      <img class="bsa-apiads-logo" src="{bsa_image}">
-    </div>
-    <p>{bsa_description} <span class="ad-bug">Ad via BuySellAds</span></p>
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/**
+ * Bsa_api
+ *
+ * @package     Bsa_api
+ * @author      Michelle Kondou http://www.michellekondou.me
+ * @copyright   Copyright (c) 2016 Michelle Kondou
+ */
+
+class Bsa_api {
+
+private function json() {
+
+  if (isset($_SERVER["HTTP_CF_CONNECTING_IP"])) {
+    $ip = $_SERVER["HTTP_CF_CONNECTING_IP"];
+  } else {
+    $ip = $_SERVER['REMOTE_ADDR'];
+  }
+
+  $json = 'https://srv.buysellads.com/ads/CVADLKQE.json?&forwardedip=' . $ip;
+
+  return $json;
+  
+}
+
+public function get_ad_data() {
+
+  $jsonfile = file_get_contents($this->json());
+  $data = json_decode($jsonfile);
+
+  foreach ($data->ads as $ad) {
+
+    if (array_key_exists('description', $ad)) { 
+      $description =  $ad->description; 
+    } else {
+      $description = '3 days of design, code, and content for web & UX designers & devs.';
+    }
+
+    if (array_key_exists('image', $ad)) { 
+      $image =  $ad->image; 
+    } else {
+      $image = '//alistapart.com/components/assets/img/bsa-AEA-logo.png';
+    }
+
+    if (array_key_exists('statlink', $ad)) { 
+      $statlink =  $ad->statlink; 
+    } else {
+      $statlink = '//aneventapart.com';
+    }
+
+    if (array_key_exists('pixel', $ad)) { 
+      $pixel =  ''; 
+      $pixels = explode('||', $ad->pixel);
+      for ($j = 0; $j < count($pixels); $j++) {
+        $pixel .= '<img src="'.preg_replace('[timestamp]', time(),
+        $pixels[$j]).'" height="1" width="1" border="0" style="display:none;" />';
+      }
+    } else {
+      $pixel = '';
+    }
+
+    $properties = array(
+      'description' => $description, 
+      'image' => $image, 
+      'statlink' => $statlink, 
+      'pixel' => $pixel
+    );
+
+
+
+   return $properties;
+
+  } //end foreach
+
+} //end get_add_data
+
+//end Bsa_api class
+}
+
+$bsa_api = new bsa_api();
+$bsa_data = $bsa_api->get_ad_data();
+
+?>
+
+<style>
+  /**
+ * BuySellAds
+ */
+.bsa-apiads {
+  margin: 0 auto 36px;
+  padding: 12px;
+  border: solid 1px #e6e6e6;
+  border-radius: 3px;
+  background-color: #f0f0f0;
+  box-shadow: inset 0 1px hsla(0, 0%, 100%, .3);
+  font-family: "Franklin ITC Light", sans-serif;
+}
+
+/**
+ * When the BSA ad is in an article visually align it with the article body 
+ * text starting point:
+ * 1. Push it down 8px (magic number) to account for the article text 
+ *    line-height (30).
+ */
+.utility-side-bar .bsa-apiads {
+  margin-top: 8px; /* 1 */
+}
+
+.bsa-apiads a {
+  display: block;
+  text-align: center;
+  line-height: 1;
+}
+
+.bsa-apiads a:hover {
+  text-decoration: none;
+}
+
+/**
+ * On pages with wider sidebars float the BSA logo and text:
+ */
+.secondary-column .bsa-apiads a {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/**
+ * BSA logo:
+ * 1. Give the logo container a min-width of 80px so it doesn't overlap with
+ *    the text in Safari. @docs http://goo.gl/TRwgiV
+ * 2. Give the logo a container of 80px so the text doesn't jump down when the 
+ *    image loads.
+ * 3. Push it down 5px (magic number) to get equal visual distance of content
+ *    from the top and bottom of the container element.
+ */
+.bsa-apiads-logo {
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 3px;
+}
+
+.bsa-apiads-logo__container {
+  min-width: 80px; /* 1 */
+  height: 80px; /* 2 */
+  margin: 5px auto 10px; /* 3 */
+}
+
+/**
+ * When the BSA logo and text are floated left:
+ * 1. Push the text on the left of the logo container 12px right.
+ * 2. Fix for IE (11, 10, fixed in Edge), to get the right image aspect ratio. 
+ *    Bug: column flex items don't always preserve intrinsic aspect ratios
+ *    @docs: http://goo.gl/5M6YZO
+ */
+.secondary-column .bsa-apiads-logo {  
+  margin: 0 12px 0 0; /* 1 */
+  flex: none; /* 2 */
+}
+
+.bsa-apiads p {
+  font-size: 14px;
+  line-height: 20px;
+  color: #222;
+  transition: color .15s ease-in-out;
+  margin-top: 12px;
+}
+
+.bsa-apiads p a {
+  color: #2455c3;
+}
+
+.bsa-apiads a:hover p {
+  color: #4d4d4d;
+}
+
+.bsa-apiads .ad-bug {
+  display: block;
+  color: #999;
+}
+
+/**
+ * When the BSA logo and text are floated left:
+ * 1. Lift the <p> up 6px (magic number) to align it exactly with the image 
+ *    (accounts for <p> line-height).
+ * 2. Fix for IE 10, to prevent text from overflowing its container. 
+ *    Bug: column flex items don't always preserve intrinsic aspect ratios
+ *    @docs: http://goo.gl/5M6YZO
+ * 3. Show the ad bug inline.
+ */
+.secondary-column .bsa-apiads p {
+  margin-top: -6px; /* 1 */
+  -ms-flex: 0 1 auto; /* 2 */
+}
+
+.secondary-column .bsa-apiads .ad-bug {
+  display: inline; /* 3 */
+}
+
+/**
+ * BSA Ads Preload: show a placeholder until the ad loads.
+ * 1. Using a background image instead of inline svg because we need to swap 
+ *    placeholders in different resolutions.
+ */
+.bsa-apiads.bsa-apiads--preload {
+  min-width: 216px;
+  min-height: 209px;
+  padding: 0;
+  background-image: url('/components/assets/img/bsa_ad-placeholder.svg'); /* 1 */
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.secondary-column .bsa-apiads.bsa-apiads--preload {
+  min-width: 320px;
+  min-height: 107px;
+  background-image: url('/components/assets/img/bsa_ad-placeholder--wide.svg');/* 1 */
+  background-position: left center;
+}
+
+/**
+ * Fixes for IE < 10 when the BSA logo and text are floated left (IE < 10 
+ * doesn't support flexbox).
+ */
+.lt-ie10 .secondary-column .bsa-apiads a {
+  display: block;
+  overflow: hidden;
+}
+
+.lt-ie10 .secondary-column .bsa-apiads-logo__container {
+  float: left;
+}
+
+.lt-ie10 .secondary-column .bsa-apiads p {
+  float: right;
+  max-width: 204px;
+}
+
+.ie8 .secondary-column .bsa-apiads p {
+  max-width: 199px;
+}
+
+.ie8 .secondary-column .bsa-apiads-logo {
+  vertical-align: top;
+}
+
+.bsa-tall {
+  margin-bottom: 36px;
+}
+
+.utility-side-bar .bsa-tall {
+  margin-top: 9px;
+}
+
+</style>
+
+<div class="bsa-apiads bsa-apiads--featured">
+  <a href="<?php echo $bsa_data['statlink'];?>" target="_blank">
+    <img class="bsa-apiads-logo" src="<?php echo $bsa_data['image'];?>">
+    <p><?php echo $bsa_data['description'];?></p>
   </a>
-  {if bsa_pixel}<img src="{bsa_pixel}" class="none">{/if}
-</aside>
-{/exp:ala_bsa_ads}
+  <?php echo $bsa_data['pixel'];?>
+</div>
