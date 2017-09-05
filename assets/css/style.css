@@ -3863,6 +3863,7 @@ ul.bullets {
   -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
           box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
   font-family: "Franklin ITC Light", sans-serif;
+  text-align: center;
 }
 
 /**
@@ -5390,25 +5391,28 @@ form.simple-form.wide-form label .error-message {
 .patreon-bubble {
   position: relative;
   display: inline-block;
-  width: 100%;
+  padding: 18px 24px;
+  margin-bottom: 18px;
+  border-radius: 6px;
   font-size: 24px;
   line-height: 24px;
-  text-align: center;
-  padding: 18px 24px;
   font-family: "Franklin ITC Light", sans-serif;
-  background: #bb3825;
-  color: #fff;
-  border: 2px solid #bb3825;
-  border-radius: 6px;
-  margin-bottom: 18px;
   -webkit-transition: all .1s ease-in;
   transition: all .1s ease-in;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background-color: #bb3825;
+  border: 2px solid #bb3825;
+}
+
+.patreon-bubble:hover {
+  text-decoration: none;
 }
 
 .patreon-bubble:hover {
   color: #bb3825;
   background-color: #fff;
-  text-decoration: none;
 }
 
 /**
