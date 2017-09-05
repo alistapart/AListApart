@@ -1,0 +1,710 @@
+{exp:channel:entries channel="articles|legacy_articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
+
+{if no_results}
+	{redirect="404"}
+{/if}
+
+{global-page-top}
+
+{if channel_short_name=='articles'}
+{!--START CONTENT FROM ARTICLES CHANNEL - GO TO LINE 281 FOR LEGACY CHANNEL CONTENT--}
+
+	<title>{title} · An A List Apart Article</title>
+
+	<link rel="alternate" type="application/rss+xml" title="A feed for comments on this article" href="/comments/feed/{url_title}" />
+
+	{embed="embeds/article-author-styles" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+
+	{exp:stash:set name="safe-description"}{exp:ala_typography:inline}{exp:strip_html}{if article_mini_deck}{article_mini_deck}{if:elseif article_deck}{article_deck}{/if}{/exp:strip_html}{/exp:ala_typography:inline}{/exp:stash:set}
+
+	<link rel="canonical" href="{site_url}/{segment_1}/{url_title}"/>
+
+	<meta name="description" content="{exp:stash:get name="safe-description"}" class="entry-summary">
+	<meta name="author" content="{embed="embeds/article-authors-no-html" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@alistapart">
+	<meta name="twitter:title" content="{title}">
+	<meta name="twitter:description" content="{exp:stash:get name="safe-description"}">
+	<meta name="twitter:url" content="{site_url}/article/{url_title}">
+
+	<meta property="og:title" content="{title}" />
+	<meta property="og:description" content="{exp:stash:get name="safe-description"}" />
+	<meta property="og:url" content="{site_url}/article/{url_title}" />
+	<meta property="og:image" content="{article_responsive_illo}{cell_1}{url}{/cell_1}{/article_responsive_illo}" />
+
+</head>
+
+<body class="printable {if comment_total > 0}comments-exist{/if}" itemscope itemtype="http://schema.org/Article">
+<link itemprop="mainEntityOfPage" href="{site_url}/article/{url_title}" />
+{primary-logo}
+
+{global-nav}
+
+{current-user-info-edit}
+
+	<div role="main" class="main-wrapper">
+
+		<article class="article-layout hentry">
+
+			<header class="entry-header">
+
+				{if article_responsive_illo}
+				{exp:stash:set name="illustrator-credit"}
+				{if article_suppress_credit != "y"}
+				<p class="illustrator-credit" itemprop="contributor" itemscope itemtype="http://schema.org/Person">Illustration by
+					{if "{article_illustrator:entry_id}" != ""}
+					{article_illustrator}
+					{embed="embeds/article-illustrator-link" entry_id="{article_illustrator:entry_id}"}
+					{/article_illustrator}
+					{if:else}
+					<a href="/author/kcornell" itemprop="sameAs"><span itemprop="name">Kevin Cornell</span></a>
+					{/if}
+				</p>
+				{/if}
+				{/exp:stash:set}
+				{/if}
+
+				{if article_responsive_illo}
+				{article_responsive_illo}
+				<figure class="wide-hero" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+				<meta itemprop="representativeOfPage" content="true">
+				<meta itemprop="url" content="{cell_1}{url}{/cell_1}">
+        <meta itemprop="width" content="{cell_1}{width}{/cell_1}">
+        <meta itemprop="height" content="{cell_1}{height}{/cell_1}">
+        <meta itemprop="description" content="{if article_illo_description}{article_illo_description}{if:else}Illustration for the {title} article {/if}">
+					<picture>
+						{if "{cell_1}{width}{/cell_1}" > "{cell_1}{height}{/cell_1}"}
+						<source srcset="{exp:ce_img:pair src='{cell_1}' width='960' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src='{cell_1}' width='1920' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
+						<img src="{exp:ce_img:pair src='{cell_1}' width='960' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" alt="{if article_illo_description}{article_illo_description}{if:else}Illustration for the {title} article {/if}" itemprop="contentUrl">
+						{if:else}
+						<source srcset="{exp:ce_img:pair src='{cell_1}' width='348' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src='{cell_1}' width='696' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 2x" media="(min-width: 960px)">
+						<img src="{exp:ce_img:pair src='{cell_1}' width='348' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" alt="{if article_illo_description}{article_illo_description}{if:else}Illustration for the {title} article {/if}" itemprop="contentUrl">
+						{/if}
+					</picture>
+					{exp:stash:get name="illustrator-credit"}
+				</figure>
+				{/article_responsive_illo}
+				{/if}
+
+				<h1 class="entry-title" itemprop="headline">{title}</h1>
+
+				<p class="entry-details">
+					<meta itemprop="description" content="{exp:strip_html}{article_mini_deck}{/exp:strip_html}"/>
+
+					<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {article_authors backspace="2"}<a itemprop="sameAs" class="author" rel="author" href="/author/{article_authors:url_title}"><span itemprop="name">{article_authors:title}</span></a>, {/article_authors}</span>
+
+					<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}" itemprop="datePublished">{entry_date format="%F %d, %Y"}</time>
+					<meta itemprop="dateModified" content="{edit_date format="%Y-%m-%dT%H:%i:%s%Q"}">
+
+					<span class="entry-meta optional-break">
+
+						Published in {modern-categories}
+
+					</span>
+				</p>
+
+				{if status != "open" OR {entry_date} > {current_time}}
+				<p class="meta warning" style="display: inline-block; background: #ffffef; outline: 3px solid #ffffef;">
+
+					{if status != "open"}
+					<strong>Please note:</strong> This article has not yet been set to "open."
+					{if:else}
+					<strong>Please note:</strong> This article is ready, and will go live when it hits its publish time.
+					{/if}
+
+				</p>
+				{/if}
+
+			</header>
+
+			{if article_series}{article-series-logic}{/if}
+
+			{if article_editors_note}
+			<div class="main-content pre-article">
+				<p class="editors-note"><b>A note from the editors:</b> {article_editors_note}</p>
+			</div>
+			{/if}
+
+			{if article_opening_blockquote}
+			<div class="main-content">{article_opening_blockquote}</div>
+			{/if}
+
+			<div class="main-content" itemprop="articleBody">
+
+			{if article_short_post != "y"}
+
+			{exp:hop_inject where="<p>" always_inject="y"}
+
+			{exp:hop_inject:injection separator="2" position="before"}
+
+			{content-minutiae}
+
+			<div class="utility-side-bar">{ads}</div>
+
+			{/exp:hop_inject:injection}
+
+				{article_content}
+
+				{article_content_overflow}
+
+			{/exp:hop_inject}
+
+			{if:else}
+
+			{content-minutiae-blog}
+
+			<div class="utility-side-bar">{ads}</div>
+
+			{article_content}
+
+			{/if}
+
+				{if article_footnotes}
+				<section class="entry-footnotes">
+
+					<h1>Notes</h1>
+
+					<ul class="the-footnotes">
+						{article_footnotes}
+						<li id="note{row_count}"><a class="count" href="#ref{row_count}">{row_count}. </a>{cell_1}</li>
+						{/article_footnotes}
+					</ul>
+
+				</section>
+				{/if}
+
+				{if article_hide_related_sidebar != "y"}
+				<!-- START RELATED SIDEBAR -->
+				{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|legacy_articles|blog|columns" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
+				{exp:stash:set name="current-entry-id"}{entry_id}{/exp:stash:set}
+				<aside id="related" class="sidebar var1 nocontent">
+				<i class="widget-branding ala"></i>
+				<!-- if this article does not have a follow up show recent articles by this author -->
+				{if '{exp:stash:get name="has-parents"}' == ''}
+				{article_authors}
+					{embed="embeds/recently-by-author" current-entry-id="{exp:stash:get name="current-entry-id"}" entry-id="{article_authors:entry_id}"}
+				{/article_authors}
+				{/if}<!-- end first block -->
+				{if '{exp:stash:get name="has-parents"}' >= 1}
+				<!-- start first block--><!-- if this article has a follow up - show the follow up -->
+					<section class="follow-up">
+						<h1>Follow-up</h1>
+						{exp:playa:parents channel="articles|legacy_articles|columns|blog"}
+						<article>
+							<h1><a href="{site_url}/{if channel_short_name=='blog'}{channel_short_name}/post/{url_title}{if:elseif channel_short_name=='articles' || channel_short_name=='legacy_articles'}article/{url_title}{if:elseif channel_short_name=='columns'}column/{url_title}{/if}" data-trackevent="Related sidebar: Follow up">{title}</a></h1>
+							{if blog_follow_up_note OR article_follow_up_note OR legacy_article_follow_up_note OR column_follow_up_note}
+								<p>{exp:strip_html}{blog_follow_up_note}{article_follow_up_note}{legacy_article_follow_up_note}{column_follow_up_note}{/exp:strip_html}</p>
+							{if:else}
+								<p>{exp:ala_typography:inline}{exp:strip_html}
+									{if channel_short_name=='blog'}
+										{if blog_mini_deck}{blog_mini_deck}{if:elseif blog_intro}{exp:trunchtml chars="130" inline="..."}{blog_intro}{/exp:trunchtml}{/if}
+									{if:elseif channel_short_name=='columns'}
+										{if column_mini_deck}{column_mini_deck}{if:elseif column_intro}{exp:trunchtml chars="130" inline="..."}{column_intro}{/exp:trunchtml}{/if}
+									{if:elseif channel_short_name=='articles' || channel_short_name=='legacy_articles'}
+										{if article_mini_deck || legacy_article_mini_deck}{article_mini_deck}{legacy_article_mini_deck}{if:elseif article_deck || legacy_article_deck}{exp:trunchtml chars="130" inline="..."}{article_deck}{legacy_article_deck}{/exp:trunchtml}{/if}
+									{/if}
+								{/exp:strip_html}{/exp:ala_typography:inline}</p>
+							{/if}
+						</article>
+						{/exp:playa:parents}
+					</section>
+				{/if}
+				<!-- show categories -->
+				{if "{categories}{category_url_title}{/categories}"!=""}
+					{embed="embeds/primary-category-logic" id="{entry_id}"}
+				{/if}
+				{if '{exp:stash:get name="has-parents"}' == ''}
+					{if '{exp:stash:get name="total-children"}' == 1}
+						<section class="related-articles events">
+						{embed="embeds/event-entries"}
+						</section>
+					{/if}
+				{/if}
+				</aside>
+				<!-- END RELATED SIDEBAR -->
+				{/if}
+
+				<footer class="entry-footer nocontent">
+				{if article_authors:total_results > 1}<h1>About the Authors</h1>{if:elseif article_authors:total_results == "1"}<h1>About the Author</h1>{/if}
+
+				{article_authors}
+
+				<div class="byline author vcard">
+
+					{if '{article_authors:contributor_avatar}{url}{/article_authors:contributor_avatar}' != ''}<a class="photo" href="/author/{article_authors:url_title}"><img src="{exp:ce_img:pair src='{article_authors:contributor_avatar}{url}{/article_authors:contributor_avatar}' width='120' height='120' crop='yes'}{made}{/exp:ce_img:pair}" alt="Image of {article_authors:title}"></a>{/if}
+
+					<h2><a class="fn" href="/author/{article_authors:url_title}">{article_authors:title}</a></h2>
+
+					<div class="author-bio">{article_authors:contributor_bio}</div>
+
+					{embed="embeds/author-entries" current-entry-id="{entry_id}" entry-id="{article_authors:entry_id}"}
+
+				</div>
+				
+				{if '{article_authors:book_title}' != ''}
+				<aside class="author-book">
+					{if '{article_authors:book_cover}{url}{/article_authors:book_cover}' != ''} 
+					<figure class="author-book__cover">
+						{if '{article_authors:book_purchase_url}' != ''}
+						<a class="author-book__purchase-url" href="{article_authors:book_purchase_url}">{/if}
+						<img src="{exp:ce_img:pair src='{article_authors:book_cover}{url}{/article_authors:book_cover}' width='120' crop='no'}{made}{/exp:ce_img:pair}" alt="{book_title}"/>
+						{if '{article_authors:book_purchase_url}' != ''}</a>{/if}
+					</figure>
+					{/if}
+					<article class="author-book__description">
+						<mark>Also from this author</mark> 
+						<h2>{if '{article_authors:book_purchase_url}' != ''}
+						<a class="author-book__purchase-url" href="{article_authors:book_purchase_url}">{/if}{article_authors:book_title} <span class="author-book__author-name">by {article_authors:contributor_first_name} {article_authors:contributor_last_name}</span>{if '{article_authors:book_purchase_url}' != ''}</a>{/if}</h2>
+						<p>{article_authors:book_description}</p>
+						{if '{article_authors:book_purchase_url}' != ''}<a class="author-book__purchase-url--cta" href="{article_authors:book_purchase_url}"><span>➝</span> Buy now</a>{/if}
+					</article>
+					
+				</aside>
+				{/if}
+
+				{/article_authors}
+
+				</footer>
+
+				{email-promo}
+
+			</div>
+
+			<div class="post-article">
+
+				<div class="column-holder unequal-columns">
+
+					<section id="comments" class="column comment-holder">
+
+							<h1 class="classy" itemprop="commentCount" data-url-title="{url_title}">
+							{if comment_total > 0}<span>{comment_total} Reader Comment{if comment_total > 1}s{/if}</span>{/if}
+							{if comment_total == 0}<span>No Comments{if allow_comments} (yet){/if}<span>{/if}
+							</h1>
+
+							{if comment_total > 0}<a href="/comments/{url_title}" class="load-comments-no-js buttonish">Load Comments</a>{/if}
+							<span id="load-comments" data-url-title="{url_title}"></span>
+
+							{if logged_out}
+								{comment-sign-in}
+							{if:else}
+								{comment-form}
+							{/if}
+
+					</section>
+
+{!--END CONTENT FROM ARTICLES CHANNEL --}
+{/if}
+
+{if channel_short_name=='legacy_articles'}
+{!--START CONTENT FROM LEGACY ARTICLE CHANNEL --}
+
+	<title>{title} · An A List Apart Article</title>
+
+	<link rel="alternate" type="application/rss+xml" title="A feed for comments on this article" href="/comments/feed/{url_title}" />
+
+	{legacy_article_custom_head}
+
+	{embed="embeds/article-author-styles" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}
+
+	{exp:stash:set name="safe-description"}{exp:ala_typography:inline}{exp:strip_html}{if legacy_article_mini_deck}{legacy_article_mini_deck}{if:elseif legacy_article_deck}{legacy_article_deck}{/if}{/exp:strip_html}{/exp:ala_typography:inline}{/exp:stash:set}
+
+	{if legacy_article_custom_css}
+	<style>
+		{legacy_article_custom_css}
+	</style>
+	{/if}
+
+	<link rel="canonical" href="{site_url}/{segment_1}/{url_title}"/>
+
+	<meta name="description" content="{exp:stash:get name="safe-description"}" class="entry-summary">
+	<meta name="author" content="{embed="embeds/article-authors-no-html" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"}">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@alistapart">
+	<meta name="twitter:title" content="{title}">
+	<meta name="twitter:description" content="{exp:stash:get name="safe-description"}">
+	<meta name="twitter:url" content="http://alistapart.com/article/{url_title}">
+
+	<meta property="og:title" content="{title}" />
+	<meta property="og:description" content="{exp:stash:get name="safe-description"}" />
+	<meta property="og:url" content="http://alistapart.com/article/{url_title}" />
+	<meta property="og:image" content="{legacy_article_illustration}{url}{/legacy_article_illustration}" />
+
+</head>
+
+<body class="printable {if comment_total > 0}comments-exist{/if}" itemscope itemtype="http://schema.org/Article">
+<link itemprop="mainEntityOfPage" href="{site_url}/article/{url_title}" />
+
+{primary-logo}
+
+{global-nav}
+
+{current-user-info-edit}
+
+	<div role="main" class="main-wrapper">
+
+		<article class="article-layout hentry">
+
+			<header class="entry-header">
+
+				{exp:stash:set name="issue-number"}{if legacy_article_illustration OR legacy_article_legacy_illo}{exp:playa:parents channel="issues" status="open|In Progress"}<span itemprop="isPartOf" itemscope itemtype="http://schema.org/PublicationIssue"><a href="/issue/{issue_number}" class="issue-number" itemprop="url" ><span class="badge">Issue №</span> <span itemprop="issueNumber">{issue_number}</span></a></span> {/exp:playa:parents}{/if}{/exp:stash:set}
+
+				{if legacy_article_illustration OR legacy_article_legacy_illo}
+				{exp:stash:set name="illustrator-credit"}
+				{if legacy_article_suppress_credit != "y"}
+				<p class="illustrator-credit" itemprop="contributor" itemscope itemtype="http://schema.org/Person">Illustration by
+					{if "{legacy_article_illustrator:entry_id}" != ""}
+					{legacy_article_illustrator}
+					{embed="embeds/article-illustrator-link" entry_id="{legacy_article_illustrator:entry_id}"}
+					{/legacy_article_illustrator}
+					{if:else}
+					<a href="/author/kcornell" itemprop="sameAs"><span itemprop="name">Kevin Cornell</span></a>
+					{/if}
+				</p>
+				{/if}
+				{/exp:stash:set}
+				{/if}
+
+				{if legacy_article_responsive_illo != ""}
+
+				<figure class="wide-hero responsive-hero" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+				<meta itemprop="representativeOfPage" content="true">
+				<meta itemprop="url" content="{legacy_article_responsive_illo limit='1'}{cell_1}{url}{/cell_1}{/legacy_article_responsive_illo}">
+        <meta itemprop="width" content="{legacy_article_responsive_illo limit='1'}{if cell_2 != ''}{cell_2}{if:else}{cell_1}{width}{/cell_1}{/if}{/legacy_article_responsive_illo}">
+        <meta itemprop="height" content="{legacy_article_responsive_illo limit='1'}{cell_1}{height}{/cell_1}{/legacy_article_responsive_illo}">
+					<picture>
+						{legacy_article_responsive_illo sort="desc"}
+						<source  srcset="{exp:ce_img:pair src='{cell_1}' width='{if cell_2 != ''}{cell_2}{/if}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src='{cell_1}' width='{width}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair} 2x" {if cell_2 != ''}media="(max-width: {cell_2}px)"{/if}>
+						{/legacy_article_responsive_illo}
+						{legacy_article_responsive_illo sort="desc" limit='1'}
+						<img src="{exp:ce_img:pair src='{cell_1}' width='{cell_2}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" srcset="{exp:ce_img:pair src='{cell_1}' width='{cell_2}' crop='no' save_type='jpg' quality='81'}{made}{/exp:ce_img:pair}" alt="" itemprop="contentUrl">
+						{/legacy_article_responsive_illo}
+ 					</picture>
+					{exp:stash:get name="issue-number"}
+					{exp:stash:get name="illustrator-credit"}
+				</figure>
+
+				{if:else}
+
+				{if legacy_article_illustration}
+
+				{legacy_article_illustration}
+				<figure class="wide-hero" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+				<meta itemprop="representativeOfPage" content="true">
+				<meta itemprop="url" content="{url}">
+        <meta itemprop="width" content="{width}">
+        <meta itemprop="height" content="{height}">
+					<picture>
+						{if width > height}
+						<source srcset="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="1920" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 600px)">
+						<img src="{exp:ce_img:pair src="{url}" width="960" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{legacy_article_illo_description}" itemprop="image">
+						{if:else}
+						<source srcset="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 1x, {exp:ce_img:pair src="{url}" width="696" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair} 2x" media="(min-width: 960px)">
+						<img src="{exp:ce_img:pair src="{url}" width="348" crop="no" save_type="jpg" quality="81"}{made}{/exp:ce_img:pair}" alt="{legacy_article_illo_description}" itemprop="contentUrl">
+						{/if}
+					</picture>
+					{exp:stash:get name="issue-number"}
+					{exp:stash:get name="illustrator-credit"}
+				</figure>
+				{/legacy_article_illustration}
+
+				{if:elseif legacy_article_legacy_illo != ''}
+				<figure class="wide-hero" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+				{legacy_article_legacy_illo}
+				</figure>
+				{if:else}
+				{exp:stash:get name="issue-number"}
+				{/if}
+
+				{/if}
+
+				<h1 class="entry-title" itemprop="headline">{title}</h1>
+
+				<p class="entry-details">
+					<meta itemprop="description" content="{exp:strip_html}{legacy_article_mini_deck}{/exp:strip_html}"/>
+
+					<span itemprop="author" itemscope itemtype="http://schema.org/Person">by {legacy_article_authors backspace="2"}<a itemprop="sameAs" class="author" rel="author" href="/author/{legacy_article_authors:url_title}"><span itemprop="name">{legacy_article_authors:title}</span></a>, {/legacy_article_authors}</span>
+
+					{exp:playa:parents channel="issues" status="open|In Progress"}<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}" itemprop="datePublished">{entry_date format="%F %d, %Y"}</time>
+					<meta itemprop="dateModified" content="{edit_date format="%Y-%m-%dT%H:%i:%s%Q"}">{/exp:playa:parents}
+
+					<span class="entry-meta optional-break">
+
+						Published in {modern-categories}
+
+					</span>
+				</p>
+
+				{exp:playa:parents status="open|In Progress" show_future_entries="yes"}
+				{if status != "open" OR {entry_date} > {current_time}}
+				<p class="meta warning" style="display: inline-block; background: #ffffef; outline: 3px solid #ffffef;">
+
+					{if status != "open"}
+					<strong>Please note:</strong> This issue has not yet been set to "open."
+					{if:else}
+					<strong>Please note:</strong> This issue is ready, and will go live when it hits its publish time.
+					{/if}
+
+				</p>
+				{/if}
+				{/exp:playa:parents}
+
+			</header>
+
+			{if legacy_article_series}
+				{legacy-article-series-logic}
+			{/if}
+
+			{if legacy_article_editors_note}
+			<div class="main-content pre-article">
+				<p class="editors-note"><b>A note from the editors:</b> {legacy_article_editors_note}</p>
+			</div>
+			{/if}
+
+			{legacy_article_outdated}
+			{if legacy_article_age_flag == 'y'}
+			<div class="main-content pre-article">
+			   <p class="editors-note var1"><b>{if custom_note}{custom_note}{if:else}Technical information may be out of date.{/if}</b> {if updated_entry}For more recent approaches, read {updated_entry}<a href="{site_url}/{if "{channel_short_name}" == "blog"}blog/post/{if:elseif "{channel_short_name}" == "columns"}column/{if:elseif "{channel_short_name}" == "articles"}article/{/if}{url_title}" title="{title}">{title}</a>{/updated_entry}.{/if}</p>
+			</div>
+			{/if}
+			{/legacy_article_outdated}
+
+			{if legacy_article_opening_blockquot}
+			<div class="main-content">
+
+				{legacy_article_opening_blockquot}
+
+			</div>
+			{/if}
+
+			<div class="main-content" itemprop="articleBody">
+
+				{exp:hop_inject where="<p>" always_inject="y"}
+
+				{exp:hop_inject:injection separator="2" position="before"}
+
+				{content-minutiae-legacy-articles}
+
+				<div class="utility-side-bar">{ads}</div>
+
+				{/exp:hop_inject:injection}
+
+				{legacy_article_content}
+
+				{legacy_article_content_overflow}
+
+				{/exp:hop_inject}
+
+				{if legacy_article_footnotes}
+				<section class="entry-footnotes">
+
+					<h1>Notes</h1>
+
+					<ul class="the-footnotes">
+
+						{legacy_article_footnotes}
+						<li id="note{row_count}"><a class="count" href="#ref{row_count}">{row_count}. </a>{cell_1}</li>
+						{/legacy_article_footnotes}
+
+					</ul>
+
+				</section>
+				{/if}
+
+				{if legacy_article_hide_related_sidebar != "y"}
+				<!-- START RELATED SIDEBAR -->
+				{exp:stash:set name="total-children"}{exp:playa:parents channel="issues" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
+				{exp:stash:set name="has-parents"}{exp:playa:parents channel="articles|legacy_articles|blog|columns" status="open"}{exp:playa:total_children}{/exp:playa:parents}{/exp:stash:set}
+				{exp:stash:set name="current-entry-id"}{entry_id}{/exp:stash:set}
+				<aside id="related" class="sidebar var1 nocontent">
+				<i class="widget-branding ala"></i>
+				{if '{exp:stash:get name="has-parents"}' >= 1}
+				<!-- start first block--><!-- if this article has a follow up - show the follow up -->
+					<section class="follow-up">
+						<h1>Follow-up</h1>
+						{exp:playa:parents channel="articles|legacy_articles|columns|blog"}
+						<article>
+							<h1><a href="{site_url}/{if channel_short_name=='blog'}{channel_short_name}/post/{url_title}{if:elseif channel_short_name=='articles' || channel_short_name=='legacy_articles'}article/{url_title}{if:elseif channel_short_name=='columns'}column/{url_title}{/if}" data-trackevent="Related sidebar: Follow up">{title}</a></h1>
+							{if blog_follow_up_note OR article_follow_up_note OR legacy_article_follow_up_note OR column_follow_up_note}
+								<p>{exp:strip_html}{blog_follow_up_note}{article_follow_up_note}{legacy_article_follow_up_note}{column_follow_up_note}{/exp:strip_html}</p>
+							{if:else}
+								<p>{exp:ala_typography:inline}{exp:strip_html}
+									{if channel_short_name=='blog'}
+										{if blog_mini_deck}{blog_mini_deck}{if:elseif blog_intro}{exp:trunchtml chars="130" inline="..."}{blog_intro}{/exp:trunchtml}{/if}
+									{if:elseif channel_short_name=='columns'}
+										{if column_mini_deck}{column_mini_deck}{if:elseif column_intro}{exp:trunchtml chars="130" inline="..."}{column_intro}{/exp:trunchtml}{/if}
+									{if:elseif channel_short_name=='articles' || channel_short_name=='legacy_articles'}
+										{if article_mini_deck || legacy_article_mini_deck}{article_mini_deck}{legacy_article_mini_deck}{if:elseif article_deck || legacy_article_deck}{exp:trunchtml chars="130" inline="..."}{article_deck}{legacy_article_deck}{/exp:trunchtml}{/if}
+									{/if}
+								{/exp:strip_html}{/exp:ala_typography:inline}</p>
+							{/if}
+						</article>
+						{/exp:playa:parents}
+					</section>
+				{/if}
+				<!-- if this article does not have a follow up, and the issue has two articles show the other article -->
+				{if '{exp:stash:get name="has-parents"}' == ''}
+					{if '{exp:stash:get name="total-children"}' > 1}
+					<section>
+					{exp:playa:parents channel="issues" status="open"}
+					{exp:stash:set name="issue-number-sidebar"}{issue_number}{/exp:stash:set}
+					{exp:stash:set name="article-illo-sidebar"}{issue_number}{/exp:stash:set}
+					{exp:playa:children status="open"}
+					{if entry_id != {exp:stash:get name="current-entry-id"}}
+						{legacy_article_illustration}
+						<figure class="sidebar-hero {if width > height}wideone{/if}" data-picture data-alt="">
+							<div data-src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}"></div>
+							<div data-src="{exp:ce_img:pair src="{url}" width="644" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" data-media="(min-width: 600px) and (min-device-pixel-ratio: 2.0)"></div>
+							<noscript><img src="{exp:ce_img:pair src="{url}" width="322" crop="no" save_type="jpg" quality="10"}{made}{/exp:ce_img:pair}" alt=""></noscript>
+						</figure>
+						{/legacy_article_illustration}
+						<h1>Also in Issue №&nbsp;{exp:stash:get name="issue-number-sidebar"}</h1>
+						<article>
+						<h1><a href="/article/{url_title}" data-trackevent="Related sidebar: Also in issue">{title}</a></h1>
+						<p>{exp:ala_typography:inline}{exp:strip_html}{if legacy_article_mini_deck}<p>{legacy_article_mini_deck}</p>{if:elseif legacy_article_deck}<p>{exp:trunchtml chars="130" inline="..."}{legacy_article_deck}{/exp:trunchtml}</p>{/if}{/exp:strip_html}{/exp:ala_typography:inline}</p>
+						</article>
+					{/if}
+					{/exp:playa:children}
+					{/exp:playa:parents}
+					</section>
+					{if:elseif '{exp:stash:get name="total-children"}' == 1}
+					{legacy_article_authors}
+						{embed="embeds/recently-by-author" current-entry-id="{exp:stash:get name="current-entry-id"}" entry-id="{legacy_article_authors:entry_id}"}
+					{/legacy_article_authors}
+ 					{/if}
+				{/if}<!-- end first block -->
+				<!-- show categories -->
+				{if "{categories}{category_url_title}{/categories}"!=""}
+					{embed="embeds/primary-category-logic" id="{entry_id}"}
+				{/if}
+				{if '{exp:stash:get name="has-parents"}' == ''}
+					{if '{exp:stash:get name="total-children"}' == 1}
+						<section class="related-articles events">
+						{embed="embeds/event-entries"}
+						</section>
+					{/if}
+				{/if}
+				</aside>
+				<!-- END RELATED SIDEBAR -->
+				{/if}
+
+				<footer class="entry-footer nocontent">
+
+				{if legacy_article_authors:total_results > 1}<h1>About the Authors</h1>{if:elseif legacy_article_authors:total_results == "1"}<h1>About the Author</h1>{/if}
+
+				{legacy_article_authors}
+
+				<div class="byline author vcard">
+
+					{if '{legacy_article_authors:contributor_avatar}{url}{/legacy_article_authors:contributor_avatar}' != ''}<a class="photo" href="/author/{legacy_article_authors:url_title}"><img src="{exp:ce_img:pair src="{legacy_article_authors:contributor_avatar}{url}{/legacy_article_authors:contributor_avatar}" width="120" height="120" crop="yes"}{made}{/exp:ce_img:pair}" alt=""></a>{/if}
+
+					<h2><a class="fn" href="/author/{legacy_article_authors:url_title}">{legacy_article_authors:title}</a></h2>
+
+					<div class="author-bio">{legacy_article_authors:contributor_bio}</div>
+
+					{embed="embeds/author-entries" current-entry-id="{entry_id}" entry-id="{legacy_article_authors:entry_id}"}
+
+				</div>
+
+				{if '{legacy_article_authors:book_title}' != ''}
+				<aside class="author-book">
+					{if '{legacy_article_authors:book_cover}{url}{/legacy_article_authors:book_cover}' != ''} 
+					<figure class="author-book__cover">
+						{if '{legacy_article_authors:book_purchase_url}' != ''}
+						<a class="author-book__purchase-url" href="{article_authors:book_purchase_url}">{/if}
+						<img src="{exp:ce_img:pair src='{legacy_article_authors:book_cover}{url}{/legacy_article_authors:book_cover}' width='120' crop='no'}{made}{/exp:ce_img:pair}" alt="{legacy_article_authors:book_title}"/>
+						{if '{legacy_article_authors:book_purchase_url}' != ''}</a>{/if}
+					</figure>
+					{/if}
+					<article class="author-book__description">
+						<mark>Also from this author</mark> 
+						<h2>{if '{legacy_article_authors:book_purchase_url}' != ''}
+						<a class="author-book__purchase-url" href="{legacy_article_authors:book_purchase_url}">{/if}{legacy_article_authors:book_title} <span class="author-book__author-name">by {legacy_article_authors:contributor_first_name} {legacy_article_authors:contributor_last_name}</span>{if '{legacy_article_authors:book_purchase_url}' != ''}</a>{/if}</h2>
+						<p>{legacy_article_authors:book_description}</p>
+						{if '{legacy_article_authors:book_purchase_url}' != ''}<a class="author-book__purchase-url--cta" href="{legacy_article_authors:book_purchase_url}"><span>➝</span> Buy now</a>{/if}
+					</article>
+					
+				</aside>
+				{/if}
+
+				{/legacy_article_authors}
+
+				</footer>
+
+				{email-promo}
+
+			</div>
+
+			<div class="post-article">
+
+				<div class="column-holder unequal-columns">
+
+					<section id="comments" class="column comment-holder">
+
+							<h1 class="classy" itemprop="commentCount" data-url-title="{url_title}">
+							{if comment_total > 0}<span>{comment_total} Reader Comment{if comment_total > 1}s{/if}</span>{/if}
+							{if comment_total == 0}<span>No Comments{if allow_comments} (yet){/if}<span>{/if}
+							</h1>
+
+							{if comment_total > 0}<a href="/comments/{url_title}" class="load-comments-no-js buttonish">Load Comments</a>{/if}
+							<span id="load-comments" data-url-title="{url_title}"></span>
+							<div class="comment-form-wrapper">
+							{if logged_out}
+								{comment-sign-in}
+							{if:else}
+								{comment-form}
+							{/if}
+							</div>
+
+					</section>
+{!--END CONTENT FROM LEGACY ARTICLE CHANNEL --}
+
+{/if}
+{/exp:channel:entries}
+
+					<aside class="column more-content">
+
+						{more-from-ala}
+
+					<!-- 	{ad-bsa-text} -->
+
+					</aside>
+
+				</div>
+
+			</div>
+
+		</article>
+
+
+
+	</div>
+
+	{global-footer}
+
+	{sponsor-top}
+
+	{exp:channel:entries channel="legacy_articles" limit="1" require_entry="yes" status="open|In Progress" show_future_entries="yes"}
+
+	{if legacy_article_custom_body_load}
+	<script>
+	$(window).load(function() {
+		// this comment prevents EE from trying to parse the previous curly brace
+		{legacy_article_custom_body_load}
+
+	});
+	</script>
+	{/if}
+
+	{if legacy_article_custom_javascript}
+	<script>
+		{legacy_article_custom_javascript}
+	</script>
+	{/if}
+
+	{/exp:channel:entries}
+
+{current-user-info-edit}
+
+{global-page-bottom}
