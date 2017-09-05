@@ -56,8 +56,6 @@ $sans-serif-light: "Franklin ITC Light", sans-serif;
 $serif: georgia, serif;
 $monospace: "Menlo", monospace;
 
-
-
 html,
 body {
 	font-family: $serif;
@@ -5519,6 +5517,7 @@ form.simple-form.wide-form label .error-message {
 
 
 //imports
+@import 'components/buttons';
 @import 'components/author-book';
 
 

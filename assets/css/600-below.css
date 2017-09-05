@@ -911,7 +911,8 @@
 		text-align: center;
 	}
 
-	.comment-bubble {
+	.comment-bubble, 
+	.patreon-bubble {
 		font-size: 18px;
 		line-height: 18px;
 		padding: 9px 12px;

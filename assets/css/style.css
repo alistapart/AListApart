@@ -227,7 +227,8 @@ ul.inline-items li {
   border-top: 1px solid #ccc;
   border-left: 1px solid #ccc;
   border-top-left-radius: 7px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   font-family: "Franklin ITC Light", sans-serif;
   color: #666;
 }
@@ -721,6 +722,7 @@ aside.column.more-content .item-summary {
 .item-summary.article.columnist img.restrain {
   width: 96px;
   height: 96px;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -910,6 +912,7 @@ aside.column.more-content .item-summary {
   width: 60px;
   height: 60px;
   border: 0.4em solid #f5f5f5;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -1815,7 +1818,8 @@ ul.fancy-links li a.googleplus {
   font-size: 14px;
   line-height: 28px;
   border: 1px solid #fff;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 
 .alphabits a.arrow.right {
@@ -3856,7 +3860,8 @@ ul.bullets {
   border: solid 1px #e6e6e6;
   border-radius: 3px;
   background-color: #f0f0f0;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
+          box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
   font-family: "Franklin ITC Light", sans-serif;
 }
 
@@ -3886,14 +3891,13 @@ ul.bullets {
  */
 .secondary-column .bsa-apiads a {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   -webkit-box-align: start;
-  -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start;
   text-align: left;
@@ -3934,7 +3938,6 @@ ul.bullets {
   margin: 0 12px 0 0;
   /* 1 */
   -webkit-box-flex: 0;
-  -webkit-flex: none;
       -ms-flex: none;
           flex: none;
   /* 2 */
@@ -4130,7 +4133,8 @@ body.modal {
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 7px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   font-family: "Franklin ITC Light", sans-serif;
   color: #666;
   font-size: 12px;
@@ -4636,9 +4640,13 @@ textarea {
   outline: 0;
   color: #000;
   font-size: 18px;
-  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.05);
   -webkit-transition: box-shadow 100ms ease-in;
+  -webkit-transition: -webkit-box-shadow 100ms ease-in;
+  transition: -webkit-box-shadow 100ms ease-in;
   transition: box-shadow 100ms ease-in;
+  transition: box-shadow 100ms ease-in, -webkit-box-shadow 100ms ease-in;
 }
 
 input[type="file"] {
@@ -4650,7 +4658,8 @@ textarea:focus,
 input:focus,
 textarea:valid,
 input:valid {
-  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.15);
+          box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.15);
 }
 
 label {
@@ -4839,7 +4848,8 @@ figure .note {
   border-top: 0;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  box-shadow: 0px 0px 9px -4px rgba(23, 187, 91, 0.3);
+  -webkit-box-shadow: 0px 0px 9px -4px rgba(23, 187, 91, 0.3);
+          box-shadow: 0px 0px 9px -4px rgba(23, 187, 91, 0.3);
 }
 
 /*----Check-radio customized------*/
@@ -5303,7 +5313,7 @@ form.simple-form.wide-form label .error-message {
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   background: #f6f7f8;
-  background: -webkit-linear-gradient(left, #eee 8%, #ddd 18%, #eee 25%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(8%, #eee), color-stop(18%, #ddd), color-stop(25%, #eee));
   background: linear-gradient(to right, #eee 8%, #ddd 18%, #eee 25%);
   background-repeat: no-repeat;
   background-size: 600px 18px;
@@ -5357,7 +5367,8 @@ form.simple-form.wide-form label .error-message {
   color: #fff;
   border: 1px solid #ccc;
   border-radius: 3px;
-  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.15);
+          box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.15);
   height: 46px;
   width: 100%;
   float: left;
@@ -5376,19 +5387,42 @@ form.simple-form.wide-form label .error-message {
   color: #bb3825;
 }
 
+.patreon-bubble {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+  padding: 18px 24px;
+  font-family: "Franklin ITC Light", sans-serif;
+  background: #bb3825;
+  color: #fff;
+  border: 2px solid #bb3825;
+  border-radius: 6px;
+  margin-bottom: 18px;
+  -webkit-transition: all .1s ease-in;
+  transition: all .1s ease-in;
+}
+
+.patreon-bubble:hover {
+  color: #bb3825;
+  background-color: #fff;
+  text-decoration: none;
+}
+
 /**
  * Author Book Snippet
  */
 .author-book {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   -webkit-box-align: start;
-  -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start;
   text-align: left;
@@ -5406,9 +5440,8 @@ form.simple-form.wide-form label .error-message {
 .author-book__cover {
   min-width: 141px;
   margin-right: 24px;
-  -webkit-flex-shrink: 1;
-      -ms-flex-negative: 1;
-          flex-shrink: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
 }
 
 .author-book__cover img {
