@@ -3821,237 +3821,6 @@ ul.bullets {
   display: none;
 }
 
-/*------------------------------------*  #ADS
-\*------------------------------------*/
-/**
- * Job Board
- */
-.job-board {
-  margin: 36px 0;
-  font-size: 14px;
-  line-height: 24px;
-  font-family: "Franklin ITC Light", sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  background: #fff;
-}
-
-.job-board h4 {
-  text-transform: uppercase;
-  color: #bb3825;
-}
-
-.job-board.in-article {
-  margin-top: 2px;
-  margin-bottom: 4em;
-  padding: 0;
-}
-
-.job-board.in-article .board-link {
-  font-size: 12px;
-}
-
-/**
- * BuySellAds
- */
-.bsa-apiads {
-  margin: 0 auto 36px;
-  padding: 12px;
-  border: solid 1px #e6e6e6;
-  border-radius: 3px;
-  background-color: #f0f0f0;
-  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
-          box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
-  font-family: "Franklin ITC Light", sans-serif;
-  text-align: center;
-}
-
-/**
- * When the BSA ad is in an article visually align it with the article body 
- * text starting point:
- * 1. Push it down 8px (magic number) to account for the article text 
- * 		line-height (30).
- */
-.utility-side-bar .bsa-apiads {
-  margin-top: 8px;
-  /* 1 */
-}
-
-.bsa-apiads a {
-  display: block;
-  text-align: center;
-  line-height: 1;
-}
-
-.bsa-apiads a:hover {
-  text-decoration: none;
-}
-
-/**
- * On pages with wider sidebars float the BSA logo and text:
- */
-.secondary-column .bsa-apiads a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  text-align: left;
-}
-
-/**
- * BSA logo:
- * 1. Give the logo container a min-width of 80px so it doesn't overlap with
- * 		the text in Safari. @docs http://goo.gl/TRwgiV
- * 2. Give the logo a container of 80px so the text doesn't jump down when the 
- *		image loads.
- * 3. Push it down 5px (magic number) to get equal visual distance of content
- * 		from the top and bottom of the container element.
- */
-.bsa-apiads-logo {
-  max-width: 80px;
-  max-height: 80px;
-  border-radius: 3px;
-}
-
-.bsa-apiads-logo__container {
-  min-width: 80px;
-  /* 1 */
-  height: 80px;
-  /* 2 */
-  margin: 5px auto 10px;
-  /* 3 */
-}
-
-/**
- * When the BSA logo and text are floated left:
- * 1. Push the text on the left of the logo container 12px right.
- * 2. Fix for IE (11, 10, fixed in Edge), to get the right image aspect ratio. 
- * 		Bug: column flex items don't always preserve intrinsic aspect ratios
- *		@docs: http://goo.gl/5M6YZO
- */
-.secondary-column .bsa-apiads-logo {
-  margin: 0 12px 0 0;
-  /* 1 */
-  -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
-  /* 2 */
-}
-
-.bsa-apiads p {
-  font-size: 14px;
-  line-height: 20px;
-  color: #222;
-  -webkit-transition: color .15s ease-in-out;
-  transition: color .15s ease-in-out;
-  margin-top: 12px;
-}
-
-.bsa-apiads p a {
-  color: #2455c3;
-}
-
-.bsa-apiads a:hover p {
-  color: #4d4d4d;
-}
-
-.bsa-apiads .ad-bug {
-  display: block;
-  color: #999;
-}
-
-/**
- * When the BSA logo and text are floated left:
- * 1. Lift the <p> up 6px (magic number) to align it exactly with the image 
- * 		(accounts	for <p> line-height).
- * 2. Fix for IE 10, to prevent text from overflowing its container. 
- * 		Bug: column flex items don't always preserve intrinsic aspect ratios
- *		@docs: http://goo.gl/5M6YZO
- * 3. Show the ad bug inline.
- */
-.secondary-column .bsa-apiads p {
-  margin-top: -6px;
-  /* 1 */
-  -ms-flex: 0 1 auto;
-  /* 2 */
-}
-
-.secondary-column .bsa-apiads .ad-bug {
-  display: inline;
-  /* 3 */
-}
-
-/**
- * BSA Ads Preload: show a placeholder until the ad loads.
- * 1. Using a background image instead of inline svg because we need to swap 
- *		placeholders in different resolutions.
- */
-.bsa-apiads.bsa-apiads--preload {
-  min-width: 216px;
-  min-height: 209px;
-  padding: 0;
-  background-image: url("/components/assets/img/bsa_ad-placeholder.svg");
-  /* 1 */
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-.secondary-column .bsa-apiads.bsa-apiads--preload {
-  min-width: 320px;
-  min-height: 107px;
-  background-image: url("/components/assets/img/bsa_ad-placeholder--wide.svg");
-  /* 1 */
-  background-position: left center;
-}
-
-/**
- * Fixes for IE < 10 when the BSA logo and text are floated left (IE < 10 
- * doesn't support flexbox).
- */
-.lt-ie10 .secondary-column .bsa-apiads a {
-  display: block;
-  overflow: hidden;
-}
-
-.lt-ie10 .secondary-column .bsa-apiads-logo__container {
-  float: left;
-}
-
-.lt-ie10 .secondary-column .bsa-apiads p {
-  float: right;
-  max-width: 204px;
-}
-
-.ie8 .secondary-column .bsa-apiads p {
-  max-width: 199px;
-}
-
-.ie8 .secondary-column .bsa-apiads-logo {
-  vertical-align: top;
-}
-
-/**
- * BSA tall ad
- */
-.bsa-tall {
-  margin-bottom: 36px;
-}
-
-/**
- * When the BSA logo and text are floated left:
- * 1. Push the ad down 9px (magic number) to align it exactly with the text 
- * 		(accounts	for <p> line-height).
- */
-.utility-side-bar .bsa-tall {
-  margin-top: 9px;
-}
-
 /*------------------------------------*  #MODULES
 \*------------------------------------*/
 /**
@@ -5413,6 +5182,241 @@ form.simple-form.wide-form label .error-message {
 .patreon-bubble:hover {
   color: #bb3825;
   background-color: #fff;
+}
+
+/*------------------------------------*  #ADS
+\*------------------------------------*/
+/**
+ * Job Board
+ */
+.job-board {
+  margin: 36px 0;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Franklin ITC Light", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  background: #fff;
+}
+
+.job-board h4 {
+  text-transform: uppercase;
+  color: #bb3825;
+}
+
+.job-board.in-article {
+  margin-top: 2px;
+  margin-bottom: 4em;
+  padding: 0;
+}
+
+.job-board.in-article .board-link {
+  font-size: 12px;
+}
+
+/**
+ * ALA Banners
+ */
+.banner {
+  margin: 0 auto 36px;
+  padding: 12px;
+  border: solid 1px #e6e6e6;
+  border-radius: 3px;
+  background-color: #fff;
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
+          box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
+  font-family: "Franklin ITC Light", sans-serif;
+  text-align: center;
+}
+
+.banner.a-book-apart {
+  background-color: #f0f0f0;
+}
+
+/**
+ * When the BSA ad is in an article visually align it with the article body 
+ * text starting point:
+ * 1. Push it down 8px (magic number) to account for the article text 
+ *    line-height (30).
+ */
+.utility-side-bar .banner {
+  margin-top: 8px;
+  /* 1 */
+}
+
+.banner a {
+  display: block;
+  text-align: center;
+  line-height: 1;
+}
+
+.banner a:hover {
+  text-decoration: none;
+}
+
+/**
+ * On pages with wider sidebars float the BSA logo and text:
+ */
+.secondary-column .banner a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  text-align: left;
+}
+
+/**
+ * BSA logo:
+ * 1. Give the logo container a min-width of 80px so it doesn't overlap with
+ *    the text in Safari. @docs http://goo.gl/TRwgiV
+ * 2. Give the logo a container of 80px so the text doesn't jump down when the 
+ *    image loads.
+ * 3. Push it down 5px (magic number) to get equal visual distance of content
+ *    from the top and bottom of the container element.
+ */
+.banner-logo {
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 3px;
+}
+
+.banner-logo__container {
+  min-width: 80px;
+  /* 1 */
+  height: 80px;
+  /* 2 */
+  margin: 5px auto 10px;
+  /* 3 */
+}
+
+/**
+ * When the BSA logo and text are floated left:
+ * 1. Push the text on the left of the logo container 12px right.
+ * 2. Fix for IE (11, 10, fixed in Edge), to get the right image aspect ratio. 
+ *    Bug: column flex items don't always preserve intrinsic aspect ratios
+ *    @docs: http://goo.gl/5M6YZO
+ */
+.secondary-column .banner-logo {
+  margin: 0 12px 0 0;
+  /* 1 */
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  /* 2 */
+}
+
+.banner p {
+  font-size: 14px;
+  line-height: 20px;
+  color: #222;
+  -webkit-transition: color .15s ease-in-out;
+  transition: color .15s ease-in-out;
+  margin-top: 12px;
+}
+
+.banner p a {
+  color: #2455c3;
+}
+
+.banner a:hover p {
+  color: #4d4d4d;
+}
+
+.banner .ad-bug {
+  display: block;
+  color: #999;
+}
+
+/**
+ * When the BSA logo and text are floated left:
+ * 1. Lift the <p> up 6px (magic number) to align it exactly with the image 
+ *    (accounts for <p> line-height).
+ * 2. Fix for IE 10, to prevent text from overflowing its container. 
+ *    Bug: column flex items don't always preserve intrinsic aspect ratios
+ *    @docs: http://goo.gl/5M6YZO
+ * 3. Show the ad bug inline.
+ */
+.secondary-column .banner p {
+  margin-top: -6px;
+  /* 1 */
+  -ms-flex: 0 1 auto;
+  /* 2 */
+}
+
+.secondary-column .banner .ad-bug {
+  display: inline;
+  /* 3 */
+}
+
+/**
+ * BSA Ads Preload: show a placeholder until the ad loads.
+ * 1. Using a background image instead of inline svg because we need to swap 
+ *    placeholders in different resolutions.
+ */
+.banner.banner--preload {
+  min-width: 216px;
+  min-height: 209px;
+  padding: 0;
+  background-image: url("/components/assets/img/bsa_ad-placeholder.svg");
+  /* 1 */
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.secondary-column .banner.banner--preload {
+  min-width: 320px;
+  min-height: 107px;
+  background-image: url("/components/assets/img/bsa_ad-placeholder--wide.svg");
+  /* 1 */
+  background-position: left center;
+}
+
+/**
+ * Fixes for IE < 10 when the BSA logo and text are floated left (IE < 10 
+ * doesn't support flexbox).
+ */
+.lt-ie10 .secondary-column .banner a {
+  display: block;
+  overflow: hidden;
+}
+
+.lt-ie10 .secondary-column .banner-logo__container {
+  float: left;
+}
+
+.lt-ie10 .secondary-column .banner p {
+  float: right;
+  max-width: 204px;
+}
+
+.ie8 .secondary-column .banner p {
+  max-width: 199px;
+}
+
+.ie8 .secondary-column .banner-logo {
+  vertical-align: top;
+}
+
+/**
+ * BSA tall ad
+ */
+.bsa-tall {
+  margin-bottom: 36px;
+}
+
+/**
+ * When the BSA logo and text are floated left:
+ * 1. Push the ad down 9px (magic number) to align it exactly with the text 
+ *    (accounts for <p> line-height).
+ */
+.utility-side-bar .bsa-tall {
+  margin-top: 9px;
 }
 
 /**

@@ -1,4 +1,4 @@
-{exp:rss:feed channel="articles" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-2 days')) ?>"}
+{exp:rss:feed channel="articles" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-1 day')) ?>"}
 
 <?xml version="1.0" encoding="{encoding}"?>
 <rss version="2.0"
@@ -22,12 +22,12 @@
 
 
 <item>
-    <title><![CDATA[{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-2 days')) ?>"}{title}, {/exp:channel:entries}]]></title>
-    <dc:creator><![CDATA[{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-2 days')) ?>"}{article_authors backspace="2"}{article_authors:title}, {/article_authors}, {/exp:channel:entries}]]></dc:creator>
+    <title><![CDATA[{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-1 day')) ?>"}{title}, {/exp:channel:entries}]]></title>
+    <dc:creator><![CDATA[{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-1 day')) ?>"}{article_authors backspace="2"}{article_authors:title}, {/article_authors}, {/exp:channel:entries}]]></dc:creator>
 
-    <description><![CDATA[{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-2 days')) ?>"}{exp:ala_typography:inline}{article_mini_deck}{/exp:ala_typography:inline}, {/exp:channel:entries}]]></description>
+    <description><![CDATA[{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-1 day')) ?>"}{exp:ala_typography:inline}{article_mini_deck}{/exp:ala_typography:inline}, {/exp:channel:entries}]]></description>
     <content:encoded><![CDATA[
-    {exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-2 days')) ?>"}
+    {exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-1 day')) ?>"}
 
         {if count == 1}<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
             <tbody class="mcnTextBlockOuter">
