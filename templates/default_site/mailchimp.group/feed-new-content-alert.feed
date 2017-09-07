@@ -1,0 +1,84 @@
+{exp:rss:feed channel="articles" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-1 day')) ?>"}
+
+<?xml version="1.0" encoding="{encoding}"?>
+<rss version="2.0"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:admin="http://webns.net/mvcb/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:atom="http://www.w3.org/2005/Atom">
+
+    <channel>
+
+    <title><![CDATA[New Content Alert!]]></title>
+    <link>https://alistapart.com</link>
+    <description>ALA's New Content Alert </description>
+    <dc:language>{channel_language}</dc:language>
+    <dc:creator>The fine folks at A List Apart</dc:creator>
+    <dc:rights>Copyright {gmt_date format="%Y"}</dc:rights>
+    <dc:date>{gmt_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
+    <atom:link href="{site_url}/mailchimp/new-content-alert" rel="self" type="application/rss+xml" />
+
+
+<item>
+    <title><![CDATA[<?php echo date('Y-m-d 00:01', strtotime('-1 day')) ?>{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-1 day'))) ?>"}{title}, {/exp:channel:entries}]]></title>
+    <dc:creator><![CDATA[{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-1 day'))) ?>"}{article_authors backspace="2"}{article_authors:title}, {/article_authors}, {/exp:channel:entries}]]></dc:creator>
+
+    <description><![CDATA[{exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-1 day'))) ?>"}{exp:ala_typography:inline}{article_mini_deck}{/exp:ala_typography:inline}, {/exp:channel:entries}]]></description>
+    <content:encoded><![CDATA[
+    {exp:channel:entries channel="articles" limit="10" dynamic_start="on" disable="member_data|pagination" status="open" show_future_entries="no" sticky="no" start_on="<?php echo date('Y-m-d 00:01', strtotime('-1 day'))) ?>"}
+
+        {if count == 1}<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
+            <tbody class="mcnTextBlockOuter">
+                <tr>
+                    <td valign="top" class="mcnTextBlockInner">
+                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextContentContainer">
+                            <tbody>
+                                <tr>
+                                    <td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
+                                        <div style="text-align: center;"><span style="line-height:20.7999992370605px"><i>A List Apart</i> Presents:
+                                        {if article_responsive_illo}
+                                        <p style="text-align: center;"><span style="line-height:20.7999992370605px">{article_responsive_illo}<img src="{site_url}/{exp:ce_img:pair src="{cell_1}" width="480" crop="no" save_type="jpg" quality="61"}{made}{/exp:ce_img:pair}" style="display: block; padding: 0; color: #666666; text-decoration: none; font-family: Helvetica, arial, sans-serif; font-size: 16px; max-width:480px; height: auto ! important;margin:0 auto;" alt="{title}">{/article_responsive_illo}</span></p>{/if}
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>{/if}
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
+            <tbody class="mcnTextBlockOuter">
+                <tr>
+                    <td valign="top" class="mcnTextBlockInner">
+                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextContentContainer">
+                            <tbody>
+                                <tr>
+                                    <td valign="top" class="mcnTextContent" style="padding: 12px 30px; text-align: center;">
+                                        <h2 class="mc-toc-title" style="text-align: center;"><a href="{site_url}/article/{url_title}" target="_blank">{title}</a></h2>
+                                        <div style="text-align: center; padding: 0 0 24px; line-height: 26px;">
+                                        <em>By {article_authors backspace="2"}{article_authors:title}, {/article_authors}</em>
+                                        <p>{article_deck}</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+   {/exp:channel:entries}    ]]></content:encoded>
+    <dc:date>{gmt_entry_date format="%Y-%m-%dT%H:%i:%s%Q"}</dc:date>
+
+</item>
+
+
+
+    </channel>
+</rss>
+
+{/exp:rss:feed}
