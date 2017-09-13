@@ -2,7 +2,7 @@
 				{exp:user:authors entry_id="{embed:entry_id}"}
 				{exp:user:entries channel="columns" user_author_id="{member_id}" limit="1" offset="1" entry_id="not {embed:entry_id}"}
 				{if {embed:entry_id} != {entry_id}}
-						<time datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+						<time datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %j, %Y"}</time>
 						
 						<h2><a href="/column/{url_title}">{title}</a></h2>
 				{/if}

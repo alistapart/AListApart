@@ -15,7 +15,7 @@
 						</figure>
 						{/issue_illustration}
 
-						<h3 class="alternate">Issue № {issue_number} · <time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time></h3>
+						<h3 class="alternate">Issue № {issue_number} · <time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %j, %Y"}</time></h3>
 
 						<ul class="entry-list">
 
@@ -54,7 +54,7 @@
 							{if column_mini_deck}<p>{exp:xhtml:light}{column_mini_deck}{/exp:xhtml:light}</p>{if:elseif column_intro}<p>{exp:xhtml:light}{exp:trunchtml chars="175" inline="..."}{column_intro}{/exp:trunchtml}{/exp:xhtml:light}</p>{/if}
 
 							<footer class="byline">
-								<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time>
+								<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %j, %Y"}</time>
 							</footer>
 
 						</article>
