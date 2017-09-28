@@ -31,7 +31,7 @@
 					<h1><a href="/column/{url_title}">{title}</a></h1>
 
 					<p class="meta">
-						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %d, %Y"}</time> ·
+						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%F %j, %Y"}</time> ·
 
 						Published in {modern-categories}
 
@@ -60,7 +60,7 @@
 
 					<footer>
 						{exp:parse_url parts="host"}{blog_target_url}{/exp:parse_url} ·
-						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="/blog/post/{url_title}">{entry_date format="%F %d, %Y"}</a></time>
+						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="/blog/post/{url_title}">{entry_date format="%F %j, %Y"}</a></time>
 					</footer>
 
 				</article>
@@ -75,7 +75,7 @@
 
 					<footer>
 						<a class="author" href="/author/{embed:entry_username}">{author}</a>
-						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="/blog/post/{url_title}">{entry_date format="%F %d, %Y"}</a></time>
+						<time class="pubdate updated" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}"><a href="/blog/post/{url_title}">{entry_date format="%F %j, %Y"}</a></time>
 					</footer>
 
 				</article>

@@ -142,8 +142,9 @@
 					{/exp:channel:entries}
 					{/if}
 					{/exp:stash:parse}
-					
-					<div class="fixed-column ads">{ads}{ad-bsa-text}</div>
+					<div class="fixed-column ads">
+						{ads}
+					</div>
 					{exp:stash:parse}
 					{exp:channel:entries channel="articles" offset="{stash:limit-entries}" limit="9" dynamic="off" status="open" show_future_entries="no" sticky="no" orderby="date" sort="desc" disable="member_data|pagination"}
 
