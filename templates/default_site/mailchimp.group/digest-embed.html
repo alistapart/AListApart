@@ -14,7 +14,7 @@
 
                         <td valign="top" class="mcnTextContent" style="padding: 12px 30px;"><h3 style="text-align: center; font-family:'Franklin ITC Pro', 'ITC Franklin Gothic Std', 'Helvetica Neue', Helvetica, sans-serif; font-size:26px; font-style:normal; font-weight:600 !important; line-height:30px;">Recent Columns</h3> <ul>{/if}
         <li><a href="{site_url}/column/{url_title}">{title}</a><br>
-          By {embed="embeds/article-authors-for-rss-2" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} on {entry_date format="%F %d, %Y"}</li>
+          By {embed="embeds/article-authors-for-rss-2" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} on {entry_date format="%F %j, %Y"}</li>
         {if count == total_results}</ul></td>
                     </tr>
                 </tbody></table>
@@ -42,7 +42,7 @@
 
                         <td valign="top" class="mcnTextContent" style="padding: 12px 30px;"><h3 style="text-align: center; font-family:'Franklin ITC Pro', 'ITC Franklin Gothic Std', 'Helvetica Neue', Helvetica, sans-serif; font-size:26px; font-style:normal; font-weight:600 !important; line-height:30px;">Recent Blog Posts</h3> <ul>{/if}
         <li><a href="{site_url}/blog/post/{url_title}">{title}</a><br>
-          By {embed="embeds/article-authors-for-rss-2" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} on {entry_date format="%F %d, %Y"}</li>
+          By {embed="embeds/article-authors-for-rss-2" entry_author="{author}" entry_username="{username}" entry_id="{entry_id}"} on {entry_date format="%F %j, %Y"}</li>
         {if count == total_results}</ul></td>
                     </tr>
                 </tbody></table>
