@@ -97,9 +97,23 @@ a:focus {
 
 .hide {
 	position: absolute !important;
-   top: -9999px !important;
-   left: -9999px !important;
+  top: -9999px !important;
+  left: -9999px !important;
 }
+
+.visually-hidden { 
+	position: absolute; 
+	top: auto; 
+	overflow: hidden; 
+	clip: rect(1px 1px 1px 1px); /* IE 6/7 */ 
+	clip: rect(1px, 1px, 1px, 1px); 
+	width: 1px; 
+	height: 1px; 
+	white-space: nowrap; 
+	/* https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe */ 
+}
+
+figcaption em { font-style: normal; }
 
 :target:not(#comments):not(.global-nav) {
 	-webkit-animation: target-fade 2s 1;
