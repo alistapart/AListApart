@@ -2,10 +2,10 @@
   font-family: "Franklin ITC";
   src: local("Franklin ITC"),
        local("franklin-itc"),
-       url("/fonts/franklin-itc-bold.woff2") format("woff2"),
-       url("/fonts/franklin-itc-bold.woff") format("woff"),
-       url("/fonts/franklin-itc-bold.eot") format("embedded-opentype"),
-       url("/fonts/franklin-itc-bold.ttf") format("truetype");
+       url("/components/assets/fonts/franklin-itc-bold.woff2") format("woff2"),
+       url("/components/assets/fonts/franklin-itc-bold.woff") format("woff"),
+       url("/components/assets/fonts/franklin-itc-bold.eot") format("embedded-opentype"),
+       url("/components/assets/fonts/franklin-itc-bold.ttf") format("truetype");
   font-style: normal;
   font-weight: bold;
   font-display: swap;
@@ -15,10 +15,10 @@
   font-family: "Franklin ITC Light";
   src: local("Franklin ITC Light"),
        local("franklin-itc-light"),
-       url("/fonts/franklin-itc-light.woff2") format("woff2"),
-       url("/fonts/franklin-itc-light.woff") format("woff"),
-       url("/fonts/franklin-itc-light.eot") format("embedded-opentype"),
-       url("/fonts/franklin-itc-light.ttf") format("truetype");
+       url("/components/assets/fonts/franklin-itc-light.woff2") format("woff2"),
+       url("/components/assets/fonts/franklin-itc-light.woff") format("woff"),
+       url("/components/assets/fonts/franklin-itc-light.eot") format("embedded-opentype"),
+       url("/components/assets/fonts/franklin-itc-light.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
   font-display: swap;
@@ -28,10 +28,10 @@
   font-family: "Franklin ITC Light";
   src: local("Franklin ITC Light"),
        local("franklin-itc-light"),
-       url("/fonts/franklin-itc-light-italic.woff2") format("woff2"),
-       url("/fonts/franklin-itc-light-italic.woff") format("woff"),
-       url("/fonts/franklin-itc-light-italic.eot") format("embedded-opentype"),
-       url("/fonts/franklin-itc-light-italic.ttf") format("truetype");
+       url("/components/assets/fonts/franklin-itc-light-italic.woff2") format("woff2"),
+       url("/components/assets/fonts/franklin-itc-light-italic.woff") format("woff"),
+       url("/components/assets/fonts/franklin-itc-light-italic.eot") format("embedded-opentype"),
+       url("/components/assets/fonts/franklin-itc-light-italic.ttf") format("truetype");
   font-style: italic;
   font-weight: normal;
   font-display: swap;
