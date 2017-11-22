@@ -31,9 +31,9 @@
 
 									<span class="commenter-name" aria-label="commenter name">
 										{if url}
-										<a href="{url}">{name}</a>
+										<a href="{url}" rel="nofollow">{name}</a>
 										{if:elseif twitter}
-										<a href="http://twitter.com/{twitter}">{name}</a>
+										<a href="http://twitter.com/{twitter}" rel="nofollow">{name}</a>
 										{if:else}
 										{name}
 										{/if}
