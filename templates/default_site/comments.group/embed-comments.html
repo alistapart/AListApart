@@ -1,7 +1,9 @@
 						<ol class="article-comments" id="comments-parent" data-xid="{XID_HASH}">
 
 							{exp:comment:entries sort="asc" dynamic="no" url_title="{segment_3}" limit="999"}
+              {exp:low_replace find="a href=" replace="a rel='nofollow' href="}
 							{single-comment}
+              {/exp:low_replace}
 							{/exp:comment:entries}
 							
 						</ol>
