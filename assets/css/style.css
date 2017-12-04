@@ -5174,6 +5174,8 @@ form.simple-form.wide-form label .error-message {
   color: #bb3825;
 }
 
+/*------------------------------------*  #BUTTONS
+\*------------------------------------*/
 .patreon-bubble {
   position: relative;
   display: inline-block;
@@ -5618,4 +5620,42 @@ h2 .author-book__purchase-url {
     display: table;
     height: 1px;
   }
+}
+
+/**
+ * Featured entry
+ */
+.featured-entry footer {
+  font-size: 14px;
+}
+
+.featured-entry footer svg {
+  width: 6em;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+/**
+* Event Sponsor
+* 1. When the sponsor is in a wide column
+* 2. When the sponsor is in the sidebar
+*/
+.single-column-display .event-sponsor {
+  /* 1 */
+  font-family: georgia, serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.single-column-display .event-sponsor svg {
+  margin-top: 1em;
+}
+
+.event-details .event-sponsor {
+  /* 2 */
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
+  font-family: "Franklin ITC Light", sans-serif;
+  text-transform: none;
 }
