@@ -30,6 +30,41 @@
 {current-user-info}
 
 	<div role="main" class="main-wrapper">
+	
+	{exp:channel:entries channel="events" sort="desc" status="open" dynamic="off" show_future_entries="no" limit='1'}
+	{if {event_home_featured_zone} == 'y'}
+		<section class="main-content{if !article_responsive_illo} no-illo{/if} featured-entry">
+
+			<header class="issue-header">
+
+			{if count == 1}
+				<time class="pubdate updated new" datetime="{entry_date format="%Y-%m-%dT%H:%i:%s%Q"}">{entry_date format="%M %d, %Y"}</time>
+			{/if}
+			</header>
+
+			<article class="entry-header">
+
+				<h2 class="entry-title"><a href="/event/{url_title}">{title}</a></h2>
+
+				<p class="entry-details" data-url-title="{url_title}">
+					<span itemprop="author" itemscope itemtype="http://schema.org/Person">participants 
+					{event_participants backspace="7"}
+						{event_participants:participant_object}<a itemprop="url" class="author" rel="author" href="/author/{event_participants:participant_object:url_title}"><span itemprop="name">{event_participants:participant_object:title}</span></a>,{/event_participants:participant_object}
+					{/event_participants}
+					</span>
+				</p>
+
+				<p class="entry-summary">
+					<meta itemprop="description" content="{event_deck}">{exp:ala_typography:inline}{exp:xhtml:light}{exp:strip_html}{event_deck}{/exp:strip_html}{/exp:xhtml:light}{/exp:ala_typography:inline}
+				</p>
+				<footer>
+					{event_sponsor_ad_code}
+				</footer>
+			</article>
+		</section>
+	{/if}
+	{/exp:channel:entries}
+
 	{exp:stash:parse}
 	{exp:channel:entries channel="articles" entry_id="{stash:entry-id-1}|{stash:entry-id-2}" sort="asc" status="open" dynamic="off" show_future_entries="no"}
 	{if count == 1}
