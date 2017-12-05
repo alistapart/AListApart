@@ -32,7 +32,7 @@
 	<div role="main" class="main-wrapper">
 	
 	{exp:channel:entries channel="events" sort="desc" status="open" dynamic="off" show_future_entries="no" limit='1'}
-	{if {event_home_featured_zone} == 'y'}
+	{if event_home_featured_zone == 'y'}
 		<section class="main-content{if !article_responsive_illo} no-illo{/if} featured-entry">
 
 			<header class="issue-header">
@@ -64,7 +64,7 @@
 		</section>
 	{/if}
 	{/exp:channel:entries}
-
+	
 	{exp:stash:parse}
 	{exp:channel:entries channel="articles" entry_id="{stash:entry-id-1}|{stash:entry-id-2}" sort="asc" status="open" dynamic="off" show_future_entries="no"}
 	{if count == 1}
