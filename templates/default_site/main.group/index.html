@@ -105,16 +105,17 @@
 				</h2>
 		
 				<p class="entry-details" data-url-title="{url_title}">
-					<span itemprop="author" itemscope itemtype="http://schema.org/Person">participants {event_participants backspace="7"} {event_participants:participant_object}
-						<a itemprop="url" class="author" rel="author" href="/author/{event_participants:participant_object:url_title}">
-							<span itemprop="name">{event_participants:participant_object:title}</span>
-						</a>,{/event_participants:participant_object} {/event_participants}
+					<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+						participants {event_participants backspace="2"}{event_participants:participant_object}
+						<a itemprop="url" class="author" rel="author" href="/author/{event_participants:participant_object:url_title}"><span itemprop="name">{event_participants:participant_object:title}</span></a>,{/event_participants:participant_object} {/event_participants}
 					</span>
 				</p>
 		
 				<p class="entry-summary">
-					<meta itemprop="description" content="{event_deck}">{exp:ala_typography:inline}{exp:xhtml:light}{exp:strip_html}{event_deck}{/exp:strip_html}{/exp:xhtml:light}{/exp:ala_typography:inline}
+					<meta itemprop="description" content="{event_deck}">
+					{exp:ala_typography:inline}{exp:xhtml:light}{exp:strip_html}{event_deck}{/exp:strip_html}{/exp:xhtml:light}{/exp:ala_typography:inline}
 				</p>
+
 				<footer>
 					{event_sponsor_ad_code}
 				</footer>
