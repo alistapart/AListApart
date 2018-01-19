@@ -1,5 +1,4 @@
 .sponsor-top {
-	display: none;
 	position: absolute;
 	z-index: 1000;
 	top: 72px;
@@ -83,7 +82,7 @@
 	text-align: left;
 	font-size: 12px;
 	line-height: 18px;
-	margin: 0 12px;
+	margin: 12px 12px;
 	font-family: "Franklin ITC Light", sans-serif;
 	font-weight: normal;
 }
