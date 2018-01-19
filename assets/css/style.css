@@ -5252,6 +5252,10 @@ form.simple-form.wide-form label .error-message {
   background-color: #f0f0f0;
 }
 
+.secondary-column .banner-wide {
+  display: none;
+}
+
 /**
  * When the BSA ad is in an article visually align it with the article body 
  * text starting point:

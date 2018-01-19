@@ -42,7 +42,7 @@
 	display: block;
 	max-width: 90%;
 	max-width: calc(100% - 24px);
-	max-height: 50px;
+	max-height: 60px;
 	margin-bottom: 9px;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -54,6 +54,10 @@
 .secondary-column .sponsor-top p {
 	margin-left: 0;
 	background-position: left center;
+}
+
+.secondary-column .sponsor-top .sponsor-logo img {
+	display: block;
 }
 
 .sponsor-top .sponsor-intro, 
