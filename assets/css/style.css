@@ -5305,6 +5305,10 @@ form.simple-form.wide-form label .error-message {
   border-radius: 3px;
 }
 
+.banner-logo-wide {
+  max-width: 100%;
+}
+
 .banner-logo__container {
   min-width: 80px;
   /* 1 */
