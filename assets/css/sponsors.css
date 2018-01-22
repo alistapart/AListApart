@@ -12,6 +12,10 @@
 	box-shadow: 0 0 9px rgba(0,0,0,0.3);
 }
 
+.sponsor-top a {
+	color: #666;
+}
+
 .secondary-column .sponsor-top {
 	position: static;
 	width: auto;
