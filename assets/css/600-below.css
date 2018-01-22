@@ -272,6 +272,7 @@
 	}
 
 	.secondary-column .sponsor-top {
+		display: block;
 		top: -176px;
 	}
 

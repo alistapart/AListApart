@@ -17,6 +17,7 @@
 }
 
 .secondary-column .sponsor-top {
+	display: none;
 	position: static;
 	width: auto;
 	margin-top: 24px;
