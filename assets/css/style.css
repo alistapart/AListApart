@@ -1970,7 +1970,7 @@ ul.secondary-nav li a.active {
 
 .compact-issue .issue-header time {
   font-size: 16px;
-  line-height: 16px;
+  line-height: 1.1;
 }
 
 .issue-header time.new:before {
@@ -1981,7 +1981,7 @@ ul.secondary-nav li a.active {
   color: #fff;
   background: #bb3825;
   border-radius: 4px;
-  line-height: 17px;
+  line-height: 1.1;
   font-weight: normal;
 }
 
@@ -3838,7 +3838,8 @@ ul.bullets {
   display: none;
 }
 
-/*------------------------------------*  #MODULES
+/*------------------------------------*\
+  #MODULES
 \*------------------------------------*/
 /**
  * Paginator
@@ -5174,7 +5175,8 @@ form.simple-form.wide-form label .error-message {
   color: #bb3825;
 }
 
-/*------------------------------------*  #BUTTONS
+/*------------------------------------*\
+  #BUTTONS
 \*------------------------------------*/
 .patreon-bubble {
   position: relative;
@@ -5203,7 +5205,8 @@ form.simple-form.wide-form label .error-message {
   background-color: #fff;
 }
 
-/*------------------------------------*  #ADS
+/*------------------------------------*\
+  #ADS
 \*------------------------------------*/
 /**
  * Job Board
