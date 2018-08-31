@@ -27,11 +27,20 @@
 	<meta name="twitter:title" content="{title}">
 	<meta name="twitter:description" content="{exp:stash:get name="safe-description"}">
 	<meta name="twitter:url" content="{site_url}/article/{url_title}">
-
+	{article_authors}
+		{if article_authors:contributor_twitter != ''}<meta name="twitter:creator" content="@{article_authors:contributor_twitter}">{/if}
+	{/article_authors}
+	
 	<meta property="og:title" content="{title}" />
 	<meta property="og:description" content="{exp:stash:get name="safe-description"}" />
 	<meta property="og:url" content="{site_url}/article/{url_title}" />
-	<meta property="og:image" content="{article_responsive_illo}{cell_1}{url}{/cell_1}{/article_responsive_illo}" />
+	<meta property="og:image" content="{if article_responsive_illo}{article_responsive_illo}{cell_1}{url}{/cell_1}{/article_responsive_illo}{if:else}{site_url}/d/misc-images/bigwreath.png{/if}" />
+	<meta property="og:locale" content="en_US">
+	<meta property="og:site_name" content="A List Apart">
+	<meta property="og:type" content="article">
+	
+	<meta property="article:published_time" content="{entry_date format='%Y-%m-%dT%H:%i:%s%Q'}">
+	<link href="https://plus.google.com/+AListApart?rel=author" rel="publisher">
 
 </head>
 
