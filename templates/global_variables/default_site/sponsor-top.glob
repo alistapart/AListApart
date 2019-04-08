@@ -1,9 +1,10 @@
 <!-- <div id="bsap_1031" class="bsaPROrocks ad" data-serve="C67DL2V"></div> -->
 <div class="sponsor-top">
-    <a href="http://cloudinary.rocks/ala">
+    <a href="https://buddy.works/?utm_source=ala">
         <div class="sponsor-logo">
-            <img class="banner-logo" src="/components/assets/img/cloudinary_vertical_logo_for_white_bg.jpg" alt="Cloudinary Logo">
+            <img class="banner-logo" src="/components/assets/img/buddy-logo.png" alt="Buddy Logo">
         </div>
-        <p>Want the best way to store and serve images and videos? Try Cloudinary. Get your own free account.</p>
+        <p>Get the fastest deployments in UI/UX, with speed that blows developers away. From static websites to WordPress to
+        Kubernetes—whatever you do, Buddy’s got your back.</p>
     </a>
 </div>
